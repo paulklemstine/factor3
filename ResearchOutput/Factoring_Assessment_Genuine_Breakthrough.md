@@ -699,6 +699,11 @@ Kolmogorov structure function: compression gap = 0 or -1 bits for all 6 tested
 (bitlen(p)+bitlen(q) = bitlen(N)); balanced semiprimes are incompressible, knee
 vacuous; finding the pair costs ~sqrt(N). REFUTED. ROUND-2 BATCH COMPLETE (6/6).
 
+**Iteration 71 experiment (ZETA-LP — subgroup zeta unifies free-witnesses).**
+zeta_{Z/NZ}(-1) = sigma(N) = (1+p)(1+q) = Gamma_0 index psi(N): three settings
+(additive subgroups, divisor sum, modular index) give the SAME free-witness,
+recovering p,q. REFUTED — barrier 4 in three guises.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1069,6 +1074,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v78 — 2026-08-11. Based on 301 computational experiments, an
+*Assessment v79 — 2026-08-11. Based on 302 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
-formalization of the polynomial barrier, the round-1 batch (8 hypotheses) and round-2 batch (6 hypotheses) both complete, and the free-witness family.*
+formalization of the polynomial barrier, both subagent rounds complete, the free-witness family, and the ZETA-LP unification.*

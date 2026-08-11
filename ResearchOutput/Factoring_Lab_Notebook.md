@@ -5505,3 +5505,29 @@ framework. No breakthrough.
 **ROUND-2 BATCH COMPLETE.** 6/6 tested and closed. Combined with round 1 (8
 hypotheses) and the self-invented free-witness family (CIRC, KROOT, BQF), the
 barrier framework has now survived 301 experiments.
+
+---
+
+## Part 48 — Experiment ZETA-LP: subgroup zeta function of Z/NZ (loop iteration)
+
+**Hypothesis (self-invented).** Subgroups of Z/NZ correspond to divisors d|N
+(subgroup d*Z/NZ of index d), so the subgroup zeta function is
+zeta_{Z/NZ}(s) = sum_{d|N} d^{-s}. At s=-1: zeta(-1) = sigma(N) (divisor sum).
+
+**Experiment (verified for N = 15, 143, 221, 899, 1763):**
+1. zeta(-1) = sigma(N) = (1+p)(1+q) verified EXACTLY for all 5.
+2. UNIFICATION: this EQUALS the Gamma_0(N) index psi(N) = N(1+1/p)(1+1/q)
+   from CUSP-INDEX. Three structurally distinct settings give the SAME
+   free-witness: additive subgroups (via the zeta function), the divisor-sum
+   sigma(N), and the modular-group index.
+3. From sigma(N): p+q = sigma - N - 1; p,q recovered (all cases).
+4. Computing sigma(N) needs the divisors (barrier 4/6).
+
+**Barrier assessment.** REFUTED as a method — but a clean UNIFICATION data
+point: the free-witness (1+p)(1+q) = sigma(N) = psi(N) = zeta(-1) arises from
+additive-group, divisor-theoretic, and modular-group structure alike. Barrier 4
+(aggregation) in three guises at once.
+
+**Conclusion.** ZETA-LP adds the additive-group-zeta framing and unifies it with
+the divisor-sum and modular index. Reinforces the free-witness family.
+No breakthrough.
