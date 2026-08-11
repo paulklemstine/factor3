@@ -674,6 +674,11 @@ N^2+3N+1+(N-1)(p+q)-(p+q)^2, verified exactly; recovers p,q from K in all cases.
 A new GROUP-THEORETIC free-witness (barrier 4), distinct from the congruence
 counts. REFUTED.
 
+**Iteration 71 experiment (CYCLOTOWER — round-2 subagent #6).** gcd(N, Phi_m(2))
+tower: first hit exactly at m0 = min(ord_p(2), ord_q(2)) (verified all 5 N).
+REFUTED — barrier 8: exactly Pollard p-1 in cyclotomic dress, depth ~sqrt(N)
+or smoothness-dependent. No new method.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1044,6 +1049,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v73 — 2026-08-11. Based on 296 computational experiments, an
+*Assessment v74 — 2026-08-11. Based on 297 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
-formalization of the polynomial barrier, the round-1 batch, the CIRC/KROOT/BQF free-witness family, and the HEISENBERG-CLASS group-theoretic free-witness.*
+formalization of the polynomial barrier, the round-1 batch, the free-witness family (CIRC/KROOT/BQF/HEISENBERG), and CYCLOTOWER (p-1 in cyclotomic dress).*

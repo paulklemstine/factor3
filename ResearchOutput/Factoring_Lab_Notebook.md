@@ -5370,3 +5370,27 @@ No breakthrough.
 index/cusp count), TOWER-LIFT (Hensel tower, predicted no-new-data), WIGNER-CUBIC
 (cubic Gauss sum), STRUCT-KOLM (Kolmogorov structure function, predicted
 vacuous), CYCLOTOWER (gcd(N, Phi_m(2)), = Pollard p-1 in cyclotomic dress).
+
+---
+
+## Part 43 — Experiment CYCLOTOWER: cyclotomic tower gcd(N, Phi_m(2)) (loop iteration)
+
+**Hypothesis (round-2 subagent #6).** Climb the cyclotomic tower
+gcd(N, Phi_m(2)) for m = 1,2,3,...: a prime p | Phi_m(2) iff ord_p(2) = m
+(primitive m-th roots mod p). The first level with a factor is
+m0 = min(ord_p(2), ord_q(2)).
+
+**Experiment (verified for N = 143, 221, 899, 1763, 3599):**
+1. First hit at m0 = min(ord_p(2), ord_q(2)) verified EXACTLY for all 5
+   (e.g. N=899=29*31: ord_29(2)=28, ord_31(2)=5, hit at m=5, factor 31).
+2. For p ~ sqrt(N), ord_p(2) ~ p, so the tower needs depth ~sqrt(N)
+   (= Pollard p-1; only fast when p-1 is smooth, e.g. ord_31(2)=5).
+
+**Barrier assessment.** REFUTED — barrier 8 (known method in disguise):
+this is exactly Pollard p-1, with the cyclotomic polynomials refining the
+exponent ladder to extract the exact order instead of a multiple. Depth ~sqrt(N)
+in general; subexponential only for smooth p-1. Same birthday/CRT-split no-go
+as all deterministic N-derived iteration.
+
+**Conclusion.** CYCLOTOWER confirms the subagent's prediction: a clean
+cyclotomic reformulation of p-1, not a new method. No breakthrough.
