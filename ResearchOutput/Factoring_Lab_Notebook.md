@@ -6236,3 +6236,34 @@ already-closed NSPLIT structure.)
 
 **Conclusion.** AGREEMENT verified as predicted. Barrier 2 holds for
 both-symmetries-invariant character aggregates. No breakthrough.
+
+---
+
+## Part 73 — Experiment STATICRHO: rho-sample collision density vs noise floor (round-7 subagent #2)
+
+**Hypothesis (round-7 subagent #2).** The static rho sample set
+S = {x_1..x_T}, x_{t+1} = x_t^2 + 1 mod N, T ~ sqrt(p), has factor-bearing
+density ~T/p = N^{-1/4}, ABOVE the noise-floor N^{-1/2} — a challenge to the
+sharpened noise-floor principle.
+
+**Experiment (N = 489779, 14287571, 78103063; T = 5000).**
+1. Measured factor-bearing fraction (samples participating in a mod-p collision):
+   0.999, 0.997, 0.985 — ~1 when T >> sqrt(p) (the walk has cycled; nearly every
+   sample repeats mod p). At T ~ sqrt(p) the participating fraction is ~2/T =
+   2*N^{-1/4}, also above the N^{-1/2} floor.
+2. The rho SAMPLE SET (correlated) has factor-bearing density ABOVE the floor.
+3. BUT: non-adaptive detection costs T^2/2 pairwise gcds = O(sqrt(N)^2/2) =
+   the trial-division floor (barrier 4); the adaptive Floyd shortcut is Pollard
+   rho (barrier 8, known method).
+
+**Barrier assessment.** REFUTED as a speedup — but a genuine REFINEMENT of the
+noise-floor principle: it is a bound on the ATOMIC uniform primitive (ADAPT:
+each query succeeds with probability <= 1/p), NOT a density theorem over
+derived/correlated samples. The rho walk's correlated samples have higher
+collision density, but exploiting it requires the correlation structure (known
+method) or pairwise aggregation (barrier 4). The sqrt(p)-vs-sqrt(N) gap is the
+known-method exception.
+
+**Conclusion.** STATICRHO forces the precise restatement: the noise-floor
+principle bounds atomic-uniform density; correlated/derived samples escape the
+density form but not barrier 4/8. No breakthrough.

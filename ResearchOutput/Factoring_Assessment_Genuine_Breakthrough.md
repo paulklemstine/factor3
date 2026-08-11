@@ -838,6 +838,11 @@ count A(N) = #{a:(a/p)=(a/q)} = phi(N)/2 exactly; agreement set = QR set mod N.
 Collapses by character orthogonality to the N-computable quadratic character.
 REFUTED — barrier 6/5; barrier 2 holds in its sharpest form.
 
+**Iteration 71 experiment (STATICRHO — round-7 subagent #2).** Rho sample set has
+factor-bearing density above the sqrt(N) floor (correlated samples), but sealed by
+pairwise gcd aggregation (barrier 4) + rho shortcut (barrier 8). REFINEMENT: the
+noise-floor principle bounds the atomic uniform primitive, not correlated samples.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1208,6 +1213,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v102 — 2026-08-11. Based on 325 computational experiments, an
+*Assessment v103 — 2026-08-11. Based on 326 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
 formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, and SCHINZEL.*
