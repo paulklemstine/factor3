@@ -689,6 +689,11 @@ c_k(N) for x^2==1 mod N^k: c_1=c_2=c_3=4 constant (= KROOT gcd(2,p-1)gcd(2,q-1))
 x^2==N mod N^2 has 0 solutions. REFUTED — the tower carries nothing beyond
 level-1 (unique lifts when f' is a unit; no lift on double roots).
 
+**Iteration 71 experiment (WIGNER-CUBIC — round-2 subagent #4).** Cubic-phase
+Wigner function: BOTH subagent claims fail — |W|=1/sqrt(N) flatness FALSE
+(N=143: |W| varies 0.00-0.19), CRT factorization W=(1/N)G_p G_q FALSE (phase
+functions don't factor through CRT, only characters). REFUTED.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1059,6 +1064,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v76 — 2026-08-11. Based on 299 computational experiments, an
+*Assessment v77 — 2026-08-11. Based on 300 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
-formalization of the polynomial barrier, the round-1 batch, the free-witness family, CYCLOTOWER, and TOWER-LIFT.*
+formalization of the polynomial barrier, the round-1 batch, the free-witness family, CYCLOTOWER, TOWER-LIFT, and WIGNER-CUBIC.*

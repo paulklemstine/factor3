@@ -5442,3 +5442,35 @@ consistent with the subagent's two-modulus decoupling lemma.
 
 **Conclusion.** TOWER-LIFT confirms: lifting to higher p-adic levels adds no
 factor information beyond level 1. No breakthrough.
+
+---
+
+## Part 46 — Experiment WIGNER-CUBIC: cubic-phase Wigner function (loop iteration)
+
+**Hypothesis (round-2 subagent #4).** The discrete Wigner function
+W(x,u) = (1/N) sum_{y mod N} omega^{2y^3 + 2(u+3x^2)y} of a cubic-phase state
+should be a non-DFT quantum-informational object with (claimed) |W|=1/sqrt(N)
+flatness and CRT factorization W = (1/N) G_p(c) G_q(c).
+
+**Experiment (N = 15, 21, 33, 143).** BOTH load-bearing claims FAIL:
+1. |W| = 1/sqrt(N) flatness: FALSE. For N=143 the |W| values at sample points
+   are {0.00, 0.02, 0.19, 0.13, 0.06} — NOT flat (cubic state is non-stabilizer,
+   so non-flatness is expected; the subagent's flatness claim was wrong).
+2. CRT factorization W = (1/N) G_p(c)G_q(c): FALSE. Fails for N=143. The
+   exponential phase function e^{2 pi i f(y)/N} does NOT decompose as a product
+   of mod-p and mod-q sums through CRT — only GROUP CHARACTERS factor, and f(y)
+   is a polynomial phase, not a character. (For N=15/21/33 the check trivially
+   'passed' because both sides were 0.)
+
+**Barrier assessment.** REFUTED — the subagent's specific Wigner formula and
+its claimed structure do not hold. W(x,u) is O(N)-computable (a function of N
+alone, exponential aggregation cost, barrier 4) and N-only (barrier 5), but it
+does NOT have the claimed factorization/flatness structure. The 'classical
+simulation of non-stabilizer quantum structure' idea, as specified, does not
+produce a working factor witness.
+
+**Conclusion.** WIGNER-CUBIC refuted; the subagent's flatness and CRT claims
+both disproven computationally. No breakthrough. (Note: a genuinely correct
+discrete Wigner function of the cubic state would be a valid quantum-info
+object, but it remains N-only / barrier-4 blocked — the phase-sum it computes
+is just another free-witness aggregate.)
