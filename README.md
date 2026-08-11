@@ -34,13 +34,14 @@ of independent mathematical interest.
 | 18 | [The Schinzel Circle](ResearchOutput/NewMathematics/18_Schinzel_Circle.md) | a geometric free-witness for barrier 4 (your idea) |
 | 19 | [Round-5 Closures](ResearchOutput/NewMathematics/19_Round5_Closures.md) | the 4 round-5 structural-gap attacks closed (experiments 316-320) |
 | 20 | [Round-6 Closures](ResearchOutput/NewMathematics/20_Round6_Closures.md) | the noise-floor principle + trace-lemma frontier (experiments 321-324) |
+| 21 | [Program Synthesis](ResearchOutput/NewMathematics/21_Program_Synthesis.md) | the definitive assessment: classification, noise-floor, frontier |
 
 The consolidated report is the authoritative record of all novel mathematics from
 the 292-experiment investigation.
 
 ## Contents
 
-- `ResearchOutput/NewMathematics/` — the 20 papers + consolidated report
+- `ResearchOutput/NewMathematics/` — the 21 papers + consolidated report
 - `ResearchOutput/Factoring_Lab_Notebook.md` — the master experiment record (284 experiments)
 - `ResearchOutput/Factoring_Assessment_Genuine_Breakthrough.md` — honest assessment (v61)
 - `ResearchOutput/Factoring_Brainstorm_Unconventional.md`, `Factoring_Research_Synthesis.md` — planning documents
