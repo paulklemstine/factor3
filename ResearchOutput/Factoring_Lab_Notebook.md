@@ -5779,3 +5779,28 @@ to hit a divisor is 2^L/2 = O(sqrt(N)).
 
 **Conclusion.** OPO-FAC verified as predicted: analog/optical resources do not
 escape barrier 4. The phase-space counting is unchanged. No breakthrough.
+
+---
+
+## Part 58 — Experiment MPS-PARENT: tensor-network / parent-Hamiltonian factor states (round-4 subagent #4)
+
+**Hypothesis (round-4 subagent #4).** If factors were the unique ground state of
+an N-computable 1-D gapped Hamiltonian, MPS/DMRG would contract it in poly(log N).
+Kill-shot: |p>|q> is a PRODUCT state (zero entanglement), so MPS compression is
+free only if you know the answer; any N-computable factor-encoding Hamiltonian
+has ground space {|1>,|p>,|q>,|N>}.
+
+**Experiment (N = 15, 21, 143).**
+1. Ground space of E(a,b) = (N - ab)^2 is EXACTLY the divisor set
+   {(1,N),(p,q),(q,p),(N,1)} — a 4-point delta (Emin=0, no gradient).
+2. |p>|q> is a product state (rank-1 tensor) — entanglement EXACTLY 0.
+3. Random descent succeeds at the random density 2/N^2 (no speedup).
+
+**Barrier assessment.** REFUTED — barrier 4/5: factor-encoding states have zero
+entanglement, so tensor networks are a representation tool, not a search tool.
+The aggregation cost reappears unchanged as the ground-state search; any N-only
+Hamiltonian's ground state is N-only (barrier 5); non-degenerate factor-encoding
+Hamiltonians are the parent Hamiltonian OF the answer (circular, barrier 6).
+
+**Conclusion.** MPS-PARENT verified as predicted: quantum-inspired tensor
+networks do not escape the barrier framework. No breakthrough.
