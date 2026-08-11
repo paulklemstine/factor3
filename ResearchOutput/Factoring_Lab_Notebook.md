@@ -6371,3 +6371,28 @@ deterministic exact iteration selects the mixed branch without the factors.
 
 **Conclusion.** MIXROOT verified as predicted: 0% mixed-root reachability.
 No breakthrough.
+
+---
+
+## Part 78 — Experiment JACWALK: Jacobi-symbol coupled CRT walk (round-8 subagent #2)
+
+**Hypothesis (round-8 subagent #2).** x_{i+1} = x_i + (x_i/N) mod N applies a
+single +-1 to BOTH CRT coordinates (genuinely coupled, unlike rho's independent
+projections). Claim: the coupling is statistically decorrelating; hits stay at
+the noise-floor density.
+
+**Experiment (N = 43931, 135229, 382937; M = N^{3/4} steps).**
+1. gcd hits: 0 in all cases — BELOW the baseline M/sqrt(N) (14-25). The +-1 walk
+   stays in a ~sqrt(M)-wide window that contains few multiples of p,q (spaced
+   ~p apart), so it UNDER-samples them.
+2. Sign lag-1 autocorrelation: ~0 (the signs alternate nearly every step) — no
+   exploitable correlation structure.
+
+**Barrier assessment.** REFUTED — the coupled walk is sealed: hits at or BELOW
+the noise floor (under-sampling), and the sign sequence decorrelates. The CRT
+coupling is real but statistically unhelpful — structured correlation !=
+exploitable correlation. Determinism makes the sample more compressible, not
+less. Consistent with the refined noise-floor principle (atomic-uniform bound).
+
+**Conclusion.** JACWALK verified as predicted: the Jacobi walk gives no speedup.
+No breakthrough.
