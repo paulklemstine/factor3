@@ -6697,3 +6697,29 @@ approach is a NN function of N (barrier 5). It may assist HINT amplification
 
 **Conclusion.** DIFFUSE: the state-of-the-art ML approach to factoring does not
 escape the barrier framework. Fresh angle tested and recorded.
+
+---
+
+## Part 90 — Experiment P2Q: free-witness framework for N = P^2 Q (arXiv mining)
+
+**Source.** arXiv 2412.12558, "The Jacobi Factoring Circuit: Quantum Factoring
+with Near-Linear Gates and Sublinear Space" — factors P^2 Q (small Q) with
+sublinear qubits. Surfaced by the loop's arXiv-mining directive.
+
+**Fresh testable angle.** The lab's framework was built on SQUAREFREE N=pq.
+Does the free-witness classification extend to non-squarefree N = P^2 Q?
+
+**Experiment (N = 175, 539, 1573, 1183).**
+1. Free-witness structure EXTENDS: #x^2==1 mod N = 4 (CRT product over
+   Z/P^2 x Z/Q); tau(P^2 Q) = 6; sigma(N) = (1+P+P^2)(1+Q) is CRT-multiplicative,
+   sealed by barrier 4 (computable only with the factors).
+2. NO classical shortcut for the small-Q subclass — the Jacobi circuit's
+   advantage is QUANTUM (sublinear qubits, near-linear gates), not classical.
+
+**Barrier assessment.** Consistent with the framework: the free-witness
+classification and trace lemma extend to N=P^2 Q. The Jacobi Factoring Circuit
+is a quantum-resource advance for a special subclass, not a classical
+breakthrough (the quantum exception, frontier 2, refined again).
+
+**Conclusion.** P2Q: the framework's scope extends to non-squarefree forms. Fresh
+arXiv angle tested and recorded. No hint-free classical breakthrough.

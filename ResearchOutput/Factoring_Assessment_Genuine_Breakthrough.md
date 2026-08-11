@@ -921,6 +921,11 @@ factoring (2309.05295): a NN function of N (barrier 5, memorization no
 generalization); constraint refinement needs the p*q=N check (= factoring).
 May assist hint amplification only. REFUTED as hint-free method.
 
+**Iteration 71 experiment (P2Q — arXiv mining).** Free-witness framework extends
+to N=P^2Q (CRT over Z/P^2xZ/Q; sigma CRT-multiplicative, sealed). No classical
+shortcut for the small-Q subclass; the Jacobi circuit's advantage is quantum.
+CONSISTENT with the framework.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1291,6 +1296,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v119 — 2026-08-11. Based on 342 computational experiments, an
+*Assessment v120 — 2026-08-11. Based on 343 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
 formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, and SCHINZEL.*
