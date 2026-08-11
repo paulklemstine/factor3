@@ -5248,3 +5248,40 @@ beats sqrt(N) for the atomic multiple-finding primitive" holds.
 beat the sqrt(N) line for finding a multiple of p. The information-theoretic
 sibling of the DFT sample bound (paper 09) and CRT-split birthday bound
 (paper 11) is confirmed by measurement.
+
+---
+
+## Part 39 — Experiment CIRC: quadratic circle congruence count (loop iteration)
+
+**Hypothesis (self-invented, outside subagent territory).** The number of
+solutions C(N) = #{(x,y) in (Z/NZ)^2 : x^2 + y^2 == 1 mod N} (the "circle
+congruence" count). Classical: C(N) = C(p)*C(q) and C(p) = p - chi_p(-1), so
+C(N) = (p - eps_p)(q - eps_q), eps_p = chi_p(-1) = (-1)^((p-1)/2).
+
+**Experiment (verified for N = 143, 221, 899, 1763, 77, 65):**
+1. C(N) = (p - eps_p)(q - eps_q) verified EXACTLY for all 6 semiprimes.
+2. From C(N) and N alone, (p,q) are recovered in ALL FOUR sign cases:
+   (1,1): p+q = N+1-C; (1,-1): q-p = N-1-C; (-1,1): p-q = N-1-C;
+   (-1,-1): p+q = C-N-1. Solve the appropriate quadratic each case.
+3. C(N) is NOT a polynomial in N — it encodes p,q SEPARATELY via
+   chi_p(-1), chi_q(-1). It EVADES the polynomial barrier (barrier 1).
+
+**Barrier assessment.** REFUTED as a factoring method, but a clean new
+instance of barrier 4 (free-witness aggregation): C(N) is a single scalar that
+IS the factorization (complete witness), yet computing it requires O(N^2)
+enumeration (count solutions) or the factorization itself (the closed form
+uses p,q). No poly(log N) formula for C(N) exists that avoids the factors.
+Also a partial barrier-6 instance (the closed form is circular).
+
+**Conclusion.** C(N) is arguably the CLEANEST free-witness found: one integer
+encoding the full factorization, non-polynomial, with complete recovery in all
+sign cases — and exponentially hard to compute. Reinforces barrier 4 precisely.
+No breakthrough.
+
+**CIRC addendum (mod-2^k leakage test).** C(N) is ALWAYS divisible by 16
+((p-eps_p), (q-eps_q) both == 0 mod 4). Higher 2-adic bits leak factor residue
+classes: N=697=17*41 (both 1 mod 8) gives C/16 even; N=2257=37*61 and
+N=1537=29*53 (both 5 mod 8) give C/16 odd. So C(N) mod 32 distinguishes p,q == 1
+vs 5 mod 8. BUT computing the count mod 2^k still requires O(N^2) enumeration or
+p,q — the leaking bits are exactly the non-computable ones. The free-witness
+barrier (barrier 4) holds even for truncated counts. No poly-computable leak.

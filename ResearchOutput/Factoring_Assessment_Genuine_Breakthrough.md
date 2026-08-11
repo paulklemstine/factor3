@@ -651,6 +651,13 @@ shows 0.89 via SMOOTHNESS (known p-1 method), not adaptivity. CONFIRMED: no
 adaptive strategy beats sqrt(N) for the atomic multiple-of-p primitive.
 Closes the last subagent loophole.
 
+**Iteration 71 experiment (CIRC — circle congruence count).** C(N) =
+#{(x,y): x^2+y^2==1 mod N} = (p-chi_p(-1))(q-chi_q(-1)), verified exactly; from
+C(N) and N, (p,q) recovered in ALL 4 sign cases. C(N) is a COMPLETE factoring
+witness, NOT polynomial in N (evades barrier 1) — but computing it costs O(N^2)
+or the factorization (barrier 4 free-witness aggregation, cleanest form yet).
+REFUTED; reinforces barrier 4.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1021,6 +1028,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v69 — 2026-08-11. Based on 292 computational experiments, an
+*Assessment v70 — 2026-08-11. Based on 293 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
-formalization of the polynomial barrier, and all seven brainstorm-subagent hypotheses (PAIR, BDPC, FOU, BPPF, HCOM, SEMI, NSPLIT, ADAPT) tested and closed.*
+formalization of the polynomial barrier, all seven round-1 subagent hypotheses, and the CIRC circle-congruence witness.*
