@@ -5755,3 +5755,27 @@ primality (v2 of p-1, q-1). Barrier 4.
 **Conclusion.** TORCEN verified as predicted — the torsion census leaks the
 2-adic valuations, sealed by aggregation. Consistent with the CRT-multiplicative
 classification (paper 16). No breakthrough.
+
+---
+
+## Part 57 — Experiment OPO-FAC: optical/Ising factorization (round-4 subagent #5)
+
+**Hypothesis (round-4 subagent #5).** Encode p's L = ceil(log2(sqrt N)) bits as
+Ising spins with H(s) = (N - p(s)*q(s))^2; a degenerate OPO/Ising machine relaxes
+to the ground state (the factors). Claim: the device's 2^L ~ sqrt(N) phase-space
+modes ARE the free witnesses — the analog resource changes the physics, not the
+counting.
+
+**Experiment (N = 6059, 165467, 2584297, 32743847; 14-26 bits; 4000 random restarts).**
+Random-restart success rate matches the random divisor density 2/2^L = 2/sqrt(N)
+at ALL four sizes (14-bit: 0.01425 vs 0.01562; 26-bit: 0.00025 vs 0.00024).
+The success probability is the divisor density in the phase space.
+
+**Barrier assessment.** REFUTED — barrier 4/5: the OPO/Ising machine's 2^L ~
+sqrt(N) metastable modes are the free witnesses in quadrature (mode volume =
+witness count). Any N-only Hamiltonian's ground state is N-only (barrier 5);
+the analog resource changes the physics but not the counting — expected tries
+to hit a divisor is 2^L/2 = O(sqrt(N)).
+
+**Conclusion.** OPO-FAC verified as predicted: analog/optical resources do not
+escape barrier 4. The phase-space counting is unchanged. No breakthrough.

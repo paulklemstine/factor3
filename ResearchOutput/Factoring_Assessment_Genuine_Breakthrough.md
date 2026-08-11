@@ -746,6 +746,11 @@ census T(k) = 2^{min(k,v2(p-1))+min(k,v2(q-1))} verified exactly; fingerprint of
 (a,b) recoverable. A torsion free-witness (KROOT specialization, 2-power framing)
 for the 2-adic valuations — barrier 4. REFUTED.
 
+**Iteration 71 experiment (OPO-FAC — round-4 subagent #5).** Optical/Ising
+factorization: random-restart success = divisor density 2/2^L = 2/sqrt(N) at all
+sizes; the device's 2^L modes ARE the witnesses. REFUTED — analog resource
+changes physics, not counting (barrier 4/5).
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1116,6 +1121,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v87 — 2026-08-11. Based on 310 computational experiments, an
+*Assessment v88 — 2026-08-11. Based on 311 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
-formalization of the polynomial barrier, three subagent rounds + round-4 #3 complete, the free-witness family + classification (paper 16), PYFAC, and SIGK.*
+formalization of the polynomial barrier, three subagent rounds + round-4 (TORCEN, OPO-FAC) complete, the free-witness classification (paper 16), PYFAC, and SIGK.*
