@@ -6159,3 +6159,29 @@ class (already sealed).
 **Conclusion.** DIRICHLET confirms the free-witness classification is closed
 under iterated aggregation. No breakthrough. (The CIRC-identification
 imprecision is noted and corrected.)
+
+---
+
+## Part 70 — Experiment RES-LIFT: 2-adic residue-depth of the TRUNC leak (analysis-subagent proposal)
+
+**Source.** The results-analysis subagent's proposed next step: quantify the
+2-adic residue-depth of the TRUNC leak (C(N) mod 2^k).
+
+**Experiment (120 semiprimes, ~9-bit factors).**
+1. DEPTH LAW: if (p1,q1) == (p2,q2) mod 2^k then C(N1) == C(N2) mod 2^k AND
+   mod 2^{k+2} (verified for k = 2..6). So C(N) mod 2^k is determined by
+   (p,q) mod 2^k — depth exactly k, with a 2-bit slack (C is 16-divisible).
+2. UNIQUENESS: (N mod 2^k, C mod 2^k) does NOT uniquely determine (p,q) mod 2^k.
+   For k=6: 32 of 57 buckets have multiple (p,q) mod 64 values (e.g. key
+   (23,48) -> {(11,37),(27,53),(51,13)}). The truncated count is NOT a complete
+   2-adic witness — it leaves multiple possible factor residues.
+
+**Barrier assessment.** REFUTED as a method — but the TRUNC finding is now
+quantified: the truncated free-witness leak has depth k (needs (p,q) mod 2^k)
+but is AMBIGUOUS (not a complete residue witness). Every leaked bit is sealed
+behind O(N) enumeration; the leak cannot be assembled into a poly-time factor
+recovery. Consistent with the trace lemma (residue-vector witnesses are free).
+
+**Conclusion.** RES-LIFT sharpens TRUNC: C(N) mod 2^k leaks factor residues at
+depth k but incompletely. The sharpest quantified statement of barrier 4's
+residue structure. No breakthrough.
