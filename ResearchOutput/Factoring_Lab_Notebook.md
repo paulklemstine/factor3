@@ -6046,3 +6046,31 @@ through O(sqrt N) correlations no sub-O(N) computation can resolve (noise floor)
 **Conclusion.** PRIMEDOM verified as predicted: the prime-domain Jacobi sum is
 pure noise. The free-witness decomposition gap is closed via the noise-floor
 argument. No breakthrough.
+
+---
+
+## Part 66 — Experiment CUBICUNIT: pure-cubic Voronoi fundamental units (round-5 subagent #4, batch complete)
+
+**Hypothesis (round-5 subagent #4).** K = Q(cuberoot N) has unit group rank 1;
+the fundamental unit e = a + b*alpha + c*alpha^2 satisfies the norm equation
+a^3 + N b^3 + N^2 c^3 - 3Nabc = +-1. Attack: compute e and read a factor of N
+off the coefficients.
+
+**Experiment (cube-free N = 2, 3, 5, 7, 10, 13; brute force [-60,60]^3).**
+1. Minimal nontrivial units found, norm +-1 verified (e.g. N=2: (-1,-1,-1);
+   N=5: (-1,4,-2), norm -1).
+2. Coefficients grow with N (max|coeff| 1 -> 6 for N=2 -> 10) but are small at
+   this tiny scale; for LARGE N the regulator is Theta(sqrt N), so e has
+   ~sqrt N digits and cannot be materialized in poly(log N).
+3. The unit's arithmetic is cube-residue / period-3 order-finding
+   (CYCLOTOWER/BURAU-ORD territory). Given e, the norm equation re-encodes the
+   unit group, giving p,q nothing.
+
+**Barrier assessment.** REFUTED — barrier 8 (index-calculus/order-finding in
+disguise) + barrier 5 (any N-computable function of the unit group is N-only).
+The regulator being exponentially large makes e infeasible to materialize;
+even if computed, no factor extraction.
+
+**Conclusion.** CUBICUNIT completes the round-5 subagent batch (4/4: DIVSUM,
+EULER, PRIMEDOM, CUBICUNIT). Five subagent rounds now complete (24 + 4 = 28
+hypotheses), all closed, all consistent with the barrier framework. No breakthrough.
