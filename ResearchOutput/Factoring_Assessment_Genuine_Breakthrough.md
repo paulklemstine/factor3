@@ -771,6 +771,31 @@ ROUND-4 BATCH COMPLETE (5/5).
 = 16 vs 0). Truncated free-witness counts leak factor residues no residue formula
 sees — CIRC addendum upgraded toward a theorem. REFUTED as method; sharpens barrier 4.
 
+**Loop iteration — Experiment SCHINZEL (Schinzel's circle theorem).** For every
+n >= 1 a circle passes through exactly n lattice points (odd n: center (1/3,0),
+(3x-1)^2+(3y)^2 = 5^(2k), R = 5^k/3; even n: center (1/2,0), (2x-1)^2+(2y)^2 =
+5^(k-1); verified count == n for n=1..20). For N=pq the construction uses exponent
+N-1 (the target count), NEVER the factorization: R = 5^((N-1)/2)/3 is exactly
+linear in log2, hence N-only, exponential-size (~1.16N bits), and the N lattice
+points are a deterministic function of N alone (barrier 5). TWO concrete sub-findings:
+(1) **Lattice-point factor leak (NEW geometric instance of barrier 4).** The
+Schinzel circle's lattice points share factors with N at density ~2(p+q)/N ~
+4/sqrt(N) (mod p, 5^(N-1) = 5^(q-1) is a square, so ~2/p of x-residues admit
+y==0 mod p, hence ~2q points leak p). This gives a RANDOMIZED factoring algorithm
+(random Gaussian index j -> lattice point mod 3N -> gcd, O(sqrt(N)) expected) —
+exactly trial-division complexity, and heuristic (N=3599=59·61: all 119 leaking
+points give gcd=N, no proper factor). (2) **x^2+y^2=N^2 count = 4*3^a** (a =
+#{p,q == 1 mod 4}) re-derives the known residue-mod-4 free witness (36/12/4;
+distinguishes 209=11·19 from 221=13·17), barrier 4/6, CIRC/BQF/GAU family.
+REFUTED — the free witness is a visible circle whose points factor N, but reading
+any one off it costs O(sqrt(N)) sampling. No breakthrough.
+
+**Iteration 71 experiment (DIVSUM — round-5 subagent #2).** Divisor-summatory
+hyperbola D(N) = sum floor(N/d) in O(sqrt N): the error Delta(N) is N-only
+(near-equal-N partial corrs low; the permutation signal was a nonlinear-N
+confound). D(N) mod 2 = floor(sqrt N) mod 2. REFUTED — barrier 5 holds even for
+a non-multiplicative O(sqrt N)-computable aggregate; strengthens barrier 4.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1141,6 +1166,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v92 — 2026-08-11. Based on 315 computational experiments, an
+*Assessment v94 — 2026-08-11. Based on 317 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
-formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, and TRUNC.*
+formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, and SCHINZEL.*

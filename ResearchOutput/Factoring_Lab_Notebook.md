@@ -4887,9 +4887,11 @@ conditional impossibility holds.  The investigation's honest conclusion stands:
 classical factoring below L_N[1/3] appears structurally impossible, but a
 formal unconditional lower bound is NOT proven.
 
-**Status of tracking files.**  Notebook: 284 experiments (14 confirmed, 265
-refuted, 5 inconclusive).  Assessment: v58.  Consolidated report: 10
+**Status of tracking files.**  Notebook: 316 experiments (14 confirmed, rest
+refuted/inconclusive; assessment v93).  Consolidated report: 10
 breakthroughs (362 lines).  Papers 01-10 all exist (~1572 total lines).
+(Count line updated 2026-08-11 after SCHINZEL; prior parts through Part 61
+brought the count to 315.)
 
 
 ---
@@ -5888,3 +5890,110 @@ factor residues no residue formula can see), sharpening barrier 4.
 **Conclusion.** TRUNC verified the analysis subagent's proof direction. The
 truncated free-witness is genuinely factor-secret beyond N's residues.
 No breakthrough — but the CIRC result is now near-theorem.
+
+---
+
+## Part 62 — Experiment SCHINZEL: Schinzel's circle theorem vs factoring (loop iteration)
+
+**Hypothesis.** Schinzel (1958): for every n >= 1, a circle in the plane passes
+through EXACTLY n lattice points. For N = pq, construct the Schinzel circle
+through exactly N lattice points and test whether the radius, a specific lattice
+point, or a statistic of the point set reveals p, q, or p+q. The lattice-point
+count on x^2+y^2 = R^2 is 4(d_1(R^2)-d_3(R^2)) (divisors ≡1 minus ≡3 mod 4) — the
+hoped-for contact point with factorization.
+
+**Construction (verified EXACTLY, count == n for n = 1..20).**
+- Odd n = 2k+1: center (1/3, 0), (3x-1)^2 + (3y)^2 = 5^(2k), radius R = 5^k/3.
+  (n=3: (-1,-1),(-1,1),(2,0); n=5: (-8,0),(-2,-8),(-2,8),(7,-5),(7,5).)
+- Even n = 2k: center (1/2, 0), (2x-1)^2 + (2y)^2 = 5^(k-1), radius R = 5^((k-1)/2)/2.
+- For odd N = pq: R = 5^((N-1)/2)/3. The construction uses the exponent N-1 —
+  the desired COUNT — never the factorization. log2(R) = (N-1)/2·log2(5) - log2(3)
+  is EXACTLY linear in N. R is exponential (~1.16·N bits; writing R down costs more
+  than N itself). The circle's parameters AND its N lattice points are a
+  deterministic function of N alone (barrier 5, N-only).
+
+**Experiment.**
+1. **Radius relation.** R is determined by N (as the target point count), not by
+   p, q separately. No factorization input anywhere in the construction: the count
+   N is achieved because 5^(N-1) has exactly N representations with the mod-3
+   congruence (a divisor/representation-count property of 5^(N-1) = of N alone).
+2. **Lattice-point factor LEAK (the genuinely new observation).** The Schinzel
+   circle's N lattice points have coordinates that share factors with N at density
+   ≈ 2(p+q)/N ≈ 4/sqrt(N). WHY: mod p the circle is (3x-1)^2 + (3y)^2 ≡ 5^(N-1)
+   ≡ 5^(q-1) mod p (Fermat), and 5^(q-1) = (5^((q-1)/2))^2 is a square, so ~2/p of
+   the residue classes x mod p admit y ≡ 0 mod p; hence ~2N/p = 2q lattice points
+   leak p (gcd(y,N)=p), ~2p leak q. MEASURED proper-leak counts: N=35 (5·7): 26/35;
+   N=77 (7·11): 36/77; N=143 (11·13): 24/143; N=221 (13·17): 82/221; N=899 (29·31):
+   208/899.
+   This yields a RANDOMIZED factoring algorithm: pick a random Gaussian index j,
+   compute the lattice point mod 3N (poly(log N) fast modular exponentiation of
+   (1+2i)^j(1-2i)^(N-1-j); the mod-3N lift makes the /3 center-shift division
+   well-defined), reduce x=(A+1)/3, y=B/3 mod N, take gcd with N. Success ≈ 4/sqrt(N)
+   per trial → O(sqrt(N)) expected time = trial division, NOT a speedup. And it is
+   HEURISTIC: N=3599=59·61 has 119 leaking points but ALL with gcd = N (no proper
+   factor), so the algorithm fails outright for some N.
+3. **x^2+y^2 = N^2 count (radius = N).** r_2(N^2) = 4(d_1(N^2)-d_3(N^2)) = 4·3^a,
+   a = #{p,q ≡ 1 mod 4}. Count = 36 (both ≡1), 12 (mixed), 4 (both ≡3). For N ≡ 1
+   mod 4 the count distinguishes (1,1) from (3,3): N=209=11·19 → 4; N=221=13·17 → 36.
+   NOT N-only — varies with factorization at near-equal N. Computing it = O(N)
+   boundary scan or the divisor structure. A free-witness for factor residues mod 4:
+   exactly the CIRC/BQF/GAU family (already refuted, barrier 4).
+4. **near-equal-N test.** Schinzel-circle invariants (R, lattice-point set, all
+   statistics) are deterministic functions of the exponent N-1, hence of N alone;
+   residual vs p,q is EXACTLY 0 (no "beyond N" variation is even possible — N fixes
+   p,q). The x^2+y^2=N^2 count DOES vary with (p mod 4, q mod 4) beyond N — the
+   free-witness signature (barrier 4).
+
+**Barrier assessment.** REFUTED as a factoring method. Three components:
+- Standard Schinzel circle: barrier 4 + 5 (N-only; O(N) lattice points to
+  aggregate; coordinates exponential in N).
+- Lattice-point factor leak: a NEW concrete GEOMETRIC instance of barrier 4 — the
+  free witness is literally a circle drawn in the plane, and a random lattice point
+  factors N with probability ~4/sqrt(N); harvesting one = O(sqrt(N)) sampling =
+  trial division. The leak is deterministic in N (the point set is f(N)); the p,q
+  information is free-witness aggregation, sealed at barrier 4.
+- x^2+y^2=N^2 count: barrier 4/6, member of the established CIRC/BQF/GAU
+  residue-mod-4 family.
+
+**Conclusion.** Schinzel's theorem gives a circle through exactly N points built
+from N ALONE (exponent N-1); the factorization never enters the construction. The
+circle's lattice points do carry factor information (a geometric free witness) at
+density ~4/sqrt(N), but harvesting it is O(sqrt(N)) sampling — no better than trial
+division — and it is heuristic (fails for some N, e.g. 3599). The count formula
+4·3^a re-derives the known residue-mod-4 free witness. No breakthrough. The
+novelty is a crisp geometric picture of barrier 4: the free witness is a visible
+circle whose points factor N, yet reading any one point off it costs O(sqrt(N)).
+Scripts: /tmp/exp_schinzel_full.py, /tmp/exp_schinzel_compact.py,
+/tmp/exp_schinzel_randj.py, /tmp/exp_schinzel_jtrack.py.
+
+---
+
+## Part 63 — Experiment DIVSUM: divisor-summatory hyperbola (round-5 subagent #2)
+
+**Hypothesis (round-5 subagent #2).** D(N) = sum_{d<=N} floor(N/d) is computable
+in O(sqrt N) via the hyperbola trick (sublinear, non-multiplicative — the
+barrier-4 classification does not literally cover it). D(N) = N + p + q + 1 +
+(other terms). Does the error Delta(N) = D(N) - (N log N + (2g-1)N) encode p+q?
+
+**Experiment (24-60 semiprimes, 16-24 bits; hyperbola in O(sqrt N)).**
+1. D(N) = N+p+q+1+(other) confirmed (the p+q terms appear among the summands).
+2. Initial permutation test (60 samples): residual |corr| of Delta with p+q/q-p
+   = 0.506, at the 100th percentile of the null (mean 0.143, 95th 0.304) —
+   SUGGESTIVE.
+3. DECISIVE near-equal-N test (8 bands, width 200000): partial |corr(Delta,
+   p|q | N)| within bands mostly LOW (0.03-0.32 in the large bands, n=19-53);
+   the 0.507 and 0.701 values are in TINY bands (n=10, n=8) — small-sample
+   artifacts. 
+4. D(N) mod 2 == floor(sqrt N) mod 2 for all (smooth function of N's structure,
+   no factor residue).
+
+**Barrier assessment.** REFUTED — barrier 5 (structural orthogonality) holds:
+the divisor-summatory error Delta(N) is N-only. The permutation signal was a
+nonlinear-N confound (both Delta(N) and q-p are nonlinear functions of N; the
+linear N-residual did not remove the shared N-dependence) — resolved by the
+near-equal-N test. The hyperbola trick gives O(sqrt N) (still exponential in
+log N); the sparse p+q witness terms are sealed. This STRENGTHENS barrier 4:
+even a non-multiplicative, O(sqrt N)-computable aggregate does not leak factors.
+
+**Conclusion.** DIVSUM refuted — the divisor error is N-only. A good test of a
+genuinely non-classification-covered aggregate. No breakthrough.
