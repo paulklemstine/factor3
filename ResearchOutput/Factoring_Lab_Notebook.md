@@ -6128,3 +6128,34 @@ empirically killed, not definitively closed.)
 
 **Conclusion.** CARRYTRACE verified as predicted: the carry escape route is
 sealed by pseudorandomness. No breakthrough.
+
+---
+
+## Part 69 — Experiment DIRICHLET: free-witness closure under Dirichlet convolution (round-6 subagent #4)
+
+**Hypothesis (round-6 subagent #4).** For multiplicative w, D(w)(N) =
+sum_{d|N} w(d) = prod_{p^e||N}(1 + w(p) + w(p^2) + ...) is again
+multiplicative — the free-witness classification is closed under Dirichlet
+convolution (no higher 'differential' escapes; the spectral-sequence escape
+route collapses at the E1 page).
+
+**Experiment (N = 143, 221, 899).**
+1. D(w)(N) = prod(1+w(p)+w(p^2)+...) verified for w = chi_-4, chi_-3, id, id^2.
+2. D(id)(N) = sigma(N), D(id^2)(N) = sigma_2(N) — known free-witnesses (SIGK).
+3. D(chi_-4)(N) = (1+chi_-4(p))(1+chi_-4(q)) — a character divisor-sum
+   free-witness (0 unless both p,q == 1 mod 4).
+4. CORRECTION: my printout claimed D(chi_-4) IS the CIRC count — IMPRECISE.
+   D(chi_-4) = (1+chi)(1+chi) (character divisor-sum) is RELATED to but
+   DISTINCT from CIRC's (p-chi)(q-chi) (e.g. D(chi_-4)(143) = 0, CIRC(143) = 144).
+   Both are free-witnesses for chi(p), chi(q); they differ.
+
+**Barrier assessment.** REFUTED as a method — CONFIRMS the classification's
+closure: every finite iteration of aggregation over the divisor lattice remains
+free (multiplicativity is preserved under Dirichlet convolution with 1). The
+E1-collapse is verified: no iterated aggregation produces a non-free witness.
+The residual non-multiplicative edge (DIVSUM-type) stays inside the noise-floor
+class (already sealed).
+
+**Conclusion.** DIRICHLET confirms the free-witness classification is closed
+under iterated aggregation. No breakthrough. (The CIRC-identification
+imprecision is noted and corrected.)

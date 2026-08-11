@@ -817,6 +817,12 @@ of the bit-convolution: linear complexity ~n/2 (random-like), no low-degree
 digit-polynomial structure; low bits give only p+q mod 2^k (free witness).
 REFUTED — trace lemma + pseudorandomness.
 
+**Iteration 71 experiment (DIRICHLET — round-6 subagent #4).** D(w)(N) =
+prod(1+w(p)+...) for multiplicative w is again multiplicative and free — the
+free-witness classification is closed under Dirichlet convolution (E1-collapse).
+CIRC-identification imprecision corrected (D(chi_-4) = character divisor-sum,
+distinct from CIRC). REFUTED as method; confirms closure.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1187,6 +1193,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v98 — 2026-08-11. Based on 321 computational experiments, an
+*Assessment v99 — 2026-08-11. Based on 322 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
 formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, and SCHINZEL.*
