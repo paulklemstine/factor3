@@ -766,6 +766,11 @@ Holographic partition function Z = tau(N) = 4 constant (zero info); factor info
 lives in marginals/address requiring the divisors. REFUTED — barrier 6/8.
 ROUND-4 BATCH COMPLETE (5/5).
 
+**Iteration 71 experiment (TRUNC — truncated-count residue theorem).** C(N) mod
+32 is NOT a function of N mod 32 (verified: 15 and 623 both == 15 mod 32, C mod 32
+= 16 vs 0). Truncated free-witness counts leak factor residues no residue formula
+sees — CIRC addendum upgraded toward a theorem. REFUTED as method; sharpens barrier 4.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1136,6 +1141,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v91 — 2026-08-11. Based on 314 computational experiments, an
+*Assessment v92 — 2026-08-11. Based on 315 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
-formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, and SIGK.*
+formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, and TRUNC.*

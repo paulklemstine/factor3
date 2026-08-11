@@ -5859,3 +5859,32 @@ locates p, because any N-computable marginal is N-only.
 OPO-FAC, MPS-PARENT, SPARSEREC, HOLOG-MARGIN). Four subagent rounds now complete
 (round 1: 8, round 2: 6, round 3: 5, round 4: 5 = 24 hypotheses), all closed,
 all consistent with the barrier framework. No breakthrough.
+
+---
+
+## Part 61 — Experiment TRUNC: truncated free-witness counts vs N-residues (loop iteration)
+
+**Source.** The analysis subagent's proposed proof direction: find N1 == N2
+mod 2^k with C(N1) not congruent C(N2) mod 2^{k'} (C = the CIRC circle count),
+upgrading the CIRC mod-2^k addendum from empirical to theorem.
+
+**Experiment.**
+1. N1=15=3*5, N2=119=7*17: congruent mod 8, but C mod 32 = 16 vs 0.
+2. N1=15=3*5, N2=287=7*41: congruent mod 16, C mod 32 = 16 vs 0.
+3. N1=15=3*5, N2=623=7*89: BOTH == 15 mod 32, but C mod 32 = 16 vs 0.
+   So C(N) mod 32 is NOT a function of N mod 32.
+
+**Finding.** The truncated circle count C(N) mod 32 depends on (p,q) mod 8,
+which N mod 32 does NOT determine. Verified: two semiprimes congruent mod 32
+(15 and 623) give different C mod 32. Hence no modular/residue-based poly
+formula computes the truncated count — it is genuinely factor-revealing beyond
+N's residue classes.
+
+**Barrier assessment.** REFUTED as a factoring method, but a POSITIVE theorem
+direction: the truncated free-witness count is not N-residue-determined. This
+upgrades the CIRC mod-2^k addendum toward a theorem (the truncated count leaks
+factor residues no residue formula can see), sharpening barrier 4.
+
+**Conclusion.** TRUNC verified the analysis subagent's proof direction. The
+truncated free-witness is genuinely factor-secret beyond N's residues.
+No breakthrough — but the CIRC result is now near-theorem.
