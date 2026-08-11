@@ -756,6 +756,11 @@ factor states: ground space = divisor set (4-point delta), |p>|q> entanglement
 exactly 0, random descent at random density. REFUTED — tensor networks are a
 representation tool, not a search tool (barrier 4/5).
 
+**Iteration 71 experiment (SPARSEREC — round-4 subagent #1).** Compressed-
+sensing divisor recovery: W is 2-sparse (support {1,p}) but 'O(log N) measurements'
+hides O(sqrt(N) log N) specification cost = the aggregation; structured probes need
+divisors. REFUTED — barrier 4, measurement cost = aggregation.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1126,6 +1131,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v89 — 2026-08-11. Based on 312 computational experiments, an
+*Assessment v90 — 2026-08-11. Based on 313 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
-formalization of the polynomial barrier, three subagent rounds + round-4 (TORCEN, OPO-FAC, MPS-PARENT) complete, the free-witness classification (paper 16), PYFAC, and SIGK.*
+formalization of the polynomial barrier, three subagent rounds + round-4 (TORCEN, OPO-FAC, MPS-PARENT, SPARSEREC) complete, the free-witness classification (paper 16), PYFAC, and SIGK.*

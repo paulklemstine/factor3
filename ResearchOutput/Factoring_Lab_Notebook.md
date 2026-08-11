@@ -5804,3 +5804,29 @@ Hamiltonians are the parent Hamiltonian OF the answer (circular, barrier 6).
 
 **Conclusion.** MPS-PARENT verified as predicted: quantum-inspired tensor
 networks do not escape the barrier framework. No breakthrough.
+
+---
+
+## Part 59 — Experiment SPARSEREC: compressed-sensing divisor recovery (round-4 subagent #1)
+
+**Hypothesis (round-4 subagent #1).** W(x) = [x | N] on [1, sqrt(N)] is a 2-spike
+vector (support {1, p}) in dimension sqrt(N); compressed-sensing theory says a
+k-sparse vector is recoverable from O(k log(n/k)) = O(log N) random measurements.
+The catch: the measurement matrix must be N-computable in poly(log N), so random
+±1 vectors (costing sqrt(N) bits each to specify) are the same aggregation.
+
+**Experiment (N = 143, 221, 899).**
+1. W is 2-sparse with support {1, p} — confirmed.
+2. "O(log N)" random measurements x dimension sqrt(N): specification cost =
+   O(sqrt(N) log N) bits — THE AGGREGATION, hidden in the measurement matrix.
+3. Structured N-computable measurements (residue-class probes mod 3,5,7) reveal
+   divisor counts per class — which requires knowing the divisors (circular).
+
+**Barrier assessment.** REFUTED — barrier 4, sharpened: the measurement
+specification cost IS the free-witness aggregation. "Random measurements are free
+witnesses in disguise"; "free-to-compute measurements are too structured
+(multiplicative) and force divisor enumeration". The O(log N) measurement count
+never materializes because each measurement costs O(sqrt(N)).
+
+**Conclusion.** SPARSEREC verified as predicted: compressed sensing does not
+escape barrier 4. No breakthrough.
