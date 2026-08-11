@@ -843,6 +843,11 @@ factor-bearing density above the sqrt(N) floor (correlated samples), but sealed 
 pairwise gcd aggregation (barrier 4) + rho shortcut (barrier 8). REFINEMENT: the
 noise-floor principle bounds the atomic uniform primitive, not correlated samples.
 
+**Iteration 71 experiment (ZDG — round-7 subagent #1).** Zero-divisor graph:
+|V|=p+q-2, wings {q-1,p-1} recover {p,q} — a STRUCTURAL witness outside the
+trace lemma's numeric scope, sealed by O(N) aggregation + divisor-structure
+circularity (barrier 4/6). REFUTED.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1213,6 +1218,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v103 — 2026-08-11. Based on 326 computational experiments, an
+*Assessment v104 — 2026-08-11. Based on 327 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
 formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, and SCHINZEL.*

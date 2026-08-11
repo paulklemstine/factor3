@@ -6267,3 +6267,31 @@ known-method exception.
 **Conclusion.** STATICRHO forces the precise restatement: the noise-floor
 principle bounds atomic-uniform density; correlated/derived samples escape the
 density form but not barrier 4/8. No breakthrough.
+
+---
+
+## Part 74 — Experiment ZDG: zero-divisor graph structural witness (round-7 subagent #1)
+
+**Hypothesis (round-7 subagent #1).** The zero-divisor graph of Z/NZ (vertices
+= nonzero zero-divisors {x: gcd(x,N)>1}, edge x~y iff xy == 0 mod N) has an
+isomorphism class that determines {p,q}. This is a STRUCTURAL witness (a
+combinatorial object, not a number) — outside the trace lemma's numeric scope
+(p+q, max(p,q), residue/order vector).
+
+**Experiment (N = 77, 143, 221, 899).**
+1. |V| = p+q-2 verified; the two wings have sizes {q-1, p-1}, recovering {p,q}.
+2. All cross-wing edges exist (complete bipartite between the wings) — the
+   graph reads off {p-1, q-1}.
+3. Building the vertex set requires N gcd tests = O(N) (trial division); the
+   zero-divisors ARE the multiples of p,q (the divisor structure itself).
+
+**Barrier assessment.** REFUTED — the trace lemma survives if 'witness' means a
+numeric aggregate value; structural witnesses are sealed by barrier 4 (O(N)
+aggregation) + barrier 6 (the vertex set is the divisor structure) + adjacency
+to the closed XXX coprime-graph (barrier 8). The attack's residue: structural
+witnesses are a genuine gap in the lemma's stated numeric scope, sealed only by
+4/6 circularity, not by the trace classification itself.
+
+**Conclusion.** ZDG verified as predicted: the zero-divisor graph is a structural
+free-witness (factor-revealing, non-numeric form) sealed by aggregation/
+circularity. No breakthrough.
