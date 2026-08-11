@@ -28,11 +28,11 @@ of independent mathematical interest.
 | 12 | [Subagent Batch Closures](ResearchOutput/NewMathematics/12_Subagent_Batch_Closures.md) | 8 novel hypotheses tested and closed (experiments 285-292) |
 
 The consolidated report is the authoritative record of all novel mathematics from
-the 284-experiment investigation.
+the 292-experiment investigation.
 
 ## Contents
 
-- `ResearchOutput/NewMathematics/` — the 11 papers + consolidated report
+- `ResearchOutput/NewMathematics/` — the 12 papers + consolidated report
 - `ResearchOutput/Factoring_Lab_Notebook.md` — the master experiment record (284 experiments)
 - `ResearchOutput/Factoring_Assessment_Genuine_Breakthrough.md` — honest assessment (v61)
 - `ResearchOutput/Factoring_Brainstorm_Unconventional.md`, `Factoring_Research_Synthesis.md` — planning documents
