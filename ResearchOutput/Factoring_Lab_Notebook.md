@@ -5673,3 +5673,31 @@ structure does not help the general case).
 **Conclusion.** PYFAC (alethean #565) tested through the pipeline: valid but
 measure-zero for semiprimes. The loop's alethean.org check surfaced a real,
 testable idea and it was recorded. No breakthrough.
+
+---
+
+## Part 54 — Experiment CONG-DIV: divisor congestion game (round-3 subagent #5, batch complete)
+
+**Hypothesis (round-3 subagent #5).** Multi-party game parameterized by N: each
+player bids d in {2..N-1}, payoff w(d) = N/d if d|N else -N. The unique Nash
+equilibrium: all bid the smallest proper divisor p. Hypothesis: better-response
+dynamics would be a distributed factoring algorithm (the equilibrium leaks the
+hidden witness).
+
+**Experiment (N = 15, 21, 143, 221).**
+1. Best-response bid = smallest proper divisor p, verified for all 4
+   (e.g. N=143: bid 11, payoff 13).
+2. The equilibrium IS the factorization (w(min divisor) > w(max divisor)).
+3. Computing a best response requires enumerating all N-2 candidate bids =
+   trial division over Z/NZ (O(N) per move; O(1) moves to 'converge').
+
+**Barrier assessment.** REFUTED — exactly as predicted: the unique equilibrium
+is the free witness, so computing any best response IS trial division / factoring
+(barrier 6 circularity; per-move cost O(N), barrier 4). The game is a
+poly-checkable restatement of the problem, not an algorithm. No equilibrium
+shortcut avoids enumerating divisors.
+
+**Conclusion.** CONG-DIV completes the round-3 subagent batch (5/5: RS-MIND,
+MODPAR-CERT, BURAU-ORD, DENS-SUB, CONG-DIV). All three subagent rounds now
+complete (round 1: 8, round 2: 6, round 3: 5 = 19 hypotheses), all closed,
+all consistent with the barrier framework. No breakthrough.
