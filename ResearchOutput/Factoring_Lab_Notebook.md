@@ -6612,3 +6612,29 @@ aggregation oracle.
 **Conclusion.** Q-BYPASS pins the quantum advantage to barrier 4's aggregation.
 The framework is honest only if scoped 'classical'. No classical breakthrough —
 the quantum channel is the confirmed exception.
+
+---
+
+## Part 87 — Experiment HINTAMP: Coppersmith partial-key-exposure (round-10 subagent #2, batch complete)
+
+**Hypothesis (round-10 subagent #2).** Given the top half of p's bits (an
+external hint), Coppersmith's small-root LLL recovers p in poly time. This is
+the framework's UNPRICED resource (never priced by any of the 336+ experiments).
+
+**Experiment (N = 24287, 504467, 15936653).**
+1. Given p_high (top half of p), naive candidates = 2^k = 16/32/64 (still a
+   ~sqrt(p) search).
+2. WITH Coppersmith (Howgrave-Graham + LLL): x0 recovered in POLY time (known
+   result — partial-key-exposure, Boneh-Venkatesan).
+3. Scope restatement: HINT-AMP is NOT a factoring attack from nothing — it
+   requires an external hint. The framework prices 'extraction from N alone';
+   hint amplification is a separate, real channel (RSA side-channel).
+
+**Barrier assessment.** NOT a barrier violation for hint-free factoring — but a
+genuine scope gap: the framework never priced hint amplification. The scope
+should be restated as 'extraction from N alone' vs 'amplification of hints'.
+This completes the round-10 batch (JOINTCLOSURE, RAINBOWWALK, Q-BYPASS,
+HINT-AMP) and the exhaustion verdict.
+
+**Conclusion.** HINTAMP confirms the unpriced-resource finding with a concrete
+scope restatement. No hint-free classical breakthrough.
