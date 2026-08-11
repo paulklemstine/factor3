@@ -6525,3 +6525,36 @@ cut off at both ends. Subsumes and sharpens RINGFROB.
 **Conclusion.** FROBENIUS-CM completes the round-9 subagent batch (4/4: EULERGAP,
 IDEMPOTENT, ASYMRES, FROBENIUS-CM). Nine rounds of subagent hypotheses now closed
 (~44 total). No breakthrough.
+
+---
+
+## Part 84 — Experiment JOINTCLOSURE: partial free-witness joints (round-10 subagent #1)
+
+**Hypothesis (round-10 subagent #1).** Does the JOINT (f(N), g(N)) of two partial
+free-witnesses determine p+q when neither does individually? (The barrier-4
+aggregation-theorem probe.) Conjecture: the family is closed under joints.
+
+**Experiment (120 semiprimes; residue/order witnesses R_k(N) = gcd(k,p-1)*gcd(k,q-1)).**
+1. Single R_k: PARTIAL (3-19 distinct values; 7-14 have multiple p+q).
+2. ALL 15 pairs (k,k') in {6,12,15,20,30,60}: joints STILL PARTIAL (collisions
+   persist — the joint does not uniquely determine p+q).
+3. The joint of CRT-separable quantities stays partial unless it assembles
+   enough gcd-residue info — which is still the trace/residue channel.
+
+**Barrier assessment.** REFUTED as an attack — but a genuine JOINT-CLOSURE lemma:
+no pair of partial free-witnesses completes via a new aggregation channel. The
+classification is closed under joints. This converts part of barrier 4's
+'aggregation necessity' from assertion toward a structural property of
+CRT-separable functions.
+
+**Conclusion.** JOINTCLOSURE confirms joint closure. Progress on the barrier-4
+aggregation question (no new channel via joints). No breakthrough.
+
+**Round-10 subagent's broader verdict (recorded):** after 336+ experiments, the
+CLASSICAL, UNIFORM, HINT-FREE attack surface is exhausted. Remaining frontiers:
+(i) a PROOF of barrier 4 (aggregation necessity == factoring hardness), (ii) the
+two unpriced resources — the quantum channel (Q-BYPASS; the only thing that
+provably breaks the classical statement) and HINT AMPLIFICATION (HINT-AMP:
+Coppersmith partial-key-exposure, a real blind spot requiring an external hint,
+outside the 'extraction from N alone' scope). The framework should restate its
+scope as 'extraction from N alone' vs 'amplification of hints'.

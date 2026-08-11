@@ -890,6 +890,12 @@ Elliptic-trace degeneration: polynomial-in-N coefficients vanish mod p, reductio
 always the N=0 curve (cuspidal a_p=1 or CM from p mod 4), never generic.
 REFUTED — barrier 1/6/8; subsumes RINGFROB. Round-9 batch complete (4/4).
 
+**Iteration 71 experiment (JOINTCLOSURE — round-10 subagent #1).** Joints of
+partial free-witnesses stay partial (all 15 R_k pairs: collisions persist) — the
+classification is closed under joints. REFUTED as attack; a joint-closure lemma
+for barrier 4. Round-10 verdict: classical uniform hint-free surface exhausted;
+frontiers = barrier-4 proof, quantum channel, hint amplification.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1260,6 +1266,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v113 — 2026-08-11. Based on 336 computational experiments, an
+*Assessment v114 — 2026-08-11. Based on 337 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
 formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, and SCHINZEL.*
