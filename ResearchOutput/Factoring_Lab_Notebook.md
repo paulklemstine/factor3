@@ -5338,3 +5338,35 @@ tied to genus theory (Kronecker symbol / class number theory).
 **Conclusion.** BQF closes the free-witness family: the count of solutions to any
 binary quadratic form Q(x,y) == c mod N is a barrier-4 free-witness encoding
 chi_D(p), chi_D(q). No member is poly-computable. No breakthrough.
+
+---
+
+## Part 42 — Experiment HEISENBERG-CLASS: Heisenberg group conjugacy-class count (loop iteration)
+
+**Hypothesis (round-2 subagent #1).** The discrete Heisenberg group H_N =
+{[[1,a,c],[0,1,b],[0,0,1]] : a,b,c mod N} has a conjugacy class count
+K = sum_{a,b mod N} gcd(a,b,N). Conjugating (a,b,c) by (x,y,z) sends c ->
+c + xb - ya, so the c-orbit for fixed (a,b) has size N/gcd(a,b,N) and the class
+count is the gcd sum. For N=pq, s=p+q: K = N^2 + 3N + 1 + (N-1)s - s^2.
+
+**Experiment (verified for N = 15, 143, 221, 77, 899):**
+1. K = sum gcd(a,b,N) = closed form verified EXACTLY for all 5.
+2. From K alone, s = p+q recovered by solving the quadratic
+   s^2 - (N-1)s + (K - N^2 - 3N - 1) = 0; then p,q from (s,N). ALL recovered.
+3. Computing K requires O(N^2) gcd aggregations or the divisor structure.
+
+**Barrier assessment.** REFUTED as a factoring method — a NEW, group-theoretic
+member of the free-witness family (barrier 4). Distinct from the congruence-count
+free-witnesses (CIRC/KROOT/BQF): this one arises from the representation theory
+of a finite group built from N alone. The class count is symmetric in p<->q
+(dodges barrier 2) and non-polynomial (dodges barrier 1) — but sealed by
+aggregation cost.
+
+**Conclusion.** HEISENBERG-CLASS adds a third, structurally distinct free-witness
+(norm-count, group-order-count, group-class-count). All barrier-4 blocked.
+No breakthrough.
+
+**Round-2 subagent's remaining hypotheses (pending):** CUSP-INDEX (Gamma_0(N)
+index/cusp count), TOWER-LIFT (Hensel tower, predicted no-new-data), WIGNER-CUBIC
+(cubic Gauss sum), STRUCT-KOLM (Kolmogorov structure function, predicted
+vacuous), CYCLOTOWER (gcd(N, Phi_m(2)), = Pollard p-1 in cyclotomic dress).

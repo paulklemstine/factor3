@@ -668,6 +668,12 @@ Carmichael/Fibonacci theory). REFUTED — barrier 4 free-witness aggregation.
 distinct factor residue (D=-4: p mod 4; D=-3: p mod 3, ...). UNIFIES CIRC and
 KROOT into one genus-theoretic free-witness family. REFUTED — all barrier-4.
 
+**Iteration 71 experiment (HEISENBERG-CLASS — round-2 subagent #1).** Conjugacy
+class count of the Heisenberg group over Z/NZ: K = sum gcd(a,b,N) =
+N^2+3N+1+(N-1)(p+q)-(p+q)^2, verified exactly; recovers p,q from K in all cases.
+A new GROUP-THEORETIC free-witness (barrier 4), distinct from the congruence
+counts. REFUTED.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1038,6 +1044,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v72 — 2026-08-11. Based on 295 computational experiments, an
+*Assessment v73 — 2026-08-11. Based on 296 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
-formalization of the polynomial barrier, all seven round-1 subagent hypotheses, and the CIRC + KROOT + BQF free-witness experiments.*
+formalization of the polynomial barrier, the round-1 batch, the CIRC/KROOT/BQF free-witness family, and the HEISENBERG-CLASS group-theoretic free-witness.*
