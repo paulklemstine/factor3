@@ -6102,3 +6102,29 @@ them -> new packages), NOT an independent convergence. The loop's publish-each-
 paper-as-an-issue step is precisely how the lab's research feeds the engine.
 The #694 note above should be read as: the engine consumed paper 10's issue and
 formalized it. This is the designed feedback loop.
+
+---
+
+## Part 68 — Experiment CARRYTRACE: factorization carry sequence (round-6 subagent #1)
+
+**Hypothesis (round-6 subagent #1).** The carry sequence C(N) of the
+bit-convolution of p,q (N_i = sum p_j q_{i-j} + c_i - 2c_{i+1}) is a function of
+N's bits alone. Attack: is C(N) a low-degree digit-polynomial of N's bits, or
+does 'bit k of s = p+q' have low F_2 Fourier weight? (Targets the trace lemma's
+p+q directly, from a representation barrier 1 does not cover.)
+
+**Experiment (16-28 bit semiprimes; Berlekamp-Massey over F_2 on the carry bits).**
+1. Linear complexity of the carry sequence: 7/16 (0.44), 9/20 (0.45), 12/23
+   (0.52), 13/27 (0.48) — ~n/2, the value for a RANDOM binary sequence. NO
+   low-degree/recurrence structure.
+2. 'Bit k of s = p+q' is not a low-degree polynomial of N's bits.
+
+**Barrier assessment.** REFUTED — the carry sequence is pseudorandom (linear
+complexity ~n/2); the low-bit equations triangulate to only p+q mod 2^k (a
+residue vector, free witness); the middle carries are maximally mixed (mixing
+Markov chain). Barrier: trace lemma + pseudorandomness. (Honest caveat: proving
+no low-degree digit-polynomial computes s mod m is a circuit lower bound —
+empirically killed, not definitively closed.)
+
+**Conclusion.** CARRYTRACE verified as predicted: the carry escape route is
+sealed by pseudorandomness. No breakthrough.

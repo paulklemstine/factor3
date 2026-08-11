@@ -812,6 +812,11 @@ grow with N (regulator Theta(sqrt N) -> exponentially large for big N); arithmet
 is period-3 order-finding; no factor extraction. REFUTED — barrier 8/5.
 ROUND-5 BATCH COMPLETE (4/4).
 
+**Iteration 71 experiment (CARRYTRACE — round-6 subagent #1).** Carry sequence
+of the bit-convolution: linear complexity ~n/2 (random-like), no low-degree
+digit-polynomial structure; low bits give only p+q mod 2^k (free witness).
+REFUTED — trace lemma + pseudorandomness.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1182,6 +1187,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v97 — 2026-08-11. Based on 320 computational experiments, an
+*Assessment v98 — 2026-08-11. Based on 321 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
 formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, and SCHINZEL.*
