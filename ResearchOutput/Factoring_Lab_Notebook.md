@@ -5588,3 +5588,31 @@ useful m (barrier 4). No poly-query shortcut.
 
 **Conclusion.** MODPAR-CERT closes the divisor-parity decision-tree loophole.
 Consistent with the barrier framework. No breakthrough.
+
+---
+
+## Part 51 — Experiment BURAU-ORD: reduced Burau image of B_3 mod N (round-3 subagent #3)
+
+**Hypothesis (round-3 subagent #3).** The reduced Burau representation of the
+braid group B_3 specialized at t = a (unit mod N): H_a = <r(s1), r(s2)> <=
+GL(2, Z/N), r(s1)=[[-a,1],[0,1]], r(s2)=[[1,0],[a,-a]]. Claim: |H_a| depends on
+the individual multiplicative orders ord_p(a), ord_q(a) — the genuine non-abelian
+hook (p<->q swap is not a braid).
+
+**Experiment (N = 15, 21, 33, 35; a = 2, 3, 5; BFS closure in GL(2, Z/N)).**
+1. |H_a| computed by BFS (e.g. N=33=3*11, a=2: 14400; a=5: 316800).
+2. KEY: |H_a| separates the individual orders, NOT just N and lcm. For N=21:
+   a=2 has (ord_3,ord_7)=(2,3) lcm 6, |H|=336; a=5 has (2,6) lcm 6, |H|=24.
+   SAME lcm, DIFFERENT |H| -> |H_a| encodes (ord_p(a), ord_q(a)) individually.
+3. By CRT the image projects mod p and mod q; computing |H_a| needs the split.
+
+**Barrier assessment.** REFUTED as a factoring method — confirmed the subagent's
+prediction: |H_a| separates the CRT components (individual orders), but
+computing it IS order-finding mod N = the Pollard p-1 / Shor core. The braid
+representation is a faithful repackaging of the multiplicative-order problem
+(barrier 6/8). The non-abelian structure does NOT escape barrier 2's spirit —
+its order invariant is still CRT-separated and factor-secret.
+
+**Conclusion.** BURAU-ORD confirms: true non-abelian structures reduce to the
+multiplicative-order problem. No breakthrough. (The hook is real — |H_a| does
+depend on individual orders — but that dependence IS the factorization.)
