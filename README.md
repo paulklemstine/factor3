@@ -32,9 +32,15 @@ the 284-experiment investigation.
 ## Contents
 
 - `ResearchOutput/NewMathematics/` — the 11 papers + consolidated report
+- `ResearchOutput/Factoring_Lab_Notebook.md` — the master experiment record (284 experiments)
+- `ResearchOutput/Factoring_Assessment_Genuine_Breakthrough.md` — honest assessment (v61)
+- `ResearchOutput/Factoring_Brainstorm_Unconventional.md`, `Factoring_Research_Synthesis.md` — planning documents
+- `ResearchOutput/Exp_*.md` — individual experiment reports (Donoho-Stark, factorial number system, hypercomputation, information geometry, Ising, Langlands, Navier-Stokes, solenoid)
+- `ResearchOutput/Lean/PolynomialBarrier.lean` — the polynomial barrier theorem, machine-checked in Lean 4
 - `REPORT_*.md`, `TROPICAL_FACTORING_REPORT.md` — experiment reports
 - `*.py` — experiment scripts (donoho-stark, hypercomputation, information
   geometry, Ising, Langlands, Navier-Stokes, solenoid, tropical, rep-theory, ...)
+- `ResearchOutput/factoring_experiments*.py` — the experiment harness scripts
 
 ## Honest bottom line
 
