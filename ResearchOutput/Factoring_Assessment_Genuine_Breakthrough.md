@@ -704,6 +704,11 @@ zeta_{Z/NZ}(-1) = sigma(N) = (1+p)(1+q) = Gamma_0 index psi(N): three settings
 (additive subgroups, divisor sum, modular index) give the SAME free-witness,
 recovering p,q. REFUTED — barrier 4 in three guises.
 
+**Iteration 71 experiment (RS-MIND — round-3 subagent #1).** Reed-Solomon code
+over Z/N: min distance d(C) = N-(k-1)*max(p,q) verified exactly; a
+CODE-THEORETIC free-witness (provably not N-only, leaks max(p,q)), needs p,q or
+>= N^k brute force. REFUTED — barrier 4, sixth free-witness setting.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1074,6 +1079,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v79 — 2026-08-11. Based on 302 computational experiments, an
+*Assessment v80 — 2026-08-11. Based on 303 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
-formalization of the polynomial barrier, both subagent rounds complete, the free-witness family, and the ZETA-LP unification.*
+formalization of the polynomial barrier, both subagent rounds + round-3 #1 (RS-MIND) complete, and the free-witness family.*

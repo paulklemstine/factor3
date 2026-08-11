@@ -5531,3 +5531,32 @@ additive-group, divisor-theoretic, and modular-group structure alike. Barrier 4
 **Conclusion.** ZETA-LP adds the additive-group-zeta framing and unifies it with
 the divisor-sum and modular index. Reinforces the free-witness family.
 No breakthrough.
+
+---
+
+## Part 49 — Experiment RS-MIND: Reed-Solomon code over Z/N (round-3 subagent #1)
+
+**Hypothesis (round-3 subagent #1).** C_k(N) = {(f(0),...,f(N-1)) : f in
+(Z/N)[x], deg < k} is the product (by CRT) of RS codes over F_p and F_q. The
+minimum Hamming weight (min distance) d(C) = N - (k-1)*max(p,q), achieved by
+f = q*h with h mod p having k-1 roots (zero set = (k-1) residue classes mod p,
+each with q lifts).
+
+**Experiment (N = 15, 21, 33; k = 2, 3; brute force excluding the zero codeword).**
+1. d(C) = N - (k-1)*max(p,q) verified EXACTLY for all 6 cases
+   (e.g. N=15=3*5, k=2: d=10 = 15-(1)(5); N=33=3*11, k=3: d=11 = 33-(2)(11)).
+2. Zero-set spacing confirms the residue-class structure (N=15, k=2: 5 zeros at
+   gaps of 3 = one residue class mod p=3, q=5 lifts).
+3. d(C) depends on max(p,q) — a free-witness that is provably NOT N-only
+   (it encodes the larger factor). Computing it needs p,q (the formula) or
+   >= N^k brute-force weight search (barrier 4).
+
+**Barrier assessment.** REFUTED as a factoring method — but a NEW
+CODE-THEORETIC member of the free-witness family (first one from coding
+theory). The min distance leaks max(p,q); extraction is the factorization
+itself. Barrier 4 in a sixth setting (after norm-count, group-order-count,
+quadratic-form-count, group-class-count, modular-index).
+
+**Conclusion.** RS-MIND adds coding theory to the free-witness family.
+No breakthrough. (Note: the subagent's formula was CORRECT here, unlike three
+round-2 claims.)
