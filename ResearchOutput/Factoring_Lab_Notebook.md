@@ -6322,3 +6322,26 @@ not escape the floor.
 **Conclusion.** DIGITLATTICE completes the round-7 subagent batch (4/4:
 AGREEMENT, STATICRHO, ZDG, DIGITLATTICE). Seven rounds of subagent hypotheses
 now closed (~36 total). No breakthrough.
+
+---
+
+## Part 76 — Experiment POLYFACT: falling-factorial polynomial witness (round-8 subagent #3)
+
+**Hypothesis (round-8 subagent #3).** P(x) = prod_{a=1}^{sqrt N}(x-a) mod N,
+built in O(sqrt N) multiplications. For N=pq, min(p,q) <= sqrt N, so
+p | P(0) = (-1)^k (k!) and gcd(P(0), N) = p. Does the polynomial batching
+change the aggregation cost exponent?
+
+**Experiment (N = 14351, 131407, 1463951).**
+1. First gcd(P(0) partial, N) > 1 at k = min(p,q) exactly (113, 331, 1039).
+2. Construction cost = isqrt(N) multiplications = the O(sqrt N) aggregation floor.
+3. The polynomial batches sqrt(N) atomic probes into ONE object, but the cost is
+   EXACTLY the aggregation bound; first hit at min(p,q) is trial division.
+
+**Barrier assessment.** REFUTED — the polynomial form does NOT change the cost
+exponent (sqrt N = 2^{(log N)/2} is still super-polynomial). It coincides with,
+does not beat, the aggregation bound. Barrier 4: structural-witness batching
+does not compress the search.
+
+**Conclusion.** POLYFACT answers the structural-witness cost question: 'cheaper
+than O(N)' is sqrt(N), which coincides with the aggregation floor. No breakthrough.
