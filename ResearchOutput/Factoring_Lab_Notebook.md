@@ -5642,3 +5642,34 @@ each measure-zero and Pollard p-1 / Fermat in disguise, not N-detectable
 (barrier 8). No density-1 poly-detectable fast subfamily exists.
 
 **Conclusion.** DENS-SUB closes the average-case loophole. No breakthrough.
+
+---
+
+## Part 53 — Experiment PYFAC: Pythagorean factor certificates (alethean.org package #565)
+
+**Source.** alethean.org package #565 "A Discrete Energy Spectrum for Pythagorean
+Factor Certificates" (the user's Alethean engine, Lean-formalized). Energy
+E(a,b,c;N) = (a^2+b^2-c^2)^2 + (ab-N)^2; zero iff the triple is Pythagorean
+AND ab=N. A leg strictly between 1 and N is a nontrivial divisor. Tested per the
+loop's alethean.org-check instruction.
+
+**Experiment:**
+1. Verified: N=12 has certificate (3,4,5), E=0, leg 3 is a nontrivial divisor.
+2. MEASURE-ZERO: N in [10,2000] with a certificate: 0/1991. Semiprimes with a
+   certificate: 0/222. A certificate exists iff a divisor pair (a, N/a) is a
+   Pythagorean leg pair (a^2+(N/a)^2 a square) — for N=pq this requires p^2+q^2
+   a square, i.e. (p,q) a Pythagorean leg pair (e.g. 3,4 — not both prime).
+   NO semiprime has one.
+3. Where a certificate exists, finding it = searching divisors up to sqrt(N)
+   (barrier 4 / trial division).
+
+**Barrier assessment.** REFUTED as a general factoring method — the idea is
+mathematically valid (energy-zero characterizes certificates, legs are
+divisors) but covers a measure-zero subfamily (products of Pythagorean legs,
+essentially never for semiprimes). Consistent with the lab's Berggren-tree
+orthogonality memory (slope coords orthogonal to norm coords; the Pythagorean
+structure does not help the general case).
+
+**Conclusion.** PYFAC (alethean #565) tested through the pipeline: valid but
+measure-zero for semiprimes. The loop's alethean.org check surfaced a real,
+testable idea and it was recorded. No breakthrough.

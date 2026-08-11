@@ -724,6 +724,12 @@ classes do NOT predict ease: rho steps ~equal across N mod 4 (332 vs 333),
 N mod 8, (2/N); the fast subfamily (small |p-q|, Fermat) is a factor property,
 not N-detectable. REFUTED — no density-1 poly-detectable fast subfamily.
 
+**Iteration 71 experiment (PYFAC — alethean.org #565).** Pythagorean factor
+certificates: energy-zero characterization verified (N=12, leg 3 = divisor), but
+certificate exists for 0/222 semiprimes (measure-zero: needs a divisor pair to
+be Pythagorean legs). REFUTED as a general method. Loop's alethean.org check
+surfaced a real idea; tested and recorded.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1094,6 +1100,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v83 — 2026-08-11. Based on 306 computational experiments, an
+*Assessment v84 — 2026-08-11. Based on 307 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
-formalization of the polynomial barrier, both subagent rounds + round-3 (RS-MIND, MODPAR-CERT, BURAU-ORD, DENS-SUB) complete, and the free-witness family.*
+formalization of the polynomial barrier, both subagent rounds + round-3 complete, the free-witness family, and PYFAC (first alethean.org-surfaced idea tested).*
