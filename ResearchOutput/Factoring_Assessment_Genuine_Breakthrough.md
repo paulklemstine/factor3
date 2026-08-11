@@ -735,6 +735,12 @@ Divisor congestion game: equilibrium = smallest proper divisor p (the
 factorization); best response = enumerate all bids = trial division. REFUTED —
 barrier 6/4. ROUND-3 BATCH COMPLETE (5/5).
 
+**Iteration 71 experiment (SIGK — classification prediction confirmed).** The
+analysis subagent's CRT-multiplicative classification PREDICTED sigma_k(N) (k>=2)
+is a free-witness; verified sigma_2(N)=(1+p^2)(1+q^2) recovers p,q in all cases.
+First free-witness PREDICTED by theory, not found by search. REFUTED as method,
+confirms the unified classification (paper 16).
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1105,6 +1111,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v85 — 2026-08-11. Based on 308 computational experiments, an
+*Assessment v86 — 2026-08-11. Based on 309 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
-formalization of the polynomial barrier, all three subagent rounds complete (19 hypotheses), the free-witness family, and PYFAC (alethean.org idea).*
+formalization of the polynomial barrier, three subagent rounds complete, the free-witness family, PYFAC, and the SIGK classification-prediction confirmation.*

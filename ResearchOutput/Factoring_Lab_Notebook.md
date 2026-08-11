@@ -5701,3 +5701,29 @@ shortcut avoids enumerating divisors.
 MODPAR-CERT, BURAU-ORD, DENS-SUB, CONG-DIV). All three subagent rounds now
 complete (round 1: 8, round 2: 6, round 3: 5 = 19 hypotheses), all closed,
 all consistent with the barrier framework. No breakthrough.
+
+---
+
+## Part 55 — Experiment SIGK: divisor-power-sum sigma_k(N) — classification prediction test
+
+**Source.** The results-analysis subagent's unifying theorem: any counting
+aggregate over a CRT-separable domain with non-polynomial CRT-multiplicative
+local weights is a free-witness. Falsifiable prediction: sigma_k(N) (k>=2) with
+local weight (1+p^k) should be another free-witness.
+
+**Experiment (N = 143, 221, 899, 1763).**
+1. sigma_2(N) = (1+p^2)(1+q^2) verified EXACTLY for all 4.
+2. From sigma_2(N): p^2+q^2 = sigma_2 - 1 - N^2, then (p+q)^2 = p^2+q^2+2N,
+   then p,q from (s,N). Recovered in ALL cases.
+3. sigma_3, sigma_4 multiplicative (CRT-multiplicative local weights) verified.
+
+**Barrier assessment.** REFUTED as a method — but CONFIRMS the classification
+theorem: sigma_k(N) (k>=2) is a new member of the free-witness family
+(non-polynomial CRT-multiplicative local weight (1+p^k)). Computing it needs the
+divisors (barrier 4). This is a SUCCESSFUL falsifiable prediction from the
+unified analysis — the first new free-witness PREDICTED by the theory, not found
+by search.
+
+**Conclusion.** SIGK validates the CRT-multiplicative free-witness
+classification (paper 16). The family is now understood as one mechanism.
+No breakthrough.
