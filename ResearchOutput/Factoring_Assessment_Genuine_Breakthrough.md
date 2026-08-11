@@ -828,6 +828,11 @@ depth quantified: C(N) mod 2^k determined by (p,q) mod 2^k (depth k, 2-bit
 slack) but (N mod 2^k, C mod 2^k) is NOT a complete witness (ambiguous factor
 residues). Every leaked bit sealed behind O(N). Consistent with trace lemma.
 
+**Iteration 71 experiment (RINGFROB — round-6 subagent #2, batch complete).**
+Exact composite Frobenius point count #E(Z/NZ) = (p+1-a_p)(q+1-a_q) verified;
+immune to noise-floor but sealed by CRT/aggregation (barrier 4) + order-finding.
+REFUTED. Round-6 batch complete.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1198,6 +1203,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v100 — 2026-08-11. Based on 323 computational experiments, an
+*Assessment v101 — 2026-08-11. Based on 324 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
 formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, and SCHINZEL.*

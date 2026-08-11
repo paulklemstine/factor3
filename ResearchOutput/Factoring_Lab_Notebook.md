@@ -6185,3 +6185,29 @@ recovery. Consistent with the trace lemma (residue-vector witnesses are free).
 **Conclusion.** RES-LIFT sharpens TRUNC: C(N) mod 2^k leaks factor residues at
 depth k but incompletely. The sharpest quantified statement of barrier 4's
 residue structure. No breakthrough.
+
+---
+
+## Part 71 — Experiment RINGFROB: exact composite Frobenius point count (round-6 subagent #2, batch complete)
+
+**Hypothesis (round-6 subagent #2).** For E: y^2 = x^3 + Nx + 1, by CRT
+#E(Z/NZ) = #E(F_p)*#E(F_q) = (p+1-a_p)(q+1-a_q), a_p, a_q the Frobenius traces.
+This is EXACT arithmetic (immune to noise-floor arguments), and the expansion
+contains p+q.
+
+**Experiment (N = 77, 143, 221; brute-force point counts).**
+1. #E(Z/NZ) = #E(F_p)*#E(F_q) = (p+1-a_p)(q+1-a_q) verified EXACTLY for all 3
+   (e.g. N=143: #E=121 = 11*11, traces a_p=1, a_q=3).
+2. The expansion contains p+q plus trace terms — exact factor info, NO noise floor.
+3. BUT computing #E(Z/NZ) needs the CRT split (the factors) or O(N^2) enumeration
+   — a free witness (barrier 4/6). The N-power map 'trace' on E[l] requires
+   order-finding (q's discrete-log class mod l) = the CRT-split no-go.
+
+**Barrier assessment.** REFUTED — the exact point count is a free witness immune
+to noise-floor arguments, but sealed by CRT/aggregation cost (barrier 4) + the
+order-finding requirement (barrier 8). The subagent's key point — this bypasses
+the noise-floor family — is CONFIRMED, but it does not bypass barrier 4.
+
+**Conclusion.** RINGFROB completes the round-6 subagent batch (CarryTrace,
+RingFrobenius, DirichletDifferential; Trace-Dichotomy is a formalization).
+Six rounds of subagent hypotheses now closed. No breakthrough.
