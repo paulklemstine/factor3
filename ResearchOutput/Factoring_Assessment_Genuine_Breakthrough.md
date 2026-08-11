@@ -875,6 +875,11 @@ orthogonality. Round-8 batch complete (4/4).
 pseudoprime probe: reveal density g/p+g/q >= 2/p (constant-factor gain above 1/p),
 verified; g is an order-vector (trace lemma); exponent untouched. REFUTED.
 
+**Iteration 71 experiment (IDEMPOTENT — round-9 subagent #2).** CRT-idempotent
+pair: factor-revealing as an object, but its elementary symmetric functions are
+N-trivial (e_p+e_q=1, e_p*e_q=0); recovering e_p IS factoring. The cleanest
+account of why barrier 2 holds. REFUTED.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1245,6 +1250,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v110 — 2026-08-11. Based on 333 computational experiments, an
+*Assessment v111 — 2026-08-11. Based on 334 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
 formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, and SCHINZEL.*

@@ -6449,3 +6449,29 @@ method).
 **Conclusion.** EULERGAP verified as predicted: the atomic Euler probe is a
 constant-factor improvement over the multiple-of-p query, but sealed by the
 trace lemma and known-method. No breakthrough.
+
+---
+
+## Part 81 — Experiment IDEMPOTENT: CRT-idempotent pair symmetrization (round-9 subagent #2)
+
+**Hypothesis (round-9 subagent #2).** The four roots of x^2 - x == 0 mod N are
+{0, 1, e_p, e_q} with e_p == 1 mod p, e_q == 0 mod q. The unordered pair
+{e_p, e_q} is barrier-2-invariant (p<->q swap, conjugation) and factor-revealing
+(gcd(e_p, N) = p) — the strongest candidate for a literal barrier-2 violation.
+
+**Experiment (N = 143, 221, 899).**
+1. Idempotent identities verified: e_p^2 == e_p, e_p + e_q == 1, e_p * e_q == 0,
+   gcd(e_p, N) = p (factor).
+2. The elementary symmetric functions e_p + e_q = 1 and e_p * e_q = 0 are BOTH
+   N-computable constants carrying ZERO factor information.
+3. Recovering e_p requires solving x^2 - x == 0 mod N = the 4-valued CRT split
+   = factoring (MIXROOT/HCOM connection).
+
+**Barrier assessment.** REFUTED — the cleanest account of WHY barrier 2 holds:
+the idempotent pair is factor-revealing as an OBJECT, but the symmetry group
+{id, swap} acting on the CRT split forces every symmetric (barrier-2-invariant)
+function of the factor-carrying objects to be N-only. The invariant exists only
+as an unstructured, non-numeric object; its recoverable content is nil.
+
+**Conclusion.** IDEMPOTENT verified: barrier 2 holds in its sharpest form. The
+idempotent pair's symmetrization degenerates to triviality. No breakthrough.
