@@ -6422,3 +6422,30 @@ Berggren-tree orthogonality memory.
 **Conclusion.** BERGGRENCERT completes the round-8 subagent batch (4/4: POLYFACT,
 MIXROOT, JACWALK, BERGGRENCERT). Eight rounds of subagent hypotheses now closed
 (~40 total). No breakthrough.
+
+---
+
+## Part 80 — Experiment EULERGAP: atomic Euler-pseudoprime probe (round-9 subagent #1)
+
+**Hypothesis (round-9 subagent #1).** d = gcd(x^(N-1) - 1, N) for random coprime
+x is an ATOMIC probe (one modular exponentiation, no aggregation) with reveal
+density (g/p) + (g/q) - (g/p)(g/q) >= 2/p, where g = gcd(p-1, q-1) — ABOVE the
+multiple-of-p query's 1/p.
+
+**Experiment (N = 10033, 119113, 3395783; 4000 samples each).**
+1. Reveal rate verified = g/p + g/q (0.112 vs 0.120; 0.0125 vs 0.0116;
+   0.0030 vs 0.0022) — a CONSTANT-factor gain (g = 6, 2, 2) above 1/p.
+2. The probe density exceeds 1/p but the gain is a constant (g small, 2-12).
+3. Amplifying beyond the constant needs iterating bases (O(p/g) -> back to the
+   sqrt(N) line) or a smooth exponent M (Pollard p-1, barrier 8).
+
+**Barrier assessment.** REFUTED — the noise floor's EXPONENT is untouched: the
+atomic bound is really an order-overlap statement (g is an order-vector, trace
+lemma), and the multiple-of-p query is NOT the optimal atomic primitive (the
+Euler probe is a constant-factor improvement), but no exponent improvement.
+Barrier: trace lemma (order-vector) + barrier 8 (Fermat/Euler test is the known
+method).
+
+**Conclusion.** EULERGAP verified as predicted: the atomic Euler probe is a
+constant-factor improvement over the multiple-of-p query, but sealed by the
+trace lemma and known-method. No breakthrough.
