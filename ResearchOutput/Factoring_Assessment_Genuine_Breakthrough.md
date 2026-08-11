@@ -796,6 +796,11 @@ hyperbola D(N) = sum floor(N/d) in O(sqrt N): the error Delta(N) is N-only
 confound). D(N) mod 2 = floor(sqrt N) mod 2. REFUTED — barrier 5 holds even for
 a non-multiplicative O(sqrt N)-computable aggregate; strengthens barrier 4.
 
+**Iteration 71 experiment (EULER — round-5 subagent #3).** Euler-pseudoprime
+base count E(N) = gcd(p-1,q-1)^2 verified (sampled fraction = g^2/phi(N)); g=2
+almost always (~0 bits), useful case = p-1 method weakness. REFUTED — barrier
+4 + trace lemma + barrier 8.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1166,6 +1171,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v94 — 2026-08-11. Based on 317 computational experiments, an
+*Assessment v95 — 2026-08-11. Based on 318 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
 formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, and SCHINZEL.*

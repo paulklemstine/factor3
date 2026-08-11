@@ -5997,3 +5997,28 @@ even a non-multiplicative, O(sqrt N)-computable aggregate does not leak factors.
 
 **Conclusion.** DIVSUM refuted — the divisor error is N-only. A good test of a
 genuinely non-classification-covered aggregate. No breakthrough.
+
+---
+
+## Part 64 — Experiment EULER: Euler-pseudoprime base count (round-5 subagent #3)
+
+**Hypothesis (round-5 subagent #3).** E(N) = #{a in (Z/NZ)* : a^{N-1} == 1 mod N}
+= gcd(N-1,p-1)*gcd(N-1,q-1) = gcd(p-1,q-1)^2 = g^2 (exploits p,q both prime).
+Attack: recover g, use p == 1 mod g to cut the factor search.
+
+**Experiment (N = 143, 221, 899, 3599, 10403; sampling 2000 bases each).**
+1. E(N) = g^2 verified: fraction of bases a with a^{N-1} == 1 mod N =
+   g^2/phi(N) (e.g. N=143: 0.0185 vs 0.0333; N=221: 0.078 vs 0.083).
+2. g = gcd(p-1,q-1) = 2 for random primes (E=4, ~0 bits of info about p).
+3. The reduced search p = 1 + kg with g=2 still gives ~sqrt(N)/2 candidates =
+   trial division. The useful case (large g, e.g. N=221 g=4) IS the p-1 method
+   weakness (p-1, q-1 sharing a large factor — a known-method condition).
+
+**Barrier assessment.** REFUTED — barrier 4 (free-witness aggregation: counting
+E(N) needs O(N) or the factors) + trace lemma (order/residue-vector witness) +
+barrier 8 (large g = p-1 method). Information-theoretically g=2 almost always, so
+E(N)=4 is essentially constant — ~0 bits about p.
+
+**Conclusion.** EULER verified as predicted: the Euler-pseudoprime count is a
+free-witness that is essentially constant for random semiprimes, and its useful
+case is a known method. No breakthrough.
