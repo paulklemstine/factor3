@@ -5394,3 +5394,28 @@ as all deterministic N-derived iteration.
 
 **Conclusion.** CYCLOTOWER confirms the subagent's prediction: a clean
 cyclotomic reformulation of p-1, not a new method. No breakthrough.
+
+---
+
+## Part 44 — Experiment CUSP-INDEX: modular group Gamma_0(N) invariants (loop iteration)
+
+**Hypothesis (round-2 subagent #2).** Gamma_0(N) = {[[a,b],[c,d]] in SL(2,Z) :
+c == 0 mod N}. Its index in SL(2,Z) is psi(N) = N * prod_{l|N}(1 + 1/l) =
+(p+1)(q+1) = N+p+q+1. Claim: index and cusp count encode p+q.
+
+**Experiment (verified for N = 15, 21, 143, 221, 899):**
+1. Index psi(N) = (p+1)(q+1) verified EXACTLY for all 5.
+2. From the index: p+q = psi(N) - N - 1; p,q recovered (solve x^2-sx+N).
+3. CORRECTION: the subagent's cusp-count formula (p-1)(q-1)+3 is WRONG.
+   The correct count sum_{d|N} phi(gcd(d, N/d)) = 4 for semiprimes
+   (verified: N=15->4, N=143->4, ...). The claimed (p-1)(q-1)+3 is refuted
+   (it is the number of cusps only for other subgroups, not Gamma_0(pq)).
+
+**Barrier assessment.** REFUTED as a factoring method — the index psi(N) =
+(p+1)(q+1) is another free-witness (barrier 4): computing it requires the prime
+divisors (the product formula, circular) or |P^1(Z/NZ)| ~ (p+1)(q+1) ~ N coset
+enumeration (aggregation). The modular-group angle confirms the free-witness
+pattern in a new (geometric/modular) setting.
+
+**Conclusion.** CUSP-INDEX adds a modular-geometric free-witness (index of
+Gamma_0(N)); the subagent's cusp formula corrected. No breakthrough.

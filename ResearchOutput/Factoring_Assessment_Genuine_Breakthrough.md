@@ -679,6 +679,11 @@ tower: first hit exactly at m0 = min(ord_p(2), ord_q(2)) (verified all 5 N).
 REFUTED — barrier 8: exactly Pollard p-1 in cyclotomic dress, depth ~sqrt(N)
 or smoothness-dependent. No new method.
 
+**Iteration 71 experiment (CUSP-INDEX — round-2 subagent #2).** Gamma_0(N)
+index psi(N) = (p+1)(q+1) verified, recovers p,q; subagent's cusp formula
+(p-1)(q-1)+3 CORRECTED to sum phi(gcd(d,N/d)) = 4. REFUTED — index is a
+modular-geometric free-witness (barrier 4).
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1049,6 +1054,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v74 — 2026-08-11. Based on 297 computational experiments, an
+*Assessment v75 — 2026-08-11. Based on 298 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
-formalization of the polynomial barrier, the round-1 batch, the free-witness family (CIRC/KROOT/BQF/HEISENBERG), and CYCLOTOWER (p-1 in cyclotomic dress).*
+formalization of the polynomial barrier, the round-1 batch, the free-witness family (CIRC/KROOT/BQF/HEISENBERG/CUSP-INDEX), and CYCLOTOWER.*
