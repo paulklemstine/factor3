@@ -709,6 +709,11 @@ over Z/N: min distance d(C) = N-(k-1)*max(p,q) verified exactly; a
 CODE-THEORETIC free-witness (provably not N-only, leaks max(p,q)), needs p,q or
 >= N^k brute force. REFUTED — barrier 4, sixth free-witness setting.
 
+**Iteration 71 experiment (MODPAR-CERT — round-3 subagent #2).** Divisor-count-
+parity oracle: recovery works in all non-collision cases; failures are exactly
+the merged-class (unresolvable) cases; special-class density 2-4/m. REFUTED —
+decision-tree closure for the divisor-parity primitive (barriers 6/4).
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1079,6 +1084,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v80 — 2026-08-11. Based on 303 computational experiments, an
+*Assessment v81 — 2026-08-11. Based on 304 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
-formalization of the polynomial barrier, both subagent rounds + round-3 #1 (RS-MIND) complete, and the free-witness family.*
+formalization of the polynomial barrier, both subagent rounds + round-3 (RS-MIND, MODPAR-CERT) complete, and the free-witness family.*

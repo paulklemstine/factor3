@@ -5560,3 +5560,31 @@ quadratic-form-count, group-class-count, modular-index).
 **Conclusion.** RS-MIND adds coding theory to the free-witness family.
 No breakthrough. (Note: the subagent's formula was CORRECT here, unlike three
 round-2 claims.)
+
+---
+
+## Part 50 — Experiment MODPAR-CERT: divisor-count-parity oracle (round-3 subagent #2)
+
+**Hypothesis (round-3 subagent #2).** P(N,a,m) = (# proper divisors d of N with
+d == a mod m) mod 2. For N=pq the parity pattern over a=0..m-1 encodes where
+{1,p,q} land mod m; subtracting the known classes {1, N} should leave
+{p mod m, q mod m}. Each random query hits a special class with prob ~4/m.
+
+**Experiment (N = 15, 21, 143, 221, 899; m = 5, 7, 11, 13).**
+1. Recovery works in ALL non-collision cases (e.g. N=221=13*17, m=11:
+   recovered [2,6] = {13 mod 11, 17 mod 11} = {2, 6} OK).
+2. The failures are EXACTLY the class-collision cases where factors genuinely
+   merge mod m and are unresolvable (e.g. N=15, m=5: q=5 == 0 == N mod 5, so
+   q's class is the known N-class; N=143, m=11: p=11 == 0 == N mod 11). The
+   oracle correctly cannot separate merged classes.
+3. Special-class density is 2-4/m (sparse) -> Omega(m) queries to extract
+   {p mod m, q mod m}.
+
+**Barrier assessment.** REFUTED as a method — a decision-tree closure (like
+ADAPT) for a NEW atomic primitive: 'decide whether a divisor lies in a residue
+class'. Evaluating P(N,a,m) requires the divisors (= factoring, barrier 6); the
+leaks are sparse (density 4/m), so aggregation costs O(m) ~ O(sqrt(N)) for the
+useful m (barrier 4). No poly-query shortcut.
+
+**Conclusion.** MODPAR-CERT closes the divisor-parity decision-tree loophole.
+Consistent with the barrier framework. No breakthrough.
