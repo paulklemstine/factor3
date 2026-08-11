@@ -833,6 +833,11 @@ Exact composite Frobenius point count #E(Z/NZ) = (p+1-a_p)(q+1-a_q) verified;
 immune to noise-floor but sealed by CRT/aggregation (barrier 4) + order-finding.
 REFUTED. Round-6 batch complete.
 
+**Iteration 71 experiment (AGREEMENT — round-7 subagent #3).** Legendre-agreement
+count A(N) = #{a:(a/p)=(a/q)} = phi(N)/2 exactly; agreement set = QR set mod N.
+Collapses by character orthogonality to the N-computable quadratic character.
+REFUTED — barrier 6/5; barrier 2 holds in its sharpest form.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1203,6 +1208,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v101 — 2026-08-11. Based on 324 computational experiments, an
+*Assessment v102 — 2026-08-11. Based on 325 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
 formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, and SCHINZEL.*

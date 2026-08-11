@@ -6211,3 +6211,28 @@ the noise-floor family — is CONFIRMED, but it does not bypass barrier 4.
 **Conclusion.** RINGFROB completes the round-6 subagent batch (CarryTrace,
 RingFrobenius, DirichletDifferential; Trace-Dichotomy is a formalization).
 Six rounds of subagent hypotheses now closed. No breakthrough.
+
+---
+
+## Part 72 — Experiment AGREEMENT: Legendre-agreement count (round-7 subagent #3)
+
+**Hypothesis (round-7 subagent #3).** A(N) = #{a in (Z/NZ)* : (a/p)_2 = (a/q)_2},
+invariant under BOTH barrier-2 symmetries (p<->q swap, conjugation). Claim: by
+character orthogonality ((a/p)(a/q) = (a/N)_2), agreement iff (a/N)_2 = +1, so
+A(N) = #{a : (a/N)_2 = 1} = phi(N)/2.
+
+**Experiment (N = 143, 221, 899, 77, 1763).**
+1. A(N) = phi(N)/2 verified EXACTLY for all 5.
+2. The agreement set IS the quadratic-residue set mod N (QR-set count = phi(N)/2).
+3. The aggregate collapses by character orthogonality to the N-computable
+   quadratic character.
+
+**Barrier assessment.** REFUTED — barrier 6/5: A(N) = phi(N)/2 is
+phi-equivalent (computing it IS factoring, barrier 6) and N-only up to that
+circularity (barrier 5). No both-symmetries-invariant character aggregate
+escapes the residue/order classification; barrier 2 holds in its sharpest form.
+(Note: the quartic analogue needs individual quartic symbols = factoring, the
+already-closed NSPLIT structure.)
+
+**Conclusion.** AGREEMENT verified as predicted. Barrier 2 holds for
+both-symmetries-invariant character aggregates. No breakthrough.
