@@ -6500,3 +6500,28 @@ coordinates are COMPLETE.
 
 **Conclusion.** ASYMRES verified: the trace lemma's completeness survives its
 strongest candidate counterexample. No breakthrough.
+
+---
+
+## Part 83 — Experiment FROBENIUS-CM: elliptic-trace degeneration (round-9 subagent #3, batch complete)
+
+**Hypothesis (round-9 subagent #3).** One-shot Schoof over Z/NZ for E_N with
+polynomial-in-N coefficients would recover the composite Frobenius trace, a
+candidate genuinely-new coordinate. Claim: any polynomial-in-N coefficient
+vanishes mod p (N == 0), so the reduction is ALWAYS the N=0 curve.
+
+**Experiment (p = 29, 61, 101, 199).**
+1. Cuspidal y^2 = x^3 mod p: #E = p, a_p = 1 (CONSTANT) for all p.
+2. CM y^2 = x^3 + x mod p: a_p from p's Gaussian splitting (p mod 4) — a
+   residue/order quantity, never a generic Hasse-interval trace.
+3. So E: y^2 = x^3 + a(N)x + b(N) with polynomial-in-N coefficients degenerates
+   to the N=0 curve; the elliptic-trace channel carries no new factor info.
+
+**Barrier assessment.** REFUTED — barrier 1 (polynomial coefficients degenerate
+mod p) + barrier 6 (exponential coefficients, e.g. 2^N, need the CRT split to
+compute p^q mod l) + barrier 8 (order-gating). The elliptic-trace channel is
+cut off at both ends. Subsumes and sharpens RINGFROB.
+
+**Conclusion.** FROBENIUS-CM completes the round-9 subagent batch (4/4: EULERGAP,
+IDEMPOTENT, ASYMRES, FROBENIUS-CM). Nine rounds of subagent hypotheses now closed
+(~44 total). No breakthrough.

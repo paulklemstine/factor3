@@ -885,6 +885,11 @@ p-q = sqrt((p+q)^2-4N) (function of the trace); unbalanced -> search k;
 anti-symmetric -> CRT split. The trace lemma's three coordinates are COMPLETE.
 REFUTED.
 
+**Iteration 71 experiment (FROBENIUS-CM — round-9 subagent #3, batch complete).**
+Elliptic-trace degeneration: polynomial-in-N coefficients vanish mod p, reduction
+always the N=0 curve (cuspidal a_p=1 or CM from p mod 4), never generic.
+REFUTED — barrier 1/6/8; subsumes RINGFROB. Round-9 batch complete (4/4).
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1255,6 +1260,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v112 — 2026-08-11. Based on 335 computational experiments, an
+*Assessment v113 — 2026-08-11. Based on 336 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
 formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, and SCHINZEL.*
