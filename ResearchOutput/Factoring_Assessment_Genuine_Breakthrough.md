@@ -694,6 +694,11 @@ Wigner function: BOTH subagent claims fail — |W|=1/sqrt(N) flatness FALSE
 (N=143: |W| varies 0.00-0.19), CRT factorization W=(1/N)G_p G_q FALSE (phase
 functions don't factor through CRT, only characters). REFUTED.
 
+**Iteration 71 experiment (STRUCT-KOLM — round-2 subagent #5, batch complete).**
+Kolmogorov structure function: compression gap = 0 or -1 bits for all 6 tested
+(bitlen(p)+bitlen(q) = bitlen(N)); balanced semiprimes are incompressible, knee
+vacuous; finding the pair costs ~sqrt(N). REFUTED. ROUND-2 BATCH COMPLETE (6/6).
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1064,6 +1069,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v77 — 2026-08-11. Based on 300 computational experiments, an
+*Assessment v78 — 2026-08-11. Based on 301 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
-formalization of the polynomial barrier, the round-1 batch, the free-witness family, CYCLOTOWER, TOWER-LIFT, and WIGNER-CUBIC.*
+formalization of the polynomial barrier, the round-1 batch (8 hypotheses) and round-2 batch (6 hypotheses) both complete, and the free-witness family.*

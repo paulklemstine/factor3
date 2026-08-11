@@ -5474,3 +5474,34 @@ both disproven computationally. No breakthrough. (Note: a genuinely correct
 discrete Wigner function of the cubic state would be a valid quantum-info
 object, but it remains N-only / barrier-4 blocked — the phase-sum it computes
 is just another free-witness aggregate.)
+
+---
+
+## Part 47 — Experiment STRUCT-KOLM: Kolmogorov structure function (loop iteration)
+
+**Hypothesis (round-2 subagent #5).** The factorization (p,q) is the minimal
+sufficient statistic of N=pq; the Kolmogorov structure function k_N(m) should
+have a knee at m = bitlen(p)+bitlen(q) that reveals the model (the factors).
+
+**Experiment (6 balanced semiprimes, 10-22 bits).**
+1. Model cost m = bitlen(p)+bitlen(q) vs bitlen(N): gap = 0 or -1 bits for all
+   6 (e.g. N=43357=227*191: 8+8=16 vs bitlen(N)=16, gap 0). NO compression gap.
+2. Balanced semiprimes are incompressible: the minimal sufficient statistic
+   (the factorization) costs as much as N itself, so the structure-function
+   knee is VACUOUS.
+3. Finding the pair costs ~sqrt(N) trial divisions (e.g. N=764177: 393 divisions
+   to find 787 vs sqrt(N)=874) — barrier 4.
+
+**Barrier assessment.** REFUTED — as predicted, the Kolmogorov-structure-function
+approach is vacuous: no compression gap exists for balanced p,q (the model
+description length equals log N), and any bounded surrogate for the true K pays
+2^m ~ N (barrier 4). The uncomputable true K is undecidable. No handle.
+
+**Conclusion.** STRUCT-KOLM completes the round-2 subagent batch. All six
+round-2 hypotheses (HEISENBERG-CLASS, CUSP-INDEX, TOWER-LIFT, WIGNER-CUBIC,
+STRUCT-KOLM, CYCLOTOWER) tested and closed, all consistent with the barrier
+framework. No breakthrough.
+
+**ROUND-2 BATCH COMPLETE.** 6/6 tested and closed. Combined with round 1 (8
+hypotheses) and the self-invented free-witness family (CIRC, KROOT, BQF), the
+barrier framework has now survived 301 experiments.
