@@ -901,6 +901,11 @@ values always units (gcd(x,N)=1) — sealed; instantiates QS/NFS in a walk mask,
 useful randomness = smoothness (subexponential). REFUTED — barrier 8/5.
 Completes the round-10 classical attacks.
 
+**Iteration 71 experiment (Q-BYPASS — round-10 subagent #3).** Shor's order is a
+classified free-witness coordinate read by the QFT from one superposition —
+the quantum channel bypasses BARRIER 4 (aggregation), not the trace lemma.
+CONFIRMED frontier; localizes the quantum-classical boundary (sharpens paper 9).
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1271,6 +1276,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v115 — 2026-08-11. Based on 338 computational experiments, an
+*Assessment v116 — 2026-08-11. Based on 339 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
 formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, and SCHINZEL.*

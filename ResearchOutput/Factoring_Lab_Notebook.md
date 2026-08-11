@@ -6585,3 +6585,30 @@ is the smoothness bound (subexponential), not the collision angle.
 **Conclusion.** RAINBOWWALK completes the round-10 CLASSICAL attacks. The
 quantum (Q-BYPASS) and hint-amplification (HINT-AMP) frontiers are scope
 restatements, not classical attacks. No breakthrough.
+
+---
+
+## Part 86 — Experiment Q-BYPASS: which barrier does the QFT bypass? (round-10 subagent #3)
+
+**Hypothesis (round-10 subagent #3).** Shor computes ord_N(a), a classified free
+witness (trace lemma: residue/order vector). Barrier 4 says aggregating it
+classically costs O(N). The QFT reads the period from a coherent superposition.
+Localize exactly which barrier the quantum channel evades.
+
+**Experiment (N = 15, 21, 33, 143; simulated Shor order-finding).**
+1. ord_N(a) found; gcd(a^{r/2} +- 1, N) recovers the factors (all 4 N).
+2. The order r is a CLASSIFIED free-witness coordinate (residue/order, per the
+   trace lemma).
+3. The QFT reads it from ONE coherent superposition, bypassing barrier 4's
+   O(N) classical aggregation.
+
+**Barrier assessment.** CONFIRMED as the frontier: the quantum channel is a TRUE
+counterexample to classical 'aggregation necessity'. The QFT evades BARRIER 4
+(the aggregation cost), NOT the trace lemma (the order IS the residue/order
+coordinate). This localizes the quantum-classical boundary precisely (sharpening
+paper 9): Shor computes a classified free-witness coordinate via a non-classical
+aggregation oracle.
+
+**Conclusion.** Q-BYPASS pins the quantum advantage to barrier 4's aggregation.
+The framework is honest only if scoped 'classical'. No classical breakthrough —
+the quantum channel is the confirmed exception.
