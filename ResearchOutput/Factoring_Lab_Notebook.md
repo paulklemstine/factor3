@@ -6638,3 +6638,35 @@ HINT-AMP) and the exhaustion verdict.
 
 **Conclusion.** HINTAMP confirms the unpriced-resource finding with a concrete
 scope restatement. No hint-free classical breakthrough.
+
+---
+
+## Part 88 — Experiment REGEV: Regev's factoring post-processing (arXiv mining, fresh research angle)
+
+**Source.** arXiv 2308.06572 (Regev, "An Efficient Quantum Factoring Algorithm")
+and 2606.17647 (experimental "From Period Finding to Lattice Sampling").
+Fresh research surfaced by mining arXiv per the loop directive.
+
+**Regev's algorithm.** Factors n-bit integers by running a quantum circuit with
+O~(n^{3/2}) gates sqrt(n)+4 times, then POLYNOMIAL-TIME classical post-processing
+(LLL lattice reduction to find a short square relation). Reduces QUANTUM circuit
+size vs Shor; relies on a smoothness heuristic like subexponential classical
+algorithms.
+
+**Experiment (N = 143, 899, 3599).**
+1. The classical post-processing finds a congruence-of-squares relation
+   x^2 == y^2 mod N (e.g. N=143: x=2, y=24, gcd(x-y,N)=11) — the
+   QS/congruence-of-squares structure (smooth-square relation).
+2. Obtaining the near-order samples classically IS order-finding (barrier 4);
+   the quantum part provides them cheaply.
+3. Regev reduces QUANTUM gates, not the classical extraction structure.
+
+**Barrier assessment.** Not a classical breakthrough — Regev's algorithm is the
+QUANTUM exception (paper 26, frontier 2) refined: it reduces quantum resources
+but its post-processing is congruence-of-squares/smoothness (barrier 8), and its
+samples are quantum-obtained. Consistent with the exhaustion verdict.
+
+**Conclusion.** REGEV confirmed: the most significant recent quantum factoring
+advance reduces to the known congruence-of-squares structure classically. No
+hint-free classical breakthrough. The arXiv-mining subagent continues in the
+background with a fuller report.

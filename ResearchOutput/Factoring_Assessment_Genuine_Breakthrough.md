@@ -911,6 +911,11 @@ Coppersmith partial-key-exposure: ~half of p's bits -> poly-time recovery (a rea
 unpriced channel), but requires an external hint — scope restatement, not a
 barrier violation for hint-free factoring. Round-10 batch complete (4/4).
 
+**Iteration 71 experiment (REGEV — arXiv mining).** Regev's factoring algorithm
+(2308.06572): reduces quantum gates (O~(n^{3/2})) but classical post-processing
+is congruence-of-squares/smoothness (barrier 8); samples quantum-obtained. The
+quantum exception refined, not a classical breakthrough. CONFIMED consistent.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1281,6 +1286,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v117 — 2026-08-11. Based on 340 computational experiments, an
+*Assessment v118 — 2026-08-11. Based on 341 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
 formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, and SCHINZEL.*
