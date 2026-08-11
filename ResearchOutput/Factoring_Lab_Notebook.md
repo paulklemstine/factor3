@@ -6670,3 +6670,30 @@ samples are quantum-obtained. Consistent with the exhaustion verdict.
 advance reduces to the known congruence-of-squares structure classically. No
 hint-free classical breakthrough. The arXiv-mining subagent continues in the
 background with a fuller report.
+
+---
+
+## Part 89 — Experiment DIFFUSE: denoising-diffusion factoring (arXiv mining)
+
+**Source.** arXiv 2309.05295, "Discrete Denoising Diffusion Approach to Integer
+Factorization" — a seq2seq neural network + discrete denoising diffusion that
+iteratively corrects errors in a partially-correct solution. Surfaced by the
+loop's arXiv-mining directive.
+
+**Honest structural assessment (experiment).**
+1. A neural network computes a FUNCTION of N. On a held-out N, the memorized
+   model FAILS to generalize (guess 191 vs true p=239) — barrier 5
+   (structural orthogonality; memorization, no generalization). Consistent with
+   the lab's MLP experiment (experiment A).
+2. The diffusion's 'iterative correction' is guided by the training
+   distribution, NOT by the p*q = N constraint (checking it requires knowing a
+   divisor = the factorization itself).
+3. With a PARTIAL p (external hint), refinement is hint-amplification (frontier
+   3 scope, paper 26) — the one setting where it could help.
+
+**Barrier assessment.** REFUTED as a hint-free factoring method — the diffusion
+approach is a NN function of N (barrier 5). It may assist HINT amplification
+(given partial factor bits), consistent with the scope restatement.
+
+**Conclusion.** DIFFUSE: the state-of-the-art ML approach to factoring does not
+escape the barrier framework. Fresh angle tested and recorded.
