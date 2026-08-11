@@ -6295,3 +6295,30 @@ witnesses are a genuine gap in the lemma's stated numeric scope, sealed only by
 **Conclusion.** ZDG verified as predicted: the zero-divisor graph is a structural
 free-witness (factor-revealing, non-numeric form) sealed by aggregation/
 circularity. No breakthrough.
+
+---
+
+## Part 75 — Experiment DIGITLATTICE: digit-convolution lattice (round-7 subagent #4, batch complete)
+
+**Hypothesis (round-7 subagent #4).** Write N in base b, factors as digit
+vectors p,q. The bilinear digit-convolution equations, linearized via
+w_ij = p_i q_j, form an affine lattice L of codimension ~2k+1 built from N's
+digits. The true factorization is the lattice point (w = p otimes q, c) of norm
+~ log N. Run LLL/BKZ and recover it.
+
+**Experiment (N = 143, 221, 899; base 2).**
+1. The target (p otimes q, c) satisfies the digit equations (verified).
+2. Lattice dim ~ (log N)^2; target norm (2.4-7.5) is COMPARABLE to the Gaussian
+   heuristic sqrt(dim) (6.4-7.5) — the target sits AT the heuristic, so LLL
+   returns a GENERIC short vector, not the factorization.
+3. The rank-1 + carry-integrality constraint is the Theta(N)-state de-carrying
+   DP (BDPC, closed experiment).
+
+**Barrier assessment.** REFUTED — barrier 4 + noise floor: the lattice relaxation
+loses exactly the carry information that would prune; factor-bearing lattice
+points occur at density <= c/sqrt(N) (Gaussian heuristic). Digit-coordinates do
+not escape the floor.
+
+**Conclusion.** DIGITLATTICE completes the round-7 subagent batch (4/4:
+AGREEMENT, STATICRHO, ZDG, DIGITLATTICE). Seven rounds of subagent hypotheses
+now closed (~36 total). No breakthrough.
