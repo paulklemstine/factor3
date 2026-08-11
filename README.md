@@ -25,6 +25,7 @@ of independent mathematical interest.
 | 10 | [A Conditional-Impossibility Framework](ResearchOutput/NewMathematics/10_Conditional_Impossibility_Framework.md) | Conditional impossibility schema |
 | 11 | [The CRT-Split No-Go](ResearchOutput/NewMathematics/11_CRT_Split_Iteration_NoGo.md) | N-alone iteration cannot factor in poly(log N) |
 | 00 | [Consolidated Breakthrough Report](ResearchOutput/NewMathematics/00_CONSOLIDATED_BREAKTHROUGH_REPORT.md) | Synthesis of all papers |
+| 12 | [Subagent Batch Closures](ResearchOutput/NewMathematics/12_Subagent_Batch_Closures.md) | 8 novel hypotheses tested and closed (experiments 285-292) |
 
 The consolidated report is the authoritative record of all novel mathematics from
 the 284-experiment investigation.

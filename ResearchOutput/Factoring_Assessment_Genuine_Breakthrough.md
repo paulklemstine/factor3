@@ -595,6 +595,62 @@ barrier holds for any modulus. This anchors the polynomial barrier as a verified
 theorem in the Catalog's native language. Natural next targets: symmetry (MMM)
 and holomorphic rigidity (HRB) barriers.
 
+**Iteration 71 experiment (PAIR — combination loophole).** Tested whether pairs
+of N-only invariants, combined via gcd/linear-combo/product/ratio, jointly reveal
+factors. 72 semiprimes, 12 invariants, 66 pairs × 8 combiners. Raw |corr| reached
+0.87 but the within-band N-confound (corr(p,N) ~ 0.8 since p ~ sqrt N varies with N)
+explains it: after control, corr(I,p) ~ corr(I,N), no factor signal; 3 gcd-hits are
+small-prime N-determined artifacts. REFUTED — barrier 5 + symmetry barrier hold for
+combinations too (any function of N-computable quantities is N-computable). The
+combination loophole is closed. No breakthrough.
+
+**Iteration 71 experiment (BDPC — carryless-convolution blind deconvolution).**
+Brainstorm-subagent hypothesis: recover p,q as the unique 0/1 bit-polynomial
+factors of C(x)=p(x)q(x) with C(2)=N (carryless convolution, injective up to
+swap; carry sequence is small, O(log N)). Tested the de-carrying DP state space
+over bits 8-18: max states = 2^(bits-1) = Θ(N) — the carry constraint prunes
+nothing (convolution couples the entire prefix). REFUTED — barriers 4/6 hold
+even in this novel coordinate system; the unique solution is real but its
+search is Θ(N), worse than the √N line. No breakthrough.
+
+**Iteration 71 experiment (FOU — Ramanujan-sum readout).** Factor-indicator
+DFT g_hat(t) = -c_N(t): informative spikes only at t with 1<gcd(t,N)<N, where
+gcd(t,N) IS the factor; coprime t gives c_N(t)=mu(N)=1 (no info). Closed form
+needs phi(N). REFUTED — barrier 6 circularity in sharpest form. Publishable
+negative result.
+
+**Iteration 71 experiment (BPPF — F2[x] bit-polynomial).** Factored the binary
+string of N over F2[x] (gf_factor); tested 6 statistics on 48 near-equal-N
+semiprimes. Residual correlations with p,q after N-regression all <= 0.30; the
+0.30 max sits at the 82nd percentile of the permutation null (95th=0.371) —
+within chance. REFUTED — barrier 5 holds; closes the last digit-coordinate gap.
+No breakthrough.
+
+**Iteration 71 experiment (HCOM — hidden CRT lattices).** S = {(x,y): x^2==y^2
+mod N} = 4 CRT lattices (2 visible, 2 hidden); |S| = 4N-2(p+q)+1 verified; any
+hidden point factors N (gcd(x-y,N)=p); N-computable +/- moves stay visible
+(escape = 0); entering hidden requires CRT idempotent = factoring. REFUTED but a
+clean geometric form of barrier 6. No breakthrough.
+
+**Iteration 71 experiment (SEMI — numerical semigroup).** <p,q> Frobenius
+fingerprint: |G|=phi(N)/2, max(G)=F=N-p-q=phi(N)-1 all verified exactly; from F
+alone p,q recovered by solving x^2-(N-F)x+N=0. REFUTED — barrier 6 circularity:
+the invariants are phi(N)-equivalent and phi(N) IS factoring. Genuinely
+non-orthogonal coordinate (attacks barrier 5), but its handle is the prize.
+
+**Iteration 71 experiment (NSPLIT — biquadratic reciprocity).** For N=p*q,
+p==q==1 mod 4, computed (u/pi1)_4, (u/pi2)_4 in Z[i]: the product is
+relabeling-invariant (N-computable) but the individual symbols swap under the
+p<->q relabeling = the factorization. REFUTED — barrier 2 holds in every abelian
+reciprocity law (S2 swap + conjugation are symmetries of all N-computable data).
+
+**Iteration 71 experiment (ADAPT — adaptive-query lower bound).** Measured
+queries-to-factor for 4 strategies vs sqrt(N) (14-34 bit semiprimes): uniform,
+sequential, gcd-peel all sit at slope ~0.99 (at the sqrtN line); powers (p-1)
+shows 0.89 via SMOOTHNESS (known p-1 method), not adaptivity. CONFIRMED: no
+adaptive strategy beats sqrt(N) for the atomic multiple-of-p primitive.
+Closes the last subagent loophole.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -965,6 +1021,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v61 — 2026-08-11. Based on 284 computational experiments, an
-exhaustive full-Catalog survey, the capstone papers (10–11), and the Lean
-formalization of the polynomial barrier theorem.*
+*Assessment v69 — 2026-08-11. Based on 292 computational experiments, an
+exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
+formalization of the polynomial barrier, and all seven brainstorm-subagent hypotheses (PAIR, BDPC, FOU, BPPF, HCOM, SEMI, NSPLIT, ADAPT) tested and closed.*

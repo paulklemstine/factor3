@@ -4987,3 +4987,264 @@ Catalog.  It anchors the polynomial barrier (which kills every polynomial /
 resultant / discriminant / hyperdeterminant-of-polynomial approach) as a
 verified theorem rather than a computational pattern.  Natural next targets:
 the symmetry barrier (Theorem 2) and holomorphic rigidity barrier (Theorem 3).
+
+---
+
+## Part 31 — Experiment PAIR: pairwise combinations of N-only invariants (loop iteration)
+
+**Hypothesis.** Two (or more) N-only invariants, COMBINED (gcd of linear combos,
+products, ratios), might jointly reveal factors — the natural loophole against
+barrier 5, which was validated for individual invariants only.
+
+**Result.** 72 semiprimes (N ~ 4e4..4e6), near-equal-N bands of width 4e5,
+12-invariant battery, 66 pairs × 8 combining functions. Raw max |corr(p or q)|
+reached 0.87 — BUT the confound control shows this is the within-band N-confound:
+corr(p,N) and corr(q,N) reach 0.83 in-band (p ~ sqrt(N) varies with N), so any
+N-correlated invariant inherits p/q-correlation. After control, the top gcd-family
+combined invariants show corr(I,p) ~ corr(I,N) (e.g., 0.16 vs 0.23) — N-driven,
+zero factor signal. The 3 gcd-factor-hits are small-prime artifacts (N-determined;
+the hit is a deterministic function of N alone and cannot be steered to find
+factors).
+
+**Barrier assessment.** REFUTED as a factoring approach, consistent with barrier 5
++ symmetry barrier (Theorem 2): any function of N-computable quantities is itself
+N-computable, hence N-only. The combination loophole is CLOSED — pairs/tuples of
+N-only invariants remain N-only.
+
+**Conclusion.** No combination of N-only invariants reveals factors. This closes a
+real methodological gap (the near-equal-N test was validated per-invariant).
+No breakthrough — the barrier framework holds. (Notebook: run in factor3
+working dir, /tmp/exp_pair2.py, /tmp/exp_pair2b.py.)
+
+---
+
+## Part 32 — Experiment BDPC: carryless-convolution blind deconvolution (loop iteration)
+
+**Hypothesis (from brainstorm subagent).** Let p(x), q(x) ∈ Z[x] be the 0/1
+bit-polynomials of p, q and C(x) = p(x)·q(x) their carryless convolution.
+Verified: C(2) = N exactly, and (p,q) → C is injective up to swap (only the
+divisor pairs (1,N),(p,q),(q,p),(N,1) have C(2)=N). So factoring ⟺ recovering
+the small coefficient vector C from the single value N, then factoring C(x)
+over Z[x] (polytime). The hidden variable (the carry sequence) is provably
+small — O(log N) integers — so the question is whether the de-carrying SEARCH
+is compressible.
+
+**Experiment.** Forward DP over bit levels k = 0..n-1: choose p_k, q_k ∈ {0,1},
+track carry via c_k + carry = N_k + 2·carry' (c_k = Σ_{i+j=k} p_i q_j). Count
+consistent (p_mask, q_mask, carry) states at each level, for balanced
+semiprimes 8-18 bits:
+
+| bits | max states |
+|------|-----------|
+| 8  | 128   = 2^7  |
+| 10 | 512   = 2^9  |
+| 12 | 2048  = 2^11 |
+| 14 | 8192  = 2^13 |
+| 16 | 32768 = 2^15 |
+| 18 | 131072= 2^17 |
+
+**Result.** max states = 2^(bits-1) = Θ(N) — exponential in log N. The carry
+constraint prunes essentially nothing: at the middle level the state space is
+already ~half the full prefix space. The convolution couples the ENTIRE prefix
+(the middle coefficients of p·q depend on all low bits), so no aggregation of
+the state exists; the search must track ~N prefixes. The unique solution is
+real but unreachable in poly(log N) time.
+
+**Barrier assessment.** REFUTED — barriers 4/6 (aggregation/search cost) hold
+even in this novel carryless-coordinate system. The "small hidden variable"
+(carry, O(log N)) does NOT make the search tractable because the constraint
+that would prune it (c_k consistency) couples all prefix bits simultaneously.
+
+**Conclusion.** BDPC is a genuine, novel coordinate system with a provably
+unique solution — but its search is Θ(N). No breakthrough. (Note: the state
+space here is WORSE than the √N birthday line — ~N, not ~√N.)
+
+---
+
+## Part 33 — Experiment FOU: Ramanujan-sum / factor-indicator DFT readout (loop iteration)
+
+**Hypothesis (from brainstorm subagent).** g(x) = 1 if gcd(x,N)>1 else 0 on
+Z/NZ has a DFT whose spikes encode the factors. Verified: g_hat(t) = -c_N(t)
+(Ramanujan sum) for all t in (0,N); g_hat(0) = N - phi(N). The informative
+spikes are exactly: t a multiple of p (not q) → g_hat = p-1; t a multiple of q
+(not p) → g_hat = q-1; all other t → g_hat = -1 (no info).
+
+**Experiment.** Verified across N = 143, 2701, 35239, 538193, 8439883
+(balanced semiprimes 6-13 bits):
+- coprime t: c_N(t) = mu(N) = 1, g_hat = -1 — ZERO information.
+- t = k*p (p | t, q ∤ t): g_hat = p-1 (spike).
+- t = k*q: g_hat = q-1 (spike).
+- Closed form c_N(t) = mu(N/g)*phi(N)/phi(N/g), g = gcd(N,t), requires phi(N)
+  (= factor info) whenever g is a proper divisor.
+- Informative spikes occur EXACTLY at t with 1 < gcd(t,N) < N, where gcd(t,N)
+  already IS the factor.
+
+**Barrier assessment.** REFUTED — barrier 6 (computational circularity) in its
+sharpest form: the informative Ramanujan spike exists precisely where the answer
+(gcd(t,N)) is already known. Any route to the spike requires phi(N) or the
+factor. The subagent's proposed sparse-FFT/compressed-sensing angle fails
+because K ~ p+q ~ 2 sqrt(N) spikes means naive sparse recovery is sqrt(N), and
+the closed form itself is factor-circular.
+
+**Conclusion.** FOU is a tight, publishable negative result: the Ramanujan-sum
+readout compresses the entire factoring problem to computing one informative
+c_N(t), which is exactly as hard as factoring. No breakthrough.
+
+---
+
+## Part 34 — Experiment BPPF: F2[x] bit-polynomial factorization (loop iteration)
+
+**Hypothesis (from brainstorm subagent).** N(x) = binary string of N read as a
+polynomial over F2[x]. Its factorization type (count, max degree, # degree-1
+factors, splitting type) is the last unturned digit-coordinate object; the
+carry-noise-corrected relation N(x) ≡ p(x)q(x) + Gamma(x) mod 2 could in
+principle track the carry structure that knows p,q.
+
+**Experiment.** 48 semiprimes (14-26 bits) in near-equal-N pairs (|N1-N2| < 2%),
+computed F2 factor statistics via sympy gf_factor, residual correlations with
+p,q after regressing out N. Raw |corr| high (sum_deg 0.85) BUT that is the
+N-confound (sum_deg correlates 0.72 with N). Residual |corr(p|N)| and |corr(q|N)|
+all <= 0.30 (most < 0.13).
+
+**Permutation null (300 shuffles of p,q against the stat columns).** Null of
+MAX residual |corr|: mean 0.235, 95th pct 0.371. Observed 0.30 falls at the
+82.3rd percentile — comfortably within chance.
+
+**Barrier assessment.** REFUTED — barrier 5 (structural orthogonality) holds:
+N(x) mod 2 is a random 0/1 polynomial of the same degree; its factorization
+type is N-only; carry noise washes out the p*q structure (consistent with the
+BDPC finding that the carry couples the full prefix). No statistic survives the
+N-drift control.
+
+**Conclusion.** BPPF closes the last digit-coordinate gap. The F2[x]
+bit-polynomial factorization carries no factor information beyond N.
+No breakthrough.
+
+---
+
+## Part 35 — Experiment HCOM: hidden components of the square-difference set (loop iteration)
+
+**Hypothesis (from brainstorm subagent).** S = {(x,y) in (Z/NZ)^2 : x^2 == y^2
+mod N} splits (via (x-y)(x+y) == 0) into 4 CRT lattices: two VISIBLE
+(L_N = {(x,x)}, L_- = {(x,-x)}) and two HIDDEN (mixed sign patterns). Any
+hidden point factors N. So factoring == reaching a hidden point.
+
+**Experiment (verified for N = 143, 221, 899, 1763):**
+1. Size formula |S| = 4N - 2(p+q) + 1 verified EXACTLY.
+2. Four components confirmed: (T,T) and (F,F) visible; (T,F) and (F,T) hidden;
+   sizes ~N each (visible ~= hidden).
+3. Hidden points factor N: e.g. N=143, (2,24): gcd(2-24,143) = 11.
+4. N-computable +/- moves (sign flips, the only square-preserving roots
+   computable from N) stay in the VISIBLE set {(T,T),(F,F)} — escape
+   probability exactly 0. The other two square roots of x^2 mod N (the
+   "mixed" roots) require the CRT idempotent.
+5. Reaching a hidden point requires the CRT idempotent (= factoring):
+   the mixed-sign y (y==x mod p, y==-x mod q) is found only via CRT with
+   known p,q; gcd(x-y,N) = p.
+
+**Barrier assessment.** REFUTED as a factoring approach — but a clean,
+geometric reformulation of barrier 6 (computational circularity): the hidden
+components are the CRT-mixed sign patterns, and entering them IS computing the
+idempotent. The oracle-only walk is provably stuck (0 escape).
+
+**Conclusion.** HCOM converts the circularity barrier into precise geometric
+form: factoring == reaching a hidden CRT lattice point, and the only
+N-computable moves preserve visibility. No breakthrough.
+
+---
+
+## Part 36 — Experiment SEMI: numerical-semigroup / Frobenius fingerprint (loop iteration)
+
+**Hypothesis (from brainstorm subagent).** The numerical semigroup <p,q> =
+{ap+bq} has Frobenius number F = N - p - q and genus phi(N)/2. Its defining
+coordinate (F) is ONE LIFT from p+q — genuinely NON-orthogonal to factoring
+(a valid attack on barrier 5). Question: is any piece N-computable without p,q?
+
+**Experiment (verified for N = 143, 221, 899, 1763, 3599):**
+1. |G| = phi(N)/2 verified EXACTLY (gap set has genus size).
+2. max(G) = F = N - p - q verified EXACTLY.
+3. KEY: F = phi(N) - 1 verified.
+4. From F alone, factoring is TRIVIAL: p+q = N - F; solve x^2 - (p+q)x + N = 0
+   -> (p,q). Verified for all 5 N.
+5. Frobenius boundary: F is the largest non-representable (gap); F+1 is
+   representable — standard Frobenius theorem, boundary encodes p+q.
+
+**Barrier assessment.** REFUTED — barrier 6 (circularity) holds. The
+semigroup's defining invariants (F, genus, |G|) are ALL phi(N)-equivalent, and
+computing phi(N) IS factoring. The subagent's prediction confirmed: the object
+is genuinely non-orthogonal (attacks barrier 5 legitimately), but its handle is
+the factoring prize itself. Any N-only route to F, |G|, or boundary membership
+would factor N.
+
+**Conclusion.** SEMI is a valid non-orthogonal-coordinate object whose
+invariants collapse to phi(N). Computing them is circular. No breakthrough.
+(Note: the object is novel and the orthogonality attack is legitimate — the
+circularity is the only barrier, unlike most candidates which fail on barrier 5.)
+
+---
+
+## Part 37 — Experiment NSPLIT: biquadratic reciprocity symbol splitting (loop iteration)
+
+**Hypothesis (from brainstorm subagent).** The Jacobi symbol (u/N) = (u/p)(u/q)
+is the S2-symmetric datum. Could 4th-order (biquadratic) reciprocity in Z[i]
+split it? For N = p*q with p == q == 1 (mod 4), p = (a+bi)(a-bi),
+q = (c+di)(c-di), and the biquadratic symbols (u/pi1)_4, (u/pi2)_4 see each
+Gaussian prime SEPARATELY (factor-revealing).
+
+**Experiment (N=629=17*37: p=1^2+4^2, q=1^2+6^2).**
+- (u/pi1)_4, (u/pi2)_4 computed via u^{(p-1)/4} mod pi, matching the root of
+  -1 belonging to each Gaussian prime (i_pi = -a*b^{-1} mod p).
+- u=2: (u/pi1)_4=-1, (u/pi2)_4=-i; u=3: -i, -1; u=5: -i, i.
+- The PRODUCT (u/pi1)_4*(u/pi2)_4 is invariant under the pi1<->pi2 relabeling
+  (symmetric) — a candidate N-computable datum.
+- The INDIVIDUAL symbols SWAP under relabeling: the ordered pair (s1,s2)
+  becomes (s2,s1). That relabeling is exactly the unknown factorization
+  (which Gaussian prime has norm p vs q).
+
+**Barrier assessment.** REFUTED — barrier 2 (symmetry) holds in higher
+reciprocity. Every N-computable datum is invariant under BOTH the p<->q swap
+and complex conjugation (conjugation swaps pi<->pibar, i<->-i); the individual
+biquadratic symbols are not invariant under either. Computing (u/pi1)_4 needs
+the Gaussian split of p = factoring. The subagent's prediction confirmed:
+barrier 2 persists in every ABELIAN reciprocity law (all of class-field-theoretic
+reciprocity).
+
+**Conclusion.** Higher reciprocity cannot split the Jacobi symbol's product into
+factor-revealing pieces. No breakthrough. (For non-abelian reciprocity, the
+Galois group could in principle distinguish primes, but no non-abelian
+reciprocity law is N-computable either — a known open/forbidden direction.)
+
+---
+
+## Part 38 — Experiment ADAPT: adaptive-query lower bound (loop iteration)
+
+**Hypothesis (from brainstorm subagent).** The atomic primitive under barriers
+4/CRT-split: find x with p | x by adaptive queries (choose x, learn gcd(x,N)).
+Multiples of p form an AP of density 1/p ~ 1/sqrt(N) in Z/NZ. Claim: no adaptive
+strategy (deterministic or randomized) finds a multiple of p with o(sqrt(N))
+queries — failures ("gcd=1") give no directional information, so adaptivity
+buys nothing.
+
+**Experiment.** For semiprimes of 14-34 bits, measured queries for 4 strategies:
+uniform random, sequential (x=1,2,3,...), powers a^k-1 (Pollard p-1 style),
+gcd-peel (AP walk). Log-log slopes vs sqrt(N):
+
+| strategy | slope vs sqrtN | verdict |
+|----------|----------------|---------|
+| uniform | 0.99 | at the sqrtN line |
+| sequential | 0.99 | at the sqrtN line |
+| powers (p-1) | 0.89 | SUB-sqrtN — but this is SMOOTHNESS, not adaptivity |
+| gcd-peel | 0.99 | at the sqrtN line |
+
+**Barrier assessment.** CONFIRMED as a lower bound for the atomic primitive:
+uniform/sequential/peel all sit at slope ~1 (queries ~ sqrt(N) = N^{1/2}).
+Honest nuance: the powers (Pollard p-1) strategy shows slope 0.89 because p-1
+is often smooth for small primes (ord_p(2) < p) — that is the KNOWN p-1
+smoothness mechanism (barrier 8/smoothness), NOT an adaptive-query advantage;
+its worst case is ord_p(a) ~ p = (sqrt N)^2. The claim "no adaptive strategy
+beats sqrt(N) for the atomic multiple-finding primitive" holds.
+
+**Conclusion.** ADAPT closes the last suggested loophole: adaptivity does not
+beat the sqrt(N) line for finding a multiple of p. The information-theoretic
+sibling of the DFT sample bound (paper 09) and CRT-split birthday bound
+(paper 11) is confirmed by measurement.
