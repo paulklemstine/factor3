@@ -31,13 +31,14 @@ of independent mathematical interest.
 | 15 | [Round-3 Closures](ResearchOutput/NewMathematics/15_Round3_Closures.md) | the 5 round-3 hypotheses tested and closed (experiments 303-308) |
 | 16 | [Free-Witness Classification](ResearchOutput/NewMathematics/16_FreeWitness_Classification.md) | the CRT-multiplicative free-witness classification + trace lemma |
 | 17 | [Round-4 Closures](ResearchOutput/NewMathematics/17_Round4_Closures.md) | the 5 round-4 exotic-resource hypotheses closed (experiments 308-314) |
+| 18 | [The Schinzel Circle](ResearchOutput/NewMathematics/18_Schinzel_Circle.md) | a geometric free-witness for barrier 4 (your idea) |
 
 The consolidated report is the authoritative record of all novel mathematics from
 the 292-experiment investigation.
 
 ## Contents
 
-- `ResearchOutput/NewMathematics/` — the 17 papers + consolidated report
+- `ResearchOutput/NewMathematics/` — the 18 papers + consolidated report
 - `ResearchOutput/Factoring_Lab_Notebook.md` — the master experiment record (284 experiments)
 - `ResearchOutput/Factoring_Assessment_Genuine_Breakthrough.md` — honest assessment (v61)
 - `ResearchOutput/Factoring_Brainstorm_Unconventional.md`, `Factoring_Research_Synthesis.md` — planning documents
