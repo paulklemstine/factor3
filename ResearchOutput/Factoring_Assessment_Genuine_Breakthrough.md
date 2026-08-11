@@ -741,6 +741,11 @@ is a free-witness; verified sigma_2(N)=(1+p^2)(1+q^2) recovers p,q in all cases.
 First free-witness PREDICTED by theory, not found by search. REFUTED as method,
 confirms the unified classification (paper 16).
 
+**Iteration 71 experiment (TORCEN — round-4 subagent #3).** 2-Sylow torsion
+census T(k) = 2^{min(k,v2(p-1))+min(k,v2(q-1))} verified exactly; fingerprint of
+(a,b) recoverable. A torsion free-witness (KROOT specialization, 2-power framing)
+for the 2-adic valuations — barrier 4. REFUTED.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1111,6 +1116,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v86 — 2026-08-11. Based on 309 computational experiments, an
+*Assessment v87 — 2026-08-11. Based on 310 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
-formalization of the polynomial barrier, three subagent rounds complete, the free-witness family, PYFAC, and the SIGK classification-prediction confirmation.*
+formalization of the polynomial barrier, three subagent rounds + round-4 #3 complete, the free-witness family + classification (paper 16), PYFAC, and SIGK.*

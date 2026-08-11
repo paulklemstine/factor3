@@ -5727,3 +5727,31 @@ by search.
 **Conclusion.** SIGK validates the CRT-multiplicative free-witness
 classification (paper 16). The family is now understood as one mechanism.
 No breakthrough.
+
+---
+
+## Part 56 — Experiment TORCEN: 2-Sylow torsion census (round-4 subagent #3)
+
+**Hypothesis (round-4 subagent #3).** (Z/NZ)^* ~= C_{p-1} x C_{q-1}, so the
+2-Sylow is C_{2^a} x C_{2^b}, a = v2(p-1), b = v2(q-1). The torsion census
+T(k) = #{x mod N : x^{2^k} == 1} = 2^{min(k,a)+min(k,b)} is a fingerprint of
+{a,b}. Exploits p,q primality concretely.
+
+**Experiment (N = 15, 21, 33, 143, 221; k = 1..5).**
+1. T(k) = 2^{min(k,a)+min(k,b)} verified EXACTLY for all k and all N
+   (e.g. N=221=13*17: a=2,b=4, T(1..5)=[4,16,32,64,64]).
+2. The fingerprint {a,b} = (v2(p-1), v2(q-1)) recoverable from the T(k)
+   sequence (jump points).
+3. Computing T(k) needs an O(N) census (counting x^{2^k}==1 over Z/NZ) or the
+   factors (closed form uses a,b) — barrier 4. Cheap N-only probes (Jacobi,
+   Blum mask) certify only T(1)=4 (O(1) bits).
+
+**Barrier assessment.** REFUTED as a method — a torsion free-witness for
+(v2(p-1), v2(q-1)). NOTE: this is a SPECIALIZATION of the KROOT/order family
+(T(k) = gcd(2^k, p-1)*gcd(2^k, q-1) = the KROOT value at the special k = 2^k),
+but with a genuinely new 2-Sylow-torsion framing that directly exploits p,q
+primality (v2 of p-1, q-1). Barrier 4.
+
+**Conclusion.** TORCEN verified as predicted — the torsion census leaks the
+2-adic valuations, sealed by aggregation. Consistent with the CRT-multiplicative
+classification (paper 16). No breakthrough.
