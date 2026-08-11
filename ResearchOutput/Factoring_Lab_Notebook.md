@@ -5285,3 +5285,29 @@ N=1537=29*53 (both 5 mod 8) give C/16 odd. So C(N) mod 32 distinguishes p,q == 1
 vs 5 mod 8. BUT computing the count mod 2^k still requires O(N^2) enumeration or
 p,q — the leaking bits are exactly the non-computable ones. The free-witness
 barrier (barrier 4) holds even for truncated counts. No poly-computable leak.
+
+---
+
+## Part 40 — Experiment KROOT: k-th root of unity count (loop iteration)
+
+**Hypothesis (self-invented, outside subagent territory).** R_k(N) =
+# {x in [0,N) : x^k == 1 mod N}. By CRT, R_k(N) = gcd(k,p-1)*gcd(k,q-1) — a
+free-witness in the GROUP-ORDER family (p-1, q-1), connecting to the
+Carmichael/Fibonacci primitive-divisor theory.
+
+**Experiment (verified for N = 143, 221, 899, 77, 91, 217; k = 2,3,4,5):**
+1. R_k(N) = gcd(k,p-1)*gcd(k,q-1) verified EXACTLY for all k and all N.
+2. The k=3 witness R_3(N) encodes (p mod 3, q mod 3): 9 iff both == 1 mod 3,
+   3 iff exactly one, 1 iff neither. Verified for all 6 N.
+3. Direct computation is O(N) enumeration (or requires p,q via the closed form).
+
+**Barrier assessment.** REFUTED as a factoring method — a small free-witness
+for (p mod k, q mod k). Computing R_k(N) requires O(N) enumeration or the
+factorization (barrier 4 free-witness aggregation). No poly(log N) route to
+R_k(N) avoids the factors. The group-order family (like CIRC's norm family)
+is barrier-4 blocked.
+
+**Conclusion.** KROOT adds a second, structurally distinct member to the
+free-witness family (CIRC: norm/count; KROOT: group-order/count), both
+encoding factor residues, both barrier-4 blocked. Reinforces barrier 4.
+No breakthrough.

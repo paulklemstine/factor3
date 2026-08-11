@@ -658,6 +658,11 @@ witness, NOT polynomial in N (evades barrier 1) — but computing it costs O(N^2
 or the factorization (barrier 4 free-witness aggregation, cleanest form yet).
 REFUTED; reinforces barrier 4.
 
+**Iteration 71 experiment (KROOT — k-th root count).** R_k(N) =
+gcd(k,p-1)*gcd(k,q-1) verified exactly (k=2,3,4,5); the k=3 witness encodes
+(p mod 3, q mod 3). A small free-witness in the group-order family (connects to
+Carmichael/Fibonacci theory). REFUTED — barrier 4 free-witness aggregation.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1028,6 +1033,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v70 — 2026-08-11. Based on 293 computational experiments, an
+*Assessment v71 — 2026-08-11. Based on 294 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
-formalization of the polynomial barrier, all seven round-1 subagent hypotheses, and the CIRC circle-congruence witness.*
+formalization of the polynomial barrier, all seven round-1 subagent hypotheses, and the CIRC + KROOT free-witness experiments.*
