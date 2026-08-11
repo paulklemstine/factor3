@@ -6345,3 +6345,29 @@ does not compress the search.
 
 **Conclusion.** POLYFACT answers the structural-witness cost question: 'cheaper
 than O(N)' is sqrt(N), which coincides with the aggregation floor. No breakthrough.
+
+---
+
+## Part 77 — Experiment MIXROOT: Newton basin-hopping for sqrt(4) mod N (round-8 subagent #1)
+
+**Hypothesis (round-8 subagent #1).** 4 has four square roots mod N = pq: +-2
+and mixed u (u == 2 mod p, u == -2 mod q). Any mixed root factors N via
+gcd(u-2, N) = p. Newton x <- (x + 4/x)/2, with the Mobius change y = (x-2)/(x+2)
+conjugating to y <- y^2 mod p and mod q. Claim: reaching a mixed cell requires
+x0 == 2 mod p AND x0 == -2 mod q = the mixed root itself.
+
+**Experiment (N = 77, 143, 221; 2000 random Newton starts each).**
+1. 0% of starts reached a mixed root (all 3 N).
+2. Starts either CYCLE (the y->y^2 dynamics never converges — 1543/1700/1768 of
+   2000) or hit a factor by RANDOM DIVISIBILITY of the start/iterate
+   (457/300/232 = the 1/p + 1/q density, NOT Newton convergence).
+3. The 4-valued branching IS the CRT split; reaching a mixed cell requires
+   starting exactly at the mixed root (which requires knowing p,q).
+
+**Barrier assessment.** REFUTED — barrier 4/6 (CRT): the Newton basin-hopping
+cannot reach the mixed roots without the CRT split. The exact arithmetic
+(RINGFROB-style) does not help: the dynamics are split across p,q and no
+deterministic exact iteration selects the mixed branch without the factors.
+
+**Conclusion.** MIXROOT verified as predicted: 0% mixed-root reachability.
+No breakthrough.

@@ -858,6 +858,10 @@ polynomial: first gcd>1 at min(p,q), construction cost = isqrt(N) multiplication
 = the aggregation floor; batching sqrt(N) probes into a polynomial does NOT change
 the exponent. REFUTED — barrier 4.
 
+**Iteration 71 experiment (MIXROOT — round-8 subagent #1).** Newton basin-hopping
+for sqrt(4) mod N: 0% reach a mixed root (the 4-valued branching IS the CRT
+split); starts cycle or hit factors by random divisibility. REFUTED — barrier 4/6.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1228,6 +1232,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v106 — 2026-08-11. Based on 329 computational experiments, an
+*Assessment v107 — 2026-08-11. Based on 330 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
 formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, and SCHINZEL.*
