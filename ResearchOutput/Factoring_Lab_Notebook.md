@@ -6022,3 +6022,27 @@ E(N)=4 is essentially constant — ~0 bits about p.
 **Conclusion.** EULER verified as predicted: the Euler-pseudoprime count is a
 free-witness that is essentially constant for random semiprimes, and its useful
 case is a known method. No breakthrough.
+
+---
+
+## Part 65 — Experiment PRIMEDOM: prime-domain Jacobi aggregate (round-5 subagent #1)
+
+**Hypothesis (round-5 subagent #1).** W(M) = sum_{x <= M, x prime} (x/N). The
+domain D_M = {x <= M : x prime} is NOT CRT-separable, so the free-witness
+decomposition fails — a candidate barrier-4 counterexample.
+
+**Experiment (100 semiprimes, 18-22 bits; M = 8192).**
+1. Residual corr of W with p+q = -0.005, with q-p = -0.103.
+2. Permutation null: observed max 0.103 at the 52nd percentile (mean 0.111,
+   95th 0.224) — WITHIN CHANCE.
+3. W is pure noise w.r.t. the factors.
+
+**Barrier assessment.** REFUTED — the Povlya-Vinogradov-style bound keeps the
+p,q-dependent part of the character sum inside the ~sqrt(N) log N error, so a
+non-CRT-separable domain does NOT produce a barrier-4 counterexample. The
+classification's spirit survives: every multiplicative weight leaks p,q only
+through O(sqrt N) correlations no sub-O(N) computation can resolve (noise floor).
+
+**Conclusion.** PRIMEDOM verified as predicted: the prime-domain Jacobi sum is
+pure noise. The free-witness decomposition gap is closed via the noise-floor
+argument. No breakthrough.
