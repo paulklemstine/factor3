@@ -663,6 +663,11 @@ gcd(k,p-1)*gcd(k,q-1) verified exactly (k=2,3,4,5); the k=3 witness encodes
 (p mod 3, q mod 3). A small free-witness in the group-order family (connects to
 Carmichael/Fibonacci theory). REFUTED — barrier 4 free-witness aggregation.
 
+**Iteration 71 experiment (BQF — binary-quadratic-form count family).** C_D(N) =
+(p-chi_D(p))(q-chi_D(q)) verified for D = -4,-3,-8,-12,-20; each D leaks a
+distinct factor residue (D=-4: p mod 4; D=-3: p mod 3, ...). UNIFIES CIRC and
+KROOT into one genus-theoretic free-witness family. REFUTED — all barrier-4.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1033,6 +1038,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v71 — 2026-08-11. Based on 294 computational experiments, an
+*Assessment v72 — 2026-08-11. Based on 295 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
-formalization of the polynomial barrier, all seven round-1 subagent hypotheses, and the CIRC + KROOT free-witness experiments.*
+formalization of the polynomial barrier, all seven round-1 subagent hypotheses, and the CIRC + KROOT + BQF free-witness experiments.*

@@ -5311,3 +5311,30 @@ is barrier-4 blocked.
 free-witness family (CIRC: norm/count; KROOT: group-order/count), both
 encoding factor residues, both barrier-4 blocked. Reinforces barrier 4.
 No breakthrough.
+
+---
+
+## Part 41 — Experiment BQF: binary-quadratic-form count family (loop iteration)
+
+**Hypothesis (self-invented, unifying CIRC + KROOT).** For a binary quadratic
+form Q(x,y) of discriminant D, C_D(N) = #{(x,y): Q(x,y) == 1 mod N}. By CRT +
+genus theory: C_D(N) = (p - chi_D(p))(q - chi_D(q)), where chi_D is the Kronecker
+symbol. This UNIFIES the two prior free-witnesses:
+- D = -4: Q = x^2+y^2 (CIRC), leaks p mod 4 via chi_-4(p) = chi_p(-1).
+- D = -3: Q = x^2+xy+y^2 (Eisenstein), leaks p mod 3 (KROOT's k=3 witness).
+- D = -8, -12, -20: leak p mod 8 / mod 3 / mod 5 respectively.
+
+**Experiment (verified for N = 143, 221, 77, 217; D = -4,-3,-8,-12,-20):**
+1. C_D(N) = (p - chi_D(p))(q - chi_D(q)) verified EXACTLY for every form and N.
+2. Each discriminant selects a DIFFERENT factor residue class (chi_D(p)).
+3. All are free-witnesses: computing C_D(N) needs O(N^2) enumeration or the
+   factors (barrier 4).
+
+**Barrier assessment.** REFUTED as a factoring method — the binary-quadratic-form
+count family is the canonical free-witness, parameterized by D (the residue dial).
+Every member is barrier-4 blocked. This unifies CIRC and KROOT into one family
+tied to genus theory (Kronecker symbol / class number theory).
+
+**Conclusion.** BQF closes the free-witness family: the count of solutions to any
+binary quadratic form Q(x,y) == c mod N is a barrier-4 free-witness encoding
+chi_D(p), chi_D(q). No member is poly-computable. No breakthrough.
