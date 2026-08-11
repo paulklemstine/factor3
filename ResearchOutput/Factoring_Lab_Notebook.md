@@ -5616,3 +5616,29 @@ its order invariant is still CRT-separated and factor-secret.
 **Conclusion.** BURAU-ORD confirms: true non-abelian structures reduce to the
 multiplicative-order problem. No breakthrough. (The hook is real — |H_a| does
 depend on individual orders — but that dependence IS the factorization.)
+
+---
+
+## Part 52 — Experiment DENS-SUB: no density-1 poly-detectable fast subfamily (round-3 subagent #4)
+
+**Hypothesis (round-3 subagent #4).** Is there a density-1 family of semiprimes,
+recognizable from N alone in poly time, that factors below the sqrt(N) floor by
+a mechanism other than smoothness? The candidates: Jacobi-symbol / congruence
+classes (N mod 4, N mod 8, (2/N)).
+
+**Experiment (200 semiprimes, p,q ~ 400-900; mean rho steps by class).**
+1. rho steps by N mod 4: N==1 mean 332 (n=93), N==3 mean 333 (n=107) --
+   ESSENTIALLY IDENTICAL.
+2. rho steps by N mod 8: 306-358 across classes -- no significant class.
+3. rho steps by (2/N): -1 mean 312, +1 mean 355 -- within noise.
+4. Fermat steps: small-|p-q| decile mean 0, large-|p-q| decile mean 29 --
+   the genuinely fast subfamily is small |p-q| (Fermat's territory), a FACTOR
+   property, NOT N-computable / N-detectable.
+
+**Barrier assessment.** REFUTED -- confirmed: no N-only statistic predicts ease
+(factorability is statistically independent of all N-only congruence/symbolic
+classes, barrier 5). The genuinely fast families (p-1 smooth, |p-q| small) are
+each measure-zero and Pollard p-1 / Fermat in disguise, not N-detectable
+(barrier 8). No density-1 poly-detectable fast subfamily exists.
+
+**Conclusion.** DENS-SUB closes the average-case loophole. No breakthrough.

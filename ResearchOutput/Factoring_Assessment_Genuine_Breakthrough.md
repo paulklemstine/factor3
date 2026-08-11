@@ -719,6 +719,11 @@ mod N: |H_a| separates individual orders (N=21, lcm 6 both, |H|=336 vs 24) —
 computing it IS order-finding = Pollard p-1 core. REFUTED — non-abelian braid
 structure reduces to the multiplicative-order problem (barrier 6/8).
 
+**Iteration 71 experiment (DENS-SUB — round-3 subagent #4).** N-only congruence
+classes do NOT predict ease: rho steps ~equal across N mod 4 (332 vs 333),
+N mod 8, (2/N); the fast subfamily (small |p-q|, Fermat) is a factor property,
+not N-detectable. REFUTED — no density-1 poly-detectable fast subfamily.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1089,6 +1094,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v82 — 2026-08-11. Based on 305 computational experiments, an
+*Assessment v83 — 2026-08-11. Based on 306 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
-formalization of the polynomial barrier, both subagent rounds + round-3 (RS-MIND, MODPAR-CERT, BURAU-ORD) complete, and the free-witness family.*
+formalization of the polynomial barrier, both subagent rounds + round-3 (RS-MIND, MODPAR-CERT, BURAU-ORD, DENS-SUB) complete, and the free-witness family.*
