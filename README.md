@@ -27,13 +27,14 @@ of independent mathematical interest.
 | 00 | [Consolidated Breakthrough Report](ResearchOutput/NewMathematics/00_CONSOLIDATED_BREAKTHROUGH_REPORT.md) | Synthesis of all papers |
 | 12 | [Subagent Batch Closures](ResearchOutput/NewMathematics/12_Subagent_Batch_Closures.md) | 8 novel hypotheses tested and closed (experiments 285-292) |
 | 13 | [The Free-Witness Family](ResearchOutput/NewMathematics/13_FreeWitness_Family.md) | CIRC/KROOT/BQF — the binary-quadratic-form count family (barrier 4) |
+| 14 | [Round-2 Closures](ResearchOutput/NewMathematics/14_Round2_Closures.md) | the 6 round-2 hypotheses tested and closed (experiments 296-301) |
 
 The consolidated report is the authoritative record of all novel mathematics from
 the 292-experiment investigation.
 
 ## Contents
 
-- `ResearchOutput/NewMathematics/` — the 13 papers + consolidated report
+- `ResearchOutput/NewMathematics/` — the 14 papers + consolidated report
 - `ResearchOutput/Factoring_Lab_Notebook.md` — the master experiment record (284 experiments)
 - `ResearchOutput/Factoring_Assessment_Genuine_Breakthrough.md` — honest assessment (v61)
 - `ResearchOutput/Factoring_Brainstorm_Unconventional.md`, `Factoring_Research_Synthesis.md` — planning documents
