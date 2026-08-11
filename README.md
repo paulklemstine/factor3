@@ -37,13 +37,14 @@ of independent mathematical interest.
 | 21 | [Program Synthesis](ResearchOutput/NewMathematics/21_Program_Synthesis.md) | the definitive assessment: classification, noise-floor, frontier |
 | 22 | [Round-7 Closures](ResearchOutput/NewMathematics/22_Round7_Closures.md) | scoping the noise-floor principle + trace-lemma frontier (experiments 325-328) |
 | 23 | [Round-8 Closures](ResearchOutput/NewMathematics/23_Round8_Closures.md) | the precise gaps closed (experiments 329-332) |
+| 24 | [Round-9 Closures](ResearchOutput/NewMathematics/24_Round9_Closures.md) | the completeness of the trace lemma (experiments 333-336) |
 
 The consolidated report is the authoritative record of all novel mathematics from
 the 292-experiment investigation.
 
 ## Contents
 
-- `ResearchOutput/NewMathematics/` — the 23 papers + consolidated report
+- `ResearchOutput/NewMathematics/` — the 24 papers + consolidated report
 - `ResearchOutput/Factoring_Lab_Notebook.md` — the master experiment record (284 experiments)
 - `ResearchOutput/Factoring_Assessment_Genuine_Breakthrough.md` — honest assessment (v61)
 - `ResearchOutput/Factoring_Brainstorm_Unconventional.md`, `Factoring_Research_Synthesis.md` — planning documents
