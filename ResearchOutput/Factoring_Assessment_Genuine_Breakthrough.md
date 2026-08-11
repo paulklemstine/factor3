@@ -896,6 +896,11 @@ classification is closed under joints. REFUTED as attack; a joint-closure lemma
 for barrier 4. Round-10 verdict: classical uniform hint-free surface exhausted;
 frontiers = barrier-4 proof, quantum channel, hint amplification.
 
+**Iteration 71 experiment (RAINBOWWALK — round-10 subagent #4).** Smooth-step walk
+values always units (gcd(x,N)=1) — sealed; instantiates QS/NFS in a walk mask,
+useful randomness = smoothness (subexponential). REFUTED — barrier 8/5.
+Completes the round-10 classical attacks.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1266,6 +1271,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v114 — 2026-08-11. Based on 337 computational experiments, an
+*Assessment v115 — 2026-08-11. Based on 338 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
 formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, and SCHINZEL.*

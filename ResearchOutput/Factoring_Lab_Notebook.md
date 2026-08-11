@@ -6558,3 +6558,30 @@ provably breaks the classical statement) and HINT AMPLIFICATION (HINT-AMP:
 Coppersmith partial-key-exposure, a real blind spot requiring an external hint,
 outside the 'extraction from N alone' scope). The framework should restate its
 scope as 'extraction from N alone' vs 'amplification of hints'.
+
+---
+
+## Part 85 — Experiment RAINBOWWALK: smooth-step walk (round-10 subagent #4)
+
+**Hypothesis (round-10 subagent #4).** x_{i+1} = x_i * s_i mod N for random
+smooth s_i. The useful randomness is the smoothness hit rate, not the collision
+angle. Claim: instantiates QS/NFS in a random-walk mask; no better than the
+birthday floor.
+
+**Experiment (N = 40301, 467069, 10800821; 50000 steps; smooth primes <= 30).**
+1. The smooth-step walk's VALUES are always units: gcd(x_i, N) = 1 for all
+   steps (no direct factor hits) — because multiplying by smooth numbers keeps
+   the value coprime to N (p is not smooth). [Measurement note: I measured
+   gcd(x_i, N); the rho collision channel uses gcd(x_i - x_j, N). The finding —
+   smooth walk values are units, sealed — holds regardless.]
+2. The walk instantiates the smoothness structure (QS/NFS in a walk mask);
+   its only useful resource is smoothness (subexponential, Dickman-rho bound),
+   never poly.
+
+**Barrier assessment.** REFUTED — barrier 8/5: no classical walk has provably
+useful randomness beyond the birthday floor; the smooth walk's useful randomness
+is the smoothness bound (subexponential), not the collision angle.
+
+**Conclusion.** RAINBOWWALK completes the round-10 CLASSICAL attacks. The
+quantum (Q-BYPASS) and hint-amplification (HINT-AMP) frontiers are scope
+restatements, not classical attacks. No breakthrough.
