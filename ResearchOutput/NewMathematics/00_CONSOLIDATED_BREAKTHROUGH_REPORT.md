@@ -2,7 +2,7 @@
 
 **Authors:** Factoring Lab (computational discovery)  
 **Date:** 2026-08-11  
-**Status:** Consolidated report — 10 breakthroughs derived from 292 experiments across 60+ paradigms  
+**Status:** Consolidated report — 10 breakthroughs derived from 336 experiments across 60+ paradigms  
 
 ---
 
@@ -12,7 +12,7 @@ This report consolidates every genuinely novel mathematical result discovered du
 
 **Key findings:**
 
-1. **Eight structural barriers** explain why all 292 approaches fail. Three are **proven theorems** (polynomial, symmetry, holomorphic rigidity); five are confirmed computational patterns.
+1. **Eight structural barriers** explain why all 336 approaches fail. Three are **proven theorems** (polynomial, symmetry, holomorphic rigidity); five are confirmed computational patterns.
 2. **Seven genuinely new mathematical results** emerged — each proven, each verified computationally, none yielding a polynomial-time factoring algorithm, but each of independent mathematical interest.
 3. **No classical polynomial-time factoring algorithm** was found anywhere in 60+ mathematical paradigms. The only known poly(log N) factoring remains Shor's quantum algorithm.
 
@@ -303,7 +303,7 @@ A practical discriminant for whether an invariant is $N$-only:
 3. Within each band, compute $\operatorname{corr}(I, N)$, $\operatorname{corr}(I, p)$, $\operatorname{corr}(I, q)$.
 4. **Criterion:** If $I$ varies across the band but $\operatorname{corr}(I,p) \approx 0$ and $\operatorname{corr}(I,q) \approx 0$ (controlling for $N$), then $I$ is $N$-only.
 
-**Result:** Applied to 292 invariants across 60+ paradigms, the test confirms that **every** invariant computable from $N$ alone is $N$-only. The eight barriers explain why.
+**Result:** Applied to 336 invariants across 60+ paradigms, the test confirms that **every** invariant computable from $N$ alone is $N$-only. The eight barriers explain why.
 
 ---
 
@@ -359,4 +359,4 @@ These are the experiments that produced genuine (non-refuted) mathematics:
 
 ---
 
-*Report compiled 2026-08-11. All results computationally verified. Full proofs and code in the accompanying papers (01–12) and the lab notebook (`Factoring_Lab_Notebook.md`).*
+*Report compiled 2026-08-11. All results computationally verified. Full proofs and code in the accompanying papers (01–24) and the lab notebook (`Factoring_Lab_Notebook.md`).*
