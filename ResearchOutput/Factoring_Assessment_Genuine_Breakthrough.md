@@ -761,6 +761,11 @@ sensing divisor recovery: W is 2-sparse (support {1,p}) but 'O(log N) measuremen
 hides O(sqrt(N) log N) specification cost = the aggregation; structured probes need
 divisors. REFUTED — barrier 4, measurement cost = aggregation.
 
+**Iteration 71 experiment (HOLOG-MARGIN — round-4 subagent #2, batch complete).**
+Holographic partition function Z = tau(N) = 4 constant (zero info); factor info
+lives in marginals/address requiring the divisors. REFUTED — barrier 6/8.
+ROUND-4 BATCH COMPLETE (5/5).
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1131,6 +1136,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v90 — 2026-08-11. Based on 313 computational experiments, an
+*Assessment v91 — 2026-08-11. Based on 314 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
-formalization of the polynomial barrier, three subagent rounds + round-4 (TORCEN, OPO-FAC, MPS-PARENT, SPARSEREC) complete, the free-witness classification (paper 16), PYFAC, and SIGK.*
+formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, and SIGK.*

@@ -5830,3 +5830,32 @@ never materializes because each measurement costs O(sqrt(N)).
 
 **Conclusion.** SPARSEREC verified as predicted: compressed sensing does not
 escape barrier 4. No breakthrough.
+
+---
+
+## Part 60 — Experiment HOLOG-MARGIN: holographic algorithm attack (round-4 subagent #2, batch complete)
+
+**Hypothesis (round-4 subagent #2).** Model factorization as a #CSP on p's bits
+with the product constraint N = p*q as an equality gadget; ask for factor-locating
+marginals of the partition function, computable by holographic matchgate
+evaluations (a proven aggregation-collapse mechanism).
+
+**Experiment (N = 15, 143, 221, 899).**
+1. The partition function Z = #divisor pairs = tau(N) = 4 is CONSTANT across ALL
+   semiprimes (verified: tau = 4 for every tested) — zero information. The count
+   of factor pairs is trivial.
+2. The factor-revealing information lives in the ADDRESS (marginals like
+   P(proper divisor == 1 mod 4) = 1/2 or 2/2 depending on p,q mod 4) — real
+   factor info, but computing it requires the divisors/factors (circular).
+3. Holographic matchgate collapse applies to COUNTING; locating (the witness
+   address) needs conditioned counts that carry the address, not the count.
+
+**Barrier assessment.** REFUTED — barrier 6/8: the holographic aggregation
+collapse counts witnesses trivially (Z=4); hardness lives entirely in locating,
+which is circular. No matchgate signature can compute an N-only marginal that
+locates p, because any N-computable marginal is N-only.
+
+**Conclusion.** HOLOG-MARGIN completes the round-4 subagent batch (5/5: TORCEN,
+OPO-FAC, MPS-PARENT, SPARSEREC, HOLOG-MARGIN). Four subagent rounds now complete
+(round 1: 8, round 2: 6, round 3: 5, round 4: 5 = 24 hypotheses), all closed,
+all consistent with the barrier framework. No breakthrough.
