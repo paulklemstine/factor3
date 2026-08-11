@@ -6396,3 +6396,29 @@ less. Consistent with the refined noise-floor principle (atomic-uniform bound).
 
 **Conclusion.** JACWALK verified as predicted: the Jacobi walk gives no speedup.
 No breakthrough.
+
+---
+
+## Part 79 — Experiment BERGGRENCERT: Berggren-tree factor certificates (round-8 subagent #4, batch complete)
+
+**Hypothesis (round-8 subagent #4).** Generate primitive Pythagorean triples via
+the three Berggren matrices from (3,4,5); test gcd(c,N), gcd(a+b,N),
+gcd(a-b,N). A 'certificate' is a triple whose legs/hypotenuse hit a divisor.
+(Sourced from alethean.org's Berggren-tree/Pythagorean package cluster.)
+
+**Experiment (N = 143, 899, 3599; 20000 Berggren triples each).**
+1. Factor-certificate hits: 2818, 3621, 618 vs the random baseline 3M/sqrt(N)
+   = 5017, 2001, 1000 — within ~2x of the noise floor.
+2. The tree's triples hit factors at approximately the random density — the
+   slope coordinates are ORTHOGONAL to factoring's norm coordinates (consistent
+   with the lab's Berggren orthogonality memory: density = random).
+3. The structured correlation is with Pythagorean structure, not N's divisors.
+
+**Barrier assessment.** REFUTED — noise floor + orthogonality: the Berggren
+tree is a cheap low-discrepancy sampler with nothing to align to N's factors.
+Consistent with the alethean.org pkg 694 impossibility framework and the
+Berggren-tree orthogonality memory.
+
+**Conclusion.** BERGGRENCERT completes the round-8 subagent batch (4/4: POLYFACT,
+MIXROOT, JACWALK, BERGGRENCERT). Eight rounds of subagent hypotheses now closed
+(~40 total). No breakthrough.
