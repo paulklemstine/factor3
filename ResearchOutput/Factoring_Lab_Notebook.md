@@ -5419,3 +5419,26 @@ pattern in a new (geometric/modular) setting.
 
 **Conclusion.** CUSP-INDEX adds a modular-geometric free-witness (index of
 Gamma_0(N)); the subagent's cusp formula corrected. No breakthrough.
+
+---
+
+## Part 45 — Experiment TOWER-LIFT: Hensel tower over N^k (loop iteration)
+
+**Hypothesis (round-2 subagent #3).** Z/N^kZ ~= Z/p^kZ x Z/q^kZ. For f(x)=x^2-1,
+count solutions c_k mod N^k. Claim: the lift sequence might carry a per-prime
+signature. Prediction: NO — f'(u)=2u is a unit mod N, so Hensel lifting is
+unique; c_k = c_1 = gcd(2,p-1)gcd(2,q-1) (KROOT) for all k.
+
+**Experiment (verified for N = 15, 21, 33, 143):**
+1. c_1 = c_2 = c_3 = 4 for all N — CONSTANT (unique Hensel lifts).
+2. c_1 = gcd(2,p-1)*gcd(2,q-1) = 4 (the level-1 KROOT value).
+3. f = x^2 - N mod N^2: 0 solutions (double root mod p and q; no lift).
+
+**Barrier assessment.** REFUTED — the Hensel tower carries NOTHING beyond the
+level-1 KROOT value. When f'(root) is a unit mod N (the generic case), lifting
+is unique and c_k is constant; no per-prime signature emerges. When f' is NOT
+invertible (double roots), no lift exists. The "tower" is a decoupling no-op —
+consistent with the subagent's two-modulus decoupling lemma.
+
+**Conclusion.** TOWER-LIFT confirms: lifting to higher p-adic levels adds no
+factor information beyond level 1. No breakthrough.
