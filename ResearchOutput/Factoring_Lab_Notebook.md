@@ -7156,3 +7156,31 @@ honest, complete result of the combining directive.
 **Conclusion.** The program's pieces combine into more capable, adaptive
 algorithms, but the barrier framework is robust to combination. No
 complexity-class breakthrough from combining.
+
+---
+
+## Part 105 — Experiment COMBRANK: MPS bond dimension of Shor's comb state (de-quantization test)
+
+**Source.** User-provided research: "De-Quantizing Quantum Mechanics:
+Mathematical Frameworks for Classical Emulation of Quantum Algorithms"
+(tensor-train QFT emulation, Theorem 3: O(n D^2) classical QFT on low-rank
+states). Published as GitHub issue #46. The key question: is Shor's comb state
+low-rank (de-quantizable)?
+
+**Experiment (COMBRANK/COMBRANK2).** Computed the max Schmidt rank (MPS bond
+dimension D) of the comb state c_x = [x == x0 mod r].
+1. For small PRIME r (37, 53, 89, 127): D = r — O(r)-sealed.
+2. For realistic orders in Shor's 2n-qubit register (r ~ Theta(N), ~N spikes):
+   D ~ N (the number of spikes) — O(N)-sealed (barrier 4).
+3. For SMOOTH orders (120, 360, 720, ...): D is LOW (8-32) — de-quantizable,
+   but smooth orders are the p-1 method weakness (barrier 8).
+
+**Barrier assessment.** The de-quantization paper's Theorem 3 (tensor-train QFT
+emulation) is mathematically real but does NOT de-quantize Shor for the
+factoring-relevant case: the comb state's MPS bond dimension is O(N) (sealed at
+barrier 4). It only works for smooth orders (the p-1 weakness, barrier 8).
+The quantum exception (Shor bypassing barrier 4) survives de-quantization.
+
+**Conclusion.** COMBRANK: de-quantization of Shor fails for factoring-relevant
+orders. Consistent with the barrier framework and the quantum-exception
+localization. The user-provided angle was tested and priced.

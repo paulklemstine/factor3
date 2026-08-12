@@ -999,6 +999,12 @@ hints, rho general). Combining synthesis: HYBRID/RESCOMB/RESGUIDE/COMBINED all
 "more than the sum" in capability/information, none in complexity (floor + seal
 intrinsic). No breakthrough from combining.
 
+**Iteration 71 experiment (COMBRANK — de-quantization test).** Shor's comb
+state MPS bond dimension: D ~ r (prime orders) and D ~ N (realistic orders in
+Shor's register) — O(N)-sealed (barrier 4); low rank only for SMOOTH orders
+(p-1 weakness, barrier 8). Tensor-train QFT emulation does NOT de-quantize
+Shor for the factoring case. The quantum exception survives.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1369,6 +1375,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v134 — 2026-08-11. Based on 358 computational experiments, an
+*Assessment v135 — 2026-08-11. Based on 359 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
 formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, and SCHINZEL.*
