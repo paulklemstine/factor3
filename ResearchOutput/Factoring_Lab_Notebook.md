@@ -8751,3 +8751,21 @@ Script: /tmp/exp_ecmordernull.py.
 **Verdict.** CONFIRMED null (negative for factoring), with a genuine structural refinement: the ECM-order invisibility is a NON-CM phenomenon. The CM curve leaks exactly the p+1 divisibility of the pair (symmetric, weak, ~40× under p−1's 0.313), never a single factor (asym all null, barrier 2); the smoothness stays invisible (barrier 2); the CM structure is p-arithmetic-orthogonal (atomic law, barrier 5); the exact order mod N is sealed (CRT split needed, barrier 6); every piece is Gauss (1801)/ECM (1987)/p+1 (1982) — known methods (barrier 8). Even choosing the curve so its order degenerates to p+1 on half the primes restores only the abelian channel already closed at round-16 #2. Round-17 1/1 done.
 Now 402 experiments. Assessment v178. Paper 67, issue #83.
 Script: /tmp/exp_cmecmorder.py.
+
+---
+
+## Part 149 — CM-ECM-GENERAL (round-17 #2, exp 403, v179)
+
+**Hypothesis.** CM-ECM-ORDER (round-17 #1, paper 67) showed the Q(i) CM curve's ECM order leaks a weak symmetric residue shadow (a_p=0 on inert p≡3 mod 4 → #E=p+1 there). Generalize to the SECOND CM field Q(√−3) — the j=0 curve y²=x³+1 (End=ℤ[ω]) — and stress-test with a control paper 67 lacked: this curve has RATIONAL 3-torsion ((0,±1) over Q), so 3 | #E UNCONDITIONALLY. If the shadow is real only when the event is conditional, the ℓ=3 shadow here should be I=0 EXACTLY despite both halves individually carrying p−1-strength class-OR structure; at safe probes the shadow should be the union-diluted inert-class OR channel; and the split-half Hecke term should be hidden at good primes but visible at the ramified prime's powers.
+
+**Part A — exact structure.** Inert collapse: a_p = 0 on 2018/2018 primes p ≡ 2 mod 3 (exact); P(a_p=0)=0.504 (CM 1/2). Unconditional 3-divisibility: 3 | #E_j0(F_p) on 2000/2000 primes p≠3 (rational 3-torsion). Atomic trace law: P(x=0)=0.504, P(|x|<0.5)=0.670, mean-sq=0.244. Point-count self-check OK.
+
+**Part B — the shadow (paired 12000 semiprimes, 400-shuffle null):** ℓ=3: inert-class OR 0.3109, split-only 0.3158, FULL **0.0000** (null max 0.0000) — DEGENERATE, the union is a constant; ℓ=5: FULL 0.0030 (3.8× null max 0.0008) ≈ inert-class 0.0032; ℓ=7: 0.0010 at null; ℓ=9: FULL 0.0120 (7.1× null max 0.0017) but BELOW inert-class 0.0174 (union-dilution); ℓ=11: 0.0006 at null. Controls: p−1 OR 0.302, p+1 OR 0.321.
+
+**Part C — mechanism.** Split-half Hecke term: ℓ=5 z=−0.31 (good prime, HIDDEN); ℓ=9=3² z=+24.5 (RAMIFIED 3, VISIBLE); ℓ=27=3³ z=+2.6 (weakly positive). The 3-adic Hecke conductor is small because 3 ramifies in Q(√−3) — refines paper 67's "split-half GL₂-hidden" to "hidden at good primes". Q(i) cross-check reproduces paper 67: FULL 0.0048/0.0053 at ℓ=3/5 vs inert-class refs 0.0143/0.0028 — the dilution law holds for both CM fields.
+
+**Part D — sealed.** Asym (which-factor) null (0.0002/0.0012 at ℓ=5/7); smoothness OR sealed (0.0006/0.0011); generic control null; on the inert half #E=p+1 exactly so ECM-on-j0 IS the p+1 method; the visible ℓ=9 channel is a residue dial on class 8 mod 9 (QRLEAK family).
+
+**Verdict.** CONFIRMED null with three measured refinements: (1) the rational-torsion degeneracy — a curve can carry a residue-visible abelian congruence on its ECM order that reveals EXACTLY zero bits (the shadow is real only when conditional); (2) the union-dilution law — the CM shadow ≤ the inert-class OR channel, never exceeding the p−1/p+1 channel; (3) the 3-adic Hecke visibility — the split-half Hecke term is hidden at good primes but visible at the ramified prime's powers. Barriers 2/5/6/8. Round-17 2/2 done.
+Now 403 experiments. Assessment v179. Paper 68, issue #84.
+Script: /tmp/exp_cmecmgeneral_final.py.
