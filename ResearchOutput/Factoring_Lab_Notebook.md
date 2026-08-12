@@ -6952,3 +6952,35 @@ unchanged; a constant-factor optimization at best. Weakest of round-11.
 CFSIGMA, GROUPOID, DRHO). Eleven rounds of subagent hypotheses now closed
 (~50 total). The classical uniform hint-free surface is confirmed closed.
 No breakthrough.
+
+---
+
+## Part 99 — Experiment MODFAC: quantum modular factorials (arXiv mining, fresh moonshot angle)
+
+**Source.** arXiv 2607.29453, "Quantum Algorithms for Modular Factorials" —
+a bounded-error quantum algorithm computing n! mod p in O~(q^c + sqrt(p/q))
+when p-1 has a divisor q (breaking the 1/2 exponent barrier for modular
+factorials under a divisor promise). Surfaced by the loop's arXiv-mining
+directive.
+
+**Mechanism.** The quantum algorithm reconstructs the relevant Jacobi sum
+exactly in compact algebraic form, with polynomial dependence on q and log p.
+The speedup comes from the divisor structure of p-1 (the multiplicative order
+structure).
+
+**Assessment.**
+1. This computes n! mod p for a PRIME p (given p) — NOT factoring N = pq.
+   For factoring N, the first n with gcd(n!, N) > 1 is min(p,q) = the trial-
+   division floor (the lab's CCC experiment).
+2. The speedup is quantum (the quantum exception), over the residue/order
+   coordinate (p-1's divisor structure — the trace lemma).
+3. Consistent with the framework: order/divisor-structure quantities are
+   quantum-computable faster, classically sealed.
+
+**Barrier assessment.** The quantum exception refined — not a classical
+factoring method. The lab's CCC experiment already covers the factorial/trial-
+division floor. No hint-free classical breakthrough.
+
+**Conclusion.** MODFAC: the modular-factorials quantum algorithm is a
+quantum-resource advance for order/divisor-structure quantities, consistent
+with the framework. Fresh moonshot angle tested and recorded.

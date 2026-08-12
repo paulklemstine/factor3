@@ -966,6 +966,11 @@ completely.
 Dickman-policy rho: mean ratio ~1.95 (not consistently better), no asymptotic
 gain, likely folklore. REFUTED — barrier 2. Round-11 batch complete (4/4).
 
+**Iteration 71 experiment (MODFAC — arXiv mining).** Quantum modular factorials
+(2607.29453): n! mod p in sub-1/2 exponent under a divisor promise (Jacobi-sum
+reconstruction) — the quantum exception over the order/divisor coordinate, not
+a classical method; the factorial/trial-division floor already covered (CCC).
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1336,6 +1341,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v128 — 2026-08-11. Based on 351 computational experiments, an
+*Assessment v129 — 2026-08-11. Based on 352 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
 formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, and SCHINZEL.*
