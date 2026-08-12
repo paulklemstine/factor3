@@ -6791,3 +6791,29 @@ volume is the witness count). Corroborates OPO-FAC with a fresh arXiv source.
 **Conclusion.** BINOPT: the binary-optimization family (PCE, QAOA, Ising,
 annealing) all reduce to the 2^L-modes-are-witnesses structure. No hint-free
 classical breakthrough.
+
+---
+
+## Part 93 — Experiment HKW-VERIFIED: independent confirmation of the spectral free-witness
+
+**Follow-up.** Independent verification of the arXiv-mining subagent's HKW
+finding (arXiv 2601.02518): p_n(e) = (1/r) sum_k lambda_k^n on the dyadic
+Cayley graph recovers r = ord_N(b) from a SINGLE heat-kernel value.
+
+**Verification (N = 143, 221, 899; b = 2, 3; n = 8*(M+1)^2 steps).**
+1. ALL 6 cases recover r EXACTLY: round(1/p_n(e)) = r (60, 15, 24, 48, 140,
+   420). p_n(e) converges to 1/r (verified to ~1e-7).
+2. Note: with the minimal n = 2(M+1)^2, recovery was PARTIAL (1/6 exact) — the
+   mixing bound requires a larger constant; at 8x the step count, recovery is
+   exact in all cases.
+3. p_n(e) is a sum over ALL r eigenvalues, r | phi(N) ~ N — O(N) aggregation
+   (barrier 4). The spectral readout is a NON-MULTIPLICATIVE free-witness.
+
+**Barrier assessment.** CONFIRMED: the heat-kernel value is the first SPECTRAL
+(non-multiplicative) free-witness, extending paper 16's CRT-multiplicative
+classification, sealed by O(N) aggregation. This sharpens the barrier-4 proof
+target (aggregation necessity holds beyond the multiplicative class).
+
+**Conclusion.** HKW-VERIFIED: the spectral free-witness is independently
+confirmed. The arXiv push produced a genuine extension of the free-witness
+classification.
