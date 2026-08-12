@@ -7023,3 +7023,45 @@ hint-free classical breakthrough.
 
 **Conclusion.** SMOOTHSUBSUM: a practical QS/NFS collection heuristic, priced as
 a constant-factor improvement. Fresh angle tested and recorded.
+
+---
+
+## Part 101 — Experiment MOONSHOT-SWEEP: ultracode workflow — 5-angle arXiv mining, judge, tests
+
+**Program.** The ultracode-orchestrated moonshot workflow (9 agents, 344 tool
+calls): 5 parallel arXiv-mining agents (quantum-sim, classical-new,
+lattice-crypto, ML-AI, spectral-analytic), a judge, and 3 experiment agents.
+
+**Mined (25 findings across 5 angles).** Notable: Forgiving quantum modular
+exponentiation (2405.17021 — orbit-only-correct truncated operators still
+factor; a QUANTUM-SPECIFIC resource: the state is orbit-concentrated, not
+atomic-uniform); Quantum S-unit computation (2510.02280 — internal
+short-generator hints, Coppersmith fuel generated INSIDE the computation,
+reframing 'external hint'); Quantum lower bound for class-group DLP
+(2506.07640 — where the quantum exception STOPS: structure computable,
+DLP exponentially hard); rank-3 lattices/second vector (2512.19076);
+multiplicative relations mod n (2211.06821); discrete Gaussian (2608.03220);
+random-position bit leakage + Coppersmith (2406.20071).
+
+**Judge ranked 3; all 3 TESTS: consistent-with-framework.**
+1. Kernel-subspace adiabatic (2602.04740) -> barrier 6 (circularity: the
+   product-kernel ker(H_LP) = {(p,q),(q,p)} IS the answer set) + barrier 3/4
+   (noise floor unchanged; no encoding family pushes density above c/sqrt(N)).
+2. Hyperbolic-sieve union sizes as elliptic Frobenius traces (2606.13018) ->
+   barrier 4 (cross-modulus O(N) aggregation); per-prime value corroborates
+   the trace-lemma residue classification (3530/3530 exact).
+3. Transformer modular-exponentiation transfer (2506.23679) -> the
+   order-recovery seal (barrier 5/HKW heat-kernel): no cross-N transfer, no
+   gain over uninformed baselines; residual is only the p-1/barrier-8 weakness.
+
+**Barrier assessment.** The moonshot sweep CONFIRMS the exhaustion from 5 fresh
+angles: no candidate bypasses a barrier. The genuinely new content: the
+forgiving-mod-exp and S-unit results refine the QUANTUM exception (orbit-
+concentrated resources, internal hint generation); the class-group-DLP lower
+bound formally bounds where the quantum exception stops (structure computable,
+DLP hard). All classical candidates collapse to known barriers.
+
+**Conclusion.** MOONSHOT-SWEEP: the ultracode sweep confirms the classical
+surface is closed; the quantum exception is further refined (orbit-concentrated
+states, internal hints, structure-vs-DLP boundary). No hint-free classical
+breakthrough.
