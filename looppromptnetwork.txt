@@ -1,0 +1,31 @@
+# NETWORK/LLM RESEARCH LOOP — cron prompt (started 2026-08-12; replaces the factoring loop)
+
+Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-state.md):
+(1) propose a NEW testable neural-network / LLM hypothesis on ANY improvement axis —
+    compression (quantization, pruning, low-rank, distillation), speed (inference,
+    attention cost, sparse methods), depth (scaling, gradient flow, residual stream),
+    performance (generalization, loss curves, architecture), interpretability
+    ("pulling the formula out of the black box" is ONE example, not the focus), or any
+    other novel, potentially world-class angle — the loop should EXPLORE ALL of these,
+    not settle on one;
+(2) FIRST scan the Catalog for prior work (alethean.org/package_index.js + any local
+    catalog) so we build on / do not duplicate prior results;
+(3) implement and run a concrete PyTorch experiment in /tmp (CPU-feasible);
+(4) validate honestly against the network-loop barriers:
+    (a) circularity (did we just recover what we injected?),
+    (b) known-method-in-disguise (re-labeled existing technique?),
+    (c) toy-scale (does it survive nontrivial sizes/domains?),
+    (d) data leakage (test signal reaching training?),
+    (e) variance/reproducibility (law holds across seeds/widths/data?),
+    (f) measurement errors (correct metrics, statistics, nulls),
+    (g) baseline unfairness (compared against fair strong baselines),
+    (h) practical relevance (real win, not just toy);
+(5) record: append notebook Part, bump assessment version+count, write paper to
+    NetworkMathematics/ if novel, publish as GitHub issue (label approved-direction) at
+    paulklemstine/Lean, commit+push;
+(6) iterate. If the loop is already complete, stop and report.
+
+# LAB PROTOCOL (same rigor as the factoring lab): exact measurable laws over a clean
+# hypothesis, honest negative results recorded, all 8 barriers checked every iteration,
+# commit+push each iteration with Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>.
+# Status: NET-1 in progress (compression axis, spectral-quantization law).

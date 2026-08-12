@@ -1,0 +1,12 @@
+# FACTORING RESEARCH LOOP — cron prompt (paused 2026-08-12 at round-23 #1 done, 414 experiments, v190)
+
+Run one iteration of the FACTORING RESEARCH LOOP (per memory file factoring-lab-state.md):
+(1) propose a NEW testable factoring hypothesis — next up round-15 #1 gcd-moment (S2 = N²+3N+1+(N−1)s−s² recovers the trace s=p+q via O(N) prefix mean), or a fresh angle;
+(2) implement and run a concrete Python experiment in /tmp (mine arXiv/alethean.org for angles if useful);
+(3) validate honestly against the 8 barriers;
+(4) record: append notebook Part, bump assessment version+count, write paper to NewMathematics/ if novel, publish as GitHub issue (label approved-direction) at paulklemstine/Lean, commit+push;
+(5) iterate. If the loop is already complete, stop and report.
+
+# STATUS NOTE (2026-08-12): factoring loop is PAUSED by request — loop now targets neural networks/LLMs
+# (see looppromptnetwork.txt and memory network-lab-state.md). Factoring state preserved as-is:
+# 414 experiments, assessment v190, papers 01–79, issues #16–#95, round-23 1/1 done.
