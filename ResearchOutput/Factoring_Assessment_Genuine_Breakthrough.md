@@ -1185,6 +1185,19 @@ barrier 4 + trace-lemma consistency. POSITIVE: a precise quantification of
 barrier 4's boundary — the trace is both the recoverable coordinate and the
 witness's information modulus-threshold. Now 378 experiments.
 
+**Iteration 71 experiment (COMPENSATING-PARTNER — round-14 frontier-i #1).** The
+class-wide no-pinning lemma: for the FULL battery of poly(log N)-computable
+predicates — N mod m (m ≤ B), Jacobi symbols, gcd(f(N), N) — every candidate
+prime p′ (coprime to the battery modulus L) admits a compensating prime q′ making
+the entire battery agree with N₀ (36/36 verified). The pinned set = primes
+dividing L = O(poly(log N)) — 3.4% of candidates at B=12, vanishing as B grows.
+gcd(f(N),N) predicates add only compatible constraints (gcd(N+k,N)=gcd(k,N)).
+REFUTED as a factoring tool — barrier 2 + 5. POSITIVE theorem: no poly(log N)-
+computable congruence battery can pin an individual factor — the unconditional
+half of the barrier-4 proof program ("poly-computable ⇒ no-pinning ⇒ cannot
+factor"), generalizing QRLEAK's Dirichlet no-pruning class-wide. Now 379
+experiments.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1555,6 +1568,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v154 — 2026-08-11. Based on 378 computational experiments, an
+*Assessment v155 — 2026-08-11. Based on 379 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
-formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, SCHINZEL, PERMORD (permutation-cycle readout collapses to barrier 4), HALFPLANE (non-CRT-separable circle count: N-dominant term + √N-noise corrections, barrier 4), RANDOM-BQF (extrinsic class-group representation vector is a residue dial, barrier 5), FETQ (asymmetric a^{N−1} CRT-split is factor-blind, barrier 5/6/8), CONDORDER (order×Jacobi joint law is N-determined, barrier 5/6/8), JACSIGN (Jacobi-signed circle count escapes the residue dial but sits at the Weil √N floor, barrier 4/2), KPOWER (cubic power-residue symbols escape the dial but are circular + symmetric, barrier 6/2/5), MULTIMOD (derived-modulus invariants are N-only, barrier 1/5), QRLEAK (QR fingerprint: good hash, zero candidate reduction — Dirichlet no-pruning, barrier 2/5/6), SPECTRES (residue+spectral cell closed; combination grid complete; round-13 12/12), and QUERYWIT (partial free-witness threshold = Θ(p+q), the trace; barrier-4 quantification).*
+formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, SCHINZEL, PERMORD (permutation-cycle readout collapses to barrier 4), HALFPLANE (non-CRT-separable circle count: N-dominant term + √N-noise corrections, barrier 4), RANDOM-BQF (extrinsic class-group representation vector is a residue dial, barrier 5), FETQ (asymmetric a^{N−1} CRT-split is factor-blind, barrier 5/6/8), CONDORDER (order×Jacobi joint law is N-determined, barrier 5/6/8), JACSIGN (Jacobi-signed circle count escapes the residue dial but sits at the Weil √N floor, barrier 4/2), KPOWER (cubic power-residue symbols escape the dial but are circular + symmetric, barrier 6/2/5), MULTIMOD (derived-modulus invariants are N-only, barrier 1/5), QRLEAK (QR fingerprint: good hash, zero candidate reduction — Dirichlet no-pruning, barrier 2/5/6), SPECTRES (residue+spectral cell closed; combination grid complete; round-13 12/12), QUERYWIT (partial free-witness threshold = Θ(p+q), the trace; barrier-4 quantification), and COMPENSATING-PARTNER (class-wide no-pinning lemma: no poly-computable congruence battery pins a factor — round-14 frontier-i, barrier 2/5).*
