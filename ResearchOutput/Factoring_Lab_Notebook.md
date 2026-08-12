@@ -7833,3 +7833,48 @@ joint law = CONDORDER) — every pairwise combination of the three sealed famili
 (residue, order, spectral) is closed. ROUND-13 BRAINSTORM COMPLETE (12/12
 hypotheses tested, all consistent with the barrier framework). Now 377
 experiments. Assessment v153. Script: /tmp/exp_spectres.py.
+
+---
+
+## Part 124 — Experiment QUERYWIT: partial free-witness factor-recovery threshold
+
+**Hypothesis (frontier i, barrier-4 boundary).** The free witness sigma_2(N) =
+(1+p²)(1+q²) factors N via p+q (SIGK). Quantify how much of the witness is
+NEEDED: given sigma_2(N) mod m (a partial value), how many candidate t = p+q
+survive, and what is the minimum m for unique factorization? Claim: the threshold
+is the TRACE coordinate p+q, and the aggregation cost is independent of how much
+of the witness is needed.
+
+**Experiment (24 semiprimes + 30 across 14–26 bits; sigma_2 mod m candidate
+recovery).**
+1. **Full sigma_2 factors N (24/24):** s = (p+q)² = sigma_2 − 1 + 2N − N², t =
+   isqrt(s), p,q = roots of x²−tx+N. Re-verified.
+2. **Partial threshold = Θ(p+q):** the minimum modulus m such that exactly one
+   candidate t′ = p+q (in [2√N, 4(p+q)]) with t′² ≡ (p+q)² mod m factors N is
+   m_min = 5·(p+q) — EXACTLY 5.00×(p+q) across all bit lengths 14–26 (the
+   constant is candidate-window dependent, but the ORDER is the trace). The
+   candidates t′ = (p+q)+jm almost never factor (disc = (p−q)²+2jm(p+q)+j²m² is
+   a square only for j=0 generically), so the true t is isolated once m spans
+   the window.
+3. **The factor-information is concentrated in the low ~¼ of sigma_2's bits:**
+   sigma_2 ≈ N² has 2·log₂(N) bits; the needed modulus m* ≈ p+q has
+   (1/2)·log₂(N)+1 bits — about a quarter. For unbalanced p (small), p+q ≈ N/p
+   grows, requiring more bits (the trace coordinate again).
+4. **BUT the aggregation is independent of the need:** computing sigma_2 mod m
+   requires computing sigma_2 (the full divisor sum) — O(N)-sealed (barrier 4).
+   There is no way to get the partial value cheaper than the full one.
+
+**Barrier assessment.** REFUTED as a factoring shortcut — barrier 4 (the witness
+value is O(N)-sealed regardless of how many bits are needed) + trace-lemma
+consistency (the threshold IS the trace coordinate p+q). POSITIVE content: a
+precise quantification of barrier 4's boundary — the free witness's
+factor-information is concentrated in its value mod (the trace coordinate), and
+the aggregation cost is independent of the information actually needed.
+
+**Conclusion.** QUERYWIT: the partial-free-witness factor-recovery threshold is
+Θ(p+q) = the trace coordinate (verified m_min/(p+q) = 5.00 across 14–26 bits),
+and computing any part of the witness costs the full O(N) aggregation. This
+connects barrier 4 to the trace lemma exactly: the trace is both the only
+recoverable coordinate and the modulus-threshold of the witness's factor
+information. A frontier-(i) quantification. Now 378 experiments. Assessment
+v154. Script: /tmp/exp_querywit.py.
