@@ -6997,3 +6997,29 @@ generalization to NEW integers' prime structure) — consistent with DIFFUSE/MLP
 Not a factoring attack; covered by the framework. The mining continues to
 confirm the exhaustion: every fresh angle (annealing, QUBO, ML, quantum) reduces
 to known barriers or the quantum exception.
+
+---
+
+## Part 100 — Experiment SMOOTHSUBSUM: smooth subsum search (arXiv mining, workflow-surfaced)
+
+**Source.** arXiv 2301.10529, "Smooth Subsum Search: A heuristic for practical
+integer factorization" — surfaced by the moonshot workflow's arXiv mining.
+
+**Mechanism.** QS/NFS find smooth values of polynomials over a factor base.
+Instead of the sieving procedure, the paper proposes a "subsum search" heuristic
+to quickly identify smooth values among candidates.
+
+**Assessment.**
+1. This optimizes the SMOOTHNESS-COLLECTION phase of QS/NFS — a practical
+   constant/prefactor improvement, NOT a complexity-class change.
+2. The smoothness bound still sets the subexponential exponent (L_N[1/2] for
+   QS, L_N[1/3] for GNFS) — barrier 8 (known method in disguise, the QS/NFS
+   collection phase, like the lab's HCD/SLC/DRHO pricing).
+3. Consistent with the framework: practical heuristic, no exponent change.
+
+**Barrier assessment.** Barrier 8 — the smoothness-collection phase is the
+QS/NFS structure; the heuristic improves the constant, not the exponent. No
+hint-free classical breakthrough.
+
+**Conclusion.** SMOOTHSUBSUM: a practical QS/NFS collection heuristic, priced as
+a constant-factor improvement. Fresh angle tested and recorded.
