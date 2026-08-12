@@ -8536,3 +8536,44 @@ ratio↔product map is the factorization step. Barrier 5 (structural
 orthogonality) sharpened; barrier 8 (tree = Fermat in a different order).
 Now 391 experiments. Assessment v167. Paper 56, issue #72. Scripts:
 /tmp/exp_berggrenprice.py, _3, _4.
+
+## Part 138 — Experiment GCD-MOMENT: the semiprime gcd-moments M_k = Σ_{x≤N} gcd(x,N)^k are a closed trace-witness family, k=1 optimal (cron loop round-15 #1)
+
+**Hypothesis.** The k-th gcd-moment M_k = Σ_{x=1}^N gcd(x,N)^k recovers the
+trace s = p+q from a closed form in (N, s) alone; the brainstorm's S2 =
+N²+3N+1+(N−1)s−s² is the k=2 case. Whether any k escapes the free-witness
+barriers (Ω(N) aggregation, symmetry, circularity).
+
+**Experiment.** Verified the exact closed forms by enumeration on small
+semiprimes and symbolically: via the Newton power-sum recurrence
+P_j = p^j+q^j = s·P_{j−1} − N·P_{j−2} (P_0=2, P_1=s),
+M_k = Σ_{d|N} d^k φ(N/d) = N^k + N·P_{k−1} − P_k + N − s + 1.
+M1 = 4N−2s+1; M2 = N²+Ns+3N−s²−s+1 = N²+3N+1+(N−1)s−s² (matches S2);
+M3 = N³−2N²+Ns²+3Ns+N−s³−s+1; M4 = N⁴−3N²s−2N²+Ns³+4Ns²+N−s⁴−s+1.
+Root structure of P_k(s)−M_k=0: k=1 unique root s; k=2 roots {s, N−1−s};
+k=3 {1−s, s, N−1}; k=4 {s, N+1} + complex pair. In every case s is the UNIQUE
+root in (0, N/2] — all spurious roots are ≥ N−1−s > N/2 or negative, so the
+size discriminator s < N/2 disambiguates trivially (the brainstorm's "root
+ambiguity" concern is resolved by size; the real cost is in computing M_k).
+
+**Findings.** (1) Closed forms exact: M1..M4 on 12 semiprimes 48/48; M5,M6
+12/12. (2) Trace recovery: s is always the unique root in (0, N/2]. (3)
+Monte-Carlo sampling cost to pin s to ±1 grows as N^{2k−1}: k=1 ~2×10³
+samples (~4N, same order as the deterministic O(N) sum — the free-witness
+floor), k=2 ~3×10¹³, k=3 ~10²³, k=4 ~10³⁰ — sampling cannot beat barrier 4.
+(4) Symmetry: M_k = F_k(N, s) for all k — p,q enter only through s and N
+(barrier 2: no asymmetric content, s alone never splits N). (5) M1 =
+4N−2s+1 = Σ_{d|N} d·φ(N/d) is the classical gcd-sum identity (barrier 8).
+
+**Verdict.** CONFIRMED negative for factoring. The gcd-moment family is
+closed and fully solved: every moment is a free witness of the trace s (and
+uniquely recoverable, via the s < N/2 size cut), but computing any M_k is
+Ω(N) aggregation (barrier 4) or circular (divisor set / closed form needs s,
+barrier 6), the content is symmetric in p,q (barrier 2), and the whole
+structure is the classical gcd-sum/Jordan-totient identity (barrier 8). k=1
+(M1 = 4N−2s+1, an O(N) gcd-scan) is the optimal moment of the family —
+consistent with TRACEPROFILE ("trace least-hidden") and QUERYWIT (threshold =
+Θ(p+q)); higher k are exponentially worse. No k escapes; the trace is the
+ceiling of what a symmetric free witness can carry, and s does not factor.
+Now 392 experiments. Assessment v168. Paper 57, issue #73.
+Script: /tmp/exp_gcdmoment.py.
