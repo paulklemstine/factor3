@@ -8196,3 +8196,56 @@ exactly ω(M#) jointly, s₁ = 1−N₁ exactly) where the factor is invisible �
 pin s. The trace lemma's witness is the most accessible symmetric residue
 target, and it remains unfactorable. Now 385 experiments. Assessment v161.
 Paper 50, issue #66. Script: /tmp/exp_traceprofile.py.
+
+## Part 132 — Experiment INTERVAL-HINT: the trace-set filter is exact but does not amplify (round-14 hypothesis 9)
+
+**Hypothesis.** Given an external interval hint s ∈ [s₀−E, s₀+E] on the trace,
+scanning 2E+1 candidates (testing Δ = s′²−4N square) factors N in O(E). Can the
+FREE trace-set filter (TRACEPROFILE) AMPLIFY this — prune wrong s′ by 2^(−ω(M#))
+and so reduce the scan? Contrast with the p-interval hint, whose residue filter
+should be empty (BITPROFILE zero-block).
+
+**Experiment (400 semiprimes, k = 24 (48-bit N); trace-set and p-set filters for
+ω = 0–20 primes; rejection-ordered interval scan with honest Δ-test /
+membership-test accounting; no-hint survivor enumeration over the full s-range).**
+1. **The trace-set filter is EXACT:** the true s survives for 400/400 semiprimes
+   at every ω up to 20 (never misses), and the survival fraction of wrong s′
+   equals 2^(−ω(M#)) EXACTLY (0.1233 vs 0.125 at ω=3; 0.0151 vs 0.0156 at ω=6;
+   0.0019 vs 0.0020 at ω=9; 0.0002 at ω=12).
+2. **The p-filter is EMPTY for real candidates:** for p′ coprime to M# (as every
+   prime is), survival = 1.0000 — zero pruning. The only "pruning" the p-residue
+   filter does is the coprimality condition, which is not information (every
+   candidate prime already satisfies it). This is the candidate-level zero-block:
+   p is congruence-invisible.
+3. **The interval scan is REFUTED as an amplifier:** the trace-filter reduces
+   Δ-tests from 8001 → 121.5 (ω=6), 2.9 (ω=12), 1.1 (ω=18) — exactly
+   (2E+1)·2^(−ω)+1 — but replaces them with ~1.9 membership-tests per candidate
+   (15 294–15 550 for the 8001 candidates). Total work is cost-parity or WORSE;
+   the full range must still be iterated (rejection-ordered filter visits every
+   candidate). The filter is an exact residue-consistency CHECK, not a search
+   accelerator.
+4. **No-hint search stays exponentially sealed:** trace-filter survivors over the
+   full s-range are 2^24 (ω=0), 2^19 (ω=6), 2^13.3 (ω=12), 2^7.4 (ω=18) — never
+   poly. Reducing to poly would need ω ~ k primes with M# ~ e^(k ln k),
+   super-exponential in the bits of N: the trace-set is Ω(N)-sealed (barrier 2/4).
+5. **The s-interval scan IS Fermat's method in disguise** (s′²−4N square ⟺
+   N = ((s′+d′)/2)((s′−d′)/2)) — barrier 8. The external interval E is a genuine
+   hint (frontier iii) but yields only O(E); sub-exponential factoring still
+   needs an external E at the Coppersmith scale.
+
+**Barrier assessment.** NOT a factoring breakthrough; REFUTED as an amplifier.
+Collapses to barrier 8 (the s-scan is Fermat-in-disguise) + barrier 2/4 (the
+trace-set residue channel is exponentially sealed: even the least-hidden
+symmetric invariant's residue filter cannot reduce the search below 2^(k−ω),
+and scaling ω to k needs M# ≫ N). EXTENDS DIAL-THRESHOLD: no residue filter —
+even the trace-set — amplifies or accelerates; it is an exact but information-
+useless consistency certificate. Positive: the exact 2^(−ω) pruning law, the
+400/400 never-miss exactness, the quantified p-filter emptiness (survival 1.0),
+and the honest Δ-test↔membership-test cost accounting.
+
+**Conclusion.** INTERVAL-HINT: the trace-set filter is exact (never misses the
+true trace, prunes wrong candidates by exactly 2^(−ω)) but information-useless
+for factoring — it cannot amplify an interval hint asymptotically, cannot find s
+from N alone, and the s-scan is Fermat in disguise. The residue channel of even
+the least-hidden invariant is Ω(N)-sealed. Now 386 experiments. Assessment v162.
+Paper 51, issue #67. Script: /tmp/exp_intervalhint.py.
