@@ -7184,3 +7184,35 @@ The quantum exception (Shor bypassing barrier 4) survives de-quantization.
 **Conclusion.** COMBRANK: de-quantization of Shor fails for factoring-relevant
 orders. Consistent with the barrier framework and the quantum-exception
 localization. The user-provided angle was tested and priced.
+
+---
+
+## Part 106 — Experiment DEQUANT: de-quantization of Shor assessed (research subagent)
+
+**Source.** User-provided de-quantization paper (published as issue #46) + a
+research subagent's rigorous assessment. Key question: can the tensor-train QFT
+emulation (paper Theorem 3) de-quantize Shor for factoring-relevant orders?
+
+**Results (subagent, 3780 verified cases + direct experiments).**
+(A) Comb-rank scaling: D = Theta(min(r, Q/r)) exactly; realistic orders
+    r ~ 2^n in a 2n-qubit register give D ~ r ~ N — O(N)-sealed (barrier 4).
+    Schmidt spectrum FLAT (incompressible — no decaying tail to truncate).
+(B) Full-circuit entanglement: the uniform superposition is rank 1 (not the QFT
+    input); the comb is D ~ r; the POST-QFT peaked state is ALSO D ~ r
+    (correcting the 'nearly a single basis state' assumption); the FULL Shor
+    state has Schmidt rank exactly r with entropy log2(r) — the whole circuit
+    is exponentially entangled.
+(C) No computational low-cost QFT emulation: automaton structure costs r states;
+    Fourier decomposition writes down r basis states; truncated-MPS emulation
+    fails catastrophically (TV ~ 0.5 at any poly D'); the only poly-time 'QFT of
+    the comb' is handed (r, x0) — baking in the answer.
+(D) Decisive: de-quantizing Shor = P = factoring. Every poly-low-rank regime
+    (small odd-part order, r near Q) coincides with a classically-EASY order.
+
+**Barrier assessment.** The quantum exception STANDS: the coherent superposition
+in the QFT is genuinely irreducible, barrier 4 (O(N) aggregation) is not
+bypassed classically by tensor networks. The user's de-quantization paper's
+Theorem 3 is mathematically real but inapplicable to Shor's factoring case.
+
+**Conclusion.** DEQUANT: Shor cannot be de-quantized for factoring-relevant
+orders. The tensor-network de-quantization angle is decisively closed.

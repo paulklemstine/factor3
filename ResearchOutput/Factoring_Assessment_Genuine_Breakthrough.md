@@ -1005,6 +1005,12 @@ Shor's register) — O(N)-sealed (barrier 4); low rank only for SMOOTH orders
 (p-1 weakness, barrier 8). Tensor-train QFT emulation does NOT de-quantize
 Shor for the factoring case. The quantum exception survives.
 
+**Iteration 71 experiment (DEQUANT — de-quantization assessed).** Shor's QFT
+cannot be de-quantized: comb and full Shor state have Schmidt rank r, flat
+incompressible spectra, entropy log2(r); every low-rank regime = classically-easy
+order; truncated-MPS emulation fails (TV ~ 0.5). De-quantizing Shor = P =
+factoring. The quantum exception stands. User paper published (issue #46).
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1375,6 +1381,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v135 — 2026-08-11. Based on 359 computational experiments, an
+*Assessment v136 — 2026-08-11. Based on 360 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
 formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, and SCHINZEL.*
