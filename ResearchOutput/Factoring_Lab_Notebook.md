@@ -7509,3 +7509,48 @@ factor-specific part is O(√N) noise (uncorrelated with p, q, p+q, |p−q|),
 sealed by the O(N) aggregation. Round-13 hypothesis 2 validated and refuted.
 Now 369 experiments. Assessment v145. Scripts: /tmp/exp_halfplane.py,
 /tmp/exp_halfplane3.py, /tmp/exp_halfplane_eps.py.
+
+---
+
+## Part 116 — Experiment RANDOM-BQF: extrinsic class-group representation vector (round-13 brainstorm hypothesis 1)
+
+**Hypothesis (round-13 #1, the agent's most-plausible-positive path).** Attach an
+EXTRINSIC discriminant D (independent of N), compute the class group Cl(D) (poly
+|D|, no factoring), and measure the vector of representation counts
+r_Q(N) = #{(x,y) : Q(x,y) = N} over all reduced forms Q of discriminant D.
+Individual counts depend on whether p and q split in specific classes — i.e.
+(D/p) and (D/q) SEPARATELY, not just the N-computable product (D/N). Claim: the
+vector might separate factorization class-types (principal vs non-principal
+splitting) that share the same N mod |D| and the same total count.
+
+**Experiment (D = −20, h=2; D = −84, h=4; 2400 + 5626 semiprimes; direct
+representation enumeration).**
+1. **Class-splitting theory verified:** for D = −20, p ≡ 1,9 mod 20 is
+   represented by x²+5y² (principal, r=4); p ≡ 3,7 mod 20 by 2x²+2xy+3y²
+   (nonprincipal, r=4); p ≡ 11,13,17,19 mod 20 is inert (r=0).
+2. **The vector is a pure residue dial:** across 2400 semiprimes, the vector
+   (r₁(N), r₂(N)) is EXACTLY constant within each N mod 20 class — (8,0) for
+   N ≡ 1,9; (0,8) for N ≡ 3,7. PP vs NN factorization types (same N mod 20, same
+   (D/N) = 1) give IDENTICAL vectors: the class of N = p·q in Cl(D) (principal
+   for both PP and NN, since Cl ≅ Z/2) is determined by N mod |D|, and the
+   representation count is a function of that class alone.
+3. **D = −84 (h=4) confirms:** conditioned on (D/N) = 1 (both factors split), the
+   4-vector is constant per N mod 84; the only in-class variation is the
+   inert/split distinction (vector all-zero vs supported), which is the
+   N-computable Kronecker symbol (D/N). No factorization info beyond N.
+4. **Cost:** r_Q(N) requires O(√N/√|D|) enumeration per form — barrier 4
+   aggregation, but the value carries no factor information to extract.
+
+**Barrier assessment.** REFUTED — barrier 5 (the representation vector is a
+deterministic function of N's residue structure: N mod |D| and (D/N); it is
+factor-blind) + barrier 8 (the BQF-family repackaged: "each D is a residue
+dial"). The extrinsic class group adds no information beyond the residue dials
+already classified (BQF). The agent's positive path collapses: the class of the
+composite N in Cl(D) is N-determined, so individual (D/p), (D/q) are never
+recoverable from the vector.
+
+**Conclusion.** RANDOM-BQF: the extrinsic class-group representation vector is a
+residue dial, confirming the BQF classification from the class-group angle and
+closing the "extrinsic discriminant" corner of the free-witness taxonomy. Now 370
+experiments. Assessment v146. Scripts: /tmp/exp_randombqf.py,
+/tmp/exp_randombqf2.py.

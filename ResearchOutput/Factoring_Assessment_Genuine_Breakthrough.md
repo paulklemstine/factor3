@@ -1077,6 +1077,19 @@ floor (ε at the √N scale, no structured signal). Positive content: the paper-
 classification boundary is real — non-separable cuts create factor-variation only
 at the noise-floor scale. Now 369 experiments.
 
+**Iteration 71 experiment (RANDOM-BQF — round-13 brainstorm hypothesis 1).** The
+extrinsic class-group representation vector: for D = −20 (h=2) and −84 (h=4),
+compute r_Q(N) = #{(x,y): Q(x,y)=N} over all reduced forms Q of discriminant D
+(2400 + 5626 semiprimes). Class-splitting theory verified (p ≡ 1,9 mod 20 →
+x²+5y²; p ≡ 3,7 → 2x²+2xy+3y²; p ≡ 11,13,17,19 → inert). But the vector is a
+PURE RESIDUE DIAL: exactly constant per N mod |D| — (8,0) for N≡1,9; (0,8) for
+N≡3,7 (D=−20); constant per N mod 84 conditioned on (D/N)=1 (D=−84). PP vs NN
+factorization types at the same N mod 20 give IDENTICAL vectors — the class of
+N=pq in Cl(D) is N-determined. REFUTED — barrier 5 (vector = function of N's
+residue structure) + barrier 8 (BQF-family repackaged). Closes the extrinsic-
+discriminant corner; the agent's most-plausible-positive path collapses. Now 370
+experiments.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1447,6 +1460,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v145 — 2026-08-11. Based on 369 computational experiments, an
+*Assessment v146 — 2026-08-11. Based on 370 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
-formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, SCHINZEL, PERMORD (permutation-cycle readout collapses to barrier 4), and HALFPLANE (non-CRT-separable circle count: N-dominant term + √N-noise corrections, barrier 4).*
+formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, SCHINZEL, PERMORD (permutation-cycle readout collapses to barrier 4), HALFPLANE (non-CRT-separable circle count: N-dominant term + √N-noise corrections, barrier 4), and RANDOM-BQF (extrinsic class-group representation vector is a residue dial, barrier 5).*
