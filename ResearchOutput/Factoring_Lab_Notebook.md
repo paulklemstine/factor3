@@ -7554,3 +7554,43 @@ residue dial, confirming the BQF classification from the class-group angle and
 closing the "extrinsic discriminant" corner of the free-witness taxonomy. Now 370
 experiments. Assessment v146. Scripts: /tmp/exp_randombqf.py,
 /tmp/exp_randombqf2.py.
+
+---
+
+## Part 117 — Experiment FETQ: the asymmetric CRT-split of a^{N−1} mod N (round-13 brainstorm hypothesis 10)
+
+**Hypothesis (round-13 #10).** Q(a) = a^{N−1} mod N is computable in poly(log N)
+(fast exponentiation — NO aggregation). Its CRT components are asymmetric:
+Q(a) mod p = a^{q−1} mod p and Q(a) mod q = a^{p−1} mod q (the mod-p component
+uses the exponent q−1). If this single N-computable value carries factor signal
+beyond N, it is a genuine cheap witness (a breakthrough candidate).
+
+**Experiment (24 small N + 80 near-equal-N semiprimes at ~10⁷ + scaling).**
+1. **Asymmetric CRT decomposition VERIFIED 24/24:** Q(a) mod p = a^{q−1} mod p,
+   Q(a) mod q = a^{p−1} mod q, exactly (all N, all a ∈ {2,3,5}).
+2. **Q(a) carries NO factor signal:** across 80 near-equal-N semiprimes
+   (N ∈ [9.06M, 10.97M]), corr(Q(a), p), corr(Q(a), q), corr(Q(a), p+q),
+   corr(Q(a), |p−q|) ALL fall inside the 300-shuffle permutation null for a =
+   2,3,5 (obs ≤ 0.19, 95th ≈ 0.22; pct 0.08–0.97). corr(Q, N) is also ≈ 0 —
+   Q(a) is pseudorandom mod N. The asymmetric encoding is real but locked
+   inside the CRT: computing Q(a) mod p requires p (barrier 6).
+3. **The gcd variant is EULERGAP in disguise:** gcd(a^{N−1}−1, N) reveals a
+   factor iff ord_p(a) | q−1 (or vice versa); the reveal density ≈ g/p + g/q
+   with g = gcd(p−1, q−1) (measured: reveal/2000 tracks g; e.g. g=24 → 29/2000,
+   g=2 → 2-4/2000). Scaling: 14-bit 0.085, 18-bit 0.024, 22-bit 0.0063, 26-bit
+   0.0087 — the g-gain above the 1/p floor, exactly the EULERGAP structure.
+   The condition "ord_p(a) | q−1" is a p−1/q−1-smoothness fact.
+
+**Barrier assessment.** REFUTED — barrier 5 (Q(a) is a pseudorandom N-only
+function, factor-blind at near-equal N), barrier 6 (the asymmetric CRT components
+are unreadable without the CRT idempotents = factoring), barrier 8 (the gcd
+variant = EULERGAP/Fermat-pseudoprime, g = gcd(p−1,q−1) gain). Even a
+poly(log N)-computable value whose INTERNAL structure is genuinely asymmetric
+carries no extractable factor signal.
+
+**Conclusion.** FETQ: the asymmetric CRT-split of a^{N−1} is real (verified) but
+the value is factor-blind (barrier 5) and the split itself is unreadable
+(barrier 6); the only usable handle (gcd variant) is the p−1/q−1-smoothness
+structure (barrier 8). Closes the "cheap asymmetric exponent" corner: cheap
+N-functions are factor-blind even when asymmetric inside the CRT. Now 371
+experiments. Assessment v147. Script: /tmp/exp_fetq.py.

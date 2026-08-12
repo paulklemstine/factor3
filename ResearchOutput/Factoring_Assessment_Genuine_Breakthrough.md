@@ -1090,6 +1090,19 @@ residue structure) + barrier 8 (BQF-family repackaged). Closes the extrinsic-
 discriminant corner; the agent's most-plausible-positive path collapses. Now 370
 experiments.
 
+**Iteration 71 experiment (FETQ — round-13 brainstorm hypothesis 10).** The
+asymmetric CRT-split of a^{N−1} mod N: Q(a) = a^{N−1} mod N is computable in
+poly(log N) (no aggregation) and its CRT components are asymmetric — Q(a) mod p =
+a^{q−1} mod p, Q(a) mod q = a^{p−1} mod q (verified 24/24). BUT Q(a) carries NO
+factor signal: across 80 near-equal-N semiprimes (~10⁷), corr(Q, p/q/p+q/|p−q|)
+all within the permutation null for a = 2,3,5 (obs ≤ 0.19, 95th ≈ 0.22); Q(a) is
+pseudorandom mod N, and the asymmetric components are locked inside the CRT
+(computing Q(a) mod p requires p, barrier 6). The gcd variant gcd(a^{N−1}−1, N)
+= EULERGAP (reveal density g/p+g/q, g = gcd(p−1,q−1); measured reveal/2000
+tracks g). REFUTED — barrier 5 + 6 + 8. Closes the "cheap asymmetric exponent"
+corner: even a poly(log N)-computable value that is asymmetric inside the CRT is
+factor-blind. Now 371 experiments.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1460,6 +1473,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v146 — 2026-08-11. Based on 370 computational experiments, an
+*Assessment v147 — 2026-08-11. Based on 371 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
-formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, SCHINZEL, PERMORD (permutation-cycle readout collapses to barrier 4), HALFPLANE (non-CRT-separable circle count: N-dominant term + √N-noise corrections, barrier 4), and RANDOM-BQF (extrinsic class-group representation vector is a residue dial, barrier 5).*
+formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, SCHINZEL, PERMORD (permutation-cycle readout collapses to barrier 4), HALFPLANE (non-CRT-separable circle count: N-dominant term + √N-noise corrections, barrier 4), RANDOM-BQF (extrinsic class-group representation vector is a residue dial, barrier 5), and FETQ (asymmetric a^{N−1} CRT-split is factor-blind, barrier 5/6/8).*
