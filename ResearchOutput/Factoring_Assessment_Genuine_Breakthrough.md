@@ -1140,6 +1140,17 @@ REFUTED — barrier 6 + 2 + 5. Confirms NSPLIT's barrier-2 finding from the
 fingerprint angle; the power-character channel adds no poly(log N) handle. Now
 374 experiments.
 
+**Iteration 71 experiment (MULTIMOD — round-13 brainstorm hypothesis 6).** The
+derived-modulus battery: invariants (circle count C(M), lpf, ω) of derived moduli
+M = poly(N) (N±1, N²±1, Φ₃, 2N±1). gcd(N, M) = 1 for all (they share nothing);
+C(M) correlates 0.66–0.95 with N (a function of N); the factor-specific
+corr(C(M), |p−q|) is noise in every case (permutation nulls pass, n=40 residual
+control: obs ≤ 0.26 vs 95th ≈ 0.29–0.31); N±1 are degenerate (lpf = 2, always
+even); computing C(M) for N²+1/Φ₃ needs M's fresh factorization (barrier 4).
+REFUTED — barrier 1 (polynomial barrier confirmed: N-explicit moduli carry no
+factor signal) + barrier 5 + barrier 4. Closes the multi-modulus corner. Now 375
+experiments.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1510,6 +1521,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v150 — 2026-08-11. Based on 374 computational experiments, an
+*Assessment v151 — 2026-08-11. Based on 375 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
-formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, SCHINZEL, PERMORD (permutation-cycle readout collapses to barrier 4), HALFPLANE (non-CRT-separable circle count: N-dominant term + √N-noise corrections, barrier 4), RANDOM-BQF (extrinsic class-group representation vector is a residue dial, barrier 5), FETQ (asymmetric a^{N−1} CRT-split is factor-blind, barrier 5/6/8), CONDORDER (order×Jacobi joint law is N-determined, barrier 5/6/8), JACSIGN (Jacobi-signed circle count escapes the residue dial but sits at the Weil √N floor, barrier 4/2), and KPOWER (cubic power-residue symbols escape the dial but are circular + symmetric, barrier 6/2/5).*
+formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, SCHINZEL, PERMORD (permutation-cycle readout collapses to barrier 4), HALFPLANE (non-CRT-separable circle count: N-dominant term + √N-noise corrections, barrier 4), RANDOM-BQF (extrinsic class-group representation vector is a residue dial, barrier 5), FETQ (asymmetric a^{N−1} CRT-split is factor-blind, barrier 5/6/8), CONDORDER (order×Jacobi joint law is N-determined, barrier 5/6/8), JACSIGN (Jacobi-signed circle count escapes the residue dial but sits at the Weil √N floor, barrier 4/2), KPOWER (cubic power-residue symbols escape the dial but are circular + symmetric, barrier 6/2/5), and MULTIMOD (derived-modulus invariants are N-only, barrier 1/5).*

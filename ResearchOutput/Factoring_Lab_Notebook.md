@@ -7717,3 +7717,41 @@ dial (like JACSIGN) but are circular to compute and symmetric in their
 N-computable form. Confirms NSPLIT's barrier-2 finding from the fingerprint
 angle; the power-character channel saturates like the quadratic one. Now 374
 experiments. Assessment v150. Script: /tmp/exp_kpower.py.
+
+---
+
+## Part 121 — Experiment MULTIMOD: derived-modulus battery (round-13 brainstorm hypothesis 6)
+
+**Hypothesis (round-13 #6).** The polynomial barrier (LLL) predicts that any
+N-explicit derived modulus M = poly(N) shares only finitely many primes with N,
+so free-witness/order data at M (N±1, N±2, N²±1, Φ₃(N), 2N±1) should be N-only.
+Test: do invariants of derived moduli carry any factor signal about N's factors
+p, q?
+
+**Experiment (28 wide-band + 8 tight-band + 40 residual-control semiprimes;
+gcds, circle counts C(M), least-prime-factor and ω via trial division).**
+1. **gcd(N, M) = 1 for all derived moduli** (N+1, N−1, N²+1, Φ₃, 2N±1 all share
+   nothing with N — verified). Only the trivial N²+N shares N.
+2. **Wide-band: corr(C(M), N) is high (0.66–0.95)** — C(M) is a function of N
+   (each M = poly(N)); the corr(C(M), p) and corr(C(M), p+q) "signals" are the
+   N-confound (p ≈ √N varies with N over the wide range).
+3. **Factor-specific coordinate is noise:** corr(C(M), |p−q|) falls inside the
+   permutation null in every case (wide-band pct 0.26–0.99; residual-control
+   n=40: lpf and ω of 2N±1, Φ₃ all pass, obs ≤ 0.26 vs 95th ≈ 0.29–0.31).
+4. **Some invariants are degenerate:** N±1 are always even → lpf(N±1) = 2
+   (constant).
+5. **Computing C(M) for large derived moduli (N²+1, Φ₃) needs M's fresh
+   factorization** — as hard as factoring M itself (barrier 4/8).
+
+**Barrier assessment.** REFUTED — barrier 1 (the polynomial barrier: N-explicit
+derived moduli carry no factor signal, confirmed) + barrier 5 (the invariants are
+deterministic functions of N) + barrier 4 (computing the large-M invariants needs
+M's fresh factorization). The LLL prediction holds exactly: derived moduli
+M = poly(N) give no handle on N's factors.
+
+**Conclusion.** MULTIMOD: derived-modulus invariants are N-only — closing the
+multi-modulus corner of the round-13 list. The only way a derived modulus helps
+is if it shares a prime with N (gcd ≠ 1), which happens only for trivial M (like
+N²+N, gcd = N, no new info) or if M's factorization happens to share p — but M
+is coprime to N by construction for the nontrivial cases. Now 375 experiments.
+Assessment v151. Scripts: /tmp/exp_multimod.py, /tmp/exp_multimod3.py.
