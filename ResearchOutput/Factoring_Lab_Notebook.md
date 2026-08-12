@@ -7354,3 +7354,30 @@ the combination transfers information, not complexity.
 **Conclusion.** WITNESSORDER: the two free resources combine to pin p tighter
 (11 -> 2 ambiguous) — a genuine information win, bounded by the partial/sealed
 nature of both. No complexity breakthrough, but a real combination finding.
+
+---
+
+## Part 112 — Experiment SCALECASCADE: scaling the residue+order combination (scientific-method hypothesis 5)
+
+**Hypothesis (from WITNESSORDER's bounded gain).** Scaling the resources
+(more witness moduli + more detected order divisors) should reduce the joint
+ambiguity toward zero.
+
+**Experiment (40 semiprimes; 3 configs from small to large resources).**
+1. The ambiguity PLATEAUS at 5 (33 distinct) across all configs — scaling
+   does NOT reduce it.
+2. More witness moduli leak the same small-prime residues (no new info);
+   the detected order divisors are only the SMOOTH part of p-1 (large p-1
+   prime factors contribute nothing detectable).
+3. The combination cannot reach the general case.
+
+**Barrier assessment.** REFUTED as a general method — the residue+order
+combination is bounded by (a) the small-moduli residues (partial) and (b) the
+smooth-part order info. The general case (large p-1 prime factors) is
+unreachable. Consistent with barrier 4/8.
+
+**Conclusion.** SCALECASCADE: the combination is bounded, cannot scale to the
+general case. The residue/order family is now fully characterized: the free
+resources pin p's small-moduli residues and smooth-part order, but cannot
+advance beyond the smoothness/partial barrier. Scientific-method hypothesis 5
+validated and refuted.
