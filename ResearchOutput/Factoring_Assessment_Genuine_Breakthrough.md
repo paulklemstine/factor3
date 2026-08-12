@@ -982,6 +982,12 @@ mining (25 findings), judge, 3 tested candidates — ALL consistent-with-framewo
 Quantum exception refined (orbit-concentrated mod-exp, S-unit internal hints,
 class-group-DLP boundary). Confirms exhaustion. No breakthrough.
 
+**Iteration 71 experiments (HYBRID + RESCOMB — combining findings).** (1) probe+rho
+hybrid: best-of-both (large-g fast, general case), floor-bounded. (2) cross-
+witness residue combination: dramatically more informative (7->62 distinct) but
+residues partial and O(N)-sealed. Both "more than the sum" in capability, not
+complexity. No breakthrough.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1352,6 +1358,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v131 — 2026-08-11. Based on 354 computational experiments, an
+*Assessment v132 — 2026-08-11. Based on 356 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
 formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, and SCHINZEL.*

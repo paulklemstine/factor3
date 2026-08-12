@@ -7065,3 +7065,33 @@ DLP hard). All classical candidates collapse to known barriers.
 surface is closed; the quantum exception is further refined (orbit-concentrated
 states, internal hints, structure-vs-DLP boundary). No hint-free classical
 breakthrough.
+
+---
+
+## Part 102 — Experiments HYBRID + RESCOMB: combining the program's findings
+
+**Directive.** Combine the different ideas to make algorithms more than the sum
+of their parts.
+
+**HYBRID (probe + rho).** Combined the EULERGAP atomic probe (density g/p+g/q,
+fast when g=gcd(p-1,q-1) large) with Pollard rho (general birthday case).
+Result: the hybrid achieves BEST-OF-BOTH (adapts between the large-g and general
+cases), a genuine constant-factor win, but never beats the birthday floor
+asymptotically (barrier 2/4).
+
+**RESCOMB (cross-witness residue combination).** Combined the residue leaks of
+multiple free-witnesses (CIRC mod 2^k, KROOT k=3,5,7,11,15, BQF D=-4,-8,-12,
+-20,-24,-28,-40,-44). Result: the combined tuple is dramatically MORE
+informative than any single witness (7 -> 62 distinct tuples as witnesses are
+added), but ambiguity plateaus ~12 (the small-moduli residues are inherently
+partial) and each residue is O(N)-sealed to compute (barrier 4).
+
+**Barrier assessment.** Both combinations are GENUINELY "more than the sum" in
+specific senses — HYBRID achieves best-of-both coverage; RESCOMB collapses the
+candidate space — but neither breaks the framework: the birthday floor (2) and
+the O(N) sealing (4) are unchanged. The combinations transfer information and
+adaptivity, not complexity.
+
+**Conclusion.** The program's pieces combine into algorithms that are more
+capable than each part (best-of-both, information collapse) but bounded by the
+same floors. Continuing to try combinations.
