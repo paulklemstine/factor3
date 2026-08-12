@@ -1018,6 +1018,10 @@ Regev output distribution (r-parameterized, TV>=0.94 for r-free samplers) — AL
 collapse to barrier 4. De-quantizing Shor = P = factoring. Quantum exception
 maximally bounded.
 
+**Iteration 71 experiment (ORDDIV — scientific-method hypothesis 1).** Free
+r|t probes (gcd(b^t-1,N)) detect multiples of ord_p/ord_q: small orders are
+caught cheaply (p-1 weakness), large orders reveal nothing. REFUTED — barrier 8.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1388,6 +1392,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v137 — 2026-08-11. Based on 361 computational experiments, an
+*Assessment v138 — 2026-08-11. Based on 362 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
 formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, and SCHINZEL.*

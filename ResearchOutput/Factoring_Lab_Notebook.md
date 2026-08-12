@@ -7252,3 +7252,28 @@ STANDS. De-quantizing Shor = P = factoring.
 tensor networks (paper 31), the l1 heat-kernel, sparse transforms, lattice
 (Regev), and frequency-selective probes. No classical poly(log N) order-recovery
 exists without O(N) aggregation. The quantum exception is now maximally bounded.
+
+---
+
+## Part 108 — Experiment ORDDIV: order-divisibility probing (scientific-method loop, hypothesis 1)
+
+**Hypothesis.** The free probe gcd(b^t - 1, N) answers 'does r | t' for any t.
+Probing SMALL t (poly many) reveals r's divisor structure. Could this advance
+factoring beyond the p-1 weakness?
+
+**Experiment (N = 143, 899, 3599, 10403; b = 2; t in 2..40).**
+1. The probes detect t that are MULTIPLES of ord_p(b) or ord_q(b) (not all
+   divisors of r): e.g. N=143 (ord_p=10, ord_q=12) detects 10, 20, 30, 40.
+2. When the orders are LARGE (N=3599: ord_p=58, ord_q=60 > 40), the small-t
+   probes detect NOTHING.
+3. So the probing reveals only SMALL orders = the SMOOTH part of p-1, p+1.
+
+**Barrier assessment.** REFUTED — collapses to barrier 8 (known method: the
+p-1/p+1 smoothness weakness). The free probes reveal the smoothness structure
+of p-1, q-1; for general N (large-order), nothing is revealed. No poly speedup.
+
+**Conclusion.** ORDDIV: the order-divisibility probing is the p-1 weakness, not
+a general factoring method. The scientific-method cycle validated and refuted
+the hypothesis. Next hypothesis: what does this suggest? The probes are free
+but reveal only smooth orders — the frontier is the NON-smooth (general) case,
+which the barrier framework seals.
