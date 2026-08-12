@@ -8146,3 +8146,53 @@ information is superdense, and the only route through it is the full nonlinear
 inversion (factoring) itself. Now 384 experiments. Assessment v160. Paper 49,
 issue #65. Scripts: /tmp/exp_bitprofile.py, /tmp/exp_bitprofile2.py,
 /tmp/exp_bitprofile3.py.
+
+## Part 131 — Experiment TRACEPROFILE: the trace is the least-hidden symmetric invariant (round-14 hypothesis 7)
+
+**Hypothesis.** The trace s = p+q — the minimal factor-bearing witness (trace
+lemma) — has a DIFFERENT information profile from the factor p: p is
+congruence-invisible (I(p mod m; N mod m) = 0, BITPROFILE zero-block), but s is
+congruence-CONSTRAINED: s mod m is pinned to the trace-set S_m(N) = {x+y mod m :
+xy ≡ N mod m}. Test the contrast and map the trace's full pairwise profile.
+
+**Experiment (k = 12, 14; 32 640–380 628 semiprime pairs; mod-m mutual
+information, CRT-factorized trace-set sizes, full (k+2)×(2k) pairwise MI matrix).**
+1. **Factor invisible, trace constrained (exact):** I(p mod m; N mod m) ≈ 0 for
+   all m (0.0001–0.006); I(s mod m; N mod m) = 1.0000 bits at m=3 EXACTLY,
+   ~1.03–1.06 per odd prime m, 1.50 (m=8), 2.00 (m=16). |S_m| = (m+1)/2 for odd
+   primes (1.5, 2.5, 3.5, …), ~m/8 for 2-powers.
+2. **Joint trace-set is EXACTLY one bit per prime:** |S_M#(N)|/M# = 2^(−ω(M#))
+   (0.5011, 0.2509, 0.1260, 0.0628, 0.0313, 0.0157, 0.0078, 0.0039, 0.0020,
+   0.0010, 0.0005 — each new prime halves it), so I(s mod M#; N) = ω(M#) bits
+   exactly (1.00, 1.99, …, 10.99). The trace's prime-modulus residues are
+   ADDITIVELY independent: ω(M#) visible bits from N.
+3. **EXACT LOW-BIT THEOREM: s₁ = 1 − N₁** (holds for 300 000/300 000 pairs —
+   provable: N₁ = p₁+q₁ mod 2 with no carry from bit 0; s₁ = p₁+q₁+1 mod 2).
+   Measured I(s₁; N₁) = 1.000 bit. Partial: s₂ ≠ N₂ with prob 0.754 (I ≈ 0.19).
+4. **Trace is LESS superdense than the factor:** pairwise total 2.32–2.34 bits
+   vs H(s) = 10.6–12.6 → pairwise fraction 18.5–21.9% (factor: 4.8–6.0%).
+   Visible regions: the exact low-bit relations (N cols 1–2) AND the top-2
+   carry-out sliver (cols 2k−2, 2k−1: 0.38 + 0.64 bits) — unlike p, whose only
+   visible sliver is the top-2 bits.
+5. **Unifying statement:** for a symmetric f(p,q), N mod m constrains f mod m to
+   a set S_m^f(N); for f = p (asymmetric) the set is the FULL residue space
+   (zero info); for f = p+q = s the set is halved per prime. The trace is the
+   LEAST-HIDDEN symmetric invariant at the congruence level — yet its visible
+   bits are symmetric functions that never isolate p or q.
+
+**Barrier assessment.** NOT a factoring breakthrough. Confirms barrier 2
+(symmetric: the visible trace bits are N-computable symmetric functions carrying
+no factor-isolating information) and reinforces the trace lemma (s is the minimal
+witness and simultaneously the most congruence-visible symmetric object — but
+pinning s mod M# to get ~ω(M#) bits can never scale to pin s ≈ 2^k bits, so the
+residue channel is information-useless for factoring). The trace-set is the same
+mechanism family as COND-RANK's divisibility lift (N mod ℓ constrains symmetric
+functions mod ℓ). Positive: the exact s₁ = 1 − N₁ theorem, the exact
+ω(M#)-bit joint law, and the trace/factor superdensity contrast (20% vs 5%).
+
+**Conclusion.** TRACEPROFILE: the trace is congruence-visible (1 bit/prime,
+exactly ω(M#) jointly, s₁ = 1−N₁ exactly) where the factor is invisible — yet
+20% visible is still useless: the visible bits are symmetric and cannot scale to
+pin s. The trace lemma's witness is the most accessible symmetric residue
+target, and it remains unfactorable. Now 385 experiments. Assessment v161.
+Paper 50, issue #66. Script: /tmp/exp_traceprofile.py.
