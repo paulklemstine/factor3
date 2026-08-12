@@ -7408,3 +7408,57 @@ term.)
 guidance. Scientific-method hypothesis 6 validated and refuted. The spectral
 and order families are both individually sealed; their combination does not
 break the barrier.
+
+---
+
+## Part 114 — Experiment PERMORD: permutation-order readout of ×a on Z/NZ (scientific-method hypothesis 7)
+
+**Hypothesis (from the order-probe family's lcm-blindness).** The order probes
+(ORDDIV/PROBESMOOTH) only ever detect `ord_N(a) = lcm(ord_p(a), ord_q(a))` — a
+lcm is a *symmetric* data loss. The permutation `x ↦ a·x mod N` has a cycle
+structure that, via the gcd strata S_d = {x : gcd(x,N) = d}, might encode the
+INDIVIDUAL orders ord_p(a) and ord_q(a) as distinct cycle lengths — a fully
+asymmetric readout. Claim: if the readout is real AND cheaply extractable, it
+bypasses the trace-lemma's order coordinate (which only knows the lcm).
+
+**Experiment (12 semiprimes, units a = 2,3,5,7; full cycle decomposition).**
+1. **Theory verified 35/35.** Stratum S_d has size φ(N/d) and every element
+   orbit length ord_{N/d}(a). For N = pq: S_1 (units, φ(N), length ord_N(a)),
+   S_p (multiples of p, size q−1, length ord_q(a)), S_q (multiples of q, size
+   p−1, length ord_p(a)), S_N ({0}, length 1). Cycle count = φ(N)/ord_N(a) +
+   (q−1)/ord_q(a) + (p−1)/ord_p(a) + 1 — exact on all 35 (N, a) pairs.
+2. **Asymmetric readout is REAL.** When ord_p(a) ≠ ord_q(a), the cycle lengths
+   {ord_p(a), ord_q(a)} appear as distinct non-trivial lengths in the
+   decomposition (28/35 directly; the 7 "merges" are length-coincidences where
+   ord_p(a) | ord_q(a) = ord_N(a), recoverable with multiplicity/stratum-size
+   data). All non-trivial-stratum elements have gcd ∈ {p, q} (35/35).
+3. **It is a valid factoring algorithm.** For a primitive root mod both p,q
+   (ord_p = p−1, ord_q = q−1), the recovered unordered pair {p−1, q−1} →
+   factors {p,q} (verified: N=143 a=2 → {11,13}; 221 a=7 → {13,17}; 899 a=3 →
+   {29,31}; 3127 a=2 → {53,59}). The readout is strictly more than the lcm
+   (e.g. N=143: pair {10,12} vs lcm 60).
+4. **BUT the extraction cost is the killer.** Computing the cycle structure of
+   a permutation on N elements is O(N) (every element must be visited), and you
+   cannot even *start* on a non-unit cycle without knowing a non-unit (a
+   multiple of p or q). Measured scan-to-first-proper-factor: cost ≈ φ(N) ≈ N
+   (N=3127: cost 3018 ≈ φ=3016; N=34571: cost 34202) — i.e. the readout costs
+   MORE than trial division's √N, and reading ord_p(a) individually is the
+   classically-exponential order-finding problem (paper 9's DFT bound).
+
+**Barrier assessment.** REFUTED as a method — collapses to barrier 4 (the
+aggregation IS the readout: O(φ(N)) enumeration, worse than √N), barrier 2
+(the length multiset is a symmetric function of N; the (p,q) tie is broken only
+by enumerating elements and gcd-ing = the aggregation), and barrier 8 (the
+resulting "algorithm" = scan-to-first-non-unit = trial division; individual
+order-finding = exponential). Consistent with the trace lemma: ord_p(a) is a
+legitimate order coordinate, but it is unreachable without the aggregation.
+
+**Conclusion.** PERMORD: a fully asymmetric combinatorial readout of the
+individual orders is REAL — strictly better than the lcm the free probes see —
+yet it cannot escape the aggregation barrier because the cycle structure is
+exactly the O(N)-enumeration object. This closes the last "lcm-blindness"
+loophole: even recovering ord_p(a) and ord_q(a) SEPARATELY does not help. A
+clean negative result connecting permutation theory to the free-witness/order
+taxonomy (a non-CRT-multiplicative, non-numeric witness in the spirit of ZDG).
+Scientific-method hypothesis 7 validated and refuted. Now 368 experiments.
+Assessment v144. Script: /tmp/exp_permord.py.

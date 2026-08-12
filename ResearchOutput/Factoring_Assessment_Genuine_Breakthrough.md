@@ -1047,6 +1047,22 @@ truncation via order guidance: the k=0 eigen-term is 1/r (r-dependent, circular)
 the full heat-kernel sum is O(r)-sealed. The truncated 'match' was an artifact of
 using r. REFUTED — barrier 4.
 
+**Iteration 71 experiment (PERMORD — scientific-method hypothesis 7).** The
+permutation x ↦ a·x mod N on Z/NZ has a cycle structure encoding ord_p(a) and
+ord_q(a) as DISTINCT cycle lengths — a fully asymmetric readout, strictly more
+informative than the lcm the free probes see. Theory verified 35/35 (stratum S_d
+has size φ(N/d), orbit length ord_{N/d}(a); cycle count = φ(N)/ord_N + (q−1)/ord_q
++ (p−1)/ord_p + 1 exact). For primitive a it is a valid factoring algorithm:
+recovered {p−1, q−1} → {p,q} (verified on N=143,221,899,3127). BUT extraction
+costs O(φ(N)) ≈ N (measured 3018 for N=3127, 34202 for N=34571) — the cycle
+structure of a permutation on N elements requires visiting all elements, and you
+cannot start on a non-unit cycle without already knowing a multiple of p or q.
+Worse than √N trial division; reading ord_p(a) individually = classically
+exponential order-finding. REFUTED — barrier 4 (aggregation IS the readout) +
+barrier 2 (length multiset symmetric) + barrier 8 (= trial division / exponential
+order-finding). Closes the "lcm-blindness" loophole: even recovering the orders
+SEPARATELY does not help. Now 368 experiments.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1417,6 +1433,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v143 — 2026-08-11. Based on 367 computational experiments, an
+*Assessment v144 — 2026-08-11. Based on 368 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
-formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, and SCHINZEL.*
+formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, SCHINZEL, and PERMORD (permutation-cycle readout of ord_p, ord_q collapses to barrier 4).*
