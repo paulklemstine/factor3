@@ -8577,3 +8577,42 @@ consistent with TRACEPROFILE ("trace least-hidden") and QUERYWIT (threshold =
 ceiling of what a symmetric free witness can carry, and s does not factor.
 Now 392 experiments. Assessment v168. Paper 57, issue #73.
 Script: /tmp/exp_gcdmoment.py.
+
+## Part 139 — Experiment UNIT-ENERGY: the additive energy of the units is the Ramanujan 4th moment with a closed semiprime form — pointwise-flat, trace-only (cron loop round-15 #2)
+
+**Hypothesis.** E(U) = #{(u1,u2,u3,u4) ∈ U⁴ : u1+u2 ≡ u3+u4}, the additive
+energy of the unit group U = (Z/NZ)^×, is the Ramanujan 4th moment
+E(U) = (1/N)Σ_{x=0}^{N−1} |c_N(x)|⁴ (c_N = Ramanujan sum, |Â|² face) and has a
+closed semiprime form; whether it leaks any asymmetric factor content.
+
+**Experiment.** Verified three ways (direct count, Ramanujan moment, closed
+form) on 10/10 semiprimes and 14/14 generic N; profile flatness on gcd-level
+sets; symbolic closed form; trace-recovery root structure on 15 semiprimes.
+
+**Findings.** (1) Closed form (a=p−1, b=q−1): E(U) = (ab/N)(1+a³)(1+b³) =
+((p−1)(q−1)/N)(1+(p−1)³)(1+(q−1)³). Via σ₁ = s−2, σ₂ = ab = N−s+1 = φ(N):
+E·N = σ₂(1+σ₁³−3σ₁σ₂+σ₂³) = N⁴−4N³s+4N³+6N²s²−15N²s+12N²−3Ns³+12Ns²−18Ns+9N —
+a symmetric polynomial in (p,q), a function of (N, s) alone. (2) POINTWISE
+FLATNESS (new): the unit-pair-sum profile r_A(x) = #{(u,v)∈U²: u+v≡x} depends
+only on gcd(x,N) — constant on the 4 gcd-level sets {1, p, q, N} (verified
+FLAT on all levels, E-from-levels = direct exactly). The Fourier transform of
+r_A is c_N², gcd-invariant ⟹ r_A gcd-invariant: the ENTIRE additive
+distribution of the units is N-symmetric, zero asymmetric content pointwise.
+(3) Recovery: E·N − P(s) = 0 is CUBIC in s (the quartic leading terms σ₂⁴ and
+σ₂σ₁³ cancel) and s = p+q is the UNIQUE real root in 15/15 samples — cleaner
+recovery than the gcd-moments (no spurious real roots at all). Still symmetric
+and unfactorable. (4) Cost: Ramanujan sweep/FFT is Ω(N) (barrier 4); the
+divisor-level form needs the factorization (barrier 6); identity = classical
+Fourier/Ramanujan + modular-hyperbola literature (barrier 8).
+
+**Verdict.** CONFIRMED negative for factoring. The additive energy of the unit
+group is the Ramanujan 4th moment with the exact semiprime closed form
+E(U) = ((p−1)(q−1)/N)(1+(p−1)³)(1+(q−1)³) = F(N, s) alone; even the pointwise
+unit-pair-sum profile is flat on gcd-level sets — the units' additive structure
+carries zero asymmetric factor content, not even pointwise (barrier 2); Ω(N)
+aggregation (barrier 4), circular (barrier 6), classical identity (barrier 8).
+s recoverable (unique real root of a cubic) but symmetric and unfactorable.
+The additive-combinatorics/Fourier lens adds no factoring leverage; reconfirms
+the trace as the ceiling of a symmetric free witness.
+Now 393 experiments. Assessment v169. Paper 58, issue #74.
+Script: /tmp/exp_unitenergy.py.
