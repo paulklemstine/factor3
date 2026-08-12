@@ -6984,3 +6984,16 @@ division floor. No hint-free classical breakthrough.
 **Conclusion.** MODFAC: the modular-factorials quantum algorithm is a
 quantum-resource advance for order/divisor-structure quantities, consistent
 with the framework. Fresh moonshot angle tested and recorded.
+
+---
+
+## Alethean.org + arXiv mining note (loop iteration)
+
+alethean.org: still #695 (no new factoring-relevant packages beyond the paper-11
+echo). arXiv mining surfaced "Goldbach's Function Approximation Using Deep
+Learning" — a NN approximating R(2n) = #{p : 2n-p prime}. Assessment: R(2n) is
+a function of 2n; a NN computing it is barrier 5 (memorization, no
+generalization to NEW integers' prime structure) — consistent with DIFFUSE/MLP.
+Not a factoring attack; covered by the framework. The mining continues to
+confirm the exhaustion: every fresh angle (annealing, QUBO, ML, quantum) reduces
+to known barriers or the quantum exception.
