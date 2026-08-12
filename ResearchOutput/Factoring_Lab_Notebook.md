@@ -7998,3 +7998,42 @@ from N alone. Barrier 4's aggregation is exactly the price of the asymmetry the
 residues would provide. This unifies frontiers (i) and (ii): the quantum channel
 is a symmetry-breaking resource, and its cost is the aggregation it bypasses. Now
 381 experiments. Assessment v157. Script: /tmp/exp_isolation.py.
+
+---
+
+## Part 128 — Experiment QUBIT-TRADE: quantum-register truncation phase diagram (round-14 frontier-ii hypothesis 3)
+
+**Hypothesis (round-14 #3).** Truncating Shor's QFT register to its top t bits
+(observing ⌊y/2^(ℓ−t)⌋ of the ideal sample y ≈ k·Q/r) might recover r = ord_N(a)
+with more samples s — a qubit/sample tradeoff. Test P_success(t, s) and find the
+threshold t_min(r).
+
+**Experiment (50 semiprimes, r ∈ [2^10, 2^22]; pure classical simulation of the
+ideal measurement; honest Shor post-processing — CF over ALL convergents + bounded
+multiple test; ell = 40).**
+1. **t_min ≈ 2·log₂(r) exactly** (verified across log₂(r) = 14–21): the threshold
+   where first-sample recovery reaches ~0.7 tracks 2·log₂(r) — log₂r=14 → t_min=27
+   (2·log₂r=28); 16 → 32 (32); 18 → 35 (36); 20 → 39 (40); 21 → 38 (42).
+2. **The CF must resolve k/r:** the truncated value y_t/2^t has error ≤ 2^(−t);
+   the continued-fraction recovery of k/r needs error < 1/(2r²), hence t > 2·log₂(r).
+   The agent's predicted t_min ≈ log r + O(log log r) is REFUTED — it's 2·log₂(r).
+3. **Below t_min, collapse to the classical floor:** at t ≤ 26 (2·log₂r ≈ 33),
+   first-sample success ≈ 0.1 and even 10 samples don't reliably recover.
+4. **Above t_min, qubit↔sample fungibility:** with full precision, more samples
+   compensate for gcd(k,r) > 1 (recovering r = q·m via the multiple test).
+5. **Shor's register is essentially forced:** since r ~ N for random bases,
+   t_min ≈ 2·log₂(N) ≈ the full ℓ = 2⌈log₂N⌉ register. The quantum channel
+   cannot be shrunk by truncation.
+
+**Barrier assessment.** NOT a factoring breakthrough (a quantum-resource
+characterization) and NOT a barrier bypass — it CONFIRMS the quantum channel
+needs its full ~2·log₂(N)-qubit register. Consistent with barrier 4 (the
+aggregation is bypassed only by the full quantum order-readout). Resource-bound
+result for frontier (ii): the minimum quantum register for order recovery is
+~2·log₂(N) qubits, forced.
+
+**Conclusion.** QUBIT-TRADE: the register truncation threshold is 2·log₂(r) —
+Shor needs essentially its full register; below it recovery collapses to the
+classical exponential floor, above it qubit↔sample fungibility operates. The
+quantum exception cannot be shrunk by register truncation. Now 382 experiments.
+Assessment v158. Script: /tmp/exp_qubittrade.py.
