@@ -7917,3 +7917,44 @@ predicates. The residue channel's failure is structural: symmetric batteries
 leave every candidate factor consistent. The only predicates that pin are the
 asymmetric sealed free-witness coordinates (barrier 4's territory). Now 379
 experiments. Assessment v155. Script: /tmp/exp_compensating.py.
+
+---
+
+## Part 126 — Experiment DIAL-THRESHOLD: Coppersmith + residue dials (round-14 frontier-iii hypothesis 2)
+
+**Hypothesis (round-14 #2).** K = Θ(log N) Kronecker dials (D_i|p) over
+fundamental discriminants are INFORMATION-sufficient to pin p mod M ≥ N^{1/4}
+(the Coppersmith hint) — but each dial is an asymmetric residue of p,
+uncomputable from N (barrier 2), sealed behind C_D(N) (barrier 4). Test the
+information/computation split: can the dials AMPLIFY a partial-key hint?
+
+**Experiment (3 semiprimes ~9×10⁸; dial conductors c_i = 4|D_i|, M* = lcm(c_i),
+hint m = N^{1/4}; candidate set p′ = p₀ + j·m).**
+1. **The precise condition is M* | m** (M* divides the hint modulus), not M* ≤ m.
+   The dial vector is computable from the hint (p mod m determines p mod M*) iff
+   M* | m.
+2. **Regime 1 (M* | m): zero pinning.** N=808M (m=168): K=1,2,3 have M*=12,84,168
+   all dividing m — the vector is computable AND constant on the candidate set
+   (verified: all candidates share the vector). The dials add NOTHING beyond the
+   hint itself (which already restricts to these candidates).
+3. **Regime 2 (M* ∤ m): not computable.** N=340M (m=135): even K=1 (M*=12 ∤ 135)
+   gives a vector NOT determined by the hint (needs p mod 12, hint gives p mod
+   135 — 12 ∤ 135). Adding dials (M* = 84, 168, 1848) makes the vector vary over
+   candidates (would pin) but requires p mod M* > m — unavailable from the hint.
+4. **Either way, the combination fails.** The K ≈ Θ(log N) dials that would pin p
+   mod N^{1/4} need p mod M* ≫ N^{1/4} (not provided by the hint); the dials
+   computable from the hint (M* | m) are constant on candidates.
+
+**Barrier assessment.** REFUTED as a hint-amplification route — barrier 2 (the
+dials are asymmetric residues of p, uncomputable from N) + barrier 4 (sealed
+behind the Ω(N)-aggregated counts C_D(N)) + barrier 6 (the pinning dials need
+p mod M* beyond the hint). The information/computation split lands against the
+combination: residue dials cannot amplify a Coppersmith partial-key hint.
+
+**Conclusion.** DIAL-THRESHOLD: the "Coppersmith + free-witness residues" hope is
+closed with a precise condition (M* | m). Information-sufficient dials are
+computationally inaccessible; computationally accessible dials are information-
+useless (constant on candidates). This settles frontier (iii)'s combination
+question — the hint must be genuinely external; self-generated residue
+amplification is impossible. Now 380 experiments. Assessment v156. Script:
+/tmp/exp_dialthreshold.py.
