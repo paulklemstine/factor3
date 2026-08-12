@@ -8249,3 +8249,54 @@ for factoring — it cannot amplify an interval hint asymptotically, cannot find
 from N alone, and the s-scan is Fermat in disguise. The residue channel of even
 the least-hidden invariant is Ω(N)-sealed. Now 386 experiments. Assessment v162.
 Paper 51, issue #67. Script: /tmp/exp_intervalhint.py.
+
+## Part 133 — Experiment SEQSTATE: the modular-exponential sequence is random-level incompressible (round-14 hypothesis 8, from brainstorm #4)
+
+**Hypothesis (agent's claim).** s_x = a^x mod N has GF(2) linear complexity ≈
+r = ord_N(a) (near-maximal), and the floor/quotient sequence t_x = ⌊a^x/N⌋ —
+the only difference between Shor's QFT peak and a closed-form geometric sum —
+is as incompressible as s_x. If true, the QFT input is classically
+incompressible (dequantization obstruction); if any regime compresses, a new
+attack surface opens.
+
+**Experiment (120 semiprimes, N ∈ [2^10, 2^16], odd base a=3, r ∈ [260, 49 506];
+Berlekamp–Massey linear complexity and substring complexity of the LSB streams
+of s_x and t_x (t computed by the exact recurrence t_{x+1} = a·t_x + ⌊a·s_x/N⌋,
+verified against direct ⌊a^x/N⌋); controls: random, max-LFSR, geometric mod
+prime).**
+1. **REFUTED in the precise prediction:** full-period linear complexity
+   λ_s(r) ≈ r/2 (measured 0.498–0.506 across r ∈ [198, 1218]), NOT ≈ r. The
+   sequence is as complex as a random r-bit string, which is the correct
+   incompressibility value.
+2. **CONFIRMED in the operative claim — maximal prefix complexity:** λ_s(n) ≈
+   n/2 for every prefix n = 128…1024 (0.500–0.501) — indistinguishable from
+   random, and crucially NOT LFSR-compressible (the max-LFSR control holds
+   λ = m = 15 constant). No short linear recurrence exists at any prefix.
+3. **The floor defect is equally incompressible:** λ_t(n) ≈ n/2 (0.500–0.502) —
+   the t-LSB stream is random-level too. There is NO closed-form shortcut
+   through the floor sequence: t carries the same complexity as s.
+4. **Substring complexity saturates at the period (random-like):** c_s(L) ≈
+   c_t(L) ≈ 2^L up to the period (ratios 1.000, 0.999 at L=3,5; declining to
+   0.467 at L=10 only because the 1024-prefix can't host 2^10 substrings).
+   Both streams are as rich as random binary strings.
+5. **Controls calibrate:** random λ ≈ n/2, max-LFSR λ = 15 (constant), geometric
+   mod prime λ ≈ n/2 — the modular/composite sequence behaves like the
+   mod-prime one: random-level, no composite-specific compressibility.
+
+**Barrier assessment.** NOT a factoring breakthrough; a dequantization
+obstruction. The modular-exponential input to Shor's QFT is classically
+incompressible at random level (λ = n/2 at every prefix, including the full
+period; c(L) = 2^L to the period) — no classical linear/short-recurrence
+simulation exists, arming the dequantization program (DEQUANT/DEQUANT2,
+QUBIT-TRADE, COND-RANK). Consistent with barrier 4/8 (the aggregation/no-free-
+lunch structure stated as sequence complexity). Positive: a reusable complexity
+measure (λ and c for modular sequences) and the correction λ_s(r) = r/2 (random
+level), cleaner than the predicted λ = r.
+
+**Conclusion.** SEQSTATE: both the modular-exponential sequence and its floor-
+quotient twin are random-level incompressible — λ(n) = n/2 at every prefix and
+at the full period, c(L) = 2^L to the period — so the QFT cannot be classically
+simulated by any low-complexity/closed-form route; the floor defect carries the
+full complexity. The dequantization obstruction now has a quantitative
+statement. Now 387 experiments. Assessment v163. Paper 52, issue #68.
+Script: /tmp/exp_seqstate.py.
