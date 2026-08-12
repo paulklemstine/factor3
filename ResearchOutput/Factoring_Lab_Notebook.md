@@ -8651,3 +8651,15 @@ No asymmetric content, no p/q distinguishability, O(N³) to compute, circular to
 close. Barriers 2/4/6/8.
 Now 394 experiments. Assessment v170. Paper 59, issue #75.
 Script: /tmp/exp_multtablerank.py.
+
+## Part 141 — Experiment ZERO-DIVISOR-GRAPH (round-15 #4): Γ(Z/NZ) = K_{p−1,q−1} exactly for N = pq
+
+**Hypothesis.** The zero-divisor graph of Z/NZ (vertices = nonzero x with gcd(x,N) > 1; edge x~y iff xy ≡ 0 mod N) is, for a semiprime, exactly the complete bipartite graph K_{p−1,q−1}. If its bipartition leaked which residues are ≡ 0 mod p vs ≡ 0 mod q, could the graph factor N?
+
+**Experiment.** Built Γ(Z/NZ) exhaustively (vertex set from a gcd scan, edge set from pairwise products mod N) on semiprimes, checked the full K_{p−1,q−1} certificate (vertex count p+q−2, edge count (p−1)(q−1), bipartition into {p-multiples (size q−1)} ∪ {q-multiples (size p−1)}, every cross pair an edge, zero within-part edges, degree distribution {p−1:q−1 times, q−1:p−1 times}); verified graph-degree(x) = gcd(x,N) − 1 on every zero-divisor; and checked the general-N classification (prime squares → complete graph K_{p−1}; p³/p⁴ and multi-prime products → neither).
+
+**Findings.** (1) EXACT: Γ(Z/NZ) ≅ K_{p−1,q−1} on 10/10 semiprimes, every structural datum matching — the brainstorm's claim is machine-confirmed. (2) degree(x) = gcd(x,N) − 1 on 62/62 zero-divisors (squarefree N): the graph's degree sequence over the zero-divisors is the multiset {p repeated q−1 times, q repeated p−1 times} = the factorization written twice. (3) Classification (proper bipartiteness test): complete-bipartite exactly for semiprimes — including even semiprimes 2p (star K_{p−1,1}, verified) and the tiny prime-power exceptions N=8 (K_{1,2}) and N=9 (K_2); complete graph K_{p−1} for prime squares; neither complete nor bipartite for p³, p⁴, or products of ≥3 primes — matching the Anderson–Livingston zero-divisor-graph classification. (4) The bipartition = {multiples of q} ∪ {multiples of p} = the factorization itself; finding the zero-divisors requires the O(N) gcd-scan, and that scan's first hit is the smallest prime factor — trial division in disguise.
+
+**Verdict.** CONFIRMED negative for factoring. The zero-divisor graph is a complete, exact, known description of the zero-divisors whose bipartition IS the factorization: knowing the parts = knowing which residues are ≡ 0 mod p vs ≡ 0 mod q. Everything about it is N-computable hence symmetric in (p,q) (swapping p,q swaps the parts; K_{p−1,q−1} unchanged) — barrier 2. Reconstructing the graph or its degree sequence costs Ω(N) gcd operations (barrier 4, free-witness aggregation), and that O(N) gcd-scan already finds the smallest factor — the reconstruction is trial division in disguise (barrier 8). The structure is a classical theorem (barrier 8). No route to the graph avoids already knowing the answer. Barriers 2/4/8.
+Now 395 experiments. Assessment v171. Paper 60, issue #76.
+Script: /tmp/exp_zerodivisorgraph.py.
