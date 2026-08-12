@@ -7095,3 +7095,30 @@ adaptivity, not complexity.
 **Conclusion.** The program's pieces combine into algorithms that are more
 capable than each part (best-of-both, information collapse) but bounded by the
 same floors. Continuing to try combinations.
+
+---
+
+## Part 103 — Experiment RESGUIDE: residue-guided search combination
+
+**Directive.** Combine the program's findings into algorithms more than the sum.
+
+**RESGUIDE.** Combine the cross-witness residue info (CIRC+KROOT+BQF, which pin
+p mod small primes) to GUIDE the factor search. Result: the implied modulus is
+M ~ 32 (from the small primes 3,5,7,11,13) — a CONSTANT, so the search reduces
+to ~3.1% of sqrt(N) (a fixed factor, still Theta(sqrt N)). And each residue is
+O(N)-sealed to compute (barrier 4).
+
+**Barrier assessment.** The residue-guided combination is information-rich but
+computationally minor — a constant factor, not below the birthday floor. Sealed.
+
+**Combining synthesis (parts 102-103).** The program's pieces combine into
+algorithms that are genuinely "more than the sum" in CAPABILITY and INFORMATION
+(HYBRID: best-of-both adaptivity; RESCOMB: candidate-space collapse; RESGUIDE:
+constant-factor search reduction) but NOT in COMPLEXITY — the birthday floor and
+the O(N) aggregation seal are unchanged, because they are intrinsic to the
+information structure (each witness's value or residue is sealed). This is the
+honest result of the combining directive.
+
+**Conclusion.** The combinations are real algorithmic improvements in capability
+and information, bounded by the same floors. Continuing to seek a combination
+that breaks the seal.
