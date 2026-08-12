@@ -7635,3 +7635,46 @@ a residue dial. Closes the order × residue joint-quadrant of the combination
 grid (SCALECASCADE residue+order, SPECTRUNC order+spectral, CONDORDER the joint
 law; SPECTRES residue+spectral remains untested but is predicted to collapse the
 same way). Now 372 experiments. Assessment v148. Script: /tmp/exp_condorder.py.
+
+---
+
+## Part 119 — Experiment JACSIGN: Jacobi-signed free-witness count (round-13 brainstorm hypothesis 7)
+
+**Hypothesis (round-13 #7).** Weight the CIRC solution set S = {x²+y²≡1 mod N}
+by the non-CRT-multiplicative character (x/N): W(N) = Σ_{(x,y)∈S} (x/N). Claim:
+the character weight may escape the product form C(N) = (p−χ_p)(q−χ_q) and
+isolate p or q.
+
+**Experiment (32 primes + 40 near-equal-N semiprimes + Weil-bound check).**
+1. **W(N) = W(p)·W(q) verified** (CRT-separable after all: (x/N) = (x_p/p)(x_q/q)),
+   with W(p) = Σ_{x mod p} (x/p)(1−x²/p) — a cubic character sum.
+2. **NOT a residue dial — a genuinely new object.** W(p) varies within p mod 8
+   (p≡1 mod 8: −2, −10, 6, −18, 14, 22; p≡5 mod 8: 2, −6, 10, −14, 10) and W(N)
+   varies within N mod 8 (N≡1: {0,−12}; N≡5: {0,−52,−900,−484}) — unlike CIRC,
+   BQF, GSP which ALL collapsed to N mod 4/8. The character weight ESCAPES the
+   residue-dial structure.
+3. **Factor-dependent but uncorrelated with trace coords:** across 40
+   semiprimes (N ∈ [37K, 397K]), corr(W, p/q/p+q/|p−q|) all inside the
+   300-shuffle permutation null (obs ≤ 0.22, 95th ≈ 0.28–0.31). Unstructured
+   factor-dependence.
+4. **Weil bound holds EXACTLY:** |W(p)| ≤ 2√p (verified, many attainments:
+   p=293 → 34 = 2·17; p=173 → 26 = 2·13). So |W(N)| ≤ 4√N — the noise floor in
+   its sharpest character-sum form. Median |W(N)| = 0 (W(p) = 0 for p ≡ 3,7
+   mod 8, half of primes).
+5. **Computing W(N) = O(N)** (Σ_{x mod N} (x/N)(1−x²/N)), or O(√N) with p known
+   (circular). Barrier 4.
+
+**Barrier assessment.** REFUTED as a method — barrier 4 (O(N) aggregation),
+barrier 2 (W(N) = W(p)W(q) is a symmetric product; the factors are inseparable),
+noise floor (|W(N)| ≤ 4√N by the Weil bound — factor-dependence at the √N
+scale). POSITIVE content: the first character-weighted free-witness shown to
+escape the residue-dial structure (unlike GSP's Gauss-sum collapse); its
+factor-dependence is bounded by the Weil bound, connecting the noise floor to
+the sharpest character-sum estimate.
+
+**Conclusion.** JACSIGN: the Jacobi-signed circle count is factor-dependent and
+non-dial, but its signal lives at the Weil-bound √N scale, uncorrelated with
+trace coordinates, symmetric (barrier 2), and O(N)-sealed (barrier 4). A new
+entry in the free-witness taxonomy: "character-weighted non-dial at the Weil
+floor." Now 373 experiments. Assessment v149. Scripts: /tmp/exp_jacsign.py,
+/tmp/exp_jacsign2.py.
