@@ -8823,3 +8823,21 @@ Scripts: /tmp/exp_forkflatness.py, /tmp/exp_forkflatness_c.py, /tmp/exp_forkflat
 **Verdict.** CONFIRMED theorem. Criterion machine-verified on three groups: C₃ (100% pinned — I = H(1/3) exact), S₃ (sign pinned, A₃-fork flat), S₄ (sign pinned, all within-face forks flat). Explains paper 70's x³−2 control failure (S₃ closure ⇒ flat predicted by the criterion). Semiprime level: symmetric residue dichotomy, factor-useless. Barriers 2/5/6/8. Round-19 1/1 done.
 Now 406 experiments. Assessment v182. Paper 71, issue #87.
 Scripts: /tmp/exp_cycliccubic.py (+ within-face S₄ supplemental).
+
+---
+
+## Part 153 — OR-COLLAPSE-LAW (round-19 #2, exp 407, v183)
+
+**Hypothesis.** Paper 71 established WHEN a prime-level fork is congruence-pinned (the abelianization criterion) and measured ONE semiprime collapse (cond-7 cubic OR = 0.0728 bits). This iteration asks: is there a UNIVERSAL law of the semiprime OR collapse? For any abelian field whose split-completely event is pinned by an order-n Dirichlet character of conductor f — split(p) ⟺ χ(p) = 1, P(split) = 1/n — the OR event [split(p) OR split(q)] should obey the counting identity (unit pairs ab ≡ N mod f): P(OR | χ(N)=1) = 1/n, P(OR | χ(N)≠1) = 2/n, hence P(OR) = (2n−1)/n² and I(N mod f; OR) = g(n) = H((2n−1)/n²) − (1/n)H(1/n) − ((n−1)/n)H(2/n), UNIVERSAL in n. If true, the p−1 ℓ=3 channel (paper 54: 0.313 — the largest symmetric residue channel in the lab) is the n=2 case (split = p ≡ 1 mod 3, χ the quadratic character of Q(√−3)), and paper 71's cubic OR is the n=3 case — one law unifying the two biggest residue channels.
+
+**Part A — the law on 7 fields (2^22, 30k semiprimes, split sets empirically verified by nroots == deg).** I(N mod f; OR) measured vs g(n): n=2 f=5 (Q(√5)): **0.3076 vs 0.3113**, P(OR) 0.7532 vs 3/4, P(OR|χ=1) 0.5050 vs 1/2, P(OR|χ≠1) 1.0000 vs 1; n=3 f=7 (cyclic cubic): **0.0704 vs 0.0728**; n=3 f=9 (COMPOSITE 3²): **0.0735 vs 0.0728**; n=4 f=16 (COMPOSITE 2⁴, non-cyclic unit group C₂×C₄): **0.0384 vs 0.0359**, per-class 0.2411/0.5011 vs 1/4/1/2; n=5 f=11 (Q(ζ₁₁)+, split ⟺ p ≡ ±1 mod 11): **0.0222 vs 0.0215**; n=6 f=7 (Φ₇, split ⟺ p ≡ 1 mod 7): **0.0146 vs 0.0144**; n=3 f=21 (character-only, non-cyclic C₂×C₆, classes {1,8,13,20}): **0.0700 vs 0.0728**. Per-class conditional rates match 1/n and 2/n within 1–2% on every field. All prime-level pinning 100% (criterion re-verified).
+
+**Part B — controls.** Coprime modulus FLAT on every field (I ≤ null max: e.g. cond-7 m=5 I=0.0001 vs null max 0.0006). m = f² invariant at g(n) (0.3077/0.0711/0.0708/0.0425 vs 0.3113/0.0728/0.0728/0.0359).
+
+**Part C — UNIFICATION.** f=3, n=2, split = p ≡ 1 mod 3: P(OR) = 0.7475 (3/4), P(OR|N≡1) = 0.4942 (1/2), P(OR|N≡2) = **1.0000** (2/n), I(N mod 3; OR) = **0.3160** (gcd(N,3)=1) and **0.3126 including the N≡0 class** (paper-54 sampling) — reproducing paper 54's 0.313 essentially exactly. **The p−1 ℓ=3 channel is the n=2 case of the OR-collapse law.**
+
+**Part D — the decay law.** g(n) monotone decreasing → 0: 0.3113/0.0728/0.0359/0.0215/0.0144/0.0103/0.0077/0.0060 at n=2..9. The MORE a prime-level fork pins (H(1/n) ≈ 1 bit), the LESS its OR shows — no order-n Dirichlet fork ever yields more than g(n) ≤ 0.3113 symmetric OR bits. Which-factor (labeled) wall 0.0001–0.0002 on every field.
+
+**Verdict.** CONFIRMED exact law. The semiprime OR of any cyclic split-complete fork is a symmetric residue dial of exactly g(n) = H((2n−1)/n²) − (1/n)H(1/n) − ((n−1)/n)H(2/n) bits, universal in the order n, verified on 7 fields spanning prime/composite conductors and cyclic/non-cyclic unit groups. Unifies paper 54 (n=2, 0.313) and paper 71 (n=3, 0.0728). Factor-useless: symmetric (barrier 2), residue dial (5), sealed (6), all classical reciprocity (8). Round-19 2/2 done. Barriers 2/5/6/8.
+Now 407 experiments. Assessment v183. Paper 72, issue #88.
+Script: /tmp/exp_orcollapse.py.
