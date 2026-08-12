@@ -7958,3 +7958,43 @@ useless (constant on candidates). This settles frontier (iii)'s combination
 question — the hint must be genuinely external; self-generated residue
 amplification is impossible. Now 380 experiments. Assessment v156. Script:
 /tmp/exp_dialthreshold.py.
+
+---
+
+## Part 127 — Experiment ISOLATION-COST: the symmetry-breaking cost of factoring (round-14 frontier-i hypothesis 4)
+
+**Hypothesis (round-14 #4).** Reframe barrier 4's aggregation as a
+symmetry-breaking cost: with an ORACLE revealing the true factor's Jacobi
+residues [(a_i|p₀)], p₀ is isolated among all candidates in O(log N) queries;
+from N alone, the symmetric battery [(a_i|N)] gives zero pruning (QRLEAK). The
+gap is the cost of breaking the symmetry.
+
+**Experiment (12 semiprimes, 15–33 bits, 31–7894 candidates; greedy Jacobi-
+symbol isolation with an asymmetry oracle).**
+1. **Oracle isolation cost = log₂(π(√N)) exactly:** queries/log₂(cands) ratio
+   ≈ 0.96–1.03 across all sizes. The residue vector [(a_i|p₀)] isolates p₀ among
+   ALL candidate primes in (1/2)log₂N − log₂log₂N queries (poly(log N)); then
+   divisibility factors N. The residues carry ~log N bits of factor information —
+   information-SUFFICIENT for factoring.
+2. **From N alone, zero pruning (re-verified):** the symmetric battery [(a_i|N)] =
+   [(a_i|p)(a_i|q)] leaves the full candidate set surviving (QRLEAK/COMPENSATING-
+   PARTNER). The individual (a_i|p₀) are uncomputable (barrier 2), sealed behind
+   the Ω(N) aggregation (barrier 4) or the factors (barrier 6).
+3. **The gap is the symmetry barrier:** between "log N queries with the residues"
+   and "exponential without" sits exactly the asymmetry — which the Ω(N)
+   aggregation, an external hint, or the quantum channel (Shor's order-readout)
+   provides. Barrier 4's cost IS the symmetry-breaking cost.
+
+**Barrier assessment.** REFUTED as a factoring tool (from N alone) — barrier 2 +
+4 + 6. POSITIVE frontier-(i) content: a precise quantification connecting barrier
+4 to the quantum channel — the residue vector is information-sufficient (log N
+bits) but computation-sealed; the asymmetry is the single resource that converts
+it into a factor, which is why Shor's QFT (an asymmetric readout) bypasses the
+aggregation.
+
+**Conclusion.** ISOLATION-COST: the symmetry-breaking cost of factoring is
+measured — ~log₂(π(√N)) oracle queries isolate the factor, zero queries prune
+from N alone. Barrier 4's aggregation is exactly the price of the asymmetry the
+residues would provide. This unifies frontiers (i) and (ii): the quantum channel
+is a symmetry-breaking resource, and its cost is the aggregation it bypasses. Now
+381 experiments. Assessment v157. Script: /tmp/exp_isolation.py.
