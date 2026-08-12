@@ -8300,3 +8300,66 @@ simulated by any low-complexity/closed-form route; the floor defect carries the
 full complexity. The dequantization obstruction now has a quantitative
 statement. Now 387 experiments. Assessment v163. Paper 52, issue #68.
 Script: /tmp/exp_seqstate.py.
+
+## Part 134 — Experiment EMPIRICAL-DEGREE: the factoring function is spectrally flat (round-14 hypothesis 12)
+
+**Hypothesis.** f_j(N) = bit j of the smaller k-bit factor p, as a boolean
+function over the exact k-bit-prime semiprime support, has no low-degree GF(2)
+parity of N's bits approximating it — the Walsh/spectral face of superdensity
+(BITPROFILE's ~95% pairwise-invisible factor info, barrier 1/2 probe). If any
+bit has a real low-degree parity, a poly(log N) readout exists.
+
+**Experiment (exact k-bit-prime semiprime support; restricted Walsh spectrum
+W(S) = Σ_x f_j(x)(−1)^{S·x} over the 2^(2k)-bit domain, 0 outside support, by
+vectorized fast Walsh–Hadamard transform at k = 10, 12 and targeted degree-≤3
+scans at k = 14; m = 276 / 2 850 / 32 640 / 380 628; random-sign null per
+size).**
+1. **CONFIRMED — spectral flatness of factor bits.** At k = 14, for every
+   information-bearing bit j below the top ~6, the max degree-≤3 correlation
+   with any parity of N is ≤ 0.021 vs an all-parity extreme-value noise floor
+   √(2 ln2·n/m) = 0.0101 and a calibrated degree-≤3 null max 0.0065 — at or
+   within a small factor of noise. No parity of ≤ 3 bits of N approximates any
+   factor bit.
+2. **The ONLY non-flat structure is the symmetric top-bit magnitude/carry
+   family.** corr(p_{k−d}, N_{2k−1}) converges across k: 0.285 (d=2 carry-out),
+   0.310 (d=3), 0.132 (d=4), 0.065 (d=5), 0.026 (d=6) at k = 14; j = k−2 max
+   0.79, j = k−3 0.34. N's leading bits vs p's leading bits — the Walsh face of
+   the BITPROFILE top-2 sliver. N-computable, symmetric in (p,q), a size
+   correlation, non-factor-revealing (barrier 2).
+3. **The round-1 "j=2 anomaly" (max |corr| = 0.166 at k=10, ~1.7× the noise
+   floor, single-bit winner N_{2k−1}) RESOLVED as a small-k fluctuation of the
+   symmetric top-bit family.** corr(p₂, N_{2k−1}) = 0.254, 0.166, 0.013, 0.006
+   at k = 8, 10, 12, 14 — decays into the noise floor (below the k=12 null);
+   corr(p₂, N_{2k−1}·N_{2k−2}) = 0.065→0.019. A fixed low bit loses the
+   magnitude correlation as its distance from the top grows with k.
+4. **Low-half cubic leaks qualify the zero-block, then decay.** corr(f₃, {1,2,3})
+   = 0.203, 0.027, 0.036, 0.013 and corr(f₄, {1,3,4}) = 0.145, 0.100, 0.042,
+   0.009 across k = 8..14. The zero-block theorem is EXACT over the full-odd
+   support (q → rq a bijection on odd residues) but only approximate — at the
+   1/√(#k-bit primes) prime-equidistribution discrepancy scale — over the
+   prime-restricted support; the residual carries ~10^(−3) bits and vanishes by
+   k = 14.
+5. **Controls calibrate:** random-sign null per size (deg-≤3 max mean 0.066 /
+   max 0.074 at k=10; mean 0.0196 / max 0.0213 at k=12; mean 0.0061 / max 0.0065
+   at k=14), all-parity noise √(2 ln2·n/m) = 0.0986 / 0.0319 / 0.0101; the
+   constant bits (j = 0, k−1) trivially 1.0; the j = k−2 carry-out reproduces
+   at 0.51 linear / 0.79 quadratic.
+
+**Barrier assessment.** NOT a factoring breakthrough; a decisive negative
+closing the Walsh/GF(2) face. The factoring function is as far from a low-degree
+parity approximator as a random function on its support — except for the
+symmetric size/carry structure that N itself already reveals. Consistent with
+barrier 1 (no poly/LLL-style approximator — here: no low-degree GF(2)
+approximator) and barrier 2 (all N-computable structure is symmetric). Positive:
+a calibrated spectral method (restricted Walsh spectrum + per-size null) and a
+quantified symmetric magnitude/carry family (corr(p_{k−d}, N_{2k−1}) ≈ 0.28 /
+0.31 / 0.13 / 0.065 / 0.026 for d = 2..6).
+
+**Conclusion.** EMPIRICAL-DEGREE: the information-bearing bits of the smaller
+factor are spectrally flat — no parity of ≤ 3 bits of N approximates them at
+the largest exact-support sizes — and the sole structure is the symmetric
+top-bit magnitude/carry family (BITPROFILE's top-2 sliver at the Walsh level),
+N-computable and non-factor-revealing. The j=2 anomaly and the low-half cubics
+are small-k finite-prime fluctuations decaying into the noise floor. Now 388
+experiments. Assessment v164. Paper 53, issue #69. Scripts:
+/tmp/exp_empiricaldegree.py, /tmp/exp_empiricaldegree2.py, _3, _4, _5.
