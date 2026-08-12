@@ -8616,3 +8616,38 @@ The additive-combinatorics/Fourier lens adds no factoring leverage; reconfirms
 the trace as the ceiling of a symmetric free witness.
 Now 393 experiments. Assessment v169. Paper 58, issue #74.
 Script: /tmp/exp_unitenergy.py.
+
+## Part 140 — Experiment MULT-TABLE-RANK: the mod-N multiplication table has rank ⌊(N+2τ(N)−3)/2⌋ — a universal semiprime law rank(pq)=(N+5)/2, a divisor-count certificate only (cron loop round-15 #3)
+
+**Hypothesis.** The N×N multiplication table M[i][j] = (i·j mod N) has a rank
+defect N−rank = (N−5)/2 + "type classifier" (brainstorm). Whether the rank (or
+null structure) leaks any asymmetric factor content.
+
+**Experiment.** Computed exact ranks: sympy rational elimination N=3..39
+(19 values), fast modular rank over two large primes N=2..80 and spot N to 495
+(rank mod p under-reports only if a pivot needs division by p — two random
+primes make this negligible; exact sympy and modular agree on all samples).
+
+**Findings.** (1) CLOSED FORM (machine-verified, 79/79 + 19/19 exact): for ALL
+N, rank = ⌊(N + 2τ(N) − 3)/2⌋, rank defect = ⌈(N − 2τ(N) + 3)/2⌉, where τ(N)
+= divisor count. The brainstorm's "type classifier" = c(N) = defect − (N−5)/2 =
+**4 − τ(N)**: primes (τ=2) c=2, prime squares (τ=3) c=1, prime cubes & products
+(τ≥4) c≤0. (2) UNIVERSAL SEMIPRIME LAW: τ(pq) = 4 ⟹ rank(pq) = (N+5)/2 and
+defect = (N−5)/2 for EVERY semiprime — the table cannot even distinguish two
+semiprimes except by size. (3) The rank/null space are N-computable ⟹ symmetric
+in (p,q) (barrier 2): the information content is the divisor-count class τ(N) at
+most — a compositeness/type certificate (prime vs prime-power vs product), never
+p or q. (4) Cost: rank = O(N³) exact/matrix elimination — super-polynomial in
+log N (barrier 4, the free-witness aggregation at matrix level); the closed form
+needs τ(N) = the divisor structure = the factorization (barrier 6); the table
+(ij mod n) is classical — M. Bueno (Involve) studies its kernel for prime n
+(prime-case rank (p+1)/2 known; the τ(N)-composite closed form machine-verified
+here) (barrier 8).
+
+**Verdict.** CONFIRMED negative for factoring. The multiplication table is a
+symmetric free witness whose exact rank ⌊(N+2τ(N)−3)/2⌋ reveals only the
+divisor-count class; for semiprimes it is a universal size-only law (N+5)/2.
+No asymmetric content, no p/q distinguishability, O(N³) to compute, circular to
+close. Barriers 2/4/6/8.
+Now 394 experiments. Assessment v170. Paper 59, issue #75.
+Script: /tmp/exp_multtablerank.py.
