@@ -6931,3 +6931,24 @@ its factorization. A clean negative result for the topological school.
 
 **Conclusion.** GROUPOID: the topological re-encoding is exactly as hard as
 factoring. No breakthrough.
+
+---
+
+## Part 98 — Experiment DRHO: Dickman-policy rho (round-11 subagent #4, batch complete)
+
+**Hypothesis (round-11 subagent #4).** Dickman-optimal stopping rule for
+relation collection in rho: a constant-factor improvement, likely folklore.
+
+**Experiment (N = 24287, 504467, 15936653).**
+1. Classic rho vs batch/early-abort: mean ratio ~1.95 — the batch variant is
+   NOT consistently better (2-3x worse at 16-20 bits, 0.67x at 24 bits).
+2. NO asymptotic gain — the sqrt floor is unchanged. Likely already in the
+   QS/MPQS/NFS early-abort folklore.
+
+**Barrier assessment.** REFUTED as a breakthrough — barrier 2 (sqrt floor)
+unchanged; a constant-factor optimization at best. Weakest of round-11.
+
+**Conclusion.** DRHO completes the round-11 subagent batch (4/4: CIFINGER,
+CFSIGMA, GROUPOID, DRHO). Eleven rounds of subagent hypotheses now closed
+(~50 total). The classical uniform hint-free surface is confirmed closed.
+No breakthrough.
