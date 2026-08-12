@@ -7304,3 +7304,30 @@ Next hypothesis (from this refutation): the frontier is the NON-smooth (general)
 order case — the barrier framework seals it; a fresh angle must attack the
 sealing itself (e.g., the free-witness value computation), which the framework
 classifies as barrier 4.
+
+---
+
+## Part 110 — Experiment SMOOTHCLASS: smoothness classification via free probes (scientific-method hypothesis 3)
+
+**Hypothesis (from PROBESMOOTH's refutation).** The free r|t probes can
+CLASSIFY a semiprime as p-1-smooth / general with poly probes, enabling route
+selection.
+
+**Experiment (6 semiprimes, p in 13-251; probe B=5000, b in {2,3,5,7,11}).**
+1. The probes detected factors in all 6 (t=4..147) — because p-1 is SMALL
+   (12-172) at these sizes.
+2. For LARGE semiprimes (p ~ 2^500), p-1 ~ 2^500 and the probes need B ~ p-1
+   (exponential) — NO poly detection.
+3. The detection time is bounded by the smallest order ~ min(p-1, q-1) — the
+   p-1 weakness.
+
+**Barrier assessment.** REFUTED — collapses to barrier 8 (p-1 smoothness). The
+classifier detects only the smooth case that p-1 already handles. No general
+advance.
+
+**Conclusion.** SMOOTHCLASS: three consecutive hypotheses (ORDDIV, PROBESMOOTH,
+SMOOTHCLASS) all confirm the free r|t probes are the p-1 weakness. The
+scientific-method cycle is working: propose -> test -> validate -> record.
+Next hypothesis (iteration 4): the probes are order/p-1-bound; a fresh angle
+must attack the free-witness VALUE computation (barrier 4) or a non-order
+structure.
