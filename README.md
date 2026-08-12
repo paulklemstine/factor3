@@ -44,13 +44,14 @@ of independent mathematical interest.
 | 28 | [The Spectral Free-Witness](ResearchOutput/NewMathematics/28_Spectral_FreeWitness.md) | heat-kernel order recovery extends the free-witness classification |
 | 29 | [Round-11 Closures](ResearchOutput/NewMathematics/29_Round11_Closures.md) | the definitive closure of the classical surface (experiments 348-351) |
 | 30 | [The Moonshot Sweep](ResearchOutput/NewMathematics/30_Moonshot_Sweep.md) | 5-angle arXiv mining; quantum exception refined (experiments 352-354) |
+| 31 | [De-Quantization Assessed](ResearchOutput/NewMathematics/31_Dequantization_Assessed.md) | Shor's QFT is irreducible; tensor-network emulation fails (experiments 359-360) |
 
 The consolidated report is the authoritative record of all novel mathematics from
 the 292-experiment investigation.
 
 ## Contents
 
-- `ResearchOutput/NewMathematics/` — the 30 papers + consolidated report
+- `ResearchOutput/NewMathematics/` — the 31 papers + consolidated report
 - `ResearchOutput/Factoring_Lab_Notebook.md` — the master experiment record (284 experiments)
 - `ResearchOutput/Factoring_Assessment_Genuine_Breakthrough.md` — honest assessment (v61)
 - `ResearchOutput/Factoring_Brainstorm_Unconventional.md`, `Factoring_Research_Synthesis.md` — planning documents
