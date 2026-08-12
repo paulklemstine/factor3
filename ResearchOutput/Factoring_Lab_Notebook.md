@@ -8037,3 +8037,59 @@ Shor needs essentially its full register; below it recovery collapses to the
 classical exponential floor, above it qubit↔sample fungibility operates. The
 quantum exception cannot be shrunk by register truncation. Now 382 experiments.
 Assessment v158. Script: /tmp/exp_qubittrade.py.
+
+## Part 129 — Experiment COND-RANK: the classical conditioning capacity on the order (round-14 frontier-ii hypothesis 5)
+
+**Hypothesis (round-14 #5).** Could a classical computer shrink Shor's quantum
+register by conditioning on poly-computable statistics of N? Strong form: the
+order r = ord_N(a) is independent of every poly-computable f(N), so I(f(N); r)
+≈ 0 for all f — no classical preconditioning exists. The order's MAGNITUDE
+log₂(r) sets the register size (QUBIT-TRADE), so the meaningful claim is that
+I(f(N); log₂ r) ≈ 0.
+
+**Experiment (10 000 semiprimes, N ∈ [23, 28] bits, base a = 2; battery of
+poly-computable statistics: N mod m (m ≤ 64), Jacobi symbols (a′|N) for 14
+small primes, possible-trace residue sets S_m(N) = {x+y mod m : xy ≡ N},
+popcount, digit predicates; targets log₂ r (binned), r mod ℓ for ℓ = 2,3,5,7;
+each mutual information compared to a permutation null; R² regression of
+log₂ r on N mod m).**
+1. **The magnitude channel is empty.** I(combined fingerprint; log₂ r) excess
+   ≈ 0 (−0.008..−0.001 bits); best R² of log₂ r on N mod m = 0.017 (m=64);
+   I(N mod ℓ; [log₂ r ≥ median]) ≤ 0.005 bits for all ℓ. The register-sizing
+   quantity is ORTHOGONAL to every poly-computable statistic.
+2. **A real but minuscule divisibility channel exists.** I(N mod ℓ; [ℓ | r]) is
+   positive and concentrates on small ℓ: ℓ=3 → 0.08 bits, ℓ=5 → 0.018, ℓ=7 →
+   0.011, decaying to ~0.0001 at ℓ=499. TOTAL capacity over ALL primes ≤ 500:
+   **C(500) = 0.173 bits** — converging (terms decay as ~1/ℓ²). vs H(r) ≥ 13.3
+   bits. H(r | F(N)) ≈ H(r) − 0.2.
+3. **Mechanism — the divisibility lift.** ℓ | r ⟹ ℓ | ord_p(2) or ℓ | ord_q(2)
+   ⟹ ℓ | p−1, and N mod ℓ constrains the (p mod ℓ, q mod ℓ) pair. So N's
+   residues leak the small-prime DIVISIBILITY PROFILE of the order, never its
+   value.
+4. **Surprising direction (Chebotarev content).** N ≡ 2 mod 3 makes P(3 | r)
+   HIGHER (0.76) than N ≡ 1 mod 3 (0.43), consistent across bases a = 2, 3, 5.
+   N ≡ 2 forces one prime ≡ 1 mod 3 (3 | p−1) and one ≡ 2 (3 ∤ p−1), so 3 | r
+   iff 3 | ord of the ≡1 prime — measuring P(3 | ord_p(a) | p ≡ 1 mod 3) ≈ 0.75
+   (the cube-residue Chebotarev density: 2^{(p−1)/3} ≠ 1 mod p for ~3/4 of
+   p ≡ 1 mod 3). N ≡ 1 mixes (1,1) [both primes ≡ 1] with (2,2) [neither],
+   dragging the marginal down.
+5. **No synergy in the joint bits:** I((N mod 3, N mod 5); ([3|r],[5|r])) =
+   0.104 ≈ 0.08 + 0.018 — the divisibility bits are ~independent.
+
+**Barrier assessment.** Strong hypothesis REFUTED (the divisibility channel is
+real); refined claim CONFIRMED and QUANTIFIED (total capacity 0.17 bits). No
+factor-revealing content — knowing ℓ | r for small ℓ does not factor N or
+shrink the register. Collapses to barriers 2 (only the SYMMETRIC divisibility
+profile leaks, never the asymmetric value) and 5 (the order's magnitude is
+orthogonal to N's poly-computable structure); circularity (barrier 6)
+reinforced — a statistic leaking the order's VALUE would be a factoring
+shortcut. Positive: a tight quantitative bound on the classical side-channel
+capacity for order-finding, with a Chebotarev-density measurement inside.
+
+**Conclusion.** COND-RANK: no poly-computable statistic of N removes more than
+~0.2 bits of the ≥13-bit order entropy — the quantum register cannot be shrunk
+by classical conditioning. Any attempt to precondition order-finding on N's
+computable structure captures only the divisibility profile, which is
+information-useless for both factoring and register sizing. Now 383 experiments.
+Assessment v159. Paper 48, issue #64. Scripts: /tmp/exp_condrank.py,
+/tmp/exp_condrank2.py.

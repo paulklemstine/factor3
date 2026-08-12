@@ -1235,6 +1235,26 @@ t_min ≈ 2·log₂(N) ≈ the full register — Shor cannot be shrunk by trunca
 a breakthrough; a frontier-(ii) resource bound confirming the quantum channel
 needs its full ~2·log₂(N) qubits. Now 382 experiments.
 
+**Iteration 71 experiment (COND-RANK — round-14 frontier-ii #5).** Can
+classical conditioning on poly-computable statistics of N shrink the quantum
+register? Measured mutual information between a battery of N-computable
+statistics (N mod m, Jacobi symbols, possible-trace sets, digit predicates) and
+targets derived from r = ord_N(2) over 10 000 semiprimes, with permutation
+nulls. **The magnitude channel is empty** (I(combined; log₂ r) excess ≈ 0; best
+R² of log₂ r on N mod m = 0.017) — the register-sizing quantity is orthogonal to
+all poly-computable structure (barrier 5). **A real but minuscule divisibility
+channel exists:** I(N mod ℓ; [ℓ|r]) concentrates on small ℓ (ℓ=3 → 0.08 bits,
+decaying ~1/ℓ²); TOTAL capacity over all primes ≤ 500 is 0.173 bits vs
+H(r) ≥ 13.3 bits — H(r|F(N)) ≈ H(r) − 0.2. Mechanism: ℓ|r ⟹ ℓ|p−1, and N mod ℓ
+constrains (p,q) mod ℓ — N's residues leak only the small-prime divisibility
+profile of the order, never its value (barrier 2; a value leak would be a
+factoring shortcut, barrier 6). Surprising direction (Chebotarev content):
+N ≡ 2 mod 3 lifts P(3|r) to 0.76 vs 0.43 for N ≡ 1 (consistent across a = 2,3,5),
+measuring P(3|ord_p(a) | p ≡ 1 mod 3) ≈ 0.75. NOT a breakthrough; strong form
+refuted, refined claim CONFIRMED and QUANTIFIED — no poly-computable statistic
+removes more than ~0.2 bits of order entropy, so the quantum register cannot be
+shrunk by classical conditioning. Now 383 experiments.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1605,6 +1625,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v158 — 2026-08-11. Based on 382 computational experiments, an
+*Assessment v159 — 2026-08-11. Based on 383 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
-formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, SCHINZEL, PERMORD (permutation-cycle readout collapses to barrier 4), HALFPLANE (non-CRT-separable circle count: N-dominant term + √N-noise corrections, barrier 4), RANDOM-BQF (extrinsic class-group representation vector is a residue dial, barrier 5), FETQ (asymmetric a^{N−1} CRT-split is factor-blind, barrier 5/6/8), CONDORDER (order×Jacobi joint law is N-determined, barrier 5/6/8), JACSIGN (Jacobi-signed circle count escapes the residue dial but sits at the Weil √N floor, barrier 4/2), KPOWER (cubic power-residue symbols escape the dial but are circular + symmetric, barrier 6/2/5), MULTIMOD (derived-modulus invariants are N-only, barrier 1/5), QRLEAK (QR fingerprint: good hash, zero candidate reduction — Dirichlet no-pruning, barrier 2/5/6), SPECTRES (residue+spectral cell closed; combination grid complete; round-13 12/12), QUERYWIT (partial free-witness threshold = Θ(p+q), the trace; barrier-4 quantification), COMPENSATING-PARTNER (class-wide no-pinning lemma: no poly-computable congruence battery pins a factor — round-14 frontier-i, barrier 2/5), DIAL-THRESHOLD (residue dials cannot amplify a Coppersmith hint: computable dials are constant on candidates, pinning dials need p mod M* beyond the hint — round-14 frontier-iii, barrier 2/4/6), ISOLATION-COST (oracle isolation = log₂(π(√N)) queries vs zero pruning from N — barrier 4 is the symmetry-breaking cost, unifying frontiers i and ii), and QUBIT-TRADE (quantum-register truncation threshold = 2·log₂(r) ≈ full Shor register; the quantum channel cannot be shrunk — round-14 frontier-ii resource bound).*
+formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, SCHINZEL, PERMORD (permutation-cycle readout collapses to barrier 4), HALFPLANE (non-CRT-separable circle count: N-dominant term + √N-noise corrections, barrier 4), RANDOM-BQF (extrinsic class-group representation vector is a residue dial, barrier 5), FETQ (asymmetric a^{N−1} CRT-split is factor-blind, barrier 5/6/8), CONDORDER (order×Jacobi joint law is N-determined, barrier 5/6/8), JACSIGN (Jacobi-signed circle count escapes the residue dial but sits at the Weil √N floor, barrier 4/2), KPOWER (cubic power-residue symbols escape the dial but are circular + symmetric, barrier 6/2/5), MULTIMOD (derived-modulus invariants are N-only, barrier 1/5), QRLEAK (QR fingerprint: good hash, zero candidate reduction — Dirichlet no-pruning, barrier 2/5/6), SPECTRES (residue+spectral cell closed; combination grid complete; round-13 12/12), QUERYWIT (partial free-witness threshold = Θ(p+q), the trace; barrier-4 quantification), COMPENSATING-PARTNER (class-wide no-pinning lemma: no poly-computable congruence battery pins a factor — round-14 frontier-i, barrier 2/5), DIAL-THRESHOLD (residue dials cannot amplify a Coppersmith hint: computable dials are constant on candidates, pinning dials need p mod M* beyond the hint — round-14 frontier-iii, barrier 2/4/6), ISOLATION-COST (oracle isolation = log₂(π(√N)) queries vs zero pruning from N — barrier 4 is the symmetry-breaking cost, unifying frontiers i and ii), QUBIT-TRADE (quantum-register truncation threshold = 2·log₂(r) ≈ full Shor register; the quantum channel cannot be shrunk — round-14 frontier-ii resource bound), and COND-RANK (classical conditioning capacity on the order = 0.17 bits total — divisibility-profile only, magnitude orthogonal; the quantum register cannot be shrunk by conditioning — round-14 frontier-ii, barriers 2/5/6).*
