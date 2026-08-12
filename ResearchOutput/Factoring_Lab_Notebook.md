@@ -6817,3 +6817,29 @@ target (aggregation necessity holds beyond the multiplicative class).
 **Conclusion.** HKW-VERIFIED: the spectral free-witness is independently
 confirmed. The arXiv push produced a genuine extension of the free-witness
 classification.
+
+---
+
+## Part 94 — Experiment ZETAGCD: zeta-law gcd stabilization (arXiv mining, corrected)
+
+**Source.** The arXiv-mining subagent's finding: dyadic collision relations
+D_j == 0 mod r; running-gcd of ~3-4 relations recovers r (zeta-law).
+
+**Verification (N = 143, 221, 899; 400 trials each).**
+1. Running-gcd of dyadic-style relations recovers r in ~2.7 relations on average.
+2. CORRECTED comparison: the fraction with <= 3 relations is 0.83-0.85, which
+   MATCHES the correct zeta-law prediction 1/zeta(3) = 0.832 (my initial print
+   used a WRONG zeta constant 2.202 instead of 1.202, claiming 'better than
+   0.45' — a bug; the observed rate equals the zeta-law, not above it).
+3. The running-gcd stabilizes at exactly the zeta-law rate — a KNOWN
+   constant-factor property (gcd of s random integers = 1 with prob 1/zeta(s)),
+   not a new discovery. (The subagent's '18/20 > prediction' was a small-sample
+   or comparison artifact.)
+
+**Barrier assessment.** Confirms the zeta-law mechanism: r is recovered from
+~3 relations at the predicted rate. This is a practical constant-factor nugget
+inside the collision/rho family, NOT an exponent change and NOT a framework
+extension. Consistent with barrier 4/8.
+
+**Conclusion.** ZETAGCD: the zeta-law stabilization is confirmed and correctly
+priced as a known constant-factor property. Honest correction recorded.

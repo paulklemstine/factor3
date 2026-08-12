@@ -942,6 +942,11 @@ heat-kernel value p_n(e) recovers r = ord_N(b) exactly (all 6 cases at n =
 8(M+1)^2) — the first SPECTRAL (non-multiplicative) free-witness, sealed by
 O(N) aggregation. CONFIRMED; extends the free-witness classification (paper 16).
 
+**Iteration 71 experiment (ZETAGCD — corrected).** Running-gcd of dyadic
+relations recovers r in ~2.7 relations at the zeta-law rate (1/zeta(3) = 0.832,
+observed 0.83-0.85) — a known constant-factor property, not a new gain
+(my initial '0.45' comparison was a wrong zeta constant bug; corrected).
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1312,6 +1317,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v123 — 2026-08-11. Based on 346 computational experiments, an
+*Assessment v124 — 2026-08-11. Based on 347 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
 formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, and SCHINZEL.*
