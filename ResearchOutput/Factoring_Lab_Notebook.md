@@ -7594,3 +7594,44 @@ the value is factor-blind (barrier 5) and the split itself is unreadable
 structure (barrier 8). Closes the "cheap asymmetric exponent" corner: cheap
 N-functions are factor-blind even when asymmetric inside the CRT. Now 371
 experiments. Assessment v147. Script: /tmp/exp_fetq.py.
+
+---
+
+## Part 118 — Experiment CONDORDER: joint law of ord_N(b) | Jacobi symbol (round-13 brainstorm hypothesis 3)
+
+**Hypothesis (round-13 #3).** SCALECASCADE combined residue witnesses with
+detected order-DIVISORS; the untested cell is the JOINT LAW of ord_N(b)
+conditioned on the Jacobi symbol (b/N). Theory: (b/p) = 1 ⟺ ord_p(b) | (p−1)/2
+(a QR iff its order divides the half-group) — so conditioning on (b/N) couples
+the orders to the residue structure. Question: is the conditional law of ord_N(b)
+N-determined (barrier 5) or does it carry (p,q)-dependence beyond N?
+
+**Experiment (14 primes coupling check + 30 near-equal-N semiprimes at ~5×10⁶,
+1500 random b each).**
+1. **Coupling EXACT (7000/7000):** (b/p) = 1 ⟺ ord_p(b) | (p−1)/2, for all
+   tested p. The QR/order link is exact.
+2. **Conditional bias is real:** E[ord_N|J=+1] < E[ord_N|J=−1] mostly (ratio
+   0.68–1.01) — the both-QR case forces both orders into the half-groups,
+   shrinking the lcm.
+3. **BUT the joint law is N-determined:** across the batch, corr of E[ord|J=±1]
+   and their ratio with p, q, p+q, |p−q| ALL fall inside the 300-shuffle
+   permutation null (obs ≤ 0.31, 95th ≈ 0.34–0.41; pct 0.08–0.98). No factor
+   signal beyond N.
+4. **The only structure is a residue dial:** the ratio groups by (p mod 4,
+   q mod 4) type — (1,1): 0.69–0.97, (1,3): 0.88–1.00, (3,3): 0.76–0.79 — a
+   function of N mod 4 (up to symmetric swap).
+5. **Computing the law is circular anyway:** it requires ord_p(b), ord_q(b) —
+   i.e. the factors (barrier 6).
+
+**Barrier assessment.** REFUTED — barrier 5 (the conditional law is a function
+of N's residue structure: (p mod 4, q mod 4) = N mod 4), barrier 6 (computing it
+requires the orders mod p,q = the factors), barrier 8 (the bias mechanism is the
+QR/order coupling = the p−1/q−1 order structure, classified). The residue ×
+order JOINT LAW adds nothing beyond N mod 4.
+
+**Conclusion.** CONDORDER: the joint law of order conditioned on the Jacobi
+symbol is N-determined — the QR-order coupling is exact but the resulting bias is
+a residue dial. Closes the order × residue joint-quadrant of the combination
+grid (SCALECASCADE residue+order, SPECTRUNC order+spectral, CONDORDER the joint
+law; SPECTRES residue+spectral remains untested but is predicted to collapse the
+same way). Now 372 experiments. Assessment v148. Script: /tmp/exp_condorder.py.

@@ -1103,6 +1103,17 @@ tracks g). REFUTED — barrier 5 + 6 + 8. Closes the "cheap asymmetric exponent"
 corner: even a poly(log N)-computable value that is asymmetric inside the CRT is
 factor-blind. Now 371 experiments.
 
+**Iteration 71 experiment (CONDORDER — round-13 brainstorm hypothesis 3).** The
+joint law of ord_N(b) conditioned on the Jacobi symbol (b/N). The QR-order
+coupling (b/p) = 1 ⟺ ord_p(b) | (p−1)/2 is EXACT (7000/7000 verified), and the
+conditional bias is real (E[ord|J=+1]/E[ord|J=−1] ∈ 0.68–1.01) — but across 30
+near-equal-N semiprimes (~5×10⁶) all correlations of the conditional means with
+p, q, p+q, |p−q| fall inside the permutation null (obs ≤ 0.31, 95th ≈ 0.34–0.41).
+The only structure is a (p mod 4, q mod 4)-type residue dial (a function of
+N mod 4); computing the law requires ord_p, ord_q = the factors (barrier 6).
+REFUTED — barrier 5 + 6 + 8. Closes the order × residue joint-quadrant of the
+combination grid. Now 372 experiments.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1473,6 +1484,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v147 — 2026-08-11. Based on 371 computational experiments, an
+*Assessment v148 — 2026-08-11. Based on 372 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
-formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, SCHINZEL, PERMORD (permutation-cycle readout collapses to barrier 4), HALFPLANE (non-CRT-separable circle count: N-dominant term + √N-noise corrections, barrier 4), RANDOM-BQF (extrinsic class-group representation vector is a residue dial, barrier 5), and FETQ (asymmetric a^{N−1} CRT-split is factor-blind, barrier 5/6/8).*
+formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, SCHINZEL, PERMORD (permutation-cycle readout collapses to barrier 4), HALFPLANE (non-CRT-separable circle count: N-dominant term + √N-noise corrections, barrier 4), RANDOM-BQF (extrinsic class-group representation vector is a residue dial, barrier 5), FETQ (asymmetric a^{N−1} CRT-split is factor-blind, barrier 5/6/8), and CONDORDER (order×Jacobi joint law is N-determined, barrier 5/6/8).*
