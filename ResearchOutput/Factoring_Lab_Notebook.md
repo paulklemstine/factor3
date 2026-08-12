@@ -8785,3 +8785,23 @@ Script: /tmp/exp_cmecmgeneral_final.py.
 **Verdict.** CONFIRMED null (factor-useless) — but a genuine positive residue shadow on the generic elliptic order's parity face (ℓ=2), qualifying ECM-ORDER-NULL (paper 66): the odd-ℓ nulls stand; only the ℓ=2 face leaks, exactly the discriminant's Jacobi character (the [1,2] transposition face, P=1.0 pinned) plus the Hilbert-class-field fork (principal-form representability, exact). Symmetric only (asym null, barrier 2); a residue dial / QRLEAK-family (barrier 5); mod-N type sealed (barrier 6); quadratic reciprocity (1801)/ECM (1987)/Hilbert class fields — known (barrier 8). Round-18 1/1 done.
 Now 404 experiments. Assessment v180. Paper 69, issue #85.
 Script: /tmp/exp_ecmparity.py.
+
+---
+
+## Part 151 — FORK-FLATNESS (round-18 #2, exp 405, v181)
+
+**Hypothesis.** ECM-PARITY (paper 69) reported the [1,1,1]-vs-[3] fork of the S₃ cubic x³+x+1 at (Δ|p)=+1 is residue-PINNED (per-class rates 0.124–0.594 mod 31, I = 0.0742; I(p mod 31²; fork) = 0.8562 = "93.3% of fork entropy by p mod 31²") with a "ray-class semiprime dial" I(N mod 31²; OR) = 0.1811 vs Jacobi 0.1444, and that the Jensen compression P(OR|(Δ|N)=+1) = 0.7358 below flat-fork 7/9 is driven by that ray-class law. Test: is the pinning a Chebotarev law or a finite-sample artifact? The fiber-product argument says the fork is EXACTLY flat over every ray class (in Gal(L·ℚ(ζ_m)/ℚ) = {(σ,u): σ|_K = u|_K} the three A₃-elements each pair with the unique residue u=c on every QR class) — I(p mod m; fork) = 0 in the limit for every m, so paper 69 Part C should be a sparse-cell artifact. Positive control: the h=1 Kummer cubic x³−2 (cubic-residue character, Eisenstein reciprocity) SHOULD be congruence-pinned at the Artin conductor (pin iff ramified ray class field).
+
+**Part 0 — exacts.** P(2|#E|(Δ|p)=−1) = 220/220 = 1.0000 EXACT; P(2|#E|(Δ|p)=+1) = 0.3062 ≈ 1/3; P(2|#E) = 0.6620 ≈ 2/3; principal-form ⟺ [1,1,1] 209/209 EXACT.
+
+**Part A — the artifact reproduced.** On the paper-69 factor range (206 eligible primes in (2^10, 2^12)): m=31 I = 0.0262 (null max 0.1506); m=961 I = **0.8660** (reproduces paper 0.8562) but null max **0.8951** — observed INSIDE the shuffled null. The "93.3%" is plug-in-MI sparsity on ~0.4-prime-per-class cells (rates 0.0–1.0), not a law.
+
+**Part B — the fork is FLAT (2^24, n=538,641 eligible).** P([1,1,1]) = 0.3332 (exact 1/3). m=31: I = 0.0000 (z = −2.55, rates 0.331–0.334); m=961: I = 0.0003 (null max 0.0008, z = **−6.88**, rates 0.305–0.359); m=29791: I = 0.0204 = null mean 0.0196 / max 0.0204 (pure sparsity — 14,415 classes × 37 primes, rate sd 0.079 = binomial exactly). Part B′ (x³−x+1, Δ=−23): m=23 I=0.0000, m=529 I=0.0002 (z=−5.77), m=713 I=0.0002 (z=−6.59) — FLAT.
+
+**Part C — Jensen real but finite-sample; the dial is noise.** P(OR|(Δ|N)=+1) rises monotonically with factor size: 0.7354 (11/12-bit, reproduces paper 0.7358) → 0.7806 (17/18) → 0.7671 (24/25) → 0.7738 (31/32) → **7/9 = 0.7778** (equilibrium by 17-bit; mechanism = concavity of 1−(1−r)², bias ∝ class-variance of the fork rate, → 0 on equidistributed primes). I((Δ|N); OR) → 0.1216 theory (31/32-bit: 0.1240; I(N mod 31; OR) = 0.1243). **Conditional-null test** (permute fork within fixed (Δ|p),(Δ|q) faces, 400×): dial excess I(N mod 961; OR) − I((Δ|N); OR) = 0.0113 vs null mean 0.0111, z = **+0.37** — the ray-class dial is noise; paper 69's C4 null was wrong (shuffling all of OR kills the Jacobi part).
+
+**Part D — positive control REFUTED.** x³−2 (h=1, Kummer, ramified): n=147,867 eligible, P([1,1,1]) = 0.3333, I(p mod m; fork) = **0.0000** at m = 9, 27, 108, 216 (null max 0.0001–0.0004). The h=1 fork is as flat as the h=3 forks. Fiber-product needs only L∩ℚ(ζ_m) = K, not unramifiedness; the cubic character pins the prime IDEAL's ray class but the integer class mixes 𝔭, 𝔭̄ (inverse chars) → rate 1/3 in every class. Flatness is UNIVERSAL for S₃ cubics.
+
+**Verdict.** CONFIRMED theorem + paper-69 Part C refuted. The S₃ fork is Chebotarev-flat (I(p mod m; fork) = 0 for every m, all three cubics); paper 69's C1/C2 "ray-class pinning" is a sparse-cell plug-in-MI artifact (observed 0.8660 inside null 0.8951); the Jensen compression of P(OR|+1) is real but finite-sample (0.7354 → 7/9 at scale); the ray-class dial is noise (z=+0.37 vs the Jacobi-preserving null); the ℓ=2 OR channel SURVIVES at its large-prime value 0.1216 = I((Δ|N); OR) exactly (still symmetric/residue/known-method — barriers 2/5/6/8); the h=1 positive control is REFUTED (x³−2 flat). Round-18 2/2 done.
+Now 405 experiments. Assessment v181. Paper 70, issue #86.
+Scripts: /tmp/exp_forkflatness.py, /tmp/exp_forkflatness_c.py, /tmp/exp_forkflatness_dial.py.
