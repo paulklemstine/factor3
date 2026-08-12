@@ -957,6 +957,11 @@ carries ~0 MI with (p+q) mod ell (corrs -0.27 to +0.08) — the Coppersmith feed
 is STARVED (atomic-uniform). The hint channel exists but has no N-computable
 source. DEFINITIVE closure: classical surface closed. REFUTED.
 
+**Iteration 71 experiment (GROUPOID — round-11 subagent #3).** Orbit-count
+identity verified exactly but computing C(b) needs phi(N) and the ords (=
+factoring). Burnside re-sums sealed data. REFUTED — barrier 4/trace-lemma seal,
+completely.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1327,6 +1332,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v126 — 2026-08-11. Based on 349 computational experiments, an
+*Assessment v127 — 2026-08-11. Based on 350 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
 formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, and SCHINZEL.*

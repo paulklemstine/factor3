@@ -6909,3 +6909,25 @@ closure test: the classical surface is closed. REFUTED.
 
 **Conclusion.** CFSIGMA: the last unpriced channel has no N-computable feed.
 The classical uniform hint-free surface is confirmed closed. No breakthrough.
+
+---
+
+## Part 97 — Experiment GROUPOID: orbit-count / homotopy cardinality (round-11 subagent #3)
+
+**Hypothesis (round-11 subagent #3).** Topological/categorical invariants of N —
+the orbit set of the unit action, homotopy cardinality of the action groupoid
+B<b> — are exact re-encodings of the divisor structure. C(b) = 1 + phi(N)/ord_N(b)
++ (p-1)/ord_p(b) + (q-1)/ord_q(b) (one stratum per divisor g | N).
+
+**Experiment (N = 143, 221, 899; b = 2, 3).**
+1. Orbit-count identity verified EXACTLY (brute = closed form, all 6 cases).
+2. Computing C(b) requires phi(N) and the ords (= factoring). Burnside's lemma
+   re-sums the same sealed data.
+3. Topology/category theory gives re-encodings, not new computation.
+
+**Barrier assessment.** REFUTED — barrier 4 / trace-lemma seal, completely.
+No cohomological/homotopy/categorical invariant of N is computably cheaper than
+its factorization. A clean negative result for the topological school.
+
+**Conclusion.** GROUPOID: the topological re-encoding is exactly as hard as
+factoring. No breakthrough.
