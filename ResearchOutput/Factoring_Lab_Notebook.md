@@ -8363,3 +8363,56 @@ N-computable and non-factor-revealing. The j=2 anomaly and the low-half cubics
 are small-k finite-prime fluctuations decaying into the noise floor. Now 388
 experiments. Assessment v164. Paper 53, issue #69. Scripts:
 /tmp/exp_empiricaldegree.py, /tmp/exp_empiricaldegree2.py, _3, _4, _5.
+
+## Part 135 — Experiment SMOOTH-SELFHINT-DENSITY: the p−1/ECM weakness is residue-invisible (round-14 hypothesis 10)
+
+**Hypothesis.** Whether the smaller factor p has p−1 B-smooth — the structural
+weakness Pollard's p−1 method and ECM exploit — is detectable from N alone. If
+any poly-computable function of N (residue vector, N−1/N+1 smoothness, low
+bits) shifts the smoothness density off the Dickman baseline, that is a
+self-generated hint toward a known method (frontier iii, barriers 2/5/8); if
+invisible, every instance must be treated uniformly.
+
+**Experiment (random k-bit semiprimes, k = 14/16/18, m up to 200 000; L(p−1),
+L(q−1), L(N−1), L(N+1) by factorint; features N mod ℓ, N mod 1155; empirical
+MI with shuffled nulls; Dickman ρ via ρ′ = −ρ(t−1)/t; per-prime and joint
+leaks; conditional densities).**
+1. **Asymmetric residue leak is ZERO:** I(N mod ℓ; ℓ|p−1) = 0.0000–0.0005 bits
+   at the shuffled-null level for ℓ = 3/5/7/11 at every k — N cannot tell which
+   factor is ≡ 1 mod ℓ.
+2. **The SYMMETRIC event leaks strongly (new positive):** I(N mod ℓ; ℓ|p−1 OR
+   ℓ|q−1) = 0.313/0.036/0.015/0.005 bits at ℓ = 3/5/7/11, stable across k.
+   Mechanism exact at ℓ=3: N ≡ 2 mod 3 forces (p,q) ≡ (1,2)/(2,1), so P(OR) =
+   1.000 while P(p≡1 | N mod 3) = 0.497/0.501 ≈ base 0.499. The
+   asymmetric/symmetric divisibility dichotomy — the divisibility-level face of
+   barrier 2 (symmetry visible, asymmetry uncomputable from N).
+3. **Full B-smoothness undetectable:** I(S_1000; N mod 1155) = 0.006 bits ≈
+   shuffled null 0.005; per-prime symmetric leaks cannot aggregate into a
+   factor-smoothness detector.
+4. **No instance-class self-hint:** corr([L(p−1)≤B], [L(N−1)≤B]) = +0.009,
+   MI 0.0001; corr with [L(N+1)≤B] ≈ 0 — N−1/N+1 smoothness (N-computable)
+   does not predict factor smoothness.
+5. **Density conditioning-invariant and fully explained:** P(L(p−1)≤B | N mod
+   ℓ = n) = base for every n; the base rate matches the even-adjusted Dickman
+   ρ_even(log(2^k/2)/log B) within ~0.04 (the residual is the powers-of-2
+   effect — an N-independent property of shifted primes). ~60–78% of these
+   semiprimes are 1000-weak (why p−1 works at all), yet the weak ones cannot be
+   flagged from N.
+
+**Barrier assessment.** NOT a factoring breakthrough; refutes the last untested
+self-hint direction. The p−1/ECM weakness is an asymmetric property of a
+specific factor, and the experiment quantifies that N carries zero asymmetric
+divisibility information while fully revealing the symmetric profile — barrier
+2 at the divisibility level; no statistical/instance-class self-hint exists
+(frontier-iii statement complete: hints must be genuinely external). Positive:
+the asymmetric/symmetric divisibility dichotomy and the even-adjusted Dickman
+calibration of the p−1 smoothness density.
+
+**Conclusion.** SMOOTH-SELFHINT-DENSITY: the p−1/ECM weakness is residue- and
+instance-class-invisible — I(N mod ℓ; ℓ|p−1) = 0 at the null while
+I(N mod ℓ; ℓ|p−1 OR ℓ|q−1) = 0.31 bits (ℓ=3), the density is
+conditioning-invariant at the parity-adjusted Dickman baseline, and no
+N-computable smoothness event predicts factor smoothness. Together with
+QRLEAK/COMPENSATING-PARTNER, DIAL-THRESHOLD, INTERVAL-HINT: the self-hint
+program is fully closed. Now 389 experiments. Assessment v165. Paper 54, issue
+#70. Scripts: /tmp/exp_smoothselfhint.py, /tmp/exp_smoothselfhint2.py.
