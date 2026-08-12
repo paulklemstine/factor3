@@ -7381,3 +7381,30 @@ general case. The residue/order family is now fully characterized: the free
 resources pin p's small-moduli residues and smooth-part order, but cannot
 advance beyond the smoothness/partial barrier. Scientific-method hypothesis 5
 validated and refuted.
+
+---
+
+## Part 113 — Experiment SPECTRUNC: spectral truncation via order guidance (scientific-method hypothesis 6)
+
+**Hypothesis (from SCALECASCADE's refutation).** Knowing r's small factors
+(from the free probes) should let a TRUNCATED heat-kernel sum recover r's
+smooth part cheaply.
+
+**Experiment (N = 143, 221, 899; heat-kernel p_n(e), n = 8(M+1)^2).**
+1. The truncated sum over small k gave ~1/r "exactly" — BUT this is an
+   ARTIFACT: the k=0 eigen-term IS 1/r, and computing it requires r (circular).
+2. The k!=0 terms decay to ~1e-15 (lambda^648), but the READOUT p_n(e) =
+   (1 + delta)/r is r-dependent; the full eigen-sum is O(r)-sealed.
+3. Knowing r's smooth part does NOT truncate the sum (the informative value is
+   the k=0 term = 1/r, which requires r).
+
+**Barrier assessment.** REFUTED — the spectral readout's k=0 term is 1/r
+(r-dependent, circular); the full eigen-sum is O(r)-sealed (barrier 4). The
+spectral + probe combination does not reduce the aggregation. (Honest note: my
+experiment's 'truncation works' was an artifact of using r to compute the k=0
+term.)
+
+**Conclusion.** SPECTRUNC: the spectral readout is r-sealed regardless of order
+guidance. Scientific-method hypothesis 6 validated and refuted. The spectral
+and order families are both individually sealed; their combination does not
+break the barrier.

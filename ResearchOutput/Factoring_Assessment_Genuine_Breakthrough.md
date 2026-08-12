@@ -1042,6 +1042,11 @@ Scaling the residue+order combination: ambiguity plateaus at 5 (33 distinct)
 across all resource levels — the combination cannot reach the general case
 (residues partial, order-info smooth-part only). REFUTED — barrier 4/8.
 
+**Iteration 71 experiment (SPECTRUNC — scientific-method hypothesis 6).** Spectral
+truncation via order guidance: the k=0 eigen-term is 1/r (r-dependent, circular);
+the full heat-kernel sum is O(r)-sealed. The truncated 'match' was an artifact of
+using r. REFUTED — barrier 4.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1412,6 +1417,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v142 — 2026-08-11. Based on 366 computational experiments, an
+*Assessment v143 — 2026-08-11. Based on 367 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
 formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, and SCHINZEL.*
