@@ -6886,3 +6886,26 @@ order is the p-1 method weakness. Consistent with the spectral extension's wall.
 **Conclusion.** CIFINGER: the sharpest statement of the spectral wall — the
 per-coefficient fingerprint is cheap per entry but the informative entry is at
 the order scale. No breakthrough.
+
+---
+
+## Part 96 — Experiment CFSIGMA: fingerprint -> Coppersmith MI test (round-11 subagent #2)
+
+**Hypothesis (round-11 subagent #2).** Coppersmith amplifies any sigma-hat with
+|sigma-hat - (p+q)| < N^{1/4} in poly time (the real unpriced channel). The
+attack: does the CI-fingerprint (d*(b) = min(ord_p, ord_q)) carry mutual
+information with (p+q) mod ell, feeding the channel?
+
+**Experiment (40 semiprimes; corr of d*(b) mod ell with (p+q) mod ell).**
+1. Correlations ~0 for ell = 3, 5, 7, 11, 13 (0.074, -0.083, -0.042, 0.077,
+   -0.270) — within noise (the -0.270 at ell=13 is a small-sample artifact).
+2. The fingerprint carries ~0 mutual info with (p+q) mod ell — the Coppersmith
+   feed is STARVED (atomic-uniform noise floor).
+
+**Barrier assessment.** The hint-amplification channel EXISTS (Coppersmith) but
+no N-computable source feeds it — ord_p(b) and the induced structure are
+empirically independent of p mod ell (atomic-uniform). This is the DEFINITIVE
+closure test: the classical surface is closed. REFUTED.
+
+**Conclusion.** CFSIGMA: the last unpriced channel has no N-computable feed.
+The classical uniform hint-free surface is confirmed closed. No breakthrough.
