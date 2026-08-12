@@ -8675,3 +8675,15 @@ Script: /tmp/exp_zerodivisorgraph.py.
 **Verdict.** CONFIRMED negative for factoring. The barrier-2 reach of the round-15 aggregate family is exactly {(N, s)}: the trace is the ceiling for the whole family jointly, the family is redundant (one aggregate + N reaches the full symmetric ceiling), asymmetric labels are unreachable, and the reach is cost-sealed at Ω(N). Barriers 2/4 (and 8: the symmetric-function theorem is classical). The trace-exhaustion item closes: no aggregate — singly or jointly — leaks anything beyond the trace, and s does not factor.
 Now 396 experiments. Assessment v172. Paper 61, issue #77.
 Script: /tmp/exp_traceexhaustion.py.
+
+## Part 143 — Experiment SEQSMOOTH-NULL (round-15 #6): the mod-exp sequence statistics do not leak the p−1 smoothness class
+
+**Hypothesis.** Extends SEQSTATE (sequence incompressibility) and SMOOTH-SELFHINT-DENSITY (p−1 smoothness residue-invisible from N) to the sequence level: for a controlled comparison between the ECM-weak class (smaller factor p with p−1 B-smooth) and a matched general class (p−1 has a large prime factor), does ANY statistic of a short window of {a^x mod N} (or its floor twin) distinguish the classes?
+
+**Experiment.** Matched 36 pairs (p,q bit-lengths matched at 18/20 bits, only p−1 smoothness differs): SMOOTH = smooth-p · general-q (only the smaller factor is ECM-weak), GENERAL = general-p · general-q. Positive control: Pollard p−1 (B=100) factors the SMOOTH class 35/36 and the GENERAL class 0/36 — the classes genuinely differ in the relevant sense. Then 42 sequence features over window m=256 (m << B=100), bases {2,3,5}, on both s_x = a^x mod N and the floor twin t_x = (a^x−s_x)//N: distinct count, self-collision gap, top-bit balance, adjacent-difference, lag-1 autocorrelation, spectral flatness, max run. Separation tested by permutation null on the max standardized difference across all 42 features + 5-fold logistic AUC.
+
+**Findings.** (1) Positive control clean: the p−1 METHOD factors 35/36 smooth vs 0/36 general — the ECM-weakness is real and the two classes are genuinely different. (2) Yet NO sequence feature separates them: observed max standardized diff 0.473 sits at the permutation null (mean 0.495, 95th pct 0.734, p = 0.502); logistic AUC = 0.500 (exactly chance). The sequence is statistically identical across the smooth and general classes. (3) Mechanism: the sequence values s_x carry no residue of the order structure ord_p(a) | p−1 — exploiting the smoothness requires computing a^M mod N for M = lcm(1..B) and gcd'ing (the p−1 method itself); no windowed statistic reaches that.
+
+**Verdict.** CONFIRMED null (negative for factoring). The mod-exp sequence is smoothness-blind: the p−1 weakness exists but is only exploitable by RUNNING the p−1 method — a known factoring method (barrier 8) — never by inspecting the sequence, which is N-computable, symmetric, and class-independent incompressible (barriers 2/4). Closes the sequence-level face of the self-hint program and completes round-15.
+Now 397 experiments. Assessment v173. Paper 62, issue #78.
+Script: /tmp/exp_seqsmoothnull.py.
