@@ -7462,3 +7462,50 @@ clean negative result connecting permutation theory to the free-witness/order
 taxonomy (a non-CRT-multiplicative, non-numeric witness in the spirit of ZDG).
 Scientific-method hypothesis 7 validated and refuted. Now 368 experiments.
 Assessment v144. Script: /tmp/exp_permord.py.
+
+---
+
+## Part 115 — Experiment HALFPLANE: non-CRT-separable half-plane circle count (brainstorm hypothesis 2)
+
+**Hypothesis (round-13 brainstorm #2).** The free-witness classification (paper
+16) covers CRT-SEPARABLE counts — products ∏g(p)g(q). Conditioning a free-witness
+solution set on a NON-CRT-separable geometric property (the half-plane x+y < N/2)
+produces a count that cannot factor as a product of local terms. Does such a
+count leak anything beyond the trace lemma, or does it reveal where the
+classification's boundary really is?
+
+**Experiment (N = 15…62879, full enumeration of the circle x²+y²≡1 mod N via CRT
+of the mod-p and mod-q solution sets; tight-band + permutation controls).**
+1. **Dominant term is N-determined:** H(N) = #{solutions with x+y < N/2} ≈
+   C(N)/8, where C(N) = (p−χ_p(−1))(q−χ_q(−1)) is the circle count (itself a
+   function of N mod 4). Verified: at N≈60000, C≈60000, H≈7500 ≈ C/8; δ = H−C/4
+   ≈ −C/8 exactly to first order. The reduction H = #{(u_p,u_q) ∈ U_p×U_q :
+   CRT(u_p,u_q) < N/2} with U_p = {x+y over the mod-p circle} of size
+   (p−χ_p(−1))/2 + {0,1} makes the dominant term a symmetric function of
+   (p mod 4, q mod 4) = N-determined.
+2. **Factor-specific correction is REAL but O(√N):** ε(N) = H − C/8 varies
+   across near-equal-N factorizations (+41 vs +128 at N∈[59881,60227], a ±0.4%
+   N-band) — genuinely non-CRT-separable. But |ε| ≲ √N (measured −88..+128 at
+   √N≈239), i.e. 0.2% of C — exactly the noise-floor scale.
+3. **ε is uncorrelated with every trace coordinate:** across 31 semiprimes
+   (N∈[57181,62879]), corr(ε, p), corr(ε, q), corr(ε, p+q), corr(ε, |p−q|) all
+   fall within the 300-shuffle permutation null (obs ≤ 0.191, 95th ≈ 0.36;
+   pct 0.27–0.62). No structured factor signal. Weak (p mod 4, q mod 4)-type
+   mean shift (±20 on ±100 variance) — residue-level only.
+4. **Computing H costs O(N):** enumerating the C(N) ≈ N circle solutions is the
+   aggregation (barrier 4). There is no free path to H (or ε).
+
+**Barrier assessment.** REFUTED as a method — collapses to barrier 4 (H requires
+the O(N) enumeration of the circle = the aggregation), with the dominant term
+N-determined (barrier 5) and the factor-specific correction ε at the O(√N)
+noise-floor scale, uncorrelated with trace coordinates. Positive content: the
+first NON-CRT-separable conditioning of a free witness; it creates genuine
+factor-variation but ONLY at the √N noise floor — the classification's boundary
+(paper 16) is real, and crossing it does not escape the aggregation seal.
+
+**Conclusion.** HALFPLANE: the half-plane-conditioned circle count is a new
+non-CRT-separable object whose dominant term is N-determined (H ≈ C/8) and whose
+factor-specific part is O(√N) noise (uncorrelated with p, q, p+q, |p−q|),
+sealed by the O(N) aggregation. Round-13 hypothesis 2 validated and refuted.
+Now 369 experiments. Assessment v145. Scripts: /tmp/exp_halfplane.py,
+/tmp/exp_halfplane3.py, /tmp/exp_halfplane_eps.py.

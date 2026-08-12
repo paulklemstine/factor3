@@ -1063,6 +1063,20 @@ barrier 2 (length multiset symmetric) + barrier 8 (= trial division / exponentia
 order-finding). Closes the "lcm-blindness" loophole: even recovering the orders
 SEPARATELY does not help. Now 368 experiments.
 
+**Iteration 71 experiment (HALFPLANE — round-13 brainstorm hypothesis 2).** The
+half-plane-constrained circle count H(N) = #{x²+y²≡1 mod N : x+y < N/2} is the
+first NON-CRT-separable conditioning of a free witness (the cut x+y<N/2 is not a
+product of mod-p and mod-q factors). Full enumeration (N = 15…62879): dominant
+term H ≈ C(N)/8 is N-determined (C(N) = (p−χ_p)(q−χ_q) is a function of N mod 4);
+factor-specific correction ε = H − C/8 is real and varies across near-equal-N
+factorizations (+41 vs +128 in a ±0.4% band) but is O(√N)-scale (−88..+128 at
+√N≈239, 0.2% of C) and uncorrelated with every trace coordinate (permutation
+nulls all pass: obs ≤ 0.191, 95th ≈ 0.36). Computing H costs O(N) enumeration.
+REFUTED — barrier 4 (aggregation) + barrier 5 (dominant term N-only) + noise
+floor (ε at the √N scale, no structured signal). Positive content: the paper-16
+classification boundary is real — non-separable cuts create factor-variation only
+at the noise-floor scale. Now 369 experiments.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1433,6 +1447,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v144 — 2026-08-11. Based on 368 computational experiments, an
+*Assessment v145 — 2026-08-11. Based on 369 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
-formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, SCHINZEL, and PERMORD (permutation-cycle readout of ord_p, ord_q collapses to barrier 4).*
+formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, SCHINZEL, PERMORD (permutation-cycle readout collapses to barrier 4), and HALFPLANE (non-CRT-separable circle count: N-dominant term + √N-noise corrections, barrier 4).*
