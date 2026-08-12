@@ -6861,3 +6861,28 @@ FINDING: another engine formalization of the lab's published work (following
 Recorded as a convergence/feedback-loop data point. The engine continues to
 consume the lab's issues; keep checking for genuinely new engine-generated
 research.
+
+---
+
+## Part 95 — Experiment CIFINGER: cycle-index fingerprint (round-11 subagent #1)
+
+**Hypothesis (round-11 subagent #1).** The spectral content of the b-action on
+Z/NZ is its cycle-length multiset, computable per-coefficient: F(c) =
+gcd(b^c - 1, N), M_d = (1/d) sum_{c|d} mu(d/c) F(c) = cycles of exact length d.
+A per-coefficient NON-sealed spectral object (extends HKW beyond the heat kernel).
+
+**Experiment (N = 143, 221, 899, 1763; b = 2, 3; D = 200).**
+1. First nontrivial cycle length d* = min(ord_p(b), ord_q(b)) EXACTLY (all 8).
+2. Each M_d is poly-log computable (NOT O(N)-sealed), but reaching the
+   informative coefficient d* needs D ~ min(ord_p, ord_q) ~ sqrt(N) for generic
+   b (or is small when p-1 is smooth = the p-1 territory).
+3. The Mobius structure is genuinely new but relocates no information.
+
+**Barrier assessment.** REFUTED as a speedup — the per-coefficient object still
+hits the sqrt floor (barrier 2 / order-seal). The informative coefficient sits
+at min(ord_p, ord_q); averaging over b gives only the birthday factor; a small
+order is the p-1 method weakness. Consistent with the spectral extension's wall.
+
+**Conclusion.** CIFINGER: the sharpest statement of the spectral wall — the
+per-coefficient fingerprint is cheap per entry but the informative entry is at
+the order scale. No breakthrough.

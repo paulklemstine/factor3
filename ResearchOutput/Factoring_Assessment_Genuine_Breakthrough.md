@@ -947,6 +947,11 @@ relations recovers r in ~2.7 relations at the zeta-law rate (1/zeta(3) = 0.832,
 observed 0.83-0.85) — a known constant-factor property, not a new gain
 (my initial '0.45' comparison was a wrong zeta constant bug; corrected).
 
+**Iteration 71 experiment (CIFINGER — round-11 subagent #1).** Cycle-index
+fingerprint: d* = min(ord_p, ord_q) exactly; per-coefficient poly-log but the
+informative entry is at the order scale (~sqrt N; small order = p-1). Mobius
+structure new but relocates no info. REFUTED — barrier 2/order-seal.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1317,6 +1322,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v124 — 2026-08-11. Based on 347 computational experiments, an
+*Assessment v125 — 2026-08-11. Based on 348 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
 formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, and SCHINZEL.*
