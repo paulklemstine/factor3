@@ -7797,3 +7797,39 @@ candidate set for p, because every candidate admits a compensating partner
 factor-reduction tool — the Dirichlet no-pruning argument is the cleanest reason
 residue dials cannot advance past the constant-factor regime. Now 376
 experiments. Assessment v152. Scripts: /tmp/exp_qrleak.py, /tmp/exp_qrleak2.py.
+
+---
+
+## Part 123 — Experiment SPECTRES: residue + spectral combination (round-13 brainstorm hypothesis 8)
+
+**Hypothesis (round-13 #8, the last untested combination cell).** SCALECASCADE
+closed residue+order; SPECTRUNC closed order+spectral. The missed cell: does
+knowing r mod m (residue constraints on r = ord_N(b)) index the characters that
+DOMINATE the heat-kernel spectral readout, allowing a residue-guided truncation
+to recover 1/r cheaply?
+
+**Experiment (N = 143, 221, 899, 3599; r = ord_N(2); the SPECTRUNC λ_k =
+0.5 + 0.5/(M+1)·Σ_t cos(2π·k·2^t/r); dominant-character and residue-class
+analysis).**
+1. **The only dominant character is k=0.** For every N, exactly 1 of r
+   characters has λ > 0.99 — the k=0 term — concentrated at k ≡ 0 mod every
+   m ∈ {2,3,4,5,8}. There is no non-trivial residue class to target.
+2. **The readout converges to 1/r (the k=0 term):** at n = (M+1)² and beyond,
+   all k>0 terms decay to ~0, so p_n(e) → 1/r. Evaluating 1/r requires r —
+   O(r)-sealed (barrier 4) and circular (knowing r IS the answer, barrier 6).
+3. **Residue guidance adds nothing:** knowing r mod m does not reveal which k
+   dominate (there's only k=0, which residue class targeting via r mod m cannot
+   reach without knowing r).
+
+**Barrier assessment.** REFUTED — barrier 4 (the readout is O(r)-sealed) +
+barrier 6 (the informative value is 1/r = r-dependent, circular). Residue
+constraints do not index any non-trivial dominant character — there is one
+(k=0), and targeting it requires knowing r.
+
+**Conclusion.** SPECTRES: the residue+spectral cell collapses exactly like
+SPECTRUNC's order+spectral. This completes the 3×3 combination grid (residue+
+order = SCALECASCADE, order+spectral = SPECTRUNC, residue+spectral = SPECTRES,
+joint law = CONDORDER) — every pairwise combination of the three sealed families
+(residue, order, spectral) is closed. ROUND-13 BRAINSTORM COMPLETE (12/12
+hypotheses tested, all consistent with the barrier framework). Now 377
+experiments. Assessment v153. Script: /tmp/exp_spectres.py.

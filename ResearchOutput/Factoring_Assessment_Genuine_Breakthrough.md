@@ -1164,6 +1164,16 @@ need p). The Dirichlet no-pruning argument is the sharpest reason residues are a
 constant-factor tool; sharpens RESGUIDE/RESCOMB/SCALECASCADE. Now 376
 experiments.
 
+**Iteration 71 experiment (SPECTRES — round-13 brainstorm hypothesis 8).** The
+residue + spectral cell (the last untested combination): does knowing r mod m
+index the dominant heat-kernel characters? N = 143, 221, 899, 3599: the ONLY
+dominant character (λ > 0.99) is k=0 (concentrated at k ≡ 0 mod every m) — no
+non-trivial residue class to target; the readout converges to 1/r (the k=0 term),
+which requires r (O(r)-sealed, barrier 4; circular, barrier 6). REFUTED — barrier
+4 + 6. This closes the 3×3 combination grid (residue+order, order+spectral,
+residue+spectral, joint law) and completes ROUND-13 (12/12 hypotheses tested,
+all barrier-consistent). Now 377 experiments.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1534,6 +1544,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v152 — 2026-08-11. Based on 376 computational experiments, an
+*Assessment v153 — 2026-08-11. Based on 377 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
-formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, SCHINZEL, PERMORD (permutation-cycle readout collapses to barrier 4), HALFPLANE (non-CRT-separable circle count: N-dominant term + √N-noise corrections, barrier 4), RANDOM-BQF (extrinsic class-group representation vector is a residue dial, barrier 5), FETQ (asymmetric a^{N−1} CRT-split is factor-blind, barrier 5/6/8), CONDORDER (order×Jacobi joint law is N-determined, barrier 5/6/8), JACSIGN (Jacobi-signed circle count escapes the residue dial but sits at the Weil √N floor, barrier 4/2), KPOWER (cubic power-residue symbols escape the dial but are circular + symmetric, barrier 6/2/5), MULTIMOD (derived-modulus invariants are N-only, barrier 1/5), and QRLEAK (the QR fingerprint is a good hash of N but gives zero candidate reduction — Dirichlet no-pruning, barrier 2/5/6).*
+formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, SCHINZEL, PERMORD (permutation-cycle readout collapses to barrier 4), HALFPLANE (non-CRT-separable circle count: N-dominant term + √N-noise corrections, barrier 4), RANDOM-BQF (extrinsic class-group representation vector is a residue dial, barrier 5), FETQ (asymmetric a^{N−1} CRT-split is factor-blind, barrier 5/6/8), CONDORDER (order×Jacobi joint law is N-determined, barrier 5/6/8), JACSIGN (Jacobi-signed circle count escapes the residue dial but sits at the Weil √N floor, barrier 4/2), KPOWER (cubic power-residue symbols escape the dial but are circular + symmetric, barrier 6/2/5), MULTIMOD (derived-modulus invariants are N-only, barrier 1/5), QRLEAK (QR fingerprint: good hash, zero candidate reduction — Dirichlet no-pruning, barrier 2/5/6), and SPECTRES (residue+spectral cell closed; the 3×3 combination grid complete; round-13 12/12).*
