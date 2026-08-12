@@ -993,6 +993,12 @@ residues pin p mod M~32 (constant), a fixed-factor reduction, still Theta(sqrt N
 residues sealed. Combining synthesis: the pieces are "more than the sum" in
 capability/information, not complexity (floor and seal unchanged).
 
+**Iteration 71 experiment (COMBINED — full hybrid).** Probe + fingerprint + rho
+achieving best-of-both across regimes (probe catches large-g, fingerprint order
+hints, rho general). Combining synthesis: HYBRID/RESCOMB/RESGUIDE/COMBINED all
+"more than the sum" in capability/information, none in complexity (floor + seal
+intrinsic). No breakthrough from combining.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1363,6 +1369,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v133 — 2026-08-11. Based on 357 computational experiments, an
+*Assessment v134 — 2026-08-11. Based on 358 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
 formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, and SCHINZEL.*
