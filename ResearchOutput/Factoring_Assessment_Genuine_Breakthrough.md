@@ -1255,6 +1255,23 @@ refuted, refined claim CONFIRMED and QUANTIFIED — no poly-computable statistic
 removes more than ~0.2 bits of order entropy, so the quantum register cannot be
 shrunk by classical conditioning. Now 383 experiments.
 
+**Iteration 71 experiment (BITPROFILE — round-14 #6).** The per-bit channel map
+I(pᵢ; Nⱼ) over exact k-bit-prime semiprime enumeration (k = 8–14, up to 380 628
+pairs). **ZERO-BLOCK THEOREM (proved):** I(p; N mod 2^(k−1)) = 0 — the bottom
+half of N is informationally EMPTY about the factor (for fixed odd r = p mod
+2^(k−1), q → r·q is a bijection on odd residues mod 2^(k−1); the whole
+bottom-left block measures at the noise floor). **TOP-2-BIT SLIVER:** the only
+pairwise-visible info is N's top two bits (cols 2k−2, 2k−1, ≈ 0.46 bits; max
+cell 0.21–0.22 at (p_{k−2}, N_{2k−1})). **SUPERDENSITY:** total pairwise
+I ≈ 0.46 bits vs H(p) ≈ 9.5 — ~95% of the factor information is invisible to
+every pairwise bit probe (fraction 6.0% → 4.8% as k grows). **JOINT-ONLY:** p is
+a function of the full N but of neither half alone (top half ambiguous for ~90%
+of classes). Agent's predicted "middle bump" carrying ½log N − log log N is
+REFUTED — no middle band, and the pairwise sliver is ~5% of the channel. NOT a
+breakthrough; confirms + quantifies barriers 2/5 as the information-theoretic
+face of symmetry/orthogonality: a bounded subword of N never reads a factor; the
+superdense joint is invertible only by factoring itself. Now 384 experiments.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1625,6 +1642,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v159 — 2026-08-11. Based on 383 computational experiments, an
+*Assessment v160 — 2026-08-12. Based on 384 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
-formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, SCHINZEL, PERMORD (permutation-cycle readout collapses to barrier 4), HALFPLANE (non-CRT-separable circle count: N-dominant term + √N-noise corrections, barrier 4), RANDOM-BQF (extrinsic class-group representation vector is a residue dial, barrier 5), FETQ (asymmetric a^{N−1} CRT-split is factor-blind, barrier 5/6/8), CONDORDER (order×Jacobi joint law is N-determined, barrier 5/6/8), JACSIGN (Jacobi-signed circle count escapes the residue dial but sits at the Weil √N floor, barrier 4/2), KPOWER (cubic power-residue symbols escape the dial but are circular + symmetric, barrier 6/2/5), MULTIMOD (derived-modulus invariants are N-only, barrier 1/5), QRLEAK (QR fingerprint: good hash, zero candidate reduction — Dirichlet no-pruning, barrier 2/5/6), SPECTRES (residue+spectral cell closed; combination grid complete; round-13 12/12), QUERYWIT (partial free-witness threshold = Θ(p+q), the trace; barrier-4 quantification), COMPENSATING-PARTNER (class-wide no-pinning lemma: no poly-computable congruence battery pins a factor — round-14 frontier-i, barrier 2/5), DIAL-THRESHOLD (residue dials cannot amplify a Coppersmith hint: computable dials are constant on candidates, pinning dials need p mod M* beyond the hint — round-14 frontier-iii, barrier 2/4/6), ISOLATION-COST (oracle isolation = log₂(π(√N)) queries vs zero pruning from N — barrier 4 is the symmetry-breaking cost, unifying frontiers i and ii), QUBIT-TRADE (quantum-register truncation threshold = 2·log₂(r) ≈ full Shor register; the quantum channel cannot be shrunk — round-14 frontier-ii resource bound), and COND-RANK (classical conditioning capacity on the order = 0.17 bits total — divisibility-profile only, magnitude orthogonal; the quantum register cannot be shrunk by conditioning — round-14 frontier-ii, barriers 2/5/6).*
+formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, SCHINZEL, PERMORD (permutation-cycle readout collapses to barrier 4), HALFPLANE (non-CRT-separable circle count: N-dominant term + √N-noise corrections, barrier 4), RANDOM-BQF (extrinsic class-group representation vector is a residue dial, barrier 5), FETQ (asymmetric a^{N−1} CRT-split is factor-blind, barrier 5/6/8), CONDORDER (order×Jacobi joint law is N-determined, barrier 5/6/8), JACSIGN (Jacobi-signed circle count escapes the residue dial but sits at the Weil √N floor, barrier 4/2), KPOWER (cubic power-residue symbols escape the dial but are circular + symmetric, barrier 6/2/5), MULTIMOD (derived-modulus invariants are N-only, barrier 1/5), QRLEAK (QR fingerprint: good hash, zero candidate reduction — Dirichlet no-pruning, barrier 2/5/6), SPECTRES (residue+spectral cell closed; combination grid complete; round-13 12/12), QUERYWIT (partial free-witness threshold = Θ(p+q), the trace; barrier-4 quantification), COMPENSATING-PARTNER (class-wide no-pinning lemma: no poly-computable congruence battery pins a factor — round-14 frontier-i, barrier 2/5), DIAL-THRESHOLD (residue dials cannot amplify a Coppersmith hint: computable dials are constant on candidates, pinning dials need p mod M* beyond the hint — round-14 frontier-iii, barrier 2/4/6), ISOLATION-COST (oracle isolation = log₂(π(√N)) queries vs zero pruning from N — barrier 4 is the symmetry-breaking cost, unifying frontiers i and ii), QUBIT-TRADE (quantum-register truncation threshold = 2·log₂(r) ≈ full Shor register; the quantum channel cannot be shrunk — round-14 frontier-ii resource bound), and COND-RANK (classical conditioning capacity on the order = 0.17 bits total — divisibility-profile only, magnitude orthogonal; the quantum register cannot be shrunk by conditioning — round-14 frontier-ii, barriers 2/5/6), and BITPROFILE (the factor information is SUPERDENSE in N: zero-block theorem — I(p; N mod 2^(k−1)) = 0, bottom half factor-empty; only a 0.46-bit pairwise sliver in N's top-2 bits; ~95% of H(p) pairwise-invisible — round-14 #6, barriers 2/5).*

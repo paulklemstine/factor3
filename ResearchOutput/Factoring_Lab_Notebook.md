@@ -8093,3 +8093,56 @@ computable structure captures only the divisibility profile, which is
 information-useless for both factoring and register sizing. Now 383 experiments.
 Assessment v159. Paper 48, issue #64. Scripts: /tmp/exp_condrank.py,
 /tmp/exp_condrank2.py.
+
+## Part 130 — Experiment BITPROFILE: the factor information is superdense in N (round-14 hypothesis 6, from brainstorm agent #2)
+
+**Hypothesis (agent's claim).** The per-bit channel map I(pᵢ; Nⱼ) has a provably
+zero bottom-left block (p mod 2ᵏ ⊥ N mod 2ᵏ), and the factor information
+concentrates in a MIDDLE bump of ~½log N − log log N bits (with a carry-cascade
+fine structure). If readable, that bump would be a decoder target.
+
+**Experiment (exact enumeration of k-bit-prime semiprime pairs, k = 8–14:
+276–380 628 pairs; full k×(2k) pairwise MI matrix over all bits of p and N; plus
+idealized uniform-odd ensembles and permutation nulls).**
+1. **ZERO-BLOCK THEOREM (proved, confirmed at noise floor):** I(p; N mod 2^(k−1))
+   = 0 — the BOTTOM HALF of N is informationally EMPTY about p. Proof: p ranges
+   over [2^(k−1), 2^k), so p = 2^(k−1) + (p mod 2^(k−1)); for fixed odd r =
+   p mod 2^(k−1), the map q mod 2^(k−1) → r·q mod 2^(k−1) is a bijection on odd
+   residues, so N mod 2^(k−1) is uniform independent of p mod 2^(k−1). The entire
+   bottom-left k×(k−1) block measures at the noise floor (total 0.003 bits at
+   k=12 = exactly Σ of per-cell noise).
+2. **TOP-2-BIT SLIVER (measured):** the only pairwise-visible information sits in
+   N's TOP TWO bits — cols 2k−2 and 2k−1 carry 0.10 + 0.36 (k=12) and 0.09 +
+   0.36 (k=14) bits; max cell 0.21–0.22 bits at (p_{k−2}, N_{2k−1}). Everything
+   else ≈ 0.
+3. **SUPERDENSITY (measured):** total pairwise I ≈ 0.46 bits vs joint
+   I(p; N) = H(p) ≈ 7.7–9.5 bits — **~95% of the factor information is invisible
+   to every pairwise/local bit probe** (pairwise fraction 6.0% at k=12, 4.8% at
+   k=14, decreasing with k).
+4. **JOINT-ONLY RECOVERABILITY (verified):** p is a function of the FULL N (unique
+   factorization), but NOT of the bottom half (independence, above) and NOT of
+   the top half alone (combinatorially ambiguous: floor(N/2^(k−1)) determines
+   p mod 2^(k−1) for only ~10% of classes). The information is superdense —
+   spread across the joint distribution of ALL bits of N.
+5. **The agent's MIDDLE-BUMP prediction is REFUTED:** no middle band exists; the
+   pairwise-visible sliver is in the top-2 carry-out bits and totals ~0.46 bits
+   (≈ 5% of the channel), not the predicted k − log₂k bits. No carry-cascade
+   fine structure.
+
+**Barrier assessment.** NOT a factoring breakthrough (a channel-map
+characterization). Confirms and quantifies barriers 2 + 5: the raw bits of N are
+a near-perfect nonlinear mixer of the factors — 95% of the factor information is
+pairwise-invisible, locked in the joint statistics that only inverting the
+multiplication (factoring) can extract. This is the information-theoretic face
+of symmetry/orthogonality, complementing QRLEAK/COMPENSATING-PARTNER (congruence
+batteries) and ISOLATION-COST (oracle cost). Positive: the zero-block theorem,
+the top-2-bit sliver, and the superdensity ratio ≈ 95% — a new quantitative
+object: the factor-information profile of N.
+
+**Conclusion.** BITPROFILE: the factor p is determined by N's full joint, empty
+from N's bottom half, ~95% pairwise-invisible, with only a 0.46-bit sliver in
+the top-2 bits. No decoder reads a bounded subword of N to factor — the
+information is superdense, and the only route through it is the full nonlinear
+inversion (factoring) itself. Now 384 experiments. Assessment v160. Paper 49,
+issue #65. Scripts: /tmp/exp_bitprofile.py, /tmp/exp_bitprofile2.py,
+/tmp/exp_bitprofile3.py.
