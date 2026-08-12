@@ -7755,3 +7755,45 @@ is if it shares a prime with N (gcd ≠ 1), which happens only for trivial M (li
 N²+N, gcd = N, no new info) or if M's factorization happens to share p — but M
 is coprime to N by construction for the nontrivial cases. Now 375 experiments.
 Assessment v151. Scripts: /tmp/exp_multimod.py, /tmp/exp_multimod3.py.
+
+---
+
+## Part 122 — Experiment QRLEAK: quantitative residue-leakage curve (round-13 brainstorm hypothesis 5)
+
+**Hypothesis (round-13 #5).** The QR fingerprint F_K(N) = [(a_i|N)] over the
+first K primes (each Jacobi symbol poly(log N)-computable via reciprocity) — how
+much does it leak about the factorization? The agent claimed: O(K) bits per K
+queries but reaching modulus ~√N needs K exponential. Test the leakage curve and
+candidate reduction precisely.
+
+**Experiment (300 semiprimes, K = 5..40 Jacobi symbols; discriminative power,
+candidate-reduction via Dirichlet construction).**
+1. **Discriminative power is full (hash property):** K=20 symbols uniquely
+   identify all 300 semiprimes (distinct = 300). F_K is a collision-free-ish
+   function of N — it distinguishes N's from each other.
+2. **BUT zero factor reduction:** given F_K(N0) alone (not N0), every candidate
+   prime p' is consistent — a compensating prime q' with F_K(p'q') = F_K(N0)
+   exists by Dirichlet (the prescribed (a_i|q') = F_a·(a_i|p') values form a
+   coprime residue class mod 8∏a_i; primes exist in every such AP). Verified
+   empirically (K=5, conductor 9240): 8/12 candidates found explicit q1 with
+   EXACT match (remaining 4 just have their least AP-prime beyond search bound).
+   The fingerprint does NOT prune the divisor search.
+3. **No individual (a_i|p) pinning:** the fingerprint knows only the symmetric
+   products (a_i|N) = (a_i|p)(a_i|q) — over primes p' < 3000, all 2^K patterns of
+   (a_i|p') are achievable (K=5: 32/32). The individual factor's residues are
+   free; pinning them needs p (circular, barrier 6).
+4. **The leak is symmetric-residue only (barrier 2/5):** each symbol gives ~1 bit
+   about the JOINT (p mod 8a_i, q mod 8a_i) structure, which is N-determined.
+
+**Barrier assessment.** REFUTED as a factoring tool — barrier 2 (F_K(N) is a
+symmetric function of the products (a_i|p)(a_i|q); no asymmetric handle) +
+barrier 5 (N-determined residue structure) + barrier 6 (individual (a_i|p) need
+p). The sharpest quantitative statement yet of WHY residues are a
+constant-factor tool: the fingerprint uniquely identifies N but cannot reduce the
+candidate set for p, because every candidate admits a compensating partner
+(Dirichlet). Sharpens RESGUIDE/RESCOMB/SCALECASCADE.
+
+**Conclusion.** QRLEAK: the QR fingerprint is a good hash of N but a useless
+factor-reduction tool — the Dirichlet no-pruning argument is the cleanest reason
+residue dials cannot advance past the constant-factor regime. Now 376
+experiments. Assessment v152. Scripts: /tmp/exp_qrleak.py, /tmp/exp_qrleak2.py.
