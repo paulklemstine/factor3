@@ -8471,3 +8471,68 @@ position — the Coppersmith condition (DIAL-THRESHOLD's M* | m constraint
 revisited: the position, not the dial, is what amplifies). Barriers 4/8/2. Now
 390 experiments. Assessment v166. Paper 55, issue #71. Script:
 /tmp/exp_genericrecovery.py.
+
+## Part 137 — Experiment BERGGREN-PRICE-INTERLOCK: every semiprime is a node of both Pythagorean trees (direct analysis request)
+
+**Hypothesis (refined from the prior hypotenuse-coordinate probe).** The
+Berggren and Price Pythagorean-triple trees interlock as two different
+Euclidean descents over the SAME vertex set, and the correct factoring-relevant
+embedding of N = pq is not hypotenuse-N (m²+n² = N, the sum-of-two-squares
+coordinate) but ODD-LEG-N: the node (m,n) = ((p+q)/2, (q−p)/2) — the Fermat
+pair — should be a valid node of BOTH trees with odd leg m²−n² = N exactly.
+If so, both trees are complete tables of Fermat decompositions, and the
+question becomes whether tree traversal to find the N-node beats Fermat.
+
+**Experiment (all valid (m,n), BFS to L=11 both trees; parent-map inversion
+on 50,564 nodes; N-node identity on 1020/1020 random 11–12-bit prime pairs;
+N-node depths at 14–23-bit primes vs Fermat cost; 3×3 matrix leg-swap
+conjugacy; B-parent vs P-parent coincidence over 455,736 nodes; hypotenuse
+density in both trees).**
+
+**Findings.**
+1. **N-NODE IDENTITY (new, exact, verified 1020/1020):** for every odd
+   semiprime N = pq, (m,n) = ((p+q)/2, (q−p)/2) is a valid node of both trees
+   (coprime: any divisor of both divides p and q; opposite parity: m+n = q odd)
+   and its odd leg is N exactly: m²−n² = (m−n)(m+n) = pq = N, hypotenuse
+   (p²+q²)/2, even leg (q²−p²)/2. Coordinates ARE the Fermat pair (c,b):
+   p = m−n, q = m+n. Example: 2003·2011 = 4028033 at node (2007,4), odd leg =
+   4028033 = N. Both trees enumerate all Fermat decompositions exactly once
+   (|B_L| = |P_L| = 3^L to L=11; parents invert with 0 failures).
+2. **Interlock = inequivalence over a shared vertex set:** Berggren child maps
+   dets {+1,−1,+1} (subtract-2/reflect Euclidean descent), Price dets
+   {+2,−2,+2} (halving descent = binary-GCD structure); no conjugacy (|det|
+   invariant, {1,−1,1} vs {8,−8,8} for the 3×3 matrices). Leg swap a↔b IS an
+   automorphism of Berggren (S·B·S permutes {B1,B2,B3}, 3/3) but NOT of Price
+   (S·P·S ∉ {P1,P2,P3}, 0/3) — asymmetric. B-parent = P-parent on exactly 2 of
+   455,736 nodes ((3,2),(4,1)).
+3. **Depth duality:** dB (Berggren) = length of the CF-descent of
+   m/n = (p+q)/(q−p) — ratio-driven, erratic: N-node of 20-bit primes mean
+   78.5, range [19, 1135]; dP (Price) = length of the halving/binary-GCD
+   descent — size-driven, tight: ≈ 1.4·log₂(p+q), sd ≈ 2.4, means
+   17.7/21.4/25.8/30.1 at 14/17/20/23-bit primes. The two orderings are
+   essentially uncorrelated (corr(dB,dP) = −0.16). Exact closed forms resisted
+   standard CF sums (≤35%) — characterized structurally.
+4. **Factoring verdict (decisive negative):** tree-work to find the N-node =
+   3^dB, which beat Fermat's scan in 0/209 trials at 20-bit primes (Fermat mean
+   6,630 steps; min case 3^19 ≈ 1.2×10⁹). dB correlates NEGATIVELY with Fermat
+   cost (r = −0.31) — the trees measure the opposite of Fermat hardness (the
+   ratio (p+q)/(q−p), while Fermat cost ≈ (q−p)²/(8√N)); dP is size-blind
+   (corr ≈ 0). The root→N path string IS the factorization (encodes the
+   binary/CF structure of the Fermat pair); no N-only branch rule; no pruning
+   (odd legs stay ~constant along staircase branches (k,k−1)→(k+1,k)); leg-only
+   descent not closed (parent's odd leg needs the full (m,n)). Hypotenuse
+   density m²+n²≡0 mod N in both trees ≤ 4/N, exactly 0 for N=15,21,35,77,91
+   (primitive pairs).
+
+**Verdict.** CONFIRMED negative for factoring. The Pythagorean-tree line
+closes with exact statements: every odd semiprime N is a node of both trees at
+its Fermat pair (odd leg = N exactly — the correct embedding, refining the
+prior hypotenuse-N probe), the interlock is two inequivalent Euclidean descents
+(dets ±1 vs ±2, leg-swap asymmetric, parents coincide on 2/455k nodes), and
+finding the N-node by traversal costs 3^d ≫ Fermat's d_F (0/209), with dB
+anti-correlated with Fermat hardness and dP size-blind. The trees organize the
+ratio (p+q)/(q−p) — Fermat's ease coordinate — not the product pq; the
+ratio↔product map is the factorization step. Barrier 5 (structural
+orthogonality) sharpened; barrier 8 (tree = Fermat in a different order).
+Now 391 experiments. Assessment v167. Paper 56, issue #72. Scripts:
+/tmp/exp_berggrenprice.py, _3, _4.
