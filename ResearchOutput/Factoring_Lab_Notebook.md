@@ -7277,3 +7277,30 @@ a general factoring method. The scientific-method cycle validated and refuted
 the hypothesis. Next hypothesis: what does this suggest? The probes are free
 but reveal only smooth orders — the frontier is the NON-smooth (general) case,
 which the barrier framework seals.
+
+---
+
+## Part 109 — Experiment PROBESMOOTH: probe-guided smoothness hybrid (scientific-method hypothesis 2)
+
+**Hypothesis (from ORDDIV's refutation).** Combine the free r|t probes (detect
+small orders cheaply) with a smoothness walk — probe-guided p-1 for the smooth
+case, QS-style for the general. Does the guidance improve the collection
+constant?
+
+**Experiment (N = 8051, 224051, 1222313; p-1 probe B=1000, b in {2,3,5}).**
+1. The p-1 probe caught factors in all 3 (t=47, 165, 165) — the SMOOTH case
+   (small p-1, small orders).
+2. rho is also fast at these sizes (3-18 steps).
+3. For general semiprimes (large p-1 with big prime factors), the probe needs
+   B ~ p (exponential) — it does NOT improve the general-case exponent.
+
+**Barrier assessment.** REFUTED — collapses to barrier 8 (known method: the p-1
+smoothness weakness). The probe-guided hybrid only handles the smooth case that
+p-1 already handles; no general-case improvement.
+
+**Conclusion.** PROBESMOOTH: the hybrid is the p-1 weakness, not a general
+advance. The scientific-method cycle validated and refuted hypothesis 2.
+Next hypothesis (from this refutation): the frontier is the NON-smooth (general)
+order case — the barrier framework seals it; a fresh angle must attack the
+sealing itself (e.g., the free-witness value computation), which the framework
+classifies as barrier 4.
