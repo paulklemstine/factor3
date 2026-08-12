@@ -1032,6 +1032,11 @@ probes detect factors only at the p-1 scale (small orders); large N needs
 exponential probes. The classifier detects only the smooth case (p-1 weakness).
 REFUTED — barrier 8.
 
+**Iteration 71 experiment (WITNESSORDER — scientific-method hypothesis 4).**
+Cross-witness residues + probe-derived 'p==1 mod d' constraints: ambiguity 11->2
+(32->42 distinct) — a genuine information combination, bounded (partial, small d,
+sealed). Positive-but-bounded; no complexity change.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1402,6 +1407,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v140 — 2026-08-11. Based on 364 computational experiments, an
+*Assessment v141 — 2026-08-11. Based on 365 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
 formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, and SCHINZEL.*

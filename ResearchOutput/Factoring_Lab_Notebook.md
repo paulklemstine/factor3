@@ -7331,3 +7331,26 @@ scientific-method cycle is working: propose -> test -> validate -> record.
 Next hypothesis (iteration 4): the probes are order/p-1-bound; a fresh angle
 must attack the free-witness VALUE computation (barrier 4) or a non-order
 structure.
+
+---
+
+## Part 111 — Experiment WITNESSORDER: free-witness residues + order constraints (scientific-method hypothesis 4)
+
+**Hypothesis.** Combine the two free resources: (a) cross-witness residues
+(CIRC+KROOT+BQF, RESCOMB), (b) probe-derived 'p == 1 mod d' constraints for
+small d | ord (from the free r|t probes' smooth-part detection).
+
+**Experiment (50 semiprimes, p mod M = 15015).**
+1. Residues alone: 32 distinct, 11 ambiguous.
+2. Residues + order constraints: 42 distinct, only 2 ambiguous.
+3. The probe-derived 'p == 1 mod d' constraints genuinely REDUCE the ambiguity
+   of the free-witness residues — a real 'more than the sum' information gain.
+
+**Barrier assessment.** Positive-but-bounded: the gain is a constant-factor
+narrowing (both resources are partial — small d, sealed residues). The general
+case (large p-1 prime factors) is unaffected. Consistent with the framework:
+the combination transfers information, not complexity.
+
+**Conclusion.** WITNESSORDER: the two free resources combine to pin p tighter
+(11 -> 2 ambiguous) — a genuine information win, bounded by the partial/sealed
+nature of both. No complexity breakthrough, but a real combination finding.
