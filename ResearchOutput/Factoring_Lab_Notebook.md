@@ -6723,3 +6723,43 @@ breakthrough (the quantum exception, frontier 2, refined again).
 
 **Conclusion.** P2Q: the framework's scope extends to non-squarefree forms. Fresh
 arXiv angle tested and recorded. No hint-free classical breakthrough.
+
+---
+
+## Part 91 — Experiment HKW: the heat-kernel spectral free-witness (arXiv mining subagent)
+
+**Source.** arXiv 2601.02518 (Cadavid-Hoyos-Jorgenson-Smajlovic-Velez),
+"diffusion computation" — order finding by an iterated Markovian diffusion (heat
+kernel) on a dyadic Cayley graph, recovering r = ord_N(b) from a SINGLE
+heat-kernel value in O((log N)^2) steps. Deep-mined by the arXiv subagent.
+
+**The mechanism (verified by the subagent, 6/6 cases, N from 20k to 10M).**
+1. For b in (Z/NZ)* with odd order r, the Cayley graph on <b> with dyadic
+   generators {b^+-2^t} mixes in O((log N)^2) steps (doubling lemma: every
+   character k != 0 has some 2^t driving k*2^t into [r/4, 3r/4]).
+2. The single heat-kernel value p_n(e) = (1/r) sum lambda_k^n satisfies
+   |p_n(e) - 1/r| <= 1/(4N^2), so round(1/p_n(e)) = r.
+3. CRITICAL: computing p_n(e) classically is a sum over ALL r eigenvalues,
+   r | phi(N) ~ N — O(N) aggregation (barrier 4). The hardware diffuser whose
+   cost doesn't scale with |X| has area/energy scaling with r: the r cells ARE
+   the free witnesses (the OPO-FAC trap). The digital fallback (collisions among
+   dyadic words) is birthday/p-1 (barrier 8).
+
+**NEW POSITIVE FINDING: p_n(e) is the first SPECTRAL (non-multiplicative)
+free-witness.** It extends paper 16's CRT-multiplicative classification — a
+non-multiplicative member sealed by O(N) aggregation. This sharpens the barrier-4
+proof target: aggregation necessity holds beyond the multiplicative class.
+
+**Zeta-law gcd stabilization (constant-factor gain).** The subagent confirmed
+running-gcd of ~3-4 dyadic relations recovers r exactly (18/20 cases, better
+than the uniform zeta-law prediction 1/zeta(3) ~ 0.83). A real constant-factor
+efficiency inside the rho family — not an exponent change.
+
+**Barrier assessment.** REFUTED as a breakthrough (the readout is barrier-4
+aggregation in a hardware mask; the fallback is barrier 8) — but extends the
+free-witness classification to the spectral class and corroborates the Q-BYPASS
+localization (only a resource with O(N) physically-embodied modes beats barrier 4).
+
+**Conclusion.** HKW: the freshest arXiv idea (heat-kernel order finding) confirmed
+as a spectral free-witness, sealed by barrier 4. No hint-free classical
+breakthrough, but the classification is extended.

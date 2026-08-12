@@ -926,6 +926,12 @@ to N=P^2Q (CRT over Z/P^2xZ/Q; sigma CRT-multiplicative, sealed). No classical
 shortcut for the small-Q subclass; the Jacobi circuit's advantage is quantum.
 CONSISTENT with the framework.
 
+**Iteration 71 experiment (HKW — arXiv mining subagent).** Heat-kernel order
+finding (2601.02518): p_n(e) recovers r = ord_N(b) but is O(N) aggregation —
+the first SPECTRAL (non-multiplicative) free-witness, extending paper 16's
+classification; sealed by barrier 4. Zeta-law gcd stabilization (constant-factor
+gain). REFUTED as breakthrough; classification extended.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1296,6 +1302,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v120 — 2026-08-11. Based on 343 computational experiments, an
+*Assessment v121 — 2026-08-11. Based on 344 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
 formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, and SCHINZEL.*
