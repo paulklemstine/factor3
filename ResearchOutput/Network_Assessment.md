@@ -2,7 +2,7 @@
 
 > Network research loop, opened 2026-08-12 (factoring loop paused). Same rigor
 > as the factoring lab: exact measurable laws, honest negative results, all 8
-> barriers checked each iteration. Count: 2 experiments, assessment v2.
+> barriers checked each iteration. Count: 3 experiments, assessment v3.
 
 ## What NET-1 established (compression axis)
 
@@ -65,6 +65,27 @@
    hierarchical syntax). That is where the next depth iteration should attack —
    alongside the real-scale (small BERT) check of LAW-B.
 
+## What NET-3 established (depth axis, round 2)
+
+1. **The composition-depth trichotomy.** On the task class where depth is
+   supposed to matter — sequential composition with hidden intermediates — all
+   three achievable training regimes are depth-flat: (i) hidden + sparse
+   supervision is UNLEARNABLE at every depth (memorizes seen strings, held-out
+   ≈ chance even at 8000 steps × 2 seeds); (ii) hidden + small input space is
+   MEMORIZED WITHOUT COMPOSITION (train 1.0, length-generalization = chance at
+   every depth d=1..8); (iii) intermediates given makes it LEARNABLE but d=1
+   suffices (depth free). Depth is gated by error-signal decomposability
+   (credit assignment), not capacity.
+2. **The depth law is flat on both sides of task difficulty.** NET-2 covered
+   the easy side (lookups: one attention layer reads the context); NET-3 covers
+   the hard side (composition: unlearnable or depth-free). The single-peaked
+   "capacity-limited / generalization-limited" picture did not materialize in
+   either regime — the binding constraint is optimization, not capacity.
+3. **Constructive pointers.** To make depth pay: a task whose error signal
+   decomposes over steps (addition carries — each digit is its own supervision
+   token) is the one place a non-flat depth law could live; and when a deep
+   model is stuck, check error-signal decomposability before scaling depth.
+
 ## Where a genuine breakthrough could come from (frontiers)
 
 - **The PR law at real scale.** Does the monotone b*(PR) law survive on a
@@ -75,10 +96,11 @@
   joint (leave-all-but-one compounding) measure; the compounding effect
   (barrier f) is the gap between isolated and joint bit-needs. This is likely
   where the real LM win lives.
-- **Depth benefit tasks.** Build a task that genuinely needs sequential
-  composition (digit addition with carries, recursion) and test whether the
-  fixed-budget depth law becomes single-peaked there (and whether LAW-B's
-  Phase-I plateau position tracks the task's required compute-in-place).
+- **Decomposable-error depth task.** Digit addition with carries, where each
+  output digit is its own supervision token (error signal decomposes over
+  steps): test whether the fixed-budget depth law becomes non-flat there, and
+  whether the length-generalization depth effect (train n-digit, test n+1)
+  is real. This is the one regime the trichotomy predicts can break flatness.
 - **Formula extraction as a compression tool** (the lab's second mandate):
   for algorithmic tasks, the extracted exact circuit (rank, frequency) IS a
   lossless compressed form; tie this to the quantization law.
@@ -94,4 +116,4 @@
   picture; the exact two-phase/crossover-d/2/depth-independent-inflation
   objects are the claim, not "residual norms grow".
 
-Assessment v2. 2 experiments (NET-1, NET-2).
+Assessment v3. 3 experiments (NET-1, NET-2, NET-3).
