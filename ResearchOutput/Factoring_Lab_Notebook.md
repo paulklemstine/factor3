@@ -6843,3 +6843,21 @@ extension. Consistent with barrier 4/8.
 
 **Conclusion.** ZETAGCD: the zeta-law stabilization is confirmed and correctly
 priced as a known constant-factor property. Honest correction recorded.
+
+---
+
+## Alethean.org check note — package #695 (loop iteration)
+
+The alethean.org package index gained #695: "The CRT-Split No-Go: Why Iteration
+Built from N Alone Cannot Factor in Polynomial Time" (Bridges domain, bronze,
+2026-08-12). This ECHOES the lab's own paper 11 (the CRT-Split No-Go,
+11_CRT_Split_Iteration_NoGo.md) — the engine consumed paper 11's GitHub issue
+and formalized it (the designed feedback loop: lab papers -> issues ->
+Alethean engine -> packages). Consistent with the user's clarification that the
+issues FEED the engine, so convergence is expected, not independent discovery.
+
+FINDING: another engine formalization of the lab's published work (following
+#694 echoing paper 10). NOT a new idea to test — the content is the lab's own.
+Recorded as a convergence/feedback-loop data point. The engine continues to
+consume the lab's issues; keep checking for genuinely new engine-generated
+research.
