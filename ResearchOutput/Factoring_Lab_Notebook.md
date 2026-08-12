@@ -7678,3 +7678,42 @@ trace coordinates, symmetric (barrier 2), and O(N)-sealed (barrier 4). A new
 entry in the free-witness taxonomy: "character-weighted non-dial at the Weil
 floor." Now 373 experiments. Assessment v149. Scripts: /tmp/exp_jacsign.py,
 /tmp/exp_jacsign2.py.
+
+---
+
+## Part 120 — Experiment KPOWER: higher-power reciprocity dials (round-13 brainstorm hypothesis 9)
+
+**Hypothesis (round-13 #9).** The trace lemma's residue coordinate is normally
+tested with quadratic characters. Cubic (Z[ω]) and quartic (Z[i]) power-residue
+symbols give additional residue dials whose leakage should also saturate —
+testing whether any power-character fingerprint escapes the residue channel.
+
+**Experiment (cubic symbols (a|p)₃ = a^{(p−1)/3} mod p for p ≡ 1 mod 3; 68-prime
+leakage comparison; near-equal-N symmetric symbol).**
+1. **Cubic symbols are NOT residue dials:** (a|p)₃ varies within p mod 9 classes
+   (verified: p ≡ 1 mod 9 gives both (2|p)₃ = 1 and ≠ 1). This is because cubic
+   reciprocity depends on the representation 4p = A²+27B² — p's fine arithmetic,
+   not just p mod 9. Same phenomenon as JACSIGN's W(p).
+2. **Computing (a|p)₃ is circular (barrier 6):** the definition (a|p)₃ =
+   a^{(p−1)/3} mod p uses the exponent p−1; the cubic-reciprocity route needs the
+   4p = A²+27B² representation (= factoring, Euler-style). The N-computable
+   symmetric version (a/N)₃ = (a/p)₃·(a/q)₃ is symmetric (barrier 2) and
+   non-dial (varies within N mod 9: {1:{0,1}, 4:{0,1,2}, 7:{0,1}}).
+3. **Leakage saturates like quadratic:** over 68 primes p ∈ [1000,2000] (p≡1
+   mod 3), both the cubic fingerprint [(a|p)₃ : a=2..11] and the quadratic
+   [(a|p) : a=2..11] give 68/68 distinct fingerprints (same rate). The
+   individual-factor fingerprints are powerful (few symbols pin p mod a large
+   modulus) but circular to compute — you need p to compute the symbols that pin p.
+
+**Barrier assessment.** REFUTED — barrier 6 (computing (a|p)₃ requires p or the
+A²+27B² representation = factoring), barrier 2 (the N-computable (a/N)₃ is
+symmetric), barrier 5 (consistent with the trace lemma: the power-character
+residue coordinate carries only dial + fine-arithmetic noise, both sealed).
+The higher-power channel adds no poly(log N)-computable handle; the "polylog
+symbols pin p" leakage is circular (needs p to compute the symbols).
+
+**Conclusion.** KPOWER: cubic/quartic power-residue symbols escape the residue
+dial (like JACSIGN) but are circular to compute and symmetric in their
+N-computable form. Confirms NSPLIT's barrier-2 finding from the fingerprint
+angle; the power-character channel saturates like the quadratic one. Now 374
+experiments. Assessment v150. Script: /tmp/exp_kpower.py.
