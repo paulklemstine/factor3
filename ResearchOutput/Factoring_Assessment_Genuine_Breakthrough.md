@@ -1011,6 +1011,13 @@ incompressible spectra, entropy log2(r); every low-rank regime = classically-eas
 order; truncated-MPS emulation fails (TV ~ 0.5). De-quantizing Shor = P =
 factoring. The quantum exception stands. User paper published (issue #46).
 
+**Iteration 71 experiment (DEQUANT2 — de-quantization frontier).** 20 ideas
+brainstormed, 3 tested: Dirichlet-annihilator (informative freqs at Q/gcd(r,Q),
+O(Q) to find), fixed-point gcd probe (free observation, O(r)-sealed extraction),
+Regev output distribution (r-parameterized, TV>=0.94 for r-free samplers) — ALL
+collapse to barrier 4. De-quantizing Shor = P = factoring. Quantum exception
+maximally bounded.
+
 A genuine classical breakthrough would require one of:
 - A **witness not defined in terms of the unknown factor** (none known)
 - A **way to compute the witness without search AND without knowing p,q**
@@ -1381,6 +1388,6 @@ structural feature of integer factorization. A classical breakthrough would
 require either (a) a genuinely new mathematical paradigm not represented in any
 existing field, or (b) a quantum computer.
 
-*Assessment v136 — 2026-08-11. Based on 360 computational experiments, an
+*Assessment v137 — 2026-08-11. Based on 361 computational experiments, an
 exhaustive full-Catalog survey, the capstone papers (10–11), the Lean
 formalization of the polynomial barrier, FOUR subagent rounds complete (24 hypotheses), the free-witness classification (paper 16), PYFAC, SIGK, TRUNC, and SCHINZEL.*

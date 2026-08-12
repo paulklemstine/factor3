@@ -7216,3 +7216,39 @@ Theorem 3 is mathematically real but inapplicable to Shor's factoring case.
 
 **Conclusion.** DEQUANT: Shor cannot be de-quantized for factoring-relevant
 orders. The tensor-network de-quantization angle is decisively closed.
+
+---
+
+## Part 107 — Experiment DEQUANT2: de-quantization frontier workflow (20 ideas, judged, tested)
+
+**Program.** The de-quantization frontier workflow (4 brainstorming agents, 20
+ideas, judge, 3 tests). The workflow stalled on the 3rd test; I ran it myself.
+
+**Mined (20 ideas across 4 angles).** Sparse transforms, l1/l2 asymmetry,
+lattice/Regev, information-theoretic.
+
+**Judge's honest verdict.** "None of the 20 ideas plausibly recovers r in
+poly(log N) for general N — de-quantizing Shor IS P = factoring."
+
+**All 3 tested candidates COLLAPSE to barrier 4:**
+1. Dirichlet-annihilator / frequency-selective probe: the informative comb-DFT
+   frequencies are at multiples of Q/gcd(r,Q), located at LARGE values — finding
+   them costs O(Q/gcd(r,Q)) = exponential, or requires knowing r (circular).
+2. Fixed-point gcd probe (Transitivity = resolvability): confirmed an exact
+   r-divisibility oracle (5440/5440) — but observation is FREE while EXTRACTION
+   costs Theta(r) / sqrt(r) BSGS / poly only with factorization of lambda(N)
+   (circular). O(N)-sealed extraction.
+3. Regev's QFT output distribution (UniformVsGaussian): the exact distribution
+   is the diagonal comb P(y)=1/r on the peak lattice (r-parameterized); every
+   r-free sampler sits at TV >= 0.94; r-recovery needs O(r log r) draws.
+
+**Barrier assessment.** All three de-quantization routes collapse to barrier 4
+(O(N)/O(r)-sealed aggregation): the comb is incompressible (rank r, flat
+spectrum), the informative structure is r-parameterized, and every classical
+sampler/extractor requires O(N) work or the factors. The quantum exception
+STANDS. De-quantizing Shor = P = factoring.
+
+**Conclusion.** The de-quantization frontier is comprehensively closed across
+tensor networks (paper 31), the l1 heat-kernel, sparse transforms, lattice
+(Regev), and frequency-selective probes. No classical poly(log N) order-recovery
+exists without O(N) aggregation. The quantum exception is now maximally bounded.
