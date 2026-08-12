@@ -8805,3 +8805,21 @@ Script: /tmp/exp_ecmparity.py.
 **Verdict.** CONFIRMED theorem + paper-69 Part C refuted. The S₃ fork is Chebotarev-flat (I(p mod m; fork) = 0 for every m, all three cubics); paper 69's C1/C2 "ray-class pinning" is a sparse-cell plug-in-MI artifact (observed 0.8660 inside null 0.8951); the Jensen compression of P(OR|+1) is real but finite-sample (0.7354 → 7/9 at scale); the ray-class dial is noise (z=+0.37 vs the Jacobi-preserving null); the ℓ=2 OR channel SURVIVES at its large-prime value 0.1216 = I((Δ|N); OR) exactly (still symmetric/residue/known-method — barriers 2/5/6/8); the h=1 positive control is REFUTED (x³−2 flat). Round-18 2/2 done.
 Now 405 experiments. Assessment v181. Paper 70, issue #86.
 Scripts: /tmp/exp_forkflatness.py, /tmp/exp_forkflatness_c.py, /tmp/exp_forkflatness_dial.py.
+
+---
+
+## Part 152 — CYCLIC-CUBIC-FORK (round-19 #1, exp 406, v182)
+
+**Hypothesis.** FORK-FLATNESS (paper 70) proved the S₃ fork is Chebotarev-flat, but its positive control (x³−2, h=1) was also flat — leaving the mechanism open. The fork-pinning CRITERION: a binary splitting fork of a number field is congruence-pinned by a Dirichlet character IFF it factors through the ABELIANIZATION G^ab of the Galois closure. For a CYCLIC cubic field (G = C₃ abelian) the [1,1,1]-vs-[3] fork should be pinned at 100% of its entropy by a cubic-residue character; for S₃/S₄ closures (G^ab = C₂) only the sign should be pinned and every within-face fork flat. This predicts WHY paper 70's x³−2 control failed: S₃ closure ⇒ G^ab = C₂ ⇒ flat by construction, not "h=1 vs h=3".
+
+**Part A — cyclic cubics (G = C₃): 100% pinned.** cond 7 (x³+x²−2x−1, real subfield of ℚ(ζ₇)): [1,1,1] ⟺ p mod 7 ∈ {1,6} on 6541/6541 = 100% EXACT (no [1,2]-type ever — Galois), P([1,1,1]) = 0.3332 (1/3), I(p mod 7; fork) = **0.9182 = H(1/3) EXACTLY** (null max 0.0000), I(p mod 49) = 0.9182 (deterministic function of the conductor — 42 classes × 7k primes, not sparsity), coprime control m=5: I = 0.0000 (z = −1.3) — the pinning is SPECIFICALLY the conductor congruence. cond 9 (x³−3x+1, real subfield of ℚ(ζ₉)): [1,1,1] ⟺ p mod 9 ∈ {1,8}, I = 0.9181, same structure.
+
+**Part B — S₃ (x³+x+1, G^ab = C₂): sign pinned, A₃-fork flat.** Over all primes P([1,1,1]) = 0.1665 (1/6), P(sign=+1) = 0.5000. I(p mod 31; fork) = **0.1906 = I(sign; fork) EXACTLY** (residual +0.0000) — the unconditioned fork's congruence content is ENTIRELY the sign (G^ab = C₂); the QR-face [1,1,1]-vs-[3] fork: I = 0.0000 (null mean 0.0001, z = −2.37) — FLAT (paper 70 re-verified at 2^22).
+
+**Part C — S₄ (x⁴−x−1, disc −283): the field is S₄, sign pinned, all within-face forks flat.** nroots 4:2:1:0 = 0.0395/0.2531/0.3318/0.3757 = **1:6:8:9/24 EXACT** (disc −283 not a square ⇒ not A₄; paper 65's "A₄ fork" [1,1,1,1]/[2,2]/[1,3] is the EVEN-face fork of this S₄ field, reproduced 0.0798/0.2501/0.6701 = 1/12:3/12:8/12; odd-face [1,1,2]/[4] = 0.5012/0.4988 = 1/2:1/2). Sign pinned: I(sign; hasroot) = 0.0483 ≈ theory 0.0488. Beyond-sign residual I(p mod 283; hasroot) − I(sign; hasroot) = +0.0131 = conditional-null mean EXACTLY (z = +1.00). EVERY within-face fork FLAT: even [1,1,1,1]/[2,2]/[1,3] and odd [1,1,2]/[4] each observed = null mean exactly (z = −1.00) — the ONLY congruence structure in the whole S₄ splitting is the sign.
+
+**Part D — semiprime OR (cond-7 cyclic cubic), factor-useless.** OR = [p split OR q split] (split ⟺ p mod 7 ∈ {1,6}), 23/25-bit factors n=30000: P(OR) = 0.5550 (5/9); P(OR|N mod 7) = 1/3 on {1,6} (0.3342/0.3313), 2/3 on {2,3,4,5} (0.6578/0.6738/0.6598/0.6661); I(N mod 7; OR) = **0.0718** ≈ theory 0.0728, I(N mod 49) = 0.0726, asymmetric labeled split_p = 0.0001 (which-factor wall) — even a 100%-pinned prime-level fork collapses to a 0.073-bit symmetric residue dial at the N level.
+
+**Verdict.** CONFIRMED theorem. Criterion machine-verified on three groups: C₃ (100% pinned — I = H(1/3) exact), S₃ (sign pinned, A₃-fork flat), S₄ (sign pinned, all within-face forks flat). Explains paper 70's x³−2 control failure (S₃ closure ⇒ flat predicted by the criterion). Semiprime level: symmetric residue dichotomy, factor-useless. Barriers 2/5/6/8. Round-19 1/1 done.
+Now 406 experiments. Assessment v182. Paper 71, issue #87.
+Scripts: /tmp/exp_cycliccubic.py (+ within-face S₄ supplemental).
