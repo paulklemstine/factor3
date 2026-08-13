@@ -284,3 +284,59 @@ recommendation is a depth-4 claim; scale-up must re-measure the floor per depth.
 Round-net-18. Now 17 network experiments. Assessment v17. Paper NET-18, issue
 #113.
 Scripts: /tmp/exp_net_d8quant.py.
+
+## Part 18 — NET-17 (round-net-17, speed axis): k* = 4·d CONFIRMED across three depths — d=16 needs k*=64, per-layer compounding r(k)^d
+
+**Hypothesis.** NET-15 (d=4) found lossless top-k pruning at k=16; NET-16
+(d=8) moved the knee to k=32. The pattern **k* = 4·d** predicts d=16 → k*=64
+(only 2× attention-core at fixed ctx=128). This round takes the third point of
+the depth ladder on the same real causal LM (d=16 s0, 5 Gutenberg novels,
+dm=64, vocab 4097, ctx 128, causal, 2000 steps; full acc 0.1610, bar
+0.98·full=0.1578, loss 5.0830).
+
+**Part A — concentration law: still diffuse, NOT strictly depth-independent.**
+Effective support mean **53.28/128** (uniform-causal ≈64.5) — attention is
+diffuse at every depth, but the drift 46.6 → 50.1 → **53.3** (d=4/8/16) is
+real (+14% relative, ~0.3/layer), and top-k mass falls monotonically (top-16
+0.617 → 0.586 → **0.556**). Within the d=16 model the later layers are
+themselves more diffuse (early 45–52, late 52–58) — a within-model analogue.
+
+**Part B — k* = 64 = 4·16 CONFIRMED.** Sweep: k=4 0.808✗ / k=8 0.877✗ / k=16
+0.929✗ / k=32 0.972✗ / **k=64 0.995✓** (Δloss +0.006) / k=96 1.000✓ (exact
+loss match). The knee is at k*=64; the attention-FLOP reduction at fixed
+ctx=128 has decayed to **2×**.
+
+**Mechanism — per-layer compounding explains the law exactly:**
+retained(k,d) ≈ r(k)^d, with r(k) a depth-independent per-layer retention.
+The d=8 per-layer retentions predict the d=16 totals within 0.006 (k=16 pred
+0.924 vs 0.929, k=32 0.966 vs 0.972, k=64 0.994 vs 0.995).
+
+**Part B2 — selection gap WIDENS with depth:** random-16 0.812 (top-k 0.929,
+**+11.7 pts**), random-32 0.874 (0.972, **+9.8 pts**) — monotone +6.2/+4.8
+(d=4) → +9.5/+7.1 (d=8) → +11.7/+9.8 (d=16).
+
+**Cost law — speedup ≈ ctx/(4d).** At fixed ctx=128 the lever decays
+8×→4×→2× with depth; but k* grows only LINEARLY in depth (4d), NOT in context
+— so at real-LM context the law is favorable: ctx=4096, d=16 → k*=64 → **64×**
+attention-core reduction (projected; k*'s ctx-independence untested, the
+natural next speed check).
+
+**Verdict.** NET-17: **k* = 4·d CONFIRMED across {4,8,16}** (k*=16/32/64) with
+a per-layer compounding mechanism r(k)^d; concentration law corrected to
+"diffuse but mildly depth-drifting" (46.6→53.3); random-k gap widens with
+depth. DIFFUSE-BUT-PRUNABLE survives, now quantified as linear-in-depth
+lossless-k. Barriers (a) top-k from eval-input causal attention, joint evals,
+k=96 exact loss match — nothing injected; (b) top-k sparse attention known,
+the k*=4d three-depth law + r(k)^d mechanism + depth-widening gap + eff-support
+drift new; Catalog 698 pkgs no attention-cost law on a real small causal LM;
+(c) real causal LM, real text, causal masking, 4097 vocab; (d) top-k data-free,
+contiguous split, held-out; (e) 1 seed/depth, every eval full joint held-out
+60k, monotone sweep with clean knee at each depth, compounding model predicts
+d=16 from d=8 within 0.006; (f) 0.98 bar + raw loss, 6-pt sweep + 2-pt random
+control, k=96 exact numerics, eval noise ≈0.15% ≪ k*=64 margin; (g) full
+reference + random-k control (+11.7/+9.8 pts), same bar; (h) lever is
+ctx/(4d) — decays with depth at fixed ctx (2× at d=16) but grows with context
+(projected 64× at ctx=4096); caveat: k*'s ctx-independence untested. Script
+/tmp/exp_net_attncost_d16.py.
+Now 18 network experiments. Assessment v18. Paper NET-17, issue #113.
+Scripts: /tmp/exp_net_attncost_d16.py.

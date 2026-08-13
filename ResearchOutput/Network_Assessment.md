@@ -2,7 +2,7 @@
 
 > Network research loop, opened 2026-08-12 (factoring loop paused). Same rigor
 > as the factoring lab: exact measurable laws, honest negative results, all 8
-> barriers checked each iteration. Count: 17 experiments, assessment v17.
+> barriers checked each iteration. Count: 18 experiments, assessment v18.
 
 ## What NET-1 established (compression axis)
 
@@ -491,6 +491,32 @@ PRUNABLE survives with a documented depth boundary.
 **LAW:** DEPTH-DEEPENS-QUANT-FLOOR. The per-channel uniform-4 practical
 optimum is a depth-4 property.
 
+## What NET-17 established (speed-axis rotation, round 4 — k* = 4·d confirmed across three depths)
+
+1. **The k* = 4·d law is CONFIRMED across {4,8,16}.** At d=16 on the same real
+   causal LM (full acc 0.1610, loss 5.0830, bar 0.1578), data-free top-k
+   key/value pruning requires **k*=64** (retained 0.995 ≥ 0.98, Δloss +0.006);
+   k=32 fails (0.972). The three-depth ladder k*=16/32/64 is exact.
+2. **The mechanism is per-layer compounding: retained(k,d) ≈ r(k)^d.** The
+   d=8 per-layer retentions predict the d=16 totals within 0.006 (k=16 pred
+   0.924 vs 0.929; k=32 0.966 vs 0.972; k=64 0.994 vs 0.995). The knee is
+   where r(k)^d crosses 0.98, giving a linear-in-depth kept window.
+3. **The concentration law is corrected: diffuse but mildly depth-DRIFTING.**
+   Effective support 46.6 → 50.1 → **53.3** (+14% relative across depth) and
+   top-16 mass 0.617 → 0.586 → 0.556; attention remains diffuse at every
+   depth (53.3 ≪ 64.5 uniform-causal), but "depth-independent" is refuted in
+   the strict sense (NET-16 overstated it).
+4. **The random-k selection gap WIDENS with depth:** +6.2/+4.8 (d=4) →
+   +9.5/+7.1 (d=8) → **+11.7/+9.8 pts (d=16)** — the compounding signature
+   (each layer's low-information-tail error multiplies through the stack).
+5. **The cost law is `speedup ≈ ctx/(4d)`.** At fixed ctx=128 the lever decays
+   8×→4×→**2×** with depth; but k* grows linearly in depth, NOT in context, so
+   at long context the lever grows (projected **64×** at ctx=4096, d=16 —
+   k*'s context-independence untested, the natural next speed check).
+
+**LAW:** LOSSLESS-K-SCALES-WITH-DEPTH, now exact across three depths — k* = 4·d,
+per-layer compounding r(k)^d, selection gap widening with depth.
+
 ## Where a genuine breakthrough could come from (frontiers)
 
 - **The PR law at real scale — tested, does NOT transfer (NET-11).** The
@@ -544,17 +570,19 @@ optimum is a depth-4 property.
 - **Formula extraction as a compression tool** (the lab's second mandate):
   for algorithmic tasks, the extracted exact circuit (rank, frequency) IS a
   lossless compressed form; tie this to the quantization law.
-- **Speed axis — TESTED with positives (NET-15/16): the attention-cost law.**
-  Trained causal attention is DIFFUSE (effective support ≈47–50/128, only ~28%
-  more concentrated than uniform; the concentration law is depth-INDEPENDENT
-  across d=4/d=8) yet data-free top-k key/value pruning is LOSSLESS at k*=16
-  (d=4: 0.984 ≥ 0.98 bar, 8× attention-core, loss +0.36% rel; ≈5–6× total at
-  ctx 128 where attention is ~95% of FLOPs); weight-selected positions beat
-  random by +4.8–9.5 pts (the gap GROWS with depth). BUT lossless-k scales with
-  depth — **k* ≈ 4d** (k*=16 at d=4 → k*=32 at d=8 → 2× predicted at d=16,
-  under test): the lever decays with depth at fixed ctx. The exit law
-  (NET-6/7/8 toy, NET-10 real-scale negative) and the attention-cost law are
-  the speed results so far.
+- **Speed axis — TESTED with positives (NET-15/16/17): the attention-cost law.**
+  Trained causal attention is DIFFUSE (effective support ≈46.6–53.3/128 across
+  d=4/8/16, only ~17–28% more concentrated than uniform; the mild upward drift
+  with depth does NOT change the diffuse verdict) yet data-free top-k key/value
+  pruning is LOSSLESS at k*=16 (d=4: 0.984 ≥ 0.98 bar, 8× attention-core, loss
+  +0.36% rel; ≈5–6× total at ctx 128 where attention is ~95% of FLOPs);
+  weight-selected positions beat random by +4.8–11.7 pts (the gap GROWS with
+  depth). Lossless-k scales with depth — **k* = 4·d, CONFIRMED across
+  {4,8,16}** (k*=16/32/64), mechanism per-layer compounding retained(k,d) ≈
+  r(k)^d: the lever is `speedup ≈ ctx/(4d)` — it decays with depth at fixed ctx
+  (8×→4×→2×) but grows with context at fixed depth (projected 64× at ctx=4096,
+  d=16; k*'s ctx-independence untested). The exit law (NET-6/7/8 toy, NET-10
+  real-scale negative) and the attention-cost law are the speed results so far.
 
 ## Standing cautions
 - Every result so far is toy-scale (barrier c); the value is in exact laws and
@@ -669,4 +697,4 @@ optimum is a depth-4 property.
   Do not quote the NET-15 8× lever without its depth: at d=8 it is 4×, and the
   d=16 prediction (k*=64, 2×) is under test.
 
-Assessment v17. 17 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18).
+Assessment v18. 18 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17).
