@@ -2,7 +2,7 @@
 
 > Network research loop, opened 2026-08-12 (factoring loop paused). Same rigor
 > as the factoring lab: exact measurable laws, honest negative results, all 8
-> barriers checked each iteration. Count: 9 experiments, assessment v9.
+> barriers checked each iteration. Count: 10 experiments, assessment v10.
 
 ## What NET-1 established (compression axis)
 
@@ -254,6 +254,38 @@
    multiple distant positions — the genuinely hard case and the natural next
    load-bearing target).
 
+## What NET-10 established (real-scale rotation — the causality screen and the exit law on a real LM)
+
+1. **The toy depth line's perfect scores were a full-attention future-peek
+   artifact (proven, not argued).** The TF class uses FULL (bidirectional)
+   attention on next-token tasks, so at position t the model attends to position
+   t+1 — the answer token — and a copy-the-future circuit gives 100% on any
+   deterministic next-token task. The leak is airtight via an information bound:
+   on Dyck-2, new-open types are iid random and 47.8% of next-tokens are opens,
+   so the causal ceiling is 0.7609 overall < the recorded full-attention 1.0000.
+   Causal re-runs at the same architecture/budget confirm it: Dyck-2 d=1
+   overall 0.557 / close_all 0.917 (d=2: 0.563/0.926) vs the recorded 1.0000;
+   extended budget asymptotes close_all near 0.92 (0.9105→0.9135→0.9207 at
+   6k/12k/18k). Causal lookup (deterministic, ceiling 1.0): ~0.89 vs NET-2's
+   1.0000 — the artifact is NOT limited to random-type tasks.
+2. **What survives the honesty fix:** (i) the flat-depth SHAPE — causal
+   d=1 ≈ d=2 within noise on both a deterministic and a random-type task; (ii)
+   transformer-beats-linear on close recovery, now fairly compared — causal
+   transformer 0.917 close_all vs causal windowed-linear 0.75 (+17pp; the NET-8
+   +25pp mixed a causal baseline with a full-attention transformer). Corrected:
+   NET-8/9's "d=1 = 1.0000 / load-bearing-boundary-not-found" absolute claims
+   are withdrawn as measurement artifacts — d=1 is 0.92/0.89, not perfect.
+3. **The exit law does NOT transfer to a real LM (0/4 lossless at crossover).**
+   Real causal GPT on 5 Gutenberg novels (dm=64, vocab 4097, ctx 128, d∈{4,8}×2
+   seeds, teacc 0.157–0.162): the norm profile is reset-then-grow (dip then
+   monotone growth, crossover at l=2–4), NOT the toy's flat-≈d/2-then-grow;
+   shared-head acc climbs monotonically through the full depth — crossover marks
+   the ONSET of decodability growth, not its completion. |exit*−cross|=2/2/5/3,
+   lossless@cross=False in 4/4. The calibration-free dynamic-depth-schedule idea
+   is not supported at real-LM scale (bar sensitivity: the 0.95-bar needs full
+   depth; a 0.80-bar would exit at crossover on d=8 s0 with 63% saving — but
+   that is not lossless).
+
 ## Where a genuine breakthrough could come from (frontiers)
 
 - **The PR law at real scale.** Does the monotone b*(PR) law survive on a
@@ -273,17 +305,23 @@
   d_model, more data, longer training) or whether credit-assignment walls are
   depth-immune in general. A curriculum that teaches carries one column at a
   time is the other untested lever.
-- **The exit law at real scale.** Does the decodability-crossover law survive on
-  a real small LM / BERT (does the norm crossover predict the per-layer
-  decodability cliff there too)? If yes, it gives a calibration-free dynamic
-  depth schedule for inference — the strongest speed candidate now on the table.
-- **The load-bearing-depth boundary.** NET-7 (bounded Dyck-1), NET-8 (Dyck-2 at
-  s=12/dm48), and NET-9 (Dyck-2 across context s≤32 and width dm≥12) all failed
-  to reach it — single-layer soft attention implements a bounded stack (scalar
-  balance pointer + positional content retrieval). The boundary needs
-  NON-POSITIONAL stack content (content computed from multiple distant
-  positions), s≫64, or unbounded nesting — the genuinely hard test of both the
-  flat-depth law and the exit law's boundary.
+- **The exit law at real scale — tested, does NOT transfer (NET-10).** The
+  norm crossover marks the ONSET of shared-head decodability growth on a real
+  causal LM, not its completion: 0/4 models are lossless (0.95·full) at the
+  crossover; the toy's flat-≈d/2-then-grow norm profile is replaced by
+  reset-then-grow. The calibration-free dynamic-depth-schedule idea is not
+  supported at real-LM scale. Remaining speed candidates: PR-based layer
+  dropping informed by actual per-layer loss, or depth-4-8 model families where
+  the 0.80-bar early-exit (≈63% saving on d=8 s0, non-lossless) is acceptable —
+  an explicitly lossy inference cut, not the calibration-free law we hoped for.
+- **The load-bearing-depth boundary — and the toy line must be re-screened
+  causally.** NET-10 proved the toy 1.0000s were full-attention future-peek
+  artifacts (ceiling 0.7609 on Dyck-2; causal lookup 0.89). The load-bearing
+  hunt now has honest targets: NON-POSITIONAL stack content, s≫64, unbounded
+  nesting — tested causally from the start. NET-7's Dyck-1 and the
+  arithmetic/composition tasks are deterministic (ceiling 1.0) and so not
+  refuted by the bound, but their absolute scores still need the causal screen
+  (only lookup and Dyck-2 have been re-run so far).
 - **Formula extraction as a compression tool** (the lab's second mandate):
   for algorithmic tasks, the extracted exact circuit (rank, frequency) IS a
   lossless compressed form; tie this to the quantization law.
@@ -334,5 +372,15 @@
   positions), much larger contexts, or unbounded nesting; and the depth axis has
   had 7 iterations — rotate to the real-scale checks on the speed/compression
   axes (exit law / PR law on a small LM).
+- NET-10 added the two most important cautions of the lab: (1) the TF-class
+  full-attention/next-token framing put the answer in the input — check EVERY
+  next-token toy experiment for the copy-the-future shortcut (causal ceiling
+  bound before trusting 1.0000s); the toy depth line's absolute 1.0000s are
+  withdrawn, the flat-depth SHAPE and transformer-beats-linear comparisons
+  survive. (2) The exit-law cautions above (NET-6/7/8) are TOY-SCALE: on a real
+  causal LM the norm crossover marks the onset of decodability, not a lossless
+  exit (0/4 lossless at crossover) — do not build dynamic-depth inference on the
+  toy crossover; and real-LM norm profiles are reset-then-grow, not
+  flat-then-grow.
 
-Assessment v9. 9 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9).
+Assessment v10. 10 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10).
