@@ -2,7 +2,7 @@
 
 > Network research loop, opened 2026-08-12 (factoring loop paused). Same rigor
 > as the factoring lab: exact measurable laws, honest negative results, all 8
-> barriers checked each iteration. Count: 5 experiments, assessment v5.
+> barriers checked each iteration. Count: 6 experiments, assessment v6.
 
 ## What NET-1 established (compression axis)
 
@@ -146,6 +146,31 @@
    wall. Neither depth, width, nor readout-untying makes depth pay at this
    scale.
 
+## What NET-6 established (speed axis, round 5 — first speed iteration)
+
+1. **The decodability-crossover exit law.** In a trained, perfectly-generalizing
+   transformer, the layer where the trained readout becomes linearly decodable
+   (shared-head early-exit accuracy ≥ 0.98) coincides with the residual-stream
+   Phase-I/II norm boundary to within one layer — |exit*−crossover| ≤ 1 in 12/12
+   models (order-3/order-4 automata, dm=40, d∈{4,8,16}×2 seeds), and exit* ≈ d/2.
+   The exit layer is predictable **a priori** from the two-phase norm law alone,
+   with no confidence gate and no extra trained head.
+2. **A real inference-speed lever.** Exiting at the crossover is lossless (gap to
+   the full model ≤ 0.02, usually 0.0000) and delivers a depth-proportional
+   saving that grows with depth: ~25% at d=4, 38–50% at d=8, ~50% at d=16.
+3. **The mechanism of the two-phase law is now pinned.** Phase I is compute-in-
+   place whose signal becomes usable exactly at the boundary (decodability
+   climbs through Phase I to ~0.93, crosses the usability bar at the boundary
+   layer); Phase II is readout-amplification of an already-formed representation
+   — which is exactly why the final LayerNorm can strip the growth (NET-2) and
+   why the second half is skippable without loss. The plateau is neither trivial
+   waiting (exit is NOT at layer 1) nor opaque compute (the sharp not-decodable-
+   before-crossover form fails in 3/12).
+4. **A useful negative:** confidence-threshold dynamic exit is NOT the lever —
+   mean per-token max-prob at the decodable layer is only 0.70–0.96, so a 0.999
+   gate fires only after the exit layer on nearly every sequence. The fixed,
+   norm-predicted exit is the artifact.
+
 ## Where a genuine breakthrough could come from (frontiers)
 
 - **The PR law at real scale.** Does the monotone b*(PR) law survive on a
@@ -165,10 +190,15 @@
   d_model, more data, longer training) or whether credit-assignment walls are
   depth-immune in general. A curriculum that teaches carries one column at a
   time is the other untested lever.
+- **The exit law at real scale.** Does the decodability-crossover law survive on
+  a real small LM / BERT (does the norm crossover predict the per-layer
+  decodability cliff there too)? If yes, it gives a calibration-free dynamic
+  depth schedule for inference — the strongest speed candidate now on the table.
 - **Formula extraction as a compression tool** (the lab's second mandate):
   for algorithmic tasks, the extracted exact circuit (rank, frequency) IS a
   lossless compressed form; tie this to the quantization law.
-- **Speed axis** is still untouched (attention-cost laws).
+- **Speed axis** is now open (NET-6 opened it with the exit law); attention-cost
+  laws remain untouched.
 
 ## Standing cautions
 - Every result so far is toy-scale (barrier c); the value is in exact laws and
@@ -189,5 +219,10 @@
   untying immediately starts per-digit learning); a per-high/full-low state
   AFTER untying is the carry chain, which depth/width do not buy at this scale
   — do not attack it with more layers.
+- NET-6 added the exit-law caution: on sequential tasks the norm crossover
+  (where ‖x_l‖ starts growing) predicts where a transformer becomes decodable —
+  use it as a fixed inference-exit point (≈d/2, lossless) rather than a
+  confidence gate, whose thresholds misfire because correct models keep
+  probability spread.
 
-Assessment v5. 5 experiments (NET-1, NET-2, NET-3, NET-4, NET-5).
+Assessment v6. 6 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6).

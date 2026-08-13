@@ -28,7 +28,8 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # LAB PROTOCOL (same rigor as the factoring lab): exact measurable laws over a clean
 # hypothesis, honest negative results recorded, all 8 barriers checked every iteration,
 # commit+push each iteration with Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>.
-# Status: NET-5 done (readout-untie, issue #100). 5 experiments, assessment v5.
-# Next: carry chain at larger scale / carry curriculum (the decomposed regime is now
-# fully understood: removable readout basin + irreducible carry-chain wall);
-# or small-BERT PR / joint-aware allocation; or speed axis (untouched).
+# Status: NET-6 done (decodability-crossover exit law, issue #101). 6 experiments,
+# assessment v6. Speed axis OPEN.
+# Next: exit law at real-LM/BERT scale (calibration-free dynamic depth schedule) —
+# the strongest speed candidate; or small-BERT PR / joint-aware allocation;
+# or carry chain at larger scale / carry curriculum.
