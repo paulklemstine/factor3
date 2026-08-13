@@ -2,7 +2,7 @@
 
 > Network research loop, opened 2026-08-12 (factoring loop paused). Same rigor
 > as the factoring lab: exact measurable laws, honest negative results, all 8
-> barriers checked each iteration. Count: 10 experiments, assessment v10.
+> barriers checked each iteration. Count: 11 experiments, assessment v11.
 
 ## What NET-1 established (compression axis)
 
@@ -23,19 +23,20 @@
 
 ## Where a genuine breakthrough could come from (frontiers)
 
-- **The PR law at real scale.** Does the monotone b*(PR) law survive on a
-  small BERT / GPT trained on a real (or synthetic-structured) corpus? If
-  yes, PR gives the first *calibration-free* per-layer bit-schedule for LLM
-  quantization — a concrete, testable compression win.
-- **Joint-aware allocation.** Replace per-layer-isolated sensitivity with a
-  joint (leave-all-but-one compounding) measure; the compounding effect
-  (barrier f) is the gap between isolated and joint bit-needs. This is likely
-  where the real LM win lives.
+- **The PR law at real scale — TESTED, does NOT transfer (NET-11); see the
+  bottom frontiers block for the full update.** The monotone b*(PR) per-layer
+  law fails on a real causal LM; only the coarse role structure (interface
+  fragile / interior robust) survives.
+- **Joint-aware allocation** — now the CONFIRMED real target (NET-11): per-layer
+  isolation wildly undercounts joint damage on real text (isolated ≥95%
+  everywhere at 3 bits vs joint 0.73–0.83), and depth amplifies it. A
+  joint/activation-aware measure, not data-free per-matrix PR, is where the real
+  LM win lives.
 - **Formula extraction as a compression tool** (the lab's second mandate):
   for algorithmic tasks, the extracted exact circuit (rank, frequency) IS a
   lossless compressed form; tie this to the quantization law.
-- **Speed / depth axes** are untouched — the loop should rotate axes each
-  iteration (speed: attention-cost laws; depth: residual-stream scaling).
+- **Speed / depth axes** — speed has had the exit-law real-scale negative
+  (NET-10); attention-cost laws are untouched; depth has had 8 iterations.
 
 ## Standing cautions
 - Every result so far is toy-scale (barrier c); the value is in exact laws and
@@ -286,16 +287,47 @@
    depth; a 0.80-bar would exit at crossover on d=8 s0 with 63% saving — but
    that is not lossless).
 
+## What NET-11 established (compression-axis real-scale rotation — the PR law on a real LM)
+
+1. **The role structure of NET-1's attention reversal survives the real-scale
+   transfer, but the monotone b*(PR) law does NOT transfer as a per-matrix
+   predictor.** On a real causal word LM (same 5 Gutenberg novels, dm=64,
+   vocab 4097, ctx 128, d=4 and d=8, full acc exactly reproduces NET-10:
+   0.1571/0.1619), per-matrix RTN bit-need is IDENTICAL across both depths:
+   attention projections (PR 19–32) are 2-bit lossless (retained 0.99–1.0);
+   MLP projections (PR 31–52) need 3 bits; embed (PR 63) and pos (PR 40) need
+   4 bits; the readout un (PR 14.9–15.3 — the LOWEST PR in the model) needs 4
+   bits with a catastrophic 2-bit collapse (acc 0.043/0.051, 27–32% retained);
+   LayerNorm weight (PR=1) is 2-bit lossless. The counterexample is decisive:
+   lowest-PR readout needs the most bits, and within the PR≈29–31 band attention
+   is 2-bit lossless while mo0 (PR 30.8) needs 3. corr(PR,b*) = +0.58/+0.67 is
+   role-grouping in disguise, not a law. Interface-fragile / interior-robust
+   survives; PR-as-predictor does not.
+2. **NET-1's practical schedule is REFUTED at real scale: no static RTN
+   schedule ≤3.7 avg bits is lossless on real text.** Joint uniform-2 collapses
+   (retained 0.16 d=4 / 0.05 d=8); joint uniform-3 is NOT lossless (retained
+   0.83 d=4 / 0.73 d=8, WORSE with depth — per-layer isolation says almost
+   everything is ≥95% at 3 bits, yet compounding costs 17–27 points, amplified
+   by residual-stream norm growth through depth, the NET-2/NET-10 mechanism).
+   The role-schedule follow-up (d=4 retrained, full acc re-verified 0.1571):
+   role(4/3/2) retains 0.878 at 3.64 avg bits (+5pts over uniform-3 at +21%
+   bits, still 12% short of lossless); role-tighter (mi=4) 0.897 at 3.73.
+   NET-1's toy "uniform-3 lossless (0.98–1.0)" does not hold on real text.
+
 ## Where a genuine breakthrough could come from (frontiers)
 
-- **The PR law at real scale.** Does the monotone b*(PR) law survive on a
-  small BERT / GPT trained on a real (or synthetic-structured) corpus? If
-  yes, PR gives the first *calibration-free* per-layer bit-schedule for LLM
-  quantization — a concrete, testable compression win.
-- **Joint-aware allocation.** Replace per-layer-isolated sensitivity with a
-  joint (leave-all-but-one compounding) measure; the compounding effect
-  (barrier f) is the gap between isolated and joint bit-needs. This is likely
-  where the real LM win lives.
+- **The PR law at real scale — tested, does NOT transfer (NET-11).** The
+  monotone b*(PR) per-layer law fails as a per-matrix predictor on a real
+  causal LM (readout PR≈15 lowest → needs the most bits; same-PR attention vs
+  MLP differ); the surviving object is the coarse role structure (interface
+  fragile / interior robust). PR is not a calibration-free bit-schedule at this
+  scale.
+- **Joint-aware allocation is now the confirmed real target.** NET-11 showed
+  per-matrix isolation wildly undercounts joint damage on real text (isolated
+  ≥95% everywhere at 3 bits vs joint 0.73–0.83), and that depth amplifies it.
+  The win (if any) lives in a joint/activation-aware measure — leave-all-but-one
+  compounding, or activation-aware (per-channel/outlier) allocation — NOT in
+  data-free per-matrix PR. This is the highest-value next compression step.
 - **Small-BERT check of the PR law and joint-aware allocation** — the
   documented domain boundary (NET-1 reverses on attention LMs) makes the
   real-LM-class transfer the highest-value next compression step.
@@ -382,5 +414,14 @@
   exit (0/4 lossless at crossover) — do not build dynamic-depth inference on the
   toy crossover; and real-LM norm profiles are reset-then-grow, not
   flat-then-grow.
+- NET-11 added the compression-axis real-scale caution: per-matrix RTN
+  isolation is a poor predictor of joint behavior on real text (isolated ≥95%
+  at 3 bits almost everywhere vs joint uniform-3 retaining only 0.73–0.83, and
+  deeper = worse); no static RTN schedule ≤3.7 avg bits is lossless at this
+  scale. Do not ship uniform-2/3 weights for a real causal LM on the strength of
+  toy/isolated measurements, and do not trust PR as a per-matrix bit-need
+  predictor (the low-PR readout is the most fragile matrix). The interface
+  (embed/pos/un) needs ≥4 bits; joint/activation-aware allocation is the only
+  live compression lever.
 
-Assessment v10. 10 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10).
+Assessment v11. 11 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11).

@@ -28,24 +28,26 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # LAB PROTOCOL (same rigor as the factoring lab): exact measurable laws over a clean
 # hypothesis, honest negative results recorded, all 8 barriers checked every iteration,
 # commit+push each iteration with Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>.
-# Status: NET-10 done (issue #105): (1) CAUSALITY SCREEN — the toy depth law's
-# perfect 1.0000s (NET-2..9) were a FULL (bidirectional) attention future-peek
-# artifact: on next-token tasks the answer token t+1 is in the input. PROVEN
-# by an information bound (causal Dyck-2 ceiling 0.478·0.5+0.522·1.0 = 0.7609 <
-# 1.0000) and confirmed by causal re-runs on two task classes (Dyck-2 close_all
-# 1.0→0.917, lookup 1.0→0.89; 18k-step asymptote ≈0.92). What survives: the
-# flat-depth SHAPE (causal d=1 ≈ d=2) and transformer-beats-linear (+17pp
-# causal-vs-causal, corrected baseline). NET-8/9's "d=1=1.0000/load-bearing-
-# boundary-not-found" absolute framing withdrawn; the boundary question (SHAPE)
-# is untouched. Every future toy iteration MUST use causal masking. (2) The
-# exit law does NOT transfer to a real causal LM (5 Gutenberg novels, dm=64,
-# ctx=128, vocab 4097): |exit*−cross|≤1 in 0/4, reset-then-grow norm profile
-# (NOT the toy's flat-≈d/2-then-grow), crossover=ONSET not completion, 0/4
-# lossless (0.95·full) at crossover — calibration-free dynamic-depth-schedule
-# retired at real-LM scale. 10 experiments, assessment v10. Load-bearing
-# boundary still needs NON-POSITIONAL stack content / s≫64 / unbounded nesting
-# WITH CAUSAL MASKING. DEPTH AXIS HAS HAD 8 ITERATIONS — ROTATE axes: next =
-# the PR law at small-LM scale (compression axis — does the monotone b*(PR)
-# bit-need law from NET-1 survive on a real causal LM, calibration-free
-# per-layer bit-schedule) or joint-aware allocation; or carry chain at scale;
-# or attention-cost laws.
+# Status: NET-11 done (issue #106): the PR-law-at-small-LM real-scale check.
+# On real causal LMs (5 Gutenberg novels, dm=64, vocab 4097, ctx 128, d=4/d=8,
+# full acc reproduces NET-10 exactly 0.1571/0.1619), per-matrix RTN bit-need is
+# IDENTICAL across both depths: attention projections (PR 19–32) 2-bit LOSSLESS;
+# MLP mi/mo (PR 31–52) 3-bit; embed (PR 63)/pos (PR 40) 4-bit; readout un
+# (PR≈15, the LOWEST PR) 4-bit with catastrophic 2-bit collapse (27–32%
+# retained); lnf (PR=1) 2-bit lossless. (1) The monotone b*(PR) law does NOT
+# transfer as a per-matrix predictor (lowest-PR readout needs the most bits;
+# same-PR attention vs MLP differ; corr +0.58/+0.67 is role-grouping in
+# disguise). (2) NO static RTN schedule ≤3.7 avg bits is lossless on real text:
+# joint uniform-3 retains only 0.83 (d=4) / 0.73 (d=8), worse with depth;
+# role(4/3/2) schedule 0.878 at 3.64 avg bits; uniform-2 collapses. NET-1's toy
+# practical claim (uniform-3 lossless) REFUTED. Surviving: coarse role structure
+# (interface fragile / interior robust). 11 experiments, assessment v11.
+# Load-bearing boundary still needs NON-POSITIONAL stack content / s≫64 /
+# unbounded nesting WITH CAUSAL MASKING. NEXT: JOINT-AWARE ALLOCATION (the
+# confirmed real compression target — per-layer isolation undercounts joint
+# damage on real text and depth amplifies it; try leave-all-but-one
+# compounding / activation-aware per-channel/outlier allocation on the same
+# real LM, does ANY data-free schedule reach lossless, or is 4-bit interface +
+# 2-bit interior enough) OR carry chain at scale OR attention-cost laws
+# (speed axis). Compression and speed axes have each had 1 real-scale
+# iteration; depth has had 8.
