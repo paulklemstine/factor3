@@ -340,3 +340,60 @@ ctx/(4d) — decays with depth at fixed ctx (2× at d=16) but grows with context
 /tmp/exp_net_attncost_d16.py.
 Now 18 network experiments. Assessment v18. Paper NET-17, issue #113.
 Scripts: /tmp/exp_net_attncost_d16.py.
+
+## Part 19 — NET-20 (round-net-20, speed axis): k* is NOT context-independent — the attention-FLOP lever is context-CONSTANT (8× at d=4), refuting the 64× long-context projection
+
+**Hypothesis.** NET-16/17 established k* = 4·d at fixed ctx=128 (k*=16/32/64
+across d=4/8/16) with cost law speedup ≈ ctx/(4d). That law's UNTESTED
+assumption — flagged in NET-17 barrier (h) — is that k* does not grow with
+context; the projected 64× @ ctx=4096, d=16 depends on it. This round tests it
+directly: the SAME d=4 model, SAME Gutenberg corpus, SAME 2000 steps, at
+**ctx=256** (2× NET-15's 128; 2,343 contiguous windows). Full acc **0.1612**
+(family scale 0.1571–0.1619), bar 0.1579, full loss **5.0877**.
+
+**Part A — concentration law is context-DEPENDENT (more diffuse at longer
+context).** Eff support mean **82.94/256** vs 46.6/128 (relative to uniform:
+0.36 → 0.65 — LESS concentrated with more context). Top-k mass at fixed k
+falls below ctx=128 everywhere (top-8 0.363 vs 0.450, top-16 0.503 vs 0.617,
+top-32 0.662 vs 0.795). **Per-position (new):** eff support grows with past
+available — early(0-31) **11.3**, mid(96-127) **72.3**, late(224-255)
+**155.4** — NO bounded working set; attention spreads over most of whatever
+context is present (the concentration-side reason k* must grow).
+
+**Part B — the decisive test: k* doubles when context doubles.** k=8 0.947✗ /
+k=16 0.971✗ (was LOSSLESS at ctx=128: 0.984✓) / **k=32 0.989✓** / k=64 0.996✓ /
+k=128 1.000✓ / k=192 0.999✓ (exact loss match). **k* = 32 at ctx=256 = exactly
+2× the ctx=128 knee (16): at d=4, k* ∝ ctx in the tested range (k* = ctx/8).**
+
+**Corrected cost law — the lever is context-CONSTANT.** Unified across
+NET-16/17/20 (3 depths @ 128 + this point): **k* = d·ctx/32 ⇒ speedup = 32/d**,
+INDEPENDENT of context. | | ctx=128 | ctx=256 |: d=4 k*=16,8× / k*=32,8×; d=8
+k*=32,4× / —; d=16 k*=64,2× / —. **NET-17's projected 64× @ ctx=4096 is
+REFUTED** — long context buys no additional relative saving because the
+lossless window scales with it (k* ∝ ctx). The surviving claim is the
+depth-only lever 32/d: 8× at d=4 robust at both 128 and 256.
+
+**Part B2 — selection still matters at 2× context:** random-16 0.884 (top-k
++8.7 pts), random-32 0.929 (+6.0) — same gap magnitude as ctx=128.
+
+**Verdict.** NET-20 (speed-axis round 5): **k* is NOT context-independent** —
+doubling ctx doubled the lossless window (16→32, exactly proportional at this
+resolution), so the attention-FLOP lever is context-constant, **speedup ≈ 32/d**
+(a depth-only property), refuting the 64× long-context projection. Concentration
+law corrected to context-DEPENDENT (more diffuse with context, no bounded
+working set). DIFFUSE-BUT-PRUNABLE survives with a context-constant lever.
+Barriers (a) top-k from eval-input causal attention, joint evals, k=192 exact
+loss match — nothing injected; (b) k* ∝ ctx proportionality + context-constant
+lever + concentration diffusion with context new; Catalog 698 pkgs no
+context-scaling sparse-attention law on a real small causal LM; (c) real causal
+LM, real text, causal masking, 4097 vocab, 2× context; (d) data-free, contiguous
+split, held-out; (e) 1 seed, context ladder = 2 points (128/256) — the
+proportionality is exact at this resolution but not extrapolated; a ctx=512 or
+seed-1 point would strengthen; k=16 clearly fails vs clearly passes at 128,
+k=32 clearly passes; (f) 0.98 bar + raw loss, 6-pt sweep + 2-pt random control,
+k=192 exact numerics, eval noise ≈0.15% ≪ k=32 margin (0.989 vs 0.98); (g) full
+ref + random-k at same k (+8.7/+6.0 pts), same bar; (h) reframed negative: the
+64× hope is dead, the real lever is depth-only 32/d, boundary ctx∈[128,256].
+Script /tmp/exp_net_ctx256.py.
+Now 19 network experiments. Assessment v19. Paper NET-20, issue #114.
+Scripts: /tmp/exp_net_ctx256.py.

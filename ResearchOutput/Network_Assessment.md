@@ -2,7 +2,7 @@
 
 > Network research loop, opened 2026-08-12 (factoring loop paused). Same rigor
 > as the factoring lab: exact measurable laws, honest negative results, all 8
-> barriers checked each iteration. Count: 18 experiments, assessment v18.
+> barriers checked each iteration. Count: 19 experiments, assessment v19.
 
 ## What NET-1 established (compression axis)
 
@@ -517,6 +517,30 @@ optimum is a depth-4 property.
 **LAW:** LOSSLESS-K-SCALES-WITH-DEPTH, now exact across three depths — k* = 4·d,
 per-layer compounding r(k)^d, selection gap widening with depth.
 
+## What NET-20 established (speed-axis rotation, round 5 — the context-scaling check of the attention-cost law)
+
+1. **k* is NOT context-independent.** At d=4, doubling ctx (128→256) doubled
+   the lossless window — k*=16 (0.984 ✓ at 128) FAILS at 256 (0.971 ✗); the
+   knee moves to k*=32 (0.989 ✓). Exactly proportional at this resolution
+   (k* = ctx/8 at d=4).
+2. **The lever is context-CONSTANT — speedup ≈ 32/d.** Unified across
+   NET-16/17/20: **k* = d·ctx/32** (fits all four measurements), so
+   **speedup = ctx/k* = 32/d**, independent of context: 8× at d=4 at BOTH 128
+   and 256, 4× at d=8, 2× at d=16. **NET-17's projected 64× at ctx=4096 is
+   REFUTED** — long context buys no additional relative saving because the
+   lossless window scales with it.
+3. **The concentration law is context-DEPENDENT.** Eff support 46.6 → **82.9**
+   (relative to uniform: 0.36 → 0.65 — MORE diffuse at longer context);
+   per-fixed-k mass lower at every k; per-position breakdown (new): eff grows
+   with past available (early 11.3 / mid 72.3 / late 155.4) — **no bounded
+   working set**, the concentration-side reason k* must grow.
+4. **Selection still matters at 2× context:** random-k gap +8.7/+6.0 pts
+   (same magnitude as ctx=128).
+
+**LAW:** LOSSLESS-K-SCALES-WITH-CONTEXT (k* ∝ ctx at fixed depth) ⇒ the
+attention-FLOP lever is **context-constant: speedup = 32/d** (a depth-only
+property), unifying the depth and context dependence as k* = d·ctx/32.
+
 ## Where a genuine breakthrough could come from (frontiers)
 
 - **The PR law at real scale — tested, does NOT transfer (NET-11).** The
@@ -579,10 +603,13 @@ per-layer compounding r(k)^d, selection gap widening with depth.
   weight-selected positions beat random by +4.8–11.7 pts (the gap GROWS with
   depth). Lossless-k scales with depth — **k* = 4·d, CONFIRMED across
   {4,8,16}** (k*=16/32/64), mechanism per-layer compounding retained(k,d) ≈
-  r(k)^d: the lever is `speedup ≈ ctx/(4d)` — it decays with depth at fixed ctx
-  (8×→4×→2×) but grows with context at fixed depth (projected 64× at ctx=4096,
-  d=16; k*'s ctx-independence untested). The exit law (NET-6/7/8 toy, NET-10
-  real-scale negative) and the attention-cost law are the speed results so far.
+  r(k)^d. **NET-20 added the context point and refuted the growth-with-context
+  projection: k* also scales with context (k*=16→32 at d=4 when ctx doubles),
+  and the unified law is k* = d·ctx/32 — so the lever is context-CONSTANT,
+  speedup = 32/d** (8× at d=4 at any ctx, 4× d=8, 2× d=16; the projected 64×
+  at ctx=4096 is refuted — long context buys no extra relative saving). The
+  exit law (NET-6/7/8 toy, NET-10 real-scale negative) and the attention-cost
+  law are the speed results so far.
 
 ## Standing cautions
 - Every result so far is toy-scale (barrier c); the value is in exact laws and
@@ -697,4 +724,4 @@ per-layer compounding r(k)^d, selection gap widening with depth.
   Do not quote the NET-15 8× lever without its depth: at d=8 it is 4×, and the
   d=16 prediction (k*=64, 2×) is under test.
 
-Assessment v18. 18 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17).
+Assessment v19. 19 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20).

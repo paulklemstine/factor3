@@ -28,7 +28,18 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # LAB PROTOCOL (same rigor as the factoring lab): exact measurable laws over a clean
 # hypothesis, honest negative results recorded, all 8 barriers checked every iteration,
 # commit+push each iteration with Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>.
-# Status: NET-17 done (issue #113): LOSSLESS-K-SCALES-WITH-DEPTH confirmed at
+# Status: NET-20 done (issue #114): k* IS NOT CONTEXT-INDEPENDENT — the
+# attention-FLOP lever is CONTEXT-CONSTANT. On the same real causal LM at
+# ctx=256 d=4 (full acc 0.1612, bar 0.1579, loss 5.0877), the lossless window
+# DOUBLED vs ctx=128 (k*=16→32, exactly proportional at this resolution; k=16
+# fails 0.971 at 256 vs 0.984✓ at 128). Unified law k* = d·ctx/32 (fits
+# NET-16/17/20) ⇒ speedup = 32/d, context-invariant: 8× at d=4 at both 128 and
+# 256, 4× d=8, 2× d=16 — a depth-only property. NET-17's projected 64× @
+# ctx=4096 is REFUTED (long context buys no extra relative saving because k*
+# scales with it). Concentration more diffuse at longer ctx (eff 46.6→82.9,
+# per-position eff grows with past: early 11.3/mid 72.3/late 155.4 — no
+# bounded working set); random-k gap survives (+8.7/+6.0).
+# Previous: NET-17 done (issue #113): LOSSLESS-K-SCALES-WITH-DEPTH confirmed at
 # the third depth — k* = 4·d EXACT across {4,8,16}. On the same real causal
 # LM (d=16 s0, full acc 0.1610, bar 0.1578, loss 5.0830): k*=64 (retained
 # 0.995 ≥ 0.98 bar, k=32 fails 0.972), attention-FLOP reduction decays to 2×
@@ -68,17 +79,19 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # FLOPs, random-k −4.8–6.2 pts); NET-14 (issue #109) compression axis EXHAUSTED
 # (4-bit interface floor data-free-irreducible AND activation-irreducible;
 # per-channel uniform-4 = 4.00 bits is the practical optimum).
-# 18 experiments, assessment v18. Load-bearing boundary
+# 19 experiments, assessment v19. Load-bearing boundary
 # still needs NON-POSITIONAL stack content / s≫64 / unbounded nesting WITH
 # CAUSAL MASKING.
-# NEXT — FAN-OUT WINDING DOWN: NET-17 DONE (issue #113, k* = 4·d CONFIRMED at
-# d=16 — k*=64/2×, per-layer compounding r(k)^d, concentration mildly
-# depth-drifting, speedup ≈ ctx/(4d)); NET-18 DONE (issue #112, quant floor
-# NOT depth-robust). Still running: (C) round-net-19 carry chain at scale
-# (dm=192, more data) — does scale unlock depth on the carry chain? (early
-# d=1 s=0 full=0.982 SOLVES the carry chain, flat-mastery horn). After the
-# fan-out: attention-cost at longer ctx (is k*'s ctx-independence real?
-# speedup ≈ ctx/(4d) projected 64× at ctx=4096), load-bearing depth
-# (non-positional stack content with causal masking), or a fresh axis.
+# NEXT — FAN-OUT WINDING DOWN: NET-20 DONE (issue #114, k* NOT ctx-independent
+# — lever CONTEXT-CONSTANT, speedup = 32/d, 64× projection refuted, k* =
+# d·ctx/32); NET-17 DONE (issue #113, k* = 4·d CONFIRMED at d=16 — k*=64/2×,
+# per-layer compounding r(k)^d); NET-18 DONE (issue #112, quant floor NOT
+# depth-robust). Still running: (C) round-net-19 carry chain at scale
+# (dm=192, more data) — does scale unlock depth on the carry chain? (d=1 s=0
+# full=0.982, s=1 full=1.0000, s=2 full=1.0000 @st=1000 — SOLVES the carry
+# chain at depth 1, flat-mastery horn; d=2/d=4 pending). After the fan-out:
+# attention-cost at longer ctx (seed-1 ctx=256 / ctx=512 to confirm the k* ∝
+# ctx proportionality), load-bearing depth (non-positional stack content with
+# causal masking), or a fresh axis.
 # Compression 4 real-scale iterations (exhausted at d=4, floor NOT depth-robust
-# at d=8), speed 4, depth 8.
+# at d=8), speed 5, depth 8.
