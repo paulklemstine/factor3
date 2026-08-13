@@ -2,7 +2,7 @@
 
 > Network research loop, opened 2026-08-12 (factoring loop paused). Same rigor
 > as the factoring lab: exact measurable laws, honest negative results, all 8
-> barriers checked each iteration. Count: 8 experiments, assessment v8.
+> barriers checked each iteration. Count: 9 experiments, assessment v9.
 
 ## What NET-1 established (compression axis)
 
@@ -233,6 +233,27 @@
    diagnostic (the deep-balance bins rise on the baselines only because they are
    dominated by first-closes of deep runs, locally covered).
 
+## What NET-9 established (depth axis, round 7 — the load-bearing boundary via context and width scaling)
+
+1. **The load-bearing boundary is NOT found at context ≤64 or width ≥12.** d=1
+   reaches test=1.0000 at every metric on all 16 models — Part A semilength
+   s∈{16,32} (context 32/64, matching opens up to 63 tokens back) at dm=48,
+   d∈{1,2}×2 seeds; Part B width dm∈{16,12} (head dim 4 and 3) at s=12, d∈{1,2}×2
+   seeds. The non-flat screen found NO config with d=1 < d=2. The flat-depth law
+   now covers five task classes AND holds across context and width scaling on the
+   non-regular grammar.
+2. **The mechanism reading is now explicit: single-layer soft attention implements
+   a bounded stack.** The stack-top STATE of a bounded Dyck word IS the scalar
+   running balance (one head's prefix-sum); the stack-top CONTENT is positionally
+   stored (attention routes each close query to the matching open at
+   balance-depth balance_before−1 via balance-conditioned key match + recency, and
+   reads the stored type). No second layer is needed because the state is scalar
+   and the content is at a computable position. The boundary would need: balance
+   range exceeding dm precision (s≫64), unbounded nesting/length-gen (a different
+   axis — NET-4's wall), or NON-POSITIONAL stack content (content computed from
+   multiple distant positions — the genuinely hard case and the natural next
+   load-bearing target).
+
 ## Where a genuine breakthrough could come from (frontiers)
 
 - **The PR law at real scale.** Does the monotone b*(PR) law survive on a
@@ -256,10 +277,13 @@
   a real small LM / BERT (does the norm crossover predict the per-layer
   decodability cliff there too)? If yes, it gives a calibration-free dynamic
   depth schedule for inference — the strongest speed candidate now on the table.
-- **The load-bearing-depth test.** NET-7 failed to reach it (bounded Dyck-1 is
-  attention-solvable). Dyck-2 (multi-type bracket matching — genuinely
-  non-regular context-free), a width-starved Dyck, or unbounded nesting is the
-  natural next test of both the flat-depth law and the exit law's boundary.
+- **The load-bearing-depth boundary.** NET-7 (bounded Dyck-1), NET-8 (Dyck-2 at
+  s=12/dm48), and NET-9 (Dyck-2 across context s≤32 and width dm≥12) all failed
+  to reach it — single-layer soft attention implements a bounded stack (scalar
+  balance pointer + positional content retrieval). The boundary needs
+  NON-POSITIONAL stack content (content computed from multiple distant
+  positions), s≫64, or unbounded nesting — the genuinely hard test of both the
+  flat-depth law and the exit law's boundary.
 - **Formula extraction as a compression tool** (the lab's second mandate):
   for algorithmic tasks, the extracted exact circuit (rank, frequency) IS a
   lossless compressed form; tie this to the quantization law.
@@ -302,5 +326,13 @@
   hard-close diagnostic is close_all (every k-th close of every run), NOT the
   deep-balance bins (which are dominated by first-closes of deep runs, locally
   predictable by windowed baselines).
+- NET-9 pushed the load-bearing boundary past context 64 and width 12 without
+  finding it: single-layer soft attention implements a bounded stack (scalar
+  balance pointer + positional content retrieval), so bounded grammar gives depth
+  nothing at any affordable scale — the next load-bearing test must use
+  NON-POSITIONAL stack content (content computed from multiple distant
+  positions), much larger contexts, or unbounded nesting; and the depth axis has
+  had 7 iterations — rotate to the real-scale checks on the speed/compression
+  axes (exit law / PR law on a small LM).
 
-Assessment v8. 8 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8).
+Assessment v9. 9 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9).
