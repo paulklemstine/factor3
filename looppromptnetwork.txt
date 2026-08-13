@@ -28,12 +28,16 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # LAB PROTOCOL (same rigor as the factoring lab): exact measurable laws over a clean
 # hypothesis, honest negative results recorded, all 8 barriers checked every iteration,
 # commit+push each iteration with Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>.
-# Status: NET-7 done (exit-tracks-task-difficulty + depth-flat-on-grammar, issue
-# #102). 7 experiments, assessment v7. Speed axis OPEN. NET-6's "exit ≈ d/2" is
-# CORRECTED: exit* ≈ crossover, and the crossover is TASK-DEPENDENT (≈d/2 on
-# harder automata, ≈1–3 on easy Dyck — up to 75% lossless inference saving).
-# Load-bearing-depth test still OPEN (bounded Dyck-1 is attention-solvable).
-# Next: load-bearing test via Dyck-2 (multi-type matching) / width-starved /
-# unbounded nesting; or exit law at real-LM/BERT scale (calibration-free dynamic
-# depth schedule); or small-BERT PR / joint-aware allocation;
-# or carry chain at larger scale / carry curriculum.
+# Status: NET-8 done (issue #103): load-bearing test via the non-regular CFG
+# FAILED a THIRD time — Dyck-2 (two bracket types) at semilength 12/dm48 is
+# attention-solvable (d=1 perfect at every balance bin AND every close position,
+# single-layer stack-top-type recovery); flat-depth law now covers FIVE task
+# classes; exit law holds on a 3rd task class (exit* ∈ {3,4,5} depth-saturated,
+# |exit*−crossover| ≤ 1 in 22/24 across three classes, 69–81% lossless saving at
+# d=16, fixed 0.95 bar confirmed as the trigger); single-layer stack-top recovery
+# GENUINE (windowed-linear baselines K≤12 cap at close_all 0.75 vs 1.0 — linear
+# maps can't conditionally index the matching open). 8 experiments, assessment
+# v8. Load-bearing-depth boundary STILL OPEN — next = semilength scaling of
+# Dyck-2 (where does d=1 break — the actual load-bearing boundary) / width-
+# starved Dyck (dm=16, 1 head) / unbounded nesting; or exit law + PR law at
+# real-LM/BERT scale; or joint-aware allocation; or carry chain at scale.

@@ -2,7 +2,7 @@
 
 > Network research loop, opened 2026-08-12 (factoring loop paused). Same rigor
 > as the factoring lab: exact measurable laws, honest negative results, all 8
-> barriers checked each iteration. Count: 7 experiments, assessment v7.
+> barriers checked each iteration. Count: 8 experiments, assessment v8.
 
 ## What NET-1 established (compression axis)
 
@@ -199,6 +199,40 @@
    open — the next test is Dyck-2 multi-type matching, a width-starved Dyck, or
    unbounded nesting.
 
+## What NET-8 established (depth axis, round 6 — the load-bearing test via the non-regular CFG)
+
+1. **Depth is FLAT on Dyck-2 (the canonical non-regular context-free language) —
+   the load-bearing test fails a THIRD time.** Two bracket types '(' vs '[',
+   semilength 12, dm=48: all 10 models (d∈{1,2,4,8,16}×2 seeds) reach test=1.0000
+   at every balance bin AND every close-position diagnostic (close_all=1.0000,
+   close_b4+=1.0000). d=1 alone recovers the TYPE of the top of the stack (chance
+   0.5 given only the balance) at every depth and every close number — including
+   closes whose matching open sits 11+ tokens back. The two-layer
+   "balance-in-L1/select-in-L2" construction is NOT needed. The flat-depth law now
+   covers FIVE task classes: lookups (NET-2), composition (NET-3), decomposable-
+   error arithmetic (NET-4/5), Dyck-1 regular grammar (NET-7), Dyck-2 non-regular
+   CFG (NET-8).
+2. **The exit law holds on a THIRD task class, and exit* is depth-saturated.**
+   exit* ∈ {3,4,5} for d∈{4,8,16} (does not scale with d): 25% saving at d=4,
+   37.5–50% at d=8, 69–81% at d=16, all lossless within the 0.95 bar (exit* acc
+   0.9654–1.0000 vs full 1.0000). |exit*−crossover| ≤ 1 in 5/6 → 22/24 across all
+   three task classes; exit* ≥ crossover in 5/6 (one +3 outlier d=16 s0, same class
+   as NET-7's). Lossless-at-crossover 4/6 — fails exactly on the two d=16 models
+   whose crossover fires at l=2 — confirming NET-7's refinement: the fixed 0.95
+   usability bar, not the norm, is the reliable trigger when the crossover fires
+   very early. NET-6's "exit ≈ d/2" is now conclusively scoped to hard automata
+   whose compute fills Phase I.
+3. **The single-layer stack-top recovery is GENUINE (barrier g, quantified).**
+   Windowed linear baselines (last-K tokens + balance + position, K∈{4,8,12}, 3
+   epochs) cap at close_all 0.7322/0.7544/0.7518 — never reaching 1.0 even when the
+   matching open is inside the window — because a linear map cannot route the
+   CONDITIONAL index "if the trailing run is k closes deep, read the open at
+   distance 2k−1" for all k at once (needs gating/products); attention can
+   (balance-conditioned position match). Transformer beats the strongest windowed
+   baseline by +25pp on close_all (1.0 vs 0.7544), the honest hard-close
+   diagnostic (the deep-balance bins rise on the baselines only because they are
+   dominated by first-closes of deep runs, locally covered).
+
 ## Where a genuine breakthrough could come from (frontiers)
 
 - **The PR law at real scale.** Does the monotone b*(PR) law survive on a
@@ -261,5 +295,12 @@
   at the first usable layer (the fixed 0.95 bar), not at a depth-dependent rule;
   and bounded Dyck at dm=48 is attention-solvable (d=1 perfect), so it does NOT
   test load-bearing depth — use Dyck-2/width-starved/unbounded nesting for that.
+- NET-8 confirmed the exit-law caution on a non-regular CFG and sharpened the
+  flat-depth caution: single-layer transformers solve canonical stack-top recovery
+  (Dyck-2 close-type, chance 0.5) at this scale — "deep is needed for syntax"
+  claims must be checked against width/context-starved confounds; and the honest
+  hard-close diagnostic is close_all (every k-th close of every run), NOT the
+  deep-balance bins (which are dominated by first-closes of deep runs, locally
+  predictable by windowed baselines).
 
-Assessment v7. 7 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7).
+Assessment v8. 8 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8).
