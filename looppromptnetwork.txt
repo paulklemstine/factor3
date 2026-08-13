@@ -28,30 +28,31 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # LAB PROTOCOL (same rigor as the factoring lab): exact measurable laws over a clean
 # hypothesis, honest negative results recorded, all 8 barriers checked every iteration,
 # commit+push each iteration with Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>.
-# Status: NET-13 done (issue #108): the last data-free compression lever —
-# activation-aware (outlier) allocation — is REFUTED. On the same real causal
-# LM (d=4 s0, full acc reproduces 0.1571 a FOURTH time), the 4-bit interface
-# floor survives EVERY standard data-free weight-quant primitive: (1) PER-COLUMN
-# axis WORSE than per-row (uniform-3 0.900 vs 0.947); (2) the interface has only
-# MILD outlier structure (top-1% magnitude share ~3.5% in every matrix, un
-# kurtosis 9.1 heaviest — vs the 30–70% outlier regime of larger LMs) — the
-# small causal LM is NOT in the LLM.int8/AWQ/SmoothQuant target regime; (3)
-# MAGNITUDE-SPLIT fails (interface top-k rows→6-bit, rest→2-bit: k=256/top-6%
-# reaches only 0.819 @ 2.74 bits, sublinear+saturating, 16pts short) — the need
-# is DISTRIBUTED; (4) PERCENTILE-CLIPPING no-op (uniform-3 stays 0.944–0.948,
-# uniform-4 stays lossless). ⇒ the 4-bit interface floor is STRUCTURAL at this
-# scale; AWQ-style weight-side fixes will NOT beat 4-bit lossless here. The only
-# honest remaining lever is activation-aware quantization WITH calibration
-# passes (SmoothQuant-style per-channel ACTIVATION scales — the one non-data-free
-# option). Previous: NET-12 (issue #107) joint-aware allocation — per-tensor
-# frontier 5.31 bits (interface pinned at 6), per-channel uniform-4 LOSSLESS at
-# 4.00 bits, "attention 2-bit free" an operating-point artifact; NET-11 (issue
-# #106) PR-law-does-not-transfer + no ≤3.7-bit static RTN schedule.
-# 13 experiments, assessment v13. Load-bearing boundary still needs
+# Status: NET-14 done (issue #109): the compression axis is EXHAUSTED at small
+# real-LM scale. The last lever — activation-aware quantization WITH calibration
+# passes (AWQ/SmoothQuant per-channel ACTIVATION scales from 512 train-seq
+# calibration) — is a NO-OP-TO-NEGATIVE on the same real causal LM (d=4 s0, full
+# acc reproduces 0.1571 a FIFTH time): (1) the per-channel activation scales are
+# near-FLAT (max/mean ≈ 1.2: un 2.13/wq0 2.12/mi0 2.12/mo0 1.82) — AWQ's
+# absorption needs 10–100× channel heterogeneity, which this scale lacks
+# (activation-side mirror of NET-13's flat weight outliers); (2) AWQ uniform-3
+# best α=0.5 = 0.943 vs plain per-row 0.947 (no help), α=1.0 = 0.888 (much
+# worse), uniform-4 identically lossless 0.987; (3) interface-at-3 with AWQ
+# scales still 2.2pts short (0.958 @ 3.18 bits); (4) activation-informed
+# allocation much WORSE than weight-based (0.828–0.841 vs role 0.892 / uniform-4
+# 0.987). ⇒ the 4-bit interface floor is BOTH data-free-irreducible (NET-13:
+# axis/split/clip all fail, no outlier mass top-1% ~3.5%) AND
+# activation-irreducible (NET-14); per-channel uniform-4 (4.00 bits, data-free,
+# retained 0.987) is the practical optimum — every primitive (per-tensor 5.31,
+# per-row/per-column uniform-4, magnitude-split, percentile-clip,
+# activation-calibration) leaves the interface irreducible below 4 bits.
+# Previous: NET-13 (issue #108) data-free levers refuted; NET-12 (issue #107)
+# per-tensor frontier 5.31 / per-channel uniform-4 lossless.
+# 14 experiments, assessment v14. Load-bearing boundary still needs
 # NON-POSITIONAL stack content / s≫64 / unbounded nesting WITH CAUSAL MASKING.
-# NEXT (compression): activation-aware quantization WITH CALIBRATION passes
-# (per-channel activation scales — the one untested, non-data-free lever) /
-# per-channel 3-bit with outlier retention / interface floor at a larger real
-# LM (d=8, bigger dm) — does the 4-bit floor hold at scale? OR carry chain at
-# scale OR attention-cost laws (speed axis). Compression has had 3 real-scale
-# iterations, speed 1, depth 8.
+# NEXT (rotate away from compression — 3 real-scale iterations exhausted it):
+# SPEED axis — carry chain at scale / attention-cost laws (the speed axis has
+# had only 1 real-scale iteration, NET-10); OR the one open compression
+# question: does the 4-bit interface floor shift at LARGER scale (d=8, bigger
+# dm, real causal LM); OR load-bearing depth (non-positional stack content with
+# causal masking). Compression 3 real-scale iterations, speed 1, depth 8.

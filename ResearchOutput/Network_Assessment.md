@@ -2,7 +2,7 @@
 
 > Network research loop, opened 2026-08-12 (factoring loop paused). Same rigor
 > as the factoring lab: exact measurable laws, honest negative results, all 8
-> barriers checked each iteration. Count: 13 experiments, assessment v13.
+> barriers checked each iteration. Count: 14 experiments, assessment v14.
 
 ## What NET-1 established (compression axis)
 
@@ -380,6 +380,41 @@ remaining lever is genuinely activation-aware quantization (SmoothQuant-style
 per-channel activation scales from calibration passes) — the one thing not
 data-free.
 
+## What NET-14 established (compression-axis rotation — activation-aware quantization WITH calibration passes)
+
+1. **The last lever is a no-op-to-negative.** AWQ/SmoothQuant-style per-channel
+   activation scales (calibration on 512 training sequences) absorbed into the
+   weight quantizer do NOT break the per-row uniform-3 floor: best α=0.5
+   retains **0.943** vs plain per-row 0.947 (marginally worse), α=1.0 collapses
+   to 0.888; uniform-4 stays identically lossless (0.987) both ways. The
+   calibration pass buys nothing.
+2. **The mechanism fails because the activation scales are nearly FLAT.**
+   Mean per-channel activation max across the model: un 2.130 / wq0 2.116 /
+   mi0 2.117 / mo0 1.820, max/mean ratios 1.07–1.24. AWQ's absorption only pays
+   when some channels carry 10–100× the activation magnitude of others; at this
+   scale there is no channel heterogeneity to exploit — the activation-side
+   mirror of NET-13's flat weight-outlier structure.
+3. **The interface-at-3 probe still fails.** Interface (embed/pos/un) at 3 with
+   AWQ scales, interior clean: **0.958 @ 3.18 bits** — 2.2 points short of
+   lossless. Calibration applied directly to the interface does not make 3-bit
+   lossless.
+4. **Activation-informed allocation is a BAD signal.** 25 Linears ranked by mean
+   per-channel act max, terciles 4/3/2: **0.828 @ 3.69** (0.841 with AWQ) — far
+   worse than the weight-based role schedule (0.892 @ 3.64) and 16 pts below
+   uniform-4 (0.987). The ranking only re-discovers the interface is fragile; it
+   cannot allocate below 4 bits.
+
+**Correction to the NET-13 frontier note:** the last remaining compression
+lever — activation-aware quantization with calibration passes — is now TESTED
+and also fails. The 4-bit interface floor is not just data-free-irreducible
+(NET-13) but **activation-irreducible** (NET-14) at this scale: even calibration
+passes don't buy sub-4-bit lossless weight quantization on a small causal LM,
+because the per-channel activation scales are near-uniform (max/mean ≈ 1.2).
+**The compression axis at small real-LM scale is EXHAUSTED** — per-channel
+uniform-4 (4.00 bits, 0.987, data-free) is the practical optimum. Remaining
+compression options are strictly larger-scale (d=8 / bigger dm) or the speed
+axis.
+
 ## Where a genuine breakthrough could come from (frontiers)
 
 - **The PR law at real scale — tested, does NOT transfer (NET-11).** The
@@ -388,20 +423,21 @@ data-free.
   MLP differ); the surviving object is the coarse role structure (interface
   fragile / interior robust). PR is not a calibration-free bit-schedule at this
   scale.
-- **Joint-aware allocation — tested (NET-12/13), answer by primitive, and the
-  data-free levers are exhausted.** Per-tensor greedy strict-lossless floor
-  ~5.3 avg bits (interface pinned at 6); per-channel uniform-4 is lossless at
-  4.00 bits (0.987) with the 4-bit interface irreducible even per-channel
-  (uniform-3 0.947). NET-13 then tested every standard data-free
-  activation-agnostic lever — per-column axis (0.900 uniform-3, worse),
-  magnitude-split (top-6% promoted → 0.819, sublinear), percentile-clipping
-  (no-op) — and NONE breaks the 4-bit interface floor, because the small LM
-  lacks the outlier regime (top-1% share ~3.5%) those methods exploit. The
-  interface's 4-bit need is distributed/structural at this scale. What remains
-  on the compression axis: genuinely activation-aware quantization with
-  calibration passes (SmoothQuant-style per-channel activation scales — the
-  one non-data-free lever), 3-bit per-channel with outlier retention on a
-  larger LM (d=8, bigger dm), and whether the floor shifts at that scale.
+- **Joint-aware allocation — tested (NET-12/13/14), answer by primitive, and
+  the compression axis is EXHAUSTED at this scale.** Per-tensor greedy floor
+  ~5.3 avg bits; per-channel uniform-4 is lossless at 4.00 bits (0.987) with
+  the 4-bit interface irreducible even per-channel (uniform-3 0.947). NET-13
+  tested every data-free lever (per-column axis, magnitude-split, clipping —
+  all fail; small LM lacks the outlier regime, top-1% share ~3.5%). NET-14
+  tested the last lever, activation-aware quantization WITH calibration passes
+  (AWQ/SmoothQuant per-channel activation scales): no-op-to-negative at
+  uniform-3 (α=0.5: 0.943 vs 0.947), interface-at-3 still 2.2pts short (0.958),
+  activation-informed allocation far worse than weight-based (0.828 vs 0.892)
+  — because the activation scales are near-uniform (max/mean ≈ 1.2). The 4-bit
+  interface floor is both data-free-irreducible AND activation-irreducible at
+  this scale; the practical optimum is per-channel uniform-4 (4.00 bits,
+  data-free). Remaining compression options: strictly larger-scale checks
+  (d=8 / bigger dm — does the floor shift?), or rotation to the speed axis.
 - **Small-BERT check of the PR law and joint-aware allocation** — the
   documented domain boundary (NET-1 reverses on attention LMs) makes the
   real-LM-class transfer the highest-value next compression step.
@@ -514,8 +550,17 @@ data-free.
   NOT in the outlier regime (top-1% magnitude share ~3.5% everywhere, vs
   30–70% for larger LMs), so the floor is structural, not an outlier artifact.
   Do not expect AWQ/SmoothQuant-style weight-side fixes to buy sub-4-bit
-  lossless quantization at this scale; the only honest remaining lever is
-  activation-aware quantization WITH calibration passes (per-channel
-  activation scales), which is not data-free.
+  lossless quantization at this scale.
+- NET-14 closed the compression axis itself at this scale: activation-aware
+  quantization WITH calibration passes (the one non-data-free lever NET-13
+  left open) is ALSO a no-op-to-negative — AWQ per-channel activation scales
+  are near-uniform (max/mean ≈ 1.2 across the model), so the absorption has no
+  channel heterogeneity to exploit; interface-at-3 stays 2.2pts short (0.958),
+  and activation-informed allocation is far worse than weight-based (0.828 vs
+  role 0.892). The 4-bit interface floor is both data-free-irreducible AND
+  activation-irreducible here. Do not expect even calibration-based methods to
+  beat per-channel uniform-4 (4.00 bits, data-free) on a small causal LM; the
+  only remaining compression question is whether the floor shifts at larger
+  scale (d=8 / bigger dm).
 
-Assessment v13. 13 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13).
+Assessment v14. 14 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14).
