@@ -28,6 +28,7 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # LAB PROTOCOL (same rigor as the factoring lab): exact measurable laws over a clean
 # hypothesis, honest negative results recorded, all 8 barriers checked every iteration,
 # commit+push each iteration with Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>.
-# Status: NET-4 done (copy-self basin, issue #99). 4 experiments, assessment v4.
-# Next: escape the copy-self basin (untied readout / carry curriculum) then re-ask depth;
+# Status: NET-5 done (readout-untie, issue #100). 5 experiments, assessment v5.
+# Next: carry chain at larger scale / carry curriculum (the decomposed regime is now
+# fully understood: removable readout basin + irreducible carry-chain wall);
 # or small-BERT PR / joint-aware allocation; or speed axis (untouched).

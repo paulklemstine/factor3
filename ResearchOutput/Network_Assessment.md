@@ -2,7 +2,7 @@
 
 > Network research loop, opened 2026-08-12 (factoring loop paused). Same rigor
 > as the factoring lab: exact measurable laws, honest negative results, all 8
-> barriers checked each iteration. Count: 4 experiments, assessment v4.
+> barriers checked each iteration. Count: 5 experiments, assessment v5.
 
 ## What NET-1 established (compression axis)
 
@@ -117,6 +117,35 @@
    binding constraint is optimization — here a flat-loss copy attractor that
    gradient descent falls into before it can exploit the decomposable signal.
 
+## What NET-5 established (depth axis, round 4 — testing the basin mechanism)
+
+1. **The copy-self basin is CONFIRMED as a tied-readout artifact — and it is
+   removable.** Untying the readout head (Linear(dm, VOCAB), no weight sharing)
+   eliminates the basin entirely: per-digit escape drops to 1000–3000 steps at
+   every depth (vs tied 3000–6000), and per-digit at st=1000 is already
+   0.60–1.00 vs the tied 0.22–0.24 plateau. NET-4's ‖emb‖² mechanism is
+   verified as the cause — a within-run tied control at equal budget reproduces
+   the basin. This is the first positive architectural cure in the depth
+   series.
+2. **The carry chain is readout-independent.** With the basin gone, three of
+   nine configs still sit in the per-digit-high/full-number-low state with the
+   identical correlated-error signature (per^7 ≫ observed full): the model
+   computes the columnwise digit map but cannot chain the carry. NET-4's
+   central bottleneck claim survives untying — the carry chain is not a
+   readout artifact, it is the genuine sequential-composition bottleneck.
+3. **Removing the basin does NOT expose a non-flat depth law.** Full-mastery
+   reliability stays non-monotone (d=4 3/3, d=1 2/3, d=2 1/3; under-powered at
+   3 seeds), and escape timing is now trivially depth-flat. The NET-4
+   depth-differences in escape were basin-escape-driven, not depth-driven.
+4. **Length-gen stays at chance.** Perfect untied n=3 trainers still
+   generalize to n=4/5/6 at chance at every depth — the
+   memorize-without-composition wall is not a copy-basin effect.
+5. **The depth flatness is now fully accounted for.** On decomposable-error
+   arithmetic the flat law decomposes into (i) a removable readout artifact
+   (copy-self basin) and (ii) an irreducible carry-chain credit-assignment
+   wall. Neither depth, width, nor readout-untying makes depth pay at this
+   scale.
+
 ## Where a genuine breakthrough could come from (frontiers)
 
 - **The PR law at real scale.** Does the monotone b*(PR) law survive on a
@@ -127,13 +156,15 @@
   joint (leave-all-but-one compounding) measure; the compounding effect
   (barrier f) is the gap between isolated and joint bit-needs. This is likely
   where the real LM win lives.
-- **Escape the copy-self basin, then ask the depth question.** NET-4 showed
-  the decomposable-error regime is flat in depth because a flat-loss copy
-  attractor blocks the decomposable signal. The open question is now: with the
-  basin escape fixed (untied readout, or a carry-aware curriculum), does the
-  carry-chain bottleneck — the width/depth-immune residual — finally respond
-  to depth at larger scale? And can a diagnostic (per-digit vs full gap with
-  correlated errors) spot "computed the map, not the chain" in real models?
+- **Small-BERT check of the PR law and joint-aware allocation** — the
+  documented domain boundary (NET-1 reverses on attention LMs) makes the
+  real-LM-class transfer the highest-value next compression step.
+- **The carry chain at scale.** NET-4/NET-5 leave the carry chain as the
+  irreducible width/depth/readout-immune bottleneck. The genuinely open depth
+  question is whether the chain responds to depth at LARGER scale (bigger
+  d_model, more data, longer training) or whether credit-assignment walls are
+  depth-immune in general. A curriculum that teaches carries one column at a
+  time is the other untested lever.
 - **Formula extraction as a compression tool** (the lab's second mandate):
   for algorithmic tasks, the extracted exact circuit (rank, frequency) IS a
   lossless compressed form; tie this to the quantization law.
@@ -153,5 +184,10 @@
   for the per≈0.23 plateau before judging a decomposed-error task unlearnable,
   and read high-per/low-full as the compositional chain failing (correlated
   errors), not the digit map.
+- NET-5 sharpened the copy-basin caution into a two-step diagnostic: a tied
+  embedding stuck at per≈0.22 should be UNTIED first (zero-cost artifact cure;
+  untying immediately starts per-digit learning); a per-high/full-low state
+  AFTER untying is the carry chain, which depth/width do not buy at this scale
+  — do not attack it with more layers.
 
-Assessment v4. 4 experiments (NET-1, NET-2, NET-3, NET-4).
+Assessment v5. 5 experiments (NET-1, NET-2, NET-3, NET-4, NET-5).
