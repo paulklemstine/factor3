@@ -28,26 +28,31 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # LAB PROTOCOL (same rigor as the factoring lab): exact measurable laws over a clean
 # hypothesis, honest negative results recorded, all 8 barriers checked every iteration,
 # commit+push each iteration with Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>.
-# Status: NET-11 done (issue #106): the PR-law-at-small-LM real-scale check.
-# On real causal LMs (5 Gutenberg novels, dm=64, vocab 4097, ctx 128, d=4/d=8,
-# full acc reproduces NET-10 exactly 0.1571/0.1619), per-matrix RTN bit-need is
-# IDENTICAL across both depths: attention projections (PR 19–32) 2-bit LOSSLESS;
-# MLP mi/mo (PR 31–52) 3-bit; embed (PR 63)/pos (PR 40) 4-bit; readout un
-# (PR≈15, the LOWEST PR) 4-bit with catastrophic 2-bit collapse (27–32%
-# retained); lnf (PR=1) 2-bit lossless. (1) The monotone b*(PR) law does NOT
-# transfer as a per-matrix predictor (lowest-PR readout needs the most bits;
-# same-PR attention vs MLP differ; corr +0.58/+0.67 is role-grouping in
-# disguise). (2) NO static RTN schedule ≤3.7 avg bits is lossless on real text:
-# joint uniform-3 retains only 0.83 (d=4) / 0.73 (d=8), worse with depth;
-# role(4/3/2) schedule 0.878 at 3.64 avg bits; uniform-2 collapses. NET-1's toy
-# practical claim (uniform-3 lossless) REFUTED. Surviving: coarse role structure
-# (interface fragile / interior robust). 11 experiments, assessment v11.
-# Load-bearing boundary still needs NON-POSITIONAL stack content / s≫64 /
-# unbounded nesting WITH CAUSAL MASKING. NEXT: JOINT-AWARE ALLOCATION (the
-# confirmed real compression target — per-layer isolation undercounts joint
-# damage on real text and depth amplifies it; try leave-all-but-one
-# compounding / activation-aware per-channel/outlier allocation on the same
-# real LM, does ANY data-free schedule reach lossless, or is 4-bit interface +
-# 2-bit interior enough) OR carry chain at scale OR attention-cost laws
-# (speed axis). Compression and speed axes have each had 1 real-scale
-# iteration; depth has had 8.
+# Status: NET-12 done (issue #107): the joint-aware-allocation real-scale check.
+# On the same real causal LM (d=4 s0, 5 Gutenberg novels, dm=64, vocab 4097,
+# ctx 128, full acc reproduces 0.1571 a third time), three connected results:
+# (1) JOINT-MARGINAL MAP: with everything else at the role schedule, attention
+# (all 16 matrices) is EXACTLY indifferent at 2 bits (retained flat 0.878),
+# embed 3-bit jointly retains 0.849 (isolation ≈0.95 — compounding is real),
+# readout un 2-bit collapses 0.280, MLP 2-bit 0.80–0.85/3-bit fine.
+# (2) PER-TENSOR GREEDY STRICT-LOSSLESS FRONTIER = 5.31 avg bits (retained
+# 0.982), interface embed/pos/un PINNED AT 6 (73% of params); even all-4
+# misses the 0.98 bar per-tensor (0.979). (3) PER-CHANNEL (per-row) RTN is the
+# fix: uniform all-4 is LOSSLESS at 4.00 bits (per-row retained 0.987, 1.3 bits
+# below the per-tensor frontier); per-row uniform-3 still fails (0.947) — the
+# 4-bit interface is irreducible under BOTH primitives; uniform-2 hopeless
+# (0.588); the per-tensor-optimized frontier scores WORSE per-row (0.973) —
+# allocation is primitive-dependent. ROTATION QUESTION answered: any data-free
+# schedule reach lossless? YES — per-channel uniform-4 (4.0 bits). Is 4-bit
+# interface + 2-bit interior enough? NO — "4iface/all-interior-2" 0.733 @ 3.46,
+# "4iface+MLP4+attn2" 0.907 @ 3.82 (the 8pt gap ≈ attention 2→4 ⇒ "attention
+# 2-bit free" is an OPERATING-POINT artifact: invisible at the degraded 0.878
+# baseline, ~8pt cost in a clean joint net). NET-11's "no static schedule ≤3.7
+# bits lossless" CORRECTED to: per-tensor ~5.3 bits, per-channel uniform-4.0.
+# 12 experiments, assessment v12. Load-bearing boundary still needs
+# NON-POSITIONAL stack content / s≫64 / unbounded nesting WITH CAUSAL MASKING.
+# NEXT (compression): activation-aware (outlier) allocation / per-channel 3-bit
+# with outlier retention / interface floor at a larger real LM (d=8, bigger dm)
+# — does the 4-bit interface floor hold, or do activation-aware methods break
+# it? OR carry chain at scale OR attention-cost laws (speed axis). Compression
+# has had 2 real-scale iterations, speed 1, depth 8.

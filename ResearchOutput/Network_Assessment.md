@@ -2,7 +2,7 @@
 
 > Network research loop, opened 2026-08-12 (factoring loop paused). Same rigor
 > as the factoring lab: exact measurable laws, honest negative results, all 8
-> barriers checked each iteration. Count: 11 experiments, assessment v11.
+> barriers checked each iteration. Count: 12 experiments, assessment v12.
 
 ## What NET-1 established (compression axis)
 
@@ -314,6 +314,40 @@
    bits, still 12% short of lossless); role-tighter (mi=4) 0.897 at 3.73.
    NET-1's toy "uniform-3 lossless (0.98–1.0)" does not hold on real text.
 
+## What NET-12 established (compression-axis rotation — joint-aware allocation on the real LM)
+
+1. **The joint-marginal map quantifies the wall — and shows "attention is
+   free" is an operating-point artifact.** With all other matrices pinned at the
+   role schedule, attention projections (all 16) are exactly indifferent at 2
+   bits (retained flat at 0.878), while embed and un are jointly far more
+   fragile than isolation suggested: embed 3-bit jointly retains **0.849**
+   (isolation ≈0.95), un (readout) 2-bit collapses to **0.280**. The interface
+   is the wall; the interior is cheap — *at a degraded operating point*.
+2. **The per-tensor greedy strict-lossless frontier is ~5.3 avg bits, and
+   even all-4 misses the bar.** Greedy from all-6 down, keeping retained ≥
+   0.98·full, lands at **5.31 avg bits / retained 0.982** with the interface
+   (embed/pos/un — 73% of params) pinned at 6. Baseline joint evals: uniform-3
+   0.825, role(4/3/2) 0.878, **all-4 0.979 (misses by one point)**, all-6 0.999.
+   Per-tensor static RTN cannot get under ≈5.3 bits losslessly on real text.
+3. **Per-channel (per-row) RTN is the fix: uniform all-4 is lossless at 4.00
+   bits (0.987), 1.3 bits below the per-tensor frontier.** Per-row uniform-3
+   still fails (0.947) — the 4-bit interface is irreducible even per-channel;
+   uniform-2 remains hopeless (0.588). The per-tensor-optimized frontier does
+   NOT transfer per-row (0.973) — allocation must be tuned to the primitive.
+4. **The rotation's literal question is answered no.** Per-row "4-bit interface
+   + all interior 2" retains 0.733 @ 3.46 bits; "4-bit interface + MLP 4 +
+   attention 2" retains 0.907 @ 3.82 bits; uniform-4 is 0.987. The 8-point gap
+   between the last two is almost all attention 2→4 — so NET-11's "attention
+   is 2-bit lossless" is corrected: true in isolation and at a degraded
+   operating point, but 2-bit attention costs ~8 points in a clean joint net.
+
+**Corrections to NET-11:** "no static RTN schedule ≤3.7 avg bits is lossless"
+was about the *per-tensor* primitive; with per-channel scales a uniform-4
+schedule IS lossless (4.0 bits). And "attention projections 2-bit lossless"
+does not survive a clean joint network. **NET-12's practical lever: the
+per-channel primitive + uniform 4-bit, data-free — not smarter per-tensor
+allocation.**
+
 ## Where a genuine breakthrough could come from (frontiers)
 
 - **The PR law at real scale — tested, does NOT transfer (NET-11).** The
@@ -322,12 +356,16 @@
   MLP differ); the surviving object is the coarse role structure (interface
   fragile / interior robust). PR is not a calibration-free bit-schedule at this
   scale.
-- **Joint-aware allocation is now the confirmed real target.** NET-11 showed
-  per-matrix isolation wildly undercounts joint damage on real text (isolated
-  ≥95% everywhere at 3 bits vs joint 0.73–0.83), and that depth amplifies it.
-  The win (if any) lives in a joint/activation-aware measure — leave-all-but-one
-  compounding, or activation-aware (per-channel/outlier) allocation — NOT in
-  data-free per-matrix PR. This is the highest-value next compression step.
+- **Joint-aware allocation — tested (NET-12), and the answer splits by
+  primitive.** The per-tensor greedy strict-lossless floor is ~5.3 avg bits
+  (interface pinned at 6; all-4 misses by one point) — smarter per-tensor
+  allocation is NOT the lever. The lever is the per-channel primitive:
+  uniform all-4 per-row is lossless at 4.00 bits (0.987), with the 4-bit
+  interface irreducible even per-channel (uniform-3 0.947). NET-11's
+  "≤3.7-bit schedule impossible" is corrected to "per-tensor ~5.3, per-channel
+  uniform-4". What remains untested on the compression axis: activation-aware
+  (outlier) allocation, 3-bit per-channel with outlier retention, and whether
+  the 4-bit interface floor survives a larger/real LM (d=8, bigger dm).
 - **Small-BERT check of the PR law and joint-aware allocation** — the
   documented domain boundary (NET-1 reverses on attention LMs) makes the
   real-LM-class transfer the highest-value next compression step.
@@ -423,5 +461,16 @@
   predictor (the low-PR readout is the most fragile matrix). The interface
   (embed/pos/un) needs ≥4 bits; joint/activation-aware allocation is the only
   live compression lever.
+- NET-12 refined that caution into a primitive split: per-tensor RTN has a
+  strict-lossless floor of ~5.3 avg bits (interface pinned at 6 — even all-4
+  misses the bar by one point), but the PER-CHANNEL primitive + uniform-4 is
+  lossless at 4.00 bits. Two traps remain: (1) "attention is 2-bit free" —
+  TRUE in isolation and at degraded operating points (it is masked by bigger
+  errors), but 2-bit attention costs ~8 points in an otherwise-clean joint
+  network — do not trust cheap-layer "wins" measured on a degraded baseline;
+  (2) a schedule optimized for one quantization primitive does not transfer to
+  another (the per-tensor greedy frontier scores WORSE per-row than uniform-4).
+  The 4-bit interface (embed/pos/un) is the irreducible floor at this scale
+  under both primitives.
 
-Assessment v11. 11 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11).
+Assessment v12. 12 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12).
