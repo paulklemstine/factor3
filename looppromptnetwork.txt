@@ -28,31 +28,30 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # LAB PROTOCOL (same rigor as the factoring lab): exact measurable laws over a clean
 # hypothesis, honest negative results recorded, all 8 barriers checked every iteration,
 # commit+push each iteration with Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>.
-# Status: NET-12 done (issue #107): the joint-aware-allocation real-scale check.
-# On the same real causal LM (d=4 s0, 5 Gutenberg novels, dm=64, vocab 4097,
-# ctx 128, full acc reproduces 0.1571 a third time), three connected results:
-# (1) JOINT-MARGINAL MAP: with everything else at the role schedule, attention
-# (all 16 matrices) is EXACTLY indifferent at 2 bits (retained flat 0.878),
-# embed 3-bit jointly retains 0.849 (isolation ≈0.95 — compounding is real),
-# readout un 2-bit collapses 0.280, MLP 2-bit 0.80–0.85/3-bit fine.
-# (2) PER-TENSOR GREEDY STRICT-LOSSLESS FRONTIER = 5.31 avg bits (retained
-# 0.982), interface embed/pos/un PINNED AT 6 (73% of params); even all-4
-# misses the 0.98 bar per-tensor (0.979). (3) PER-CHANNEL (per-row) RTN is the
-# fix: uniform all-4 is LOSSLESS at 4.00 bits (per-row retained 0.987, 1.3 bits
-# below the per-tensor frontier); per-row uniform-3 still fails (0.947) — the
-# 4-bit interface is irreducible under BOTH primitives; uniform-2 hopeless
-# (0.588); the per-tensor-optimized frontier scores WORSE per-row (0.973) —
-# allocation is primitive-dependent. ROTATION QUESTION answered: any data-free
-# schedule reach lossless? YES — per-channel uniform-4 (4.0 bits). Is 4-bit
-# interface + 2-bit interior enough? NO — "4iface/all-interior-2" 0.733 @ 3.46,
-# "4iface+MLP4+attn2" 0.907 @ 3.82 (the 8pt gap ≈ attention 2→4 ⇒ "attention
-# 2-bit free" is an OPERATING-POINT artifact: invisible at the degraded 0.878
-# baseline, ~8pt cost in a clean joint net). NET-11's "no static schedule ≤3.7
-# bits lossless" CORRECTED to: per-tensor ~5.3 bits, per-channel uniform-4.0.
-# 12 experiments, assessment v12. Load-bearing boundary still needs
+# Status: NET-13 done (issue #108): the last data-free compression lever —
+# activation-aware (outlier) allocation — is REFUTED. On the same real causal
+# LM (d=4 s0, full acc reproduces 0.1571 a FOURTH time), the 4-bit interface
+# floor survives EVERY standard data-free weight-quant primitive: (1) PER-COLUMN
+# axis WORSE than per-row (uniform-3 0.900 vs 0.947); (2) the interface has only
+# MILD outlier structure (top-1% magnitude share ~3.5% in every matrix, un
+# kurtosis 9.1 heaviest — vs the 30–70% outlier regime of larger LMs) — the
+# small causal LM is NOT in the LLM.int8/AWQ/SmoothQuant target regime; (3)
+# MAGNITUDE-SPLIT fails (interface top-k rows→6-bit, rest→2-bit: k=256/top-6%
+# reaches only 0.819 @ 2.74 bits, sublinear+saturating, 16pts short) — the need
+# is DISTRIBUTED; (4) PERCENTILE-CLIPPING no-op (uniform-3 stays 0.944–0.948,
+# uniform-4 stays lossless). ⇒ the 4-bit interface floor is STRUCTURAL at this
+# scale; AWQ-style weight-side fixes will NOT beat 4-bit lossless here. The only
+# honest remaining lever is activation-aware quantization WITH calibration
+# passes (SmoothQuant-style per-channel ACTIVATION scales — the one non-data-free
+# option). Previous: NET-12 (issue #107) joint-aware allocation — per-tensor
+# frontier 5.31 bits (interface pinned at 6), per-channel uniform-4 LOSSLESS at
+# 4.00 bits, "attention 2-bit free" an operating-point artifact; NET-11 (issue
+# #106) PR-law-does-not-transfer + no ≤3.7-bit static RTN schedule.
+# 13 experiments, assessment v13. Load-bearing boundary still needs
 # NON-POSITIONAL stack content / s≫64 / unbounded nesting WITH CAUSAL MASKING.
-# NEXT (compression): activation-aware (outlier) allocation / per-channel 3-bit
-# with outlier retention / interface floor at a larger real LM (d=8, bigger dm)
-# — does the 4-bit interface floor hold, or do activation-aware methods break
-# it? OR carry chain at scale OR attention-cost laws (speed axis). Compression
-# has had 2 real-scale iterations, speed 1, depth 8.
+# NEXT (compression): activation-aware quantization WITH CALIBRATION passes
+# (per-channel activation scales — the one untested, non-data-free lever) /
+# per-channel 3-bit with outlier retention / interface floor at a larger real
+# LM (d=8, bigger dm) — does the 4-bit floor hold at scale? OR carry chain at
+# scale OR attention-cost laws (speed axis). Compression has had 3 real-scale
+# iterations, speed 1, depth 8.

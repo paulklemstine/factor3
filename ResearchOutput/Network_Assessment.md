@@ -2,7 +2,7 @@
 
 > Network research loop, opened 2026-08-12 (factoring loop paused). Same rigor
 > as the factoring lab: exact measurable laws, honest negative results, all 8
-> barriers checked each iteration. Count: 12 experiments, assessment v12.
+> barriers checked each iteration. Count: 13 experiments, assessment v13.
 
 ## What NET-1 established (compression axis)
 
@@ -348,6 +348,38 @@ does not survive a clean joint network. **NET-12's practical lever: the
 per-channel primitive + uniform 4-bit, data-free — not smarter per-tensor
 allocation.**
 
+## What NET-13 established (compression-axis rotation — activation-aware/outlier allocation on the real LM)
+
+1. **The quantization axis is not the lever.** Per-column (input-channel)
+   symmetric RTN — the standard group-quant axis — is WORSE than per-row at
+   this scale (uniform-2 0.413 vs 0.588, uniform-3 0.900 vs 0.947); per-row
+   (output-channel) remains the better primitive. The axis does not break the
+   4-bit interface floor.
+2. **The interface has only MILD outlier structure (the key diagnostic).**
+   Top-1% of magnitude holds only ~3.5% of the mass in EVERY matrix (embed
+   3.6%, un 3.5%, interior 3.0–3.4%); row-norm max/mean 1.1–1.9; the heaviest
+   tail is un (kurtosis 9.1) — nowhere near the 30–70% outlier concentration
+   of larger-LM regimes. This small real causal LM is NOT in the outlier regime
+   that LLM.int8/AWQ/SmoothQuant target.
+3. **Magnitude split fails — the need is distributed.** Interface rows at top-k
+   ∈ {0..256} promoted to 6-bit, rest 2-bit: k=256 (top-6%) reaches only
+   **0.819** at 2.74 bits — sublinear, saturating, 16 points short of lossless.
+   Magnitude-aware allocation cannot shrink the schedule below ~4 bits.
+4. **Outlier clipping is a no-op.** SmoothQuant/AWQ-style percentile-scaled
+   per-row RTN (99.9th/99.0th percentile) changes nothing: uniform-3 stays
+   0.944–0.948 (under bar), uniform-4 stays lossless (0.982–0.985). Consistent
+   with point 2 — no outlier mass to clip.
+
+**Correction to the NET-12 frontier note:** the "activation-aware (outlier)
+allocation" lever — the last data-free compression idea — is now TESTED and
+fails: the 4-bit interface floor survives every standard data-free
+weight-quantization primitive (axis, magnitude-split, clipping) because the
+small causal LM lacks the outlier regime those methods exploit. The interface's
+bit-need is distributed and the floor is structural at this scale. The honest
+remaining lever is genuinely activation-aware quantization (SmoothQuant-style
+per-channel activation scales from calibration passes) — the one thing not
+data-free.
+
 ## Where a genuine breakthrough could come from (frontiers)
 
 - **The PR law at real scale — tested, does NOT transfer (NET-11).** The
@@ -356,16 +388,20 @@ allocation.**
   MLP differ); the surviving object is the coarse role structure (interface
   fragile / interior robust). PR is not a calibration-free bit-schedule at this
   scale.
-- **Joint-aware allocation — tested (NET-12), and the answer splits by
-  primitive.** The per-tensor greedy strict-lossless floor is ~5.3 avg bits
-  (interface pinned at 6; all-4 misses by one point) — smarter per-tensor
-  allocation is NOT the lever. The lever is the per-channel primitive:
-  uniform all-4 per-row is lossless at 4.00 bits (0.987), with the 4-bit
-  interface irreducible even per-channel (uniform-3 0.947). NET-11's
-  "≤3.7-bit schedule impossible" is corrected to "per-tensor ~5.3, per-channel
-  uniform-4". What remains untested on the compression axis: activation-aware
-  (outlier) allocation, 3-bit per-channel with outlier retention, and whether
-  the 4-bit interface floor survives a larger/real LM (d=8, bigger dm).
+- **Joint-aware allocation — tested (NET-12/13), answer by primitive, and the
+  data-free levers are exhausted.** Per-tensor greedy strict-lossless floor
+  ~5.3 avg bits (interface pinned at 6); per-channel uniform-4 is lossless at
+  4.00 bits (0.987) with the 4-bit interface irreducible even per-channel
+  (uniform-3 0.947). NET-13 then tested every standard data-free
+  activation-agnostic lever — per-column axis (0.900 uniform-3, worse),
+  magnitude-split (top-6% promoted → 0.819, sublinear), percentile-clipping
+  (no-op) — and NONE breaks the 4-bit interface floor, because the small LM
+  lacks the outlier regime (top-1% share ~3.5%) those methods exploit. The
+  interface's 4-bit need is distributed/structural at this scale. What remains
+  on the compression axis: genuinely activation-aware quantization with
+  calibration passes (SmoothQuant-style per-channel activation scales — the
+  one non-data-free lever), 3-bit per-channel with outlier retention on a
+  larger LM (d=8, bigger dm), and whether the floor shifts at that scale.
 - **Small-BERT check of the PR law and joint-aware allocation** — the
   documented domain boundary (NET-1 reverses on attention LMs) makes the
   real-LM-class transfer the highest-value next compression step.
@@ -472,5 +508,14 @@ allocation.**
   another (the per-tensor greedy frontier scores WORSE per-row than uniform-4).
   The 4-bit interface (embed/pos/un) is the irreducible floor at this scale
   under both primitives.
+- NET-13 closed the last data-free compression lever: activation-agnostic
+  outlier methods (per-column axis, magnitude-split, percentile-clipping) do
+  NOT break the 4-bit interface floor on a real causal LM — the small LM is
+  NOT in the outlier regime (top-1% magnitude share ~3.5% everywhere, vs
+  30–70% for larger LMs), so the floor is structural, not an outlier artifact.
+  Do not expect AWQ/SmoothQuant-style weight-side fixes to buy sub-4-bit
+  lossless quantization at this scale; the only honest remaining lever is
+  activation-aware quantization WITH calibration passes (per-channel
+  activation scales), which is not data-free.
 
-Assessment v12. 12 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12).
+Assessment v13. 13 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13).
