@@ -2,7 +2,7 @@
 
 > Network research loop, opened 2026-08-12 (factoring loop paused). Same rigor
 > as the factoring lab: exact measurable laws, honest negative results, all 8
-> barriers checked each iteration. Count: 3 experiments, assessment v3.
+> barriers checked each iteration. Count: 4 experiments, assessment v4.
 
 ## What NET-1 established (compression axis)
 
@@ -86,6 +86,37 @@
    token) is the one place a non-flat depth law could live; and when a deep
    model is stuck, check error-signal decomposability before scaling depth.
 
+## What NET-4 established (depth axis, round 3 — testing NET-3's corollary)
+
+1. **The decomposable-error regime is REFUTED as a non-flat-depth regime.**
+   LSB-first carry addition with per-digit supervision (the ONE regime NET-3
+   predicted could break flatness) shows a depth-FLAT law in distribution:
+   escape from the copy-self basin is a stochastic phase transition whose
+   timing is non-monotone in depth at seed level (d=1 [5000,3000,6000], d=2
+   [3000,5000,5000], d=4 [3000,4000,3000] — within-depth spread up to 2×
+   exceeds between-depth differences). Reliability mildly favors d=4 (3/3 vs
+   2/3 full-mastery) but is under-powered (3 seeds).
+2. **The copy-self basin is a real, characterized object.** Every config sits
+   at per-digit ≈ 0.22–0.24, identical across depths to three decimals, for
+   hundreds-to-thousands of steps, then escapes abruptly. It is task-
+   INDEPENDENT (the carry-free control is also trapped) — a property of
+   tied-embedding per-digit teacher-forced decoding, present even though the
+   GO-shift makes copying adversarial at init.
+3. **The binding bottleneck is the carry chain, not the digit map — and it is
+   width- and depth-immune at this scale.** Both stuck seeds and the 400k
+   partial states are per-digit-high/full-low with correlated carry errors
+   (per=0.87 ⇒ full ≈ 0.38 if independent; observed 0.09). Scale (4× budget)
+   gates the per-digit escape 2–3× earlier but full-number mastery at 400k is
+   LOWER than at 100k (d=1: 0.40 vs 0.96). Length-gen is exactly chance at
+   every depth even after train n=3 is perfectly memorized (memorize-without-
+   composition on arithmetic — NET-3's leg-2 wall reproduced).
+4. **The flat-depth law now covers all three regimes.** NET-2 (lookups, flat
+   via one-hop attention), NET-3 (composition, flat via unlearnable/memorized/
+   depth-free), NET-4 (decomposable-error arithmetic, flat via a flat-loss
+   copy attractor). The single-peaked depth picture fails everywhere; the
+   binding constraint is optimization — here a flat-loss copy attractor that
+   gradient descent falls into before it can exploit the decomposable signal.
+
 ## Where a genuine breakthrough could come from (frontiers)
 
 - **The PR law at real scale.** Does the monotone b*(PR) law survive on a
@@ -96,11 +127,13 @@
   joint (leave-all-but-one compounding) measure; the compounding effect
   (barrier f) is the gap between isolated and joint bit-needs. This is likely
   where the real LM win lives.
-- **Decomposable-error depth task.** Digit addition with carries, where each
-  output digit is its own supervision token (error signal decomposes over
-  steps): test whether the fixed-budget depth law becomes non-flat there, and
-  whether the length-generalization depth effect (train n-digit, test n+1)
-  is real. This is the one regime the trichotomy predicts can break flatness.
+- **Escape the copy-self basin, then ask the depth question.** NET-4 showed
+  the decomposable-error regime is flat in depth because a flat-loss copy
+  attractor blocks the decomposable signal. The open question is now: with the
+  basin escape fixed (untied readout, or a carry-aware curriculum), does the
+  carry-chain bottleneck — the width/depth-immune residual — finally respond
+  to depth at larger scale? And can a diagnostic (per-digit vs full gap with
+  correlated errors) spot "computed the map, not the chain" in real models?
 - **Formula extraction as a compression tool** (the lab's second mandate):
   for algorithmic tasks, the extracted exact circuit (rank, frequency) IS a
   lossless compressed form; tie this to the quantization law.
@@ -115,5 +148,10 @@
 - On the depth axis, barrier (b) bites via the mech-interp residual-stream
   picture; the exact two-phase/crossover-d/2/depth-independent-inflation
   objects are the claim, not "residual norms grow".
+- NET-4 added the copy-self-basin caution: per-digit-supervised tied-embedding
+  models can sit in a flat-loss copy attractor for thousands of steps — check
+  for the per≈0.23 plateau before judging a decomposed-error task unlearnable,
+  and read high-per/low-full as the compositional chain failing (correlated
+  errors), not the digit map.
 
-Assessment v3. 3 experiments (NET-1, NET-2, NET-3).
+Assessment v4. 4 experiments (NET-1, NET-2, NET-3, NET-4).
