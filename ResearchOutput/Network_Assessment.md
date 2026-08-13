@@ -2,7 +2,7 @@
 
 > Network research loop, opened 2026-08-12 (factoring loop paused). Same rigor
 > as the factoring lab: exact measurable laws, honest negative results, all 8
-> barriers checked each iteration. Count: 14 experiments, assessment v14.
+> barriers checked each iteration. Count: 15 experiments, assessment v15.
 
 ## What NET-1 established (compression axis)
 
@@ -35,8 +35,11 @@
 - **Formula extraction as a compression tool** (the lab's second mandate):
   for algorithmic tasks, the extracted exact circuit (rank, frequency) IS a
   lossless compressed form; tie this to the quantization law.
-- **Speed / depth axes** — speed has had the exit-law real-scale negative
-  (NET-10); attention-cost laws are untouched; depth has had 8 iterations.
+- **Speed / depth axes** — speed has the exit-law real-scale negative (NET-10)
+  AND its first positive real-scale law (NET-15: attention is diffuse but
+  top-k pruning is lossless at 8× — the DIFFUSE-BUT-PRUNABLE law); attention-cost
+  laws at larger scale (d=8 / longer ctx) are the open next step; depth has had
+  8 iterations.
 
 ## Standing cautions
 - Every result so far is toy-scale (barrier c); the value is in exact laws and
@@ -415,6 +418,33 @@ uniform-4 (4.00 bits, 0.987, data-free) is the practical optimum. Remaining
 compression options are strictly larger-scale (d=8 / bigger dm) or the speed
 axis.
 
+## What NET-15 established (speed-axis rotation — the attention-cost law, FIRST POSITIVE REAL-SCALE SPEED RESULT)
+
+1. **Trained causal attention is DIFFUSE, not concentrated.** Per-query effective
+   support exp(H) mean **46.6 of 128** (uniform-causal baseline ≈64.5; only ~28%
+   more concentrated), per-head 39.5–54.7; top-8 mass only 0.450, top-32 0.795.
+   The "attention concentrates on a few tokens" premise is refuted at this scale
+   (dm=64, 4 heads).
+2. **Yet data-free top-k key/value pruning is LOSSLESS at 12.5% of context.**
+   k=16 retains **0.984** (≥0.98 bar) with loss 5.1370 vs full 5.1188 (+0.36%
+   rel) at an **8× attention-core FLOP reduction**; k=32 → 0.998 at 4×; k=64/96
+   → exact (verifies the explicit-attention eval path). Knee between k=8
+   (0.971, fails) and k=16.
+3. **The selection is genuine.** Random-k control: 0.922/0.950 at k=16/32 vs
+   top-k 0.984/0.998 (−4.8 to −6.2 pts); random-16 is even worse than top-8 —
+   the best 8 positions by weight beat any 16 at random.
+4. **The cost law is nearly total.** At ctx 128/dm 64 the attention core is ~95%
+   of inference FLOPs, so the L/k ratio is the total-model law: **8× attention
+   ≈ 5–6× total-model speedup, data-free, no retraining, no calibration, no
+   concentration assumption.**
+
+**DIFFUSE-BUT-PRUNABLE law:** attention need not be sharply concentrated for
+lossless top-k pruning at ~12% of context on real text — the mass beyond the
+top-k is low-information and renormalization concentrates the retained mass
+onto informative positions. First positive real-scale speed result (NET-6/7/8
+toy positives; NET-10 real-scale negative). Open: does the concentration law /
+lossless-k shift at larger scale (d=8 / bigger dm / bigger vocab)?
+
 ## Where a genuine breakthrough could come from (frontiers)
 
 - **The PR law at real scale — tested, does NOT transfer (NET-11).** The
@@ -467,8 +497,16 @@ axis.
 - **Formula extraction as a compression tool** (the lab's second mandate):
   for algorithmic tasks, the extracted exact circuit (rank, frequency) IS a
   lossless compressed form; tie this to the quantization law.
-- **Speed axis** is now open (NET-6 opened it with the exit law); attention-cost
-  laws remain untouched.
+- **Speed axis — TESTED with a positive (NET-15): the attention-cost law.**
+  Trained causal attention is DIFFUSE (effective support ≈47/128, only ~28% more
+  concentrated than uniform) yet data-free top-k key/value pruning is LOSSLESS at
+  k=16 (12.5% of ctx, 0.984 ≥ 0.98 bar, loss +0.36% rel) with an 8× attention-core
+  FLOP reduction (≈5–6× total at ctx 128, where attention is ~95% of FLOPs);
+  the weight-selected positions beat random by +4.8–6.2 pts. Concentration is
+  NOT required for lossless pruning — the diffuse-but-prunable law. Open: does
+  lossless-k / the concentration law shift at larger scale (d=8 / bigger dm)? The
+  exit law (NET-6/7/8 toy, NET-10 real-scale negative) and attention cost are
+  the speed results so far.
 
 ## Standing cautions
 - Every result so far is toy-scale (barrier c); the value is in exact laws and
@@ -562,5 +600,17 @@ axis.
   beat per-channel uniform-4 (4.00 bits, data-free) on a small causal LM; the
   only remaining compression question is whether the floor shifts at larger
   scale (d=8 / bigger dm).
+- NET-15 added the first positive real-scale speed caution: trained attention is
+  DIFFUSE (effective support ≈47/128), yet data-free top-k key/value pruning is
+  LOSSLESS at k=16 (0.984 ≥ 0.98 bar, +0.018 loss, 8× attention-core FLOPs). The
+  caveat is scale: this is measured at dm=64/ctx 128 — the concentration law and
+  the lossless-k may shift at larger scale (d=8, bigger dm, longer contexts), so
+  the practical 5–6× speedup claim is scale-contingent. Two standing traps from
+  the result: (1) concentration is NOT the justification for sparsity here —
+  "attention is focused" is empirically false at this scale even though pruning
+  works; (2) random-k loses 4.8–6.2 pts to weight-selected top-k, so the
+  selection information is the content, not merely the reduced support. Do not
+  build top-k inference without the weight-selected mask, and do not generalize
+  the diffuse regime to larger models without re-measuring effective support.
 
-Assessment v14. 14 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14).
+Assessment v15. 15 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15).
