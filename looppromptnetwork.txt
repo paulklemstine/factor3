@@ -28,30 +28,33 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # LAB PROTOCOL (same rigor as the factoring lab): exact measurable laws over a clean
 # hypothesis, honest negative results recorded, all 8 barriers checked every iteration,
 # commit+push each iteration with Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>.
-# Status: NET-15 done (issue #110): FIRST POSITIVE REAL-SCALE SPEED LAW.
-# Attention-cost law on the same real causal LM (d=4 s0, full acc reproduces
-# 0.1571 a SIXTH time, bar 0.98·full=0.1540, full loss 5.1188). Part A: trained
-# causal attention is DIFFUSE — effective support mean 46.6/128 (uniform-causal
-# 64.5), top-16 mass fraction 0.617; the "attention is concentrated" premise is
-# REFUTED at dm=64. Part B: yet data-free top-k key/value pruning (per-query/
-# per-head by trained weight at inference, renormalized) is LOSSLESS at k=16 —
-# retained 0.984 ≥ bar, loss +0.018 (+0.36% rel), 8× attention-core FLOP
-# reduction (≈5–6× total at ctx 128 where attention ≈95% of inference FLOPs);
-# k=32 0.998 @ 4×; knee between k=8 (0.971 ✗) and k=16. Part B2: random-k
-# control −4.8 to −6.2 pts (random-16 0.922 worse than top-8 0.971) — selection
-# genuine. LAW: DIFFUSE-BUT-PRUNABLE — concentration is NOT required for
-# lossless top-k pruning at ~12% of context on real text (mass beyond top-k is
-# low-information; renormalization concentrates it). First positive real-scale
-# speed result (toy positives NET-6/7/8; real-scale negative NET-10). Speed
-# axis now has 2 real-scale iterations (NET-10 negative, NET-15 positive).
-# Previous: NET-14 (issue #109) compression axis EXHAUSTED at small real-LM
-# scale (4-bit interface floor data-free-irreducible AND activation-irreducible;
+# Status: NET-16 done (issue #111): LOSSLESS-K-SCALES-WITH-DEPTH — the
+# attention-cost law has a depth boundary. On the same real causal LM (d=8 s0,
+# full acc 0.1619, bar 0.98·full=0.1587, full loss 5.0788): (1) Part A — the
+# concentration law is DEPTH-INDEPENDENT: eff support 50.1/128 (d=4 46.6),
+# top-k mass lower at every level; (2) Part B — lossless-k GROWS with depth,
+# k* ≈ 4·d: k=16 was lossless at d=4 (0.984) but FAILS at d=8 (0.961), the
+# knee moves to k=32 (0.983); every retained fraction lower and Δloss ~doubled
+# at each k (per-layer top-k error compounding — the speed-axis mirror of
+# NET-11's compression compounding); the 8× attention lever decays to 4× at
+# d=8; (3) Part B2 — selection importance GROWS with depth (random-k gap
+# +6.2→+9.5 pts at k=16, +4.8→+7.1 at k=32). DIFFUSE-BUT-PRUNABLE survives
+# with a documented depth boundary: k*(d=4)=16, k*(d=8)=32, predicts k*=64
+# (2×) at d=16 — UNDER TEST. Speed axis now 3 real-scale iterations (NET-10
+# negative, NET-15 positive, NET-16 boundary).
+# Previous: NET-15 (issue #110) DIFFUSE-BUT-PRUNABLE first positive real-scale
+# speed law (d=4: eff support 46.6/128, top-k lossless at k=16 = 8× attention
+# FLOPs, random-k −4.8–6.2 pts); NET-14 (issue #109) compression axis EXHAUSTED
+# (4-bit interface floor data-free-irreducible AND activation-irreducible;
 # per-channel uniform-4 = 4.00 bits is the practical optimum).
-# 15 experiments, assessment v15. Load-bearing boundary still needs
+# 16 experiments, assessment v16. Load-bearing boundary still needs
 # NON-POSITIONAL stack content / s≫64 / unbounded nesting WITH CAUSAL MASKING.
-# NEXT (speed axis now open with a positive): does the attention-cost law /
-# lossless-k shift at LARGER scale (d=8, bigger dm, longer ctx — re-measure
-# effective support + k-sweep); OR carry chain at scale; OR the d=8 compression
-# floor check (does the 4-bit interface floor shift at d=8?); OR load-bearing
-# depth (non-positional stack content with causal masking). Compression 3
-# real-scale iterations (exhausted), speed 2, depth 8.
+# NEXT — PARALLEL FAN-OUT RUNNING (3 subagents, results to integrate as
+# rounds 17-19): (A) d=16 attention-cost — is k*≈4d confirmed (predicts
+# k*=64/2×)?; (B) d=8 compression floor — does per-channel uniform-4 stay
+# lossless at depth, does the 4-bit interface floor shift?; (C) carry chain at
+# scale (dm=192, more data) — does scale unlock depth on the carry chain?
+# After the fan-out: attention-cost at longer ctx, load-bearing depth
+# (non-positional stack content with causal masking), or a fresh axis.
+# Compression 3 real-scale iterations (exhausted at d=4, d=8 check running),
+# speed 3, depth 8.

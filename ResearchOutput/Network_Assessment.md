@@ -2,7 +2,7 @@
 
 > Network research loop, opened 2026-08-12 (factoring loop paused). Same rigor
 > as the factoring lab: exact measurable laws, honest negative results, all 8
-> barriers checked each iteration. Count: 15 experiments, assessment v15.
+> barriers checked each iteration. Count: 16 experiments, assessment v16.
 
 ## What NET-1 established (compression axis)
 
@@ -445,6 +445,31 @@ onto informative positions. First positive real-scale speed result (NET-6/7/8
 toy positives; NET-10 real-scale negative). Open: does the concentration law /
 lossless-k shift at larger scale (d=8 / bigger dm / bigger vocab)?
 
+## What NET-16 established (depth-scaling of the attention-cost law — k* ≈ 4d, concentration depth-independent)
+
+1. **The concentration law is DEPTH-INDEPENDENT.** At d=8 on the same real
+   causal LM (full acc 0.1619, loss 5.0788; d=4 0.1571/5.1188), effective
+   support mean **50.1 of 128** (d=4: 46.6) — if anything slightly MORE diffuse
+   with depth; top-k mass fractions lower at every level (top-16 0.586 vs
+   0.617). The diffuse regime is a stable property of this model scale.
+2. **Lossless-k GROWS with depth — k* ≈ 4·d.** The lossless knee moves from
+   k=16 (d=4, retained 0.984) to **k=32 (d=8, retained 0.983)**: k=16 FAILS at
+   d=8 (0.961 < 0.98). Every retained fraction drops and Δloss roughly doubles
+   at each k — per-layer top-k error compounding through the residual stream,
+   the speed-axis mirror of NET-11's compression compounding. The practical
+   lever decays: 8× attention-core at d=4 → 4× at d=8.
+3. **Selection importance GROWS with depth.** Random-k gap: +6.2 → **+9.5 pts**
+   (k=16) and +4.8 → **+7.1 pts** (k=32) from d=4 to d=8 — the deeper model
+   relies more on the trained selection information.
+4. **The d=16 prediction is under test (round-net-17, running):** if k* ≈ 4d
+   continues, k*=64 at d=16 (only 2× attention-core) — the lever nearly gone at
+   depth. The attention-cost law is real but its leverage is a shallow-depth
+   property at fixed ctx.
+
+**LAWS:** CONCENTRATION-LAW-DEPTH-INDEPENDENT + LOSSLESS-K-SCALES-WITH-DEPTH
+(k* ≈ 4d at fixed ctx) + SELECTION-IMPORTANCE-GROWS-WITH-DEPTH. DIFFUSE-BUT-
+PRUNABLE survives with a documented depth boundary.
+
 ## Where a genuine breakthrough could come from (frontiers)
 
 - **The PR law at real scale — tested, does NOT transfer (NET-11).** The
@@ -497,15 +522,16 @@ lossless-k shift at larger scale (d=8 / bigger dm / bigger vocab)?
 - **Formula extraction as a compression tool** (the lab's second mandate):
   for algorithmic tasks, the extracted exact circuit (rank, frequency) IS a
   lossless compressed form; tie this to the quantization law.
-- **Speed axis — TESTED with a positive (NET-15): the attention-cost law.**
-  Trained causal attention is DIFFUSE (effective support ≈47/128, only ~28% more
-  concentrated than uniform) yet data-free top-k key/value pruning is LOSSLESS at
-  k=16 (12.5% of ctx, 0.984 ≥ 0.98 bar, loss +0.36% rel) with an 8× attention-core
-  FLOP reduction (≈5–6× total at ctx 128, where attention is ~95% of FLOPs);
-  the weight-selected positions beat random by +4.8–6.2 pts. Concentration is
-  NOT required for lossless pruning — the diffuse-but-prunable law. Open: does
-  lossless-k / the concentration law shift at larger scale (d=8 / bigger dm)? The
-  exit law (NET-6/7/8 toy, NET-10 real-scale negative) and attention cost are
+- **Speed axis — TESTED with positives (NET-15/16): the attention-cost law.**
+  Trained causal attention is DIFFUSE (effective support ≈47–50/128, only ~28%
+  more concentrated than uniform; the concentration law is depth-INDEPENDENT
+  across d=4/d=8) yet data-free top-k key/value pruning is LOSSLESS at k*=16
+  (d=4: 0.984 ≥ 0.98 bar, 8× attention-core, loss +0.36% rel; ≈5–6× total at
+  ctx 128 where attention is ~95% of FLOPs); weight-selected positions beat
+  random by +4.8–9.5 pts (the gap GROWS with depth). BUT lossless-k scales with
+  depth — **k* ≈ 4d** (k*=16 at d=4 → k*=32 at d=8 → 2× predicted at d=16,
+  under test): the lever decays with depth at fixed ctx. The exit law
+  (NET-6/7/8 toy, NET-10 real-scale negative) and the attention-cost law are
   the speed results so far.
 
 ## Standing cautions
@@ -612,5 +638,13 @@ lossless-k shift at larger scale (d=8 / bigger dm / bigger vocab)?
   selection information is the content, not merely the reduced support. Do not
   build top-k inference without the weight-selected mask, and do not generalize
   the diffuse regime to larger models without re-measuring effective support.
+- NET-16 added the depth boundary of the attention-cost law: lossless-k scales
+  with depth (k* ≈ 4d at fixed ctx 128: k*=16 at d=4, k*=32 at d=8) — a
+  k* measured at one depth does NOT transfer to another; per-layer top-k error
+  compounds through the residual stream (the speed-axis mirror of NET-11's
+  compression compounding). The concentration law IS depth-independent (eff
+  support ≈47–50), but lossless-k and the selection gap both grow with depth.
+  Do not quote the NET-15 8× lever without its depth: at d=8 it is 4×, and the
+  d=16 prediction (k*=64, 2×) is under test.
 
-Assessment v15. 15 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15).
+Assessment v16. 16 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16).
