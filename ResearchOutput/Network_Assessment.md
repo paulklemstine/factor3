@@ -2,7 +2,7 @@
 
 > Network research loop, opened 2026-08-12 (factoring loop paused). Same rigor
 > as the factoring lab: exact measurable laws, honest negative results, all 8
-> barriers checked each iteration. Count: 16 experiments, assessment v16.
+> barriers checked each iteration. Count: 17 experiments, assessment v17.
 
 ## What NET-1 established (compression axis)
 
@@ -470,6 +470,27 @@ lossless-k shift at larger scale (d=8 / bigger dm / bigger vocab)?
 (k* ≈ 4d at fixed ctx) + SELECTION-IMPORTANCE-GROWS-WITH-DEPTH. DIFFUSE-BUT-
 PRUNABLE survives with a documented depth boundary.
 
+## What NET-18 established (compression-axis rotation — the depth-robustness check of the per-channel uniform-4 practical optimum)
+
+1. **The 4-bit interface floor is NOT depth-robust.** At d=8 on the same real
+   causal LM (full acc 0.1619, loss 5.0788), the flagship per-row uniform-4 —
+   lossless at d=4 (0.987 ≥ 0.98) — falls to **0.967, below the bar**. The
+   depth penalty lands at every bit level, worst where the schedule sits near
+   the robustness cliff: uniform-3 per-row −7.4 pts (0.947 → 0.873), role −9.1
+   pts (0.892 → 0.801), per-tensor uniform-3 −12.0 pts (0.825 → 0.705, agreeing
+   with NET-11's d=8 0.73 within eval noise).
+2. **The drop that matters is the small one.** Uniform-4 loses only ~2 pts at
+   d=8 — but that is exactly the margin that cost it losslessness. NET-11's
+   "deeper = worse compounding" is confirmed at EVERY bit level, not just
+   uniform-3.
+3. **The compression axis is now closed at d=4 AND its floor does not transfer
+   to d=8.** Both axes' lossless operating points shrink with depth at fixed
+   width — the compression mirror of NET-16's k* ≈ 4d. Any 4-bit lossless claim
+   must quote the depth.
+
+**LAW:** DEPTH-DEEPENS-QUANT-FLOOR. The per-channel uniform-4 practical
+optimum is a depth-4 property.
+
 ## Where a genuine breakthrough could come from (frontiers)
 
 - **The PR law at real scale — tested, does NOT transfer (NET-11).** The
@@ -491,8 +512,9 @@ PRUNABLE survives with a documented depth boundary.
   — because the activation scales are near-uniform (max/mean ≈ 1.2). The 4-bit
   interface floor is both data-free-irreducible AND activation-irreducible at
   this scale; the practical optimum is per-channel uniform-4 (4.00 bits,
-  data-free). Remaining compression options: strictly larger-scale checks
-  (d=8 / bigger dm — does the floor shift?), or rotation to the speed axis.
+  data-free). **NET-18 answered the d=8 check: the floor is NOT depth-robust —
+  uniform-4 falls to 0.967 at d=8 (below bar), uniform-3/role fall 7–9 pts, so
+  the practical optimum is a d=4 claim and the depth must be quoted.**
 - **Small-BERT check of the PR law and joint-aware allocation** — the
   documented domain boundary (NET-1 reverses on attention LMs) makes the
   real-LM-class transfer the highest-value next compression step.
@@ -647,4 +669,4 @@ PRUNABLE survives with a documented depth boundary.
   Do not quote the NET-15 8× lever without its depth: at d=8 it is 4×, and the
   d=16 prediction (k*=64, 2×) is under test.
 
-Assessment v16. 16 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16).
+Assessment v17. 17 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18).

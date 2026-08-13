@@ -28,8 +28,17 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # LAB PROTOCOL (same rigor as the factoring lab): exact measurable laws over a clean
 # hypothesis, honest negative results recorded, all 8 barriers checked every iteration,
 # commit+push each iteration with Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>.
-# Status: NET-16 done (issue #111): LOSSLESS-K-SCALES-WITH-DEPTH — the
-# attention-cost law has a depth boundary. On the same real causal LM (d=8 s0,
+# Status: NET-18 done (issue #112): DEPTH-DEEPENS-QUANT-FLOOR — the
+# compression-axis 4-bit floor is NOT depth-robust. On the same real causal
+# LM (d=8 s0, full acc 0.1619, bar 0.1587, loss 5.0788), per-row RTN joint
+# evals over 52 matrices: uniform-4 per-row 0.987@d=4 (lossless) → 0.967@d=8
+# (BELOW the 0.98 bar); uniform-3 0.947→0.873, role 0.892→0.801, per-tensor
+# uniform-3 0.825→0.705 (agrees with NET-11 0.73). NET-11's "deeper = worse
+# compounding" confirmed at EVERY bit level; both axes' lossless operating
+# points shrink with depth (compression mirror of NET-16's k*≈4d) — quote the
+# depth with any 4-bit lossless claim. Compression axis closed at d=4 AND its
+# floor does not transfer to d=8.
+# Previous: NET-16 (issue #111) LOSSLESS-K-SCALES-WITH-DEPTH — the
 # full acc 0.1619, bar 0.98·full=0.1587, full loss 5.0788): (1) Part A — the
 # concentration law is DEPTH-INDEPENDENT: eff support 50.1/128 (d=4 46.6),
 # top-k mass lower at every level; (2) Part B — lossless-k GROWS with depth,
@@ -47,14 +56,16 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # FLOPs, random-k −4.8–6.2 pts); NET-14 (issue #109) compression axis EXHAUSTED
 # (4-bit interface floor data-free-irreducible AND activation-irreducible;
 # per-channel uniform-4 = 4.00 bits is the practical optimum).
-# 16 experiments, assessment v16. Load-bearing boundary still needs
-# NON-POSITIONAL stack content / s≫64 / unbounded nesting WITH CAUSAL MASKING.
-# NEXT — PARALLEL FAN-OUT RUNNING (3 subagents, results to integrate as
-# rounds 17-19): (A) d=16 attention-cost — is k*≈4d confirmed (predicts
-# k*=64/2×)?; (B) d=8 compression floor — does per-channel uniform-4 stay
-# lossless at depth, does the 4-bit interface floor shift?; (C) carry chain at
-# scale (dm=192, more data) — does scale unlock depth on the carry chain?
-# After the fan-out: attention-cost at longer ctx, load-bearing depth
-# (non-positional stack content with causal masking), or a fresh axis.
-# Compression 3 real-scale iterations (exhausted at d=4, d=8 check running),
-# speed 3, depth 8.
+# 17 experiments, assessment v17 (NET-17 still running). Load-bearing boundary
+# still needs NON-POSITIONAL stack content / s≫64 / unbounded nesting WITH
+# CAUSAL MASKING.
+# NEXT — PARALLEL FAN-OUT: NET-18 DONE (issue #112, DEPTH-DEEPENS-QUANT-FLOOR,
+# compression floor NOT depth-robust — uniform-4 0.967@d=8 below bar). Still
+# running: (A) round-net-17 d=16 attention-cost — is k*≈4d confirmed (predicts
+# k*=64/2×)?; (C) round-net-19 carry chain at scale (dm=192, more data) — does
+# scale unlock depth on the carry chain? (early d=1 s=0 full=0.982 SOLVES the
+# carry chain, flat-mastery horn). After the fan-out: attention-cost at longer
+# ctx, load-bearing depth (non-positional stack content with causal masking),
+# or a fresh axis.
+# Compression 4 real-scale iterations (exhausted at d=4, floor NOT depth-robust
+# at d=8), speed 3, depth 8.

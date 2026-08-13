@@ -231,3 +231,56 @@ Scripts: /tmp/exp_net_attncost.py.
 **Verdict.** NET-16: **CONCENTRATION-LAW-DEPTH-INDEPENDENT** (eff support ≈47–50 both depths) + **LOSSLESS-K-SCALES-WITH-DEPTH (k* ≈ 4d)** + **SELECTION-IMPORTANCE-GROWS-WITH-DEPTH**. DIFFUSE-BUT-PRUNABLE survives with a documented depth boundary. Barriers: (a) top-k from eval-input causal attention, joint evals, k=96 exact-loss match — nothing injected; (b) top-k a known family, the k*≈4d depth-scaling + flat concentration law new; Catalog 698 pkgs no depth-scaling attention-cost law; (c) real causal LM, real text, causal masking, 4097 vocab; (d) top-k data-free, contiguous split, held-out eval; (e) 1 model/depth, reproduced exactly 6×, monotone sweep with a knee that MOVED (16→32) in the direction consistent with NET-11's both-depth compounding; (f) 0.98 bar + raw loss, 6-pt sweep + 2-pt random control, k=96 exact numerics, retained fractions against each model's own full (full loss 5.1188→5.0788 reported); (g) full ref at each depth + random-k control, same bar; (h) lever real (4× at d=8) but depth-scaling is the honest caveat for scale-up claims. Script: /tmp/exp_net_attncost_d8.py.
 Now 16 network experiments. Assessment v16. Paper NET-16, issue #111.
 Scripts: /tmp/exp_net_attncost_d8.py.
+
+## Part 17 — NET-18 (round-net-18, compression axis): the 4-bit floor is NOT depth-robust — per-channel uniform-4 loses losslessness at d=8
+
+**Hypothesis.** NET-12's per-channel practical optimum (per-row uniform-4,
+lossless 0.987 @ 4.00 bits at d=4) has a stated scale caveat. Does it survive
+d=8 on the same real causal LM (d=8 s0, 5 Gutenberg novels, dm=64, vocab 4097,
+ctx 128, causal, 2000 steps; full acc 0.1619, bar 0.98·full=0.1587, loss
+5.0788)? Horns: (a) uniform-4 stays lossless at d=8 — floor depth-robust;
+(b) NOT — NET-11's depth compounding at every bit level, floor deepens;
+(c) non-monotone shift.
+
+**Setup.** Identical to NET-10/11/12/13/14 family at d=8. 52 matrices, per-row
+symmetric RTN, every eval JOINT (fresh model with quantized state dict, full
+held-out 60k forward).
+
+**Results (d=8; d=4 NET-12 refs in parens).** uniform-2 per-row 0.568 (0.588);
+uniform-3 per-row **0.873 (0.947)** — Δ−7.4 pts; **uniform-4 per-row 0.967
+(0.987)** — Δ−2.0 pts, **BELOW the 0.98 bar at d=8**; role(4/3/2) 0.801
+(0.892) — Δ−9.1 pts; per-tensor uniform-3 **0.705 (0.825)** — Δ−12.0 pts
+(cross-check vs NET-11's d=8 0.73, agreed within eval noise); per-tensor
+uniform-4 0.961 (0.979); per-tensor uniform-2 0.038 (0.112).
+
+**LAW: DEPTH-DEEPENS-QUANT-FLOOR.** The 4-bit per-channel interface floor is a
+d=4 property: at d=8 the flagship uniform-4 drops below the lossless bar by
+~2 pts, and the depth penalty is largest exactly where the schedule sits near
+the robustness cliff (uniform-3 −7.4/−12.0, role −9.1) and smallest where the
+schedule is already collapsed (uniform-2) or near-flawless (uniform-4) — but
+uniform-4's small drop is the one that costs losslessness. NET-11's "deeper =
+worse compounding" confirmed at EVERY bit level. Both axes' lossless operating
+points shrink with depth at fixed width (the compression mirror of NET-16's
+k*≈4d): quote the depth, or the 4-bit claim is a d=4 artifact.
+
+**Barriers.** (a) joint evals on independent loaded copies, RTN data-free — no
+injection; (b) per-channel quant known, the depth-dependence of the floor is
+the content; Catalog 698 pkgs no depth sweep of the per-channel floor on a real
+causal LM; (c) confronted — real causal LM, real text, causal masking, 4097
+vocab, d=8; (d) causal masking + contiguous split + held-out + data-free quant;
+(e) 1 model/depth, exact family reproduction (0.1571/0.1619), every eval a full
+joint held-out forward, eval noise ≈0.15%; (f) 0.98 bar + raw loss both
+reported, per-tensor uniform-3 cross-checked vs NET-11 (0.705 vs 0.73), avg-bits
+size-weighted over 52 matrices (NET-12 convention); (g) uniform-2/3/4 + role
+honest joint baselines, d=4 refs from same family at same bar; (h) real
+consequence: deployment depth must be quoted with any 4-bit lossless claim —
+the compression axis is now closed at d=4 AND its floor does not transfer to
+d=8.
+
+**Verdict.** NET-18: **DEPTH-DEEPENS-QUANT-FLOOR** — per-channel uniform-4
+(0.987 lossless at d=4) FAILS at d=8 (0.967 < 0.98); depth penalty at every bit
+level, worst near the robustness cliff. The compression axis's surviving
+recommendation is a depth-4 claim; scale-up must re-measure the floor per depth.
+Round-net-18. Now 17 network experiments. Assessment v17. Paper NET-18, issue
+#113.
+Scripts: /tmp/exp_net_d8quant.py.
