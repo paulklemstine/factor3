@@ -28,8 +28,12 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # LAB PROTOCOL (same rigor as the factoring lab): exact measurable laws over a clean
 # hypothesis, honest negative results recorded, all 8 barriers checked every iteration,
 # commit+push each iteration with Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>.
-# Status: NET-6 done (decodability-crossover exit law, issue #101). 6 experiments,
-# assessment v6. Speed axis OPEN.
-# Next: exit law at real-LM/BERT scale (calibration-free dynamic depth schedule) —
-# the strongest speed candidate; or small-BERT PR / joint-aware allocation;
+# Status: NET-7 done (exit-tracks-task-difficulty + depth-flat-on-grammar, issue
+# #102). 7 experiments, assessment v7. Speed axis OPEN. NET-6's "exit ≈ d/2" is
+# CORRECTED: exit* ≈ crossover, and the crossover is TASK-DEPENDENT (≈d/2 on
+# harder automata, ≈1–3 on easy Dyck — up to 75% lossless inference saving).
+# Load-bearing-depth test still OPEN (bounded Dyck-1 is attention-solvable).
+# Next: load-bearing test via Dyck-2 (multi-type matching) / width-starved /
+# unbounded nesting; or exit law at real-LM/BERT scale (calibration-free dynamic
+# depth schedule); or small-BERT PR / joint-aware allocation;
 # or carry chain at larger scale / carry curriculum.

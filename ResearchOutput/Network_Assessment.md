@@ -2,7 +2,7 @@
 
 > Network research loop, opened 2026-08-12 (factoring loop paused). Same rigor
 > as the factoring lab: exact measurable laws, honest negative results, all 8
-> barriers checked each iteration. Count: 6 experiments, assessment v6.
+> barriers checked each iteration. Count: 7 experiments, assessment v7.
 
 ## What NET-1 established (compression axis)
 
@@ -171,6 +171,34 @@
    gate fires only after the exit layer on nearly every sequence. The fixed,
    norm-predicted exit is the artifact.
 
+## What NET-7 established (speed axis, round 2 — the load-bearing-depth test of NET-6)
+
+1. **Depth is FLAT on the canonical grammar task.** Dyck-1 balanced-paren
+   next-token (semilength 12, nesting ≤12, dm=48): all 10 models
+   (d∈{1,2,4,8,16}×2 seeds) reach test=1.0000 at every balance bin including b4+
+   (deep nesting 4–10) — d=1 alone solves all nesting. The "shallow transformers
+   fail at deep nesting" expectation is a width/context-starved artifact, not this
+   scale. The flat-depth law now covers four task classes: lookups (NET-2),
+   composition (NET-3), decomposable-error arithmetic (NET-4/5), grammar (NET-7).
+   The load-bearing-depth regime was NOT achieved — it remains genuinely open.
+2. **The exit law is corrected to EXIT-TRACKS-TASK-DIFFICULTY.** exit* is
+   depth-INDEPENDENT: {2,3,4} across d=4..16 (d=16 exits at layer 4/16 = 75%
+   saving, lossless within the 0.95 bar), vs ≈50% on NET-6's automata. The
+   universal object is exit* ≈ crossover with the crossover TASK-DEPENDENT
+   (≈d/2 on harder automata whose compute fills Phase I, ≈1–3 on easy grammar);
+   |exit*−crossover| ≤ 1 in 17/18 across both task classes (one +3 outlier).
+   NET-6's "exit* ≈ d/2" was an automaton-specific value, not universal.
+3. **A partial refinement of the lossless claim.** Lossless-at-crossover holds only
+   3/6 on Dyck (vs essentially all in NET-6): on easy tasks the crossover is much
+   earlier and exit* lags it 1–3 layers; the reliable trigger is the fixed
+   usability bar, which fires far below d/2 on easy tasks.
+4. **The practical consequence is bigger, not smaller.** On easy-to-moderate
+   sequential tasks a trained transformer's inference depth can be cut ~75%
+   (exit at layer 2–4 of 16) losslessly with no confidence gate. The one regime
+   where the exit law could have a boundary (genuine load-bearing depth) remains
+   open — the next test is Dyck-2 multi-type matching, a width-starved Dyck, or
+   unbounded nesting.
+
 ## Where a genuine breakthrough could come from (frontiers)
 
 - **The PR law at real scale.** Does the monotone b*(PR) law survive on a
@@ -194,6 +222,10 @@
   a real small LM / BERT (does the norm crossover predict the per-layer
   decodability cliff there too)? If yes, it gives a calibration-free dynamic
   depth schedule for inference — the strongest speed candidate now on the table.
+- **The load-bearing-depth test.** NET-7 failed to reach it (bounded Dyck-1 is
+  attention-solvable). Dyck-2 (multi-type bracket matching — genuinely
+  non-regular context-free), a width-starved Dyck, or unbounded nesting is the
+  natural next test of both the flat-depth law and the exit law's boundary.
 - **Formula extraction as a compression tool** (the lab's second mandate):
   for algorithmic tasks, the extracted exact circuit (rank, frequency) IS a
   lossless compressed form; tie this to the quantization law.
@@ -224,5 +256,10 @@
   use it as a fixed inference-exit point (≈d/2, lossless) rather than a
   confidence gate, whose thresholds misfire because correct models keep
   probability spread.
+- NET-7 sharpened the exit-law caution: the crossover is TASK-dependent, not d/2
+  — on easy tasks (Dyck-1) it fires at layers 1–3 regardless of depth, so exit
+  at the first usable layer (the fixed 0.95 bar), not at a depth-dependent rule;
+  and bounded Dyck at dm=48 is attention-solvable (d=1 perfect), so it does NOT
+  test load-bearing depth — use Dyck-2/width-starved/unbounded nesting for that.
 
-Assessment v6. 6 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6).
+Assessment v7. 7 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7).
