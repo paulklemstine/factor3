@@ -2,7 +2,7 @@
 
 > Network research loop, opened 2026-08-12 (factoring loop paused). Same rigor
 > as the factoring lab: exact measurable laws, honest negative results, all 8
-> barriers checked each iteration. Count: 19 experiments, assessment v19.
+> barriers checked each iteration. Count: 20 experiments, assessment v20.
 
 ## What NET-1 established (compression axis)
 
@@ -541,6 +541,39 @@ per-layer compounding r(k)^d, selection gap widening with depth.
 attention-FLOP lever is **context-constant: speedup = 32/d** (a depth-only
 property), unifying the depth and context dependence as k* = d·ctx/32.
 
+## What NET-19 established (depth-axis rotation, round 9 — the carry chain at scale, dm=192)
+
+1. **Scale unlocks length-SPECIFIC mastery, not composition.** At 4.5–18×
+   NET-5's parameter count (dm=192, bs=256, 12000 steps), the n=6 carry chain
+   is mastered by ALL 9/9 configs (d=1 0.9940±0.0085, d=2 1.0000, d=4
+   0.9976±0.0035) — including all three d=1 seeds (NET-5's under-powered d=1
+   failed 2/3). Fixed-length addition is scale-SOLVED at every depth.
+2. **The depth law stays flat — depth pays nothing even at scale.** The d=1 vs
+   d=4 gap is 0.0036, within seed noise. Credit-assignment depth-immunity holds
+   at 18× scale and 3× data: the carry chain's binding constraint is
+   optimization (decomposable-error credit assignment), never capacity.
+3. **The length wall is depth- and scale-immune — 9/9 at chance.** Every
+   mastered config re-trained at n=3 (8/9 full=1.0000; d=1 s=2 reached
+   per=0.8010/full=0.2041 — the NET-5 carry-chain dissociation, per-high/
+   full-low correlated errors, reproduced at dm=192) then tested n=4/5/6:
+   **full=0.0000 at every depth and seed** (per ≈ 0.09–0.22 ≈ digit floor vs
+   chance 1e-5/1e-6/1e-7). The memorize-without-compose wall (NET-3 leg-2 /
+   NET-4/5) survives the largest arithmetic scale tested in the program.
+4. **Deterministic replication confirmed.** The fast probe (task #89) matched
+   the marathon's d=1 s=0 and d=4 s=0 Part B numbers BYTE-IDENTICAL (same
+   seed/settings ⇒ identical results) — the length wall at the two depth
+   extremes was confirmed 6h before the marathon finished.
+5. **The carry chain is now the best-characterized hard problem in the
+   program.** Fixed-length = depth-flat and scale-solved; length-gen = depth-
+   and scale-immune. Do not scale depth (or width) to fix length-general
+   arithmetic — attack the objective (carry curriculum, scratchpad/CoT
+   intermediates, a stateful carry cell / recurrence).
+
+**LAW:** SCALE-UNLOCKS-LENGTH-SPECIFIC-MASTERY-NOT-COMPOSITION +
+CREDIT-ASSIGNMENT-DEPTH-IMMUNITY-HOLDS-AT-SCALE. The depth axis has had 9
+iterations; compression (exhausted at d=4, not depth-robust at d=8) and speed
+(context-constant lever 32/d) are the standing axes.
+
 ## Where a genuine breakthrough could come from (frontiers)
 
 - **The PR law at real scale — tested, does NOT transfer (NET-11).** The
@@ -724,4 +757,4 @@ property), unifying the depth and context dependence as k* = d·ctx/32.
   Do not quote the NET-15 8× lever without its depth: at d=8 it is 4×, and the
   d=16 prediction (k*=64, 2×) is under test.
 
-Assessment v19. 19 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20).
+Assessment v20. 20 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19).

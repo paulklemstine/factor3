@@ -397,3 +397,57 @@ ref + random-k at same k (+8.7/+6.0 pts), same bar; (h) reframed negative: the
 Script /tmp/exp_net_ctx256.py.
 Now 19 network experiments. Assessment v19. Paper NET-20, issue #114.
 Scripts: /tmp/exp_net_ctx256.py.
+
+## Part 20 — NET-19 (round-net-19, depth axis): scale unlocks LENGTH-SPECIFIC mastery but NOT length-general composition — the carry chain is solved at every depth, the length wall is depth- and scale-immune (credit-assignment depth-immunity holds at scale)
+
+**Hypothesis.** NET-4/5 decomposed the decomposable-error regime: the copy-self
+basin is a tied-readout artifact (untie ⇒ escape, NET-5), but the CARRY CHAIN is
+readout-independent — a width/depth/readout-immune credit-assignment wall. At
+NET-5's scale full-mastery fails in some configs and the depth law is flat but
+under-powered (d=4 3/3, d=1 2/3, d=2 1/3). This round asks the last open
+question: **does scale unlock depth pay?** Scale up vs NET-5 — dm=192 (untied,
+4.5–18× params), bs=256 (2×), 12000 steps (~3× distinct pairs).
+
+**Setup.** Identical to NET-4/5 except scale: LSB-first base-10 a+b=c, n=6,
+inputs `[a,'+',b,'=']`, outputs c₀…c₆ (carry-out last), per-digit CE,
+teacher-forced GO-shift, pre-LN, 4 heads, d_mlp=4·dm, UNTIED head, dm=192 for
+all depths (NOT budget-matched — generous to depth). d∈{1,2,4}×3 seeds = 9
+configs, B = 454477/899341/1789069.
+
+**Part A — ALL 9/9 MASTER, depth pays NOTHING (flat-mastery horn).**
+d=1 full=0.9940±0.0085, d=2 1.0000±0.0000, d=4 0.9976±0.0035 — masters 3/3 at
+every depth; the d=1 vs d=4 gap (0.0036) is within seed noise (individual d=1
+seeds hit 1.0000). **Scale unlocked depth-1 mastery** (NET-5's d=1 failed 2/3;
+here 3/3) — but deeper nets do NOT beat shallow ones at 4.5–18× params and 3×
+data. The copy-self-basin + stochastic-escape mechanism reproduces at dm=192
+(d=2 s=2: per≈0.87/full≈0.10 plateau st=2000–3000, per⁷=0.38≫full, jump to
+full=1.0000 at st=4000). Per-position: errors spread thin across interior
+columns, never localized — the model computes the full n=6 sum algorithmically
+(fresh-draw 1.0000 on a 10¹² pair space rules out memorization).
+
+**Part B — the length wall survives scale: 9/9 at chance.** Every mastered
+config re-trained at n=3 (8/9 full=1.0000; d=1 s=2 reached per=0.8010 but
+full=0.2041 — the NET-5 carry-chain dissociation, per-high/full-low correlated
+errors, reproduced at dm=192 in the same config type), then tested n=4/5/6:
+**full=0.0000 at every depth and seed** (per ≈0.09–0.22 ≈ digit floor vs
+chance 1e-5/1e-6/1e-7). The probe (task #89) reproduced the marathon's d=1 s=0
+and d=4 s=0 numbers BYTE-IDENTICAL (same seed/settings ⇒ identical results),
+validating the length wall at the two depth extremes 6h early.
+
+**Verdict.** Flat-law-extension horn CONFIRMED (all-master-equally form);
+breakthrough horn REFUTED. Scale unlocks length-SPECIFIC mastery at every
+depth, NOT length-general composition — the memorize-without-compose wall
+(NET-3 leg-2 / NET-4/5) reproduced at the largest arithmetic scale in the
+program (dm=192). Credit-assignment depth-immunity holds at scale: the binding
+constraint is optimization (decomposable-error credit assignment), never
+capacity. The carry chain is now the best-characterized hard problem in the
+program: fixed-length = depth-flat and scale-solved; length-gen = depth- and
+scale-immune. Open levers (untested): carry curriculum, scratchpad/CoT
+intermediates, recurrence (a stateful carry cell). Depth axis has had 9
+iterations; compression (exhausted at d=4, not depth-robust at d=8) and speed
+(context-constant lever 32/d) are the standing axes. Barriers all checked —
+clean held-out, 3 seeds×every config, per^7 diagnostic, per-position
+localization, chance ceilings per length, deterministic probe replication.
+Paper 63, issue #115.
+Now 20 network experiments. Assessment v20. Paper NET-19, issue #115.
+Scripts: /tmp/exp_net_carry_scale.py, /tmp/exp_net_carry_lenprobe.py.

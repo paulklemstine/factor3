@@ -28,7 +28,25 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # LAB PROTOCOL (same rigor as the factoring lab): exact measurable laws over a clean
 # hypothesis, honest negative results recorded, all 8 barriers checked every iteration,
 # commit+push each iteration with Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>.
-# Status: NET-20 done (issue #114): k* IS NOT CONTEXT-INDEPENDENT — the
+# Status: NET-19 done (issue #115): CARRY CHAIN AT SCALE — scale unlocks
+# length-SPECIFIC mastery, NOT length-general composition. At dm=192 (4.5–18×
+# NET-5 params, bs=256, 12000 steps, d∈{1,2,4}×3 seeds, n=6 carry): ALL 9/9
+# configs master fixed-length (d=1 0.9940±0.0085 — NET-5's d=1 failure GONE,
+# d=2 1.0000, d=4 0.9976±0.0035) — depth pays NOTHING at 18× scale (d=1 vs
+# d=4 gap 0.0036, in seed noise; credit-assignment depth-immunity HOLDS);
+# copy-basin + stochastic escape reproduces at scale (d=2 s=2: per≈0.87/
+# full≈0.10 plateau st=2000–3000, jump to 1.0000 at 4000); per-position errors
+# thin across interior columns (algorithmic — fresh-draw 1.0000 on 10^12
+# pairs). But length-gen n=3→n=4/5/6 is at CHANCE at every depth and seed
+# (9/9: full=0.0000, per ≈0.09–0.22 ≈ digit floor vs chance 1e-5/1e-6/1e-7);
+# d=1 s=2 reproduces the NET-5 carry dissociation (per=0.80/full=0.20) at 18×
+# params; fast probe byte-identical to marathon (d=1 s=0, d=4 s=0) —
+# deterministic. Fixed-length = depth-flat AND scale-solved; length-gen =
+# depth- AND scale-immune (memorize-without-compose at the largest arithmetic
+# scale in the program). Open levers: carry curriculum, scratchpad/CoT
+# intermediates, recurrence (stateful carry cell). Depth axis has had 9
+# iterations — rotate to a fresh axis.
+# Previous: NET-20 done (issue #114): k* IS NOT CONTEXT-INDEPENDENT — the
 # attention-FLOP lever is CONTEXT-CONSTANT. On the same real causal LM at
 # ctx=256 d=4 (full acc 0.1612, bar 0.1579, loss 5.0877), the lossless window
 # DOUBLED vs ctx=128 (k*=16→32, exactly proportional at this resolution; k=16
@@ -79,19 +97,22 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # FLOPs, random-k −4.8–6.2 pts); NET-14 (issue #109) compression axis EXHAUSTED
 # (4-bit interface floor data-free-irreducible AND activation-irreducible;
 # per-channel uniform-4 = 4.00 bits is the practical optimum).
-# 19 experiments, assessment v19. Load-bearing boundary
+# 20 experiments, assessment v20. Load-bearing boundary
 # still needs NON-POSITIONAL stack content / s≫64 / unbounded nesting WITH
 # CAUSAL MASKING.
-# NEXT — FAN-OUT WINDING DOWN: NET-20 DONE (issue #114, k* NOT ctx-independent
-# — lever CONTEXT-CONSTANT, speedup = 32/d, 64× projection refuted, k* =
-# d·ctx/32); NET-17 DONE (issue #113, k* = 4·d CONFIRMED at d=16 — k*=64/2×,
-# per-layer compounding r(k)^d); NET-18 DONE (issue #112, quant floor NOT
-# depth-robust). Still running: (C) round-net-19 carry chain at scale
-# (dm=192, more data) — does scale unlock depth on the carry chain? (d=1 s=0
-# full=0.982, s=1 full=1.0000, s=2 full=1.0000 @st=1000 — SOLVES the carry
-# chain at depth 1, flat-mastery horn; d=2/d=4 pending). After the fan-out:
-# attention-cost at longer ctx (seed-1 ctx=256 / ctx=512 to confirm the k* ∝
-# ctx proportionality), load-bearing depth (non-positional stack content with
-# causal masking), or a fresh axis.
+# NEXT — FAN-OUT COMPLETE, ALL ROUNDS DONE: NET-20 (issue #114, k* NOT
+# ctx-independent — lever CONTEXT-CONSTANT, speedup = 32/d); NET-17 (issue
+# #113, k* = 4·d CONFIRMED at d=16 — k*=64/2×, per-layer compounding r(k)^d);
+# NET-18 (issue #112, quant floor NOT depth-robust); NET-19 (issue #115, carry
+# chain at scale: scale unlocks length-SPECIFIC mastery NOT composition,
+# credit-assignment depth-immunity HOLDS at scale — 9/9 fixed-n masters at
+# every depth, 9/9 length-gen at chance). Depth axis now 9 iterations, speed 5,
+# compression 4. Next round: fresh axis or strengthen a law — candidates:
+# (1) attention-cost law robustness (seed-1 ctx=256 / ctx=512 to confirm the
+# k* ∝ ctx proportionality at a second seed — currently 1 seed per point);
+# (2) load-bearing depth (non-positional stack content with causal masking,
+# s≫64, unbounded nesting); (3) a fresh axis (e.g. training dynamics /
+# grokking-free curvature, curriculum as the carry-chain cure, recurrence);
+# (4) any novel hypothesis — the loop should EXPLORE ALL axes, not settle.
 # Compression 4 real-scale iterations (exhausted at d=4, floor NOT depth-robust
-# at d=8), speed 5, depth 8.
+# at d=8), speed 5, depth 9.
