@@ -2,7 +2,7 @@
 
 > Network research loop, opened 2026-08-12 (factoring loop paused). Same rigor
 > as the factoring lab: exact measurable laws, honest negative results, all 8
-> barriers checked each iteration. Count: 20 experiments, assessment v20.
+> barriers checked each iteration. Count: 21 experiments, assessment v21.
 
 ## What NET-1 established (compression axis)
 
@@ -574,6 +574,48 @@ CREDIT-ASSIGNMENT-DEPTH-IMMUNITY-HOLDS-AT-SCALE. The depth axis has had 9
 iterations; compression (exhausted at d=4, not depth-robust at d=8) and speed
 (context-constant lever 32/d) are the standing axes.
 
+## What NET-21 established (performance axis — the training-schedule test of the carry-chain length wall)
+
+1. **The length wall is schedule-robust — every schedule fails beyond-max.**
+   Curriculum-grow (2→3→4→5), length-mixing {3,4,5}, plain-n3, and plain-n5
+   training were tested at dm=192/untied/12000 steps, seed 0, pos-emb enlarged
+   22→32 so beyond-max n=6/7/8 fits. **Beyond-max length-gen is at chance in
+   EVERY arm** (n=6/7/8 full=0.0000). The plain-n5 control (E) — "trained
+   longer" in isolation — also fails (masters n=5=1.0000, n=6/7/8 chance):
+   the wall is NOT a training-distribution artifact. NET-19's named open lever
+   "carry curriculum" is REFUTED as a cure.
+2. **NEW — MIXING PREVENTS MASTERY.** Training on mixed lengths {3,4,5}
+   (arm B) never masters ANY length: per-digit stuck at 0.54–0.67 / full
+   0.00–0.02 for all 12000 steps — the carry-dissociation correlated-error
+   regime (per ≫ per^n) is PERMANENT under length diversity. Diversity blocks
+   length-specific mastery without yielding length-general mastery.
+3. **NEW — CURRICULUM FORGETS INTERMEDIATE LENGTHS.** The d=2 curriculum
+   (arm D) mastered n=5 perfectly (1.0000, per-position all 1.0000) but n=4 —
+   trained for 3000 steps — collapsed to chance (0.0000). Final-length training
+   OVERWRITES intermediate lengths: the optimizer converges to a single
+   length-SPECIFIC attractor (the last length), never a length-parameterized
+   general algorithm.
+4. **The mechanism sharpened.** Three manifestations of the same optimizer
+   attractor: the copy-self basin (NET-4/5), the carry dissociation
+   (per-high/full-low correlated errors), and now curriculum-forgetting /
+   mix-never-masters. Adding length diversity does not move the optimizer toward
+   the general solution — it either blocks mastery entirely or specializes to
+   the last length seen.
+5. **The right next levers change the problem, not the schedule.** Do NOT invest
+   in schedule-only fixes for length-general arithmetic. Untested levers in
+   priority order: scratchpad/CoT intermediate tokens (change the task),
+   recurrence / stateful carry cell (change the architecture), explicit length
+   conditioning (change the input). A second-seed replication of the two new
+   phenomena is the strengthening step (1 seed per arm this round; the stark
+   1.0000-vs-0.0000 readings and the in-run plain-n3 control that reproduces the
+   known wall exactly keep the verdict robust).
+
+**LAW:** LENGTH-WALL-IS-SCHEDULE-ROBUST + MIXING-PREVENTS-MASTERY +
+CURRICULUM-FORGETS-INTERMEDIATE-LENGTHS. The depth axis has had 9 iterations;
+the carry chain is characterized on depth, scale, AND schedule — all negative
+for length-general composition; compression (exhausted at d=4, not depth-robust
+at d=8) and speed (context-constant lever 32/d) are the standing axes.
+
 ## Where a genuine breakthrough could come from (frontiers)
 
 - **The PR law at real scale — tested, does NOT transfer (NET-11).** The
@@ -757,4 +799,4 @@ iterations; compression (exhausted at d=4, not depth-robust at d=8) and speed
   Do not quote the NET-15 8× lever without its depth: at d=8 it is 4×, and the
   d=16 prediction (k*=64, 2×) is under test.
 
-Assessment v20. 20 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19).
+Assessment v21. 21 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21).

@@ -451,3 +451,71 @@ localization, chance ceilings per length, deterministic probe replication.
 Paper 63, issue #115.
 Now 20 network experiments. Assessment v20. Paper NET-19, issue #115.
 Scripts: /tmp/exp_net_carry_scale.py, /tmp/exp_net_carry_lenprobe.py.
+
+---
+
+# Part 21 — NET-21: The Length Wall Is Schedule-Robust (Curriculum and Length-Mixing Do Not Unlock Length-General Composition)
+
+**Program:** Network/LLM lab — round-net-21 (performance axis; training-schedule test of the carry-chain length wall)
+**Date:** 2026-08-14
+**Script:** /tmp/exp_net_curriculum.py (ALL_DONE). **Log:** /tmp/net21.log.
+
+**Question.** NET-19 (dm=192, 9/9 fixed-length masters, 9/9 length-gen at chance)
+named the TRAINING SCHEDULE as the untested lever on the memorize-without-compose
+wall. Does a length curriculum — or length-mixing — force a length-GENERAL carry
+procedure (positive horn), or is the wall intrinsic to carry credit assignment
+(negative)? Decisive test: does beyond-max n=6/7/8 generalize for a model whose
+curriculum ends at n=5?
+
+**Setup.** Byte-identical to NET-19 (pre-LN transformer, dm=192, 4 heads,
+d_mlp=4·dm, UNTIED readout, per-digit cross-entropy, teacher-forced GO-shift,
+LSB-first base-10 a+b=c, bs=256, 12000 AdamW steps, seed 0). ONE documented
+deviation: pos-embedding CTX 22→32 so eval at n=8 (3n+3=27 positions) fits;
+all 5 arms — including the two plain controls — carry the same enlargement, so
+comparisons stay fair. Arms: C (control plain n=3, d=1), E (control plain n=5,
+d=1), A (curriculum GROW 2→3→4→5, d=1), B (mixed lengths {3,4,5} each batch,
+d=1), D (curriculum GROW, d=2). Final eval at n=4/5/6/7/8 (chance 10^-(n+1)),
+per-position at the max trained length.
+
+**Results (full=per-digit in parens):**
+
+| arm | schedule | n=4 | n=5 | n=6 | n=7 | n=8 |
+|---|---|---|---|---|---|---|
+| C control | plain n=3 | 0.0000 (.224) | 0.0000 (.211) | 0.0000 (.153) | 0.0000 (.158) | 0.0000 (.163) |
+| E control | plain n=5 | — | **1.0000** | 0.0000 (.110) | 0.0000 (.106) | 0.0000 (.105) |
+| A | cur grow, d=1 | 0.0000 (.107) | 0.1929 (.854) | 0.0000 (.099) | 0.0000 (.133) | 0.0000 (.110) |
+| B | mixed {3,4,5} | 0.0068 (.572) | 0.0142 (.670) | 0.0000 (.099) | 0.0000 (.107) | 0.0000 (.114) |
+| D | cur grow, d=2 | **0.0000** (.105) | **1.0000** | 0.0000 (.129) | 0.0000 (.111) | 0.0000 (.116) |
+
+- **C** masters n=3 (1.0000) from st=1000; n=4/5/6/7/8 all chance. The known wall
+  reproduced in-run (enlarged pos table does not disturb it).
+- **E** masters n=5 (1.0000 by st=8000, per-position all 1.0000); n=6/7/8 all
+  chance (per ≈0.105–0.110 ≈ digit floor). "Trained longer" is NOT the cure — a
+  plain-n5 trainer is as length-specific as a plain-n3 trainer.
+- **A** (curriculum, d=1): n=5 stuck in carry dissociation (per 0.85/full 0.19);
+  n=4 0.0000; n=6/7/8 chance. Never even masters the final trained length at d=1.
+- **B** (mixed): NEW — NEVER masters ANY length. per stuck 0.54–0.67 / full
+  0.00–0.02 for ALL 12000 steps (permanent per-high/full-low correlated-error
+  regime). Diversity blocks length-specific mastery, delivers no general mastery.
+- **D** (curriculum, d=2): NEW — curriculum FORGETS intermediate lengths. Masters
+  n=5 perfectly (per-position all 1.0000) but n=4 — trained 3000 steps — is
+  chance (0.0000). The final-length training OVERWROTE the n=4 algorithm. The
+  model specializes to the LAST length; no length-parameterized general
+  procedure emerges. Beyond-max n=6/7/8 all chance.
+
+**Verdict.** Negative — the schedule-cure is REFUTED. Beyond-max length-gen is
+at chance under every schedule tested (curriculum at d=1 and d=2, mixing, plain
+n=3, plain n=5). The wall is robust to the training DISTRIBUTION: the optimizer
+converges to a length-SPECIFIC carry attractor under every schedule — adding
+diversity either blocks mastery (mixing) or erases intermediate lengths
+(curriculum). Two NEW phenomena recorded: MIXING-PREVENTS-MASTERY and
+CURRICULUM-FORGETS-INTERMEDIATE-LENGTHS — a third and fourth manifestation of
+the optimizer attractor mechanism (after the copy-self basin and the carry
+dissociation). Surviving levers change the problem, not the schedule:
+scratchpad/CoT (task), recurrence/stateful carry cell (architecture), explicit
+length token (input). Caveat: 1 seed per arm (the stark 1.0000-vs-0.0000
+readings and the in-run plain-n3 control that reproduces the known wall keep
+the verdict robust; a second-seed replication of the two new phenomena is the
+strengthening step). All 8 barriers checked (see paper). Paper 65, issue #116.
+Now 21 network experiments. Assessment v21. Paper NET-21, issue #116.
+Script: /tmp/exp_net_curriculum.py.
