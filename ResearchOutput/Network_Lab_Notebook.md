@@ -727,3 +727,64 @@ threshold untested, mechanism hypothesis unproven. Paper 69, issue #120. Now 25
 network experiments. Assessment v25. Scripts: /tmp/exp_net_stateful_ctrl.py,
 _pad.py, _sweep.py, _eosctrl.py; logs: /tmp/net25.log, _pad.log, _sweep.log,
 _eos.log.
+
+## Part 26 — EOS-Width Is a Distribution Shift, Not a Sharp Threshold (round-net-26, NET-26)
+
+**Date:** 2026-08-14. **Status:** Machine-verified (ALL_DONE_NET26 / _VER / _DIST).
+**Hypothesis:** NET-25 flagged an EOS-width threshold (28–384 untested) and an
+"identical-weights airtight control" (pad384 vs pad384-zeroEOS). Both are
+attacked: (1) is the EOS-width effect a SHARP critical width or a
+seed-dependent probability? (2) is NET-25's control valid (the two arms were
+constructed before vs after `torch.manual_seed` → different init streams)?
+
+**Setup:** new EOSWidthGRU(eos_width): GRUCell(384→192) on zero-padded raw
+one-hot digit columns, learned E-d EOS zero-padded to 384, n GRU steps + one
+EOS step, Linear(192→10) head. Fixed cell — only trainable EOS width varies.
+Same task/budget/eval as NET-25. Three script families: sweep (E × 2 seeds),
+verify (after-seed vs before-seed construction, E=20, s=0), dist (E=20/384 ×
+seeds 2–7). 30 arms total.
+
+**Results:**
+- Sweep n=8 full: **E=20 → 0.9990 / 0.0166** (fragile); **E≥28 → 1.0000 in all
+  14/14 arms** (E=28,64,96,128,192,256,384 × 2). No threshold inside the tested
+  band — the fragility sits below 28, at E=20.
+- E20 s1 failure trajectory: n=5 1.0000 → n=6 0.9556 → n=7 0.1445 → n=8 0.0166
+  — smooth progressive-unroll collapse, not a cliff.
+- Verify: after-seed s0 = 0.9990, before-seed s0 = 0.9990 (deterministic: same
+  value as sweep E20 s0). Construction-order RNG does NOT explain NET-25's 0/2;
+  both timings near-cure at s0 → the 0/2 was two unlucky draws from a wide
+  distribution.
+- Dist: E=20 seeds 2–7 → 0.0107, 0.1240, 0.0576, 0.0054, 0.0063, 0.0308; E=384
+  → 1.0000 ×6.
+- **Merged E=20 (12 samples): {0.999×3, 0.744, 0.124, 0.058, 0.031, 0.026,
+  0.017, 0.011, 0.006, 0.005}** — P(clean cure) = 3/12 = 25%, median 0.044,
+  P(≤0.75) = 75%. **Merged E≥28 (20 samples): all 1.0000, 0/20 failures.**
+- Probe: cure = hidden-norm FLAT through cols 6–8 (Δ+0.1–0.15) + maxconf 1.000;
+  E20 failure = norm DRIFT (Δ+2.2 → 12.44) + maxconf dips 0.945–0.984 at
+  beyond-training columns. The boundary input keeps the hidden state
+  in-distribution at depth.
+
+**Findings:**
+1. **EOS-WIDTH-DISTRIBUTION-SHIFT.** The EOS width gates P(cure) as a one-sided
+   distribution shift, not a sharp boundary. E=20 fragile (P≈¼, wide
+   continuum); E≥28 robust (19/19). NET-25's "28-d fails (pos28)" was a
+   GRUCell(28)-architecture artifact; its "20-d fails 0/2" was a small draw.
+2. **THE CONTROLLING VARIABLE IS REPRESENTATIONAL DISTINCTNESS, NOT WIDTH PER
+   SE.** E=20's EOS occupies exactly the digit subspace (dims 0–19, no exclusive
+   dims) → boundary ambiguous with a digit step → seed-fragile. E≥28's EOS has
+   exclusive dims 20..E−1 no digit column activates → unambiguous boundary →
+   robust. pos28 (full-input-width EOS, no exclusive dims) is consistent.
+3. **CONSTRUCTION-ORDER RNG RULED OUT.** Both after-seed and before-seed
+   constructions near-cure at s0 (0.9990). NET-25's "airtight control" was
+   invalid (different init streams) but immaterial (both timings → same result);
+   the corrected evidence is stronger: 20/20 vs 3/12.
+4. **FAILURE = PROGRESSIVE-OOD HIDDEN-STATE DRIFT.** Per/full gap (0.879 per vs
+   0.124 full ≪ per⁹≈0.31) shows column-clustered errors; probe shows ‖h‖ drift
+   + maxconf dip at beyond-training columns.
+
+**Verdict:** NET-25's sharp-threshold law REFUTED; its mechanism (dense EOS →
+boundary conditioning) SURVIVES on stronger ground. Barrier (e) closed: 12- and
+19-sample distributions + determinism check. Open: shape of the 20→28 shift
+(E=24 untested), real-scale transfer of the cure. Paper 70, issue #121. Now 26
+network experiments. Assessment v26. Scripts: /tmp/exp_net_eos_sweep.py,
+_verify.py, _dist.py; logs: /tmp/net26.log, _verify.log, _dist.log.

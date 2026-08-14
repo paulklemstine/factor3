@@ -973,4 +973,23 @@ dense-EOS law are the open questions. Paper 69, issue #120.
   Do not quote the NET-15 8× lever without its depth: at d=8 it is 4×, and the
   d=16 prediction (k*=64, 2×) is under test.
 
-Assessment v25. 25 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25).
+- NET-26 corrected NET-25's EOS-width law with a 30-arm round: the flagged
+  "28–384 threshold" resolved as NO threshold — every width ≥28 cured 19/19
+  (E=28,64,96,128,192,256,384 ×2 + E384×5) — while the fragility actually sits
+  BELOW 28, at E=20, where a 12-sample distribution gives P(clean cure)≈¼
+  {0.999×3, 0.744, 0.124, 0.058, 0.031, 0.026, 0.017, 0.011, 0.006, 0.005}.
+  NET-25's two "evidence" pillars both fell: "28-d fails" (pos28) was a
+  GRUCell(28)-architecture artifact, and "20-d fails 0/2" was a 2-sample draw
+  from P(cure|E=20)≈¼. The "airtight same-weights control" was invalid
+  (construction-order RNG — pad384 after-seed, pad384-zeroEOS before-seed drew
+  different init streams) but immaterial (a construction-order verify showed
+  both timings near-cure 0.9990 at s0). The controlling variable is
+  representational DISTINCTNESS, not width: E=20's EOS occupies exactly the
+  digit subspace (no exclusive dims) → boundary ambiguous → seed-fragile; E≥28
+  adds exclusive dims → robust. Mechanism (dense boundary input keeps the
+  hidden state in-distribution at depth — probe: flat norm + maxconf 1.000 vs
+  drift + dips) SURVIVES. Net correction: EOS-width is a one-sided P(cure)
+  distribution shift, not a sharp threshold; do not cite NET-25's pad control
+  as airtight, and do not claim any single-seed EOS-width "threshold".
+
+Assessment v26. 26 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26).

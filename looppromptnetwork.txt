@@ -28,7 +28,35 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # LAB PROTOCOL (same rigor as the factoring lab): exact measurable laws over a clean
 # hypothesis, honest negative results recorded, all 8 barriers checked every iteration,
 # commit+push each iteration with Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>.
-# Status: NET-25 done (issue #120): DENSE-FINAL-STEP-IS-THE-CURE — the
+# Status: NET-26 done (issue #121): EOS-WIDTH-DISTRIBUTION-SHIFT — CORRECTS
+# NET-25: the EOS-width "threshold" is a one-sided P(cure) distribution shift,
+# not a sharp boundary. 30 arms (EOSWidthGRU: GRUCell(384→192), learned E-d EOS
+# zero-padded to 384, ONLY E varies; same task/budget/eval as NET-25):
+# sweep E ∈ {20,28,64,96,128,192,256,384} × 2 seeds → E=20 {0.9990, 0.0166}
+# fragile, E≥28 ALL 1.0000 (14/14); construction-order verify (E=20 s0):
+# after-seed 0.9990 = before-seed 0.9990 ⇒ NET-25's pad384/pad384-zeroEOS drew
+# DIFFERENT init streams ("airtight same-weights control" INVALID) but the
+# timing is immaterial (the 0/2 was 2 unlucky draws from P(cure|E20)≈¼);
+# dist E=20/384 × seeds 2–7 → E20 {0.0107,0.1240,0.0576,0.0054,0.0063,0.0308},
+# E384 1.0000 ×6. MERGED E=20 (12 samples): {0.999×3, 0.744, 0.124, 0.058,
+# 0.031, 0.026, 0.017, 0.011, 0.006, 0.005} — P(clean cure) = 3/12 = 25%,
+# median 0.044, P(≤0.75)=75%; failures are smooth progressive-unroll collapses
+# (n=5 1.0000 → n=6 0.9556 → n=7 0.1445 → n=8 0.0166) with column-clustered
+# errors. MERGED E≥28 (20 samples): all 1.0000, 0/20 failures. Corrected law:
+# EOS width gates P(cure) one-sided; the control variable is REPRESENTATIONAL
+# DISTINCTNESS, not width per se — E=20's EOS occupies exactly the digit
+# subspace (dims 0–19, no exclusive dims) → boundary ambiguous with a digit
+# step → seed-fragile; E≥28 adds exclusive dims 20..E−1 → robust (pos28's
+# full-input-width EOS is consistent). NET-25's "28-d fails" (pos28) was a
+# GRUCell(28)-architecture artifact (E28 cures 2/2 on the 384-d cell); its
+# mechanism (dense boundary input keeps the hidden state in-distribution at
+# depth — probe: cure = flat hidden-norm + maxconf 1.000 through cols 6–8,
+# failure = norm drift Δ+2.2 + maxconf dips 0.945–0.984) SURVIVES on stronger
+# ground. Design lesson: the final-step boundary token needs its OWN parameter
+# subspace (exclusive dims); single-seed "thresholds" in toy mechanism studies
+# are unreliable. Open: shape of the 20→28 shift (E=24 untested), real-scale
+# transfer with an exclusive-dimension boundary input.
+# PREVIOUS STATUS — NET-25 done (issue #120): DENSE-FINAL-STEP-IS-THE-CURE — the
 # mechanism dissection of the NET-24 stateful-carry-cell cure. Hypothesis:
 # WHICH answer-side ingredient is load-bearing? Three horns — H1 CAPACITY
 # (the raw-GRU state-horizon is a 125k-param artifact), H2 REPRESENTATION
@@ -267,15 +295,15 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # credit-assignment depth-immunity HOLDS at scale — 9/9 fixed-n masters at every
 # depth, 9/9 length-gen at chance). Depth axis 10 iterations, speed 5,
 # compression 4, carry-wall SOLVED at toy level (NET-24) + cure DISSECTED
-# (NET-25). Next round: fresh axis
+# (NET-25) + threshold CORRECTED (NET-26). Next round: fresh axis
 # or strengthen a law — candidates:
 # (1) REAL-SCALE CARRY-WALL TRANSFER (the frontier opened by NET-24's cure,
 # refined by NET-25): does a recurrence/state-space-augmented answer path give
 # a real causal LM length-general computation — with a WELL-CONDITIONED DENSE
 # BOUNDARY (final-step) input, per NET-25? the most load-bearing open question;
-# (1b) NET-25's EOS-dimension threshold (between 28 and 384 — try 64/96/128-d
-# EOS) and the explicit pad384-vs-NET-24-hybrid parity check (a dense-EOS raw
-# GRU should match the hybrid exactly);
+# (1b) the shape of the EOS-width shift inside (20,28) — E=24/26 (NET-26 left
+# it 1-point undersampled) and the explicit pad384-vs-NET-24-hybrid parity
+# check (a dense-EOS raw GRU should match the hybrid exactly);
 # (2) attention-cost law robustness (seed-1 ctx=256 / ctx=512 to confirm the
 # k* ∝ ctx proportionality at a second seed — currently 1 seed per point);
 # (3) load-bearing depth (non-positional stack content with causal masking,
@@ -283,4 +311,4 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # curvature); (5) any novel hypothesis — the loop should EXPLORE ALL axes, not
 # settle.
 # Compression 4 real-scale iterations (exhausted at d=4, floor NOT depth-robust
-# at d=8), speed 5, depth 10, carry-wall mechanism 6 (NET-19/21/22/23/24/25).
+# at d=8), speed 5, depth 10, carry-wall mechanism 7 (NET-19/21/22/23/24/25/26).
