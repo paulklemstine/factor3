@@ -2,7 +2,7 @@
 
 > Network research loop, opened 2026-08-12 (factoring loop paused). Same rigor
 > as the factoring lab: exact measurable laws, honest negative results, all 8
-> barriers checked each iteration. Count: 24 experiments, assessment v24.
+> barriers checked each iteration. Count: 25 experiments, assessment v25.
 
 ## What NET-1 established (compression axis)
 
@@ -737,6 +737,42 @@ cure (0→1, seed-independent). Depth, scale, schedule, scratchpad, and position
 scheme are each individually insufficient — state is the load-bearing device.
 Caveats: hybrid-abs 1 seed; pure-GRU capacity confound; 2 hybrid seeds.
 
+## What NET-25 established (performance axis — mechanism dissection of the NET-24 cure: the lever is the dense final step)
+
+1. **DENSE-FINAL-STEP-IS-THE-CURE — the NET-24 cure was the final-carry (EOS)
+   input richness, NOT the encoder's features.** Same-seed, identical-weights
+   control (pad384 vs pad384-zeroEOS: construction order matches, only the EOS
+   parameter count differs): a dense 384-d learned EOS gives n=8 full=1.0000
+   (4/4 seeds) while a 20-d EOS gives 0.026–0.744 (0/2, inside the raw20
+   distribution). The EOS input dimension ALONE flips the cure. NET-24's
+   "content-rich column features" interpretation is corrected.
+2. **THE DIGIT-PATH CAN BE RAW.** pad384's digit columns are functionally raw
+   20-d one-hots (364 dead padding dims) and it still cures 4/4; proj384
+   (untrained fixed random 384-d projection, no context/position/learning)
+   cures 5/5. The dense EOS is sufficient alone — no encoder, no learned
+   features, no position required. The NET-24 pure-GRU failure was its 20-d
+   EOS, not its digit inputs.
+3. **THE RAW20 STATE-HORIZON IS REAL BUT SEED-VARIANCE-HEAVY (0/7 at 1.0).**
+   n=8 full over 7 seeds: 0.0806, 0.6997, 0.0103, 0.0063, 0.0093, 0.0020,
+   0.0132 — wide distribution, mode ~0.01, never 1.0. NET-24's 2-seed law
+   (0.08/0.70) undersampled; the qualitative conclusion holds at 0/7.
+4. **EOS RICHNESS NEEDS DIM ≫ DIGIT COUNT.** pos28's learned 28-d EOS still
+   fails (0.0049, both seeds) — the effect is not "any trained EOS"; 384-d
+   works, 20/28-d fail (threshold 28–384 untested).
+5. **H1 CAPACITY and H3 POSITION REFUTED.** cap384-raw (471k params, raw
+   one-hots) fails like the 125k pure GRU (0.006–0.008); one-hots + an 8-d
+   RoPE-schedule step sinusoid add nothing (0.0049). Capacity of the cell and
+   position structure in the digit path are not the levers.
+
+**LAW:** DENSE-FINAL-STEP-IS-THE-CURE — THE-STATEFUL-CARRY-CELL-CURE-IS-THE-
+FINAL-STEP-INPUT-RICHNESS; THE-ENCODER'S-CONTENT-WAS-NOT-THE-LOAD-BEARING-
+INGREDIENT. The NET-24 cure decomposes: state (GRU) + a dense learned final-step
+input. The carry TRANSITION was always length-general (final-carry 0.86–0.99
+even in failing arms); the dense EOS is what keeps the digit readout
+in-distribution at deep unrolls (hypothesis: boundary-step backprop conditioning
+— flagged, unproven). Threshold (28–384) and the real-LM transfer of the
+dense-EOS law are the open questions. Paper 69, issue #120.
+
 ## Where a genuine breakthrough could come from (frontiers)
 
 - **The PR law at real scale — tested, does NOT transfer (NET-11).** The
@@ -777,9 +813,15 @@ Caveats: hybrid-abs 1 seed; pure-GRU capacity confound; 2 hybrid seeds.
   seeds (0→1; the readout's state is the ONLY difference from NET-23's 0.0000).
   The wall was the state-free feedforward answer function; carries as recurrent
   STATE work where carries as input tokens (NET-22) failed. Pure recurrence on
-  raw digits alone hits a state-horizon (n=8 full 0.08–0.70), so the cure is
-  state + the encoder's content-rich column features. The frontier is the
-  real-scale question: does a recurrence/state-space-augmented answer path give
+  raw digits alone hits a state-horizon (n=8 full 0.002–0.70 over 7 seeds,
+  seed-variance-heavy, 0/7 at 1.0). **NET-25 dissected the cure: the lever is
+  the DENSE FINAL (EOS) STEP, not the encoder's content** — an airtight
+  same-seed identical-weights control (pad384 vs pad384-zeroEOS, only the EOS
+  input dimension differs) flips n=8 full 0.026–0.744 → 1.0000 (4/4); the digit
+  path can be raw one-hots (pad384 cures with dead padding), so no encoder,
+  learned features, context, or position is required (proj384 untrained random
+  projection 5/5). The frontier is the real-scale question: does a
+  recurrence/state-space-augmented answer path with a RICH boundary input give
   a real causal LM length-general computation the way it does here?
 - **The exit law at real scale — tested, does NOT transfer (NET-10).** The
   norm crossover marks the ONSET of shared-head decodability growth on a real
@@ -931,4 +973,4 @@ Caveats: hybrid-abs 1 seed; pure-GRU capacity confound; 2 hybrid seeds.
   Do not quote the NET-15 8× lever without its depth: at d=8 it is 4×, and the
   d=16 prediction (k*=64, 2×) is under test.
 
-Assessment v24. 24 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24).
+Assessment v25. 25 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25).

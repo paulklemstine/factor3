@@ -28,7 +28,45 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # LAB PROTOCOL (same rigor as the factoring lab): exact measurable laws over a clean
 # hypothesis, honest negative results recorded, all 8 barriers checked every iteration,
 # commit+push each iteration with Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>.
-# Status: NET-24 done (issue #119): STATEFUL-CARRY-CELL-UNLOCKS-LENGTH-GEN —
+# Status: NET-25 done (issue #120): DENSE-FINAL-STEP-IS-THE-CURE — the
+# mechanism dissection of the NET-24 stateful-carry-cell cure. Hypothesis:
+# WHICH answer-side ingredient is load-bearing? Three horns — H1 CAPACITY
+# (the raw-GRU state-horizon is a 125k-param artifact), H2 REPRESENTATION
+# (high-dim well-separated features cure it; the encoder's LEARNING not
+# load-bearing), H3 POSITION (the encoder's step-position signal is
+# load-bearing). 6-arm dissection on plain n=5 (bs=256/12000 steps, eval
+# n=5/6/7/8 fresh draws, teacher-forced): ALL THREE REFUTED — cap384-raw
+# (471k, capacity-matched) n=8 full 0.0078/0.0063 (fails like the 125k one),
+# pos28 (one-hots + RoPE-schedule sinusoid) 0.0049/0.0049 (position adds
+# nothing), proj384 (UNTRAINED fixed random 384-d projection, no context/
+# position/learning) 1.0000/1.0000 (the cure needs no learned encoder
+# content). Barrier-e follow-ups: pad384 (one-hots zero-padded to 384-d, 364
+# dead dims — functionally raw20 at every digit column) cures 4/4 at 1.0000,
+# yet a zero-padded one-hot is a 20-input GRU ⇒ the difference is subtler than
+# dimension (init-scale hypothesis KILLED: GRUCell inits ALL params from
+# U(±1/sqrt(hidden)), in_dim-independent — verified max-abs 0.0722 for in_dim
+# 20/28/384). DECISIVE CONTROL (same-seed, identical GRUCell/head weights; the
+# EOS input dimension is the ONLY difference): GRUCarry's EOS is a DENSE
+# LEARNED vector of size in_dim fed at the final carry step — 384-d for pad384
+# (the dead columns are ALIVE there), 20-d for raw20. pad384-zeroEOS (EOS
+# zero-padded to 20-d) FAILS: n=8 full 0.7441/0.0259 (raw20 range) vs pad384
+# 4/4 at 1.0000. THE EOS INPUT DIMENSION ALONE FLIPS THE CURE. Variance
+# sweep: raw20-192 n=8 full over 7 seeds 0.002–0.70 (mode ~0.01, 0/7 at 1.0 —
+# NET-24's 2-seed law undersampled a wide distribution, conclusion holds);
+# proj384 5/5 at 1.0000. LAW: the cure is the DENSE learned final-carry (EOS)
+# input RICHNESS, NOT the encoder's content; the digit path can be RAW (pad384
+# cures with 364 dead dims); EOS richness needs dimension FAR above the digit
+# count (28-d learned EOS still fails 0.0049; 384 works, 20/28 fail — threshold
+# untested); the carry TRANSITION was always length-general (final-carry 0.86–
+# 0.99 even in failing arms) — the digit READOUT was the fragile part and the
+# dense EOS keeps it in-distribution at deep unrolls. CORRECTION TO NET-24:
+# the pure-GRU failure was its 20-d EOS, not its 20-d digit inputs; a dense-EOS
+# raw GRU cures with NO encoder at all; the encoder's content-rich features
+# were sufficient-but-not-necessary. Frontier now: real-scale transfer with a
+# WELL-CONDITIONED DENSE BOUNDARY (final-step) input — does a recurrence/
+# state-space-augmented answer path give a real causal LM length-general
+# computation? 25 experiments, assessment v25.
+# Previous: NET-24 done (issue #119): STATEFUL-CARRY-CELL-UNLOCKS-LENGTH-GEN —
 # the FIRST POSITIVE CURE of the carry-chain length wall (the recurrence /
 # stateful-carry-cell test — the surviving lever after scratchpad and position
 # encoding closed). Hypothesis: the wall is a fixed-depth, STATE-FREE,
@@ -203,7 +241,11 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # 21 experiments, assessment v21. Load-bearing boundary
 # still needs NON-POSITIONAL stack content / s≫64 / unbounded nesting WITH
 # CAUSAL MASKING.
-# NEXT — FAN-OUT COMPLETE, ALL ROUNDS DONE: NET-24 (issue #119, STATEFUL-CARRY-
+# NEXT — FAN-OUT COMPLETE, ALL ROUNDS DONE: NET-25 (issue #120, DENSE-FINAL-
+# STEP-IS-THE-CURE — the NET-24 cure DISSECTED: the lever is the dense learned
+# EOS (final-carry) input, NOT the encoder's content; same-seed identical-
+# weights control; untrained proj384/pad384 cure, raw20's 20-d EOS fails 0/7);
+# NET-24 (issue #119, STATEFUL-CARRY-
 # CELL-UNLOCKS-LENGTH-GEN — FIRST POSITIVE CURE of the carry wall; the wall was
 # the state-free feedforward ANSWER FUNCTION; a GRU carry-cell readout over the
 # walled RoPE encoder's per-column features gives full=1.0000 at n=5/6/7/8 both
@@ -224,12 +266,16 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # chain at scale: scale unlocks length-SPECIFIC mastery NOT composition,
 # credit-assignment depth-immunity HOLDS at scale — 9/9 fixed-n masters at every
 # depth, 9/9 length-gen at chance). Depth axis 10 iterations, speed 5,
-# compression 4, carry-wall SOLVED at toy level (NET-24). Next round: fresh axis
+# compression 4, carry-wall SOLVED at toy level (NET-24) + cure DISSECTED
+# (NET-25). Next round: fresh axis
 # or strengthen a law — candidates:
-# (1) REAL-SCALE CARRY-WALL TRANSFER (the frontier opened by NET-24's cure):
-# does a recurrence/state-space-augmented answer path give a real causal LM
-# length-general computation the way the GRU readout did here? the most
-# load-bearing open question;
+# (1) REAL-SCALE CARRY-WALL TRANSFER (the frontier opened by NET-24's cure,
+# refined by NET-25): does a recurrence/state-space-augmented answer path give
+# a real causal LM length-general computation — with a WELL-CONDITIONED DENSE
+# BOUNDARY (final-step) input, per NET-25? the most load-bearing open question;
+# (1b) NET-25's EOS-dimension threshold (between 28 and 384 — try 64/96/128-d
+# EOS) and the explicit pad384-vs-NET-24-hybrid parity check (a dense-EOS raw
+# GRU should match the hybrid exactly);
 # (2) attention-cost law robustness (seed-1 ctx=256 / ctx=512 to confirm the
 # k* ∝ ctx proportionality at a second seed — currently 1 seed per point);
 # (3) load-bearing depth (non-positional stack content with causal masking,
@@ -237,4 +283,4 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # curvature); (5) any novel hypothesis — the loop should EXPLORE ALL axes, not
 # settle.
 # Compression 4 real-scale iterations (exhausted at d=4, floor NOT depth-robust
-# at d=8), speed 5, depth 10.
+# at d=8), speed 5, depth 10, carry-wall mechanism 6 (NET-19/21/22/23/24/25).

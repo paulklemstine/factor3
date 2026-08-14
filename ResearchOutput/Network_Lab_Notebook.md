@@ -671,3 +671,59 @@ unambiguous. All 8 barriers checked (see paper); caveats: hybrid-abs 1 seed,
 pure-GRU capacity, 2 hybrid seeds. Paper 68, issue #119. Now 24 network
 experiments. Assessment v24. Script: /tmp/exp_net_stateful.py; log:
 /tmp/net24.log.
+
+---
+
+## Part 25 — Stateful-Carry-Cell Cure, Mechanism Dissection (round-net-25, NET-25)
+
+**Date:** 2026-08-14. **Status:** Machine-verified (ALL_DONE_NET25 / _PAD / _SWEEP / _EOS).
+**Hypothesis:** NET-24's cure (GRU carry cell over encoder features → n=5/6/7/8
+full=1.0000) is dissected: which ingredient of the answer-side features is
+load-bearing? Three mutually-exclusive hypotheses — H1 CAPACITY (raw-GRU
+state-horizon = too-small cell; test: hidden=384, 471k params on raw one-hots),
+H2 REPRESENTATION (high-dim well-separated digit features cure; test: UNTRAINED
+fixed random 384-d projection of the one-hots), H3 POSITION (encoder's RoPE-style
+step signal is load-bearing; test: one-hots + 8-d step sinusoid).
+
+**Setup:** all arms plain n=5, LSB-first, per-digit CE, bs=256, 12000 AdamW steps,
+lr 1e-3, eval n=5/6/7/8 (2048 fresh, teacher-forced). Reuses GRUCarry/make_cols
+from the NET-24 script. The round grew: a pad-to-384 control (barrier-e forced,
+after verifying GRUCell inits all params from U(±1/sqrt(hidden)), in_dim-
+independent), a 13-seed variance sweep, and an EOS-density control (pad384 vs
+pad384-zeroEOS: SAME seed → IDENTICAL GRUCell/head weights; only the EOS input
+dimension differs, 384-d dense-learned vs 20-d).
+
+**Results** (n=8 full):
+- cap384-raw (471k, raw one-hots): 0.0078 / 0.0063 → **H1 CAPACITY REFUTED**.
+- proj384 (untrained random 384-d projection): 1.0000, 5/5 seeds → H2-strong
+  (learned features needed) REFUTED; high-dim features (untrained) cure.
+- pos28 (one-hots + 8-d RoPE sinusoid, 28-d EOS): 0.0049 / 0.0049 → **H3
+  POSITION REFUTED**.
+- pad384 (one-hots zero-padded to 384-d, DENSE 384-d learned EOS): 1.0000, 4/4.
+- pad384-zeroEOS (identical weights, 20-d EOS): 0.7441 / 0.0259 → raw20-range.
+- raw20-192 variance (7 seeds): 0.0806, 0.6997, 0.0103, 0.0063, 0.0093, 0.0020,
+  0.0132 → **0/7 at 1.0** (state-horizon real but seed-variance-heavy; NET-24's
+  2-seed law undersampled, conclusion holds).
+
+**Findings:**
+1. **DENSE-FINAL-STEP-IS-THE-CURE.** The NET-24 cure is the dense learned
+   final-carry (EOS) input, NOT the encoder's features. Same-seed identical-
+   weights control: dense 384-d EOS → 1.0000 (4/4); 20-d EOS → 0.026–0.744
+   (raw-range). NET-24's "content-rich column features" interpretation corrected.
+2. **THE DIGIT-PATH CAN BE RAW.** pad384's digit columns are functionally raw
+   20-d one-hots and it still cures 4/4; the dense EOS is sufficient alone. The
+   pure-GRU failure was its 20-d EOS, not its digit inputs.
+3. **EOS RICHNESS NEEDS DIM ≫ DIGIT COUNT.** pos28's 28-d learned EOS still fails
+   (0.0049); 384-d works. Threshold (28–384) untested.
+4. **CARRY TRANSITION ALWAYS LENGTH-GENERAL** (final-carry 0.86–0.99 even in
+   failing arms); the digit READOUT was the fragile part; the dense EOS keeps it
+   in-distribution at depth (hypothesis: boundary-step backprop conditioning).
+
+**Verdict:** all three original hypotheses REFUTED; the lever is the final-step
+input richness. Airtight control (same-weights, EOS dim only) flips the cure.
+Corrects NET-24; strengthens the round via the seed distributions (barrier e
+bit hard and was addressed). All 8 barriers checked (see paper); flagged: EOS
+threshold untested, mechanism hypothesis unproven. Paper 69, issue #120. Now 25
+network experiments. Assessment v25. Scripts: /tmp/exp_net_stateful_ctrl.py,
+_pad.py, _sweep.py, _eosctrl.py; logs: /tmp/net25.log, _pad.log, _sweep.log,
+_eos.log.
