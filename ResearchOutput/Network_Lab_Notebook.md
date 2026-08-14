@@ -569,3 +569,49 @@ credit-assignment horn is refuted; the wall is positional expressivity. Survivin
 levers: recurrence/stateful carry cell, RoPE/position encoding, length-parameterized
 readout. All 8 barriers checked (see paper). Paper 66, issue #117. Now 22
 network experiments. Assessment v22. Script: /tmp/exp_net_scratchpad.py.
+
+## Part 23 — Round-net-23: RoPE vs the carry-chain length wall (position-representation axis)
+
+**Hypothesis.** NET-22's GIVEN-CARRIES-STILL-FAIL proved the wall is a
+position-specific answer-COMPUTATION failure — but every length-gen eval used
+LEARNED ABSOLUTE pos embeddings, so beyond-max positions (25..36) were UNTRAINED
+table entries. Test: RoPE (rotary q/k, no table, smooth extrapolatable
+positions) removes the confound. Positive: RoPE unlocks length-gen (first cure;
+the whole line was pos-emb-confounded). Negative: wall survives → genuine
+fixed-depth expressivity limit; caveat retired; recurrence is the sole lever.
+
+**Setup.** Plain n=5 LSB-first a+b=c, dm=192/untied/bs=256/12000 steps, d=1;
+arms: abs-pos control (s=0) + rope (s=0, s=1). The `rope` flag is the ONLY
+difference (same task/arch/budget/eval). VOCAB=13, CTX=40 (abs-pos table only;
+RoPE arm has no table). Eval n=5/6/7/8 teacher-forced, 2048 fresh draws, with
+per-position breakdown. Script /tmp/exp_net_rope.py, log /tmp/net23.log.
+
+**Results.** abs-pos control (s=0): masters n=5 (full=1.0000, late jump
+st=5000–6000), n=6/7/8 full=0.0000, per 0.11/0.13/0.10 ≈ digit floor; MSB
+position 0.20/0.31/0.11 (untrained entry fires wrong). **rope s=0:** n=5
+full=1.0000/per=1.0000 BY STEP 1000 (fastest in-range arm); n=6/7/8 full=0.0000,
+per 0.166/0.156/0.146; **MSB position 0.587/0.571/0.565** (final-carry marginal
+≈0.5 prior transferred — abs-pos got 0.11–0.31). **rope s=1:** n=5
+full=0.1040/per=0.8507, PERMANENTLY dissociated (flat full≈0.10/per≈0.85
+st=5000–11000, no escape); per-position shape [0.107, 1,1,1,1,1] — the model
+computes all interior + final-carry columns perfectly and fails ONLY the LSB
+digit; n=6/7/8 full=0.0000, per 0.156/0.157/0.113.
+
+**Findings.** (1) ROPE-DOES-NOT-UNLOCK-LENGTH-GEN — beyond-max 0.0000 in both
+RoPE seeds despite in-range mastery (s=0). (2) THE-POS-EMB-CAVEAT-IS-RETIRED —
+the first length-gen eval with NO position table; the wall reproduces with
+smooth, extrapolatable, training-consistent rotary positions ⇒ the length wall
+is NOT an absolute-pos-extrapolation artifact. (3) NEW MSB-MARGINAL-TRANSFERS —
+the final-carry DISTRIBUTION transfers beyond-max with RoPE (0.565–0.587 ≈ 0.5
+prior) while the computation does not: statistical prior vs algorithm transfer
+cleanly separated. (4) NEW ROPE-DISSOCIATION-IS-SEED-DEPENDENT — s=0 perfect by
+st=1000, s=1 permanently dissociated; per-position shape is a ONE-COLUMN
+failure (interior + final-carry 1.000, LSB 0.107) — distinct from NET-4/5's
+carry-cascade shape, single-seed. **Verdict:** negative — the positive horn is
+refuted; carry wall characterized on depth, scale, schedule, task-remodeling,
+AND position representation, all negative for length-gen. Surviving levers
+(down from NET-22's list of 3): recurrence / stateful carry cell, length-
+parameterized readout. RoPE speeds IN-RANGE learning and transfers the beyond-
+max MARGINAL but not the composition. All 8 barriers checked (see paper). Paper
+67, issue #118. Now 23 network experiments. Assessment v23. Script:
+/tmp/exp_net_rope.py.

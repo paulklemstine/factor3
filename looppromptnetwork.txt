@@ -28,7 +28,39 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # LAB PROTOCOL (same rigor as the factoring lab): exact measurable laws over a clean
 # hypothesis, honest negative results recorded, all 8 barriers checked every iteration,
 # commit+push each iteration with Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>.
-# Status: NET-22 done (issue #117): SCRATCHPAD DOES NOT UNLOCK LENGTH-GEN —
+# Status: NET-23 done (issue #118): ROPE DOES NOT UNLOCK LENGTH-GEN — the
+# position-representation test of the carry-chain length wall; POS-EMB-CAVEAT
+# RETIRED. Every length-gen eval so far used learned ABSOLUTE pos embeddings,
+# so beyond-max positions 25..36 were UNTRAINED table entries — the last
+# surviving caveat. Replaced the pos table with RoPE (rotary q/k, NO table,
+# smooth extrapolatable positions — the scheme of modern LLMs) at
+# d=1/dm=192/untied/bs=256/12000 steps, identical arch/budget (the `rope` flag
+# is the ONLY difference), plain n=5 task; arms: abs-pos control (s=0) + rope
+# s0/s1. abs-pos control masters n=5 (full=1.0000, late jump st=5000–6000),
+# n=6/7/8 full=0.0000 ≈ digit floor (wall reproduces). rope s=0 masters n=5
+# full=1.0000/per=1.0000 BY STEP 1000 (fastest in-range arm) yet n=6/7/8
+# full=0.0000 (per 0.166/0.156/0.146); rope s=1 permanently dissociated
+# (full=0.1040/per=0.8507, flat st=5000–11000, no escape). ⇒ the FIRST
+# length-gen eval with NO position table: the wall is a GENUINE fixed-depth
+# expressivity limit, NOT a pos-emb-extrapolation artifact; the caveat shared
+# by the whole length-gen line is RETIRED. NEW (1) MSB/FINAL-CARRY-MARGINAL-
+# TRANSFERS — RoPE's beyond-max MSB accuracy 0.565–0.587 ≈ the P(carry-out≈1)≈
+# 0.5 prior vs abs-pos control 0.11–0.31: the DISTRIBUTION transfers while the
+# COMPUTATION does not (statistical-prior vs algorithm transfer cleanly
+# separated). NEW (2) ROPE-DISSOCIATION-IS-SEED-DEPENDENT with a ONE-COLUMN
+# per-position shape (s=1 n=5 [0.107,1,1,1,1,1]: interior+final-carry columns
+# perfect, ONLY the LSB digit wrong — distinct from NET-4/5's carry-cascade,
+# single-seed). Carry wall now characterized on FIVE axes — depth (NET-4/5/19),
+# scale (NET-19), schedule (NET-21), task-remodeling (NET-22), position
+# representation (this round) — all negative for length-general composition.
+# RoPE speeds IN-RANGE learning and transfers the beyond-max MARGINAL but not
+# the composition. Surviving levers (down from 3 to 2) change the STATE, not
+# the position scheme: recurrence / stateful carry cell (architecture —
+# length-general state), length-parameterized readout (output). Caveat: 2 RoPE
+# seeds (diverge on in-range — s=0 perfect/s=1 dissociated, itself a finding),
+# 1 abs-pos control; beyond-max verdict (0.0000 both seeds) seed-independent.
+# 23 experiments, assessment v23.
+# Previous: NET-22 done (issue #117): SCRATCHPAD DOES NOT UNLOCK LENGTH-GEN —
 # the task-remodeling test of the carry-chain length wall. Explicit per-column
 # carry targets (scratchpad/CoT: SC c_1..c_n GO s_1..s_n c_n, carries AND
 # answers teacher-forced at train) at dm=192/untied/bs=256/12000 steps, 2
@@ -50,7 +82,7 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # stateful carry cell (architecture), RoPE / position encoding (input),
 # length-parameterized readout (output). Caveat: 2 seeds per depth (scratchpad
 # arm), 1 per plain control; pos-emb extrapolation shared by all length-gen
-# evals. 22 experiments, assessment v22.
+# evals (now retired by NET-23). 22 experiments, assessment v22.
 # Previous: NET-21 done (issue #116): THE LENGTH WALL IS SCHEDULE-ROBUST —
 # curriculum and length-mixing do NOT unlock length-general composition. At
 # dm=192/untied/seed0/bs=256/12000 steps, pos-emb CTX 22→32 (the only
@@ -139,28 +171,32 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # 21 experiments, assessment v21. Load-bearing boundary
 # still needs NON-POSITIONAL stack content / s≫64 / unbounded nesting WITH
 # CAUSAL MASKING.
-# NEXT — FAN-OUT COMPLETE, ALL ROUNDS DONE: NET-22 (issue #117, scratchpad
-# does NOT unlock length-gen — task-remodeling lever CLOSED at d=1/d=2;
-# GIVEN-CARRIES-STILL-FAIL ⇒ wall is position-specific answer-computation, not
-# credit; SCRATCHPAD-COLLAPSE-IS-DEPTH-CONDITIONED); NET-21 (issue #116,
-# length wall SCHEDULE-ROBUST — curriculum + mixing fail beyond-max;
-# MIXING-PREVENTS-MASTERY; CURRICULUM-FORGETS-INTERMEDIATE-LENGTHS); NET-20
-# (issue #114, k* NOT ctx-independent — lever CONTEXT-CONSTANT, speedup =
-# 32/d); NET-17 (issue #113, k* = 4·d CONFIRMED at d=16 — k*=64/2×, per-layer
-# compounding r(k)^d); NET-18 (issue #112, quant floor NOT depth-robust);
-# NET-19 (issue #115, carry chain at scale: scale unlocks length-SPECIFIC
-# mastery NOT composition, credit-assignment depth-immunity HOLDS at scale —
-# 9/9 fixed-n masters at every depth, 9/9 length-gen at chance). Depth axis
-# now 10 iterations, speed 5, compression 4. Next round: fresh axis or
-# strengthen a law — candidates:
+# NEXT — FAN-OUT COMPLETE, ALL ROUNDS DONE: NET-23 (issue #118, RoPE does NOT
+# unlock length-gen — position-representation lever CLOSED, POS-EMB-CAVEAT
+# RETIRED: first length-gen eval with no position table, wall survives smooth
+# extrapolatable rotary positions; MSB-MARGINAL transfers 0.565–0.587 while
+# computation does not; ROPE-DISSOCIATION-SEED-DEPENDENT one-column shape);
+# NET-22 (issue #117, scratchpad does NOT unlock length-gen — task-remodeling
+# lever CLOSED at d=1/d=2; GIVEN-CARRIES-STILL-FAIL ⇒ wall is position-specific
+# answer-computation, not credit; SCRATCHPAD-COLLAPSE-IS-DEPTH-CONDITIONED);
+# NET-21 (issue #116, length wall SCHEDULE-ROBUST — curriculum + mixing fail
+# beyond-max; MIXING-PREVENTS-MASTERY; CURRICULUM-FORGETS-INTERMEDIATE-
+# LENGTHS); NET-20 (issue #114, k* NOT ctx-independent — lever CONTEXT-CONSTANT,
+# speedup = 32/d); NET-17 (issue #113, k* = 4·d CONFIRMED at d=16 — k*=64/2×,
+# per-layer compounding r(k)^d); NET-18 (issue #112, quant floor NOT
+# depth-robust); NET-19 (issue #115, carry chain at scale: scale unlocks
+# length-SPECIFIC mastery NOT composition, credit-assignment depth-immunity
+# HOLDS at scale — 9/9 fixed-n masters at every depth, 9/9 length-gen at
+# chance). Depth axis now 10 iterations, speed 5, compression 4. Next round:
+# fresh axis or strengthen a law — candidates:
 # (1) attention-cost law robustness (seed-1 ctx=256 / ctx=512 to confirm the
 # k* ∝ ctx proportionality at a second seed — currently 1 seed per point);
 # (2) load-bearing depth (non-positional stack content with causal masking,
-# s≫64, unbounded nesting); (3) the carry-chain surviving levers CHANGE THE
-# REPRESENTATION, not the task (task now REFUTED as a cure): recurrence /
-# stateful carry cell (architecture), RoPE / position encoding (input),
-# length-parameterized readout (output); (4) a fresh axis (training dynamics
-# / grokking-free curvature); (5) any novel hypothesis — the loop should
-# EXPLORE ALL axes, not settle.
+# s≫64, unbounded nesting); (3) the carry-chain surviving levers change the
+# STATE, not the position scheme (task AND position encoding now REFUTED as
+# cures): recurrence / stateful carry cell (architecture — the only
+# length-general state device), length-parameterized readout (output);
+# (4) a fresh axis (training dynamics / grokking-free curvature); (5) any
+# novel hypothesis — the loop should EXPLORE ALL axes, not settle.
 # Compression 4 real-scale iterations (exhausted at d=4, floor NOT depth-robust
 # at d=8), speed 5, depth 10.

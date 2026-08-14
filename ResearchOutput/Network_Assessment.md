@@ -2,7 +2,7 @@
 
 > Network research loop, opened 2026-08-12 (factoring loop paused). Same rigor
 > as the factoring lab: exact measurable laws, honest negative results, all 8
-> barriers checked each iteration. Count: 22 experiments, assessment v22.
+> barriers checked each iteration. Count: 23 experiments, assessment v23.
 
 ## What NET-1 established (compression axis)
 
@@ -658,6 +658,49 @@ on depth, scale, schedule, AND task-remodeling — all negative for length-gener
 composition. 2 seeds per depth in the scratchpad arm (1 seed per plain control);
 the given-carries reading (0.0000) is the decisive isolation of the answer wall.
 
+## What NET-23 established (performance axis — the position-representation test of the carry-chain length wall)
+
+1. **RoPE does NOT unlock length-general carry.** The last surviving
+   length-gen caveat was pos-emb EXTRAPOLATION: every prior eval used learned
+   ABSOLUTE positions, so beyond-max positions 25..36 were UNTRAINED table
+   entries. Replacing the pos table with RoPE (rotary q/k, no table, smooth
+   extrapolatable positions — the scheme of essentially all modern LLMs) at
+   d=1/dm=192/untied/bs=256/12000 steps, identical arch and budget (the `rope`
+   flag is the only difference): n=6/7/8 full=0.0000 in both RoPE seeds. The
+   in-range arm (s=0) masters n=5 cleanly (full=1.0000 by step 1000 — FASTER
+   than the abs-pos control's st≈6000), so in-range competence is not the
+   issue; the answer function still does not transfer.
+2. **THE-POS-EMB-CAVEAT-IS-RETIRED.** This is the first length-gen eval in the
+   program with NO position table. The wall reproduces with smooth,
+   training-consistent, extrapolatable rotary positions ⇒ the length wall is a
+   GENUINE fixed-depth expressivity limit, NOT an absolute-pos-extrapolation
+   artifact. Every length-gen caveat from NET-22 is now closed: scratchpad
+   (NET-22) and position encoding (this round).
+3. **NEW — the final-carry MARGINAL transfers while the computation does not.**
+   At n=6/7/8 the RoPE arm's MSB position scores 0.565–0.587 (≈ the
+   P(carry-out≈1)≈0.5 prior over random n-digit operands) versus the abs-pos
+   control's 0.11–0.31 (untrained entries fire wrong). RoPE's extrapolated
+   positions carry training-consistent structure into the MSB slot, so the
+   model applies its learned final-carry DISTRIBUTION — but still cannot
+   COMPUTE the carry. Cleanest separation yet between statistical-prior
+   transfer and algorithm transfer.
+4. **NEW — ROPE-DISSOCIATION-IS-SEED-DEPENDENT, with a one-column shape.**
+   Same hyperparameters: s=0 perfect by st=1000, s=1 permanently stuck in the
+   carry-dissociation plateau (full=0.1040 / per=0.8507, flat st=5000–11000, no
+   stochastic escape). The per-position shape is UNUSUAL: n=5 reads
+   [0.107, 1.000, 1.000, 1.000, 1.000, 1.000] — interior + final-carry columns
+   perfect, ONLY the LSB digit wrong. This is NOT NET-4/5's carry-cascade
+   dissociation (wrong LSB carry → correlated errors downstream); the model
+   reads carries correctly but the ones-column digit computation fails.
+   Single-seed observation; mechanism open.
+
+**LAW:** ROPE-DOES-NOT-UNLOCK-LENGTH-GEN + THE-POS-EMB-CAVEAT-IS-RETIRED +
+ROPE-DISSOCIATION-IS-SEED-DEPENDENT. The carry chain is now characterized on
+FIVE axes — depth (NET-4/5/19), scale (NET-19), schedule (NET-21),
+task-remodeling (NET-22), and position representation (this round) — all
+negative for length-general composition. Surviving levers, down from NET-22's
+three: recurrence / stateful carry cell, length-parameterized readout.
+
 ## Where a genuine breakthrough could come from (frontiers)
 
 - **The PR law at real scale — tested, does NOT transfer (NET-11).** The
@@ -686,14 +729,15 @@ the given-carries reading (0.0000) is the decisive isolation of the answer wall.
   documented domain boundary (NET-1 reverses on attention LMs) makes the
   real-LM-class transfer the highest-value next compression step.
 - **The carry chain at scale.** NET-4/NET-5 leave the carry chain as the
-  irreducible width/depth/readout-immune bottleneck, and NET-19/21/22 have now
-  shown the wall is scale-immune (dm=192, 18× params), schedule-immune
-  (curriculum/mixing), AND task-remodeling-immune (scratchpad carry targets;
+  irreducible width/depth/readout-immune bottleneck, and NET-19/21/22/23 have
+  now shown the wall is scale-immune (dm=192, 18× params), schedule-immune
+  (curriculum/mixing), task-remodeling-immune (scratchpad carry targets;
   given-correct-carries still fails ⇒ position-specific answer-computation, not
-  credit). The genuinely open levers change the REPRESENTATION: recurrence (a
-  stateful carry cell — the only length-general state device), RoPE or an
-  alternative position encoding (removes the pos-emb extrapolation caveat
-  shared by every length-gen eval), or an explicit length-parameterized readout.
+  credit), AND position-scheme-immune (RoPE: no table, smooth extrapolatable
+  positions — n=6/7/8 still 0.0000; the pos-emb-extrapolation caveat shared by
+  every prior length-gen eval is RETIRED). The genuinely open levers change the
+  STATE, not the position scheme: recurrence (a stateful carry cell — the only
+  length-general state device) or an explicit length-parameterized readout.
 - **The exit law at real scale — tested, does NOT transfer (NET-10).** The
   norm crossover marks the ONSET of shared-head decodability growth on a real
   causal LM, not its completion: 0/4 models are lossless (0.95·full) at the
@@ -844,4 +888,4 @@ the given-carries reading (0.0000) is the decisive isolation of the answer wall.
   Do not quote the NET-15 8× lever without its depth: at d=8 it is 4×, and the
   d=16 prediction (k*=64, 2×) is under test.
 
-Assessment v22. 22 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22).
+Assessment v23. 23 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23).
