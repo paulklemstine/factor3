@@ -519,3 +519,53 @@ the verdict robust; a second-seed replication of the two new phenomena is the
 strengthening step). All 8 barriers checked (see paper). Paper 65, issue #116.
 Now 21 network experiments. Assessment v21. Paper NET-21, issue #116.
 Script: /tmp/exp_net_curriculum.py.
+
+---
+
+## Part 22 — Round-net-22: Scratchpad vs the carry-chain length wall (task-remodeling axis)
+
+**Date:** 2026-08-14. **Hypothesis:** NET-4's credit-assignment account says the
+carry-chain length wall (master training length, chance beyond-max) is a credit
+shortfall; exposing the carry state as explicit per-column targets (scratchpad)
+should give the chain per-step credit and unlock length-gen — the first positive
+cure. **Setup:** LSB-first a+b=c, dm=192, untied, bs=256, 12000 steps, VOCAB=14
+(+SC/GO), CTX=40 (n=8 scratchpad seq 4n+5=37 fits). Scratchpad target sequence
+`SC c_1..c_n GO s_1..s_n c_n` (carries + answers both teacher-forced at train).
+Eval fully autoregressive (model generates its own carries, then answers) plus a
+given-correct-carries diagnostic (feeds true carries, isolates answer-computation
+from carry-generation). Arms: d=1 plain control + scratchpad s0/s1; d=2 plain
+control + scratchpad s0/s1.
+
+**d=1 results (2 seeds).** Control masters n=5 (1.0000 stable), n=6/7/8 0.0000
+(wall reproduced). Scratchpad s=0: tf 1.0000@st1000 → collapse 0.008@st2000 →
+plateau full≈0.25/per≈0.87 for 9000 steps (carries still known); n=6/7/8 all
+0.0000, carry_per 0.29–0.38 (at/below chance). Scratchpad s=1: tf 1.0000@
+st1000–3000 → collapse to full≈0.74/per≈0.96 from st4000; n=6/7/8 all 0.0000,
+carry_per 0.32–0.48. **Given-correct-carries: n=6/7/8 answers still 0.0000 in
+both seeds** — the wall is a position-specific answer-COMPUTATION failure, not
+carry propagation.
+
+**d=2 results (2 seeds).** Control plain n=5 (s=0) did NOT master (full=0.1016/
+per=0.8503, stuck dissociation), n=6/7/8 0.0000. Scratchpad s=0: tf 1.0000@
+st1000, transient dip 0.80@st2000, RECOVERED to 1.0000 held st5000→end; n=6/7/8
+all 0.0000; given-carries 0.0000. Scratchpad s=1: tf 1.0000@st1000–2000, violent
+crash to 0.041@st3000, recovered 0.949@st4000, held 1.0000 st5000→end; n=6/7/8
+all 0.0000; given-carries 0.0000.
+
+**Findings.** (1) SCRATCHPAD-DOES-NOT-UNLOCK-LENGTH-GEN — all 4 scratchpad arms
+0.0000 at n=6/7/8; the task-remodeling lever is CLOSED. (2) GIVEN-CARRIES-STILL-
+FAIL — the strongest wall diagnostic: perfect carries still give 0.0000 beyond-
+max answers; the wall is a positional/representational expressivity property of
+the fixed-depth answer function, not a credit shortfall. (3) NEW SCRATCHPAD-
+COLLAPSE-IS-DEPTH-CONDITIONED — scratchpad mastery is unstable at both depths,
+but absorbing at d=1 (permanent plateaus 0.25/0.74) and restorative at d=2
+(recoveries to stable 1.0000): the mirror of NET-19's stochastic escape. Plus:
+scratchpad rescued IN-RANGE mastery at d=2 (both seeds 1.0000 where the d=2
+plain control stuck at 0.10) — clean split between in-range credit (helped) and
+beyond-range answer function (untouched). Caveat shared with the length-gen
+line: pos-emb extrapolation beyond trained positions 0..24 is a factor in all
+beyond-max evals; RoPE is a surviving lever. **Verdict:** negative — the
+credit-assignment horn is refuted; the wall is positional expressivity. Surviving
+levers: recurrence/stateful carry cell, RoPE/position encoding, length-parameterized
+readout. All 8 barriers checked (see paper). Paper 66, issue #117. Now 22
+network experiments. Assessment v22. Script: /tmp/exp_net_scratchpad.py.

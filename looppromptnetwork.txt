@@ -28,7 +28,48 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # LAB PROTOCOL (same rigor as the factoring lab): exact measurable laws over a clean
 # hypothesis, honest negative results recorded, all 8 barriers checked every iteration,
 # commit+push each iteration with Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>.
-# Status: NET-19 done (issue #115): CARRY CHAIN AT SCALE — scale unlocks
+# Status: NET-22 done (issue #117): SCRATCHPAD DOES NOT UNLOCK LENGTH-GEN —
+# the task-remodeling test of the carry-chain length wall. Explicit per-column
+# carry targets (scratchpad/CoT: SC c_1..c_n GO s_1..s_n c_n, carries AND
+# answers teacher-forced at train) at dm=192/untied/bs=256/12000 steps, 2
+# seeds at d=1 and 2 seeds at d=2 (VOCAB=14 +SC/GO, CTX=40 for the n=8
+# scratchpad seq; auto eval FULLY AUTOREGRESSIVE — model generates its own
+# carries then answers, no teacher forcing). Beyond-max n=6/7/8 is at CHANCE
+# (0.0000) in ALL FOUR scratchpad arms — the scratchpad/CoT lever is CLOSED at
+# both depths. NEW (1) GIVEN-CARRIES-STILL-FAIL — feeding TRUE carries for
+# n=6/7/8 still gives 0.0000 answers (both depths) ⇒ the wall is a
+# position-specific ANSWER-COMPUTATION property, NOT carry propagation / NOT
+# credit assignment. NEW (2) SCRATCHPAD-COLLAPSE-IS-DEPTH-CONDITIONED —
+# scratchpad n=5 mastery is unstable at both depths but permanently absorbing
+# at d=1 (both seeds collapse from 1.0000 to plateaus 0.25/0.74, carries still
+# known) and restorative at d=2 (recover to stable 1.0000; mirror of NET-19's
+# stochastic escape). Scratchpad rescues IN-RANGE mastery at d=2 (1.0000 where
+# the plain control stuck at 0.10). The wall is characterized on depth, scale,
+# schedule, AND task-remodeling — all negative for length-general composition.
+# Surviving levers change the REPRESENTATION, not the task: recurrence /
+# stateful carry cell (architecture), RoPE / position encoding (input),
+# length-parameterized readout (output). Caveat: 2 seeds per depth (scratchpad
+# arm), 1 per plain control; pos-emb extrapolation shared by all length-gen
+# evals. 22 experiments, assessment v22.
+# Previous: NET-21 done (issue #116): THE LENGTH WALL IS SCHEDULE-ROBUST —
+# curriculum and length-mixing do NOT unlock length-general composition. At
+# dm=192/untied/seed0/bs=256/12000 steps, pos-emb CTX 22→32 (the only
+# deviation, so beyond-max n=8 eval fits; all 5 arms share it): beyond-max
+# n=6/7/8 is at CHANCE in EVERY arm — curriculum-grow 2→3→4→5 (d=1: n=5 stuck
+# per=0.85/full=0.19 dissociation; d=2), length-mixing {3,4,5}, AND the
+# plain-n5 control (E: masters n=5=1.0000, n=6/7/8 chance) — the wall is NOT a
+# training-distribution artifact. Two NEW phenomena: (1) MIXING-PREVENTS-
+# MASTERY — mixed {3,4,5} never masters ANY length (per stuck 0.54–0.67 /
+# full 0.00–0.02 for ALL 12000 steps, permanent carry dissociation); (2)
+# CURRICULUM-FORGETS-INTERMEDIATE-LENGTHS — the d=2 curriculum mastered n=5
+# perfectly (per-position all 1.0000) but n=4 (trained 3000 steps) collapsed
+# to chance 0.0000: final-length training OVERWRITES intermediate lengths —
+# the optimizer converges to a single length-SPECIFIC attractor (the last
+# length), never a length-parameterized general algorithm. The carry chain is
+# now characterized on depth (NET-4/5/19), scale (NET-19), AND schedule (this
+# round) — all negative for length-general composition. 21 experiments,
+# assessment v21.
+# Previous: NET-19 done (issue #115): CARRY CHAIN AT SCALE — scale unlocks
 # length-SPECIFIC mastery, NOT length-general composition. At dm=192 (4.5–18×
 # NET-5 params, bs=256, 12000 steps, d∈{1,2,4}×3 seeds, n=6 carry): ALL 9/9
 # configs master fixed-length (d=1 0.9940±0.0085 — NET-5's d=1 failure GONE,
@@ -43,9 +84,7 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # params; fast probe byte-identical to marathon (d=1 s=0, d=4 s=0) —
 # deterministic. Fixed-length = depth-flat AND scale-solved; length-gen =
 # depth- AND scale-immune (memorize-without-compose at the largest arithmetic
-# scale in the program). Open levers: carry curriculum, scratchpad/CoT
-# intermediates, recurrence (stateful carry cell). Depth axis has had 9
-# iterations — rotate to a fresh axis.
+# scale in the program).
 # Previous: NET-20 done (issue #114): k* IS NOT CONTEXT-INDEPENDENT — the
 # attention-FLOP lever is CONTEXT-CONSTANT. On the same real causal LM at
 # ctx=256 d=4 (full acc 0.1612, bar 0.1579, loss 5.0877), the lossless window
@@ -97,22 +136,31 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # FLOPs, random-k −4.8–6.2 pts); NET-14 (issue #109) compression axis EXHAUSTED
 # (4-bit interface floor data-free-irreducible AND activation-irreducible;
 # per-channel uniform-4 = 4.00 bits is the practical optimum).
-# 20 experiments, assessment v20. Load-bearing boundary
+# 21 experiments, assessment v21. Load-bearing boundary
 # still needs NON-POSITIONAL stack content / s≫64 / unbounded nesting WITH
 # CAUSAL MASKING.
-# NEXT — FAN-OUT COMPLETE, ALL ROUNDS DONE: NET-20 (issue #114, k* NOT
-# ctx-independent — lever CONTEXT-CONSTANT, speedup = 32/d); NET-17 (issue
-# #113, k* = 4·d CONFIRMED at d=16 — k*=64/2×, per-layer compounding r(k)^d);
-# NET-18 (issue #112, quant floor NOT depth-robust); NET-19 (issue #115, carry
-# chain at scale: scale unlocks length-SPECIFIC mastery NOT composition,
-# credit-assignment depth-immunity HOLDS at scale — 9/9 fixed-n masters at
-# every depth, 9/9 length-gen at chance). Depth axis now 9 iterations, speed 5,
-# compression 4. Next round: fresh axis or strengthen a law — candidates:
+# NEXT — FAN-OUT COMPLETE, ALL ROUNDS DONE: NET-22 (issue #117, scratchpad
+# does NOT unlock length-gen — task-remodeling lever CLOSED at d=1/d=2;
+# GIVEN-CARRIES-STILL-FAIL ⇒ wall is position-specific answer-computation, not
+# credit; SCRATCHPAD-COLLAPSE-IS-DEPTH-CONDITIONED); NET-21 (issue #116,
+# length wall SCHEDULE-ROBUST — curriculum + mixing fail beyond-max;
+# MIXING-PREVENTS-MASTERY; CURRICULUM-FORGETS-INTERMEDIATE-LENGTHS); NET-20
+# (issue #114, k* NOT ctx-independent — lever CONTEXT-CONSTANT, speedup =
+# 32/d); NET-17 (issue #113, k* = 4·d CONFIRMED at d=16 — k*=64/2×, per-layer
+# compounding r(k)^d); NET-18 (issue #112, quant floor NOT depth-robust);
+# NET-19 (issue #115, carry chain at scale: scale unlocks length-SPECIFIC
+# mastery NOT composition, credit-assignment depth-immunity HOLDS at scale —
+# 9/9 fixed-n masters at every depth, 9/9 length-gen at chance). Depth axis
+# now 10 iterations, speed 5, compression 4. Next round: fresh axis or
+# strengthen a law — candidates:
 # (1) attention-cost law robustness (seed-1 ctx=256 / ctx=512 to confirm the
 # k* ∝ ctx proportionality at a second seed — currently 1 seed per point);
 # (2) load-bearing depth (non-positional stack content with causal masking,
-# s≫64, unbounded nesting); (3) a fresh axis (e.g. training dynamics /
-# grokking-free curvature, curriculum as the carry-chain cure, recurrence);
-# (4) any novel hypothesis — the loop should EXPLORE ALL axes, not settle.
+# s≫64, unbounded nesting); (3) the carry-chain surviving levers CHANGE THE
+# REPRESENTATION, not the task (task now REFUTED as a cure): recurrence /
+# stateful carry cell (architecture), RoPE / position encoding (input),
+# length-parameterized readout (output); (4) a fresh axis (training dynamics
+# / grokking-free curvature); (5) any novel hypothesis — the loop should
+# EXPLORE ALL axes, not settle.
 # Compression 4 real-scale iterations (exhausted at d=4, floor NOT depth-robust
-# at d=8), speed 5, depth 9.
+# at d=8), speed 5, depth 10.

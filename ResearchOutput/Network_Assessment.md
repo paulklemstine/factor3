@@ -2,7 +2,7 @@
 
 > Network research loop, opened 2026-08-12 (factoring loop paused). Same rigor
 > as the factoring lab: exact measurable laws, honest negative results, all 8
-> barriers checked each iteration. Count: 21 experiments, assessment v21.
+> barriers checked each iteration. Count: 22 experiments, assessment v22.
 
 ## What NET-1 established (compression axis)
 
@@ -616,6 +616,48 @@ the carry chain is characterized on depth, scale, AND schedule — all negative
 for length-general composition; compression (exhausted at d=4, not depth-robust
 at d=8) and speed (context-constant lever 32/d) are the standing axes.
 
+## What NET-22 established (performance axis — the task-remodeling test of the carry-chain length wall)
+
+1. **Scratchpad does NOT unlock length-gen.** Explicit per-column carry targets
+   (a maximal scratchpad/CoT: `SC c_1..c_n GO s_1..s_n c_n`, carries AND answers
+   teacher-forced) were tested at dm=192/untied/bs=256/12000 steps, 2 seeds at
+   d=1 and 2 seeds at d=2. **Beyond-max n=6/7/8 is at chance (0.0000) in all four
+   scratchpad arms** — the task-remodeling lever, NET-21's top surviving
+   candidate, is CLOSED.
+2. **NEW — GIVEN-CARRIES-STILL-FAIL (the strongest wall diagnostic).** Feeding
+   the TRUE carries for n=6/7/8 still yields 0.0000 answers, at both depths. The
+   wall is NOT "the model can't propagate carries" — a model that knows every
+   carry exactly still cannot compute the n+1-digit answer. The wall is a
+   position-specific ANSWER-COMPUTATION property of the fixed-depth answer
+   function; the credit-assignment account of the wall is REFUTED.
+3. **NEW — SCRATCHPAD-COLLAPSE-IS-DEPTH-CONDITIONED.** Scratchpad n=5 mastery is
+   UNSTABLE at both depths, but the terminal state is depth-dependent: at d=1
+   both seeds collapse PERMANENTLY from 1.0000 into carry-dissociation plateaus
+   (full≈0.25 / 0.74, carries still known, answer chain failed — the correlated-
+   error signature of NET-4/5/19/21); at d=2 both seeds survive collapse
+   episodes (dip to 0.80; crash to 0.041) and RECOVER to stable 1.0000. The
+   plain d=1 control's mastery is rock-stable — the instability is specific to
+   the scratchpad objective. The mirror-image of NET-19's stochastic ESCAPE
+   (dissociation→mastery): here mastery→dissociation→(d=2 only) re-mastery.
+4. **Scratchpad aids IN-RANGE, not BEYOND-range.** At d=2 the plain control
+   stuck in dissociation (full=0.10), while BOTH scratchpad seeds mastered n=5
+   (1.0000) — the per-column targets rescue in-range credit assignment, and
+   leave the beyond-range answer function untouched. The cleanest possible
+   split between the two regimes.
+5. **The mechanism is now positional expressivity, not credit.** Six angles all
+   negative for length-gen: depth (NET-4/5/19), scale (NET-19), schedule
+   (NET-21), task-remodeling (this round). The surviving levers change the
+   REPRESENTATION: recurrence (stateful carry cell — length-general state), RoPE
+   / position encoding (removes the shared pos-emb extrapolation caveat: train
+   sees positions 0..24, beyond-max evals use up to 36), or a length-parameterized
+   readout.
+
+**LAW:** SCRATCHPAD-DOES-NOT-UNLOCK-LENGTH-GEN + GIVEN-CARRIES-STILL-FAIL +
+SCRATCHPAD-COLLAPSE-IS-DEPTH-CONDITIONED. The carry chain is now characterized
+on depth, scale, schedule, AND task-remodeling — all negative for length-general
+composition. 2 seeds per depth in the scratchpad arm (1 seed per plain control);
+the given-carries reading (0.0000) is the decisive isolation of the answer wall.
+
 ## Where a genuine breakthrough could come from (frontiers)
 
 - **The PR law at real scale — tested, does NOT transfer (NET-11).** The
@@ -644,11 +686,14 @@ at d=8) and speed (context-constant lever 32/d) are the standing axes.
   documented domain boundary (NET-1 reverses on attention LMs) makes the
   real-LM-class transfer the highest-value next compression step.
 - **The carry chain at scale.** NET-4/NET-5 leave the carry chain as the
-  irreducible width/depth/readout-immune bottleneck. The genuinely open depth
-  question is whether the chain responds to depth at LARGER scale (bigger
-  d_model, more data, longer training) or whether credit-assignment walls are
-  depth-immune in general. A curriculum that teaches carries one column at a
-  time is the other untested lever.
+  irreducible width/depth/readout-immune bottleneck, and NET-19/21/22 have now
+  shown the wall is scale-immune (dm=192, 18× params), schedule-immune
+  (curriculum/mixing), AND task-remodeling-immune (scratchpad carry targets;
+  given-correct-carries still fails ⇒ position-specific answer-computation, not
+  credit). The genuinely open levers change the REPRESENTATION: recurrence (a
+  stateful carry cell — the only length-general state device), RoPE or an
+  alternative position encoding (removes the pos-emb extrapolation caveat
+  shared by every length-gen eval), or an explicit length-parameterized readout.
 - **The exit law at real scale — tested, does NOT transfer (NET-10).** The
   norm crossover marks the ONSET of shared-head decodability growth on a real
   causal LM, not its completion: 0/4 models are lossless (0.95·full) at the
@@ -799,4 +844,4 @@ at d=8) and speed (context-constant lever 32/d) are the standing axes.
   Do not quote the NET-15 8× lever without its depth: at d=8 it is 4×, and the
   d=16 prediction (k*=64, 2×) is under test.
 
-Assessment v21. 21 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21).
+Assessment v22. 22 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22).
