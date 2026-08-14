@@ -28,7 +28,39 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # LAB PROTOCOL (same rigor as the factoring lab): exact measurable laws over a clean
 # hypothesis, honest negative results recorded, all 8 barriers checked every iteration,
 # commit+push each iteration with Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>.
-# Status: NET-23 done (issue #118): ROPE DOES NOT UNLOCK LENGTH-GEN — the
+# Status: NET-24 done (issue #119): STATEFUL-CARRY-CELL-UNLOCKS-LENGTH-GEN —
+# the FIRST POSITIVE CURE of the carry-chain length wall (the recurrence /
+# stateful-carry-cell test — the surviving lever after scratchpad and position
+# encoding closed). Hypothesis: the wall is a fixed-depth, STATE-FREE,
+# position-parameterized ANSWER-FUNCTION expressivity limit, not a task or
+# input-representation limit. Augmented the walled NET-23 RoPE encoder (d=1,
+# dm=192, causal, 12000 steps — the config that produced 0.0000 beyond-max)
+# with a length-general stateful answer cell: GRU carrying the carry in hidden
+# state; per-column feature = concat(h[a_i], h[b_i]); digits read off the GRU;
+# jointly trained. plain n=5 task, bs=256, 12000 steps; 5 arms: pure GRU s0/s1,
+# hybrid-RoPE s0/s1, hybrid-abs s0. hybrid-RoPE s=0 AND s=1: full=1.0000/per=
+# 1.0000 at n=5/6/7/8 — zero errors on 18.4k fresh n=8 digit predictions; the
+# ONLY difference vs NET-23's 0.0000-beyond-max transformer is the readout's
+# STATE (byte-identical encoder/budget/causal mask) ⇒ THE-WALL-WAS-THE-ANSWER-
+# FUNCTION, NOT THE ENCODER; NET-22's GIVEN-CARRIES-STILL-FAIL is explained
+# (carries as INPUT tokens are useless to a state-free readout; the same
+# carries as recurrent STATE are exactly the cure). THE-CURE-IS-POSITION-
+# SCHEME-INDEPENDENT (hybrid-abs ALSO length-gens: n=8 full=0.9624, uniform
+# thin column-error tail 0.986–1.000 = feature-quality noise from untrained
+# table entries, not a structural wall; RoPE gives the clean 1.0000). NEW
+# RAW-STATE-ALONE-HITS-A-STATE-HORIZON: the textbook pure GRU (raw one-hot
+# columns) masters n=5 by st=2000 (fastest arm), extends ~1–2 steps (n=6 full
+# 0.998/1.000, n=7 0.7021/0.9854) but degrades at n=8 (0.0806/0.6997,
+# seed-dependent) — carry TRANSITION length-general (final-carry 0.896/0.991)
+# while the digit READOUT misfires past the training unroll; the cure needs
+# state AND the encoder's content-rich column features (capacity caveat 125k vs
+# 782k). The five-axis negative line (depth/scale/schedule/task-remodeling/
+# position-representation) is RESOLVED: the wall is the state-free feedforward
+# answer function; a length-general stateful answer cell over the walled
+# encoder's features is the cure (0→1, seed-independent). Frontier now: does a
+# recurrence/state-space-augmented answer path give a REAL causal LM
+# length-general computation? 24 experiments, assessment v24.
+# Previous: NET-23 done (issue #118): ROPE DOES NOT UNLOCK LENGTH-GEN — the
 # position-representation test of the carry-chain length wall; POS-EMB-CAVEAT
 # RETIRED. Every length-gen eval so far used learned ABSOLUTE pos embeddings,
 # so beyond-max positions 25..36 were UNTRAINED table entries — the last
@@ -171,32 +203,38 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # 21 experiments, assessment v21. Load-bearing boundary
 # still needs NON-POSITIONAL stack content / s≫64 / unbounded nesting WITH
 # CAUSAL MASKING.
-# NEXT — FAN-OUT COMPLETE, ALL ROUNDS DONE: NET-23 (issue #118, RoPE does NOT
-# unlock length-gen — position-representation lever CLOSED, POS-EMB-CAVEAT
-# RETIRED: first length-gen eval with no position table, wall survives smooth
-# extrapolatable rotary positions; MSB-MARGINAL transfers 0.565–0.587 while
-# computation does not; ROPE-DISSOCIATION-SEED-DEPENDENT one-column shape);
-# NET-22 (issue #117, scratchpad does NOT unlock length-gen — task-remodeling
-# lever CLOSED at d=1/d=2; GIVEN-CARRIES-STILL-FAIL ⇒ wall is position-specific
-# answer-computation, not credit; SCRATCHPAD-COLLAPSE-IS-DEPTH-CONDITIONED);
-# NET-21 (issue #116, length wall SCHEDULE-ROBUST — curriculum + mixing fail
-# beyond-max; MIXING-PREVENTS-MASTERY; CURRICULUM-FORGETS-INTERMEDIATE-
-# LENGTHS); NET-20 (issue #114, k* NOT ctx-independent — lever CONTEXT-CONSTANT,
-# speedup = 32/d); NET-17 (issue #113, k* = 4·d CONFIRMED at d=16 — k*=64/2×,
-# per-layer compounding r(k)^d); NET-18 (issue #112, quant floor NOT
-# depth-robust); NET-19 (issue #115, carry chain at scale: scale unlocks
-# length-SPECIFIC mastery NOT composition, credit-assignment depth-immunity
-# HOLDS at scale — 9/9 fixed-n masters at every depth, 9/9 length-gen at
-# chance). Depth axis now 10 iterations, speed 5, compression 4. Next round:
-# fresh axis or strengthen a law — candidates:
-# (1) attention-cost law robustness (seed-1 ctx=256 / ctx=512 to confirm the
+# NEXT — FAN-OUT COMPLETE, ALL ROUNDS DONE: NET-24 (issue #119, STATEFUL-CARRY-
+# CELL-UNLOCKS-LENGTH-GEN — FIRST POSITIVE CURE of the carry wall; the wall was
+# the state-free feedforward ANSWER FUNCTION; a GRU carry-cell readout over the
+# walled RoPE encoder's per-column features gives full=1.0000 at n=5/6/7/8 both
+# seeds; cure position-scheme-independent; RAW-STATE-ALONE-HITS-A-STATE-HORIZON);
+# NET-23 (issue #118, RoPE does NOT unlock length-gen — position-representation
+# lever CLOSED, POS-EMB-CAVEAT RETIRED: first length-gen eval with no position
+# table, wall survives smooth extrapolatable rotary positions; MSB-MARGINAL
+# transfers 0.565–0.587 while computation does not; ROPE-DISSOCIATION-SEED-
+# DEPENDENT one-column shape); NET-22 (issue #117, scratchpad does NOT unlock
+# length-gen — task-remodeling lever CLOSED at d=1/d=2; GIVEN-CARRIES-STILL-FAIL
+# ⇒ wall is position-specific answer-computation, not credit;
+# SCRATCHPAD-COLLAPSE-IS-DEPTH-CONDITIONED); NET-21 (issue #116, length wall
+# SCHEDULE-ROBUST — curriculum + mixing fail beyond-max; MIXING-PREVENTS-
+# MASTERY; CURRICULUM-FORGETS-INTERMEDIATE-LENGTHS); NET-20 (issue #114, k* NOT
+# ctx-independent — lever CONTEXT-CONSTANT, speedup = 32/d); NET-17 (issue #113,
+# k* = 4·d CONFIRMED at d=16 — k*=64/2×, per-layer compounding r(k)^d);
+# NET-18 (issue #112, quant floor NOT depth-robust); NET-19 (issue #115, carry
+# chain at scale: scale unlocks length-SPECIFIC mastery NOT composition,
+# credit-assignment depth-immunity HOLDS at scale — 9/9 fixed-n masters at every
+# depth, 9/9 length-gen at chance). Depth axis 10 iterations, speed 5,
+# compression 4, carry-wall SOLVED at toy level (NET-24). Next round: fresh axis
+# or strengthen a law — candidates:
+# (1) REAL-SCALE CARRY-WALL TRANSFER (the frontier opened by NET-24's cure):
+# does a recurrence/state-space-augmented answer path give a real causal LM
+# length-general computation the way the GRU readout did here? the most
+# load-bearing open question;
+# (2) attention-cost law robustness (seed-1 ctx=256 / ctx=512 to confirm the
 # k* ∝ ctx proportionality at a second seed — currently 1 seed per point);
-# (2) load-bearing depth (non-positional stack content with causal masking,
-# s≫64, unbounded nesting); (3) the carry-chain surviving levers change the
-# STATE, not the position scheme (task AND position encoding now REFUTED as
-# cures): recurrence / stateful carry cell (architecture — the only
-# length-general state device), length-parameterized readout (output);
-# (4) a fresh axis (training dynamics / grokking-free curvature); (5) any
-# novel hypothesis — the loop should EXPLORE ALL axes, not settle.
+# (3) load-bearing depth (non-positional stack content with causal masking,
+# s≫64, unbounded nesting); (4) a fresh axis (training dynamics / grokking-free
+# curvature); (5) any novel hypothesis — the loop should EXPLORE ALL axes, not
+# settle.
 # Compression 4 real-scale iterations (exhausted at d=4, floor NOT depth-robust
 # at d=8), speed 5, depth 10.

@@ -615,3 +615,59 @@ parameterized readout. RoPE speeds IN-RANGE learning and transfers the beyond-
 max MARGINAL but not the composition. All 8 barriers checked (see paper). Paper
 67, issue #118. Now 23 network experiments. Assessment v23. Script:
 /tmp/exp_net_rope.py.
+
+---
+
+## Part 24 — STATEFUL CARRY CELL vs THE LENGTH WALL (the recurrence test — FIRST POSITIVE CURE)
+
+**Hypothesis:** the carry-chain length wall is a fixed-depth, STATE-FREE,
+position-parameterized ANSWER-FUNCTION expressivity limit — not a task limit and
+not an input-representation limit. A length-general stateful answer device (GRU
+carrying the carry in hidden state; step count = column index) unlocks length-gen
+on the exact task family that walls the feedforward transformer.
+
+**Setup:** plain n=5 LSB-first a+b=c, dm=192, bs=256, 12000 AdamW steps, lr 1e-3,
+teacher-forced eval n=5/6/7/8 (2048 fresh draws each). Five arms: pure GRU (raw
+one-hot columns → GRUCell 20→192 → per-column digits; EOS step → final carry) s=0,
+s=1; hybrid-RoPE (the NET-23 walled encoder on a|+|b|=, VOCAB=12, per-column
+feature = concat(h[a_i], h[b_i]), GRUCell 384→192 readout, jointly trained) s=0,
+s=1; hybrid-abs (same, learned pos table) s=0. Encoder causal mask verified
+identical to the walled model (on-the-fly triu for any T).
+
+**Results (full/per at n=5/6/7/8):** pure GRU s=0: 1.0000/1.0000, 0.9980/0.9997,
+0.7021/0.9625, 0.0806/0.8584. pure GRU s=1: 1.0000/1.0000, 1.0000/1.0000,
+0.9854/0.9982, 0.6997/0.9648. **hybrid-RoPE s=0 and s=1: 1.0000/1.0000 at ALL of
+n=5/6/7/8.** hybrid-abs s=0: 1.0000/1.0000, 0.9834/0.9976, 0.9634/0.9951,
+0.9624/0.9957. Reference (NET-23 state-free readout, same encoder/budget):
+0.0000 at n=6/7/8.
+
+**Findings:**
+1. **STATEFUL-CARRY-CELL-UNLOCKS-LENGTH-GEN — the FIRST positive cure in the
+   program.** The walled RoPE encoder + GRU carry-cell readout computes the carry
+   chain PERFECTLY beyond its training length (full=1.0000 at n=5/6/7/8, both
+   seeds, zero errors on 18.4k fresh n=8 digit predictions).
+2. **THE-WALL-WAS-THE-ANSWER-FUNCTION, NOT THE ENCODER.** Byte-identical
+   encoder, budget, causal mask; the readout's STATE is the only difference vs
+   NET-23 and it flips beyond-max 0.0000 → 1.0000. NET-22's GIVEN-CARRIES-STILL-
+   FAIL is explained: carries as INPUT tokens are useless to a state-free
+   readout; the same carries as recurrent STATE are exactly the cure.
+3. **THE-CURE-IS-POSITION-SCHEME-INDEPENDENT, but encoder feature quality still
+   modulates it.** hybrid-abs ALSO length-gens (n=8 full=0.9624) — far above the
+   transformer's 0.0000 — with a uniform, thin per-column error tail (0.986–1.000,
+   feature-quality noise from untrained table entries), not a structural wall.
+   RoPE gives the clean 1.0000.
+4. **NEW — RAW-STATE-ALONE-HITS-A-STATE-HORIZON.** The textbook pure GRU masters
+   n=5 (fastest arm: by step 2000), extends ~1–2 steps, but degrades at n=8
+   (full 0.08–0.70, seed-dependent) with the carry TRANSITION length-general
+   (final-carry 0.90–0.99 at n=8) while the digit READOUT misfires past the
+   training unroll. The cure needs state AND the encoder's content-rich column
+   features. Capacity caveat: 125k vs 782k params (flagged).
+
+**Verdict:** CONFIRMED — first positive cure. The five-axis negative line is
+resolved: the wall is the state-free feedforward answer function; adding a
+length-general stateful carry cell unlocks exact, seed-independent length-gen.
+Recurrence/state was the surviving lever, and the controlled toggle is
+unambiguous. All 8 barriers checked (see paper); caveats: hybrid-abs 1 seed,
+pure-GRU capacity, 2 hybrid seeds. Paper 68, issue #119. Now 24 network
+experiments. Assessment v24. Script: /tmp/exp_net_stateful.py; log:
+/tmp/net24.log.

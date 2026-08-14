@@ -2,7 +2,7 @@
 
 > Network research loop, opened 2026-08-12 (factoring loop paused). Same rigor
 > as the factoring lab: exact measurable laws, honest negative results, all 8
-> barriers checked each iteration. Count: 23 experiments, assessment v23.
+> barriers checked each iteration. Count: 24 experiments, assessment v24.
 
 ## What NET-1 established (compression axis)
 
@@ -701,6 +701,42 @@ task-remodeling (NET-22), and position representation (this round) — all
 negative for length-general composition. Surviving levers, down from NET-22's
 three: recurrence / stateful carry cell, length-parameterized readout.
 
+## What NET-24 established (performance axis — the recurrence test: FIRST POSITIVE CURE of the length wall)
+
+1. **STATEFUL-CARRY-CELL-UNLOCKS-LENGTH-GEN — the first positive cure in the
+   program.** Augmenting the walled NET-23 RoPE encoder (d=1, dm=192, causal,
+   12000 steps — the config that produced 0.0000 beyond-max) with a length-
+   general stateful answer cell (GRU carrying the carry in hidden state; per-
+   column feature = concat(h[a_i], h[b_i]); digits read off the GRU) yields
+   **full=1.0000 at n=5/6/7/8, both seeds** — zero errors on 18.4k fresh n=8
+   digit predictions. The five-axis negative line is RESOLVED: the wall is the
+   state-free, fixed-depth, position-parameterized feedforward answer function.
+2. **THE-WALL-WAS-THE-ANSWER-FUNCTION, NOT THE ENCODER.** Byte-identical
+   encoder, budget, causal mask; the readout's STATE is the only difference vs
+   NET-23, and it flips beyond-max 0.0000 → 1.0000. NET-22's GIVEN-CARRIES-
+   STILL-FAIL is explained: carries as INPUT tokens are useless to a state-free
+   readout; the same carries as recurrent STATE are exactly the cure.
+3. **THE-CURE-IS-POSITION-SCHEME-INDEPENDENT, but encoder feature quality still
+   modulates it.** hybrid-abs (learned pos, untrained beyond-max entries) ALSO
+   length-gens (n=8 full=0.9624) — far above the transformer's 0.0000 — with a
+   uniform thin column-error tail (feature noise, not a structural wall). RoPE
+   gives the clean 1.0000.
+4. **NEW — RAW-STATE-ALONE-HITS-A-STATE-HORIZON.** The textbook pure GRU (raw
+   one-hot columns) masters n=5 (by step 2000), extends ~1–2 steps (n=6 full
+   0.998–1.000, n=7 0.70–0.99) but degrades at n=8 (0.08–0.70, seed-dependent):
+   the carry TRANSITION is length-general (final-carry 0.90–0.99 at n=8) but
+   the digit READOUT misfires past the training unroll. The cure needs state
+   AND the encoder's content-rich column features. Capacity caveat: 125k vs
+   782k params (flagged).
+
+**LAW:** STATEFUL-CARRY-CELL-UNLOCKS-LENGTH-GEN + THE-WALL-WAS-THE-ANSWER-
+FUNCTION + THE-CURE-IS-POSITION-SCHEME-INDEPENDENT + RAW-STATE-ALONE-HITS-A-
+STATE-HORIZON. The carry-chain wall is a state-free answer-function limit; a
+length-general stateful answer cell over the walled encoder's features is the
+cure (0→1, seed-independent). Depth, scale, schedule, scratchpad, and position
+scheme are each individually insufficient — state is the load-bearing device.
+Caveats: hybrid-abs 1 seed; pure-GRU capacity confound; 2 hybrid seeds.
+
 ## Where a genuine breakthrough could come from (frontiers)
 
 - **The PR law at real scale — tested, does NOT transfer (NET-11).** The
@@ -728,16 +764,23 @@ three: recurrence / stateful carry cell, length-parameterized readout.
 - **Small-BERT check of the PR law and joint-aware allocation** — the
   documented domain boundary (NET-1 reverses on attention LMs) makes the
   real-LM-class transfer the highest-value next compression step.
-- **The carry chain at scale.** NET-4/NET-5 leave the carry chain as the
-  irreducible width/depth/readout-immune bottleneck, and NET-19/21/22/23 have
-  now shown the wall is scale-immune (dm=192, 18× params), schedule-immune
-  (curriculum/mixing), task-remodeling-immune (scratchpad carry targets;
-  given-correct-carries still fails ⇒ position-specific answer-computation, not
-  credit), AND position-scheme-immune (RoPE: no table, smooth extrapolatable
-  positions — n=6/7/8 still 0.0000; the pos-emb-extrapolation caveat shared by
-  every prior length-gen eval is RETIRED). The genuinely open levers change the
-  STATE, not the position scheme: recurrence (a stateful carry cell — the only
-  length-general state device) or an explicit length-parameterized readout.
+- **The carry chain at scale — the length wall is SOLVED at the toy level
+  (NET-24): the cure is a stateful answer cell, and the frontier is now
+  real-scale transfer.** NET-4/5/19/21/22/23 showed the wall is immune to
+  width/depth/readout, scale (dm=192, 18× params), schedule
+  (curriculum/mixing), task-remodeling (scratchpad carry targets;
+  given-correct-carries still fails ⇒ answer-computation, not credit), and
+  position scheme (RoPE: no table, smooth positions — n=6/7/8 still 0.0000).
+  NET-24 resolves the five-axis negative line: adding a length-general
+  STATEFUL answer cell (GRU carrying the carry in hidden state) over the walled
+  RoPE encoder's per-column features yields full=1.0000 at n=5/6/7/8, both
+  seeds (0→1; the readout's state is the ONLY difference from NET-23's 0.0000).
+  The wall was the state-free feedforward answer function; carries as recurrent
+  STATE work where carries as input tokens (NET-22) failed. Pure recurrence on
+  raw digits alone hits a state-horizon (n=8 full 0.08–0.70), so the cure is
+  state + the encoder's content-rich column features. The frontier is the
+  real-scale question: does a recurrence/state-space-augmented answer path give
+  a real causal LM length-general computation the way it does here?
 - **The exit law at real scale — tested, does NOT transfer (NET-10).** The
   norm crossover marks the ONSET of shared-head decodability growth on a real
   causal LM, not its completion: 0/4 models are lossless (0.95·full) at the
@@ -888,4 +931,4 @@ three: recurrence / stateful carry cell, length-parameterized readout.
   Do not quote the NET-15 8× lever without its depth: at d=8 it is 4×, and the
   d=16 prediction (k*=64, 2×) is under test.
 
-Assessment v23. 23 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23).
+Assessment v24. 24 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24).
