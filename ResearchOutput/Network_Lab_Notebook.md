@@ -906,3 +906,68 @@ freeze-eos[20] test at a k=3 cure; k=3 rule transfer to the real causal LM;
 ~24 more E=21 arms for the exclusivity-ratio trend. Paper 72, issue #123. Now
 28 network experiments. Assessment v28. Script: /tmp/exp_net_eos_knee.py; log:
 /tmp/net28.log.
+
+---
+
+## Part 29 — NET-29: Causal Freeze — the Exclusive Boundary Channel Is Training-Time Load-Bearing (Internalization ∝ Cure Quality)
+
+**Round-net-29.** The causal test NET-28's open (1) demanded. 12 arms, each a
+SAME-SEED reproduction of a NET-28 arm (byte-identical EOSWidthGRU; trained
+exclusive coords reproduce NET-28 to 3 decimals — every intervention attaches
+to the exact published solutions). Inference-only manipulations of the trained
+EOS exclusive coords at n=5/6/7/8 (fresh draws per arm × intervention,
+teacher-forced; ctl re-baselines reproduce NET-28 outcomes). Part A: E=23
+(k=3) × seeds 8–13, 7 interventions — ctl / zero3 (zero all 3 excl) / zero1@0/1/2 /
+flip1 / scale0.1 (42 arm-interventions). Part B: E=21 (k=1) × seeds 14–19,
+ctl / zero1 (12).
+
+**Part A — the k=3 cures (n=8 full):** zero3 → {1.0000, 0.9995, 0.9995,
+1.0000, 0.9971, **0.7041**} — the k=3 cure SURVIVES complete removal of the
+exclusive block in 5/6 arms (≤0.3% scattered, never a collapse); s=13 is the
+outlier (0.70, per 0.967 — partial degradation, not the E=20 hard-fragile
+regime). zero1 (any single coord) → 0% in ALL 6; flip1 → 0% in all 6; scale0.1
+→ 0% in 5/6 and 3% at s=13. s=13 = MAGNITUDE-ENSEMBLE dependence: collective
+(2-of-3 suffices, full strength needs all three), magnitude-sensitive,
+sign-insensitive, never individually load-bearing.
+
+**Part B — the k=1 arms under zero1:** s=14 (cure) → 0.9717 vs 1.0000 (−2.8%,
+~3 SE, uniform); s=15 (near-cure) → n5 0.9531 vs 1.0000 (−1 to −5% at short/
+mid lengths); s=16/17/18/19 (fails/partials) → no-op (all |Δ| ≤ 1.2 SE).
+**Eval-load-bearingness of the sole exclusive coord is PROPORTIONAL TO CURE
+QUALITY**: it costs real accuracy where the recurrence internalized it, and is
+a no-op where it failed — causally confirming NET-28 (the k=1 failure was
+downstream).
+
+**Findings:**
+1. **THE EXCLUSIVE BOUNDARY CHANNEL IS (MOSTLY) TRAINING-TIME LOAD-BEARING.**
+   At k=3 the trained recovery is self-sufficient: zero3 at eval costs ≤0.3%
+   in 5/6; zero1 costs 0% in all 6; signs never matter; magnitude second-order.
+   BPTT, seeing an unambiguous boundary every EOS step, shapes the weights so
+   the depth-recovery no longer needs the exclusive input at inference — the
+   k≥3 benefit is realized as SELF-SUFFICIENT DYNAMICS, not held at the input.
+2. **INTERNALIZATION IS SEED-HETEROGENEOUS (1/6 stay eval-dependent).** s=13
+   leans on the exclusive block as a magnitude-ensemble (zero3 0.70 / scale0.1
+   0.97 / zero1 1.0000 / flip no-op); it has the LARGEST coords (|0.65–0.66|)
+   — a magnitude→dependence hint, FLAGGED (n=6, 1 outlier). A single-seed
+   "boundary doesn't matter at eval" claim is untrustworthy.
+3. **AT k=1 THE SOLE COORD IS EVAL-LOAD-BEARING IN PROPORTION TO THE CURE.**
+   Significant cost at cures (−1 to −5%), no-op at partials/fails. The k=1
+   cure holds a thinner margin: its recovery needs the single channel at
+   inference.
+4. **THE k=3 RULE IS A TRAINING-TIME RULE.** The exclusive dims are a boundary
+   teacher signal for the optimizer; an internalized k=3 answer path need not
+   re-serve the exclusive token at inference.
+
+**Verdict:** Prediction 2 (optimization-load-bearing) holds in the majority at
+k=3 but not uniformly (1/6 ensemble-dependent); at k=1 the interaction is
+monotone — eval-dependence ∝ internalization. The cleanest causal statement:
+removal of the whole exclusive block costs ≤0.3% at 5/6 k=3 cures, and removal
+of the sole coord is a no-op exactly where the k=1 model already failed
+(causal confirmation of downstream-fragility). Barrier (e) is the round's
+content (seed-heterogeneous internalization reported as a distribution, every
+arm a byte-identical same-seed reproduction). Open: k=2 freeze test (is E=22
+internalization intermediate — links the eval-dependence gradient to the
+P(cure) ramp); magnitude→dependence trend (~24 more E=23 arms); REAL-SCALE
+transfer of the training-time ≥3-exclusive-dims rule; pad384-hybrid parity.
+Paper 73, issue #124. Now 29 network experiments. Assessment v29. Script:
+/tmp/exp_net_eos_freeze.py; log: /tmp/net29.log.

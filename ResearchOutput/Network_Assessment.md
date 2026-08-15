@@ -1032,4 +1032,28 @@ dense-EOS law are the open questions. Paper 69, issue #120.
   rule sharpens to ≥3 exclusive dims (k=3 6/6, k=2 5/6 near-robust, k=1
   17–33%). Pooled E=21 = 12 samples, P(≥0.99) 2/12, median ≈0.68.
 
-Assessment v28. 28 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28).
+- NET-29 ran the causal test NET-28's open (1) demanded — 12 SAME-SEED
+  reproductions of NET-28 arms (exclusive coords reproduce to 3 decimals; ctl
+  re-baselines reproduce NET-28 outcomes on fresh draws) with INFERENCE-ONLY
+  interventions on the trained EOS exclusive coords. Part A (E=23 k=3 × seeds
+  8–13, 7 interventions/arm): zeroing the ENTIRE exclusive block at eval leaves
+  the cure intact in 5/6 arms (n=8 full {1.0000, 0.9995, 0.9995, 1.0000,
+  0.9971}) — ≤0.3% scattered, never a collapse — and costs 0.70 in 1/6 (s=13,
+  a MAGNITUDE-ENSEMBLE: zero1→1.0000, scale0.1→0.9692, flip→no-op; the arm
+  with the largest coords |0.65–0.66|); zeroing ANY SINGLE coord costs 0% in
+  all 6; signs never matter. Part B (E=21 k=1 × seeds 14–19): zeroing the SOLE
+  exclusive coord costs real accuracy at the cures (s=14 −2.8% ~3 SE; s=15 −1
+  to −5% at short/mid lengths) and is a NO-OP at the partials/fails (all
+  |Δ| ≤ 1.2 SE) — eval-load-bearingness ∝ cure quality, causally confirming
+  NET-28's downstream-fragility (removal is free exactly where the model
+  already failed). LAW: THE-EXCLUSIVE-BOUNDARY-CHANNEL-IS-TRAINING-TIME-
+  LOAD-BEARING — at k=3 the trained recovery is (mostly) self-sufficient
+  (BPTT shapes the weights using the exclusive teacher signal; inference need
+  not re-serve it), internalization is seed-heterogeneous (5/6 vs 1/6), and
+  the k=3 rule is a TRAINING-TIME rule. Barrier (e) is the round's content
+  (seed heterogeneity reported as a distribution, byte-identical same-seed
+  reproductions). Open: k=2 freeze test (is E=22 internalization intermediate
+  → links the gradient to the ramp); magnitude→dependence trend; REAL-SCALE
+  transfer of the training-time rule; pad384-hybrid parity.
+
+Assessment v29. 29 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29).
