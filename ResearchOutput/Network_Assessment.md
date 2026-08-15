@@ -1155,4 +1155,27 @@ dense-EOS law are the open questions. Paper 69, issue #120.
   (k*=4d at d=8/16, NET-16/17) is still single-seed; k* exact at the sweep's
   k-resolution. Open: d=8/16 seed-1 depth-leg points; a ctx=512 point.
 
-Assessment v33. 33 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30, NET-31, NET-32, NET-33).
+- **NET-34 (issue #141) — THE-DEPTH-LEG-OF-THE-ATTENTION-COST-LAW-IS-SEED-ROBUST:
+  k*=d·ctx/32 holds at a second seed in EVERY measured cell of the (d×ctx)
+  grid.** The barrier-(e) limb NET-33 named open — the depth leg k*=4d at
+  d=8/16 rests on seed-0 alone. CausalTF **d=8, seed=1** at BOTH ctx=128 and
+  ctx=256 (byte-identical harness, 2000 steps; ALL_DONE_NET34). Prediction
+  stated before the run: k*=32 @ 128 (4d) and k*=64 @ 256 (d·ctx/32 = 8·256/32,
+  a NEVER-MEASURED grid cell). Both land EXACT: k*(s1, ctx=128) = 32 (k=16 0.962
+  ✗, k=32 0.988 ✓ — identical to s0's 32, NET-16) and k*(s1, ctx=256) = 64
+  (k=32 0.968 ✗, k=64 0.990 ✓, margin 0.010 — same margin as every prior pass).
+  k=192 recovers full loss exactly (5.0868 vs 5.0865). Concentration reproduces
+  to ≤0.003 at ctx=128 (eff support 50.16 vs s0 50.13; top-k masses identical
+  to 0.001); the context-diffusion law extends to depth (eff 50.16 → 91.49 as
+  ctx doubles, 1.82× vs d=4's 1.78×); per-position monotone no-bounded-
+  working-set shape preserved. Selection importance survives depth AND seed
+  (random-k gaps 4.5–8.0 pts at d=8 vs 6.0–8.7 at d=4). Full-acc spread across
+  all six (seed × depth × ctx) models 0.1571–0.1620. Barrier (e) CLEARED for
+  the depth leg at d=8 — the last single-seed limb of the attention-cost law is
+  closed (the law holds at a second seed in every measured grid cell; the
+  deployable claim — speedup 32/d = 8× at d=4, 4× at d=8, context-invariant in
+  [128, 256] at both depths — can be shipped without per-instance re-measurement).
+  Honest remaining single-seed: d=16 (NET-17) at ctx=128, and no ctx=512 point
+  exists. Open: d=16 second-seed point; a ctx=512 point.
+
+Assessment v34. 34 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30, NET-31, NET-32, NET-33, NET-34).

@@ -28,7 +28,40 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # LAB PROTOCOL (same rigor as the factoring lab): exact measurable laws over a clean
 # hypothesis, honest negative results recorded, all 8 barriers checked every iteration,
 # commit+push each iteration with Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>.
-# Status: NET-33 done (issue #140): THE-ATTENTION-COST-LAW-IS-SEED-ROBUST —
+# Status: NET-34 done (issue #141): THE-DEPTH-LEG-OF-THE-ATTENTION-COST-LAW-IS-
+# SEED-ROBUST — k*=d·ctx/32 holds at a SECOND SEED in EVERY measured cell of the
+# (d×ctx) grid (loop candidate (2)'s remaining single-seed limb, the DEPTH leg
+# k*=4d at d=8/16, ANSWERED at d=8). Byte-identical harness to NET-16/33 —
+# CausalTF d=8, dm=64, 4 heads, Gutenberg corpus, vocab 4097, 2000 AdamW steps —
+# at seed=1, BOTH ctx=128 and ctx=256 (ALL_DONE_NET34, /tmp/exp_net_attncost_d8_s1.py;
+# train 735s + 1554s). Per context: full-acc eval (ctx=128 full 0.1620, loss
+# 5.0808; ctx=256 full 0.1620, loss 5.0865 — s0 d=8 ctx=128 0.1619) → Part A
+# concentration → Part B top-k sweep → Part B2 random-k (seed 12345); k* =
+# smallest k with retained ≥ 0.98·full; the prediction (32 @ 128 = 4d, 64 @ 256 =
+# d·ctx/32 = 8·256/32 — a NEVER-MEASURED grid cell) was stated BEFORE the run.
+# RESULT — BOTH CELLS LAND EXACT: ctx=128 k=16 0.962 ✗, k=32 0.988 ✓ → k*=32
+# (identical to s0, NET-16); ctx=256 k=32 0.968 ✗, k=64 0.990 ✓ → k*=64 (margin
+# 0.010, the same as every prior pass); k=192 recovers full loss exactly
+# (5.0868 vs 5.0865) ⇒ the depth leg is seed-robust AND the full two-parameter
+# law k* = d·ctx/32 now holds at a second seed in EVERY measured cell of the
+# (d ∈ {4,8} × ctx ∈ {128,256}) grid — the last single-seed limb is CLOSED.
+# CONCENTRATION REPRODUCES to ≤0.003 at ctx=128 (eff support 50.16 vs s0 50.13;
+# top-k masses identical to 0.001); the context-diffusion law extends to depth
+# (eff 50.16 → 91.49 as ctx doubles, 1.82× vs d=4's 1.78×); per-position
+# no-bounded-working-set shape preserved (256: 12.45/80.88/170.47). SELECTION
+# GAP SURVIVES DEPTH AND SEED: random-k 4.5–8.0 pts at d=8 (128: k=16 +8.0/k=32
+# +6.2 vs s0 +9.5/+7.1; 256: k=32 +7.1/k=64 +4.5 — same family as d=4's 6.0–8.7).
+# Full-acc spread across all six (seed×depth×ctx) models is 0.1571–0.1620,
+# k*-irrelevant.
+# VERDICT: DEPTH-LEG SEED-ROBUST CONFIRMED — the deployable claim (speedup 32/d
+# = 8× at d=4, 4× at d=8, context-invariant in [128,256] at both depths) can be
+# shipped without per-instance re-measurement; DIFFUSE-BUT-PRUNABLE and the
+# concentration statistics are depth-invariant.
+# Open: the VERY last single-seed cells — d=16 at ctx=128 (NET-17, k*=4d=64) and
+# the whole ctx=512 regime (a d=16 seed-1 point or a ctx=512 point would complete
+# the grid); carry chain at scale (the frontier); d=8 compression floor check.
+# Paper 78, log /tmp/net34.log.
+# PREVIOUS STATUS — NET-33 done (issue #140): THE-ATTENTION-COST-LAW-IS-SEED-ROBUST —
 # k*=d·ctx/32 survives a SECOND SEED at both contexts (loop candidate (2)'s
 # ∝-ctx reproducibility check, ANSWERED — exactly the re-run NET-20's barrier
 # (e) requested). Byte-identical harness to NET-15/20 — CausalTF d=4, dm=64,
@@ -506,11 +539,11 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # NET-18 (issue #112, quant floor NOT depth-robust); NET-19 (issue #115, carry
 # chain at scale: scale unlocks length-SPECIFIC mastery NOT composition,
 # credit-assignment depth-immunity HOLDS at scale — 9/9 fixed-n masters at every
-# depth, 9/9 length-gen at chance). Depth axis 10 iterations, speed 6,
+# depth, 9/9 length-gen at chance). Depth axis 10 iterations, speed 7,
 # compression 4, carry-wall SOLVED at toy level (NET-24) + cure DISSECTED
 # (NET-25) + threshold CORRECTED (NET-26) + ramp MAPPED (NET-27) + knee AND
 # k=1 mechanism CLOSED (NET-28) + seed-trait REFUTED (NET-31) + trait
-# TRAINED AWAY (NET-32) + attention-cost law SEED-ROBUST (NET-33). Next round:
+# TRAINED AWAY (NET-32) + attention-cost law SEED-ROBUST (NET-33/34). Next round:
 # fresh axis
 # or strengthen a law — candidates:
 # (1) REAL-SCALE CARRY-WALL TRANSFER (the frontier opened by NET-24's cure,
@@ -531,14 +564,17 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # (T needed to convert a k=2-dependent seed — how the budget scales with k).
 # Plus the pad384-vs-NET-24-hybrid parity check (a dense-EOS raw GRU should
 # match the hybrid exactly);
-# (2) ANSWERED by NET-33 (issue #140): the ∝-ctx leg of the attention-cost law
-# is SEED-ROBUST (k*=16/32 exact at seed=1, both contexts). REPLACED by the
-# remaining single-seed limb: the DEPTH leg of k*=d·ctx/32 (k*=4d at d=8/16,
-# NET-16/17) is still s0-only — a d=8 seed-1 point (or a ctx=512 point) would
-# close the law's last single-seed limb;
+# (2) ANSWERED by NET-33 (issue #140, ∝-ctx leg seed-robust: k*=16/32 exact at
+# seed=1 both contexts) AND NET-34 (issue #141, DEPTH leg seed-robust: k*=32 @
+# ctx=128 = 4d exact at d=8 seed=1, AND the never-measured ctx=256 d=8 cell
+# returns k*=64 = d·ctx/32 exactly ⇒ the law now holds at a second seed in EVERY
+# measured grid cell). REPLACED by the VERY last single-seed cells: d=16 at
+# ctx=128 (NET-17, k*=4d=64) and the whole ctx=512 regime — a d=16 seed-1 point
+# or a ctx=512 point would complete the two-parameter grid (and a ctx=512 d=4
+# point would test the law at 4× the longest measured context);
 # (3) load-bearing depth (non-positional stack content with causal masking,
 # s≫64, unbounded nesting); (4) a fresh axis (training dynamics / grokking-free
 # curvature); (5) any novel hypothesis — the loop should EXPLORE ALL axes, not
 # settle.
 # Compression 4 real-scale iterations (exhausted at d=4, floor NOT depth-robust
-# at d=8), speed 6, depth 10, carry-wall mechanism 13 (NET-19/21/22/23/24/25/26/27/28/29/30/31/32).
+# at d=8), speed 7, depth 10, carry-wall mechanism 13 (NET-19/21/22/23/24/25/26/27/28/29/30/31/32).
