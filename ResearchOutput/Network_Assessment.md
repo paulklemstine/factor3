@@ -1351,5 +1351,33 @@ dense-EOS law are the open questions. Paper 69, issue #120.
   Open: **d=16 ctx=512 second seed (the affine law's third rung — highest
   value)**; ctx=1024 second seed; d=8 @ ctx=256 s0 corner; carry chain at scale
   (the frontier).
+- **NET-41 — THE-AFFINE-LAW'S-THIRD-RUNG-IS-NOT-TWO-SEED-EXACT (speed; the affine
+  third rung at a second seed, mirroring NET-38→39; ALL_DONE_NET41): at (d=16,
+  ctx=512, seed=2) k* = **144** (s1 measured 160; predicted 160 = affine third
+  rung) ⇒ **P2 — the affine third rung did NOT reproduce**; the s2 retained curve
+  is shifted UP uniformly near the knee (k=128/144/160: 0.967/0.976/0.981 → s2
+  0.980/0.986/0.987, all +0.006–0.013), so the s2 model's attention is slightly
+  MORE prunable; k=128 is knife-edge (raw 0.9795 vs bar 0.98014, fail by 0.0006);
+  the two-seed d=16 knee spans **(144, 160] — exactly bracketing the affine-law
+  prediction (8d+32 = 160, matched by s1) and a concave power-law continuation
+  (k* ≈ 28.3·d^0.585 ≈ 144, matched by s2)** ⇒ at two seeds the exact functional
+  form at the deepest rung is UNDECIDED (NET-40's "exact three-point affine law"
+  over-claimed: its third point was a single-seed soft-knee draw); the two forms
+  differ by ~10% and both ≪ the guarantee, so the practical claim is unaffected.
+  What SURVIVES at two seeds: (i) depth right-shift at d=16 (knee 144–160 vs d=8's
+  96; s2 k=96 retained 0.963 below bar); (ii) proven-safe upper bound (256
+  non-minimal by 1.6–1.78×; deployable speedup **3.2–3.56×** at d=16 ctx=512 vs
+  the 2.0× guarantee); (iii) concentration reproducible to ≤0.5% (eff 198.78 vs
+  199.84, top-128 0.773 vs 0.771, top-256 0.935 vs 0.934, per-position
+  25.53/173.85/371.99 vs 25.55/174.57/372.99); (iv) selection importance survives
+  (random-k gaps +6.0/+2.6, stronger than s1's +3.4/+2.3). Barrier (e) is the
+  round's substance — the d=16 knee is seed-fluctuating (160/144, one grid step,
+  flat-topped retained at both seeds), so affine-vs-power is UNDECIDED at two
+  seeds; the affine law 8d+32 remains the best central tendency of the ctx=512
+  ladder (64, 96, ~152) but is NOT exact at d=16.
+  Open: **d=32 ctx=512 (the discriminating cell — affine predicts 288, concave
+  power ≈213, product 512, a 35% separation; expensive ~3.5h but decisive)**;
+  ctx=1024 second seed; d=8 @ ctx=256 s0 corner; carry chain at scale (the
+  frontier).
 
-Assessment v40. 40 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30, NET-31, NET-32, NET-33, NET-34, NET-35, NET-36, NET-37, NET-38, NET-39, NET-40).
+Assessment v41. 41 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30, NET-31, NET-32, NET-33, NET-34, NET-35, NET-36, NET-37, NET-38, NET-39, NET-40, NET-41).
