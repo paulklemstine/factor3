@@ -1031,3 +1031,76 @@ test (run NET-29's dependent k=1 seeds s=14/15 at E=23 — are they
 ensemble-dependent there too?); pad384-hybrid parity. Paper 74, issue #125.
 Now 30 network experiments. Assessment v30. Script: /tmp/exp_net_eos_freezek2.py;
 log: /tmp/net30.log.
+
+## Part 31 — NET-31: INTERNALIZATION-IS-A-SEED-FIXED-TRAIT (seed-trait vs width-trait)
+
+**Hypothesis (round-net-31):** is the eval-dependence of the exclusive boundary
+channel a property of the SEED (seed-trait: s=14/15 stay dependent at every
+width) or of the WIDTH (width-trait: the k=1 dependence was a k=1 artifact and
+s=13 is the unique non-internalizing seed)?
+**Design:** SEED-FIXED, WIDTH-SWEPT freeze — the same seeds 14–19 at k=2 and
+k=3, byte-identical EOSWidthGRU, same-seed training (same init/train streams as
+the published E=21 arms, which are the k=1 rung), inference-only interventions,
+fresh eval draws per arm × manipulation (ALL_DONE_NET31,
+/tmp/exp_net_eos_freezek13.py). Part A: E=23 (k=3) × seeds 14–19, 7
+interventions (ctl/zeroN/zero1@0,1,2/flip1@0/scale0.1). Part B: E=22 (k=2) ×
+seeds 14–19, 6 interventions (ctl/zeroN/zero1@0,1/flip1@0/scale0.1). The
+E=22/E=23 solutions are NEW (NET-28 ran E=21 only on these seeds); all 12 arms
+cure (ctl ≥ 0.9985, s=16@E=22 the sole partial at 0.9058).
+
+### Findings
+
+1. **The boundary-dependence set is the SAME at k=2 and k=3: {13, 14, 15, 17}.**
+   This round measures s=14/15/17 at both widths (k=3 zeroN: 0.9014, 0.7104,
+   0.7437; k=2 zeroN: 0.9141, 0.8037, 0.9067); NET-29/30 measured s=13 at both
+   (0.7041 / 0.7544). Every other seed that cures at k≥2 is self-sufficient at
+   both widths. Internalization is ~60/40 (7/11 cures self-sufficient, 4
+   dependent) and the split is WIDTH-INDEPENDENT — width sets P(cure), the seed
+   sets internalization.
+2. **NET-29's "5/6 self-sufficient at k=3" was a seed-set-specific high.** At
+   seeds 14–19 the k=3 rate is 3/6 dependent (s=14, 15, 17) + 1/6 marginal
+   (s=19 −1% at n=8, −3% at n=5); pooled over seeds 8–19 it is 7/12
+   self-sufficient/marginal, ~40% dependent. HONEST CORRECTION of both NET-29
+   (5/6) and NET-30 ("k≥2 5/6"): self-sufficiency is ~60% at every width.
+3. **The seed-trait holds for the k=1-dependent seeds, and dependence GROWS
+   with k.** s=14: −2.8% (k=1) → −9% (k=2) → −10% (k=3). s=15: −1…−5% → −20% →
+   −29%. s=13 (−25% → −30%) and s=17 (−9% → −26%) grow too. WIDTH-TRAIT
+   REFUTED. But the trait has NO k=1 predictor: s=13 (k=1 fail, no-op) and s=17
+   (k=1 partial, no-op) are dependent at k≥2, while s=16/18 (k=1 fails, no-ops)
+   are self-sufficient — the trait only manifests at widths where the seed cures.
+4. **k=2 sign-sensitivity is a clean dependence marker; k=3 is sign-insensitive
+   everywhere.** All four dependent k=2 arms carry a flip cost (s=13 −25%,
+   s=14 −7%, s=15 −11%, s=17 −8%) and require sign-opposition in the two trained
+   coords; every self-sufficient k=2 arm is flip-free. At k=3, flip is 0% in all
+   12 arms across both seed sets. NET-30's width-conditional sign-sensitivity
+   generalizes beyond s=13.
+5. **NET-29's magnitude→dependence hint is REFUTED.** s=18 is self-sufficient
+   with |max| 0.702@k=2 (0.627@k=3) — larger than dependent s=14 (0.636/0.581)
+   and s=17 (0.654/0.588). The dependent set is not identifiable from the
+   trained exclusive coordinates.
+6. **P(cure)=100% at k=3 extends to a second seed set** (seeds 14–19: 6/6 ctl
+   ≥ 0.9985; merged 12/12 across seeds 8–19). NET-28's knee is seed-robust.
+
+**Verdict:** SEED-TRAIT PARTIALLY CONFIRMED (s=14/15 stay dependent at every
+width; dependence grows with k), WIDTH-TRAIT REFUTED. The clean law:
+internalization is a seed-fixed trait among cures at k≥2 — the same four seeds
+({13,14,15,17}) build boundary-dependent recoveries at both widths, the same
+seven build self-sufficient ones — with no k=1 predictor; NET-29's 5/6 was a
+seed-set-specific high (pooled ~60%). Mechanism: at k≥2 the boundary block is
+used COLLECTIVELY (zero1 = 0% in every arm); dependent seeds gate on the
+aggregate block norm (zeroN 9–29%, scale0.1 1–5%), with width-conditional sign
+structure (k=2 sign-opposition required, k=3 sign-insensitive). Barriers: (a)
+clean (new E=22/E=23 solutions, own ctl baselines; k=1 rung = published arms),
+(b) clean (no Catalog prior), (c) confronted — ≥3 dims now guarantee reliable
+SUCCESS (12/12) but only ~60% self-sufficient internalization; real-scale is the
+frontier, (d) clean, (e) THE round's content (seed-set-heterogeneous rate
+reported as pooled distribution; within-seed-across-width reproducibility of the
+trait), (f) clean (exact writes, SEs, no-op = |Δ|≤1.2 SE), (g) strong (seed-fixed
+design — width the only training variable), (h) design rule sharpened: ≥3
+exclusive dims ⇒ reliable success, but ~40% of seeds remain eval-dependent on
+the boundary ensemble — keep re-serving it or verify per instance. Open:
+REAL-SCALE transfer (frontier); a trained-WEIGHT predictor of the seed trait
+(the W_ih projection onto the exclusive block? hidden-norm response?); pad384-
+hybrid parity; why dependence GROWS with k. Paper 75, issue #138. Now 31 network
+experiments. Assessment v31. Script: /tmp/exp_net_eos_freezek13.py; log:
+/tmp/net31.log.

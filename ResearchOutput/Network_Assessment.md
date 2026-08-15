@@ -1071,5 +1071,35 @@ dense-EOS law are the open questions. Paper 69, issue #120.
   in EVERY arm of both rounds and successes split seed-heterogeneously.
   Self-sufficiency rate rises with k: k=1 ~1/2, k≥2 5/6. Design rule sharpens
   to ≥2 exclusive dims for a self-sufficient recovery, ≥3 for reliable success.
+- NET-31 (issue #138): INTERNALIZATION-IS-A-SEED-FIXED-TRAIT-AMONG-CURES +
+  NET-29's "5/6 SELF-SUFFICIENT AT k=3" WAS A SEED-SET-SPECIFIC HIGH +
+  THE-DEPENDENT-SEEDS-STAY-DEPENDENT-AT-EVERY-WIDTH — the seed-trait-vs-width-
+  trait test (12 SEED-FIXED WIDTH-SWEPT arms, ALL_DONE_NET31: E=23 k=3 and E=22
+  k=2 × seeds 14–19, same seeds as the published E=21 arms = the k=1 rung, so
+  every seed 14–19 now has k=1/2/3 internalization reads). The boundary-
+  dependence set is the SAME at k=2 and k=3: {13, 14, 15, 17} (k=3 zeroN 0.9014/
+  0.7104/0.7437, k=2 0.9141/0.8037/0.9067; s=13 from NET-29/30 0.7041/0.7544);
+  the same seven seeds are self-sufficient at both widths ⇒ internalization is
+  ~60/40 and WIDTH-INDEPENDENT (width sets P(cure), the seed sets internalization).
+  HONEST CORRECTION: NET-29's 5/6 and NET-30's "k≥2 5/6" were seed-set-specific
+  highs — pooled k=3 (seeds 8–19) is 7/12 self-sufficient/marginal, ~40%
+  dependent. SEED-TRAIT CONFIRMED for the k=1-dependent seeds (s=14: −2.8% →
+  −9% → −10% as k goes 1→2→3; s=15: −1…−5% → −20% → −29% — dependence GROWS
+  with k), WIDTH-TRAIT REFUTED, but the trait has NO k=1 predictor (s=13 fail-
+  no-op and s=17 partial-no-op are dependent at k≥2; s=16/18 fail-no-ops are
+  self-sufficient). NEW k=2 sign-sensitivity marker: flip cost ≠ 0 ⟺ dependent
+  (4/4 dependent k=2 arms −7 to −25%, require sign-opposition; self-sufficient
+  k=2 arms flip-free; k=3 flip = 0% in all 12 arms both seed sets). NET-29's
+  magnitude→dependence hint REFUTED (self-sufficient s=18 has larger coords than
+  dependent s=14/17). P(cure)=100% at k=3 extends to a SECOND seed set (12/12
+  merged). Mechanism: at k≥2 the block is used COLLECTIVELY (zero1 = 0% in every
+  arm); dependent seeds gate on the aggregate block norm. Design rule sharpened:
+  ≥3 exclusive dims ⇒ reliable training SUCCESS (12/12), but ~40% of seeds remain
+  eval-dependent on the boundary ensemble — keep re-serving the boundary token or
+  verify per instance. Barrier (e) is the round's content (seed-set-
+  heterogeneous rate reported pooled; the same-4-seeds trait is a within-seed-
+  across-width reproducibility statement). Open: REAL-SCALE transfer (frontier);
+  a trained-WEIGHT predictor of the seed trait; pad384-hybrid parity; why
+  dependence grows with k.
 
-Assessment v30. 30 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30).
+Assessment v31. 31 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30, NET-31).
