@@ -1379,5 +1379,42 @@ dense-EOS law are the open questions. Paper 69, issue #120.
   power ≈213, product 512, a 35% separation; expensive ~3.5h but decisive)**;
   ctx=1024 second seed; d=8 @ ctx=256 s0 corner; carry chain at scale (the
   frontier).
+- **NET-42 — DEPTH-LEG-AT-LONG-CONTEXT-IS-CONCAVE-POWER (speed; the DISCRIMINATING
+  depth rung that resolves NET-40/41's affine-vs-power indecision; ALL_DONE
+  sweep — KSTAR/ALL_DONE not printed due to documented crash): at (d=32, ctx=512,
+  seed=1) k* = **256** (predicted 288 affine / ≈215 concave power / 512 product)
+  ⇒ **NEITHER horn** — k=224 0.977 ✗ (knife-edge, fail by 0.003 ≈ 0.3 SE), k=256
+  0.987 ✓, k=288 0.989 ✓ (8d+32 passes but is NOT minimal — over-predicts by
+  11%), k=384 0.995 ✓, k=512 1.000 ✓ (loss 5.6281 = full exactly; the product
+  form is refuted by 2×). The four ctx=512 rungs (64, 96, ~152, 256 for
+  d=4/8/16/32) lie on a log-log regression **k\* ≈ 24.7·d^(2/3)** to ≤3%
+  (62/99/157/249), the exponent ROBUST to the d=16 seed choice (0.666 with s2's
+  144, 0.673 with s1's 160) ⇒ **the affine law 8d+32 — exact at d=4/8/16-s1 — was
+  a 3-point LOCAL LINEAR approximation of this concave power curve and breaks at
+  d=32**; the naive power fit of NET-40/41 (28.3·d^0.585) was biased by anchoring
+  on the single noisy s2 d=16 reading. The sub-linear depth leg CONTINUES at every
+  rung (per-doubling ratio 1.50 → 1.58 → 1.68, approaching but never reaching 2.0
+  through d=32) — P3 (recovery at depth) refuted decisively (256 = exactly half of
+  512). Deployable speedup at (d=32, ctx=512) = **2.0×** vs the 1.0× guarantee —
+  the largest over-pruneable factor yet. Concentration depth-diffuses to eff
+  218.46 (top-256 mass 0.921, top-384 0.986; per-position 27.81/190.90/409.08 —
+  NO bounded working set). HONEST CRASH LOG: the k=768 sweep point threw
+  `RuntimeError: selected index k out of range` (topk(768) on a 512-wide causal
+  attention row — my sweep-design bug), aborting Part B2 (random-k control) and
+  the KSTAR/ALL_DONE prints; the point was REDUNDANT (k=512 already = 1.000) so
+  the k* verdict is unaffected, but the random-k control at (d=32, ctx=512) is
+  UNMEASURED (standing evidence: selection gap positive in every prior cell,
+  +2.3 to +11.7). Barrier (e) is the round's honest limit — the d=32 cell is
+  SINGLE-SEED (every new rung starts single-seed) but the knee is bracketed
+  (k=224 fails 0.3 SE, k=256 passes 0.7 SE) and the exponent-2/3 fit rests on
+  FOUR rungs robust to the d=16 seed; barrier (f) is documented including the
+  crash (same metrics/protocol, k=512 recovers full loss exactly); barrier (g)
+  is partially documented — full-attention reference + same 0.98 bar intact, the
+  random-k control UNMEASURED for this cell (NET-43's second seed restores it);
+  barrier (h) sharpened — the true form at long context is measured to d=32 and
+  pinned as concave power ≈ 2/3, and the per-doubling ratio is still < 2.
+  Open: **d=32 ctx=512 second seed (closes the deepest rung's single-seed status
+  AND repairs the missing random-k control — highest value)**; ctx=1024 second
+  seed; d=8 @ ctx=256 s0 corner; carry chain at scale (the frontier).
 
-Assessment v41. 41 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30, NET-31, NET-32, NET-33, NET-34, NET-35, NET-36, NET-37, NET-38, NET-39, NET-40, NET-41).
+Assessment v42. 42 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30, NET-31, NET-32, NET-33, NET-34, NET-35, NET-36, NET-37, NET-38, NET-39, NET-40, NET-41, NET-42).

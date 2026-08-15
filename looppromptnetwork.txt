@@ -28,7 +28,52 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # LAB PROTOCOL (same rigor as the factoring lab): exact measurable laws over a clean
 # hypothesis, honest negative results recorded, all 8 barriers checked every iteration,
 # commit+push each iteration with Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>.
-# Status: NET-41 done (issue #148): THE-AFFINE-LAW'S-THIRD-RUNG-IS-NOT-TWO-SEED-EXACT
+# Status: NET-42 done (issue #149): DEPTH-LEG-AT-LONG-CONTEXT-IS-CONCAVE-POWER
+# — k*=256 at (d=32, ctx=512, seed=1), the DISCRIMINATING depth rung that RESOLVES
+# NET-40/41's affine-vs-power indecision (loop candidate (2)'s d=32 ctx=512
+# discriminating cell — ANSWERED, and the answer is NEITHER horn).
+# Byte-identical harness to NET-40/41 — CausalTF dm=64, 4 heads, Gutenberg corpus,
+# vocab 4097, 2000 AdamW steps — at d=32, seed=1, ctx=512 (sweep complete;
+# KSTAR/ALL_DONE not printed due to documented crash;
+# /tmp/exp_net_attncost_d32_ctx512.py; train 11113s; 1171 windows, 10% held out).
+# Per cell: full-acc eval (full 0.1353, bar 0.1326, loss 5.6281) → Part A
+# concentration → Part B top-k sweep {96,128,160,192,224,256,288,320,384,512,768} →
+# Part B2 random-k (seed 12345) ABORTED BY CRASH; k* = smallest k with retained
+# ≥ 0.98·full. The prediction (k* = 288 if affine; ≈224 if concave power; 512 if
+# product recovers) was stated BEFORE the run.
+# RESULT — k* = 256, NEITHER horn: k=96 0.916 ✗, k=128 0.948 ✗, k=160 0.964 ✗,
+# k=192 0.975 ✗, k=224 0.977 ✗ (knife-edge — raw 0.9771 vs bar 0.98014, fail by
+# 0.003 ≈ 0.3 SE), k=256 0.987 ✓, k=288 0.989 ✓ (8d+32 passes but is NOT minimal —
+# P1 over-predicts by 11%), k=320 0.993 ✓, k=384 0.995 ✓, k=512 1.000 ✓ (loss
+# 5.6281 = full exactly — the product form refuted by 2×). The four ctx=512 rungs
+# (64, 96, ~152, 256 for d=4/8/16/32) lie on a log-log regression **k* ≈
+# 24.7·d^(2/3)** to ≤3% (62/99/157/249), the exponent ROBUST to the d=16 seed
+# (0.666 with s2's 144, 0.673 with s1's 160).
+# VERDICT: DEPTH-LEG-AT-LONG-CONTEXT-IS-CONCAVE-POWER — the affine law 8d+32 —
+# exact at d=4/8/16-s1 — was a 3-point LOCAL LINEAR approximation of this concave
+# power curve and breaks at d=32 (over-predicts by 11%); NET-40/41's naive power
+# fit (28.3·d^0.585) was biased by a single noisy s2 d=16 reading; AFFINE was the
+# local form, the GLOBAL form is concave power ≈ 2/3. The sub-linear depth leg
+# CONTINUES at every rung (per-doubling ratio 1.50 → 1.58 → 1.68, approaching but
+# never reaching 2.0 through d=32) — P3 (recovery at depth) refuted decisively
+# (256 = exactly half of 512). Deployable speedup at ctx=512: 8.0×/5.33×/3.2–3.56×/
+# 2.0× at d=4/8/16/32 (guarantee 4×/4×/2×/1× — the product law gives NO speedup at
+# d=32, the actual knee gives 2.0×). Concentration depth-diffuses to eff support
+# 218.46 (top-256 mass 0.921; per-position 27.81/190.90/409.08 — NO bounded working
+# set). HONEST LIMITS (barriers e/f/g): the d=32 cell is SINGLE-SEED (knee
+# bracketed: k=224 fails 0.3 SE, k=256 passes 0.7 SE) and the RANDOM-K CONTROL is
+# UNMEASURED — the k=768 sweep point threw `RuntimeError: selected index k out of
+# range` (topk(768) on a 512-wide causal attention row — my sweep-design bug), a
+# REDUNDANT point (k=512 already = 1.000) that killed the run before Part B2; the
+# k* verdict is unaffected; the exponent-2/3 fit rests on FOUR rungs robust to the
+# d=16 seed (the affine-vs-power discrimination at d=32 is a ~34% separation, far
+# beyond the knee fuzz).
+# Open: d=32 ctx=512 second seed (closes the deepest rung's single-seed status AND
+# repairs the missing random-k control — highest value; the script must drop
+# k=768/clamp to min(k, L)); ctx=1024 second seed; d=8 @ ctx=256 s0 corner; carry
+# chain at scale (the frontier); d=8 compression floor check. Paper 86, log
+# /tmp/net42.log.
+# PREVIOUS STATUS — NET-41 done (issue #148): THE-AFFINE-LAW'S-THIRD-RUNG-IS-NOT-TWO-SEED-EXACT
 # — k*=144 at (d=16, ctx=512, seed=2) vs 160 at seed=1, so the deepest-rung knee is
 # seed-fluctuating in (144, 160] (loop candidate (2)'s d=16 ctx=512 second-seed check
 # — the affine third rung — ANSWERED, and the answer is P2: NOT reproduced).
@@ -811,7 +856,7 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # NET-18 (issue #112, quant floor NOT depth-robust); NET-19 (issue #115, carry
 # chain at scale: scale unlocks length-SPECIFIC mastery NOT composition,
 # credit-assignment depth-immunity HOLDS at scale — 9/9 fixed-n masters at every
-# depth, 9/9 length-gen at chance). Depth axis 10 iterations, speed 14,
+# depth, 9/9 length-gen at chance). Depth axis 10 iterations, speed 15,
 # compression 4, carry-wall SOLVED at toy level (NET-24) + cure DISSECTED
 # (NET-25) + threshold CORRECTED (NET-26) + ramp MAPPED (NET-27) + knee AND
 # k=1 mechanism CLOSED (NET-28) + seed-trait REFUTED (NET-31) + trait
@@ -819,7 +864,8 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # CONTEXT-EXTRAPOLATED (NET-35) + GRID-TWO-SEED (NET-36) + KNEE-SURVIVES-8×-CONTEXT
 # (NET-37) + PRODUCT-FORM-CONFIRMED-DEPTH-LEG-SUB-LINEAR-AT-LONG-CONTEXT (NET-38)
 # + SUB-LINEAR-DEPTH-LEG-CONFIRMED (NET-39) + DEPTH-LEG-IS-AFFINE-AT-LONG-CONTEXT (NET-40)
-# + THE-AFFINE-LAW'S-THIRD-RUNG-IS-NOT-TWO-SEED-EXACT (NET-41).
+# + THE-AFFINE-LAW'S-THIRD-RUNG-IS-NOT-TWO-SEED-EXACT (NET-41)
+# + DEPTH-LEG-AT-LONG-CONTEXT-IS-CONCAVE-POWER (NET-42).
 # Next round:
 # fresh axis
 # or strengthen a law — candidates:
@@ -886,16 +932,25 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # the deepest-rung functional form is UNDECIDED at two seeds (NET-40's exact affine
 # law over-claimed); robust structure survives: depth right-shift, proven-safe upper
 # bound (256 non-minimal by 1.6–1.78×, deployable 3.2–3.56× at d=16 ctx=512),
-# concentration ≤0.5% reproducible, selection gaps +2.6–6.0). REPLACED by the
-# remaining cells, now ordered by value:
-# **d=32 ctx=512 (the DISCRIMINATING cell — affine predicts 288, concave power
-# ≈213, product 512, a 35% separation; expensive ~3.5h but decisive)**; ctx=1024
-# second seed (closes the last context-extrapolation cell's single-seed status);
-# d=8 @ ctx=256 s0 corner (s1-only); a third seed at d=16 (low value — the
-# flat-topped knee makes the discrete k* a coin-toss);
+# concentration ≤0.5% reproducible, selection gaps +2.6–6.0) AND NET-42 (issue #149,
+# DEPTH-LEG-AT-LONG-CONTEXT-IS-CONCAVE-POWER: k*=256 at (d=32, ctx=512, s1) — the
+# DISCRIMINATING rung that RESOLVES the indecision: NEITHER affine (288, over by
+# 11%) NOR naive power (≈215, under by ~16%) NOR product (512, refuted by 2×); the
+# four ctx=512 rungs (64, 96, ~152, 256) fit **k* ≈ 24.7·d^(2/3)** to ≤3% (exponent
+# robust to the d=16 seed: 0.666–0.673) ⇒ the affine law 8d+32 was a 3-point LOCAL
+# LINEAR approximation of a concave power curve and breaks at d=32; sub-linearity
+# continues at every rung (per-doubling 1.50→1.58→1.68 < 2), deployable 2.0× at
+# d=32 vs the 1.0× guarantee; honest limits: single-seed cell + random-k control
+# UNMEASURED (k=768>ctx topk crash — my sweep-design bug, k* verdict unaffected)).
+# REPLACED by the remaining cells, now ordered by value:
+# **d=32 ctx=512 second seed (closes the deepest rung's single-seed status AND
+# repairs the missing random-k control — the script must drop k=768/clamp to
+# min(k, L); ~3.5h)**; ctx=1024 second seed (closes the last context-extrapolation
+# cell's single-seed status); d=8 @ ctx=256 s0 corner (s1-only); a third seed at
+# d=16 (low value — the flat-topped knee makes the discrete k* a coin-toss);
 # (3) load-bearing depth (non-positional stack content with causal masking,
 # s≫64, unbounded nesting); (4) a fresh axis (training dynamics / grokking-free
 # curvature); (5) any novel hypothesis — the loop should EXPLORE ALL axes, not
 # settle.
 # Compression 4 real-scale iterations (exhausted at d=4, floor NOT depth-robust
-# at d=8), speed 14, depth 10, carry-wall mechanism 13 (NET-19/21/22/23/24/25/26/27/28/29/30/31/32).
+# at d=8), speed 15, depth 10, carry-wall mechanism 13 (NET-19/21/22/23/24/25/26/27/28/29/30/31/32).
