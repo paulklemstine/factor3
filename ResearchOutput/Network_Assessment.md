@@ -974,8 +974,8 @@ dense-EOS law are the open questions. Paper 69, issue #120.
   d=16 prediction (k*=64, 2×) is under test.
 
 - NET-26 corrected NET-25's EOS-width law with a 30-arm round: the flagged
-  "28–384 threshold" resolved as NO threshold — every width ≥28 cured 19/19
-  (E=28,64,96,128,192,256,384 ×2 + E384×5) — while the fragility actually sits
+  "28–384 threshold" resolved as NO threshold — every width ≥28 cured 20/20
+  (E=28,64,96,128,192,256,384 ×2 + E384×6) — while the fragility actually sits
   BELOW 28, at E=20, where a 12-sample distribution gives P(clean cure)≈¼
   {0.999×3, 0.744, 0.124, 0.058, 0.031, 0.026, 0.017, 0.011, 0.006, 0.005}.
   NET-25's two "evidence" pillars both fell: "28-d fails" (pos28) was a
@@ -992,4 +992,23 @@ dense-EOS law are the open questions. Paper 69, issue #120.
   distribution shift, not a sharp threshold; do not cite NET-25's pad control
   as airtight, and do not claim any single-seed EOS-width "threshold".
 
-Assessment v26. 26 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26).
+- NET-27 filled NET-26's open gap — the shape of the EOS-width P(cure) shift
+  inside (20,28) — with 24 FRESH-seed arms (E ∈ {21,22,24,28} × seeds 8–13,
+  byte-identical EOSWidthGRU; every sample an independent draw). Result: the
+  shift is a MONOTONE RAMP, no sharp critical width, and the first exclusive
+  dim is NOT sufficient. Failure mass vs E: 75% (E=20) → 67% (E=21) → 17%
+  (E=22, worst case a near-cure 0.948) → 0 (E=24) → 0 (E≥28). Worst case n=8
+  full: 0.005 → 0.157 → 0.948 → 1.0000 → 1.0000; medians 0.044 → 0.83 → 1.0 →
+  1.0 → 1.0. E=21 (k=1 exclusive dim) is the only width with both a full cure
+  (1.0000) and a hard failure (0.1567) among fresh draws — the exclusive-dim
+  benefit is SUBLINEAR, a reliability curve (optimization-fragile boundary),
+  not a capacity cliff. Failure mechanism is width-independent (same
+  progressive-unroll collapse + same probe signature: ‖h‖ drift + maxconf dips
+  at beyond-training cols). E≥28 merged is now 26/26 clean cures. Refines
+  NET-26's distinctness law: the boundary token needs its own parameter
+  subspace with ≥4 exclusive dims (k=2 near-robust, k=1 fragile); "any
+  exclusive dim suffices" is REFUTED. Honest limit: n=6/width makes the
+  E21→E22 P-jump alone not significant (Fisher ≈0.24); the law rests on the
+  monotone ordering + merged anchors.
+
+Assessment v27. 27 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27).

@@ -788,3 +788,59 @@ boundary conditioning) SURVIVES on stronger ground. Barrier (e) closed: 12- and
 (E=24 untested), real-scale transfer of the cure. Paper 70, issue #121. Now 26
 network experiments. Assessment v26. Scripts: /tmp/exp_net_eos_sweep.py,
 _verify.py, _dist.py; logs: /tmp/net26.log, _verify.log, _dist.log.
+
+## Part 27 — EOS-Width Shift Is a Monotone Ramp, Not a Threshold (round-net-27, NET-27)
+
+**Date:** 2026-08-14. **Status:** Machine-verified (ALL_DONE_NET27).
+**Hypothesis:** NET-26 left the shape of the EOS-width P(cure) shift inside
+(20,28) open ("E=24 would resolve") and proposed representational distinctness
+as the control variable — implying the naive reading "any exclusive dim
+suffices". Two questions: (1) sharp critical width vs gradual ramp? (2) is the
+FIRST exclusive dim (E=21, exactly one) sufficient?
+
+**Setup:** byte-identical NET-26 EOSWidthGRU (GRUCell(384→192), learned E-d EOS
+zero-padded to 384, only E varies; same task/budget/eval). 24 arms: E ∈
+{21,22,24,28} × 6 FRESH seeds (8–13, all new to the program, so every sample
+is an independent draw and the merged E=20 / E≥28 anchors stay independent).
+
+**Results (n=8 full, seeds 8–13):**
+- **E=21:** 1.0000, 0.7715, 0.1567, 0.8926, 1.0000, 0.2656 — P(≥0.99) = 2/6,
+  median ≈0.83, min 0.157. The ONLY width with both a full cure and a hard
+  failure among fresh draws.
+- **E=22:** 1.0000, 0.9912, 0.9482, 1.0000, 1.0000, 0.9990 — P(≥0.99) = 5/6,
+  min 0.948 (no hard failure).
+- **E=24:** 1.0000 ×6 — 6/6 clean.
+- **E=28:** 1.0000 ×6 — 6/6 (combined with NET-26's E=28 ×2 → 8/8; E≥28 total
+  26/26).
+- Failure signature (E21 s10/s13): n=5 1.0000 → n=6 0.9995 → n=7 0.8203/0.8096
+  → n=8 0.1567/0.2656 — same progressive-unroll collapse as NET-26's E20 s1.
+- Probe reproduces NET-26 line-for-line: failures show hidden-norm DRIFT
+  (cols 5→8 Δ+1.9~2.0) + maxconf dips (0.919/0.935, 0.929/0.899); all cures
+  show flat norm (Δ<0.2) + maxconf 1.000, EOS-step norm settles.
+
+**Findings:**
+1. **EOS-WIDTH-SHIFT-IS-A-MONOTONE-RAMP — NO SHARP CRITICAL WIDTH IN (20,28].**
+   Failure mass vs E: 75% (E=20) → 67% (E=21) → 17% (E=22, worst case a
+   near-cure 0.948) → 0 (E=24) → 0 (E≥28). Worst case: 0.005 → 0.157 → 0.948 →
+   1.0 → 1.0. Every width contributes to the ordering; no single width carries
+   it.
+2. **THE FIRST EXCLUSIVE DIM IS NOT SUFFICIENT** (naive distinctness reading
+   REFUTED). E=21 (k=1) is still seed-fragile; the benefit is SUBLINEAR in k.
+   Medians: 0.044 → 0.83 → 1.0 → 1.0 → 1.0.
+3. **THE FAILURE MECHANISM IS WIDTH-INDEPENDENT.** Same progressive-unroll
+   collapse, same clustered-column errors, same probe signature as E=20 —
+   exclusive dims raise P(working boundary), not the boundary's kind.
+4. **SATURATION BY E=24.** k=2 near-robust (no hard failure), k=4 certain
+   (6/6), k≥8 stays certain (26/26 merged). Honest limit: n=6/width makes the
+   E21→E22 P-jump alone not significant (Fisher ≈0.24); the law rests on the
+   monotone ordering + merged anchors.
+
+**Verdict:** gradual ramp, not a cliff — both sharp-threshold readings refuted.
+NET-26's distinctness law refined: the boundary token needs its OWN parameter
+subspace with ≥4 exclusive dims (k=2 near, k=1 fragile), a *reliability*
+statement rather than a *capacity* one. Barrier (e) is the round's content
+(E=21's 0.157-vs-1.0 spread is seed variance). Open: knee inside (21,24) —
+E=23/25; mechanistic read of k=1 (measure the learned EOS exclusive-dim
+coordinate at cure vs fail); real-scale transfer. Paper 71, issue #122. Now 27
+network experiments. Assessment v27. Script: /tmp/exp_net_eos_shape.py; log:
+/tmp/net27.log.
