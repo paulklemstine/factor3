@@ -1101,5 +1101,38 @@ dense-EOS law are the open questions. Paper 69, issue #120.
   across-width reproducibility statement). Open: REAL-SCALE transfer (frontier);
   a trained-WEIGHT predictor of the seed trait; pad384-hybrid parity; why
   dependence grows with k.
+- NET-32 (issue #139): THE-INTERNALIZATION-TRAIT-IS-A-TRAINING-ARTIFACT +
+  NOT-SEED-INTRINSIC — a NO-BOUNDARY final fine-tune converts 4/4 known-dependent
+  seeds to self-sufficient (the constructive test NET-31's "seed-fixed trait"
+  demanded). 6 arms at E=23 (k=3), byte-identical EOSWidthGRU: the COMPLETE known-
+  dependent population {13,14,15,17} + self-sufficient controls {16,18}
+  (ALL_DONE_NET32). Each arm: standard 12000-step training → stage-0 ctl+zeroN
+  (EXACT same-seed replication: zeroN {0.7041, 0.9014, 0.7104, 0.9932, 0.7437,
+  0.9995} = NET-29/30/31 to 4 decimals) → fine-tune T∈{300,1000,3000} with the
+  exclusive block ZEROED at the EOS step (the zeroN eval condition made a TRAINING
+  condition). CONVERSION: zeroN n=8 goes {0.7041, 0.9014, 0.7104, 0.7437} → 1.0000
+  for all four dependent seeds in ≤3000 steps (≤2.5% of the training budget) —
+  the trait is a property of the converged SOLUTION, not the seed's landscape;
+  INTRINSIC-TRAIT REFUTED. Fast onset (≥0.99 at T=300 in 5/6) but NON-MONOTONE in
+  4/6 arms (transient n=8 reorganization dip — s=13 T=1000 0.9746, s=15 0.9390,
+  s=16 T=300/1000 0.7163/0.6763, s=18 0.9150 — always recovering by T=3000; deploy
+  only at full convergence). Cure preserved (ctl ends 1.0000 in 6/6). Post-
+  conversion the block is INERT: ctl/zeroN/zero1@0/flip1@0/scale0.1 all 1.0000 at
+  n=8 in all six arms — decisive because zero1 was 0% in EVERY trained k≥2 arm,
+  so the trained block-gated path is GONE (full switch, not compensation).
+  HONEST CORRECTION (barrier f): the log's EOSCOORD-AFTER |0.06| was a scale0.1
+  measurement artifact (buffer printed after the final scale0.1 eval — exactly
+  ×0.10 in every arm); true post-fine-tune coords unmeasured, weight-decay-bounded
+  at ~0.97× trained (~0.6) ⇒ mechanism is DYNAMIC STOP-ROUTING (block present at
+  near-full magnitude but inert), not coord decay. Design rule UPGRADED: ≥3
+  exclusive dims ⇒ reliable success (12/12 cures), then a ≤3000-step no-boundary
+  final fine-tune makes the boundary block OPTIONAL seed-independently — the ~60%
+  internalization lottery and the "re-serve or verify per instance" caveat are
+  gone. Barrier (b) confronted: no-boundary fine-tuning is a known qualitative
+  family; the exact T-law + dip + inertia + not-intrinsic reframing are novel
+  (Catalog: pkg 693/35 certified adversarial robustness, orthogonal). Open:
+  REAL-SCALE transfer (now with a concrete protocol); clean post-fine-tune coord
+  readout (confirm stop-routing); dip distribution; minimal conversion budget at
+  k=2; pad384-hybrid parity.
 
-Assessment v31. 31 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30, NET-31).
+Assessment v32. 32 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30, NET-31, NET-32).

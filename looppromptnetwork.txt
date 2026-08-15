@@ -28,7 +28,47 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # LAB PROTOCOL (same rigor as the factoring lab): exact measurable laws over a clean
 # hypothesis, honest negative results recorded, all 8 barriers checked every iteration,
 # commit+push each iteration with Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>.
-# Status: NET-31 done (issue #138): INTERNALIZATION-IS-A-SEED-FIXED-TRAIT-AMONG-
+# Status: NET-32 done (issue #139): THE-INTERNALIZATION-TRAIT-IS-A-TRAINING-
+# SOLUTION-PROPERTY-NOT-SEED-INTRINSIC — the constructive test of NET-31's
+# "seed-fixed trait" (loop candidate (1b)'s question, ANSWERED constructively):
+# a NO-BOUNDARY final fine-tune converts 4/4 known-dependent seeds to self-
+# sufficient. 6 arms at E=23 (k=3), byte-identical EOSWidthGRU — the COMPLETE
+# known-dependent population {13,14,15,17} + self-sufficient controls {16,18}
+# (ALL_DONE_NET32, /tmp/exp_net_eos_ftune.py). Protocol: standard 12000-step
+# training → stage-0 ctl+zeroN (EXACT same-seed replication: zeroN {0.7041,
+# 0.9014, 0.7104, 0.9932, 0.7437, 0.9995} = NET-31 to 4 decimals; ctl 1.0000)
+# → fine-tune T∈{300,1000,3000} cumulative steps with the exclusive block
+# ZEROED at the EOS step (the exact zeroN eval condition made a TRAINING
+# condition), fresh AdamW lr 1e-3, fresh eval draws per (stage, manipulation).
+# CONVERSION: zeroN n=8 {0.7041, 0.9014, 0.7104, 0.7437} → 1.0000 in ≤3000
+# steps (≤2.5% of the training budget) for ALL FOUR dependent seeds ⇒
+# INTRINSIC-TRAIT REFUTED — the trait is a property of the converged SOLUTION,
+# not the seed's landscape (the no-block solution is reachable from every
+# dependent starting point). Fast onset (≥0.99 at T=300 in 5/6; s=16 lags) but
+# NON-MONOTONE in 4/6 arms (the REORGANIZATION DIP: s=13 T=1000 0.9746, s=15
+# T=1000 0.9390, s=16 T=300/1000 0.7163/0.6763, s=18 T=1000 0.9150 — always
+# recovering by T=3000; affects ctl and zeroN equally; deploy only at full
+# convergence). Cure preserved (ctl ends 1.0000 in 6/6; worst mid-way ctl
+# 0.6924 = s=16's dip). Post-conversion the block is INERT: ctl/zeroN/zero1@0/
+# flip1@0/scale0.1 all = 1.0000 at n=8 × 6 arms — decisive since zero1 was 0%
+# in EVERY trained k≥2 arm (the trained block-gated path needed ALL coords) ⇒
+# that path is GONE (full switch to the no-block path, not compensation).
+# HONEST CORRECTION (barrier f): the log's EOSCOORD-AFTER |0.06| was a scale0.1
+# measurement artifact (eos buffer printed after the final scale0.1 eval —
+# exactly ×0.10 in every arm); true post-fine-tune coords UNMEASURED, weight-
+# decay-bounded at ~0.97× trained (~0.6) ⇒ mechanism is DYNAMIC STOP-ROUTING
+# (block present at near-full magnitude yet with zero effect on the answer),
+# NOT coord decay.
+# DESIGN RULE UPGRADED: ≥3 exclusive dims ⇒ reliable success (12/12 cures at
+# k=3); then a ≤3000-step no-boundary final fine-tune makes the boundary block
+# OPTIONAL seed-independently — the ~60% internalization lottery and the
+# "re-serve or verify per instance" caveat are GONE (a one-time training-time
+# protocol replaces per-instance eval verification).
+# Open: REAL-SCALE transfer (frontier — now with a concrete protocol); a clean
+# post-fine-tune coord readout (save models — confirm dynamic stop-routing vs
+# partial decay); the dip's distribution (fresh dependent seeds); the minimal
+# conversion budget at k=2; pad384-hybrid parity. Paper 76, log /tmp/net32.log.
+# PREVIOUS STATUS — NET-31 done (issue #138): INTERNALIZATION-IS-A-SEED-FIXED-TRAIT-AMONG-
 # CURES + THE-DEPENDENT-SEEDS-STAY-DEPENDENT-AT-EVERY-WIDTH + NET-29's "5/6
 # SELF-SUFFICIENT AT k=3" WAS A SEED-SET-SPECIFIC HIGH — the seed-trait-vs-
 # width-trait test (loop candidate (1b), ANSWERED). 12 SEED-FIXED WIDTH-SWEPT
@@ -438,7 +478,8 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # depth, 9/9 length-gen at chance). Depth axis 10 iterations, speed 5,
 # compression 4, carry-wall SOLVED at toy level (NET-24) + cure DISSECTED
 # (NET-25) + threshold CORRECTED (NET-26) + ramp MAPPED (NET-27) + knee AND
-# k=1 mechanism CLOSED (NET-28). Next round:
+# k=1 mechanism CLOSED (NET-28) + seed-trait REFUTED (NET-31) + trait
+# TRAINED AWAY (NET-32). Next round:
 # fresh axis
 # or strengthen a law — candidates:
 # (1) REAL-SCALE CARRY-WALL TRANSFER (the frontier opened by NET-24's cure,
@@ -447,14 +488,18 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # length-general computation — with a WELL-CONDITIONED DENSE BOUNDARY
 # (final-step) input with ≥3 exclusive dims, per NET-25/28? the most
 # load-bearing open question;
-# (1b) a trained-WEIGHT predictor of the internalization seed trait — NET-31
-# showed internalization is a SEED-FIXED trait among cures ({13,14,15,17}
-# dependent at BOTH k=2 and k=3, ~60/40, no k=1 proxy, no coord-magnitude
-# proxy): can it be predicted from the trained weights (e.g. the W_ih column
-# projection onto the exclusive block, or the hidden-norm response to boundary
-# removal)? — would make the per-instance eval-robustness check deployment-
-# relevant. Plus the pad384-vs-NET-24-hybrid parity check (a dense-EOS raw GRU
-# should match the hybrid exactly);
+# (1b) ANSWERED by NET-32 (issue #139): the internalization trait is a TRAINING
+# ARTIFACT, not a seed-fixed intrinsic — a ≤3000-step no-boundary final fine-
+# tune converts 4/4 known-dependent seeds {13,14,15,17} to self-sufficient, so
+# a weight predictor is MOOT (the solution property is always trainable-away).
+# REPLACED by three concrete follow-ups: (i) a CLEAN POST-FINE-TUNE COORD
+# READOUT (save the converted models — NET-32's log artifact left coords
+# unmeasured; confirm dynamic stop-routing vs partial decay), (ii) the DIP
+# DISTRIBUTION (fresh dependent seeds; is the non-monotone reorganization dip a
+# universal fine-tune feature?), (iii) the MINIMAL CONVERSION BUDGET at k=2
+# (T needed to convert a k=2-dependent seed — how the budget scales with k).
+# Plus the pad384-vs-NET-24-hybrid parity check (a dense-EOS raw GRU should
+# match the hybrid exactly);
 # (2) attention-cost law robustness (seed-1 ctx=256 / ctx=512 to confirm the
 # k* ∝ ctx proportionality at a second seed — currently 1 seed per point);
 # (3) load-bearing depth (non-positional stack content with causal masking,
@@ -462,4 +507,4 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # curvature); (5) any novel hypothesis — the loop should EXPLORE ALL axes, not
 # settle.
 # Compression 4 real-scale iterations (exhausted at d=4, floor NOT depth-robust
-# at d=8), speed 5, depth 10, carry-wall mechanism 12 (NET-19/21/22/23/24/25/26/27/28/29/30/31).
+# at d=8), speed 5, depth 10, carry-wall mechanism 13 (NET-19/21/22/23/24/25/26/27/28/29/30/31/32).
