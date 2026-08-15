@@ -1178,4 +1178,28 @@ dense-EOS law are the open questions. Paper 69, issue #120.
   Honest remaining single-seed: d=16 (NET-17) at ctx=128, and no ctx=512 point
   exists. Open: d=16 second-seed point; a ctx=512 point.
 
-Assessment v34. 34 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30, NET-31, NET-32, NET-33, NET-34).
+- **NET-35 (issue #142) — THE-ATTENTION-COST-LAW-EXTRAPOLATES-TO-4×-CONTEXT:
+  k*=d·ctx/32 holds at ctx=512 (k*=64, the law's first point outside [128,256]).**
+  The context leg of the law rested on exactly ONE doubling (128→256); the whole
+  ctx=512 regime was unmeasured. CausalTF **d=4, seed=1, ctx=512** (byte-identical
+  harness, 2000 steps, 2854s train; ALL_DONE_NET35). Prediction stated before the
+  run: k* = 64 (d·ctx/32 = 4·512/32). EXACT: k=16 0.940 ✗, k=32 0.964 ✗, k=64
+  **0.983 ✓** (k=128 0.992, k=256 0.999, k=384 1.000 — loss 5.0827 = full
+  exactly) ⇒ the law holds across a 4× context range at a second seed and the
+  lever speedup = 32/d = 8× at d=4 is context-invariant over the quadrupled range
+  (NET-20's core claim, now tested to 512 — longer context still buys no extra
+  relative saving). NEW P3 CAVEAT (long-context margin erosion): the k* pass
+  clears the bar by only 0.003 (≈2 SE) vs ~0.007–0.010 at 128/256, and retained
+  is uniformly ~0.01 lower at every k — the law's KNEE stays exact but its margin
+  erodes with context (re-check at ctx=1024). Concentration diffusion continues
+  (eff support 152.11; 46.4 → 80.6 → 152.1 across doublings, ×1.74/×1.89 —
+  slightly superlinear on the third); per-position eff 20.41/133.37/281.20 — NO
+  bounded working set at 512. Selection importance survives the longest context
+  (random-k gaps +5.3/+4.6 vs 6.0–8.7 at 128/256). Seven-model full-acc set
+  0.1571–0.1616, k*-irrelevant. Barrier (e): the extrapolation cell is EXACT but
+  SINGLE-SEED — no ctx=512 second seed, no depth sweep there. Honest remaining
+  single-seed: d=16 @ ctx=128 (NET-17), ctx=512 at d=8/16, and no ctx=1024 point.
+  Open: ctx=512 second seed; ctx=1024 (margin-erosion check); d=16 second seed;
+  carry chain at scale (the frontier).
+
+Assessment v35. 35 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30, NET-31, NET-32, NET-33, NET-34, NET-35).

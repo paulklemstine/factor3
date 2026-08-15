@@ -28,7 +28,39 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # LAB PROTOCOL (same rigor as the factoring lab): exact measurable laws over a clean
 # hypothesis, honest negative results recorded, all 8 barriers checked every iteration,
 # commit+push each iteration with Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>.
-# Status: NET-34 done (issue #141): THE-DEPTH-LEG-OF-THE-ATTENTION-COST-LAW-IS-
+# Status: NET-35 done (issue #142): THE-ATTENTION-COST-LAW-EXTRAPOLATES-TO-4×-
+# CONTEXT — k*=d·ctx/32 holds at ctx=512 (loop candidate (2)'s ctx=512 limb,
+# ANSWERED; the law's first point outside [128,256]). Byte-identical harness to
+# NET-15/20/33 — CausalTF d=4, dm=64, 4 heads, Gutenberg corpus, vocab 4097,
+# 2000 AdamW steps — at seed=1, ctx=512 (ALL_DONE_NET35,
+# /tmp/exp_net_attncost_ctx512.py; train 2854s; 1171 windows, 10% held out).
+# Full-acc eval (full 0.1616, bar 0.1584, loss 5.0827) → Part A concentration →
+# Part B top-k sweep {16,32,64,128,256,384} → Part B2 random-k (seed 12345);
+# k* = smallest k with retained ≥ 0.98·full; the prediction (k* = 64 =
+# d·ctx/32 = 4·512/32) was stated BEFORE the run.
+# RESULT — k* = 64 IS EXACT: k=16 0.940 ✗, k=32 0.964 ✗, k=64 0.983 ✓ (k=128
+# 0.992, k=256 0.999, k=384 1.000 — loss 5.0827 = full exactly) ⇒ the law
+# k* = d·ctx/32 now holds across a 4× context range at a second seed, and the
+# lever speedup = 32/d = 8× at d=4 is context-invariant over the QUADRUPLED
+# range (NET-20's core claim — longer context buys no extra relative saving —
+# now tested to 512).
+# NEW P3 CAVEAT (long-context margin erosion): the k* pass clears the 0.98 bar
+# by only 0.003 (≈2 SE) vs ~0.007–0.010 at 128/256, and retained is uniformly
+# ~0.01 lower at every k (0.940/0.964/0.983 vs ctx=256's 0.954/0.973/0.990) —
+# the law's KNEE stays exact (k=32 fails ~10 SE below bar; 0.964→0.983 is a
+# 12 SE jump) but its margin erodes with context; re-check at ctx=1024.
+# CONCENTRATION diffusion continues: eff support 152.11 (46.4 → 80.6 → 152.1
+# across the two doublings, ×1.74/×1.89); per-position eff 20.41/133.37/281.20
+# — NO bounded working set at 512. SELECTION IMPORTANCE survives: random-k gaps
+# +5.3 (k=32) / +4.6 (k=64), same family as 6.0–8.7 at 128/256. Seven-model
+# full-acc set 0.1571–0.1616, k*-irrelevant.
+# VERDICT: CONTEXT-EXTRAPOLATION CONFIRMED — the economically important claim
+# (context-invariant speedup lever 32/d, 8× at d=4) survives a quadrupled
+# context range; the honest caveat is the P3 margin erosion at long context.
+# Open: ctx=512 second seed; ctx=1024 (margin-erosion check); d=16 @ ctx=128
+# second seed (NET-17, k*=4d=64, s0-only); ctx=512 at d=8/16; carry chain at
+# scale (the frontier); d=8 compression floor check. Paper 79, log /tmp/net35.log.
+# PREVIOUS STATUS — NET-34 done (issue #141): THE-DEPTH-LEG-OF-THE-ATTENTION-COST-LAW-IS-
 # SEED-ROBUST — k*=d·ctx/32 holds at a SECOND SEED in EVERY measured cell of the
 # (d×ctx) grid (loop candidate (2)'s remaining single-seed limb, the DEPTH leg
 # k*=4d at d=8/16, ANSWERED at d=8). Byte-identical harness to NET-16/33 —
@@ -539,11 +571,12 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # NET-18 (issue #112, quant floor NOT depth-robust); NET-19 (issue #115, carry
 # chain at scale: scale unlocks length-SPECIFIC mastery NOT composition,
 # credit-assignment depth-immunity HOLDS at scale — 9/9 fixed-n masters at every
-# depth, 9/9 length-gen at chance). Depth axis 10 iterations, speed 7,
+# depth, 9/9 length-gen at chance). Depth axis 10 iterations, speed 8,
 # compression 4, carry-wall SOLVED at toy level (NET-24) + cure DISSECTED
 # (NET-25) + threshold CORRECTED (NET-26) + ramp MAPPED (NET-27) + knee AND
 # k=1 mechanism CLOSED (NET-28) + seed-trait REFUTED (NET-31) + trait
-# TRAINED AWAY (NET-32) + attention-cost law SEED-ROBUST (NET-33/34). Next round:
+# TRAINED AWAY (NET-32) + attention-cost law SEED-ROBUST (NET-33/34) +
+# CONTEXT-EXTRAPOLATED (NET-35). Next round:
 # fresh axis
 # or strengthen a law — candidates:
 # (1) REAL-SCALE CARRY-WALL TRANSFER (the frontier opened by NET-24's cure,
@@ -565,16 +598,20 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # Plus the pad384-vs-NET-24-hybrid parity check (a dense-EOS raw GRU should
 # match the hybrid exactly);
 # (2) ANSWERED by NET-33 (issue #140, ∝-ctx leg seed-robust: k*=16/32 exact at
-# seed=1 both contexts) AND NET-34 (issue #141, DEPTH leg seed-robust: k*=32 @
-# ctx=128 = 4d exact at d=8 seed=1, AND the never-measured ctx=256 d=8 cell
-# returns k*=64 = d·ctx/32 exactly ⇒ the law now holds at a second seed in EVERY
-# measured grid cell). REPLACED by the VERY last single-seed cells: d=16 at
-# ctx=128 (NET-17, k*=4d=64) and the whole ctx=512 regime — a d=16 seed-1 point
-# or a ctx=512 point would complete the two-parameter grid (and a ctx=512 d=4
-# point would test the law at 4× the longest measured context);
+# seed=1 both contexts), NET-34 (issue #141, DEPTH leg seed-robust: k*=32 @
+# ctx=128 = 4d exact at d=8 seed=1 AND the never-measured ctx=256 d=8 cell
+# returns k*=64 = d·ctx/32 exactly — the law holds at a second seed in EVERY
+# measured grid cell) AND NET-35 (issue #142, CONTEXT-EXTRAPOLATION: k*=64 =
+# d·ctx/32 EXACT at ctx=512 d=4 s1 — the law's first point outside [128,256],
+# 4× the longest measured context; lever 32/d context-invariant over a quadrupled
+# range; NEW P3 caveat — the k* pass margin thins to ~2 SE at ctx=512, margin
+# erosion with context). REPLACED by the remaining single-seed / margin cells:
+# ctx=512 second seed (the extrapolation cell is single-seed), ctx=1024 (the
+# margin-erosion check the P3 caveat demands — does the knee eventually fail?),
+# d=16 @ ctx=128 second seed (NET-17, k*=4d=64, s0-only), and ctx=512 at d=8/16;
 # (3) load-bearing depth (non-positional stack content with causal masking,
 # s≫64, unbounded nesting); (4) a fresh axis (training dynamics / grokking-free
 # curvature); (5) any novel hypothesis — the loop should EXPLORE ALL axes, not
 # settle.
 # Compression 4 real-scale iterations (exhausted at d=4, floor NOT depth-robust
-# at d=8), speed 7, depth 10, carry-wall mechanism 13 (NET-19/21/22/23/24/25/26/27/28/29/30/31/32).
+# at d=8), speed 8, depth 10, carry-wall mechanism 13 (NET-19/21/22/23/24/25/26/27/28/29/30/31/32).
