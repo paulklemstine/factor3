@@ -1286,5 +1286,34 @@ dense-EOS law are the open questions. Paper 69, issue #120.
   Open: **d=8 ctx=512 second seed (sub-linear depth leg — highest value)**;
   ctx=1024 second seed; ctx=512 at d=16; d=8 @ ctx=256 s0 corner; carry chain at
   scale (the frontier).
+- **NET-39 (issue #146) — SUB-LINEAR-DEPTH-LEG-CONFIRMED-AT-A-SECOND-SEED: the
+  exact knee k*=96 reproduces at (d=8, ctx=512, seed=2), resolving NET-38's
+  barrier-(e) honest limit (soft knee, single seed).** The second-seed check
+  NET-38's paper explicitly demanded. CausalTF **d=8, seed=2, ctx=512**
+  (byte-identical harness, 2000 steps, 4257s train; 1171 windows, 10% held out;
+  ALL_DONE_NET39, /tmp/exp_net_attncost_d8_ctx512_s2.py). Prediction stated
+  before the run: k* = 96 (reproducing s1). **EXACT — P1 OUTCOME: k=16 0.904 ✗,
+  k=32 0.938 ✗ (4d — depth-only refuted even more decisively than s1's 0.952),
+  k=64 0.973 ✗ (ctx/8 — refuted CLEANLY, 4.5 SE below bar, resolving the
+  marginal-0.979 straddle), k=96 0.987 ✓, k=128 0.992 ✓ (safe but NOT minimal),
+  k=192 0.999, k=256 1.001 [re-norm MC sat.], k=384 1.000 (loss 5.1504 ≈ full
+  5.1499)** ⇒ k* = 96 = 96 at both seeds; the sub-linear depth leg at ctx=512 is
+  a REAL two-seed property: at ctx=512 doubling d gives ×1.5 at BOTH seeds
+  (k*=64,64 d=4 → 96,96 d=8) vs the ×2.0 linear exact at ctx=128 (all three
+  depths, two seeds each). The law d·ctx/32 is confirmed a PROVEN-SAFE UPPER
+  BOUND at long context — the actual knee is systematically below it, so
+  deployments can prune MORE than the guarantee (**5.33× at d=8 ctx=512, not
+  4×**). Concentration reproduces to ~2.5% (eff support 173.23 vs s1 177.80;
+  top-64 0.645 vs 0.634, top-128 0.814 vs 0.806; per-position 22.33/151.63/
+  326.05 vs 23.09/156.01/332.15 — NO bounded working set). Selection importance
+  survives — random-k gaps +5.3 (k=64) / +5.0 (k=128), same family as s1's
+  +6.4/+3.7. Barrier (e) clean this round — exact knee reproduces, soft-knee
+  concern resolved (s2 k=64 −4.5 SE; crossing genuinely in (64, 96]), ×1.5
+  coefficient two-seed at both depths; remaining single-seed/unmeasured:
+  ctx=512 at d=16, ctx=1024, d=8 @ ctx=256 s0 corner.
+  Open: **ctx=512 at d=16 — does the sub-linearity continue? predicts k*≈144 =
+  ×1.5·96 if it does, vs 256 = d·ctx/32 if the law recovers (highest value)**;
+  ctx=1024 second seed; d=8 @ ctx=256 s0 corner; carry chain at scale (the
+  frontier).
 
-Assessment v38. 38 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30, NET-31, NET-32, NET-33, NET-34, NET-35, NET-36, NET-37, NET-38).
+Assessment v39. 39 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30, NET-31, NET-32, NET-33, NET-34, NET-35, NET-36, NET-37, NET-38, NET-39).
