@@ -971,3 +971,63 @@ P(cure) ramp); magnitude→dependence trend (~24 more E=23 arms); REAL-SCALE
 transfer of the training-time ≥3-exclusive-dims rule; pad384-hybrid parity.
 Paper 73, issue #124. Now 29 network experiments. Assessment v29. Script:
 /tmp/exp_net_eos_freeze.py; log: /tmp/net29.log.
+
+---
+
+## Part 30 — NET-30: INTERNALIZATION-SATURATES-AT-K=2 (k=2 freeze test; the missing middle)
+
+**Hypothesis (round-net-30):** is k=2 (E=22, P(cure)=83%) internalization
+INTERMEDIATE between k=1 (cures eval-dependent per NET-29) and k=3 (5/6
+self-sufficient)? Secondary: within-width internalization ∝ cure quality (the
+E=22 near-cures s=9/s=10 depend more than the full cures?).
+**Design:** 12 same-seed reproductions of NET-27 arms, inference-only
+interventions on the trained exclusive coords, fresh eval draws per arm ×
+manipulation (ALL_DONE_NET30, /tmp/exp_net_eos_freezek2.py). Part A: E=22 ×
+seeds 8–13, 6 interventions (ctl/zeroN/zero1@0/zero1@1/flip1@0/scale0.1).
+Part B: E=21 × seeds 8–13, 2 interventions (ctl/zero1) — includes the TWO
+NET-27 k=1 full cures (s=8, s=12). All ctl baselines reproduce the published
+NET-27 outcomes on fresh draws (Part A {1.0000, 0.9888, 0.9399, 1.0000,
+1.0000, 0.9980} vs {1.0, 0.991, 0.948, 1.0, 1.0, 0.999}; Part B {1.0000,
+0.7622, 0.1606, 0.8892, 1.0000, 0.2734} vs {1.0000, 0.7715, 0.1567, 0.8926,
+1.0000, 0.2656}).
+
+### Findings
+
+1. **k=2 is NOT intermediate — it matches k=3 (5/6 self-sufficient).** Zeroing
+   the ENTIRE exclusive block at eval costs ≤0.010 in 5/6 E=22 arms (s=8/9/10/
+   11/12; the two largest changes are POSITIVE — removal *helps* the imperfect
+   s=10 arm, never breaks it). The 6th (s=13) is the SAME seed as the k=3
+   outlier, with the same ensemble dependence (zeroN 0.7544, flip 0.7505,
+   scale0.1 0.9067, zero1 no-ops) and the LARGEST coords of its width (0.701 vs
+   ≤0.660). Eval-sufficiency of the boundary channel collapses between k=1 and
+   k=2; NET-28's P(cure) ramp is a TRAINING-TIME success-rate effect only.
+2. **The within-width ∝-quality prediction is REFUTED.** The worst E=22 arm
+   (s=10, ctl 0.9399) is as self-sufficient as the full cures (zeroN +0.005,
+   no-op; its only ~2 SE swings are positive). No internalization-vs-quality
+   slope at fixed k=2.
+3. **NET-29's "k=1 ∝-quality" law is REFUTED (honest correction).** Both fresh
+   k=1 full cures (s=8, s=12) are fully self-sufficient — zero1 costs 0% at
+   every length. Pooled over 12 k=1 arms (NET-29 seeds 14–19 + NET-30 seeds
+   8–13): the dependences NET-29 reported (s=14 −2.8%, s=15 −1 to −5%) do not
+   reproduce at a second seed set; fails are no-ops in EVERY arm of both rounds;
+   successes split seed-heterogeneously (~1/2–2/3 self-sufficient).
+4. **s=13 is a SEED-WIDE outlier, and its internal structure is
+   width-conditional.** The same seed builds a boundary-dependent recovery at
+   both k=2 and k=3, with the largest exclusive coords at both widths. But at
+   k=3 it is sign-INSENSITIVE (flip no-op, 2-of-3-redundant) while at k=2 it is
+   sign-SENSITIVE (flip −0.25; 2-of-2-redundant) — NET-29's "signs never
+   matter" was a k=3 statement, not general.
+
+**Verdict:** the round's hypothesis is REFUTED (k=2 is indistinguishable from
+k=3), and so is the secondary ∝-quality prediction at fixed k. The honest
+correction: NET-29's k=1 ∝-quality law was a 6-seed observation; the robust
+invariant over 12 k=1 arms is that fails are always no-ops and successes are
+seed-heterogeneous, with self-sufficiency rate rising with k (k=1 ~1/2,
+k≥2 5/6). Barrier (e) is the round's content (seed-heterogeneity as a
+distribution; the NET-29 refutation recorded as a correction). Open: REAL-SCALE
+transfer of the training-time ≥2/≥3-exclusive-dims rule (frontier);
+magnitude→dependence trend at ~24 more arms/width; the seed-trait-vs-width-trait
+test (run NET-29's dependent k=1 seeds s=14/15 at E=23 — are they
+ensemble-dependent there too?); pad384-hybrid parity. Paper 74, issue #125.
+Now 30 network experiments. Assessment v30. Script: /tmp/exp_net_eos_freezek2.py;
+log: /tmp/net30.log.

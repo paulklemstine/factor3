@@ -28,9 +28,44 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # LAB PROTOCOL (same rigor as the factoring lab): exact measurable laws over a clean
 # hypothesis, honest negative results recorded, all 8 barriers checked every iteration,
 # commit+push each iteration with Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>.
-# Status: NET-29 done (issue #124): THE-EXCLUSIVE-BOUNDARY-CHANNEL-IS-TRAINING-
-# TIME-LOAD-BEARING + INTERNALIZATION-PROPORTIONAL-TO-CURE-QUALITY — the causal
-# test NET-28's open (1) demanded: 12 SAME-SEED reproductions of NET-28 arms
+# Status: NET-30 done (issue #125): INTERNALIZATION-SATURATES-AT-K=2 +
+# THE-K=1-INTERNALIZATION-IS-SEED-HETEROGENEOUS + S13-IS-A-SEED-WIDE-OUTLIER —
+# the k=2 freeze test, the missing middle of the eval-dependence gradient
+# (NET-29's open (1) / loop candidate (1b), ANSWERED); also CORRECTS NET-29's
+# ∝-quality law. 12 SAME-SEED reproductions of NET-27 arms (byte-identical
+# EOSWidthGRU; every ctl re-baseline reproduces the published NET-27 outcomes
+# on fresh draws), INFERENCE-ONLY interventions, fresh eval draws per arm ×
+# manipulation (ALL_DONE_NET30, /tmp/exp_net_eos_freezek2.py).
+# Part A (E=22 k=2 × seeds 8–13, 6 interventions/arm): zeroing the ENTIRE
+# exclusive block costs ≤0.010 in 5/6 arms (s=8/9/10/11/12 — the two largest
+# changes are POSITIVE: removal HELPS the imperfect s=10 arm, never breaks it)
+# ⇒ k=2 is NOT intermediate, it MATCHES k=3 (5/6 self-sufficient); eval-
+# sufficiency of the boundary channel SATURATES at k=2, and NET-28's P(cure)
+# ramp is a TRAINING-TIME success-rate effect only (k=3's knee buys reliable
+# success; eval-sufficiency is bought at k=2). s=13 is the SAME seed-wide
+# outlier at both widths (k=2: zeroN 0.7544, flip1@20 0.7505, scale0.1 0.9067,
+# zero1 no-ops — 2-of-2-redundant but sign- AND magnitude-sensitive; k=3: flip
+# no-op — sign-insensitive 2-of-3-redundant), again with the LARGEST coords
+# (0.701 vs ≤0.660) ⇒ sign-sensitivity is WIDTH-CONDITIONAL and NET-29's 'signs
+# never matter' was a k=3 statement. Within-width ∝-quality REFUTED (s=10, the
+# worst arm at ctl 0.9399, is self-sufficient).
+# Part B (E=21 k=1 × seeds 8–13, ctl/zero1): BOTH fresh full cures (s=8, s=12)
+# are fully self-sufficient (zero1 = 0% cost at every length); s=9 partial −0.019
+# (~2 SE, marginal); fails no-op (s=10; s=13 ~2 SE marginal) ⇒ **NET-29's 'k=1
+# internalization ∝ cure quality' is REFUTED at a second seed set** — pooled
+# over 12 k=1 arms (NET-29 seeds 14–19 + NET-30 seeds 8–13): fails are no-ops
+# in EVERY arm of both rounds; successes split seed-heterogeneously (2/2
+# dependent at NET-29 seeds, 0/2 at NET-30 seeds). Self-sufficiency rate rises
+# with k: k=1 ~1/2 of successes, k≥2 5/6. DESIGN RULE sharpens to ≥2 exclusive
+# dims for a self-sufficient recovery (≥3 for reliable success); CAUTION
+# updated — k=1 cures are NOT reliably self-sufficient (a minority need their
+# sole coord at inference). Open: REAL-SCALE transfer (the frontier);
+# magnitude→dependence trend (~24 more arms/width); seed-trait-vs-width-trait
+# test (run the dependent k=1 seeds s=14/15 at E=23); pad384-hybrid parity.
+# Paper 74, log /tmp/net30.log.
+# PREVIOUS STATUS — NET-29 done (issue #124): THE-EXCLUSIVE-BOUNDARY-CHANNEL-IS-
+# TRAINING-TIME-LOAD-BEARING + INTERNALIZATION-PROPORTIONAL-TO-CURE-QUALITY — the
+# causal test NET-28's open (1) demanded: 12 SAME-SEED reproductions of NET-28 arms
 # (byte-identical EOSWidthGRU; trained EOS exclusive coords reproduce NET-28 to 3
 # decimals), INFERENCE-ONLY interventions on the trained exclusive coords, fresh
 # eval draws per arm × intervention (ALL_DONE_NET29, /tmp/exp_net_eos_freeze.py).
@@ -383,11 +418,10 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # length-general computation — with a WELL-CONDITIONED DENSE BOUNDARY
 # (final-step) input with ≥3 exclusive dims, per NET-25/28? the most
 # load-bearing open question;
-# (1b) the k=2 freeze test — is the E=22 (83% P(cure)) internalization
-# INTERMEDIATE between k=1 and k=3 (zero the two exclusive coords of a trained
-# E=22 cure at eval; links the eval-dependence gradient to the P(cure) ramp),
-# plus the pad384-vs-NET-24-hybrid parity check (a dense-EOS raw GRU should
-# match the hybrid exactly);
+# (1b) the seed-trait-vs-width-trait test — run NET-29's dependent k=1 seeds
+# s=14/15 at E=23: do they become ensemble-dependent there too (seed trait), or
+# is s=13 unique (width×seed interaction)? plus the pad384-vs-NET-24-hybrid
+# parity check (a dense-EOS raw GRU should match the hybrid exactly);
 # (2) attention-cost law robustness (seed-1 ctx=256 / ctx=512 to confirm the
 # k* ∝ ctx proportionality at a second seed — currently 1 seed per point);
 # (3) load-bearing depth (non-positional stack content with causal masking,
@@ -395,4 +429,4 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # curvature); (5) any novel hypothesis — the loop should EXPLORE ALL axes, not
 # settle.
 # Compression 4 real-scale iterations (exhausted at d=4, floor NOT depth-robust
-# at d=8), speed 5, depth 10, carry-wall mechanism 10 (NET-19/21/22/23/24/25/26/27/28/29).
+# at d=8), speed 5, depth 10, carry-wall mechanism 11 (NET-19/21/22/23/24/25/26/27/28/29/30).

@@ -1055,5 +1055,21 @@ dense-EOS law are the open questions. Paper 69, issue #120.
   reproductions). Open: k=2 freeze test (is E=22 internalization intermediate
   → links the gradient to the ramp); magnitude→dependence trend; REAL-SCALE
   transfer of the training-time rule; pad384-hybrid parity.
+- NET-30 (issue #125): INTERNALIZATION-SATURATES-AT-K=2 — the k=2 (E=22) freeze
+  test completes the eval-dependence gradient (12 same-seed reproductions of
+  NET-27 arms, inference-only, ALL_DONE_NET30). k=2 is NOT intermediate: zeroing
+  the entire exclusive block at eval costs ≤0.010 in 5/6 arms (two largest
+  changes POSITIVE) — indistinguishable from k=3's 5/6; NET-28's P(cure) ramp is
+  a training-time success-rate effect only (eval-sufficiency saturates at k=2).
+  s=13 is a SEED-WIDE outlier at both k=2 and k=3 (largest exclusive coords at
+  both widths, 0.701 vs ≤0.660) but its structure is width-conditional: at k=3
+  sign-insensitive 2-of-3-redundant (flip no-op), at k=2 sign-sensitive
+  2-of-2-redundant (flip −0.25) — NET-29's 'signs never matter' was a k=3
+  statement. HONEST CORRECTION: NET-29's 'k=1 internalization ∝ cure quality'
+  is REFUTED at a second seed set — both fresh k=1 full cures (s=8, s=12) are
+  self-sufficient (zero1 = 0% cost); pooled over 12 k=1 arms, fails are no-ops
+  in EVERY arm of both rounds and successes split seed-heterogeneously.
+  Self-sufficiency rate rises with k: k=1 ~1/2, k≥2 5/6. Design rule sharpens
+  to ≥2 exclusive dims for a self-sufficient recovery, ≥3 for reliable success.
 
-Assessment v29. 29 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29).
+Assessment v30. 30 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30).
