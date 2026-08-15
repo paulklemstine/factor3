@@ -28,7 +28,53 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # LAB PROTOCOL (same rigor as the factoring lab): exact measurable laws over a clean
 # hypothesis, honest negative results recorded, all 8 barriers checked every iteration,
 # commit+push each iteration with Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>.
-# Status: NET-39 done (issue #146): SUB-LINEAR-DEPTH-LEG-CONFIRMED-AT-A-SECOND-
+# Status: NET-40 done (issue #147): DEPTH-LEG-IS-AFFINE-AT-LONG-CONTEXT — k*=160
+# at (d=16, ctx=512), completing the exact three-point linear law k* = 8d + 32
+# (loop candidate (2)'s ctx=512-at-d=16 rung — the cell that was to discriminate
+# whether NET-38/39's ×1.5 sub-linear coefficient continues or the law recovers —
+# ANSWERED, and the answer is NEITHER). Byte-identical harness to NET-15/20/33-39
+# — CausalTF dm=64, 4 heads, Gutenberg corpus, vocab 4097, 2000 AdamW steps — at
+# d=16, seed=1, ctx=512 (ALL_DONE_NET40, /tmp/exp_net_attncost_d16_ctx512.py;
+# train 6472s; 1171 windows, 10% held out). Per cell: full-acc eval (full 0.1469,
+# bar 0.1439, loss 5.3147) → Part A concentration → Part B top-k sweep
+# {32,64,96,128,144,160,192,224,256,384} (enriched in [96,256] with 144/160/224 to
+# pin the knee; k=16 dropped — foregone failure at depth) → Part B2 random-k
+# (seed 12345); k* = smallest k with retained ≥ 0.98·full. The prediction (k* =
+# 144 = ×1.5·96 if the sub-linearity persists; 256 = d·ctx/32 if the law recovers)
+# was stated BEFORE the run.
+# RESULT — k* = 160, NEITHER horn (P3 outcome): k=32 0.854 ✗, k=64 0.917 ✗ (4d —
+# depth-only far short at depth), k=96 0.944 ✗ (d=8's knee fails ~4 SE at d=16 —
+# depth right-shift confirmed), k=128 0.967 ✗, k=144 0.976 ✗ (×1.5·96 — P1
+# REFUTED, 2.7 SE below bar), k=160 0.981 ✓, k=192 0.991 ✓, k=224 0.993 ✓, k=256
+# 0.993 ✓ (d·ctx/32 passes but is NOT minimal — 37.5% above the knee), k=384
+# 1.000 (loss 5.3172 ≈ full 5.3147) ⇒ the depth ratio on doubling d=8→16 is
+# ×1.67, not ×1.5 — the sub-linear coefficient is NOT a power law. All three
+# ctx=512 points (64, 96, 160 for d=4, 8, 16) lie EXACTLY on the affine line
+# **k* = 8d + 32 = (ctx/64)·d + (ctx/16)** — slope HALF the small-context value
+# (ctx/32=16 → ctx/64=8) plus a positive intercept (ctx/16=32). NET-38/39's ×1.5
+# was the FIRST STEP of this affine law (ratios ×1.5, ×1.67 — approaching ×2 as d
+# grows, as the intercept's relative share shrinks). At ctx ≤ 256 the law is
+# EXACT product (d=8 ctx=256: k*=64, not 96) ⇒ the product→affine crossover lies
+# in (256, 512].
+# THE LAW d·ctx/32 IS A PROVEN-SAFE UPPER BOUND AT LONG CONTEXT: actual available
+# speedup at ctx=512 is d=4 → **8.0×**, d=8 → **5.33×**, d=16 → **3.2×** (guarantee
+# 4×/4×/2×) — over-pruneable by up to 1.6×, the factor growing with depth.
+# CONCENTRATION depth-diffuses: eff support 199.84 (152.11 → 177.80 → 199.84
+# across d=4/8/16 at ctx=512, ×1.17/×1.12 per doubling); top-128 mass DROPS to
+# 0.771 (vs 0.806/0.814 — the distribution spreads further); per-position
+# 25.55/174.57/372.99 — NO bounded working set. SELECTION IMPORTANCE DILUTES:
+# random-k gaps +3.4 (k=128) / +2.3 (k=256) — positive but the SMALLEST of any
+# cell (+3.7–10 elsewhere), consistent with the depth diffusion.
+# VERDICT: DEPTH-LEG-IS-AFFINE-AT-LONG-CONTEXT — the d=16 rung resolves the
+# NET-38/39 ambiguity: the depth leg at ctx=512 is LINEAR with half slope plus an
+# intercept (8d+32), not a ×1.5 power law (refuted) and not the product law
+# (recovered but non-minimal). The deployable speedup at d=16 ctx=512 is 3.2× (not
+# the 2× guarantee), and the crossover context (256, 512] where the slope halves
+# is now predicted.
+# Open: d=16 ctx=512 second seed (the affine law's third rung — highest value);
+# ctx=1024 second seed; d=8 @ ctx=256 s0 corner; carry chain at scale (the
+# frontier); d=8 compression floor check. Paper 84, log /tmp/net40.log.
+# PREVIOUS STATUS — NET-39 done (issue #146): SUB-LINEAR-DEPTH-LEG-CONFIRMED-AT-A-SECOND-
 # SEED — k*=96 reproduces EXACTLY at (d=8, ctx=512, seed=2), resolving NET-38's
 # barrier-(e) honest limit (loop candidate (2)'s d=8 ctx=512 second-seed check —
 # ANSWERED). Byte-identical harness to NET-15/20/33/34/35/36/37/38 — CausalTF
@@ -727,14 +773,14 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # NET-18 (issue #112, quant floor NOT depth-robust); NET-19 (issue #115, carry
 # chain at scale: scale unlocks length-SPECIFIC mastery NOT composition,
 # credit-assignment depth-immunity HOLDS at scale — 9/9 fixed-n masters at every
-# depth, 9/9 length-gen at chance). Depth axis 10 iterations, speed 12,
+# depth, 9/9 length-gen at chance). Depth axis 10 iterations, speed 13,
 # compression 4, carry-wall SOLVED at toy level (NET-24) + cure DISSECTED
 # (NET-25) + threshold CORRECTED (NET-26) + ramp MAPPED (NET-27) + knee AND
 # k=1 mechanism CLOSED (NET-28) + seed-trait REFUTED (NET-31) + trait
 # TRAINED AWAY (NET-32) + attention-cost law SEED-ROBUST (NET-33/34) +
 # CONTEXT-EXTRAPOLATED (NET-35) + GRID-TWO-SEED (NET-36) + KNEE-SURVIVES-8×-CONTEXT
 # (NET-37) + PRODUCT-FORM-CONFIRMED-DEPTH-LEG-SUB-LINEAR-AT-LONG-CONTEXT (NET-38)
-# + SUB-LINEAR-DEPTH-LEG-CONFIRMED (NET-39).
+# + SUB-LINEAR-DEPTH-LEG-CONFIRMED (NET-39) + DEPTH-LEG-IS-AFFINE-AT-LONG-CONTEXT (NET-40).
 # Next round:
 # fresh axis
 # or strengthen a law — candidates:
@@ -789,14 +835,19 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # k=64 fails cleanly by 4.5 SE), the ×1.5 depth coefficient at ctx=512 is a
 # TWO-SEED property at both depths (64,64 → 96,96), and d·ctx/32 is a PROVEN-SAFE
 # UPPER BOUND at long context — 5.33× actually available at (d=8, ctx=512), not
-# 4×). REPLACED by the remaining cells, now ordered by value:
-# **ctx=512 at d=16 (does the sub-linearity continue? predicts k*≈144 = ×1.5·96
-# if it does, vs 256 = d·ctx/32 if the law recovers — highest value)**, ctx=1024
-# second seed (closes the last context-extrapolation cell's single-seed status),
-# and the d=8 @ ctx=256 s0 corner (s1-only);
+# 4×) AND NET-40 (issue #147, DEPTH-LEG-IS-AFFINE-AT-LONG-CONTEXT: k*=160 at
+# (d=16, ctx=512) — the ×1.5 prediction (144) REFUTED by 2.7 SE and the law
+# recovery (256) non-minimal by 37.5%; the three ctx=512 points (64, 96, 160)
+# lie EXACTLY on the affine law k*=8d+32 = (ctx/64)·d + (ctx/16), slope HALF the
+# small-context value plus an intercept — NET-38/39's ×1.5 was the first step of
+# this affine law, NOT a power law; the product→affine crossover lies in (256,
+# 512]). REPLACED by the remaining cells, now ordered by value:
+# **d=16 ctx=512 second seed (the affine law's third rung — highest value)**,
+# ctx=1024 second seed (closes the last context-extrapolation cell's single-seed
+# status), and the d=8 @ ctx=256 s0 corner (s1-only);
 # (3) load-bearing depth (non-positional stack content with causal masking,
 # s≫64, unbounded nesting); (4) a fresh axis (training dynamics / grokking-free
 # curvature); (5) any novel hypothesis — the loop should EXPLORE ALL axes, not
 # settle.
 # Compression 4 real-scale iterations (exhausted at d=4, floor NOT depth-robust
-# at d=8), speed 12, depth 10, carry-wall mechanism 13 (NET-19/21/22/23/24/25/26/27/28/29/30/31/32).
+# at d=8), speed 13, depth 10, carry-wall mechanism 13 (NET-19/21/22/23/24/25/26/27/28/29/30/31/32).

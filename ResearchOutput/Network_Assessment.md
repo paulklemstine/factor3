@@ -1315,5 +1315,41 @@ dense-EOS law are the open questions. Paper 69, issue #120.
   ×1.5·96 if it does, vs 256 = d·ctx/32 if the law recovers (highest value)**;
   ctx=1024 second seed; d=8 @ ctx=256 s0 corner; carry chain at scale (the
   frontier).
+- **NET-40 (issue #147) — DEPTH-LEG-IS-AFFINE-AT-LONG-CONTEXT: k\*=160 at (d=16,
+  ctx=512), completing the exact three-point linear law k\* = 8d + 32.** The
+  third rung of the ctx=512 depth ladder — the one cell that discriminates
+  whether NET-38/39's ×1.5 sub-linear coefficient continues (k*≈144) or the law
+  recovers (k*=256). CausalTF **d=16, seed=1, ctx=512** (byte-identical harness,
+  2000 steps, 6472s train; 1171 windows, 10% held out; ALL_DONE_NET40,
+  /tmp/exp_net_attncost_d16_ctx512.py). Enriched sweep {32,64,96,128,144,160,192,
+  224,256,384} to pin the knee in [96,256]. Prediction stated before the run:
+  k* = 144 (×1.5·96) if the sub-linearity persists; 256 = d·ctx/32 if the law
+  recovers. **RESULT — k\* = 160, NEITHER horn: k=32 0.854 ✗, k=64 0.917 ✗ (4d —
+  depth-only far short at depth), k=96 0.944 ✗ (d=8's knee fails ~4 SE at d=16 —
+  depth right-shift confirmed), k=128 0.967 ✗, k=144 0.976 ✗ (×1.5·96 — P1
+  REFUTED, 2.7 SE below bar), k=160 0.981 ✓, k=192 0.991 ✓, k=224 0.993 ✓, k=256
+  0.993 ✓ (d·ctx/32 passes but is NOT minimal — 37.5% above the knee), k=384
+  1.000 (loss 5.3172 ≈ full 5.3147)** ⇒ the depth ratio on doubling d=8→16 is
+  ×1.67, not ×1.5 — the sub-linear coefficient is NOT a power law. All three
+  ctx=512 points (64, 96, 160 for d=4, 8, 16) lie EXACTLY on the affine line
+  **k\* = 8d + 32 = (ctx/64)·d + (ctx/16)** — slope HALF the small-context value
+  (ctx/32=16 → ctx/64=8) plus a positive intercept (ctx/16=32); the ×1.5 of
+  NET-38/39 was the first step (ratios ×1.5, ×1.67 — approaching ×2 as d grows).
+  At ctx ≤ 256 the law is EXACT product (d=8 ctx=256: k*=64, not 96), so the
+  crossover lies in (256, 512]. Deployable speedup at ctx=512: d=4 → **8.0×**,
+  d=8 → **5.33×**, d=16 → **3.2×** (guarantee 4×/4×/2× — the law is a proven-safe
+  upper bound, over-pruneable by up to 1.6×). Concentration: eff support 199.84
+  (depth diffusion 152.11 → 177.80 → 199.84 across d=4/8/16, ×1.17/×1.12 per
+  doubling); top-128 mass DROPS to 0.771 (vs 0.806/0.814 — the distribution
+  spreads further); per-position 25.55/174.57/372.99 — NO bounded working set.
+  Selection importance dilutes: random-k gaps +3.4 (k=128) / +2.3 (k=256), the
+  SMALLEST of any cell. Barrier (e) is the round's honest limit — the d=16 cell
+  is SINGLE-SEED with the SOFTEST knee of the series (k=144 fails 2.7 SE, k=160
+  passes 0.7 SE), mitigated because the affine law rests on the three-depth SHAPE
+  (d=4/d=8 rungs two-seed, all three points exactly on 8d+32) and the crossing is
+  robustly in (144, 160].
+  Open: **d=16 ctx=512 second seed (the affine law's third rung — highest
+  value)**; ctx=1024 second seed; d=8 @ ctx=256 s0 corner; carry chain at scale
+  (the frontier).
 
-Assessment v39. 39 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30, NET-31, NET-32, NET-33, NET-34, NET-35, NET-36, NET-37, NET-38, NET-39).
+Assessment v40. 40 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30, NET-31, NET-32, NET-33, NET-34, NET-35, NET-36, NET-37, NET-38, NET-39, NET-40).
