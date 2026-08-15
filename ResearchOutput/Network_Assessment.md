@@ -1201,5 +1201,30 @@ dense-EOS law are the open questions. Paper 69, issue #120.
   single-seed: d=16 @ ctx=128 (NET-17), ctx=512 at d=8/16, and no ctx=1024 point.
   Open: ctx=512 second seed; ctx=1024 (margin-erosion check); d=16 second seed;
   carry chain at scale (the frontier).
+- **NET-36 (issue #143) — THE-ATTENTION-COST-GRID-IS-NOW-TWO-SEED-EVERYWHERE:
+  k*=d·ctx/32 holds at every measured (depth × context) cell.**
+  The grid's two LAST single-seed corners — d=16 @ ctx=128 (NET-17, s0 only)
+  and ctx=512 @ d=4 (NET-35, s1 only) — both predicted k*=64 (4d and d·ctx/32).
+  CausalTF **d=16 seed=1 ctx=128 AND d=4 seed=2 ctx=512** (byte-identical harness,
+  2000 steps each; ALL_DONE_NET36). Predictions stated before the run: k* = 64
+  both. EXACT BOTH: cell A k=32 0.970 ✗, k=64 **0.996 ✓** (loss 5.0827 = full);
+  cell B k=16 0.965 ✗, k=32 0.976 ✗, k=64 **0.985 ✓** (k=384 loss 5.0803 = full
+  exactly) ⇒ the depth leg k*=4d now holds at ALL THREE depths × two seeds
+  (16/32/64 at d=4/8/16 @ ctx=128), and the context leg holds to 4× context at
+  two seeds (64 @ ctx=512 d=4 s1+s2) — EVERY measured cell is two-seed, the
+  deployable lever 32/d (8× at d=4) is seed-independent at every corner. P3
+  REFINEMENT — NET-35's long-context margin erosion (s1 pass 0.983, margin 0.003)
+  does NOT reproduce at s2 (pass **0.985**, margin 0.005 — healthy): margin is
+  seed-fluctuating ±0.002 at 512, retained curve still ~0.005–0.01 below 128/256
+  at both seeds, knee unaffected (re-check at ctx=1024). Concentration reproduces
+  to three sig figs (eff support **152.11 = 152.11** both seeds; top-32 0.533/0.532;
+  eff by pos 20.41–20.45 / 133.23–133.37 / 281.20–281.46); depth-drift continues
+  (eff 52.73 at d=16, 46.6→50.2→52.7). Selection gaps at fresh seeds +10.0/+6.0
+  (d=16) and +7.6/+5.2 (ctx=512). Eight-model full-acc set 0.1571–0.1620.
+  Barrier (e): this round closed the grid's last two single-seed cells; honest
+  remaining non-threatening: ctx=512 at d=8/16 (unmeasured), d=8 @ ctx=256 s0
+  corner, ctx=1024 margin re-check.
+  Open: ctx=1024 (margin-erosion check); ctx=512 at d=8/16; d=8 @ ctx=256 s0
+  corner; carry chain at scale (the frontier).
 
-Assessment v35. 35 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30, NET-31, NET-32, NET-33, NET-34, NET-35).
+Assessment v36. 36 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30, NET-31, NET-32, NET-33, NET-34, NET-35, NET-36).
