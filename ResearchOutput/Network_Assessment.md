@@ -1134,5 +1134,25 @@ dense-EOS law are the open questions. Paper 69, issue #120.
   REAL-SCALE transfer (now with a concrete protocol); clean post-fine-tune coord
   readout (confirm stop-routing); dip distribution; minimal conversion budget at
   k=2; pad384-hybrid parity.
+- NET-33 (issue #140): THE-ATTENTION-COST-LAW-IS-SEED-ROBUST — the barrier-(e)
+  check exactly requested by NET-20's declared gap ("a seed-1 ctx=256 re-run
+  would strengthen"). Byte-identical harness to NET-15/20 (CausalTF d=4, dm=64,
+  4 heads, Gutenberg corpus, 2000 AdamW steps) at **seed=1**, at BOTH ctx=128
+  and ctx=256 (ALL_DONE_NET33). k* is EXACT at the second seed: k*(s1,128)=16
+  (k=8 0.973 ✗, k=16 0.987 ✓) and k*(s1,256)=32 (k=16 0.973 ✗, k=32 0.990 ✓) —
+  matching s0 (16/32) and the prediction d·ctx/32 stated before the run ⇒ the
+  ∝-ctx proportionality is NOT a single-seed artifact. The knee is if anything
+  MORE favorable at s1 (retained@k* 0.987/0.990 vs 0.984/0.989; cleaner
+  fail/pass margin at ctx=128). Concentration reproduces to ≤3% relative (eff
+  support 46.41 vs 46.63 @128, 80.57 vs 82.94 @256; top-k masses within 0.009;
+  per-position monotone no-bounded-working-set shape preserved: 11.12/70.08/
+  150.44 vs 11.27/72.25/155.35 @256). Random-k selection gap is seed-stable
+  (within 0.5 pts at every comparable (k, ctx): +6.1/+8.3/+6.3 vs s0's
+  +6.2/+8.7/+6.0). Full-acc spread across the 4 (seed × ctx) models is
+  0.1571–0.1612 (±0.4% of mean) and does not shift k*. Barrier (e) CLEARED at
+  d=4 for the ∝-ctx leg; the diffuse-but-prunable structure is a property of
+  the task/data scale, not of one run. Honest remaining limit: the DEPTH leg
+  (k*=4d at d=8/16, NET-16/17) is still single-seed; k* exact at the sweep's
+  k-resolution. Open: d=8/16 seed-1 depth-leg points; a ctx=512 point.
 
-Assessment v32. 32 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30, NET-31, NET-32).
+Assessment v33. 33 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30, NET-31, NET-32, NET-33).
