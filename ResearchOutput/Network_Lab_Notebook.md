@@ -844,3 +844,65 @@ E=23/25; mechanistic read of k=1 (measure the learned EOS exclusive-dim
 coordinate at cure vs fail); real-scale transfer. Paper 71, issue #122. Now 27
 network experiments. Assessment v27. Script: /tmp/exp_net_eos_shape.py; log:
 /tmp/net27.log.
+
+---
+
+## Part 28 — NET-28: EOS-Width Knee at k=3 + Boundary Signal Is Not the Failure Locus
+
+**Round-net-28.** Two open threads from NET-27, both closed in 18 arms
+(ALL_DONE_NET28, /tmp/exp_net_eos_knee.py, log /tmp/net28.log): (1) the knee
+inside (21,24) — Part A, E=23 (k=3) and E=25 (k=5) × seeds 8–13, seed-paired
+with NET-27 (width the only variable); (2) the mechanistic read of the k=1
+fragility — Part B, E=21 × 6 FRESH seeds (14–19), each printing the trained
+EOS exclusive coordinate eos[20] (EOSCOORD). Architecture byte-identical to
+NET-26/27 (EOSWidthGRU, GRUCell(384→192), only trainable EOS width varies).
+
+**Part A — the knee.** E=23 **6/6** and E=25 **6/6** clean cures (all n=8 full
+= 1.0000). P(cure) first reaches 100% at **k=3 (E=23)** — refined from NET-27's
+"E=24 is the current first all-cure width". Full merged ramp: k=0 → 25% (12
+samples), k=1 → 17–33% (12 samples), k=2 → 83%, **k=3 → 100%**, k=4 → 100%,
+k=5 → 100%, k≥8 → 100% (E≥28 now 26/26).
+
+**Part B — the k=1 mechanism (coordinate-dropout REFUTED).** eos[20] across
+the 6 fresh E=21 arms: {cure +0.778, near-cure −0.912, FAIL −0.672, partial
++0.771, FAIL +0.812, partial +0.846}. **Pinned at |0.67–0.91| in ALL outcomes,
+cure and fail alike** — an order above the mean digit-subspace coordinate
+(0.17–0.25), ~3–5× the digit max. Prediction A ("the optimizer drops the
+exclusive coordinate → silent E=20 fallback") is REFUTED: the boundary signal
+is always present. The k=1 fragility is DOWNSTREAM of the EOS parameter — with
+one exclusive dim the boundary step perturbs the hidden state along a single
+direction, and whether BPTT-through-time shapes W_hh/W_ih so that direction
+drives the hidden state back into the generalizing manifold at depth is
+seed-fragile. k≥3 gives three+ independent boundary directions → robust
+recovery (a *dimensionality of the boundary lever*). Exclusivity ratio leans
+the same way (fails 1.30/1.78 vs cures 1.73/2.24) but overlaps at n=6 —
+flagged, not asserted.
+
+**Redundancy picture.** Every cure at k≥3 pins ALL its exclusive coords
+(E=23: |0.52–0.66|; E=25: |0.46–0.55|), dominant over the digit subspace
+(0.24–0.48). Exclusive capacity is used, not idle.
+
+**Findings:**
+1. **THE KNEE IS AT k=3.** P(cure) first reaches 100% at E=23; confirmed at
+   k=4/5/8. No width in (20,23] is a sharp threshold — a crossing of a
+   monotone curve.
+2. **THE BOUNDARY SIGNAL IS PRESENT IN FAILURES (coordinate-dropout REFUTED).**
+   eos[20] pinned |0.67–0.91| in all 6 fresh E=21 arms regardless of outcome;
+   failures do NOT fall back to the E=20 input.
+3. **THE FAILURE LOCUS IS DOWNSTREAM OF THE EOS PARAMETER.** k=1 = one boundary
+   direction the recurrence must learn to use for depth-recovery — a
+   dimensionality/fragility statement, not a presence/absence one. k=3+ =
+   reliable.
+4. **ALL EXCLUSIVE CAPACITY IS USED IN CURES** (k=3/5 cures pin every coord,
+   dominant over digit subspace) — redundant boundary channels are
+   load-bearing.
+
+**Verdict:** NET-27's two open questions answered. Knee: k=3 (E=23). Mechanism:
+Prediction B — the k=1 fragility is in the recurrent dynamics, not the EOS
+parameter; the design rule sharpens to ≥3 exclusive dims (k=3 6/6, k=2 5/6
+near-robust, k=1 17–33%). Barrier (e) is handled two ways (paired seeds 8–13
+for the knee vs NET-27; fresh seeds 14–19 for the mechanism). Open: a causal
+freeze-eos[20] test at a k=3 cure; k=3 rule transfer to the real causal LM;
+~24 more E=21 arms for the exclusivity-ratio trend. Paper 72, issue #123. Now
+28 network experiments. Assessment v28. Script: /tmp/exp_net_eos_knee.py; log:
+/tmp/net28.log.

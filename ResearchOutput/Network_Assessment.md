@@ -1011,4 +1011,25 @@ dense-EOS law are the open questions. Paper 69, issue #120.
   E21→E22 P-jump alone not significant (Fisher ≈0.24); the law rests on the
   monotone ordering + merged anchors.
 
-Assessment v27. 27 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27).
+- NET-28 closed NET-27's two open threads in 18 arms (ALL_DONE_NET28,
+  /tmp/exp_net_eos_knee.py): (1) the KNEE inside (21,24) — Part A, E=23 (k=3)
+  and E=25 (k=5) × seeds 8–13, seed-paired with NET-27 (width the only
+  variable): both 6/6 clean cures → P(cure) first reaches 100% at k=3 (E=23),
+  refined from NET-27's "E=24 is the current first all-cure width"; full
+  merged ramp k=0 → 25%, k=1 → 17–33%, k=2 → 83%, k=3+ → 100% (E≥28 now
+  26/26). (2) The k=1 MECHANISM — Part B, E=21 × 6 FRESH seeds (14–19), each
+  printing the trained EOS exclusive coordinate eos[20]: pinned at |0.67–0.91|
+  in ALL outcomes (cure +0.778, near-cure −0.912, fails −0.672/+0.812,
+  partials +0.771/+0.846) → the coordinate-dropout mechanism (Prediction A,
+  "optimizer drops the exclusive dim → silent E=20 fallback") is REFUTED; the
+  boundary signal is always present and the k=1 fragility is DOWNSTREAM in the
+  recurrent dynamics (one boundary direction is a thin lever for shaping a
+  192-dim hidden-state trajectory at depth; k≥3 gives independent directions
+  → robust). Exclusivity ratio leans the same way (fails 1.30/1.78 vs cures
+  1.73/2.24) but overlaps at n=6 — flagged, not asserted. Redundancy: every
+  k=3/5 cure pins ALL exclusive coords (|0.46–0.66|), dominant over digit
+  subspace (0.24–0.48) — exclusive capacity is load-bearing, not idle. Design
+  rule sharpens to ≥3 exclusive dims (k=3 6/6, k=2 5/6 near-robust, k=1
+  17–33%). Pooled E=21 = 12 samples, P(≥0.99) 2/12, median ≈0.68.
+
+Assessment v28. 28 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28).

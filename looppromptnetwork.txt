@@ -28,7 +28,33 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # LAB PROTOCOL (same rigor as the factoring lab): exact measurable laws over a clean
 # hypothesis, honest negative results recorded, all 8 barriers checked every iteration,
 # commit+push each iteration with Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>.
-# Status: NET-27 done (issue #122): EOS-WIDTH-SHIFT-IS-A-MONOTONE-RAMP — the
+# Status: NET-28 done (issue #123): EOS-WIDTH-KNEE-AT-K=3 +
+# THE-BOUNDARY-SIGNAL-IS-NOT-THE-FAILURE-LOCUS — closes both of NET-27's open
+# threads (18 arms, ALL_DONE_NET28, /tmp/exp_net_eos_knee.py). Part A (knee):
+# E=23 (k=3) and E=25 (k=5) × seeds 8–13, SEED-PAIRED with NET-27 (width the
+# only variable): both 6/6 clean cures (n=8 full = 1.0000 ×6) ⇒ P(cure) first
+# reaches 100% at k=3 (E=23 — refines NET-27's "E=24 is the current first
+# all-cure width"). MERGED ramp: k=0 25% (12 samples), k=1 17–33% (12
+# samples), k=2 83%, k=3 100%, k=4 100%, k=5 100%, k≥8 100% (E≥28 now 26/26).
+# Part B (mechanism): E=21 × 6 FRESH seeds 14–19 with EOSCOORD readouts — the
+# trained EOS exclusive coordinate eos[20] is pinned at |0.67–0.91| in ALL
+# outcomes (cure +0.778, near-cure −0.912, fails −0.672/+0.812, partials
+# +0.771/+0.846), ~3–5× the digit-subspace max ⇒ the coordinate-dropout
+# mechanism (Prediction A: "optimizer drops the exclusive dim → silent E=20
+# fallback") is REFUTED. The boundary signal is always present; the k=1
+# fragility is DOWNSTREAM in the recurrent dynamics — one boundary direction
+# is a thin lever for shaping a 192-dim hidden-state trajectory at depth;
+# k≥3 gives independent directions → robust recovery (dimensionality of the
+# boundary lever). Exclusivity ratio leans the same way (fails 1.30/1.78 vs
+# cures 1.73/2.24) but overlaps at n=6 — flagged, not asserted. Redundancy:
+# every k=3/5 cure pins ALL its exclusive coords (|0.46–0.66|), dominant over
+# digit subspace (0.24–0.48) — exclusive capacity is load-bearing, not idle.
+# DESIGN RULE sharpens to ≥3 exclusive dims for a final-step boundary token
+# (k=3 6/6, k=2 5/6 near-robust, k=1 17–33%). Pooled E=21 = 12 samples,
+# P(≥0.99) 2/12, median ≈0.68. Open: causal freeze-eos[20] test at a k=3
+# cure; k=3 rule transfer to the real causal LM's final step; ~24 more E=21
+# arms for the exclusivity-ratio trend. Paper 72, log /tmp/net28.log.
+# PREVIOUS STATUS — NET-27 done (issue #122): EOS-WIDTH-SHIFT-IS-A-MONOTONE-RAMP — the
 # P(cure) shift inside (20,28] is a monotone reliability ramp, NOT a sharp
 # boundary; the FIRST exclusive dim is NOT sufficient (refines NET-26's
 # distinctness law). 24 arms (byte-identical EOSWidthGRU, E ∈ {21,22,24,28} ×
@@ -319,17 +345,21 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # credit-assignment depth-immunity HOLDS at scale — 9/9 fixed-n masters at every
 # depth, 9/9 length-gen at chance). Depth axis 10 iterations, speed 5,
 # compression 4, carry-wall SOLVED at toy level (NET-24) + cure DISSECTED
-# (NET-25) + threshold CORRECTED (NET-26) + ramp MAPPED (NET-27). Next round:
+# (NET-25) + threshold CORRECTED (NET-26) + ramp MAPPED (NET-27) + knee AND
+# k=1 mechanism CLOSED (NET-28). Next round:
 # fresh axis
 # or strengthen a law — candidates:
 # (1) REAL-SCALE CARRY-WALL TRANSFER (the frontier opened by NET-24's cure,
-# refined by NET-25): does a recurrence/state-space-augmented answer path give
-# a real causal LM length-general computation — with a WELL-CONDITIONED DENSE
-# BOUNDARY (final-step) input, per NET-25? the most load-bearing open question;
-# (1b) the knee of the EOS-width ramp inside (21,24) — E=23/25 (NET-27 left it
-# 1-point undersampled), the mechanistic k=1 read (learned EOS exclusive-dim
-# coordinate at cure vs fail), and the explicit pad384-vs-NET-24-hybrid parity
-# check (a dense-EOS raw GRU should match the hybrid exactly);
+# refined by NET-25, now with the NET-28 design rule ≥3 exclusive dims): does
+# a recurrence/state-space-augmented answer path give a real causal LM
+# length-general computation — with a WELL-CONDITIONED DENSE BOUNDARY
+# (final-step) input with ≥3 exclusive dims, per NET-25/28? the most
+# load-bearing open question;
+# (1b) the causal freeze-eos[20] test at a k=3 cure (isolate the boundary
+# channel's contribution directly — zero/project-out the exclusive coords of a
+# trained E=23 cure and measure the degradation), and the explicit
+# pad384-vs-NET-24-hybrid parity check (a dense-EOS raw GRU should match the
+# hybrid exactly);
 # (2) attention-cost law robustness (seed-1 ctx=256 / ctx=512 to confirm the
 # k* ∝ ctx proportionality at a second seed — currently 1 seed per point);
 # (3) load-bearing depth (non-positional stack content with causal masking,
@@ -337,4 +367,4 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # curvature); (5) any novel hypothesis — the loop should EXPLORE ALL axes, not
 # settle.
 # Compression 4 real-scale iterations (exhausted at d=4, floor NOT depth-robust
-# at d=8), speed 5, depth 10, carry-wall mechanism 8 (NET-19/21/22/23/24/25/26/27).
+# at d=8), speed 5, depth 10, carry-wall mechanism 9 (NET-19/21/22/23/24/25/26/27/28).
