@@ -1252,5 +1252,39 @@ dense-EOS law are the open questions. Paper 69, issue #120.
   is wider at long context than at 128/256.
   Open: ctx=1024 second seed; ctx=512 at d=8/16; d=8 @ ctx=256 s0 corner; carry
   chain at scale (the frontier).
+- **NET-38 (issue #145) — PRODUCT-FORM-CONFIRMED-DEPTH-LEG-SUB-LINEAR-AT-LONG-
+  CONTEXT: the attention-cost law's first discriminating corner (d=8, ctx=512),
+  where 4d=32, ctx/8=64, and d·ctx/32=128 ALL disagree — and the knee lands at
+  NONE of them.** The first cell where the exact k* deviates from d·ctx/32, in the
+  SAFE direction. CausalTF **d=8, seed=1, ctx=512** (byte-identical harness, 2000
+  steps, 3889s train; 1171 windows, 10% held out; ALL_DONE_NET38,
+  /tmp/exp_net_attncost_d8_ctx512.py). Prediction stated before the run: k* = 128
+  (d·ctx/32 = 8·512/32). Measured **k* = 96**: k=16 0.915 ✗, k=32 0.952 ✗ (4d —
+  depth-only rule REFUTED by 18 SE), k=64 0.979 ✗ (ctx/8 — context-only rule
+  marginal, ~1 SE below bar), k=96 **0.990 ✓**, k=128 0.995 ✓ (d·ctx/32 passes
+  but is NOT minimal), k=192 0.995, k=256 0.999, k=384 0.998 (loss 5.1356 ≈ full
+  5.1355). ⇒ the single-lever rules are REFUTED — depth demonstrably raises the
+  required k above the d=4 context-only value (64): the levers act
+  MULTIPLICATIVELY — but the exact product value 128 is not the minimum: the law
+  is a **proven-safe upper bound** at high (depth × context), over-pruneable
+  never under. **SUB-LINEAR DEPTH LEG AT LONG CONTEXT**: at ctx=512, doubling d
+  (4→8) raises k* 64→96 = ×1.5, not the ×2.0 linear law (which held exactly at
+  ctx=128 across d=4/8/16) — the retrieval load is shared across the deeper stack
+  at long context; cross-depth retained shift confirms direction robustly (k=64:
+  0.983/0.985 d=4 two seeds → 0.979 d=8, ≈3 SE). Deployable claim intact with
+  margin: ≥4× speedup at d=8 guaranteed, **5.3× actually available** (512/96).
+  Concentration keeps diffusing superlinearly — eff support **177.80** (d=8:
+  50.16 @128 → 91.49 @256 → 177.80 @512, ×1.82/×1.94; 152.11 d=4 ctx=512 → 177.80
+  d=8, mild depth spread); top-64 0.634, top-128 0.806; per-position eff
+  23.09/156.01/332.15 — NO bounded working set. Selection importance survives —
+  random-k gaps +6.4 (k=64) / +3.7 (k=128). Barrier (e): the round's honest limit
+  — the cell is single-seed AND the knee is soft (k=64 ~1 SE below bar; a
+  re-measure could read 64), so the ROBUST claims are the single-lever refutation
+  (k=32, −18 SE) and the depth right-shift of the retained curve (≈3 SE), NOT the
+  exact coefficient; the sub-linear-depth claim needs a second seed at this
+  corner (the immediate next round).
+  Open: **d=8 ctx=512 second seed (sub-linear depth leg — highest value)**;
+  ctx=1024 second seed; ctx=512 at d=16; d=8 @ ctx=256 s0 corner; carry chain at
+  scale (the frontier).
 
-Assessment v37. 37 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30, NET-31, NET-32, NET-33, NET-34, NET-35, NET-36, NET-37).
+Assessment v38. 38 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30, NET-31, NET-32, NET-33, NET-34, NET-35, NET-36, NET-37, NET-38).
