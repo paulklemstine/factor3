@@ -1226,5 +1226,31 @@ dense-EOS law are the open questions. Paper 69, issue #120.
   corner, ctx=1024 margin re-check.
   Open: ctx=1024 (margin-erosion check); ctx=512 at d=8/16; d=8 @ ctx=256 s0
   corner; carry chain at scale (the frontier).
+- **NET-37 (issue #144) — THE-ATTENTION-COST-LAW'S-KNEE-SURVIVES-8×-CONTEXT:
+  k*=d·ctx/32 holds at ctx=1024 AND the margin-erosion caveat is RESOLVED.**
+  The P3 caveat NET-35 flagged (ctx=512 pass margin 0.003 ≈ 2 SE) demanded a
+  re-check at 1024 — the retained-curve depression extrapolates to ~0.97–0.98
+  there, right at the bar. CausalTF **d=4, seed=1, ctx=1024** (byte-identical
+  harness, 2000 steps, 5516s train; 585 windows, 10% held out; ALL_DONE_NET37,
+  /tmp/exp_net_attncost_ctx1024.py). Prediction stated before the run: k* = 128
+  (d·ctx/32 = 4·1024/32). EXACT — P1 OUTCOME: k=32 0.945 ✗, k=64 0.968 ✗, k=96
+  0.977 ✗, k=128 **0.986 ✓** (k=192 0.991, k=256 0.993, k=384 0.996, k=512 1.000
+  [re-norm MC saturation], k=768 0.999) ⇒ the law k* = d·ctx/32 holds at a fixed
+  seed across an **8× context range (128 → 1024)**, every doubling exact, no
+  ceiling. **MARGIN-EROSION REFUTED**: the pass margin chain at d=4 s1 across
+  contexts is **+0.007 (128) / +0.010 (256) / +0.003 (512) / +0.006 (1024)** —
+  NOT monotonic, the 512 dip was a fluctuation and the margin RECOVERED at 1024;
+  the knee is exact at every doubling, the retained curve is still somewhat lower
+  at longest context but the knee is unaffected. Concentration diffusion
+  continues superlinearly — eff support **291.16** (46.4 → 80.6 → 152.1 → 291.2,
+  ×1.74/×1.89/×1.91); per-position eff 37.56/255.76/542.05 — NO bounded working
+  set at 1024; top-128 mass 0.702. Selection importance survives — random-k gaps
+  +5.9 (k=64) / +4.6 (k=128). Nine-model full-acc set 0.1571–0.1620 (0.1594 at
+  1024), k*-irrelevant. Barrier (e): the margin question answered by the
+  FOUR-point same-seed chain (the 512 dip shown to be a fluctuation); honest
+  limit — the ctx=1024 cell is single-seed and the knee fluctuation band (±0.003)
+  is wider at long context than at 128/256.
+  Open: ctx=1024 second seed; ctx=512 at d=8/16; d=8 @ ctx=256 s0 corner; carry
+  chain at scale (the frontier).
 
-Assessment v36. 36 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30, NET-31, NET-32, NET-33, NET-34, NET-35, NET-36).
+Assessment v37. 37 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30, NET-31, NET-32, NET-33, NET-34, NET-35, NET-36, NET-37).
