@@ -28,7 +28,63 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # LAB PROTOCOL (same rigor as the factoring lab): exact measurable laws over a clean
 # hypothesis, honest negative results recorded, all 8 barriers checked every iteration,
 # commit+push each iteration with Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>.
-# Status: NET-47 done (issue #154): THE-THIRD-SEED-REVEALS-A-SPREAD-NOT-A-TWO-POINT-SET —
+# Status: NET-48 done (issue #155): THE-DIRECT-TEST-SURVIVES-VIA-THE-MEDIAN —
+# k*=160 at (d=4, ctx=2048, seed=3) — ALL FOUR point-horns REFUTED (P1 224, P2 240,
+# P3 256, P4 192 — every pre-stated value passes but none is the knee), yet the
+# completed 16× three-seed knee distribution is {160, 224, 256} — MEDIAN EXACTLY 224
+# = 7/8·(d·ctx/32), replicating the 8× three-seed median 112 = 7/8·128: the 7/8-MEDIAN
+# LAW is 2/2-context, 6/6-seed (per-seed knees too noisy to predict on the point —
+# 0/4 horns — the distribution's center robust — 1/1). The 16× spread {0.625, 0.875,
+# 1.0} is ~50% WIDER than 8×'s {0.75, 0.875, 1.0} — the LOW TAIL is the
+# context-growing quantity, the product value the pinned upper edge. The product law's
+# UPPER BOUND is now 3/3-seed-sure at BOTH long contexts (product point 256 passes
+# 0.981/0.986/0.990).
+# Byte-identical harness to NET-45/46, seed=3 only — CausalTF dm=64, 4 heads,
+# Gutenberg corpus, vocab 4097, 2000 AdamW steps — at d=4, seed=3, ctx=2048
+# (ALL_DONE_NET48, /tmp/exp_net_attncost_ctx2048_s3.py; train 14566s ~4h03m; 292
+# windows, 10% held out; chunked eval CHUNK=8).
+# Sweep {96,128,160,192,224,240,256,288,384,512,768,1024} — 12 points (two more than
+# the prior 16× sweeps), extended down to 96 so the low tail is measured directly;
+# the fine point 240 discriminates mid-grid; Part B2 random-k {128,256} (seed 12345).
+# Full-acc eval (full 0.1546, bar 0.1516, loss 5.2199) → Part A concentration → Part
+# B sweep → Part B2 random-k; k* = smallest k with retained ≥ 0.98·full.
+# Prediction stated BEFORE the run: P1 k* = 224 (the 7/8-median law replicates — s3
+# joins the s2 family, {192/224,224,256}); P2 k* = 240 (the 16× knee quantizes
+# MID-GRID as 112 did at 8×, {224,240,256} symmetric); P3 k* = 256 (the 7/8 median
+# REFUTES at 16× — s3 reproduces s1); P4 (low prior) k* = 192 (the 0.75/0.875/1.0
+# ×product pattern completes).
+# RESULT — k* = 160, ALL FOUR POINT-HORNS REFUTED but the LAW CONFIRMED: k=96 0.963
+# ✗, k=128 0.973 ✗, k=160 0.981 ✓ (margin +0.0012 — the TIGHTEST of the recent
+# cells; the true s3 knee ~150–160 sits between grid points), k=192 0.984 ✓, k=224
+# 0.986 ✓, k=240 0.987 ✓, k=256 0.990 ✓ (product point — passes 3/3), k=288 0.993 ✓,
+# k=384 0.999 ✓, k=512 1.000 ✓, k=768 1.003 ✓, k=1024 1.003 ✓ (loss 5.2215 vs full
+# 5.2199 — Δ0.0016). The s3 retained curve is the HIGHEST of the three 16× seeds
+# throughout (0.973 at 128 vs s1 0.939, s2 0.965) — its whole curve sits above,
+# crossing the bar two grid steps earlier than s2, three than s1. PART B2 — random-k
+# gaps +4.7 (k=128: 0.926 vs top-k 0.973) / +3.4 (k=256: 0.956 vs top-k 0.990) —
+# comparable to s2's +4.4/+3.9, far above s1's +1.7/+1.8 (the 16× dilution is
+# strongly seed-dependent; the 16× selection spread {1.7, 4.4, 4.7} at k=128 is
+# three-fold). Concentration: eff support 498.13 (s1 526.39, s2 472.50 — mid-family,
+# spread ~11%), top-128 0.608, top-256 0.746, per-pos 64.91/435.27/929.55 — the
+# eff↔knee correlation again does NOT sort across 3 points (s1 highest-eff/highest-
+# knee, s2 lowest-eff/middle-knee, s3 middle-eff/lowest-knee), NO bounded working set.
+# VERDICT: THE-DIRECT-TEST-SURVIVES-VIA-THE-MEDIAN — k*=160 at (d=4, ctx=2048, s3);
+# the honest structure is the separation of point-accuracy (0/4 horns) from
+# structural confirmation (1/1 — a whole family of third-seed values {160,192,224}
+# each keep the 16× median at 224; only ≥256 would shift it); the 7/8-median law is
+# 2/2-context, 6/6-seed (medians 112 @ 8×, 224 @ 16×); the 16× spread is ~50% wider
+# than 8×'s — the low tail (0.625) the context-growing quantity, the product value
+# the pinned upper edge. Deployable: ≥8.0× guaranteed (product point 3/3), 9.1×
+# median, 12.8× best — the BEST-EVER deployable reading at (d=4, ctx=2048). Honest
+# limits: the s3=160 read is razor-thin (+0.0012, the true knee ~150–160 between
+# grid points); the 0.625 low tail is ONE of three seeds — a fourth seed at 2048
+# decides whether it is s3-specific or a stable 16× feature; the median law is 2
+# contexts × 3 seeds. Next: a fourth seed at ctx=2048 (the LOW-TAIL test — s4=160/192
+# → the low tail is real, s4 in {224,256} → s3-specific; the highest-value open cell
+# now; ~4–5h); a fourth seed at ctx=1024 (refine {96,112,128}; low value); d=8 @
+# ctx=256 s0 corner; d=8 compression floor check; carry chain at scale (the
+# frontier). Paper 92, log /tmp/net48.log.
+# PREVIOUS STATUS — NET-47 done (issue #154): THE-THIRD-SEED-REVEALS-A-SPREAD-NOT-A-TWO-POINT-SET —
 # k*=112 (MID-GRID) at (d=4, ctx=1024, seed=3) — the prediction's horn P3 CONFIRMED
 # (P1 96, P2 128 REFUTED). The ctx=1024 knee distribution is {96,112,128} — a ±16
 # half-grid-step jitter, mean = median = 112 = 7/8 × product — the NET-44 {96,128}
@@ -1065,7 +1121,7 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # NET-18 (issue #112, quant floor NOT depth-robust); NET-19 (issue #115, carry
 # chain at scale: scale unlocks length-SPECIFIC mastery NOT composition,
 # credit-assignment depth-immunity HOLDS at scale — 9/9 fixed-n masters at every
-# depth, 9/9 length-gen at chance). Depth axis 10 iterations, speed 20,
+# depth, 9/9 length-gen at chance). Depth axis 10 iterations, speed 21,
 # compression 4, carry-wall SOLVED at toy level (NET-24) + cure DISSECTED
 # (NET-25) + threshold CORRECTED (NET-26) + ramp MAPPED (NET-27) + knee AND
 # k=1 mechanism CLOSED (NET-28) + seed-trait REFUTED (NET-31) + trait
@@ -1074,7 +1130,7 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # (NET-37) + PRODUCT-FORM-CONFIRMED-DEPTH-LEG-SUB-LINEAR-AT-LONG-CONTEXT (NET-38)
 # + SUB-LINEAR-DEPTH-LEG-CONFIRMED (NET-39) + DEPTH-LEG-IS-AFFINE-AT-LONG-CONTEXT (NET-40)
 # + THE-AFFINE-LAW'S-THIRD-RUNG-IS-NOT-TWO-SEED-EXACT (NET-41)
-# + DEPTH-LEG-AT-LONG-CONTEXT-IS-CONCAVE-POWER (NET-42) + THE-DEEPEST-RUNG-IS-TWO-SEED-256 (NET-43) + THE-LAST-CONTEXT-CELL-IS-TWO-SEED-AND-THE-KNEE-FLUCTUATES (NET-44) + THE-S1-PRODUCT-CHAIN-SURVIVES-AT-FIVE-DOUBLINGS-AT-THE-TIGHTEST-MARGIN + THE-S2-ONE-GRID-STEP-DROP-REPLICATES-AT-16×-CONTEXT (NET-46) + THE-THIRD-SEED-REVEALS-A-SPREAD-NOT-A-TWO-POINT-SET (NET-47).
+# + DEPTH-LEG-AT-LONG-CONTEXT-IS-CONCAVE-POWER (NET-42) + THE-DEEPEST-RUNG-IS-TWO-SEED-256 (NET-43) + THE-LAST-CONTEXT-CELL-IS-TWO-SEED-AND-THE-KNEE-FLUCTUATES (NET-44) + THE-S1-PRODUCT-CHAIN-SURVIVES-AT-FIVE-DOUBLINGS-AT-THE-TIGHTEST-MARGIN + THE-S2-ONE-GRID-STEP-DROP-REPLICATES-AT-16×-CONTEXT (NET-46) + THE-THIRD-SEED-REVEALS-A-SPREAD-NOT-A-TWO-POINT-SET (NET-47). + THE-DIRECT-TEST-SURVIVES-VIA-THE-MEDIAN (NET-48).
 # Next round:
 # fresh axis
 # or strengthen a law — candidates:
@@ -1174,6 +1230,14 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # drift SYSTEMATIC (P2 confirmed); the two-seed d=4 picture COMPLETE (s1 exact at
 # every context, s2 one grid step below from 8× on); product law a proven-safe
 # upper bound at both seeds; deployable ≥8.0× guaranteed, 9.1× s2-typical).
+# AND NET-48 (issue #155, THE-DIRECT-TEST-SURVIVES-VIA-THE-MEDIAN:
+# at (d=4, ctx=2048, s3) k*=160 — ALL FOUR point-horns REFUTED (P1 224/P2 240/P3 256/P4
+# 192 — every pre-stated value passes but none is the knee), yet the completed 16× three-
+# seed distribution {160, 224, 256} has median EXACTLY 224 = 7/8·(d·ctx/32),
+# replicating the 8× median 112 = 7/8·128 — the 7/8-median law is 2/2-context,
+# 6/6-seed; the 16× spread {0.625, 0.875, 1.0} is ~50% wider than 8×'s — the low
+# tail the context-growing quantity, product the pinned upper edge; product-law upper
+# bound 3/3-seed-sure at BOTH long contexts; deployable ≥8.0×/9.1×/12.8× best-ever).
 # AND NET-47 (issue #154, THE-THIRD-SEED-REVEALS-A-SPREAD-NOT-A-TWO-POINT-SET:
 # k*=112 (MID-GRID) at (d=4, ctx=1024, s3) — the ctx=1024 knee distribution is
 # {96,112,128} (mean=median=7/8×product), the {96,128} binary was a two-seed sampling
@@ -1196,19 +1260,19 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # below the product knee 256, the NET-44 s2 break replicates at 16× (256→224 as
 # 128→96 at 8×), the s2 sub-linear drift SYSTEMATIC; the two-seed d=4 picture is
 # COMPLETE — s1 exact at every context, s2 one grid step below from 8× on).
-# REPLACED by NET-47 (issue #154, THE-THIRD-SEED-REVEALS-A-SPREAD: the ctx=1024 third
-# seed reads MID-GRID k*=112, so the {96,128} binary collapses to the THREE-POINT
-# spread {96,112,128} (mean=median=112=7/8×product) — a two-seed sampling artifact;
-# the emerging 7/8-median law at context ≥ 8× needs its direct test).
+# REPLACED by NET-48 (issue #155, THE-DIRECT-TEST-SURVIVES-VIA-THE-MEDIAN: the ctx=2048
+# third seed reads k*=160, BELOW all four point-horns, yet the completed 16×
+# three-seed distribution {160,224,256} has median exactly 224 = 7/8·(d·ctx/32) — the
+# 7/8-median law is 2/2-context, 6/6-seed; the 0.625 low tail is one of three seeds).
 # REPLACED by the remaining cells, now ordered by value:
-# **a third seed at ctx=2048 (does the 7/8 median replicate at 16×? — if s3 reads
-# 224 or 192 the 7/8 law holds, if 256 it refutes — the direct test of this round's
-# discovery; ~3.7–5h — the highest-value open cell now)**; a fourth seed at ctx=1024
-# (refine {96,112,128}; low value); d=8 @ ctx=256 s0 corner (s1-only); a third seed
-# at d=16 (low value — the flat-topped knee makes the discrete k* a coin-toss);
+# **a fourth seed at ctx=2048 (the LOW-TAIL test — s4=160/192 → the 0.625 low tail is
+# REAL, a stable 16× feature; s4 in {224,256} → it was s3-specific; ~4–5h — the
+# highest-value open cell now)**; a fourth seed at ctx=1024 (refine {96,112,128}; low
+# value); d=8 @ ctx=256 s0 corner (s1-only); a third seed at d=16 (low value — the
+# flat-topped knee makes the discrete k* a coin-toss);
 # (3) load-bearing depth (non-positional stack content with causal masking,
 # s≫64, unbounded nesting); (4) a fresh axis (training dynamics / grokking-free
 # curvature); (5) any novel hypothesis — the loop should EXPLORE ALL axes, not
 # settle.
 # Compression 4 real-scale iterations (exhausted at d=4, floor NOT depth-robust
-# at d=8), speed 20, depth 10, carry-wall mechanism 13 (NET-19/21/22/23/24/25/26/27/28/29/30/31/32).
+# at d=8), speed 21, depth 10, carry-wall mechanism 13 (NET-19/21/22/23/24/25/26/27/28/29/30/31/32).

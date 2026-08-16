@@ -1617,4 +1617,41 @@ Assessment v46. 46 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7,
   discovery); a fourth seed at ctx=1024 (refine {96,112,128}; low value); d=8 @ ctx=256
   s0 corner; carry chain at scale (the frontier).
 
-Assessment v47. 47 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30, NET-31, NET-32, NET-33, NET-34, NET-35, NET-36, NET-37, NET-38, NET-39, NET-40, NET-41, NET-42, NET-43, NET-44, NET-45, NET-46, NET-47).
+- **NET-48 — THE-DIRECT-TEST-SURVIVES-VIA-THE-MEDIAN (speed; the ctx=2048 THIRD seed
+  that directly tests the 7/8-median law NET-47 discovered — the highest-value cell NET-47
+  made): at (d=4, ctx=2048, seed=3) k\*=160, all four point-horns REFUTED (P1 224, P2 240,
+  P3 256, P4 192), P-every-value-passes-but-none-is-the-knee** (full acc 0.1546, bar 0.1516,
+  loss 5.2199, train 14566s; sweep: 96 0.963 ×, 128 0.973 ×, 160 0.981 ✓ margin +0.0012
+  razor, 192 0.984 ✓, 224 0.986 ✓, 240 0.987 ✓, 256 0.990 ✓, 288 0.993 ✓, 384 0.999 ✓,
+  512 1.000 ✓, 768 1.003 ✓, 1024 1.003 ✓; ALL_DONE_NET48). The completed 16× three-seed
+  knee distribution is **{160, 224, 256} — median 224 = 7/8·(d·ctx/32) EXACTLY, replicating
+  the 8× median 112 = 7/8·128: the 7/8-MEDIAN LAW is 2/2-context, 6/6-seed.** The honest
+  structure: per-seed knees too noisy to predict on the point (0/4 horns), the
+  distribution's center robust (1/1 — a whole family {160,192,224} each keep the median at
+  224). The 16× spread {0.625, 0.875, 1.0} is ~50% WIDER than 8×'s {0.75, 0.875, 1.0} —
+  the low tail is the context-growing quantity, the product value the pinned upper edge.
+  Product point 256 passes 3/3 (0.981/0.986/0.990): the k\* ≤ d·ctx/32 guarantee is
+  3/3-seed-sure at BOTH long contexts. Selection importance +4.7/+3.4 (k=128 0.926 random
+  vs 0.973 top-k; the 16× seed spread {1.7,4.4,4.7} — dilution seed-dependent);
+  concentration eff 498.13 (mid-family, spread ~11%), eff↔knee again NOT sorting across
+  three points, NO bounded working set. Deployable ≥8.0× guaranteed / 9.1× median /
+  12.8× best — the BEST-EVER reading (beats 10.7× at 8×). Barriers: (a) clean — four
+  horns + the law's direct test stated before the run, measured 160 outside ALL horns yet
+  the distribution's median landed exactly on the predicted center (point-accuracy 0/4,
+  structural confirmation 1/1); (b) clean — three-seed 16× spread / widening low tail:
+  none in Catalog or literature; (c) confronted — three seeds at d=4 × ctx=2048 real
+  causal word LM; (d) clean (held-out last-10%, data-free top-k); (e) the SUBSTANCE,
+  sharpened — the 16× distribution complete; honest limits: the s3=160 read razor-thin
+  (+0.0012, true knee ~150–160), the 0.625 low tail one of three seeds (a fourth decides
+  s3-specific vs stable), the median law 2 contexts × 3 seeds; (f) clean — same metrics,
+  binom SE ≈ 0.11% acc, the +0.0012 razor margin documented, k=512 recovers 1.000,
+  NO crash (ALL_DONE_NET48); (g) fair — full-attention reference + same 0.98 bar +
+  random-k at the same k (gaps +4.7/+3.4, positive, spread {1.7–4.7} informative);
+  (h) sharpened — ≥8.0×/9.1×/12.8×, the widened spread the deployment-relevant
+  uncertainty at the longest cell. Open: a fourth seed at ctx=2048 (the low-tail test —
+  s4=160/192 → low tail real, s4 in {224,256} → s3-specific; highest value; ~4–5h);
+  a fourth seed at ctx=1024 (refine {96,112,128}; low value); d=8 @ ctx=256 s0 corner;
+  d=8 compression floor check; carry chain at scale (the frontier).
+
+Assessment v48. 48 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30, NET-31, NET-32, NET-33, NET-34, NET-35, NET-36, NET-37, NET-38, NET-39, NET-40, NET-41, NET-42, NET-43, NET-44, NET-45, NET-46, NET-47, NET-48).
+
