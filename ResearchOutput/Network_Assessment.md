@@ -1417,4 +1417,50 @@ dense-EOS law are the open questions. Paper 69, issue #120.
   AND repairs the missing random-k control — highest value)**; ctx=1024 second
   seed; d=8 @ ctx=256 s0 corner; carry chain at scale (the frontier).
 
-Assessment v42. 42 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30, NET-31, NET-32, NET-33, NET-34, NET-35, NET-36, NET-37, NET-38, NET-39, NET-40, NET-41, NET-42).
+- **NET-43 — THE-DEEPEST-RUNG-IS-TWO-SEED-256 (speed; the second seed that
+  closes BOTH of NET-42's honest limits — the deepest rung's single-seed
+  status AND the missing random-k control; ALL_DONE_NET43, no crash): at
+  (d=32, ctx=512, seed=2) k* = **256 — EXACT reproduction of s1** (predicted
+  256 reproducing s1; concave power 24.7·d^(2/3) ≈ 249). Full acc 0.1350,
+  bar 0.1323, loss 5.6482, train 11563s (s1: 0.1353/5.6281/11113s). Sweep
+  {96,128,160,192,224,240,256,288,320,384,512} — NET-42's grid minus the
+  crashing k=768, plus the new k=240. Retained: k=96 0.893 ✗, k=128 0.919 ✗,
+  k=160 0.945 ✗, k=192 0.957 ✗, k=224 0.973 ✗, k=240 **0.978 ✗** (new — fails
+  ~0.2 SE below bar), k=256 **0.982 ✓**, k=288 0.984 ✓ (8d+32 passes but is
+  NOT minimal — affine still over-predicts by 11%), k=320 0.987 ✓, k=384 0.996
+  ✓, k=512 1.000 ✓ (loss 5.6482 = full exactly — product refuted by 2× at both
+  seeds). The s2 retained curve is uniformly ~0.02 LOWER than s1's below the
+  knee (0.893 vs 0.916 at k=96 … 0.973 vs 0.977 at 224) but converges AT the
+  knee — the retained curve seed-fluctuates, the knee does NOT (the OPPOSITE
+  of d=16, where the knee moved one grid step and the retained curve was
+  flat-topped). **PART B2 REPAIRED** — random-k control ran: k=256 0.956
+  (top-k 0.982) → gap +2.6; k=384 0.979 (top-k 0.996) → gap +1.7 — both
+  positive, selection importance survives at the deepest rung, narrowing
+  monotonically with depth (d=4 +5.3/+4.6 → d=8 +6.4/+3.7 → d=16 +3.4/+2.3 &
+  +6.0/+2.6 → d=32 +2.6/+1.7). **NET-42's two honest limits CLOSED**: (i) the
+  d=32 cell is now TWO-SEED with an exact knee (256, 256) — the
+  concave-power-2/3 rung (predicts 249) confirmed at the deepest point, the
+  two-seed knee bracket tightened to (240, 256], every ctx=512 rung now
+  two-seed at its knee (64,64 / 96,96 / 160,144 / 256,256); (ii) the missing
+  random-k control is measured (+2.6/+1.7). Concentration reproducible to
+  ~0.7% (eff 216.92 vs s1 218.46, top-256 0.922 vs 0.921, per-position
+  27.66/189.71/407.03 vs 27.81/190.90/409.08 — NO bounded working set, two
+  seeds). Deployable speedup at (d=32, ctx=512) = **2.0×** confirmed two-seed
+  (vs the 1.0× guarantee). Barriers: (a) clean — prediction (k\*=256) stated
+  before the run, a reproducibility test closing the documented gaps; (b)
+  clean — no depth-scaling law for data-free attention pruning in Catalog or
+  literature; (c) confronted — d=32 × ctx=512 real causal word LM, 4097 vocab,
+  held-out loss+acc; (d) clean (held-out last-10%, data-free top-k); (e) the
+  round's substance RESOLVED — two-seed exact knee (256,256), s2 bracket
+  (240, 256] tightens s1's (224, 256], exponent-2/3 fit robust to both seed
+  choices; (f) clean — same metrics, binom SE ≈ 0.15%, k=512 recovers full
+  loss exactly, NO crash (k=768 defect dropped, ALL_DONE_NET43 printed); (g)
+  now FAIR — full-attention reference + same 0.98 bar + the random-k control
+  at the same k (gaps +2.6/+1.7 positive, NET-42's barrier-(g) gap CLOSED);
+  (h) sharpened — deployable 2.0× at d=32 is two-seed, sub-linear depth leg
+  holds at both seeds, concave-power-2/3 deepest rung pinned at two seeds.
+  Open: **ctx=1024 second seed (closes the last context-extrapolation cell's
+  single-seed status)**; d=8 @ ctx=256 s0 corner; a third seed at d=16 (low
+  value — flat-topped knee); carry chain at scale (the frontier).
+
+Assessment v43. 43 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30, NET-31, NET-32, NET-33, NET-34, NET-35, NET-36, NET-37, NET-38, NET-39, NET-40, NET-41, NET-42, NET-43).

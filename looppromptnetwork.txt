@@ -28,7 +28,40 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # LAB PROTOCOL (same rigor as the factoring lab): exact measurable laws over a clean
 # hypothesis, honest negative results recorded, all 8 barriers checked every iteration,
 # commit+push each iteration with Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>.
-# Status: NET-42 done (issue #149): DEPTH-LEG-AT-LONG-CONTEXT-IS-CONCAVE-POWER
+# Status: NET-43 done (issue #150): THE-DEEPEST-RUNG-IS-TWO-SEED-256 — k*=256 at
+# (d=32, ctx=512) reproduces EXACTLY at seed=2, closing BOTH of NET-42's honest
+# limits (the deepest rung's single-seed status AND the missing random-k control).
+# Byte-identical harness to NET-42 — CausalTF dm=64, 4 heads, Gutenberg corpus,
+# vocab 4097, 2000 AdamW steps — at d=32, seed=2, ctx=512 (ALL_DONE_NET43,
+# /tmp/exp_net_attncost_d32_ctx512_s2.py; train 11563s; 1171 windows, 10% held
+# out). Sweep {96,128,160,192,224,240,256,288,320,384,512} — NET-42's grid MINUS
+# the crashing k=768 (redundant — k=512 already = 1.000) PLUS the new k=240;
+# Part B2 random-k (seed 12345) NOW RUNS. Per cell: full-acc eval (full 0.1350,
+# bar 0.1323, loss 5.6482 — s1: 0.1353/0.1326/5.6281) → Part A concentration →
+# Part B sweep → Part B2 random-k; k* = smallest k with retained ≥ 0.98·full.
+# Prediction stated BEFORE the run: k* = 256 (reproducing s1).
+# RESULT — k* = 256, EXACT reproduction: k=96 0.893 ✗, k=128 0.919 ✗, k=160
+# 0.945 ✗, k=192 0.957 ✗, k=224 0.973 ✗, k=240 0.978 ✗ (NEW — fails ~0.2 SE),
+# k=256 0.982 ✓, k=288 0.984 ✓ (8d+32 passes but NOT minimal — affine still
+# over-predicts by 11%), k=320 0.987 ✓, k=384 0.996 ✓, k=512 1.000 ✓ (loss
+# 5.6482 = full exactly — product refuted by 2× at both seeds). PART B2
+# REPAIRED — random-k gaps +2.6 (k=256) / +1.7 (k=384), positive — selection
+# importance survives at the deepest rung, narrowing with depth. Concentration
+# reproducible to ~0.7% (eff 216.92 vs 218.46, top-256 0.922 vs 0.921, per-pos
+# 27.66/189.71/407.03 vs 27.81/190.90/409.08 — NO bounded working set, two seeds).
+# VERDICT: THE-DEEPEST-RUNG-IS-TWO-SEED-256 — the concave-power law k* ≈
+# 24.7·d^(2/3) (predicts 249) has its deepest rung confirmed at two seeds
+# (256, 256 — within knee fuzz); the two-seed knee bracket tightens to (240,
+# 256]; EVERY ctx=512 rung is two-seed at its knee (64,64/96,96/160,144/256,256);
+# the product law refuted by 2× at both seeds; deployable 2.0× at d=32 confirmed
+# two-seed (vs the 1.0× guarantee). NET-42's barrier-(e) single-seed and
+# barrier-(g) missing-control gaps are BOTH CLOSED. Honest limits: NONE for this
+# cell — a clean two-seed reproduction with all controls measured.
+# Open: ctx=1024 second seed (closes the last context-extrapolation cell's
+# single-seed status — highest value); d=8 @ ctx=256 s0 corner; a third seed at
+# d=16 (low value); carry chain at scale (the frontier). Paper 87, log
+# /tmp/net43.log.
+# PREVIOUS STATUS — NET-42 done (issue #149): DEPTH-LEG-AT-LONG-CONTEXT-IS-CONCAVE-POWER
 # — k*=256 at (d=32, ctx=512, seed=1), the DISCRIMINATING depth rung that RESOLVES
 # NET-40/41's affine-vs-power indecision (loop candidate (2)'s d=32 ctx=512
 # discriminating cell — ANSWERED, and the answer is NEITHER horn).
@@ -856,7 +889,7 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # NET-18 (issue #112, quant floor NOT depth-robust); NET-19 (issue #115, carry
 # chain at scale: scale unlocks length-SPECIFIC mastery NOT composition,
 # credit-assignment depth-immunity HOLDS at scale — 9/9 fixed-n masters at every
-# depth, 9/9 length-gen at chance). Depth axis 10 iterations, speed 15,
+# depth, 9/9 length-gen at chance). Depth axis 10 iterations, speed 16,
 # compression 4, carry-wall SOLVED at toy level (NET-24) + cure DISSECTED
 # (NET-25) + threshold CORRECTED (NET-26) + ramp MAPPED (NET-27) + knee AND
 # k=1 mechanism CLOSED (NET-28) + seed-trait REFUTED (NET-31) + trait
@@ -865,7 +898,7 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # (NET-37) + PRODUCT-FORM-CONFIRMED-DEPTH-LEG-SUB-LINEAR-AT-LONG-CONTEXT (NET-38)
 # + SUB-LINEAR-DEPTH-LEG-CONFIRMED (NET-39) + DEPTH-LEG-IS-AFFINE-AT-LONG-CONTEXT (NET-40)
 # + THE-AFFINE-LAW'S-THIRD-RUNG-IS-NOT-TWO-SEED-EXACT (NET-41)
-# + DEPTH-LEG-AT-LONG-CONTEXT-IS-CONCAVE-POWER (NET-42).
+# + DEPTH-LEG-AT-LONG-CONTEXT-IS-CONCAVE-POWER (NET-42) + THE-DEEPEST-RUNG-IS-TWO-SEED-256 (NET-43).
 # Next round:
 # fresh axis
 # or strengthen a law — candidates:
@@ -942,15 +975,22 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # continues at every rung (per-doubling 1.50→1.58→1.68 < 2), deployable 2.0× at
 # d=32 vs the 1.0× guarantee; honest limits: single-seed cell + random-k control
 # UNMEASURED (k=768>ctx topk crash — my sweep-design bug, k* verdict unaffected)).
+# AND NET-43 (issue #150, THE-DEEPEST-RUNG-IS-TWO-SEED-256: k*=256 reproduces EXACTLY at
+# seed=2 — BOTH of NET-42's honest limits CLOSED, random-k control repaired
+# +2.6/+1.7 positive, two-seed knee bracket (240,256], every ctx=512 rung
+# two-seed 64,64/96,96/160,144/256,256).
 # REPLACED by the remaining cells, now ordered by value:
-# **d=32 ctx=512 second seed (closes the deepest rung's single-seed status AND
-# repairs the missing random-k control — the script must drop k=768/clamp to
-# min(k, L); ~3.5h)**; ctx=1024 second seed (closes the last context-extrapolation
-# cell's single-seed status); d=8 @ ctx=256 s0 corner (s1-only); a third seed at
-# d=16 (low value — the flat-topped knee makes the discrete k* a coin-toss);
+# ANSWERED by NET-43 (issue #150, THE-DEEPEST-RUNG-IS-TWO-SEED-256: k*=256 at
+# (d=32, ctx=512) reproduces EXACTLY at seed=2 — both honest limits closed, random-k
+# control repaired (+2.6/+1.7), knee bracket (240,256], every ctx=512 rung two-seed
+# 64,64/96,96/160,144/256,256).
+# REPLACED by the remaining cells, now ordered by value:
+# **ctx=1024 second seed (closes the last context-extrapolation cell's single-seed
+# status — highest value; ~3h)**; d=8 @ ctx=256 s0 corner (s1-only); a third seed
+# at d=16 (low value — the flat-topped knee makes the discrete k* a coin-toss);
 # (3) load-bearing depth (non-positional stack content with causal masking,
 # s≫64, unbounded nesting); (4) a fresh axis (training dynamics / grokking-free
 # curvature); (5) any novel hypothesis — the loop should EXPLORE ALL axes, not
 # settle.
 # Compression 4 real-scale iterations (exhausted at d=4, floor NOT depth-robust
-# at d=8), speed 15, depth 10, carry-wall mechanism 13 (NET-19/21/22/23/24/25/26/27/28/29/30/31/32).
+# at d=8), speed 16, depth 10, carry-wall mechanism 13 (NET-19/21/22/23/24/25/26/27/28/29/30/31/32).
