@@ -1542,4 +1542,45 @@ dense-EOS law are the open questions. Paper 69, issue #120.
   highest value)**; a third seed at ctx=1024 (knee distribution {96,128}); d=8 @ ctx=256 s0
   corner; a third seed at d=16 (low value); carry chain at scale (the frontier).
 
-Assessment v45. 45 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30, NET-31, NET-32, NET-33, NET-34, NET-35, NET-36, NET-37, NET-38, NET-39, NET-40, NET-41, NET-42, NET-43, NET-44, NET-45).
+- **NET-46 — THE-S2-ONE-GRID-STEP-DROP-REPLICATES-AT-16×-CONTEXT (speed; the ctx=2048
+  second seed that closes the 16× cell's single-seed status — the sharpest open cell NET-45
+  made; ALL_DONE_NET46, no crash): at (d=4, ctx=2048, seed=2) k* = **224 — one grid step
+  below the product knee 256, the prediction's horn P2 CONFIRMED (P1=256 two-seed-exact
+  REFUTED)**. Full acc 0.1545, bar 0.1514, loss 5.2241, train 13508s (~3.75h — faster than
+  s1's 18436s, 4-thread wall variance). Sweep {96,128,160,192,224,256,288,384,512,768,1024}:
+  k=96 0.956 ✗, k=128 0.965 ✗, k=160 0.971 ✗, k=192 0.978 ✗ (~0.15 SE below bar), k=224
+  **0.982 ✓** (margin +0.0023), k=256 0.986 ✓, k=288 0.987 ✓, k=384 0.992 ✓, k=512 0.993 ✓,
+  k=768 0.998 ✓, k=1024 0.998 ✓ (loss 5.2247 vs full 5.2241 — Δ0.0006, this time nearly
+  EXACTLY full loss, a cleaner read than s1's Δ0.0015). The s2 retained curve is uniformly
+  ABOVE s1's (0.956 vs 0.939 at 96 … 0.982 vs 0.976 at 224) yet the knee reads one grid step
+  LOWER — the whole s2 curve sits higher, crossing the bar one step earlier. The NET-44 s2
+  pattern REPLICATES at 16×: 256→224 as 128→96 at 8× — the sub-linear drift at the second
+  seed is SYSTEMATIC. The two-seed d=4 picture is now complete across all five doublings: s1
+  exact at every context (16/32/64/128/256); s2 exact through 4× (64 at ctx=512) and exactly
+  one grid step (32) below from 8× on (96, 224). The product law d·ctx/32 remains a
+  PROVEN-SAFE UPPER BOUND at both seeds through 16× — its robust claim is the upper bound;
+  its exactness is s1-specific at long context. Part B2: random k=128 0.921 (top-k 0.965) →
+  selection gap **+4.4**; random k=256 0.947 (top-k 0.986) → **+3.9** — LARGER than s1's
+  +1.7/+1.8 (the 16× dilution is seed-dependent). Concentration: eff support 472.50 (vs
+  s1's 526.39 — s2 measurably more concentrated, consistent with the lower knee), top-128
+  mass 0.623, top-256 0.759, per-position 61.56/412.27/888.64 — NO bounded working set at
+  16×. Deployable speedup at (d=4, ctx=2048) = **≥8.0× guaranteed (product law, safe at both
+  seeds), up to 9.1× at the s2-typical knee** — the first cell where the two-seed
+  distribution brackets the deployable number. Barriers: (a) clean — both horns stated
+  before the run, measured 224 — a replication test of NET-44's pattern at the longest cell;
+  (b) clean — two-seed knee distribution of data-free attention pruning at 16×: none in
+  Catalog or literature; (c) confronted — d=4 × ctx=2048, the longest context, now two-seed;
+  (d) clean (held-out last-10%, data-free top-k); (e) the round's honest limit — the s2 drop
+  is now measured at TWO cells (8× and 16×) — the reproducibility the s1 single-seed chain
+  lacked — but {224,256} is two-point with no third seed; the sign (s2 ≤ s1 at long context)
+  is robust, the exact one-grid-step magnitude needs a third seed at 1024; (f) clean — same
+  metrics, binom SE ≈ 0.11% acc, the +0.0023 margin documented, k=1024's Δ0.0006 cleaner
+  than s1's Δ0.0015, chunked eval identical math, NO crash (ALL_DONE_NET46); (g) fair —
+  full-attention reference + same 0.98 bar + random-k control at the same k (gaps +4.4/+3.9,
+  positive, the s1-vs-s2 spread informative); (h) sharpened — deployable ≥8.0× guaranteed /
+  9.1× s2-typical, the two-seed distribution bracketing the claim. Open: **a third seed at
+  ctx=1024 (does the knee distribution {96,128} hold or collapse? — highest value)**; a third
+  seed at ctx=2048 (does {224,256} extend?); d=8 @ ctx=256 s0 corner; a third seed at d=16
+  (low value); carry chain at scale (the frontier).
+
+Assessment v46. 46 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30, NET-31, NET-32, NET-33, NET-34, NET-35, NET-36, NET-37, NET-38, NET-39, NET-40, NET-41, NET-42, NET-43, NET-44, NET-45, NET-46).
