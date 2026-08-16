@@ -1506,4 +1506,40 @@ dense-EOS law are the open questions. Paper 69, issue #120.
   the knee distribution {96,128}); d=8 @ ctx=256 s0 corner; a third seed at
   d=16 (low value); carry chain at scale (the frontier).
 
-Assessment v44. 44 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30, NET-31, NET-32, NET-33, NET-34, NET-35, NET-36, NET-37, NET-38, NET-39, NET-40, NET-41, NET-42, NET-43, NET-44).
+- **NET-45 — THE-S1-PRODUCT-CHAIN-SURVIVES-AT-FIVE-DOUBLINGS-AT-THE-TIGHTEST-MARGIN (speed;
+  the ctx=2048 first seed that tests whether the sub-linear drift continues at 16× context —
+  the sharpest open cell NET-44 made; ALL_DONE_NET45, no crash): at (d=4, ctx=2048, seed=1)
+  k* = **256 = d·ctx/32 EXACTLY — the prediction CONFIRMED at the fifth doubling** (P1; P2=192
+  systematic-0.75× and P3=224 one-grid-step both REFUTED at s1). Full acc 0.1543, bar 0.1512,
+  loss 5.2047, train 18436s (~5.1h — the O(L²) attention term dominates at 2048, the longest
+  training of the program). Sweep {96,128,160,192,224,256,288,384,512,768,1024}: k=96 0.939 ✗,
+  k=128 0.951 ✗, k=160 0.963 ✗, k=192 0.970 ✗, k=224 0.976 ✗ (~0.45 SE below bar), k=256
+  **0.9813 ✓** (margin +0.0013 — the TIGHTEST of the whole chain: 128/256/512/1024 were
+  +0.007/+0.010/+0.003/+0.006), k=288 0.984 ✓, k=384 0.993 ✓, k=512 0.997 ✓, k=768 0.996 ✓,
+  k=1024 0.998 ✓ (loss 5.2062 vs full 5.2047 — Δ0.0015, the first time the ctx/2 point is not
+  EXACTLY full loss, a 2048-row renormalization residual, documented). The s1 context chain is
+  now EXACT at FIVE doublings — 16/32/64/128/256 across 128→2048, 16× context, the longest
+  measured anywhere in the program; the product law d·ctx/32 remains a proven-safe UPPER BOUND
+  at every measured cell AND the exact knee at s1 through 16×. Part B2: random k=128 0.934
+  (top-k 0.951) → selection gap **+1.7**; random k=256 0.963 (top-k 0.981) → **+1.8** — positive
+  but the SMALLEST at d=4 (dilutes from +5.9/+4.6 at 8×, +5.3/+4.6 at 4×): the diffuse
+  distribution at 16× carries most of the mass in any half of the keys. Concentration: eff
+  support 526.39 (×1.81 on the doubling, same superlinear family), top-128 mass 0.589, top-256
+  0.731, per-position 68.21/461.11/987.30 — NO bounded working set at 16×. Deployable speedup
+  at (d=4, ctx=2048) = **8.0×**, the guarantee intact but now EQUAL to the knee (the s2 could
+  read 224 → 10.3×). Barriers: (a) clean — prediction (k*=256) stated before the run, measured
+  256; (b) clean — no context-scaling of data-free attention pruning at 16× in Catalog or
+  literature; (c) confronted — d=4 × ctx=2048, the longest context of the program; (d) clean
+  (held-out last-10%, data-free top-k); (e) the round's honest limit — single-seed at 16× with
+  a razor-thin margin (+0.0013, k=224 fails ~0.45 SE): the ctx=2048 second seed is the sharpest
+  open cell (decides whether 256 is two-seed-exact, extending ctx=512's 64/64, or drops one
+  grid step to 224, replicating the NET-44 s2 break at 16×); (f) clean — same metrics, binom
+  SE ≈ 0.11% acc, the +0.0013 margin documented, k=1024's Δ0.0015 residual noted, chunked eval
+  (CHUNK=8) identical math, NO crash (ALL_DONE_NET45); (g) fair — full-attention reference +
+  same 0.98 bar + random-k control at the same k (gaps +1.7/+1.8, positive); (h) sharpened —
+  deployable 8.0× at 16× context, the guarantee equal to the knee, two-seed confirmation the
+  practical next step. Open: **ctx=2048 second seed (closes the 16× cell's single-seed status —
+  highest value)**; a third seed at ctx=1024 (knee distribution {96,128}); d=8 @ ctx=256 s0
+  corner; a third seed at d=16 (low value); carry chain at scale (the frontier).
+
+Assessment v45. 45 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30, NET-31, NET-32, NET-33, NET-34, NET-35, NET-36, NET-37, NET-38, NET-39, NET-40, NET-41, NET-42, NET-43, NET-44, NET-45).
