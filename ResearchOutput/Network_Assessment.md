@@ -1463,4 +1463,47 @@ dense-EOS law are the open questions. Paper 69, issue #120.
   single-seed status)**; d=8 @ ctx=256 s0 corner; a third seed at d=16 (low
   value — flat-topped knee); carry chain at scale (the frontier).
 
-Assessment v43. 43 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30, NET-31, NET-32, NET-33, NET-34, NET-35, NET-36, NET-37, NET-38, NET-39, NET-40, NET-41, NET-42, NET-43).
+- **NET-44 — THE-LAST-CONTEXT-CELL-IS-TWO-SEED-AND-THE-KNEE-FLUCTUATES (speed;
+  the ctx=1024 second seed that closes the LAST context-extrapolation cell's
+  single-seed status; ALL_DONE_NET44, no crash): at (d=4, ctx=1024, seed=2)
+  k* = **96 — NOT the predicted 128, the FIRST break of product-exactness at
+  any context** (predicted 128 reproducing s1; the prediction FAILED). Full
+  acc 0.1591, bar 0.1559, loss 5.1179, train 6067s (s1: 0.1594/5.1209/5516s).
+  Sweep {32,64,96,112,128,192,256,384,512,768} — k=112 NEW. Retained: k=32
+  0.952 ✗, k=64 0.979 ✗ (~0.1 SE below bar — marginal; s1 0.968), k=96
+  **0.987 ✓** (s1 0.977 ✗ — the s2 knee), k=112 0.991 ✓ (s2 knee is NOT
+  112), k=128 0.993 ✓ (s1 0.986 ✓ — k*(s1)), k=192 0.998 ✓, k=256 1.001 ✓,
+  k=384 0.998 ✓, k=512 0.999 ✓, k=768 1.000 ✓ (loss 5.1179 = full exactly).
+  The s2 retained curve is uniformly ~0.01 HIGHER than s1's at every k
+  (0.979/0.987/0.993 vs 0.968/0.977/0.986 at 64/96/128) — the knee crossed
+  the bar one grid step (32) earlier. Part B2: random k=64 0.917 (top-k
+  0.979) → selection gap **+6.2**; random k=128 0.945 (top-k 0.993) →
+  **+4.8** (s1: +5.9/+4.6, reproduces to ~0.3 pts). Two-seed knee bracket
+  **(64, 128]**; the product law d·ctx/32 (128) remains a proven-safe UPPER
+  BOUND (passes 0.986/0.993 both seeds) but is NOT minimal at s2 — the s1
+  context chain's exactness (16/32/64/128) was SEED-LUCKY. Knee-fluctuates-
+  one-grid-step family now spans BOTH axes (depth at d=16 ctx=512 160/144;
+  context at d=4 ctx=1024 128/96). Concentration reproducible to ~1.3% (eff
+  294.97 vs 291.16, per-position within ~1.6%) — NO bounded working set, two
+  seeds. Deployable speedup at (d=4, ctx=1024) = **8.0–10.7×** two-seed
+  (guarantee 8× intact as floor). Barriers: (a) clean — prediction (k*=128)
+  stated before the run, measured 96, so the run discriminates and exposes
+  the exact-product reading as seed-lucky; (b) clean — no context-scaling
+  seed-reproducibility of an attention knee in Catalog or literature; (c)
+  confronted — d=4 × ctx=1024 real causal word LM, 4097 vocab, held-out
+  loss+acc; (d) clean (held-out last-10%, data-free top-k); (e) the round's
+  substance RESOLVED — the last single-seed context cell is two-seed with a
+  one-grid-step knee fluctuation (128/96), the s2 curve uniformly higher at
+  every k (opposite of d=32 ctx=512 s2); (f) clean — same metrics, binom SE
+  ≈ 0.15%, k=768 recovers full loss exactly, NO crash (ALL_DONE_NET44); the
+  k=112 addition pins the s2 knee at 96; (g) fair — full-attention reference
+  + same 0.98 bar + random-k control at the same k (gaps +6.2/+4.8 vs
+  +5.9/+4.6, both seeds positive); (h) sharpened — the exact-product claim
+  becomes a two-seed bracket: deployable 8.0–10.7× at ctx=1024, the 8×
+  guarantee intact as floor, the sub-linear drift at s2 the first hint the
+  context lever is sub-linear in truth. Open: **ctx=2048 (does the sub-linear
+  drift continue at 16× context?)**; a third seed at ctx=1024 (characterize
+  the knee distribution {96,128}); d=8 @ ctx=256 s0 corner; a third seed at
+  d=16 (low value); carry chain at scale (the frontier).
+
+Assessment v44. 44 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30, NET-31, NET-32, NET-33, NET-34, NET-35, NET-36, NET-37, NET-38, NET-39, NET-40, NET-41, NET-42, NET-43, NET-44).

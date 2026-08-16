@@ -28,7 +28,46 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # LAB PROTOCOL (same rigor as the factoring lab): exact measurable laws over a clean
 # hypothesis, honest negative results recorded, all 8 barriers checked every iteration,
 # commit+push each iteration with Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>.
-# Status: NET-43 done (issue #150): THE-DEEPEST-RUNG-IS-TWO-SEED-256 — k*=256 at
+# Status: NET-44 done (issue #151): THE-LAST-CONTEXT-CELL-IS-TWO-SEED-AND-THE-
+# KNEE-FLUCTUATES — k*=96 at (d=4, ctx=1024, seed=2), NOT the predicted 128, the
+# FIRST break of product-exactness at any context; the last context-extrapolation
+# cell's single-seed status is CLOSED.
+# Byte-identical harness to NET-37 — CausalTF dm=64, 4 heads, Gutenberg corpus,
+# vocab 4097, 2000 AdamW steps — at d=4, seed=2, ctx=1024 (ALL_DONE_NET44,
+# /tmp/exp_net_attncost_ctx1024_s2.py; train 6067s; 585 windows, 10% held out).
+# Sweep {32,64,96,112,128,192,256,384,512,768} — NET-37's grid PLUS the new k=112
+# (to pin the (96, 128] bracket finer); Part B2 random-k (seed 12345). Per cell:
+# full-acc eval (full 0.1591, bar 0.1559, loss 5.1179 — s1: 0.1594/0.1562/5.1209)
+# → Part A concentration → Part B sweep → Part B2 random-k; k* = smallest k with
+# retained ≥ 0.98·full.
+# Prediction stated BEFORE the run: k* = 128 (reproducing s1).
+# RESULT — k* = 96, NOT 128; the prediction FAILED: k=32 0.952 ✗, k=64 0.979 ✗
+# (s1 0.968; ~0.1 SE below bar — marginal), k=96 0.987 ✓ (s1 0.977 ✗ — the s2
+# knee), k=112 0.991 ✓ (NEW — s2 knee is NOT 112), k=128 0.993 ✓ (s1 0.986 ✓ —
+# k*(s1)), k=192 0.998 ✓, k=256 1.001 ✓, k=384 0.998 ✓, k=512 0.999 ✓, k=768
+# 1.000 ✓ (loss 5.1179 = full exactly). The s2 retained curve is uniformly ~0.01
+# HIGHER than s1's at every k (0.979/0.987/0.993 vs 0.968/0.977/0.986 at
+# 64/96/128) — the knee crossed the bar one grid step (32) earlier. PART B2 —
+# random-k gaps +6.2 (k=64) / +4.8 (k=128) (s1 +5.9/+4.6 — reproduces to ~0.3
+# pts). Concentration reproducible to ~1.3% (eff 294.97 vs 291.16, top-64 0.545
+# vs 0.552, per-pos 38.68/259.07/551.00 vs 37.56/255.76/542.05 — NO bounded
+# working set, two seeds).
+# VERDICT: THE-LAST-CONTEXT-CELL-IS-TWO-SEED-AND-THE-KNEE-FLUCTUATES — k*=96 at
+# (d=4, ctx=1024) is the FIRST break of product-exactness at any context: the s1
+# chain's exactness (16/32/64/128 across four doublings) was SEED-LUCKY; two-seed
+# knee bracket (64, 128]; the product law d·ctx/32 (128) remains a proven-safe
+# UPPER BOUND (passes 0.986/0.993 both seeds) but is NOT minimal at s2
+# (over-predicts by 25%). The knee-fluctuates-one-grid-step family now spans
+# BOTH axes (depth at d=16 ctx=512 160/144; context at d=4 ctx=1024 128/96).
+# Deployable speedup at (d=4, ctx=1024) = 8.0–10.7× two-seed (guarantee 8× intact
+# as floor). Honest limits: two seeds only — the fluctuation distribution
+# (96 vs 128) is uncharacterized; ctx=2048 would test whether the sub-linear
+# drift continues at 16× context.
+# Open: ctx=2048 (does the sub-linear drift continue at 16× context? — the
+# sharpest open cell; ~3.3h); a third seed at ctx=1024 (characterize the knee
+# distribution {96,128}); d=8 @ ctx=256 s0 corner; a third seed at d=16 (low
+# value); carry chain at scale (the frontier). Paper 88, log /tmp/net44.log.
+# PREVIOUS STATUS — NET-43 done (issue #150): THE-DEEPEST-RUNG-IS-TWO-SEED-256 — k*=256 at
 # (d=32, ctx=512) reproduces EXACTLY at seed=2, closing BOTH of NET-42's honest
 # limits (the deepest rung's single-seed status AND the missing random-k control).
 # Byte-identical harness to NET-42 — CausalTF dm=64, 4 heads, Gutenberg corpus,
@@ -889,7 +928,7 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # NET-18 (issue #112, quant floor NOT depth-robust); NET-19 (issue #115, carry
 # chain at scale: scale unlocks length-SPECIFIC mastery NOT composition,
 # credit-assignment depth-immunity HOLDS at scale — 9/9 fixed-n masters at every
-# depth, 9/9 length-gen at chance). Depth axis 10 iterations, speed 16,
+# depth, 9/9 length-gen at chance). Depth axis 10 iterations, speed 17,
 # compression 4, carry-wall SOLVED at toy level (NET-24) + cure DISSECTED
 # (NET-25) + threshold CORRECTED (NET-26) + ramp MAPPED (NET-27) + knee AND
 # k=1 mechanism CLOSED (NET-28) + seed-trait REFUTED (NET-31) + trait
@@ -898,7 +937,7 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # (NET-37) + PRODUCT-FORM-CONFIRMED-DEPTH-LEG-SUB-LINEAR-AT-LONG-CONTEXT (NET-38)
 # + SUB-LINEAR-DEPTH-LEG-CONFIRMED (NET-39) + DEPTH-LEG-IS-AFFINE-AT-LONG-CONTEXT (NET-40)
 # + THE-AFFINE-LAW'S-THIRD-RUNG-IS-NOT-TWO-SEED-EXACT (NET-41)
-# + DEPTH-LEG-AT-LONG-CONTEXT-IS-CONCAVE-POWER (NET-42) + THE-DEEPEST-RUNG-IS-TWO-SEED-256 (NET-43).
+# + DEPTH-LEG-AT-LONG-CONTEXT-IS-CONCAVE-POWER (NET-42) + THE-DEEPEST-RUNG-IS-TWO-SEED-256 (NET-43) + THE-LAST-CONTEXT-CELL-IS-TWO-SEED-AND-THE-KNEE-FLUCTUATES (NET-44).
 # Next round:
 # fresh axis
 # or strengthen a law — candidates:
@@ -979,18 +1018,25 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # seed=2 — BOTH of NET-42's honest limits CLOSED, random-k control repaired
 # +2.6/+1.7 positive, two-seed knee bracket (240,256], every ctx=512 rung
 # two-seed 64,64/96,96/160,144/256,256).
+# AND NET-44 (issue #151, THE-LAST-CONTEXT-CELL-IS-TWO-SEED-AND-THE-KNEE-FLUCTUATES:
+# k*=96 at (d=4, ctx=1024, s2) NOT the predicted 128 — the FIRST break of
+# product-exactness at any context, s1 chain's exactness seed-lucky, two-seed knee
+# bracket (64,128], product law stays a proven-safe upper bound (over-predicts 25%
+# at s2), knee-fluctuates-one-grid-step family spans BOTH axes).
 # REPLACED by the remaining cells, now ordered by value:
-# ANSWERED by NET-43 (issue #150, THE-DEEPEST-RUNG-IS-TWO-SEED-256: k*=256 at
-# (d=32, ctx=512) reproduces EXACTLY at seed=2 — both honest limits closed, random-k
-# control repaired (+2.6/+1.7), knee bracket (240,256], every ctx=512 rung two-seed
-# 64,64/96,96/160,144/256,256).
+# ANSWERED by NET-44 (issue #151, THE-LAST-CONTEXT-CELL-IS-TWO-SEED-AND-THE-KNEE-
+# FLUCTUATES: k*=96 at (d=4, ctx=1024, s2) — the last single-seed context cell is
+# CLOSED; the s1 exact-product chain (16/32/64/128) was seed-lucky; two-seed knee
+# bracket (64,128]; product law d·ctx/32 stays a proven-safe upper bound).
 # REPLACED by the remaining cells, now ordered by value:
-# **ctx=1024 second seed (closes the last context-extrapolation cell's single-seed
-# status — highest value; ~3h)**; d=8 @ ctx=256 s0 corner (s1-only); a third seed
-# at d=16 (low value — the flat-topped knee makes the discrete k* a coin-toss);
+# **ctx=2048 (does the sub-linear drift continue at 16× context? — NET-44's
+# fluctuation finding makes this the sharpest open cell; ~3.3h)**; a third seed at
+# ctx=1024 (characterize the knee distribution {96,128}; ~2.3h); d=8 @ ctx=256 s0
+# corner (s1-only); a third seed at d=16 (low value — the flat-topped knee makes
+# the discrete k* a coin-toss);
 # (3) load-bearing depth (non-positional stack content with causal masking,
 # s≫64, unbounded nesting); (4) a fresh axis (training dynamics / grokking-free
 # curvature); (5) any novel hypothesis — the loop should EXPLORE ALL axes, not
 # settle.
 # Compression 4 real-scale iterations (exhausted at d=4, floor NOT depth-robust
-# at d=8), speed 16, depth 10, carry-wall mechanism 13 (NET-19/21/22/23/24/25/26/27/28/29/30/31/32).
+# at d=8), speed 17, depth 10, carry-wall mechanism 13 (NET-19/21/22/23/24/25/26/27/28/29/30/31/32).
