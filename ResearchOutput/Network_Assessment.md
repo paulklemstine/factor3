@@ -1584,3 +1584,37 @@ dense-EOS law are the open questions. Paper 69, issue #120.
   (low value); carry chain at scale (the frontier).
 
 Assessment v46. 46 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30, NET-31, NET-32, NET-33, NET-34, NET-35, NET-36, NET-37, NET-38, NET-39, NET-40, NET-41, NET-42, NET-43, NET-44, NET-45, NET-46).
+
+- **NET-47 — THE-THIRD-SEED-REVEALS-A-SPREAD-NOT-A-TWO-POINT-SET (speed; the ctx=1024
+  THIRD seed that decides whether the {96,128} knee distribution holds or collapses — the
+  highest-value cell NET-46 made): at (d=4, ctx=1024, seed=3) k\*=112 (MID-GRID) — P3
+  CONFIRMED, P1 (96) and P2 (128) REFUTED** (full acc 0.1582, bar 0.1550, loss 5.1387,
+  train 6141s; sweep: 96 0.979 ✗ razor, 112 0.983 ✓ margin +0.0035, 128 0.988 ✓; k=768
+  recovers loss exactly; ALL_DONE_NET47). The three-seed knee distribution is **{96,112,
+  128}** — a ±16 half-grid-step jitter, mean = median = **112 = 7/8 × product**; the
+  {96,128} binary was a TWO-SEED SAMPLING ARTIFACT. Emerging law at context ≥ 8× (d=4):
+  **the seed-averaged knee sits at 7/8·(d·ctx/32)** (112 @ 8×; 224 = 7/8·256 is the mid
+  of the 16× set {224,256}) with the product value the MAXIMUM of the seed range — the s1
+  chain's exactness is the law's upper edge, not its center. Product law's upper bound
+  STRENGTHENS to 3/3-seed-sure: product point 128 passes 3/3 seeds (0.986/0.993/0.988),
+  k\* ≤ d·ctx/32 a three-seed-verified guarantee. Selection importance +4.7/+3.8 (positive
+  but smallest at 1024; the seed spread 3.8–6.2 exceeds the eff spread ~4%); concentration
+  eff 271.92 (most concentrated of the three, family within ~4%), and the eff↔knee
+  correlation does NOT sort cleanly across three points (the NET-46 two-point correlation
+  was a coincidence). Deployable ≥8.0× guaranteed / 9.1× median / 10.7× best. Barriers:
+  (a) clean — three horns stated before the run, measured 112, the fine point winning;
+  (b) clean — three-seed knee distribution / mid-grid knee / 7/8 median: none in Catalog
+  or literature; (c) confronted — three seeds at d=4 × ctx=1024 real causal word LM;
+  (d) clean (held-out last-10%, data-free top-k); (e) the round's SUBSTANCE — the
+  {96,112,128} distribution IS the variance estimate, the {96,128} binary falsified; the
+  7/8 median is a two-context hypothesis needing a third seed at 2048, and the s3 96/112
+  boundary the least certain read (~0.5 SE); (f) clean — same metrics, binom SE ≈ 0.15%
+  acc, margins documented, k=768 loss recovered exactly, NO crash (ALL_DONE_NET47);
+  (g) fair — full-attention reference + same 0.98 bar + random-k at the same k (gaps
+  +4.7/+3.8, positive); (h) sharpened — the three-seed distribution brackets the
+  deployable claim with the guarantee at the conservative end. Open: a third seed at
+  ctx=2048 (does the 7/8 median replicate at 16×? — direct test of this round's
+  discovery); a fourth seed at ctx=1024 (refine {96,112,128}; low value); d=8 @ ctx=256
+  s0 corner; carry chain at scale (the frontier).
+
+Assessment v47. 47 experiments (NET-1, NET-2, NET-3, NET-4, NET-5, NET-6, NET-7, NET-8, NET-9, NET-10, NET-11, NET-12, NET-13, NET-14, NET-15, NET-16, NET-18, NET-17, NET-20, NET-19, NET-21, NET-22, NET-23, NET-24, NET-25, NET-26, NET-27, NET-28, NET-29, NET-30, NET-31, NET-32, NET-33, NET-34, NET-35, NET-36, NET-37, NET-38, NET-39, NET-40, NET-41, NET-42, NET-43, NET-44, NET-45, NET-46, NET-47).
