@@ -9426,3 +9426,10 @@ Paper 122, issue #214. Now 453 experiments. Assessment v232.
 Three independent S3 cubics with coprime conductors (31, 23, 3): each gives exactly 1 bit (C2 sign character). Pairwise joints additive to slightly super-additive. Triple joint 2.5620 vs sum 3.0022 — sub-additive by 0.44 bits (population correlation between dials reading the same (p,q)).
 Which-factor wall 0.0039.
 Now 455 experiments. Assessment v232.
+
+## Part 198 - SEXTIC-HINT-VALUE (round-31 #2, exp 448, v228, paper 121)
+
+Q(zeta_13)+ (C6, degree 6, conductor 13): hint value +1.6407 bits.
+Product view 1.4704; (s,d) jointly 3.1110; walls clean (z=+0.90).
+Hint map extends beyond degree 5.
+Paper 121, issue #201. Now 449 experiments. Assessment v228.
