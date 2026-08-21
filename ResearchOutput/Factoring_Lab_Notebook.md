@@ -9354,3 +9354,12 @@ Paper 111, issue #203. Now 446 experiments. Assessment v222. Script: /tmp/exp_un
 
 **What this decides.** THE-LAW-IS-UNIVERSAL: a different S3 field gives exactly the same 1-bit channel. The law depends only on GROUP STRUCTURE, not on the specific polynomial.
 Paper 112, issue #204. Now 447 experiments. Assessment v223. Script: /tmp/exp_universals3_fixed.py; log: /tmp/r32n3c.log.
+
+## Part 189 — ETALE-DIAL (round-32 #2, exp 448, v224, paper 113)
+
+**Question.** Does the type-channel framework extend to reducible polynomials (etale algebras)? f(x) = (x3-2)(x2-3) corresponds to Q(cbrt(2)) x Q(sqrt(3)).
+
+**Results (7s).** At m=3: x3-2 alone I=1.0000 (sign character); x2-3 alone I=0.0000 (conductor is 12, not 3); composite I=1.0000 (= the informative component). Sub-additivity confirmed. Semiprime composite pair = 1.0000; wall z = +0.91.
+
+**What this decides.** THE-COMPOSITE-CAPTURES-THE-UNION: the framework extends correctly to etale algebras.
+Paper 113, issue #205. Now 448 experiments. Assessment v224.
