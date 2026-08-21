@@ -9468,3 +9468,11 @@ Paper 125, issue #214. Now 455 experiments. Assessment v235.
 Hint values compound: k=1 +0.52, k=2 +2.43, k=3 +3.19. Marginal gains positive but decreasing.
 Hints compound like capacities — super-additive with diminishing returns.
 Now 457 experiments. Assessment v234.
+
+## Part 199 - D5-HINT-VALUE (round-35 #6, exp 458, v235, paper 125)
+
+D5 x5+20x+32 at m*=320: HINT VALUE +0.6940 bits.
+Sum view 0.3265, gap view 0.3285, (s,d) jointly 1.6994.
+Which-factor wall 0.0002; wall z=+0.91.
+Every dial now has both capacity and hint value at its verified conductor.
+Paper 125. Now 458 experiments. Assessment v235.
