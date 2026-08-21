@@ -9456,3 +9456,9 @@ Four types {1:12%, 2:12%, 4:25%, 8:50%} matching C8 structure.
 Semiprime pair 1.3097; which-factor 0.0002.
 Degree ladder extends to 8: every abelian field shows full pinning.
 Paper 124, issue #215. Now 456 experiments. Assessment v234.
+
+## Part 198 - COMPOSITE-DIAL (round-35 #4, exp 455, v235, paper 125)
+
+An EMERGENCE phenomenon: three irreducible components (x2-3, x3-5, x5-7) each carry ~zero trace information individually, but their COMPOSITE label carries 1.8170 bits at the semiprime level.
+The whole exceeds the sum of its parts.
+Paper 125, issue #214. Now 455 experiments. Assessment v235.
