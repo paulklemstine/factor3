@@ -8987,3 +8987,18 @@ Paper 80, issue #172. Now 415 experiments. Assessment v191. Script: /tmp/exp_non
 
 **Verdict.** CONFIRMED (4/4 horns; both live controls fire). Barriers 5/6/8 (+4 aggregation for exploitation). The Pythagorean-tree line is now CLOSED at three strengths: embedding exact, coordinates orthogonal, position adically sealed. Frontier returns to the quantum channel (QUBIT-TRADE) and the barrier-4 converse.
 Paper 81, issue #173. Now 416 experiments. Assessment v192. Script: /tmp/exp_berggren3adic.py; log: /tmp/r24n2.log.
+
+## Part 163 — QUINTIC-TYPE-CHANNEL (round-24 #3, exp 417, v193, paper 82)
+
+**Question.** Paper 80 closed the type-channel law over S₃/S₄/A₄/D₄ (abelianizations C₂/C₃/C₂×C₂). Does the law hold at degree 5 — and what does the program's first C₄-ABELIANIZATION dial look like? Object: the Frobenius group F₂₀ = AGL(1,5) via x⁵−2; control: C₅ = Q(ζ₁₁)⁺.
+
+**Predictions (before the run).** H1: I(p mod 5; T) = 1.5000 EXACTLY (H(T) = H(1/20,4/20,10/20,5/20) = 1.6805 through the 2-bit quartic dial mod 5; the [1,4] type merges the two order-4 cosets {2,3} → loss exactly 0.5). H2: semiprime pair = 1.2500 exactly; [1,2,2]-fork coset-determined ⟹ s-proj = Is(4) = 0.2947 (order-4 pinned fork on a NON-abelian field). H3: C₅ control I₁ = H(1/5,4/5) = 0.7220, pair = Is(5) = 0.2027 (paper 79). H4: flatness/thickening/coprime/walls clean.
+
+**Method.** Quintic types via (nr, nr₂) F_{p²}-root counting: dictionary (5,5)→11111, (1,1)→14, (1,5)→122, (0,0)→5 — note (1,5) NOT (1,3): both quadratic pairs' roots live in F_{p²}\F_p. Sieves 2^18/2^16, ramified {2,5}/{11} excluded, 400k MC.
+
+**Results (all asserts green, 81 s).** F₂₀ PRIME: H(T) = 1.6805 exact, I₁ = 1.4989 vs 1.5000 ✓, loss exactly 0.5000; within-coset flatness z=+0.00 (only p≡1 stratum has residual structure); thickening m*²=25 agrees to 0.0001; coprime flat. F₂₀ SEMIPRIME: pair = 1.2462 vs 1.2500 ✓ (reads 1.25 of the 2-bit dial — the largest fraction of any merged-type field in the program); which-factor 0.0000; [1,2,2]-fork s-proj = 0.2915 vs Is(4) = 0.2947 ✓. C₅ CONTROL: prime 0.7198 vs 0.7219 ✓; pair = 0.2026 vs Is(5) = 0.2027 ✓ (paper-79 f=11 reproduced).
+
+**Instructive failure (recorded).** First run swapped the coset labels of the multiplier-3 and multiplier-4 families relative to the C₄ valuation V(3)=3, V(4)=2 — INVISIBLE at the prime level (both merged classes share type [1,4], I₁ unchanged) but corrupting the pair enumeration (law 1.1250 vs true 1.2500). The 400k MC caught it: measured 1.2462 sat on the CORRECTED value. Lesson: the pair law is the discriminating test of coset bookkeeping precisely where type-merging hides it. Plus three harness bugs fixed across runs (little-endian reversal; (1,3) dictionary carryover; non-variadic character-product lambda).
+
+**What this decides.** THE-ABELIANIZATION-LAW-AT-DEGREE-FIVE: the law now spans degrees 2–5 and abelianizations C₂/C₃/C₄/C₂×C₂/Cₙ; the type-vs-dial gap is always exactly E[H(coset|T)] — the entropy of the cosets the type cannot tell apart. Is(4) realized through a genuine cyclic order-4 character on a non-abelian field (previously only abelian V₄ and the joint-AND D₄ fork). Factor-useless: symmetric (wall 0.0000), residue dial (barrier 5), CRT-sealed (barrier 6), Kummer/affine classical (barrier 8).
+Paper 82, issue #174. Now 417 experiments. Assessment v193. Script: /tmp/exp_quintictypechan.py; log: /tmp/r24n3f.log.
