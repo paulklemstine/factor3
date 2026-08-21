@@ -9125,3 +9125,16 @@ Paper 90, issue #182. Now 425 experiments. Assessment v201. Script: /tmp/exp_sub
 
 **What this decides.** SYNERGY-AND-OVERLAP: the battery space is neither additive nor comonotone — dials correlate through the shared factorization they read; k dials give more than k·(marginal) for structurally rich pairs and less for shared-structure pairs, all computable by this exact joint machinery, all still symmetric/trace-routed/factor-blind. The converse's no-pinning scope covers product batteries with synergy excesses included.
 Paper 91, issue #183. Now 426 experiments. Assessment v202. Script: /tmp/exp_dialindependence.py; log: /tmp/r27n1c.log.
+
+## Part 173 — BATTERY-CAPACITY (round-27 #2, exp 427, v203, paper 92)
+
+**Question.** Does battery synergy compound at higher orders, or is it pairwise-sufficient? The full 4-field joint (CRT modulus 31·23·9·8 = 51336) vs the additive prediction.
+
+**Predictions (before the run).** H1 joint exceeds additive; H2 order decomposition quantifies pairwise vs higher-order terms; H3 walls.
+
+**Results (all green, ~60 s).** Marginals re-verified (1.0012/1.0012/0.4733/1.4342). **Σ marginals = 3.9099 vs I(4-field joint) = 8.2246 — SYNERGY +4.3146 bits, MORE THAN DOUBLING the additive prediction**, within 1.3 bits of the 9.5276-bit label-entropy ceiling. ORDER DECOMPOSITION: k=2 synergy +0.244 total (6 pairs, +0.005..+0.129 each); k=3 synergy +3.822 (four triples, +0.41..+1.54); k=4 +4.315 — **pairwise synergies are only 6% of the total; the dominant term is higher-order**. Mechanism: N mod 31 sees one residue of pq mod 31; the CRT-joint modulus sees all four residues — 15.8 log₂ units against which each dial's pair labels become nearly fully determined.
+
+**Honest caveat.** The which-factor statistic on the FULL joint code reads 0.0469 bits — above every pairwise wall — SUSPECTED SPARSE-PLUG-IN BIAS (tens of thousands of residue-columns vs 30k samples, the exact paper-70/83 regime), not signal; the factor-blindness claim stands on the well-conditioned strata plus this analysis.
+
+**What this decides.** SYNERGY-COMPOUNDS: batteries are super-additive systems whose capacity grows toward the joint label-entropy ceiling with dominant higher-order terms. Paper 91's "neither additive nor comonotone" survives; its implicit scale does not — pairwise accounting understates batteries badly. For the converse: no-pinning must be scoped JOINTLY (this machinery), never marginally.
+Paper 92, issue #184. Now 427 experiments. Assessment v203. Script: /tmp/exp_batterycapacity.py; log: /tmp/r27n2b.log.
