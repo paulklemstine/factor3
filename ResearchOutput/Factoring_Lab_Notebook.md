@@ -9112,3 +9112,16 @@ Paper 89, issue #181. Now 424 experiments. Assessment v200. Script: /tmp/exp_thr
 
 **What this decides.** THE-STRATUM-STAYS-UNMEASURED at toy scale: MC-feasible smoothness measurement cannot resolve ρ(u) ≪ 10⁻³, and the toy cost model cannot see the asymptotic regime. The landscape stands at THREE measured strata plus one unmeasured; open targets now explicitly include the formal barrier-4 converse proof AND a production-scale measurement of the sub-exponential stratum.
 Paper 90, issue #182. Now 425 experiments. Assessment v201. Script: /tmp/exp_subexpstratum.py; log: /tmp/r26n3e.log.
+
+## Part 172 — DIAL-INDEPENDENCE (round-27 #1, exp 426, v202, paper 91)
+
+**Question.** On ONE shared semiprime population, is the JOINT of two fields' type-pair channels additive (independent dials), comonotone (one variable), or something else? Decides how rich any congruence battery could be.
+
+**Pre-stated hypothesis (REFUTED — the refutation is the finding).** Coprime-conductor additivity: I(N mod m₁m₂; pair₁,pair₂) = I₁ + I₂ exactly. REFUTED at the first pair — and directionally:
+
+**Results (all green, ~60 s).** Marginals re-verified against papers 80/82 first (S₃a 1.0012 / S₃b 1.0012 / A₄ 0.4733 / D₄ 1.4342 ✓). JOINTS on one shared 30k population: S₃a@31 × S₃b@23 → **2.1314 vs sum 2.0024 = SYNERGY +0.129 bits**; A₄@9 × D₄@8 → 1.9125 vs 1.9076 = +0.005 (near-additive); SHARED disc −23 (S₃a@23 × S₃b@23) → **1.0104 vs 2.0024 = OVERLAP 0.992 bits** (essentially one full channel redundant). Which-factor walls ≤ 0.0016 everywhere.
+
+**Mechanism of the refutation.** The additivity argument treated dial labels as independent draws — but both dials read the SAME underlying (p,q): their label entropies are population-correlated, so the joint modulus (CRT-seeing p mod m₁ AND q mod m₂) extracts combinations neither marginal reaches. Synergy is structure-dependent: rich-type pairs (+0.129) vs lossy-type pairs (+0.005). Shared conductor structure makes dials comonotone to within noise.
+
+**What this decides.** SYNERGY-AND-OVERLAP: the battery space is neither additive nor comonotone — dials correlate through the shared factorization they read; k dials give more than k·(marginal) for structurally rich pairs and less for shared-structure pairs, all computable by this exact joint machinery, all still symmetric/trace-routed/factor-blind. The converse's no-pinning scope covers product batteries with synergy excesses included.
+Paper 91, issue #183. Now 426 experiments. Assessment v202. Script: /tmp/exp_dialindependence.py; log: /tmp/r27n1c.log.
