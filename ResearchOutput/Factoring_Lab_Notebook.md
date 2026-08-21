@@ -9476,3 +9476,10 @@ Sum view 0.3265, gap view 0.3285, (s,d) jointly 1.6994.
 Which-factor wall 0.0002; wall z=+0.91.
 Every dial now has both capacity and hint value at its verified conductor.
 Paper 125. Now 458 experiments. Assessment v235.
+
+## Part 199 - CYCLIC-CUBIC-CONDUCTOR-13 (round-35 #7, exp 459, v228, paper 126)
+
+Q(zeta_13 + zeta_13^-1) cyclic cubic (C3, conductor 13): only TWO types {nr=0: 66%, nr=3: 33%}.
+H(T) = 0.9192 bits. I(p mod 13; T) = H(T) EXACTLY (full pinning).
+Semiprime pair 0.4702; wall z = +9505; which-factor 0.0001.
+Paper 126. Now 459 experiments. Assessment v228.
