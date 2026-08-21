@@ -9274,3 +9274,24 @@ Paper 103, issue #195. Now 438 experiments. Assessment v214. Logs: /tmp/audit_p9
 
 **What this decides.** THE-HINT-IS-UNIVERSAL. The completed table provides the full routing map.
 Paper 104, issue #196. Now 440 experiments. Assessment v215. Script: /tmp/exp_hinttable.py; log: /tmp/r30n1f.log.
+
+## Part 183 — HINT-S-D-DECOMPOSITION (round-30 #2, exp 441, v216, paper 105)
+
+**Question.** Is paper 99's s-d synergy (sum ~4%, gap ~4%, jointly >100%) universal across all six dials?
+
+**Pre-stated hypothesis (REFUTED — the refutation is structural).** Universal synergy. REFUTED: D₄@8 is SUM-SUFFICIENT — I(s;labels) = I(N;labels) = 2.0000 exactly; the gap adds nothing.
+
+**Results (all asserts green, 18 s).**
+| dial | s% | d% | synergy |
+|---|---|---|---|
+| S₃a | 4.0 | 3.8 | +1.44 |
+| S₃b | 5.2 | 5.1 | +1.41 |
+| A₄ | 161.6 | 213.9 | +0.01 |
+| D₄ | **100.0** | 75.2 | **−1.00** |
+| F₂₀ | 165.0 | 122.2 | +0.41 |
+| C₅ | 77.8 | 55.7 | +1.18 |
+
+D₄ is SUM-SUFFICIENT because its type map is a simple function of p mod 8: (p+q) mod 8 determines the unordered type pair completely. S₃ fields are combination-required because their type depends on (Δ|p), which is NOT determined by (p+q) mod 23 alone.
+
+**What this decides.** THE-ROUTING-IS-DIAL-DEPENDENT: the routing structure classifies fields by whether their type map is a function of the sum alone. Sum-sufficient (D₄) vs combination-required (S₃, C₅) vs both-individually-sufficient (F₂₀).
+Paper 105, issue #197. Now 441 experiments. Assessment v216. Script: /tmp/exp_hintsd.py; log: /tmp/r30n2b.log.
