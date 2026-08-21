@@ -9149,3 +9149,16 @@ Paper 92, issue #184. Now 427 experiments. Assessment v203. Script: /tmp/exp_bat
 
 **What this decides.** THE-WALL-WAS-BIAS: the battery programme's factor-blindness claim STANDS with its caveat converted into a verified statement — the full battery capacity (8.2246 bits at k=4, ceiling 9.53) is symmetric trace-routed content with zero detectable which-factor leakage at permutation-null sensitivity (~±0.003 bits).
 Paper 93, issue #185. Now 428 experiments. Assessment v204. Script: /tmp/exp_jointwall.py; log: /tmp/r27n3c.log.
+
+## Part 175 — BATTERY-SCALING (round-27 #4, exp 429, v205, paper 94)
+
+**Question.** The capacity law's k-scaling: add F₂₀@5 and C₅@11 to the battery (6 dials, all conductors pairwise coprime, CRT modulus 31·23·9·8·5·11) — does the additive deficit grow monotonically toward the label-entropy ceiling?
+
+**Predictions (before the run).** H1 deficit monotone; H2 marginals reproduce papers 79/80/82; H3 wall inside null at k=6.
+
+**Results (all asserts green, 292 s).** Marginals reproduce (S₃a 1.0011 / S₃b 1.0012-lineage / A₄ 0.4733 / D₄ 1.4302 / F₂₀ ≈ 1.25-lineage / C₅ ≈ Is(5)-lineage). CAPACITY CURVE (nested): deficits +0.000 / +0.132 / +1.547 / +4.329 / +6.372 / **+7.359** — MONOTONE ✓; I(6-dial joint) = **12.7235 vs ceiling 12.7726 = 99.6% OF THE CEILING** — the CRT-joint modulus sees all six residues simultaneously and the pair-label structure becomes nearly fully determined. H3: 6-dial wall observed 0.3594 vs null 0.3591 (z = +0.11) — sparse-bias-dominated exactly as at k=4; factor-blindness extends to k=6.
+
+**Method notes disclosed.** (i) printed row labels off by one (k = i+1 where i counts dials) — cosmetic, corrected in the paper; (ii) the chained 6-dial label code spans ~10¹² values — bincount-based entropy cannot run (5.6 TiB allocation caught), np.unique-based substituted.
+
+**What this decides.** THE-CURVE-SATURATES-AT-THE-CEILING: the battery-capacity law in three lines — I(k-joint) → H(joint labels); the deficit D(k) grows monotonically (7.36 bits = 3.7× additive at k=6); the ceiling is the joint label entropy. For the converse: k-dial battery capacity must be computed jointly and carries zero detectable which-factor content through k=6.
+Paper 94, issue #186. Now 429 experiments. Assessment v205. Script: /tmp/exp_batteryscaling.py; log: /tmp/r27n4b.log.
