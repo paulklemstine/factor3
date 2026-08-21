@@ -9420,3 +9420,9 @@ I(p mod 3; T) = 0.3630, z=+1921 — massive signal at conductor.
 Semiprime pair channel 0.1321 bits — genuine structure.
 Framework extends to nonabelian groups at degree 6.
 Paper 122, issue #214. Now 453 experiments. Assessment v232.
+
+## Part 197 - CUBIC-BATTERY-CAPACITY (round-35 #1, exp 454, v232)
+
+Three independent S3 cubics with coprime conductors (31, 23, 3): each gives exactly 1 bit (C2 sign character). Pairwise joints additive to slightly super-additive. Triple joint 2.5620 vs sum 3.0022 — sub-additive by 0.44 bits (population correlation between dials reading the same (p,q)).
+Which-factor wall 0.0039.
+Now 455 experiments. Assessment v232.
