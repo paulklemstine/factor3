@@ -9058,3 +9058,16 @@ Paper 85, issue #177. Now 420 experiments. Assessment v196. Script: /tmp/exp_qub
 
 **What this decides.** THE-RAMP-SURVIVES-CONTACT-WITH-FACTORS: the fungibility law extends end-to-end from abstract certification to real factor extraction, with one new structural element — the per-N unlucky cap that sample count cannot move. The dominant classical burden is spurious-certificate filtering (N-verification's exact role). Frontier (ii) is quantitatively mapped on both axes.
 Paper 86, issue #178. Now 421 experiments. Assessment v197. Script: /tmp/exp_qubittrade3.py; log: /tmp/r25n2h.log.
+
+## Part 168 — QUBIT-TRADE4 (round-25 #3, exp 422, v198, paper 87)
+
+**Question.** The third axis: real Shor escapes the per-N unlucky cap (paper 86) by re-drawing the base a. Does the base-re-draw ladder lift the cap as 1−(1−p₁m)^{ks}? Are all three axes (t, s, k) fungible? Where is total cost G ≈ k·s·t² minimized?
+
+**Predictions (before the run).** H1 cap lifts exponentially in k; H2 three-way unit-rate fungibility below saturation; H3 standard full-register corner minimizes G.
+
+**Method.** Paper-86 population (24 constructed semiprimes, 12 mixed/12 same-role), K = 6 independent bases per N (fresh role structure each), progression kernel, cells t ∈ {wall−4,−2,0} × s ∈ {1,5,20} × k ∈ {1,2,4}, 20 trials each.
+
+**Results (all green, ~30 s).** H1: at t=wall, s=5 — k=1: 0.504, k=2: 0.735, k=4: 0.940 (cap lifts as independence predicts). H2: mean ΔP = +0.18 over 12 single-doubling steps mixing axes, positive everywhere. H3: DISCLOSED BUG — the script's cheapest-cell loop took the last match not the minimum; corrected from the printed grid: t=wall reaches P≥0.3 at s=1,k=4 → G = 6400 vs wall−2's 14440 and wall−4's 51840 — **the standard corner wins by 8×**.
+
+**What this decides.** THE-STANDARD-CORNER-IS-OPTIMAL: shaving register width costs exponential samples/re-draws against a quadratic width saving; no point on the three-axis surface undercuts the textbook parameterization, and no point approaches classical complexity. Frontier (ii) CLOSED quantitatively: paper 47 threshold → paper 85 ramp → paper 86 cap → paper 87 optimum. DEQUANT final form.
+Paper 87, issue #179. Now 422 experiments. Assessment v198. Script: /tmp/exp_qubittrade4.py; log: /tmp/r25n3.log.
