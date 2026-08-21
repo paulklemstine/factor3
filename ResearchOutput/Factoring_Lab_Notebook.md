@@ -9313,3 +9313,12 @@ Paper 106, issue #198. Now 442 experiments. Assessment v217. Script: /tmp/exp_se
 
 **Post-resume programme summary:** type-channel law confirmed (degrees 2-6); nonabelian channels law-verified (10 groups); battery space characterized (k=2-6); factor-blindness verified; hint value measured; quantum frontier closed; method stratum mapped; three strata measured; reproducibility audited; Pythagorean trees closed.
 Paper 107, issue #199. Now 443 experiments. Assessment v218.
+
+## Part 186 — TRACE-BATTERY (round-30 #4, exp 444, v218, paper 108)
+
+**Question.** The joint channel capacity for increasing subsets of the 6-dial battery on a fresh population.
+
+**Results.** Joint capacity grows 7.9455 → 10.4462 → 12.1080 as moduli expand from {31,23} to {31,23,9} to {31,23,9,8}. Per-dial trace information varies enormously (0.04 to 3.46 bits). Which-factor wall 0.4677 (sparse-table regime).
+
+**What this decides.** THE-SCALING-IS-CONFIRMED: paper 94's battery-scaling verified on an independent population.
+Paper 108, issue #200. Now 444 experiments. Assessment v218. Script: /tmp/exp_tracebattery.py; log: /tmp/r30n4b.log.
