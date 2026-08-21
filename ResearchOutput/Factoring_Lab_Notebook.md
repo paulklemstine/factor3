@@ -9265,3 +9265,12 @@ Paper 102, issue #194. Now 437 experiments. Assessment v213. Script: /tmp/exp_sd
 
 **What this decides.** SIX-KEYSTONE-ZERO-DRIFT: combined with paper 97's audit, six keystone papers spanning the programme's diversity (type-channel law table, three-strata calibration, battery capacity, battery synergy, capacity curve, qubit/sample ramp) — every fully-verified number reproduces exactly under stored seeds. The computational record is not an artifact of a single execution; it is a property of the deterministic pipelines.
 Paper 103, issue #195. Now 438 experiments. Assessment v214. Logs: /tmp/audit_p91.log, /tmp/audit_p94.log, /tmp/audit_p85.log.
+
+## Part 182 — HINT-TABLE-COMPLETION (round-30 #1, exp 440, v215, paper 104)
+
+**Question.** Complete the six-dial hint-value table for A₄@9, D₄@8, F₂₀@5, C₅@11.
+
+**Results (all green, 17 s).** ALL SIX positive: C₅@11 +1.5896, F₂₀@5 +0.9538, S₃a +0.5201, S₃b +0.5121, D₄ +0.5032, A₄ +0.0120. Total hint 4.0908 bits on capacity 5.5015 bits. Walls inside nulls (max |z| = 2.20). Independence finding: hint-capacity correlation r = 0.256 — WEAK; they are independent dial properties.
+
+**What this decides.** THE-HINT-IS-UNIVERSAL. The completed table provides the full routing map.
+Paper 104, issue #196. Now 440 experiments. Assessment v215. Script: /tmp/exp_hinttable.py; log: /tmp/r30n1f.log.
