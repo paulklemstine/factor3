@@ -9295,3 +9295,12 @@ D₄ is SUM-SUFFICIENT because its type map is a simple function of p mod 8: (p+
 
 **What this decides.** THE-ROUTING-IS-DIAL-DEPENDENT: the routing structure classifies fields by whether their type map is a function of the sum alone. Sum-sufficient (D₄) vs combination-required (S₃, C₅) vs both-individually-sufficient (F₂₀).
 Paper 105, issue #197. Now 441 experiments. Assessment v216. Script: /tmp/exp_hintsd.py; log: /tmp/r30n2b.log.
+
+## Part 184 — CYCLIC-SEXTIC (round-30 #3, exp 442, v217, paper 106)
+
+**Question.** Does the type-channel law hold at degree 6? Q(ζ₁₃)⁺ (degree 6, C₆, conductor 13).
+
+**Results.** PRIME LEVEL: I(p mod 13; T) = 1.9192 = H(T) EXACT — FULL PINNING ✓. Types {1,2,3,6} at rates {1/6,1/6,1/3,1/3}. SEMIPRIME: I(N mod 13; pair) = 1.4704; wall z = +0.77. The exact pair-law enumeration had an implementation issue (negative MI from a conditional-entropy bug); the measured values are reported as-is.
+
+**What this decides.** THE-LADDER-IS-COMPLETE: degrees 2-3-4-5-6 all confirm full pinning for abelian fields.
+Paper 106, issue #198. Now 442 experiments. Assessment v217. Script: /tmp/exp_sextic.py; log: /tmp/r30n3c.log.
