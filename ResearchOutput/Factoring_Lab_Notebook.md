@@ -9433,3 +9433,10 @@ Q(zeta_13)+ (C6, degree 6, conductor 13): hint value +1.6407 bits.
 Product view 1.4704; (s,d) jointly 3.1110; walls clean (z=+0.90).
 Hint map extends beyond degree 5.
 Paper 121, issue #201. Now 449 experiments. Assessment v228.
+
+## Part 197 - CYCLIC-CUBIC-TYPE-CHANNEL (round-32 #3, exp 448, v228, paper 122)
+
+Q(zeta_7 + zeta_7^-1) cyclic cubic (C3, conductor 7): only TWO types {nr=0: 66%, nr=3: 33%}.
+H(T) = 0.9179 bits. I(p mod 7; T) = 0.9179 = H(T) EXACTLY (full pinning).
+Semiprime pair 0.4747; wall z = +12517 (genuine); which-factor 0.0000.
+Paper 122, issue #209. Now 448 experiments. Assessment v228.
