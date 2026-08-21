@@ -9333,3 +9333,10 @@ Paper 108, issue #200. Now 444 experiments. Assessment v218. Script: /tmp/exp_tr
 
 **What this decides.** THE-CHARACTER-CAPTURES-EXACTLY-ONE-BIT: for ANY G^ab = C₂ field, I = 1 bit exactly, proven from character theory.
 Paper 109, issue #201. Now 445 experiments. Assessment v220.
+
+## Part 188 — D₅-VERIFICATION (round-32 #1, exp 446, v221, paper 110)
+
+**Question.** Rigorously verify the four D₅ quintics found in paper 84.
+
+**Results (sympy galois_group + Chebotarev signature).** All four verified: x⁵+11x±44 (disc = 108416²) and x⁵+20x±32 (disc = 64000²), all irreducible, all with Gal of order 10 (= D₅). Root-count signature {nr=0: 40%, nr=1: 50%, nr=5: 10%} matches D₅'s expected conjugacy-class distribution exactly. D₅ ⊆ A₅ confirmed by square discriminants.
+Paper 110, issue #202. Now 446 experiments. Assessment v221.
