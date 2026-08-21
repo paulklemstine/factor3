@@ -9345,3 +9345,12 @@ Paper 110, issue #202. Now 446 experiments. Assessment v221.
 
 The round intended to verify the type-channel law for x3-2 (S3, disc -108). Instead, the coefficient vector encodes x5-2 (degree 5), not x3-2 (degree 3). The measurements are valid for x5-2 but do not test the universal-S3 hypothesis. x5-2 type channel at small conductors: all negligible. Confirms F20 conductor is 5.
 Paper 111, issue #203. Now 446 experiments. Assessment v222. Script: /tmp/exp_universals3.py; log: /tmp/r32n2b.log.
+
+## Part 189 — UNIVERSAL-S3-CORRECTED (round-32 #3, exp 447, v223, paper 112)
+
+**Question.** Does the type-channel law hold for a DIFFERENT S3 field (x3-2, disc -108) from paper 80's x3+x+1 (disc -31)?
+
+**Results (all asserts green, 7s).** Root-count histogram {nr=0: 2181, nr=1: 3281, nr=3: 1078} at rates {1/3, 1/2, 1/6} matching S3 conjugacy classes. H(type) = 1.4563. I(p mod 3; T) = 1.0000 EXACTLY — the sign character at conductor 3. Thickening adds nothing. Coprime flat. Semiprime pair channel = 1.0000. Wall z = +0.62.
+
+**What this decides.** THE-LAW-IS-UNIVERSAL: a different S3 field gives exactly the same 1-bit channel. The law depends only on GROUP STRUCTURE, not on the specific polynomial.
+Paper 112, issue #204. Now 447 experiments. Assessment v223. Script: /tmp/exp_universals3_fixed.py; log: /tmp/r32n3c.log.
