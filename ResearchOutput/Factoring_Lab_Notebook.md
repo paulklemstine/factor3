@@ -9382,3 +9382,8 @@ Paper 115. Now 450 experiments. Assessment v226.
 
 Consolidation: all 36 post-resume results fit into one framework (the type-channel law). Papers 80-116 summarized. Open targets identified. The programme is at a natural consolidation point.
 Paper 116, issue #207. Now 450 experiments. Assessment v226.
+
+## Part 193 - D5-CONDUCTOR (round-33 #2, paper 117, issue #208)
+
+Conductor scan identified m* = 320 for x5+20x+32 (D5): I(N mod 320; fork) = 0.9999 = 1 bit. The quadratic subfield has |d(K)| = 320.
+Paper 117, issue #208.
