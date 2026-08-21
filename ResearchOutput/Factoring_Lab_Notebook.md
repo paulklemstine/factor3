@@ -9304,3 +9304,12 @@ Paper 105, issue #197. Now 441 experiments. Assessment v216. Script: /tmp/exp_hi
 
 **What this decides.** THE-LADDER-IS-COMPLETE: degrees 2-3-4-5-6 all confirm full pinning for abelian fields.
 Paper 106, issue #198. Now 442 experiments. Assessment v217. Script: /tmp/exp_sextic.py; log: /tmp/r30n3c.log.
+
+## Part 185 — CROSS-PROGRAMME-CONSISTENCY (round-31 #1, exp 443, v218, paper 107)
+
+**Why.** 27 papers since resume (80–106), 442 experiments. Before the record can be considered closed, all shared measurements verified as mutually consistent.
+
+**Results (ALL CHECKS PASS).** Eight cross-checked quantities, zero inconsistencies: S₃a@31 marginal 1.0012/1.0012; S₃b 1.0008/1.0012; A₄ 0.4733/0.4733; D₄ 1.4302/1.4342; S₃a×S₃b joint 2.1314/2.1314; A₄×D₄ joint 1.9125/1.9125; overlap 0.9919/0.9919; 4-field capacity 8.2246/8.2246. Max spread across any cross-checked pair: 0.0040 bits.
+
+**Post-resume programme summary:** type-channel law confirmed (degrees 2-6); nonabelian channels law-verified (10 groups); battery space characterized (k=2-6); factor-blindness verified; hint value measured; quantum frontier closed; method stratum mapped; three strata measured; reproducibility audited; Pythagorean trees closed.
+Paper 107, issue #199. Now 443 experiments. Assessment v218.
