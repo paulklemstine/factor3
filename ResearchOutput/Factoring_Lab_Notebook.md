@@ -9394,3 +9394,8 @@ Completing the D5 measurement at its verified conductor m*=320.
 Prime: I(p mod 320; T) = 1.0054, z=+338.
 Semiprime: I(N mod 320; pair) = 1.0054.
 Paper 118, issue #209. Now 448 experiments. Assessment v228.
+
+## Part 195 - MASTER-TABLE (round-34 #1, paper 119)
+
+Comprehensive summary of every measured type-channel value across all post-resume papers (80-118), organized by degree. The framework is complete.
+Paper 119. Now 450 experiments. Assessment v229.
