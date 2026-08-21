@@ -9462,3 +9462,9 @@ Paper 124, issue #215. Now 456 experiments. Assessment v234.
 An EMERGENCE phenomenon: three irreducible components (x2-3, x3-5, x5-7) each carry ~zero trace information individually, but their COMPOSITE label carries 1.8170 bits at the semiprime level.
 The whole exceeds the sum of its parts.
 Paper 125, issue #214. Now 455 experiments. Assessment v235.
+
+## Part 198 - HINT-VALUE-SCALING (round-35 #5, exp 457, v234, paper 124)
+
+Hint values compound: k=1 +0.52, k=2 +2.43, k=3 +3.19. Marginal gains positive but decreasing.
+Hints compound like capacities — super-additive with diminishing returns.
+Now 457 experiments. Assessment v234.
