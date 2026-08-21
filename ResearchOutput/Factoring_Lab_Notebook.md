@@ -9188,3 +9188,14 @@ Paper 95, issue #187. Now 430 experiments. Assessment v206. Script: /tmp/exp_met
 
 **What this decides.** THE-TAXONOMY-IS-COMPLETE: four methods, three locality classes — trial division p-linear, ρ/ECM factor-local (√p / sub-exp in p), Fermat gap-local ((p+q)/2 − √N with measured cofactor-linear degradation). The method stratum's internal structure is fully mapped: which methods see the factor, which see the gap, and which see nothing but the scan.
 Paper 96, issue #188. Now 431 experiments. Assessment v207. Script: /tmp/exp_gaplocal.py; log: /tmp/r28n2d.log.
+
+## Part 178 — REPRODUCIBILITY-AUDIT (round-28 #3, exp 432, v208, paper 97)
+
+**Why.** Seventeen experiment scripts written today lived only in /tmp (one reboot from oblivion), and no stored result had ever been re-run post-hoc. This round fixes the durability gap and audits reproducibility.
+
+**Preservation.** All 17 scripts copied to ResearchOutput/scripts/2026-08-21-resume/ and committed: type-channel law table (80), quintic endpoints (82), D₅ search (84), battery series (91–92), joint-wall verification (93), qubit/sample ramp series (85–87), converse plane (88–90), method-locality pair (95–96), Berggren-3adic (81).
+
+**Audit — three keystones, fresh runs, stored fixed seeds.** Paper 80: all seven law-table rows identical to 4 decimals (S₃a/S₃b 1.0000; S₄ 1.0100; A₄ 0.9188; D₄ 1.6555; V₄ 0.8092; C₄ 1.4989), type histograms identical ({15320, 5778, 1900} for A₄), REVERSAL check True, semiprime legs identical (1.0001/1.0001/1.0034/0.4729; s-projs Is(2)/Is(2)/Is(3)). Paper 89: α_τ = 0.500, medians 19.30/19.36, α_ρ on N = 0.261 — identical. Paper 92: I(4-joint) = 8.2246, SYNERGY +4.3146, S₃a marginal 1.0012 — identical. TWELVE RECORDED HEADLINE NUMBERS; TWELVE EXACT REPRODUCTIONS. Zero drift.
+
+**What this decides.** THE-NUMBERS-REPRODUCE: the resumed programme's computational record is reproducible by construction — deterministic seeds and pipelines, demonstrated by fresh re-runs landing on the exact recorded values, with the scripts now durably in the repo.
+Paper 97, issue #189. Now 432 experiments. Assessment v208. Logs: /tmp/audit_p80.log, /tmp/audit_p89.log, /tmp/audit_p92.log.
