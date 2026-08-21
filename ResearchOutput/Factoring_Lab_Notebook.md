@@ -9234,3 +9234,14 @@ Paper 99, issue #191. Now 434 experiments. Assessment v210. Script: /tmp/exp_sum
 
 **Programme lesson.** Chained integer label encodings must be width-checked against their field sizes — a ·10 frame for a 3-valued code inside a ·100 frame for a 6-valued code silently merges classes. Paper 97's audit practice (fresh re-runs) is the detector.
 Paper 100, issue #192. Now 435 experiments. Assessment v211. Script: /tmp/exp_jointreconcile.py; log: /tmp/r29n2.log.
+
+## Part 181 — HINT-VALUE-JOINT (round-30 #1, exp 436, v212, paper 101)
+
+**Question.** With the verified 36-label chaining (paper 100), measure the corrected 2-field joint hint value: I(s,d jointly; joint labels) − I(N mod 713; joint labels). Does it exceed the per-dial hint sum (+0.52 + +0.51)?
+
+**Results (all asserts green, 4 s).** Product view (hint-free) = 2.1314 (= paper 91 exact); sum view alone 0.6432; gap view alone 0.6496; (s,d) joint view = 4.5605 (99.1% of the 4.6006 ceiling); **JOINT HINT VALUE = +2.4291 bits vs per-dial hint sum +1.0288 — HINT SYNERGY +1.40 bits: hints compound like capacities** (mirroring paper 92's capacity synergy — same mechanism: the CRT-joint sees all residues simultaneously, and the (s,d) pair determines both factor residues simultaneously).
+
+**NEW FLAG (paper-93 discipline).** The (s,d)-view which-factor statistic reads 0.9663 bits — far above every product-view wall. This is the sparse-plug-in regime at its extreme (~508k residue-pair cells vs 30k samples); NOT interpreted this round — a permutation-null test is the immediate follow-up. Structural note: s,d are symmetric under p↔q, so any REAL leakage would be orientation-conditional and itself significant.
+
+**What this decides.** THE-HINTS-COMPOUND: the hint-value law mirrors the capacity law — both compound super-additively across conductors with the same mechanism. Sharpens COND-RANK: conditioning capacity compounds across conductors.
+Paper 101, issue #193. Now 436 experiments. Assessment v212. Script: /tmp/exp_hintvaluejoint.py; log: /tmp/r30n1.log.
