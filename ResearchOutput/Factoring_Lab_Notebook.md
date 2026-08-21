@@ -9404,3 +9404,11 @@ Paper 119. Now 450 experiments. Assessment v229.
 
 Extending beyond degree 6: x7-3 root-count types show the type-channel framework extends cleanly to degree 7. Massive signal at conductor moduli (z=+1728), flat at coprime.
 Paper 120. Now 451 experiments. Assessment v230.
+
+## Part 196 - DIAL-CROSS-TALK (round-34 #3, exp 452, v231, paper 121)
+
+Two coprime-disc S3 cubics measured on the same primes: their splitting types are completely independent.
+Prime: I(type1;type2) = 0.000437 bits (null z=-0.81).
+Semiprime: I(pair1;pair2) = 0.001424 bits (null z=+2.79).
+Confirms that the type-channel framework's additivity rests on genuine independence.
+Paper 121, issue #213. Now 452 experiments. Assessment v231.
