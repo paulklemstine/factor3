@@ -9483,3 +9483,11 @@ Q(zeta_13 + zeta_13^-1) cyclic cubic (C3, conductor 13): only TWO types {nr=0: 6
 H(T) = 0.9192 bits. I(p mod 13; T) = H(T) EXACTLY (full pinning).
 Semiprime pair 0.4702; wall z = +9505; which-factor 0.0001.
 Paper 126. Now 459 experiments. Assessment v228.
+
+## Part 199 - CONJUGATE-S3-TEST (round-35 #8, exp 455, v232, paper 127)
+
+Conjugate S3 cubics with same disc -23: x3-x+1 and x3-x-1 produce EXACTLY identical type channels.
+I(p mod 23; T) = 1.000065 for BOTH — bit-for-bit identical to 6 decimal places.
+Semiprime pair channels agree within MC noise (1.0012 vs 1.0006).
+Confirms the type-channel law depends on the FIELD, not the POLYNOMIAL.
+Paper 127. Now 455 experiments. Assessment v232.
