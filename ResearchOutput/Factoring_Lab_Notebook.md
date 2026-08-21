@@ -9440,3 +9440,10 @@ Q(zeta_7 + zeta_7^-1) cyclic cubic (C3, conductor 7): only TWO types {nr=0: 66%,
 H(T) = 0.9179 bits. I(p mod 7; T) = 0.9179 = H(T) EXACTLY (full pinning).
 Semiprime pair 0.4747; wall z = +12517 (genuine); which-factor 0.0000.
 Paper 122, issue #209. Now 448 experiments. Assessment v228.
+
+## Part 198 - UNIVERSAL-S3-FIFTH (round-35 #2, exp 455, v233, paper 123)
+
+A fifth independent S3 cubic (x3-4x+1, disc = 229 prime) confirms the type-channel law.
+H(type) = 1.4575; I(p mod 229; T) = 1.0078, z=+263 (massive signal).
+Coprime moduli flat. FIVE-FIELDS-ONE-LAW.
+Now 455 experiments. Assessment v233.
