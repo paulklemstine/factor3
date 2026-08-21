@@ -9245,3 +9245,14 @@ Paper 100, issue #192. Now 435 experiments. Assessment v211. Script: /tmp/exp_jo
 
 **What this decides.** THE-HINTS-COMPOUND: the hint-value law mirrors the capacity law — both compound super-additively across conductors with the same mechanism. Sharpens COND-RANK: conditioning capacity compounds across conductors.
 Paper 101, issue #193. Now 436 experiments. Assessment v212. Script: /tmp/exp_hintvaluejoint.py; log: /tmp/r30n1.log.
+
+## Part 183 — SD-WALL-TEST (round-30 #2, exp 437, v213, paper 102)
+
+**Question.** Paper 101's (s,d)-view which-factor reading of 0.9663 bits — bias or signal? The paper-93 discipline requires the null before interpretation.
+
+**Test.** The exact (s,d)-view from paper 101 (s mod 713 · 713 + d mod 713; 28 947 distinct values vs 30k samples — extreme sparsity), 200-shuffle permutation null on bigger.
+
+**Results (all green, 6 s).** Product view: observed 0.0153 vs null 0.0162, z = −1.04 ✓. **(s,d) view: observed 0.9663 vs null 0.9648, z = +1.36 ✓ — INSIDE ITS NULL.** Joint labels: 0.0011 vs 0.0008, z = +1.44 ✓. All three views factor-blind at null sensitivity.
+
+**What this decides.** THE-HINTED-VIEW-IS-BLIND: the entire 0.97-bit (s,d)-view reading was sparse-plug-in inflation — the null reproduces it exactly. The battery programme's factor-blindness now extends to its strongest view: the factor-residue hint view carrying 4.56 of the 4.60 label-entropy bits is factor-blind at permutation-null sensitivity (±0.001 bits). The chain — capacity (92), ceiling saturation (94), hint compounding (101), verified blindness on every view including the hinted one (this paper) — is closed with no loose ends.
+Paper 102, issue #194. Now 437 experiments. Assessment v213. Script: /tmp/exp_sdwall.py; log: /tmp/r30n2.log.
