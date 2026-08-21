@@ -9162,3 +9162,16 @@ Paper 93, issue #185. Now 428 experiments. Assessment v204. Script: /tmp/exp_joi
 
 **What this decides.** THE-CURVE-SATURATES-AT-THE-CEILING: the battery-capacity law in three lines — I(k-joint) → H(joint labels); the deficit D(k) grows monotonically (7.36 bits = 3.7× additive at k=6); the ceiling is the joint label entropy. For the converse: k-dial battery capacity must be computed jointly and carries zero detectable which-factor content through k=6.
 Paper 94, issue #186. Now 429 experiments. Assessment v205. Script: /tmp/exp_batteryscaling.py; log: /tmp/r27n4b.log.
+
+## Part 176 — METHOD-LOCALITY (round-28 #1, exp 430, v206, paper 95)
+
+**Question.** Which methods are FACTOR-LOCAL (cost determined by a factor p rather than by N)? Adds ECM to the plane (never calibrated) and measures locality for ECM/ρ/trial division on constructed semiprimes with controlled (p,q).
+
+**Predictions (before the run).** H1 ρ and ECM flat in N at fixed p; H2 ρ grows ~√p, ECM sub-exponential-in-p locally; H3 trial division linear in p.
+
+**Method.** Constructed (p,q): fixed p=4093 with q ∈ 2^14..2^23 (H1); q ≈ 64p with p ∈ 2^8..2^14 (H2/H3); 9 draws per cell, MEDIANS (the first single-draw design was statistically inadequate — ρ's cost distribution spans 9..136 iters per cell; caught and fixed before claims).
+
+**Results (all asserts green, ~60 s).** H1: median flatness over 2^23 cofactor growth — ECM ×2.16, ρ ×1.40 (flat within method luck: ECM curve-restart scatter, ρ Poisson around √p ≈ 64). H2/H3 corrected slopes per log₂p (the script's slope print took log₂ of bit-lengths — xs nearly constant; DISCLOSED, corrected from the printed medians): **ρ 0.45 (birthday √p ✓), trial-div 1.09 (linear ✓), ECM 1.13** (locally power-like but constant-advantaged: at p = 2^14, ECM 6657 ops vs trial-div 12142 — already ahead, sub-exponential bending beyond this window).
+
+**What this decides.** THE-METHODS-ARE-FACTOR-LOCAL: the method stratum has measured internal structure — ρ and ECM never see the cofactor's size; trial division does; and the two factor-local methods differ in their p-profiles (ρ birthday-bound, ECM locally steeper but constant-advantaged and destined to bend sub-exponentially). ECM's plane position calibrated.
+Paper 95, issue #187. Now 430 experiments. Assessment v206. Script: /tmp/exp_methodlocality.py; log: /tmp/r28n1b.log.
