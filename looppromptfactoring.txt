@@ -1,12 +1,26 @@
-# FACTORING RESEARCH LOOP — cron prompt (paused 2026-08-12 at round-23 #1 done, 414 experiments, v190)
+# FACTORING RESEARCH LOOP — cron prompt (ACTIVE 2026-08-21: resumed by user request;
+# 429 experiments, v205, papers 01–94, issues #16–#95 + #172–#186, round-27 4/4 done)
 
 Run one iteration of the FACTORING RESEARCH LOOP (per memory file factoring-lab-state.md):
-(1) propose a NEW testable factoring hypothesis — next up round-15 #1 gcd-moment (S2 = N²+3N+1+(N−1)s−s² recovers the trace s=p+q via O(N) prefix mean), or a fresh angle;
-(2) implement and run a concrete Python experiment in /tmp (mine arXiv/alethean.org for angles if useful);
-(3) validate honestly against the 8 barriers;
-(4) record: append notebook Part, bump assessment version+count, write paper to NewMathematics/ if novel, publish as GitHub issue (label approved-direction) at paulklemstine/Lean, commit+push;
-(5) iterate. If the loop is already complete, stop and report.
+(1) propose a NEW testable factoring hypothesis — check factoring-lab-state.md for open
+    targets first (currently: formal barrier-4 converse proof; production-scale subexp
+    measurement; battery/type-channel extensions; fresh Catalog angles);
+(2) FIRST scan the Catalog (alethean.org/package_index.js) for prior work on the angle;
+(3) implement and run a concrete Python experiment in /tmp;
+(4) validate honestly against the 8 barriers;
+(5) record: append notebook Part, bump assessment version+count, write paper to
+    NewMathematics/ if novel, publish as GitHub issue (label approved-direction) at
+    paulklemstine/Lean, commit+push;
+(6) iterate. If a round is already in flight, check it rather than starting a parallel one.
 
-# STATUS NOTE (2026-08-12): factoring loop is PAUSED by request — loop now targets neural networks/LLMs
-# (see looppromptnetwork.txt and memory network-lab-state.md). Factoring state preserved as-is:
-# 414 experiments, assessment v190, papers 01–79, issues #16–#95, round-23 1/1 done.
+# STATE SUMMARY (2026-08-21): loop RESUMED after the 2026-08-12 pause. Since resume:
+# round-24 5/5 (papers 80–84: type-channel law closed at every tested group incl.
+#   non-abelian S₃/S₄/A₄/D₄/F₂₀ + D₅; Pythagorean-tree line closed adically),
+# round-25 3/3 (papers 85–87: qubit/sample fungibility ramp — 1 bit = 1 sample;
+#   real-N cap; standard-corner optimal — frontier ii CLOSED quantitatively),
+# round-26 3/3 (papers 88–90: empirical barrier-4 across the witness family;
+#   three-strata landscape; subexp stratum honestly unmeasured at toy scale),
+# round-27 4/4 (papers 91–94: battery space — synergy-and-overlap, synergy compounds,
+#   joint wall verified as bias, capacity curve saturates at the label-entropy ceiling).
+# Frontiers: (ii) CLOSED quantitatively; (i) empirically armed (formal converse proof
+# open); (iii) closed. All 8 barriers hold.
