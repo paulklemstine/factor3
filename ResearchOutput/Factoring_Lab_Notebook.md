@@ -9387,3 +9387,10 @@ Paper 116, issue #207. Now 450 experiments. Assessment v226.
 
 Conductor scan identified m* = 320 for x5+20x+32 (D5): I(N mod 320; fork) = 0.9999 = 1 bit. The quadratic subfield has |d(K)| = 320.
 Paper 117, issue #208.
+
+## Part 194 - D5-TYPE-CHANNEL (round-33 #3, exp 448, v228, paper 118)
+
+Completing the D5 measurement at its verified conductor m*=320.
+Prime: I(p mod 320; T) = 1.0054, z=+338.
+Semiprime: I(N mod 320; pair) = 1.0054.
+Paper 118, issue #209. Now 448 experiments. Assessment v228.
