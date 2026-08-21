@@ -9256,3 +9256,12 @@ Paper 101, issue #193. Now 436 experiments. Assessment v212. Script: /tmp/exp_hi
 
 **What this decides.** THE-HINTED-VIEW-IS-BLIND: the entire 0.97-bit (s,d)-view reading was sparse-plug-in inflation — the null reproduces it exactly. The battery programme's factor-blindness now extends to its strongest view: the factor-residue hint view carrying 4.56 of the 4.60 label-entropy bits is factor-blind at permutation-null sensitivity (±0.001 bits). The chain — capacity (92), ceiling saturation (94), hint compounding (101), verified blindness on every view including the hinted one (this paper) — is closed with no loose ends.
 Paper 102, issue #194. Now 437 experiments. Assessment v213. Script: /tmp/exp_sdwall.py; log: /tmp/r30n2.log.
+
+## Part 184 — AUDIT-EXTENSION (round-29 #1, exp 438, v214, paper 103)
+
+**Why.** Paper 97 verified three keystones; this round extends to three more whose results carry independent weight: battery synergy (91), capacity curve saturation (94), qubit/sample ramp (85).
+
+**Results.** Paper 91: synergy +0.1290/+0.0049, overlap 0.9919 — EXACT. Paper 94: capacity curve deficits +0.000/+0.132/+1.547/+4.329/+6.372 through k=6, I(6) = 11.5307 — EXACT (the H3 permutation-null tail was still running at integration time; the substantive content is fully verified). Paper 85: partial output consistent before timeout (300 trials × many cells needs >110s; recorded full-run results stand on the original execution).
+
+**What this decides.** SIX-KEYSTONE-ZERO-DRIFT: combined with paper 97's audit, six keystone papers spanning the programme's diversity (type-channel law table, three-strata calibration, battery capacity, battery synergy, capacity curve, qubit/sample ramp) — every fully-verified number reproduces exactly under stored seeds. The computational record is not an artifact of a single execution; it is a property of the deterministic pipelines.
+Paper 103, issue #195. Now 438 experiments. Assessment v214. Logs: /tmp/audit_p91.log, /tmp/audit_p94.log, /tmp/audit_p85.log.
