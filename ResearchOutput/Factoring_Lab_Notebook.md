@@ -9071,3 +9071,16 @@ Paper 86, issue #178. Now 421 experiments. Assessment v197. Script: /tmp/exp_qub
 
 **What this decides.** THE-STANDARD-CORNER-IS-OPTIMAL: shaving register width costs exponential samples/re-draws against a quadratic width saving; no point on the three-axis surface undercuts the textbook parameterization, and no point approaches classical complexity. Frontier (ii) CLOSED quantitatively: paper 47 threshold → paper 85 ramp → paper 86 cap → paper 87 optimum. DEQUANT final form.
 Paper 87, issue #179. Now 422 experiments. Assessment v198. Script: /tmp/exp_qubittrade4.py; log: /tmp/r25n3.log.
+
+## Part 169 — CONVERSE-COST-CURVE (round-26 #1, exp 423, v199, paper 88)
+
+**Question.** The empirical barrier-4 converse: does the ENTIRE known factor-revealing witness family sit on one cost-information plane with no poly(log N) definition-route anywhere?
+
+**Family & method.** W1 M1 = Σ gcd(x,N) (paper 57's closed trace witness, N-scan); W2 zero-divisor first hit (paper 60, cost = min(p,q)); W3 CF period of √N (paper 63, cost = ℓ); W4 idempotent count #{x² ≡ x mod N} (CRT-separable N-scan). Identical conditions: balanced random semiprimes, timed definition-route passes, fitted exponents, exchange rates in ops/factor-bit, joint reach-chain verification.
+
+**Predictions (before the run).** H1: α ≈ 1.0 for scan-type witnesses, ≈ 0.5 for structural hits — all super-poly in log N; H2: the floor sits at the scan witnesses; H3: reach chain 100% jointly.
+
+**Results (all asserts green, ~60 s).** α_W1 = 1.000 EXACT; W2 cost = min(p,q) 60/60 (mean log₂cost 19.35 at log₂N ≈ 20); **α_W3 = 0.398** (honest: ℓ/√N drifts 0.75→0.18→0.23 — period growth lags √N on finite samples); α_W4 = 1.000 with count = 4 idempotents INCLUDING x = 0 (first launch excluded 0 and failed its own assert — the trivial idempotent is part of the CRT structure). THE PLANE: exchange rates 2.0e4 / 2.9e4 / 3.0e5 / 2.0e4 ops per factor-bit — floor at the scan-type witnesses; NO poly(log N) route anywhere. Reach chain 100% jointly. Disclosed: first launch sized semiprimes by `bits` while N carries 2·bits bits (a 10⁹-op stall).
+
+**What this decides.** NO-POLYLOG-ROUTE-ANYWHERE: the empirical converse holds across the whole family — every factor-revealing definition-route is super-poly in log N, the cheapest factor-bits ride the √N-scale classical methods (barrier 8's own face), and all content routes through the trace s. With the proven no-pinning half (QRLEAK/COMPENSATING-PARTNER), frontier (i) is empirically armed end-to-end; the formal converse proof remains the open theoretical target.
+Paper 88, issue #180. Now 423 experiments. Assessment v199. Script: /tmp/exp_conversecost.py; log: /tmp/r26n1c.log.
