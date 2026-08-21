@@ -9097,3 +9097,18 @@ Paper 88, issue #180. Now 423 experiments. Assessment v199. Script: /tmp/exp_con
 
 **What this decides.** THE-THREE-STRATA-PLANE: barrier 4 prices the definition-routes (α ≥ 0.4), barrier 8 owns the methods (α ≈ ¼ as data, not citation), Shor owns the quantum corner (poly) — three non-overlapping strata whose boundaries are the barriers, each price MEASURED under identical conditions. The programme's cost knowledge is unified; frontier (i)'s empirical arming extends to the whole landscape.
 Paper 89, issue #181. Now 424 experiments. Assessment v200. Script: /tmp/exp_threestrata.py; log: /tmp/r26n2c.log.
+
+## Part 171 — SUBEXP-STRATUM (round-26 #3, exp 425, v201, paper 90) — HONEST INCONCLUSIVE
+
+**Question.** Add the fourth stratum (sub-exponential sieves, L_{1/2}) to the landscape by measuring its engine: is P(x²−N is B-smooth) described by Dickman ρ(u); do trials-per-relation follow 1/ρ(u); can the optimal-B trade-off place the stratum's cost curve?
+
+**Design.** x uniform in [√N, 2√N] (x²−N at N-scale), per-sample u = log(x²−N)/log B, half-bit bins pooled over six (N,B) cells (2400 samples), compared against NUMERICALLY INTEGRATED Dickman ρ (Euler step 5e-4 on uρ′(u) = −ρ(u−1)).
+
+**Results — INCONCLUSIVE.** Empirical/true-ρ ratios across populated bins: 0.26 (u=3.0, n=161) / 1.86 (u=3.5) / 1.47 (u=4.0) / 9.27 (u=5.0, ±σ ≈ 100% relative) / 0.00 at three bins below MC reach. Non-monotone, underpowered. The toy cost model C(B) = π(B)/ρ(u) + π(B)² fits d(log₂C)/d(log₂N) = 0.024 — flat, cannot place the stratum.
+
+**Two real findings inside the null.** (1) The leading-term Dickman approximation exp(−u(ln u + ln ln u − 1)) is INVALID at small u: 0.561 at u=3 vs true ρ(3) = 0.0487 — a 12× error, still large through u=6; informal smoothness arguments using it below u ≈ 8 are quantitatively meaningless. (2) x²−N smoothness is NOT random-integer smoothness at toy scale (non-monotone ratios vs correct ρ — consistent with the quadratic-character constraint on prime divisors of x²−N, whose O(1) corrections only stabilize asymptotically).
+
+**Method ledger (3 catches).** (1) First design sampled x in a width-10³ window (x²−N ~ N^{1/2+}-scale) while computing u as if N-scale — the entire first comparison mis-binned (caught by empirical-above-predicted anomalies); (2) pre-written success VERDICT over contradicting data → replaced by data-computed output before claims; (3) trailing-quote syntax break caught by ast.parse.
+
+**What this decides.** THE-STRATUM-STAYS-UNMEASURED at toy scale: MC-feasible smoothness measurement cannot resolve ρ(u) ≪ 10⁻³, and the toy cost model cannot see the asymptotic regime. The landscape stands at THREE measured strata plus one unmeasured; open targets now explicitly include the formal barrier-4 converse proof AND a production-scale measurement of the sub-exponential stratum.
+Paper 90, issue #182. Now 425 experiments. Assessment v201. Script: /tmp/exp_subexpstratum.py; log: /tmp/r26n3e.log.
