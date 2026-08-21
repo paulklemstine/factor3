@@ -9138,3 +9138,14 @@ Paper 91, issue #183. Now 426 experiments. Assessment v202. Script: /tmp/exp_dia
 
 **What this decides.** SYNERGY-COMPOUNDS: batteries are super-additive systems whose capacity grows toward the joint label-entropy ceiling with dominant higher-order terms. Paper 91's "neither additive nor comonotone" survives; its implicit scale does not — pairwise accounting understates batteries badly. For the converse: no-pinning must be scoped JOINTLY (this machinery), never marginally.
 Paper 92, issue #184. Now 427 experiments. Assessment v203. Script: /tmp/exp_batterycapacity.py; log: /tmp/r27n2b.log.
+
+## Part 174 — JOINT-WALL-VERIFIED (round-27 #3, exp 428, v204, paper 93)
+
+**Question.** Paper 92's 4-field joint which-factor reading of 0.0469 bits was flagged as suspected sparse-plug-in bias but left untested. Bias or signal? An untested caveat on a factor-blindness claim is a debt.
+
+**Test.** The exact 4-field joint code (S₃a@31 × S₃b@23 × A₄@9 × D₄@8, CRT-chained) vs bigger = [p>q], 200-shuffle permutation null. Process catch disclosed: first build chained only two fields (wrong object — trivially inside its null) before extending to the actual target.
+
+**Results (all green, ~60 s).** Observed 0.0469 vs null mean **0.0469** (sd 0.0014), **z = +0.05** — THE ENTIRE READING IS SPARSE-PLUG-IN BIAS. The 2-field joint also verified (0.0011 inside its null).
+
+**What this decides.** THE-WALL-WAS-BIAS: the battery programme's factor-blindness claim STANDS with its caveat converted into a verified statement — the full battery capacity (8.2246 bits at k=4, ceiling 9.53) is symmetric trace-routed content with zero detectable which-factor leakage at permutation-null sensitivity (~±0.003 bits).
+Paper 93, issue #185. Now 428 experiments. Assessment v204. Script: /tmp/exp_jointwall.py; log: /tmp/r27n3c.log.
