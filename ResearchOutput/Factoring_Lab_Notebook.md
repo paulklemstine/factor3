@@ -9447,3 +9447,12 @@ A fifth independent S3 cubic (x3-4x+1, disc = 229 prime) confirms the type-chann
 H(type) = 1.4575; I(p mod 229; T) = 1.0078, z=+263 (massive signal).
 Coprime moduli flat. FIVE-FIELDS-ONE-LAW.
 Now 455 experiments. Assessment v233.
+
+## Part 198 - THE-OCTIC-CYCLIC (round-35 #3, exp 456, v234, paper 124)
+
+Q(zeta_17)+ (C8, degree 8, conductor 17): FULL PINNING confirmed.
+H(T) = 1.7474 bits; I(p mod 17; T) = 1.7474 = H(T) EXACTLY.
+Four types {1:12%, 2:12%, 4:25%, 8:50%} matching C8 structure.
+Semiprime pair 1.3097; which-factor 0.0002.
+Degree ladder extends to 8: every abelian field shows full pinning.
+Paper 124, issue #215. Now 456 experiments. Assessment v234.
