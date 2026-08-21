@@ -9491,3 +9491,10 @@ I(p mod 23; T) = 1.000065 for BOTH — bit-for-bit identical to 6 decimal places
 Semiprime pair channels agree within MC noise (1.0012 vs 1.0006).
 Confirms the type-channel law depends on the FIELD, not the POLYNOMIAL.
 Paper 127. Now 455 experiments. Assessment v232.
+
+## Part 200 - BIQUADRATIC-TYPE-CHANNEL (round-35 #9, exp 459, v236, paper 127)
+
+Biquadratic Q(sqrt2,sqrt3) via x4-10x2+1 (V4, conductor 24): only TWO types {nr=0:75%, nr=4:25%}.
+H(T) = 0.8074 bits. I(p mod 24; T) = H(T) EXACTLY (full pinning).
+Semiprime pair 0.2909; which-factor 0.0001.
+Paper 127, issue #223. Now 459 experiments. Assessment v236.
