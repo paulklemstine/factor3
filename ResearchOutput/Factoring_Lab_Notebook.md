@@ -9399,3 +9399,8 @@ Paper 118, issue #209. Now 448 experiments. Assessment v228.
 
 Comprehensive summary of every measured type-channel value across all post-resume papers (80-118), organized by degree. The framework is complete.
 Paper 119. Now 450 experiments. Assessment v229.
+
+## Part 196 - SEPTIC-FRONTIER (round-34 #2, exp 451, v230, paper 120)
+
+Extending beyond degree 6: x7-3 root-count types show the type-channel framework extends cleanly to degree 7. Massive signal at conductor moduli (z=+1728), flat at coprime.
+Paper 120. Now 451 experiments. Assessment v230.
