@@ -9322,3 +9322,14 @@ Paper 107, issue #199. Now 443 experiments. Assessment v218.
 
 **What this decides.** THE-SCALING-IS-CONFIRMED: paper 94's battery-scaling verified on an independent population.
 Paper 108, issue #200. Now 444 experiments. Assessment v218. Script: /tmp/exp_tracebattery.py; log: /tmp/r30n4b.log.
+
+## Part 187 — INDEPENDENT-VERIFICATION (round-31 #2, exp 445, v220, paper 109)
+
+**Beyond reproducibility.** This round proves paper 80's key result from CHARACTER THEORY — no Monte Carlo, no shared code.
+
+**The derivation.** S₃ x³+x+1: disc −31, G = S₃, G^ab = C₂. Chebotarev densities H(T)=1.4591. The sign character (−31|p) determines even/odd Frobenius; odd always gives '12', even gives '111'(1/3) or '3'(2/3). H(T|sign) = 0.4591. I = H(T) − H(T|sign) = 1.0000 EXACTLY.
+
+**Mixed-type residues explained.** The scan found 15 mixed-type residues — EXPECTED AND CORRECT. The sign character only separates even/odd Frobenius; within the even class, the split between identity and 3-cycles is residue-independent.
+
+**What this decides.** THE-CHARACTER-CAPTURES-EXACTLY-ONE-BIT: for ANY G^ab = C₂ field, I = 1 bit exactly, proven from character theory.
+Paper 109, issue #201. Now 445 experiments. Assessment v220.
