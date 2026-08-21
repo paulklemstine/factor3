@@ -9175,3 +9175,16 @@ Paper 94, issue #186. Now 429 experiments. Assessment v205. Script: /tmp/exp_bat
 
 **What this decides.** THE-METHODS-ARE-FACTOR-LOCAL: the method stratum has measured internal structure — ρ and ECM never see the cofactor's size; trial division does; and the two factor-local methods differ in their p-profiles (ρ birthday-bound, ECM locally steeper but constant-advantaged and destined to bend sub-exponentially). ECM's plane position calibrated.
 Paper 95, issue #187. Now 430 experiments. Assessment v206. Script: /tmp/exp_methodlocality.py; log: /tmp/r28n1b.log.
+
+## Part 177 — THE-GAP-LOCAL-METHOD (round-28 #2, exp 431, v207, paper 96)
+
+**Question.** Fermat — the one classical method never locality-classified — has iteration count exactly (p+q)/2 − √N: a function of the GAP q − p. Verify the identity and measure its interpolation between the factor-local and cofactor-scale regimes.
+
+**Predictions (before the run).** H1 identity exact; H2 across r = q/p ∈ [1, 64] at fixed p, cost grows from ~0 toward the cofactor-linear face; H3 the completed four-method locality table.
+
+**Results (all asserts green, 1 s).** H1: identity 24/24 with per-draw instrumentation (draw 0: pred = meas = 637). H2: r = 2..64 → Fermat 352 → 100282 iterations; in p-units 0.09 → 24.50; at r = 64 the measured cost is 0.78 of the cofactor-linear limit p·(r−1)/2 — the gap-local degradation path quantified. BONUS FINDING: the r=1 row is the degenerate N = p² case — Fermat's target a = p lies BELOW its start ⌊√N⌋+1, so plain Fermat has no true stopping point on prime squares (it exited after 8.37M iterations only by hitting an unrelated square); CFRAC-style generalizations do not share the defect.
+
+**Method ledger (2 catches).** (1) the round's first launch hung 7+ minutes in H1 — faulthandler stack dump found the ROOT CAUSE: the fermat loop LACKED ITS INCREMENT (a += 1 lost between drafts), spinning on a constant value; the standalone control (with increment) ran the identical body instantly; (2) instrumented rerun asserted ok == 40 against a 24-draw loop — stale constant fixed.
+
+**What this decides.** THE-TAXONOMY-IS-COMPLETE: four methods, three locality classes — trial division p-linear, ρ/ECM factor-local (√p / sub-exp in p), Fermat gap-local ((p+q)/2 − √N with measured cofactor-linear degradation). The method stratum's internal structure is fully mapped: which methods see the factor, which see the gap, and which see nothing but the scan.
+Paper 96, issue #188. Now 431 experiments. Assessment v207. Script: /tmp/exp_gaplocal.py; log: /tmp/r28n2d.log.
