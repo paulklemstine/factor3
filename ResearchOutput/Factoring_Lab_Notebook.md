@@ -9199,3 +9199,16 @@ Paper 96, issue #188. Now 431 experiments. Assessment v207. Script: /tmp/exp_gap
 
 **What this decides.** THE-NUMBERS-REPRODUCE: the resumed programme's computational record is reproducible by construction — deterministic seeds and pipelines, demonstrated by fresh re-runs landing on the exact recorded values, with the scripts now durably in the repo.
 Paper 97, issue #189. Now 432 experiments. Assessment v208. Logs: /tmp/audit_p80.log, /tmp/audit_p89.log, /tmp/audit_p92.log.
+
+## Part 179 — BATTERY-UTILITY (round-28 #4, exp 433, v208, paper 98) — REFUTED BY DESIGN FLAW, THE FLAW IS THE FINDING
+
+**Question.** What does the 6-dial battery's 12.7-bit capacity BUY? Does observing the label vector narrow the candidate set for p beyond the unconditional scan?
+
+**What broke.** The measurement needed per-dial maps residue r mod m* → type of a prime ≡ r mod m*. Built by polynomial evaluation at r (does f(r) ≡ 0?), the tables were conceptually wrong: they test whether r ITSELF is a root of f mod m*, not which splitting type primes ≡ r carry. The consistency assert caught it: true p excluded in 6/150 cases (quartic dials' buggy pattern enumeration), while the cubic dials' union-filter passed 0/150 — but only because their wrong unions covered nearly all residues.
+
+**THE FINDING.** The needed map DOES NOT EXIST: primes in the same residue class mod m* carry different splitting types — that is exactly why every measured channel sits below its label-entropy ceiling (S₃a: I = 1.0012 vs H(T) = 2.2982; the gap IS the within-class variation). The battery's labels are statistics of the JOINT (p mod m*, q mod m*) draw; they cannot be compiled into per-candidate residue filters. The candidate-set framing of battery utility is a category error.
+
+**The corrected understanding.** The battery's utility is Bayesian: the label vector re-weights the posterior over the joint residue vector (p mod M, q mod M) — a 12.7-bit update on a ~20-bit space, exactly as the capacity law says. Converting that posterior into individual-candidate narrowing requires the per-prime type determination that the abelianization gap denies: computing which type a prime carries IS the factoring problem. In no-pinning terms: constant-bounded posterior mass on joint residue vectors, no candidate filter without circularity.
+
+**Method ledger.** The inconsistency assert stopped the run before any claim; the diagnosis traced the exclusions to the quartic pattern enumeration's precedence bug AND then to the deeper conceptual error.
+Paper 98, issue #190. Now 433 experiments. Assessment v208. Script: /tmp/exp_batteryutility.py; log: /tmp/r28n4b.log.
