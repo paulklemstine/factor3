@@ -9043,3 +9043,18 @@ Paper 84, issue #176. Now 419 experiments. Assessment v195. Script: /tmp/exp_d5q
 
 **What this decides.** The qubit/sample phase diagram is a FUNGIBILITY RAMP: P_certify(s,t) = 1−(1−min(c·q/r², sat))^s with unit exchange rate — not a threshold. Round-14's "samples fail" was the deep-ramp limit. The quantum channel's resource bound is quantitatively graded: Shor's register can be shortened by paying samples linearly (1 bit ↔ 1 sample) until both explode together. Sharpens DEQUANT beyond paper 47's binary truncation threshold.
 Paper 85, issue #177. Now 420 experiments. Assessment v196. Script: /tmp/exp_qubittrade2.py; log: /tmp/r25n1g.log.
+
+## Part 167 — QUBIT-TRADE3 (round-25 #2, exp 421, v197, paper 86)
+
+**Question.** Does the fungibility ramp (paper 85) survive when the recovered period must ACTUALLY FACTOR a real semiprime — r = ord_N(a), certificates → gcd(a^{b/2} ± 1, N), full failure taxonomy?
+
+**Construction (invented this round).** Real ord_N(a) is lcm(p−1,q−1)-scale (~2^30) — register simulation impossible → CONSTRUCTED controlled-order semiprimes: primes p ≡ 1 mod r (r smooth ∈ {210,310,434,510}), order-r elements by projection, CRT-combined with RANDOMIZED per-prime orders d_p, d_q ∈ {r, r/2}. Structural fact surfaced: ord_p = ord_q EXACTLY ⟹ a^{r/2} ≡ −1 mod both ⟹ N NEVER factors from period certificates (the permanently-unlucky case, ~½ in real Shor — re-draw a).
+
+**Predictions (before the run).** H1 ramp persists in the factoring metric; H2 exchange law; H3 unlucky-half cap < 1 per-N structural; H4 taxonomy.
+
+**Results (all green, 14 s).** RAMP PERSISTS: P_factor(s=1) = 0.018/0.056/0.158/0.181 across t = wall−4..wall+2; nocert share 0.003 (certification is not the bottleneck above wall−2 — paper 85's ramp). LADDERS track independence where the cap allows (wall−2: 0.056/0.204/0.471 ≈ 1−(1−0.06)^s). **SATURATION ≈ 0.53 = cert-rate × mixed-role fraction (~⅔)** — the per-N structural cap: same-role N's never factor, samples cannot push past, only re-drawing a. TAXONOMY: spurious-or-partial 0.844 (the classical burden IS certificate filtering = N-verification's role), unlucky 0.109, factor 0.044, nocert 0.003. Exchange-law visibility compressed against the cap (t*(≥0.5) reachable only at s=20).
+
+**Method ledger (4 catches across 6 launches).** (1) order blow-up (naive r ~ 2^30); (2) simultaneous-order search impossible (~1e-7) → CRT construction; (3) equal-order = permanent unluckiness (first measurements all-zero); (4) infinite loop on odd half-orders (leftover guard) + first-certificate early-return masking later splitting ones + a HARDCODED VERDICT STRING replaced by data-computed output before any claim.
+
+**What this decides.** THE-RAMP-SURVIVES-CONTACT-WITH-FACTORS: the fungibility law extends end-to-end from abstract certification to real factor extraction, with one new structural element — the per-N unlucky cap that sample count cannot move. The dominant classical burden is spurious-certificate filtering (N-verification's exact role). Frontier (ii) is quantitatively mapped on both axes.
+Paper 86, issue #178. Now 421 experiments. Assessment v197. Script: /tmp/exp_qubittrade3.py; log: /tmp/r25n2h.log.
