@@ -9212,3 +9212,14 @@ Paper 97, issue #189. Now 432 experiments. Assessment v208. Logs: /tmp/audit_p80
 
 **Method ledger.** The inconsistency assert stopped the run before any claim; the diagnosis traced the exclusions to the quartic pattern enumeration's precedence bug AND then to the deeper conceptual error.
 Paper 98, issue #190. Now 433 experiments. Assessment v208. Script: /tmp/exp_batteryutility.py; log: /tmp/r28n4b.log.
+
+## Part 180 — THE-SUM-DIFFERENCE-SPLIT (round-29 #1, exp 434, v210, paper 99)
+
+**Question.** Each dial's labels are functions of (p mod m*, q mod m*) ↔ (s mod m*, d mod m*) — sum and gap. How much of each dial's channel rides on the trace (s, the least-hidden invariant) versus the gap (d, what Fermat feeds on)?
+
+**Pre-stated hypothesis (REFUTED — in the interesting direction).** I(s,d jointly) reconstructs the product-view channel I(N mod m*; labels). REFUTED: the (s,d) view EXCEEDS it.
+
+**Results (all asserts green, ~45 s).** Per-dial routing (S₃a@31; S₃b replicates): product-view (hint-free) = 1.0012; sum-view alone = 0.0391 (3.9%); gap-view alone = 0.0387 (3.9%); full-residue view (s,d jointly) = 1.5201; **HINT VALUE = +0.5189 bits** — what knowing the factor residues separately adds over reading N's residue. S₃b: hint +0.5099. p↔q symmetry verified (d ≡ −d equivalent).
+
+**What this decides.** THE-HINT-VALUE-IS-REAL: the sum and gap residues individually carry almost nothing (~4% each); their COMBINATION carries more than the modulus's product residue — the difference is exactly the value of a factor-residue hint, bridging battery capacity to COND-RANK's conditioning-capacity measurements and explaining the sub-ceiling gaps from the other side. ANOMALY FLAGGED: this script's joint-battery product-view reads 0.1353 vs paper 91's 2.1314 for the nominally identical quantity — unresolved, joint row not cited until reconciled; per-dial tables internally consistent across two independent computations.
+Paper 99, issue #191. Now 434 experiments. Assessment v210. Script: /tmp/exp_sumdiffsplit.py; log: /tmp/r29n1b.log.
