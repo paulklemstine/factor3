@@ -9498,3 +9498,9 @@ Biquadratic Q(sqrt2,sqrt3) via x4-10x2+1 (V4, conductor 24): only TWO types {nr=
 H(T) = 0.8074 bits. I(p mod 24; T) = H(T) EXACTLY (full pinning).
 Semiprime pair 0.2909; which-factor 0.0001.
 Paper 127, issue #223. Now 459 experiments. Assessment v236.
+
+## Part 200 - RAMIFIED-TYPE-CHANNEL (round-36 #1, exp 460, v237)
+
+Ramified primes add negligible info: x2-3 ramified {2,3} gives I=1.0020 all vs 1.0000 unramified only.
++0.002 bits from including two ramified primes out of thousands. Exclusion fully justified.
+Now 460 experiments. Assessment v237.
