@@ -9412,3 +9412,11 @@ Prime: I(type1;type2) = 0.000437 bits (null z=-0.81).
 Semiprime: I(pair1;pair2) = 0.001424 bits (null z=+2.79).
 Confirms that the type-channel framework's additivity rests on genuine independence.
 Paper 121, issue #213. Now 452 experiments. Assessment v231.
+
+## Part 197 - DEGREE-6-NONABELIAN (round-34 #4, exp 453, v232, paper 122)
+
+D6 type channel for x6-2: three types {0:66%, 2:25%, 6:8%}, H(T)=1.1835 bits.
+I(p mod 3; T) = 0.3630, z=+1921 — massive signal at conductor.
+Semiprime pair channel 0.1321 bits — genuine structure.
+Framework extends to nonabelian groups at degree 6.
+Paper 122, issue #214. Now 453 experiments. Assessment v232.
