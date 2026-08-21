@@ -9017,3 +9017,16 @@ Paper 82, issue #174. Now 417 experiments. Assessment v193. Script: /tmp/exp_qui
 
 **What this decides.** THE-TYPE-CHANNEL'S-TWO-EXTREMES: S₅'s 2.5574 bits (program maximum) reduce to the single quadratic-residue bit of N mod 2869; A₅'s 1.6555 bits reduce to NOTHING. The quintic row is measured on 4/5 groups (D₅ pending a verified polynomial); the abelianization law confirmed at EVERY abelianization type existing for degrees 2–5: trivial/C₂/C₃/C₄/C₂×C₂/Cₙ. Type-channel program complete at every tested group.
 Paper 83, issue #175. Now 418 experiments. Assessment v194. Script: /tmp/exp_s5a5quintics.py; log: /tmp/r24n4k.log.
+
+## Part 165 — D₅-QUINTIC (round-24 #5, exp 419, v195, paper 84)
+
+**Question.** The last untested transitive quintic group: does the abelianization law hold on D₅, completing the row C₅/D₅/F₂₀/A₅/S₅?
+
+**Method (the round invented its object).** No literature polynomial needed — the type histogram IS the Chebotarev group readout. Scanned x⁵+ax+b (|a|,|b| ≤ 60) via sympy disc + irreducibility: FOUR D₅ quintics in seconds (x⁵+11x±44 disc 108416²; x⁵+20x±32 disc 64000²), each with the exact signature {[1⁵]:≈0.10, [5]:≈0.40, [1,2,2]:≈0.50}. THE SUBTLETY: D₅ ⊆ A₅ ⟹ √disc ∈ ℚ ⟹ the abelianization's quadratic subfield K is NOT Q(√disc). Theory locates it — splitting-field ramification = root-field ramification ⟹ K = Q(√d), d squarefree over f's ramified set — and candidate enumeration + Kronecker matching identifies K = Q(√−5) at agreement 1.0000 UNIQUELY (m* = 20). A modulus-scan approach (m < 5000) failed honestly first; an even-numerator jacobi_symbol bug was fixed by reusing the proven Kronecker helper.
+
+**Predictions (before the run).** I₁ = 1.0000 exact (every D₅ type determines its sign); pair = 1.0 (C₂ cap); [1,2,2]-fork s-proj = Is(2).
+
+**Results (all asserts green, 105 s).** Type rates within 0.002 of {1/10, 4/10, 5/10}; no non-D₅ type ever; H(T) = 1.3610 bits; sign agreement 1.0000 vs kron(−5,p); **I(p mod 20; T) = 1.0000 vs law 1.0000 EXACTLY** (bias +0.0001 at the small conductor — the cleanest cell of the program); semiprime pair = 1.0000 vs null 1.0000 (z=+1.06); reflection-fork s-proj = 1.0000 vs Is(2) = 1.0000; which-factor 0.0000.
+
+**What this decides.** THE-QUINTIC-ROW-COMPLETE: all five transitive groups on their pre-stated predictions — C₅ 0.7198/Is(5), D₅ 1.0000/1.0, F₂₀ 1.4989/1.25, A₅ 0/0, S₅ 1.2158-at-null/1.0 — one law, five groups, no exceptions; the gap always exactly E[H(coset|T)]. The type-channel program has measured every group structure it can name at degrees 2–5.
+Paper 84, issue #176. Now 419 experiments. Assessment v195. Script: /tmp/exp_d5quintic.py; log: /tmp/r24n5f.log.
