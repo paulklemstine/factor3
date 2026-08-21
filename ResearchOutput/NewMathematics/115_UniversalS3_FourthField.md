@@ -18,4 +18,4 @@ x³−7 (disc = −1323 = −3³·7²): root-count histogram {nr=0: 2173, nr=1: 
 
 Four independent S₃ fields across four distinct discriminants, all confirming the same result: the sign character captures exactly 1 bit of type information.
 
-Now 450 experiments. Assessment v226. Paper 115.
+Now 450 experiments. Assessment v226. Paper 115, issue #206.
