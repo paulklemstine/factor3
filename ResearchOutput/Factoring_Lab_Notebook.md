@@ -9030,3 +9030,16 @@ Paper 83, issue #175. Now 418 experiments. Assessment v194. Script: /tmp/exp_s5a
 
 **What this decides.** THE-QUINTIC-ROW-COMPLETE: all five transitive groups on their pre-stated predictions — C₅ 0.7198/Is(5), D₅ 1.0000/1.0, F₂₀ 1.4989/1.25, A₅ 0/0, S₅ 1.2158-at-null/1.0 — one law, five groups, no exceptions; the gap always exactly E[H(coset|T)]. The type-channel program has measured every group structure it can name at degrees 2–5.
 Paper 84, issue #176. Now 419 experiments. Assessment v195. Script: /tmp/exp_d5quintic.py; log: /tmp/r24n5f.log.
+
+## Part 166 — QUBIT-TRADE2 (round-25 #1, exp 420, v196, paper 85)
+
+**Question.** Round-14 fixed t_min ≈ 2log₂r at s=1 and saw "10 samples fail" below. What is the full (t, s) phase diagram — can samples compensate for missing qubits?
+
+**Pre-stated hypothesis (REFUTED — honestly).** A VERTICAL WALL: odd r ⟹ q = 2^t never a multiple of r ⟹ every peak strictly between grid points ⟹ the 1/(2r²) CF test never certifies r, deterministically, at any s. REFUTED under the correct measurement kernel: certification needs dist(jq/r, ℤ) < q/(2r²), and those distances spread over [0,½] ⟹ per-sample rate ≈ q/r², not zero. The wall bound holds only in the deep-ramp corner q/r² ≪ 1 — exactly where paper 47's "10 samples fail" lived.
+
+**Method (3 designed-check catches across 6 runs).** (1) WRONG KERNEL: contiguous-block Dirichlet (x ∈ [0,r)) instead of the post-collapse arithmetic-progression kernel P(k) = (1/Mq)|sin(πMkr/q)/sin(πkr/q)|², M ≈ q/r — flagged by degenerate P(k=0)=1 at q=r; the first vertical-wall table was an artifact of the wrong ensemble. (2) POST-PROCESSING SWAMP: lcm-of-candidates dies on spurious small-denominator certificates → replaced by the CERTIFICATION STATISTIC (∃ sample whose CF passes 1/(2b²) with b = r — necessary condition for any post-processing; classical period-verification free). (3) Degenerate regimes documented: pure powers of two at t = v₂(r) give uniform outcomes (entropy = log₂q, r-independent).
+
+**Results (all asserts green, 342 s).** (a) RAMP: P₁(t) rises smoothly with q/r² in odd/mixed families (4·odd: 0.003 @ 0.028 → 0.36 @ 0.905 → plateau ≈ 0.46); pure powers of two flat-saturated (~0.5 — peaks exactly on grid). (b) LADDERS: P_s = 1−(1−P₁)^s predicts measured ladders tightly (0.725 → s=2: 0.940 vs pred 0.924; 0.055 → s=20: 0.680 vs pred 0.677). (c) EXCHANGE LAW (odd comp 1155, wall t=21): t*(P≥0.5) shifts {s=2:+0, s=5:−2, s=20:−4, s=100:−6} vs −log₂s = {−1, −2.3, −4.3, −6.6} — **ONE REGISTER BIT IS WORTH ONE SAMPLE**; s=1 never crosses 0.5 (saturation P₁ ≈ 0.37 = the standard per-sample rate).
+
+**What this decides.** The qubit/sample phase diagram is a FUNGIBILITY RAMP: P_certify(s,t) = 1−(1−min(c·q/r², sat))^s with unit exchange rate — not a threshold. Round-14's "samples fail" was the deep-ramp limit. The quantum channel's resource bound is quantitatively graded: Shor's register can be shortened by paying samples linearly (1 bit ↔ 1 sample) until both explode together. Sharpens DEQUANT beyond paper 47's binary truncation threshold.
+Paper 85, issue #177. Now 420 experiments. Assessment v196. Script: /tmp/exp_qubittrade2.py; log: /tmp/r25n1g.log.
