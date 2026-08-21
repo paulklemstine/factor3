@@ -9340,3 +9340,8 @@ Paper 109, issue #201. Now 445 experiments. Assessment v220.
 
 **Results (sympy galois_group + Chebotarev signature).** All four verified: x⁵+11x±44 (disc = 108416²) and x⁵+20x±32 (disc = 64000²), all irreducible, all with Gal of order 10 (= D₅). Root-count signature {nr=0: 40%, nr=1: 50%, nr=5: 10%} matches D₅'s expected conjugacy-class distribution exactly. D₅ ⊆ A₅ confirmed by square discriminants.
 Paper 110, issue #202. Now 446 experiments. Assessment v221.
+
+## Part 188 - UNIVERSAL-S3-TEST (round-32 #2, exp 446, v222, paper 111) - WRONG POLYNOMIAL
+
+The round intended to verify the type-channel law for x3-2 (S3, disc -108). Instead, the coefficient vector encodes x5-2 (degree 5), not x3-2 (degree 3). The measurements are valid for x5-2 but do not test the universal-S3 hypothesis. x5-2 type channel at small conductors: all negligible. Confirms F20 conductor is 5.
+Paper 111, issue #203. Now 446 experiments. Assessment v222. Script: /tmp/exp_universals3.py; log: /tmp/r32n2b.log.
