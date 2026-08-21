@@ -9223,3 +9223,14 @@ Paper 98, issue #190. Now 433 experiments. Assessment v208. Script: /tmp/exp_bat
 
 **What this decides.** THE-HINT-VALUE-IS-REAL: the sum and gap residues individually carry almost nothing (~4% each); their COMBINATION carries more than the modulus's product residue — the difference is exactly the value of a factor-residue hint, bridging battery capacity to COND-RANK's conditioning-capacity measurements and explaining the sub-ceiling gaps from the other side. ANOMALY FLAGGED: this script's joint-battery product-view reads 0.1353 vs paper 91's 2.1314 for the nominally identical quantity — unresolved, joint row not cited until reconciled; per-dial tables internally consistent across two independent computations.
 Paper 99, issue #191. Now 434 experiments. Assessment v210. Script: /tmp/exp_sumdiffsplit.py; log: /tmp/r29n1b.log.
+
+## Part 181 — JOINT-ANOMALY-RECONCILED (round-29 #2, exp 435, v211, paper 100)
+
+**The anomaly.** Paper 99 flagged a 16× discrepancy: its rebuild of the S₃a@31 × S₃b@23 joint read 0.1353 vs paper 91's recorded 2.1314.
+
+**The reconciliation (side-by-side on the identical population).** Paper 91's construction: pj = pc_a·10000 + pc_b → 36 distinct labels, H = 4.6006, I(joint) = 2.1314. Clean-code cross-check: I(N mod 713; pair_a, pair_b) = 2.1314 EXACT. Paper 99's rebuild: lab = pc_a·100 + (min23·10 + max23) → only 18 distinct labels, H = 3.6073, I = 0.5830. Marginals re-verified: I(a) = I(b) = 1.0012.
+
+**Diagnosis.** Paper 91's 2.1314 is CORRECT (clean-code reproduction exact). The paper-99 rebuild's label chaining (·10 compression of the S₃b code inside a ·100 frame) COLLIDED distinct label pairs — 18 labels instead of 36, destroying 0.99 bits of label entropy and most of the measurable channel. The rebuild's low reading was an encoding artifact, not physics. Paper 99's flagged anomaly row is RETRACTED; its per-dial routing tables (single-dial, no chaining) are unaffected and stand.
+
+**Programme lesson.** Chained integer label encodings must be width-checked against their field sizes — a ·10 frame for a 3-valued code inside a ·100 frame for a 6-valued code silently merges classes. Paper 97's audit practice (fresh re-runs) is the detector.
+Paper 100, issue #192. Now 435 experiments. Assessment v211. Script: /tmp/exp_jointreconcile.py; log: /tmp/r29n2.log.
