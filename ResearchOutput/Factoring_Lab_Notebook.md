@@ -9084,3 +9084,16 @@ Paper 87, issue #179. Now 422 experiments. Assessment v198. Script: /tmp/exp_qub
 
 **What this decides.** NO-POLYLOG-ROUTE-ANYWHERE: the empirical converse holds across the whole family — every factor-revealing definition-route is super-poly in log N, the cheapest factor-bits ride the √N-scale classical methods (barrier 8's own face), and all content routes through the trace s. With the proven no-pinning half (QRLEAK/COMPENSATING-PARTNER), frontier (i) is empirically armed end-to-end; the formal converse proof remains the open theoretical target.
 Paper 88, issue #180. Now 423 experiments. Assessment v199. Script: /tmp/exp_conversecost.py; log: /tmp/r26n1c.log.
+
+## Part 170 — THREE-STRATA-PLANE (round-26 #2, exp 424, v200, paper 89)
+
+**Question.** Complete the cost-information plane: add τ/σ₁ definition-route witnesses and classical-method calibration points (trial division, Fermat, Pollard ρ) under identical conditions — the full factoring landscape in three measured strata.
+
+**Predictions (before the run).** H1 three distinct strata (definition α ≥ 0.4 / methods α ≈ ¼ / quantum poly); H2 τ/σ₁ at exactly ½; H3 the structure-blindness price grows with N.
+
+**Results (all asserts green, 59 s).** STRATUM A: **α_τ = 0.500 to three decimals** (the √N scan IS the definition; σ₁ = 1+N+p+q exact at every size). STRATUM B: trial division mean log₂cost 19.30/median 19.36 (= E[min(p,q)]); Fermat mean = median = 19.36 — indistinguishable from trial division on uniform draws (gap cost tail-dominated); Pollard ρ mean log₂cost 8.73, size-stratified slope 0.523 per prime-bit → **α on N = 0.261 vs the 0.25 birthday bound** (standalone check: log₂ops = bits/2 − 1 exactly). STRATUM C: papers 85–87's surface. STRUCTURE-BLINDNESS PRICE: τ-def-scan vs ρ at N = 2^16/20/24/28 → **173× / 1780× / 2070× / 8310×**, growing with N.
+
+**Method ledger (2 catches).** (1) ρ exponent first read 0.523 — UNITS MISMATCH (slope per prime-bit vs per-N; log₂N = 2·bits), corrected to 0.261 and confirmed standalone; (2) the N=2^36 blindness row would have run for hours — capped honestly rather than approximated silently.
+
+**What this decides.** THE-THREE-STRATA-PLANE: barrier 4 prices the definition-routes (α ≥ 0.4), barrier 8 owns the methods (α ≈ ¼ as data, not citation), Shor owns the quantum corner (poly) — three non-overlapping strata whose boundaries are the barriers, each price MEASURED under identical conditions. The programme's cost knowledge is unified; frontier (i)'s empirical arming extends to the whole landscape.
+Paper 89, issue #181. Now 424 experiments. Assessment v200. Script: /tmp/exp_threestrata.py; log: /tmp/r26n2c.log.
