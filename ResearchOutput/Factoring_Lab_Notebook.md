@@ -9960,3 +9960,18 @@ papers 150/151's 'linear closed' verdicts sit inside a wide seed distribution; A
 NEXT STEP = multi-seed replication of the +0.03 lift class before closure claims stand.
 The split-ceiling excess has its first positive lever: joint-alignment structure.
 Paper 152, issue #254. Now 484 experiments. Assessment v261.
+
+## Part 225 - MULTISEED-PHASE (round-41 #4 [cron iteration], exp 485, v262)
+
+The gating replication papers 150-152 needed. 5 fresh populations (seeds 20260910-14),
+1200 Ns x 240 values each, identical feature constructions:
+dR2(ph13) per seed: -0.0046/+0.0072/-0.0020/-0.0023/+0.0057 -> mean **+0.0008 +/- 0.0053**
+(zero within noise); dR2(pair): mean **+0.0030 +/- 0.0119**, pair-vs-phase diff
++0.0022 +/- 0.0160 (indistinguishable); corr(dR2, R2_base) = 0.06/0.09 (no concentration).
+VERDICT: THE LIFT CLASS DOES NOT REPLICATE — the +0.03 readings of exps 482r/484 were
+population luck (base R2 itself spans 0.56-0.62 across the same seeds). Papers 150/151/152
+now resolve fully: singleton phases, high-prime phases, AND pair coincidences all add
+~nothing beyond the footprint dial; the split-ceiling excess remains unexplained by every
+tested encoding and may be intrinsic to the dial family (same-window realized-divisibility
+information). The footprint dial (paper 145) stands as the final form.
+Paper 153, issue #255. Now 485 experiments. Assessment v262.
