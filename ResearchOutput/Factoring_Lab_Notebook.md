@@ -9975,3 +9975,18 @@ now resolve fully: singleton phases, high-prime phases, AND pair coincidences al
 tested encoding and may be intrinsic to the dial family (same-window realized-divisibility
 information). The footprint dial (paper 145) stands as the final form.
 Paper 153, issue #255. Now 485 experiments. Assessment v262.
+
+## Part 226 - FACTOR-LOCAL-ET lean (round-41 #5 [cron iteration], exp 486, v263)
+
+Paper 132's residual item (2): price factor-local methods on a comparable E[T] plane.
+Lean scope (td + rho + Fermat; ECM dropped, disclosed), 1500 balanced semiprimes per
+k in {16,20,24}. ACROSS-K SCALING (log2 meanT per log2 p): trial division 0.84 (near-linear,
+balanced draws compress the range vs paper 89's 1.09 uniform), **rho 0.52 = the birthday
+bound (replicates paper 89's 0.523)**, Fermat 0.50 (gap-locality re-confirmed — on balanced
+draws its cost is gap-driven, within-k alpha ~ 0). WITHIN-K FITS CONFOUNDED and NOT cited
+(balanced-draw gap structure + rho heavy tail + 18-51 censored runs bias slopes; the
+negative Fermat alphas ARE the gap-locality signature). HONEST PARTIAL: the unified plane's
+slopes measured on one population for the first time; the full alpha-table needs uniform
+draws + ECM. LEDGER: missing import; zero-cost Fermat hits dropped from x but kept in y
+(length mismatch); inline takeover after channel death #10.
+Paper 154, issue #256. Now 486 experiments. Assessment v263.

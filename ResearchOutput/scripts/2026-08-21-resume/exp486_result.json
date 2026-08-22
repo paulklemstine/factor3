@@ -1,0 +1,81 @@
+{
+ "meta": {
+  "seed": 20260920,
+  "exp": 486,
+  "codename": "FACTOR-LOCAL-ET-LEAN",
+  "ecm": "dropped for budget"
+ },
+ "cells": [
+  {
+   "k": 16,
+   "n": 1500,
+   "cens": {
+    "rho": 51,
+    "fermat": 0
+   },
+   "fit_td": {
+    "alpha": 0.7651680734348221,
+    "c": -0.36186396332644066,
+    "meanT": 45.589333333333336
+   },
+   "fit_rho": {
+    "alpha": 1.0425701476909306,
+    "meanT": 8.775017253278122
+   },
+   "fit_fermat": {
+    "alpha": -0.0,
+    "meanT": 1.0
+   }
+  },
+  {
+   "k": 20,
+   "n": 1500,
+   "cens": {
+    "rho": 25,
+    "fermat": 0
+   },
+   "fit_td": {
+    "alpha": 0.8165579677909635,
+    "c": -0.7457532911219501,
+    "meanT": 143.292
+   },
+   "fit_rho": {
+    "alpha": 0.42833369085739115,
+    "meanT": 21.75457627118644
+   },
+   "fit_fermat": {
+    "alpha": -1.317991239080919,
+    "meanT": 1.3386243386243386
+   }
+  },
+  {
+   "k": 24,
+   "n": 1500,
+   "cens": {
+    "rho": 18,
+    "fermat": 0
+   },
+   "fit_td": {
+    "alpha": 0.8548891473407855,
+    "c": -1.1258176287315673,
+    "meanT": 468.8926666666667
+   },
+   "fit_rho": {
+    "alpha": 1.267986295907721,
+    "meanT": 37.08771929824562
+   },
+   "fit_fermat": {
+    "alpha": -2.323999161343224,
+    "meanT": 3.985929648241206
+   }
+  }
+ ],
+ "verdict": {
+  "expected": {
+   "trial_division": "alpha~1.0",
+   "rho": "alpha~0.5",
+   "fermat": "alpha~1.0+balance"
+  },
+  "note": "per-k alphas averaged; compare vs H3"
+ }
+}
