@@ -1720,3 +1720,15 @@ log /tmp/net61.log.
 deterministic pre-stated grid; (f) clean (ALL_DONE_NET61); (g) fair (identical harness as
 56/58); (h) DIRECT. Open: sub-16 addendum @1024 (next); domain-jump corpora; 1.5B tail map;
 7B cell. Paper 146, issue #296. Now 61 network experiments. Assessment v61.
+
+## Part 62 — THE-KNEE-LANDS-ON-THE-FINE-GRID: 0.5B knee at ctx=1024 is k*=20 (k=16 fails 0.971, k=20 passes 0.980, k=24 passes 0.985) — 0.5B chain now strictly monotone {16, 20, 24} across {512, 1024, 2048}, replacing the coarse {16, 32, 24}; NET-55's size-invariance SHARPENS (1.5B {16,16} is flat-to-declining against a rising baseline); the 2048 corpus-B reading (32) looks like a coarse-grid artifact, not corpus sensitivity; knee-quantizes-to-grid pattern now has a third instance; P1 and P2 both CONFIRMED (NET-62; limited-memory axis round 22)
+
+**Method:** fine sweep k∈{4,8,12,20,24} at ctx=1024, oracle top-k, identical harness/windows
+as NET-56/58/61 (baseline 0.4627 bit-identical to three prior rounds). Script
+ResearchOutput/exp_net62_sub16.py; results ~/f3cache/net62_results.json; log /tmp/net62.log.
+**Verdict:** THE-KNEE-LANDS-ON-THE-FINE-GRID. Barriers: (a) clean (both horns confirmed);
+(b) clean; (c) confronted (finer grid, same model/corpus; 24 windows stated); (d) clean;
+(e) deterministic pre-stated grid; (f) clean (ALL_DONE_NET62); (g) fair (same bar);
+(h) DIRECT (deployment table's 1024 entry: 32 → 20). Open: fine grids at 512/2048;
+domain-jump corpora; 1.5B fine-grid; 7B cell. Paper 147, issue #298.
+Now 62 network experiments. Assessment v62.
