@@ -9554,3 +9554,30 @@ LEDGER (9 catches): two SUBSTANTIVE cost-accounting bugs produced spurious >1.5x
 + derivation; dummy dial v1 read a random table THROUGH THE FACTORS (not N-computable,
 leaked 1 bit) — rebuilt as public table on N mod 97 (I_emp 0.0014).
 Paper 131, issue #227. Now 463 experiments. Assessment v240.
+
+## Part 204 - CONVERSE-CAP-THEOREM (round-37 #4, exp 466, v241)
+
+FRONTIER (i) UPGRADED: the barrier-4 converse is now a THEOREM for the residue-dial stratum.
+UNIVERSAL EXACT LAW: Speedup(K,c) = 1/(1-theta+theta^2), theta = |K_c|/phi(M) — independent
+of c, of M's structure, of character content, of the number of composed dials. UNIVERSAL CAP
+4/3 attained exactly at theta=1/2; n=2 max 4/3 at quadratic cosets (conjecture confirmed);
+n=3/n=5 max ALSO 4/3 at ANY half-density subset (Lemma B2: P(min in K|c)=theta identically
+kills all internal structure — mixing cannot beat it); CRT composition is FREE (k dials = one
+dial mod product): battery cap STILL 4/3 < 2 — the 12.7235 measured battery bits buy <=
+log2(4/3) = 0.41504 work-bits, a constant. Capacity bits and work bits are DIFFERENT
+CURRENCIES. Corollary A2: which-factor blindness of residues (papers 93/102 z~0) becomes an
+IDENTITY under MA-1. Proof status: A/B/C proved (A under explicit pair-equidistribution
+MA-1, asymptotically unconditional via Siegel-Walfisz; the 1/2-split step exact by
+exchangeability); D scoped with sealed exclusions. MACHINE VERIFICATION: Claim-A MC 1,065,538
+samples max dev 0.000294 (chi2 z=-1.67); exhaustive enumeration m=3/4/7/11 + batteries
+12/15/21/33 (up to 2^20 subsets) — every max exactly 1.3333333333; real-semiprime sims within
++/-0.006 of predictions incl. structure-blindness controls. RESIDUAL GAP (precise): positional/
+interval witnesses (paper 88 arms empirically), superconstant-cost tests (factor-local methods
+escape scan-order framing), effectivizing MA-1 at cryptographic sizes.
+LEDGER (5 self-caught): first cost model gave speedups <1 (phase-1 overshoot charged) —
+replaced by position-of-min functional; nearly reported the asked "<=2" instead of provable
+4/3; hand-mislabeled theta caught by machine counting; finite-pool chi2 z=+5.1 fixed by
+per-class trimming; real-prime +0.002..0.005 above 4/3 documented as prime-race deviation.
+Pairs with exp 461 (paper 131): measured 1.25 at theta=1/2 sits below the 4/3 cap (toy-window
+kappa artifact); with overhead priced BOTH accounts agree filters are net losses.
+Paper 132, issue #228. Now 464 experiments. Assessment v241.
