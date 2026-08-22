@@ -10044,6 +10044,19 @@ element 1/n instead of ((n-1)/n)^2); both silently produced garbage before the e
 complement forms were imposed.
 Paper 160, issue #262. Now 492 experiments. Assessment v269.
 
+## Part 232 - TABLE-CLOSURE FULL (round-43 #1 [cron iteration], exp 491-full, v270)
+
+The agent's mpmath dps=50 version found the TRUE asymptotic constants behind paper 160's
+refuted guess, verified to n=655360 (deviations <=3e-6): **g*n^2 -> log2(e)-1 = 0.442695**
+(NO log factor); **X*n^2 -> 2*log2(e) = 2.885390**; **A*n^2/log2(n) -> 1 exactly**;
+**(Is-A)*n^2 -> 2log2(e)**; hence **X/g -> 2log2(e)/(log2(e)-1) = 6.51778** — replacing
+paper 160's measured-ratios-only record with exact laws. Its own pre-data scratch
+prediction (X/g->2, same as paper 160's H3) was REFUTED by its own exact table — corrected
+constants derived post-hoc, confirmed on fresh n, labeled post-hoc throughout. Also:
+all four channels collapse at n=2 (g=A=0.311278 reproduces the OR cap; Is=X=1.000000);
+the A/X sign flip lives exactly in (7,8); MC tie at n=17 z=-0.10.
+Paper 161, issue #263. Now 493 experiments. Assessment v270.
+
 ## Part 229 - DEGREE-SEVEN lean (round-42 #3 [cron iteration], exp 489, v266)
 
 The ladder's LAST gap below 10: cyclic degree-7 subfield of Q(zeta_29) (conductor 29,
