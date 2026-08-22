@@ -9581,3 +9581,26 @@ per-class trimming; real-prime +0.002..0.005 above 4/3 documented as prime-race 
 Pairs with exp 461 (paper 131): measured 1.25 at theta=1/2 sits below the 4/3 cap (toy-window
 kappa artifact); with overhead priced BOTH accounts agree filters are net losses.
 Paper 132, issue #228. Now 464 experiments. Assessment v241.
+
+## Part 205 - DIAL-OVERLAP-LAW (round-37 #5, exp 462, v242)
+
+The open cell between coprime-synergy (+0.13) and shared-disc-full-redundancy (-0.99):
+PARTIAL OVERLAP. H1 CONFIRMED — two distinct S3 fields sharing their quadratic subfield are
+EXACTLY one bit redundant. Pairs found by scanning 56,410 S3 cubics (23,481 squarefree parts):
+d=-7: x3-5x-5 (-175=-7.5^2) & x3-3x-5 (-567=-7.9^2); twin replica x3-5x+5/x3-3x+5;
+d=-3: x3-6x-6 (-108) & x3-3 (-243). Deficits: +0.9998/+0.9998/+1.0000 vs law 1 bit
+(dev -0.0002/-0.0000). Derivation committed BEFORE simulation: Gal(L1L2/Q)=S3 x_C2 S3
+(order 18), co-info = H(C)-H(C|X) = 1.5-0.5 = 1.0000 exact; fiber-product correlation confined
+to the residue-invisible chi=+1 fiber (H2 refuted analytically in advance). Prime-level joint
+Chebotarev distribution matches (1/2, 1/18, 2/18, 2/18, 4/18); off-diag mass 34,375 vs pred
+34,307. Controls: coprime synergy reproduced (-0.1300 vs lab -0.1290), conjugate pair deficit
++1.0008 (=I_a as pre-stated degeneracy demands), which-factor wall NULL on the new joint.
+Caveats: sparse joints (lcm 14175 -> 2.1 samples/cell) distort plug-in readings — joint dial
+readings need ~100 samples/cell; LEDGER INSIGHT L11: MI signatures CANNOT distinguish
+partial-overlap from same-field pairs (~1.00 both) — the discriminators are type-agreement
+(7/9 vs 1.0) and off-diagonal mass (4/18 vs 0); index^2 trap caught live (disc-value arguments
+are not field arguments — third 'pair' was ONE field with different generators).
+THE OVERLAP LADDER IS CLOSED: coprime (+synergy) / shared-subfield (exactly -1 bit =
+the shared sign character) / same-field (full redundancy) — everything else in the fiber
+product provably invisible to any residue class.
+Paper 133, issue #229. Now 465 experiments. Assessment v242.

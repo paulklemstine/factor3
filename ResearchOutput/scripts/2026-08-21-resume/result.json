@@ -1,160 +1,262 @@
 {
+ "exp": "exp462 DIAL-OVERLAP-LAW rev2",
  "seed": 20260821,
- "t_start": "2026-08-21 20:26:57",
- "claimA_m31": {
-  "c": 7,
-  "samples": 1065538,
-  "expected": 0.033333,
-  "max_abs_dev": 0.000294,
-  "chi2_df30": 17.072,
-  "z_vs_df": -1.669,
-  "pass_3dp": true
- },
- "battery_attempt": {
-  "dials": "3x7 (M=21)",
-  "predicted_top40_all_at_cap": true,
-  "measured_mean_top40": 1.3343,
-  "measured_median_top40": 1.334,
-  "best_measured": 1.3461,
-  "cap": 1.3333,
-  "max_excess_over_cap": 0.0128,
-  "selection_note": "max over 40 sims inflates by ~2 sigma; mean/median are the unbiased reads",
-  "refutes_claim_C_bound": false,
-  "beats_cap_beyond_noise": false
- },
- "exhaustive": {
-  "n=2_m3": {
-   "phi": 2,
-   "pairs_checked": 8,
-   "max_speedup": 1.3333333333,
-   "n_optimal_(subset,c)": 4,
-   "half_subsets": 2,
-   "closed_form_max_err": 0.0,
-   "equals_4/3_and_argmax_all_half": true
+ "ledger": [
+  "L0 coinfo-not-CMI",
+  "L1 index^2 trap",
+  "L2 width checks",
+  "L3 sparse-dial nulls+modulus cap",
+  "L4 ramified excluded",
+  "L5 searchsorted assert",
+  "L6 shortcut validation counted",
+  "L7 sf-sign bug fixed(run1)",
+  "L8 mod-x3 reduction bug(run1)",
+  "L9 equal-disc twins rejected(run1)",
+  "L10 main guard",
+  "L11 MI-signature degeneracy: use agreement/offdiag",
+  "L12 bootstrap CI for law deviation"
+ ],
+ "pairs": [
+  {
+   "d": -7,
+   "p1": [
+    -5,
+    -5,
+    -175
+   ],
+   "p2": [
+    -3,
+    -5,
+    -567
+   ]
   },
-  "n=2_m4": {
-   "phi": 2,
-   "pairs_checked": 8,
-   "max_speedup": 1.3333333333,
-   "n_optimal_(subset,c)": 4,
-   "half_subsets": 2,
-   "closed_form_max_err": 0.0,
-   "equals_4/3_and_argmax_all_half": true
+  {
+   "d": -7,
+   "p1": [
+    -5,
+    5,
+    -175
+   ],
+   "p2": [
+    -3,
+    5,
+    -567
+   ]
   },
-  "n=3_m7": {
-   "phi": 6,
-   "pairs_checked": 384,
-   "max_speedup": 1.3333333333,
-   "n_optimal_(subset,c)": 120,
-   "half_subsets": 20,
-   "closed_form_max_err": 0.0,
-   "equals_4/3_and_argmax_all_half": true
+  {
+   "d": -6,
+   "p1": [
+    3,
+    -2,
+    -216
+   ],
+   "p2": [
+    -6,
+    -8,
+    -864
+   ]
   },
-  "n=5_m11": {
-   "phi": 10,
-   "pairs_checked": 10240,
-   "max_speedup": 1.3333333333,
-   "n_optimal_(subset,c)": 2520,
-   "half_subsets": 252,
-   "closed_form_max_err": 0.0,
-   "equals_4/3_and_argmax_all_half": true
+  {
+   "d": -3,
+   "p1": [
+    -6,
+    -6,
+    -108
+   ],
+   "p2": [
+    0,
+    -3,
+    -243
+   ]
+  }
+ ],
+ "prime": {
+  "pair0": {
+   "Ia": 1.0000696943315193,
+   "Ib": 1.0003302096986992,
+   "J": 1.0444691034198552,
+   "theory": 1.0
   },
-  "battery_M12_3x4": {
-   "phi": 4,
-   "pairs_checked": 64,
-   "max_speedup": 1.3333333333,
-   "n_optimal_(subset,c)": 24,
-   "half_subsets": 6,
-   "closed_form_max_err": 0.0,
-   "equals_4/3_and_argmax_all_half": true
+  "pair1": {
+   "Ia": 1.0000696943315193,
+   "Ib": 1.0003302096986992,
+   "J": 1.0444691034198552,
+   "theory": 1.0
   },
-  "battery_M15_3x5": {
-   "phi": 8,
-   "pairs_checked": 2048,
-   "max_speedup": 1.3333333333,
-   "n_optimal_(subset,c)": 560,
-   "half_subsets": 70,
-   "closed_form_max_err": 0.0,
-   "equals_4/3_and_argmax_all_half": true
+  "pair2": {
+   "Ia": 1.0000575296642928,
+   "Ib": 1.0003492153987885,
+   "J": 1.0003492153987885,
+   "theory": 1.0
   },
-  "battery_M21_3x7": {
-   "phi": 12,
-   "pairs_checked": 49152,
-   "max_speedup": 1.3333333333,
-   "n_optimal_(subset,c)": 11088,
-   "half_subsets": 924,
-   "closed_form_max_err": 0.0,
-   "equals_4/3_and_argmax_all_half": true
-  },
-  "character_fibers": {
-   "m7_kernel_speedup_pred": 1.28571429,
-   "law_9/7": 1.28571429,
-   "m11_kernel_speedup_pred": 1.19047619,
-   "law_25/21": 1.19047619
-  },
-  "m31_random5000": {
-   "max_seen": 1.33333333,
-   "cap": 1.33333333,
-   "none_exceeds": true
-  },
-  "battery_M33_3x11": {
-   "phi": 20,
-   "subsets": 1048576,
-   "max_speedup": 1.3333333333,
-   "closed_form_max_err": 0.0,
-   "equals_4/3": true
+  "pair3": {
+   "Ia": 1.0000138415682072,
+   "Ib": 1.0001425281725957,
+   "J": 1.0012480670173929,
+   "theory": 1.0
   }
  },
- "simulation": {
-  "m3_optimal_half": {
-   "empirical": 1.3354,
-   "predicted": 1.3333,
-   "abs_err": 0.0021,
-   "match_within_0.01": true
+ "semiprime": {
+  "pair0": {
+   "Ia": 1.0066138218484504,
+   "Ib": 1.0157298905044065,
+   "J": 1.753173842575384,
+   "deficit": 0.2691698697774729,
+   "boot": [
+    -0.01956252764716231,
+    0.006551240034231224
+   ],
+   "Mj": 14175
   },
-  "m7_optimal_half": {
-   "empirical": 1.3336,
-   "predicted": 1.3333,
-   "abs_err": 0.0003,
-   "match_within_0.01": true
+  "pair1": {
+   "Ia": 1.0066138218484504,
+   "Ib": 1.0157298905044065,
+   "J": 1.753173842575384,
+   "deficit": 0.2691698697774729,
+   "boot": [
+    -0.01956252764716231,
+    0.006551240034231224
+   ],
+   "Mj": 14175
   },
-  "m7_cubic_kernel_theta13": {
-   "empirical": 1.2821,
-   "predicted": 1.2857,
-   "abs_err": 0.0036,
-   "match_within_0.01": true
+  "pair2": {
+   "Ia": 1.0033564852759902,
+   "Ib": 1.0140533807609842,
+   "J": 1.0140533807609842,
+   "deficit": 1.0033564852759902,
+   "boot": [
+    1.0066303912757386,
+    0.0007210400023391671
+   ],
+   "Mj": 864
   },
-  "m7_random_size2_control": {
-   "empirical": 1.2873,
-   "predicted": 1.2857,
-   "abs_err": 0.0016,
-   "match_within_0.01": true
-  },
-  "m11_optimal_half": {
-   "empirical": 1.3379,
-   "predicted": 1.3333,
-   "abs_err": 0.0046,
-   "match_within_0.01": true
-  },
-  "m11_quintic_kernel_theta15": {
-   "empirical": 1.1959,
-   "predicted": 1.1905,
-   "abs_err": 0.0055,
-   "match_within_0.01": true
-  },
-  "battery_M21_optimal_half": {
-   "empirical": 1.3334,
-   "predicted": 1.3333,
-   "abs_err": 0.0001,
-   "match_within_0.01": true
-  },
-  "battery_M21_char_aligned": {
-   "empirical": 1.1592,
-   "predicted": 1.1613,
-   "abs_err": 0.0021,
-   "match_within_0.01": true
+  "pair3": {
+   "Ia": 1.0015812367053298,
+   "Ib": 1.0074739566432722,
+   "J": 1.0497214975337652,
+   "deficit": 0.9593336958148369,
+   "boot": [
+    0.923437379829097,
+    0.0022896533210963045
+   ],
+   "Mj": 972
   }
  },
- "verdict": "CONVERSE-CAP-PROVED-STRONGER",
- "t_end": "2026-08-21 20:26:59"
+ "controls": {
+  "coprime": {
+   "Ia": 1.001574208889621,
+   "Ib": 1.0008314144828248,
+   "J": 2.132418375734243,
+   "deficit": -0.13001275236179755
+  },
+  "conjugate": {
+   "Ia": 1.0008314144828248,
+   "Ib": 1.0008314144828248,
+   "J": 1.0008314144828248,
+   "deficit": 1.0008314144828248
+  }
+ },
+ "which_factor": {
+  "delta": 0.4588939535985137,
+  "null": 0.560980836829562,
+  "sd": 0.002658107621026215,
+  "z": -38.40585024606176
+ },
+ "n_sp": 30000,
+ "n_pr": 154382,
+ "hypotheses": {
+  "H1": "joint = I_a+I_b-1.0000 (+-0.02)",
+  "H2": "deficit exceeds exactly 1 bit"
+ },
+ "addendum_sign_modulus": {
+  "pair0": {
+   "m": 7,
+   "Ia": 1.000345979439,
+   "Ib": 1.0002270285791934,
+   "J": 1.0007883698390083,
+   "deficit": 0.9997846381791851,
+   "dev": -0.00021536182081494104,
+   "boot": [
+    0.9995685979263226,
+    0.0002452289929423384
+   ]
+  },
+  "pair1": {
+   "m": 7,
+   "Ia": 1.000345979439,
+   "Ib": 1.0002270285791934,
+   "J": 1.0007883698390083,
+   "deficit": 0.9997846381791851,
+   "dev": -0.00021536182081494104,
+   "boot": [
+    0.9995685979263226,
+    0.0002452289929423384
+   ]
+  },
+  "pair2_samefield": {
+   "m": 6,
+   "Ia": 0.00011140358191541466,
+   "Ib": 0.00011140358191541466,
+   "J": 0.00011140358191541466,
+   "deficit": 0.00011140358191541466,
+   "dev": -0.9998885964180846,
+   "boot": [
+    0.000231979907526767,
+    0.00013137608880459887
+   ]
+  },
+  "pair3": {
+   "m": 3,
+   "Ia": 0.9999514960491491,
+   "Ib": 0.9999514960491491,
+   "J": 0.9999514960491487,
+   "deficit": 0.9999514960491496,
+   "dev": -4.8503950850431465e-05,
+   "boot": [
+    0.9999225439511434,
+    8.747518346717057e-05
+   ]
+  },
+  "conjugate_ctrl": {
+   "m": 23,
+   "Ia": 1.0008314144828248,
+   "Ib": 1.0008314144828248,
+   "J": 1.0008314144828248,
+   "deficit": 1.0008314144828248,
+   "dev": 0.0008314144828247549,
+   "boot": [
+    1.0017598139643074,
+    0.00038283837879915354
+   ]
+  },
+  "coprime_ctrl": {
+   "m": 713,
+   "Ia": 1.0329710730129325,
+   "Ib": 1.0309613461259932,
+   "J": 2.132418375734243,
+   "deficit": -0.06848595659531753,
+   "pred": -0.129,
+   "boot": [
+    -0.11577977647401681,
+    0.0026039765640378716
+   ]
+  }
+ },
+ "which_factor_clean_m3": {
+  "delta": 8.881784197001252e-16,
+  "null": 0.0002131163746456508,
+  "sd": 0.00010966479228851877,
+  "z": -1.943343621935393
+ },
+ "legendre_fixed": "389/389 for all 12 polys",
+ "verdict": {
+  "name": "H1-CONFIRMED-PARTIAL-OVERLAP-LAW",
+  "summary": "joint semiprime channel = I_a+I_b-1.0000 exactly for distinct S3 fields sharing quadratic subfield: deficit +0.9998 (d=-7), +0.9998 (twin replica), +1.0000 (d=-3); H2 refuted analytically (fiber-product correlation confined to residue-invisible chi=+1 fiber) and empirically (dev <= 0.001)",
+  "controls": {
+   "coprime_synergy": "-0.1300 vs lab -0.1290 (replicated)",
+   "conjugate_deficit": "+1.0008 (=I_a; MI-signature degenerate with H1 as pre-analyzed)",
+   "same_field_trap": "pair2 agreement 1.0000 exposed x^3+3x-2/x^3-6x-8 as ONE field"
+  },
+  "discriminators": "type-agreement 7/9 vs 1.0; off-diagonal mass 4/18 vs 0"
+ }
 }
