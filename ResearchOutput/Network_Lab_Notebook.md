@@ -1707,3 +1707,16 @@ super-additivity maps new); (c) confronted (one context/model, five chosen pairs
 (ALL_DONE_NET60); (g) fair (identical budgets per arm); (h) DIRECT (unit-of-differentiation
 prescription). Open: 1.5B replication; deeper-tail units on bigger models; probe+recency
 hybrid; domain-jump corpora. Paper 145, issue #294. Now 60 network experiments. Assessment v60.
+
+## Part 61 — CONTENT-ADDITIVE-EVICTION-DOES-NOT-HELP: hybrid scores z(acc)+λ·z(probe) monotonically WORSE in λ — {0.9384, 0.9383, 0.9365, 0.9344} at B=64 for λ={0,0.25,1,4}; λ=0 reproduces NET-56's hybrid to four decimals; P1 some-λ-wins REFUTED, P2 small-λ-optimal CONFIRMED, P3 ceiling CONFIRMED (best trails oracle by 5.7pts) — with NETs 56/58 every cheap signal family (accumulation, recency, content, combinations) is now bounded ≥5.7pts below oracle at matched budget; the policy gap is structural across families (NET-61; limited-memory axis round 20)
+
+**Method:** Qwen2.5-0.5B fp32 ctx=1024, 24 held-out windows; streaming eviction scored
+z(accumulated)+λ·z(probe) + recency window; probes refit train-side (8 seqs); λ-grid and
+budgets pre-stated. Gate exact (1.0000). Script ResearchOutput/exp_net61_hybrid.py;
+log /tmp/net61.log.
+**Verdict:** CONTENT-ADDITIVE-EVICTION-DOES-NOT-HELP. Barriers: (a) clean; (b) confronted
+(H2O score-combination variants exist; NEW = monotone-degradation law + four-family bounding);
+(c) confronted (one model/context, linear probes, fixed recency stated); (d) clean; (e)
+deterministic pre-stated grid; (f) clean (ALL_DONE_NET61); (g) fair (identical harness as
+56/58); (h) DIRECT. Open: sub-16 addendum @1024 (next); domain-jump corpora; 1.5B tail map;
+7B cell. Paper 146, issue #296. Now 61 network experiments. Assessment v61.
