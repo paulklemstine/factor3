@@ -10094,6 +10094,16 @@ T (0.40 vs 0.53) — retired. ADOPTED: T as the closed-form dial; keep w's full 
 support over the bit truncation.
 Paper 164, issue #266. Now 496 experiments. Assessment v273.
 
+## Part 236 - T-DIAL-STABLE lean (round-44 #1 [cron iteration], exp 497, v274)
+
+Across-seed stability of the adopted zero-fit dial (paper 152's lesson applied
+prospectively). 5 independent populations (seeds 20260930-34): per-seed Spearman(T, rate) =
+0.7528/0.7363/0.7253/0.7235/0.7133 — ALL within the [0.60, 0.85] stability band, mean
+0.7302, SE(mean) = 0.0067. T beats the bare QR-count by >0.05 on **5/5 seeds** (margins
+0.09-0.14). H2 (rank-flip arm) omitted in the lean run, disclosed. The zero-fit dial is
+seed-stable; adoption stands without qualification.
+Paper 165, issue #267. Now 498 experiments. Assessment v274.
+
 AMENDMENT (original agent's clean run + coordinator diagnostic): the ANTI-COINCIDENCE read
 is RETIRED — measured c_pq equals the exact CRT count on all 8000 points (corr 1.000000);
 the ~0.26 ratios were the coordinator comparing conditional-on-both-QR predictions against

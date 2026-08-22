@@ -1,0 +1,52 @@
+{
+ "meta": {
+  "base_seed": 20260930,
+  "exp": 497,
+  "codename": "T-DIAL-STABLE"
+ },
+ "rows": [
+  {
+   "seed": 20260930,
+   "R2_base_seed": 20260930,
+   "spearman_T": 0.7527666546990658,
+   "spearman_count": 0.6261902751321354
+  },
+  {
+   "seed": 20260931,
+   "R2_base_seed": 20260931,
+   "spearman_T": 0.7363356988442353,
+   "spearman_count": 0.6276829428353768
+  },
+  {
+   "seed": 20260932,
+   "R2_base_seed": 20260932,
+   "spearman_T": 0.7252856842261697,
+   "spearman_count": 0.6456818303346044
+  },
+  {
+   "seed": 20260933,
+   "R2_base_seed": 20260933,
+   "spearman_T": 0.723480801028334,
+   "spearman_count": 0.5804213405703754
+  },
+  {
+   "seed": 20260934,
+   "R2_base_seed": 20260934,
+   "spearman_T": 0.7132678078248665,
+   "spearman_count": 0.5907268616158762
+  }
+ ],
+ "summary": {
+  "mean_spearman_T": 0.7302273293245343,
+  "sd": 0.015024099277124127,
+  "SE_mean": 0.006718981456870999,
+  "min": 0.7132678078248665,
+  "max": 0.7527666546990658,
+  "mean_spearman_count": 0.6141406500976736,
+  "wins_gt_0.05": 5
+ },
+ "verdict": {
+  "H1_band_and_SE": true,
+  "H3_advantage_4of5": true
+ }
+}
