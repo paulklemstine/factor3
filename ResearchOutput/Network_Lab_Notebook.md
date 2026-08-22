@@ -1880,3 +1880,14 @@ French measurement); (c) confronted (one source/context stated); (d) clean; (e)
 deterministic; (f) clean (ALL_DONE_NET75); (g) fair; (h) DIRECT. Open: French @512
 extended; increments@4096; more languages; 7B cell. Paper 160, issue #316.
 Now 75 network experiments. Assessment v75.
+
+## Part 76 — THE-DOMAIN-FACTOR-IS-MULTIPLICATIVE: the complete five-domain × two-context table reveals each domain's ENTIRE budget curve scales by a single multiplicative factor — code ≈0.75×, EN/math ≈1.0×, DE ≈1.25×, FR = 2.0× relative to English prose; French knee @512 is 32 (k=28 fails, k=32 passes), completing the French chain {32, 40} with +8/doubling increment; P2 CONFIRMED, P3 CLOSE; one number per domain replaces a full grid measurement for any new domain within its family (NET-76; limited-memory axis round 49)
+
+**Method:** extended grid {24,28,32,36,44} on French prose @ctx=512; gate exact; identical
+harness/bar. Script ResearchOutput/exp_net76_frenchext512.py; results
+~/f3cache/net76_results.json; log /tmp/net76.log.
+**Verdict:** THE-DOMAIN-FACTOR-IS-MULTIPLICATIVE. Barriers: (a) clean; (b) clean;
+(c) confronted (five domains, two contexts, 0.5B stated); (d) clean; (e) deterministic;
+(f) clean (ALL_DONE_NET76); (g) fair; (h) DIRECT (one-measurement prescription).
+Open: 4096 increments; more languages/domains; 7B scale test.
+Paper 161, issue #317. Now 76 network experiments. Assessment v76.
