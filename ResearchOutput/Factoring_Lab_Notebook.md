@@ -9854,3 +9854,20 @@ in the work dir mid-run — untouched, not cited.
 Pairs with exp 474/paper 143 (measurement grid under oracle-contract conditioning): this
 paper adds the closed forms, the optimality proof, and the conservative-pricing bound.
 Paper 146, issue #248. Now 478 experiments. Assessment v255.
+
+## Part 219 - FOOTPRINT-SCALE (round-40 #3 [cron iteration], exp 478, v256)
+
+Does the footprint dial transfer across scale, and does it ride the ceiling at higher
+relation counts? H1 CONFIRMED (post-reconciliation): fitted at bitlen 44, transfer
+calibration slopes to bitlen {48,52} = 0.8955/0.8341 (80 values/N) and 0.9124/0.8335
+(240 values/N) — ALL FOUR CELLS in the [0.8, 1.25] band (the pre-reconciliation read had
+one cell at 0.7697 + duplicated u-blocks; agent fixed the assembly bug on demand and all
+four moved into band). H3 CONFIRMED: d(N) independently significant in 12/12 cells
+(min |t| = 3.92). H2 RAW FACTS: R2 rises substantially with relation count — 0.41->0.60
+(u2.5/bl48), 0.40->0.57, 0.32->0.49, 0.27->0.42 — but the agent's "ceiling" COLUMN is
+definition-inconsistent with the lab's exp472/477 convention (measured R2 exceeds it >2x);
+the column is NOT ADOPTED, only the raw R2-vs-n facts are cited. Ceiling re-derivation
+deferred to a dedicated check.
+LEDGER: reconciliation-on-demand worked (asked for surgical fix, got it); ceiling-definition
+mismatch flagged not silently adopted.
+Paper 147, issue #249. Now 479 experiments. Assessment v256.
