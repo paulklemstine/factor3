@@ -9912,3 +9912,21 @@ measurement (0 mismatches) — analytic path buggy, brute paths consistent; disc
 LEDGER: zombie-completion pattern again (~40 min to first files); population balance
 distribution differs from paper 137's (disclosed by the agent itself).
 Paper 149, issue #251. Now 481 experiments. Assessment v258.
+
+## Part 222 - PHASE-FEATURES (round-41 #1 [cron iteration], exp 482, v259)
+
+Paper 147's named follow-up: do root-position phases mod small primes explain the
+split-ceiling excess? Verdict: **PHASE-SUBTHRESHOLD-LIFT / H3-FAIL** (agent's clean
+reimplementation authoritative; its L0 audit voided the coordinator's inline quick version —
+cross-window arm trained AND tested on second-half targets, min-of-two-roots offset,
+non-QR/o=0 encoding collision).
+H1 REFUTED: phase features (o_p for p in {3,5,7,11,13} as cos/sin+QR-indicator, extended to
+30) add only +0.008/+0.004 out-of-sample R2 (CIs span 0) over the paper-145 dial; phase-only
+is WORSE than baseline (-0.077). H2 CONFIRMED: cross-window phase gain goes significantly
+NEGATIVE (dR2 -0.0120, CI upper < 0) — window-locality SUPPORTED as the mechanism behind
+paper 147's split-ceiling excess. H3 REFUTED: R2_aug = 0.608 < 0.70.
+NET: low-prime phases are sub-threshold and window-local; the split-ceiling excess remains
+UNEXPLAINED by any tested feature class (candidates narrow: higher-prime phase patterns or
+same-window leakage of realized-divisibility features). Base dial R2 drops 0.60->0.40
+cross-window regardless — same-window information is real in the current dial.
+Paper 150, issue #252. Now 482 experiments. Assessment v259.
