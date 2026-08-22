@@ -1,0 +1,328 @@
+{
+ "meta": {
+  "exp": 509,
+  "codename": "MA1-EFFECTIVE-v2"
+ },
+ "cells": [
+  {
+   "m": 3,
+   "x_exp": 28,
+   "x": 268435456,
+   "phi": 2,
+   "total_primes": 14630843,
+   "max_dev_rel_empirical": 3.6e-05,
+   "worst_class": 1,
+   "counts": [
+    7315157,
+    7315685
+   ],
+   "expected_per_class": 7315421,
+   "chi2": 0.02
+  },
+  {
+   "m": 4,
+   "x_exp": 28,
+   "x": 268435456,
+   "phi": 2,
+   "total_primes": 14630843,
+   "max_dev_rel_empirical": 2.7e-05,
+   "worst_class": 1,
+   "counts": [
+    7315221,
+    7315621
+   ],
+   "expected_per_class": 7315421,
+   "chi2": 0.01
+  },
+  {
+   "m": 5,
+   "x_exp": 28,
+   "x": 268435456,
+   "phi": 4,
+   "total_primes": 14630843,
+   "max_dev_rel_empirical": 0.00011,
+   "worst_class": 4,
+   "counts": [
+    3657746,
+    3657813,
+    3657975,
+    3657308
+   ],
+   "expected_per_class": 3657710,
+   "chi2": 0.07
+  },
+  {
+   "m": 7,
+   "x_exp": 28,
+   "x": 268435456,
+   "phi": 6,
+   "total_primes": 14630843,
+   "max_dev_rel_empirical": 8.8e-05,
+   "worst_class": 4,
+   "counts": [
+    2438537,
+    2438389,
+    2438684,
+    2438260,
+    2438645,
+    2438327
+   ],
+   "expected_per_class": 2438473,
+   "chi2": 0.06
+  },
+  {
+   "m": 8,
+   "x_exp": 28,
+   "x": 268435456,
+   "phi": 4,
+   "total_primes": 14630843,
+   "max_dev_rel_empirical": 0.00017,
+   "worst_class": 1,
+   "counts": [
+    3657088,
+    3657724,
+    3658133,
+    3657897
+   ],
+   "expected_per_class": 3657710,
+   "chi2": 0.16
+  },
+  {
+   "m": 11,
+   "x_exp": 28,
+   "x": 268435456,
+   "phi": 10,
+   "total_primes": 14630843,
+   "max_dev_rel_empirical": 0.000251,
+   "worst_class": 3,
+   "counts": [
+    1463045,
+    1463210,
+    1462717,
+    1463020,
+    1463074,
+    1463177,
+    1463020,
+    1463251,
+    1463069,
+    1463259
+   ],
+   "expected_per_class": 1463084,
+   "chi2": 0.16
+  },
+  {
+   "m": 31,
+   "x_exp": 28,
+   "x": 268435456,
+   "phi": 30,
+   "total_primes": 14630843,
+   "max_dev_rel_empirical": 0.000929,
+   "worst_class": 11,
+   "counts": [
+    487375,
+    487500,
+    487718,
+    487419,
+    487863,
+    487891,
+    487988,
+    487803,
+    487537,
+    487685,
+    488148,
+    487763,
+    487914,
+    487571,
+    487592,
+    487762,
+    487838,
+    487657,
+    487413,
+    487510,
+    487740,
+    487583,
+    487832,
+    487294,
+    487737,
+    487859,
+    487914,
+    487854,
+    487386,
+    487696
+   ],
+   "expected_per_class": 487694,
+   "chi2": 2.51
+  },
+  {
+   "m": 3,
+   "x_exp": 30,
+   "x": 1073741824,
+   "phi": 2,
+   "total_primes": 54400028,
+   "max_dev_rel_empirical": 3.2e-05,
+   "worst_class": 1,
+   "counts": [
+    27199150,
+    27200877
+   ],
+   "expected_per_class": 27200014,
+   "chi2": 0.05
+  },
+  {
+   "m": 4,
+   "x_exp": 30,
+   "x": 1073741824,
+   "phi": 2,
+   "total_primes": 54400028,
+   "max_dev_rel_empirical": 3.4e-05,
+   "worst_class": 1,
+   "counts": [
+    27199095,
+    27200932
+   ],
+   "expected_per_class": 27200014,
+   "chi2": 0.06
+  },
+  {
+   "m": 5,
+   "x_exp": 30,
+   "x": 1073741824,
+   "phi": 4,
+   "total_primes": 54400028,
+   "max_dev_rel_empirical": 4.9e-05,
+   "worst_class": 1,
+   "counts": [
+    13599341,
+    13600508,
+    13600519,
+    13599659
+   ],
+   "expected_per_class": 13600007,
+   "chi2": 0.08
+  },
+  {
+   "m": 7,
+   "x_exp": 30,
+   "x": 1073741824,
+   "phi": 6,
+   "total_primes": 54400028,
+   "max_dev_rel_empirical": 5.9e-05,
+   "worst_class": 4,
+   "counts": [
+    9066654,
+    9067018,
+    9066887,
+    9066139,
+    9066682,
+    9066647
+   ],
+   "expected_per_class": 9066671,
+   "chi2": 0.05
+  },
+  {
+   "m": 8,
+   "x_exp": 30,
+   "x": 1073741824,
+   "phi": 4,
+   "total_primes": 54400028,
+   "max_dev_rel_empirical": 0.000101,
+   "worst_class": 1,
+   "counts": [
+    13598631,
+    13601029,
+    13600464,
+    13599903
+   ],
+   "expected_per_class": 13600007,
+   "chi2": 0.23
+  },
+  {
+   "m": 11,
+   "x_exp": 30,
+   "x": 1073741824,
+   "phi": 10,
+   "total_primes": 54400028,
+   "max_dev_rel_empirical": 0.000163,
+   "worst_class": 3,
+   "counts": [
+    5439607,
+    5439974,
+    5439115,
+    5440211,
+    5440078,
+    5440513,
+    5439946,
+    5440574,
+    5439405,
+    5440604
+   ],
+   "expected_per_class": 5440002,
+   "chi2": 0.42
+  },
+  {
+   "m": 31,
+   "x_exp": 30,
+   "x": 1073741824,
+   "phi": 30,
+   "total_primes": 54400028,
+   "max_dev_rel_empirical": 0.000446,
+   "worst_class": 7,
+   "counts": [
+    1813238,
+    1813617,
+    1813497,
+    1813213,
+    1813371,
+    1812978,
+    1814143,
+    1813501,
+    1813441,
+    1813739,
+    1813402,
+    1813342,
+    1813231,
+    1812989,
+    1812929,
+    1813183,
+    1813756,
+    1812841,
+    1813413,
+    1813216,
+    1812611,
+    1813300,
+    1813281,
+    1812687,
+    1813433,
+    1813451,
+    1813703,
+    1813376,
+    1813622,
+    1813523
+   ],
+   "expected_per_class": 1813334,
+   "chi2": 1.71
+  }
+ ],
+ "summary": {
+  "H1_max_dev_at_30": 0.000446,
+  "H1_pass_lt_0.001": true,
+  "H2_worst_stable": {
+   "3": true,
+   "4": true,
+   "5": false,
+   "7": true,
+   "8": true,
+   "11": true,
+   "31": false
+  },
+  "H3_shrinking": {
+   "3": true,
+   "4": false,
+   "5": true,
+   "7": true,
+   "8": true,
+   "11": true,
+   "31": true
+  }
+ }
+}
