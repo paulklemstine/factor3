@@ -1732,3 +1732,13 @@ ResearchOutput/exp_net62_sub16.py; results ~/f3cache/net62_results.json; log /tm
 (h) DIRECT (deployment table's 1024 entry: 32 → 20). Open: fine grids at 512/2048;
 domain-jump corpora; 1.5B fine-grid; 7B cell. Paper 147, issue #298.
 Now 62 network experiments. Assessment v62.
+
+## Part 63 — THE-2048-KNEE-IS-TWENTY-FOUR: fine grid confirms k*(2048)=24 on corpus-A (k=20 fails 0.9793, k=24 passes 0.9835 with +0.35pt margin — 7x healthier than the original razor, k=28/32 pass 0.985/0.989); P1 knee-in-{28} REFUTED, P2 monotone-chain CONFIRMED ({16,20,24} on fine grids), P3 PARTIAL; completing the 0.5B chain {16,20,24} across all three contexts with healthy margins; corpus-B's coarse 32 isolated as shard-or-window-count question, no longer threatening the chain; quantization is context-dependent (smooth bracketing here vs ON-grid at 1024) (NET-63; limited-memory axis round 24)
+
+**Method:** fine sweep k∈{20,24,28,32} at ctx=2048, corpus-A, 12 windows (VRAM-bound);
+gate exact. Script ResearchOutput/exp_net63_fine2048.py; results
+~/f3cache/net63_results.json; log /tmp/net63.log.
+**Verdict:** THE-2048-KNEE-IS-TWENTY-FOUR. Barriers: (a) clean; (b) clean; (c) confronted
+(12 windows stated); (d) clean; (e) deterministic; (f) clean (ALL_DONE_NET63); (g) fair;
+(h) DIRECT. Open: corpus-B fine sweep @2048; domain-jump corpora; 1.5B fine grids; 7B cell.
+Paper 148, issue #299. Now 63 network experiments. Assessment v63.
