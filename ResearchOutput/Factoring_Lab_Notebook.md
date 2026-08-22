@@ -9817,3 +9817,18 @@ population's correlation; calibration slopes in-band 4/4 cells. Weighted feature
 features), 1.05x floor at u=3.5 (noise-bound). LEDGER: sympy.factorint hung -> primorial-gcd
 independent verification path; OLS primary/logistic secondary agree.
 Paper 144, issue #245. Now 476 experiments. Assessment v253.
+
+## Part 217 - QR-RESIDUAL (round-40 #1 [cron iteration], exp 477, v254)
+
+What explains paper 144's 1.31x-floor residual at u=2.5? H1 CONFIRMED DECISIVELY: the
+footprint-weighted feature sum(2/p) over QR primes <=400 — each QR prime p divides ~2/p of
+the values, so its weighted mass IS the theoretically-motivated quantity — lifts out-of-sample
+R2 from 0.3927 to **0.5691** (delta +0.176, bootstrap CI [0.120, 0.229]) at u=2.5, and from
+0.2063 to 0.3078 (+0.102, CI [0.037, 0.155]) at u=3.5. The DIRECT mechanism feature (fraction
+of values divisible by primes <=13, measurable without factoring) adds independently
+(+0.118/+0.046); both together R2 = 0.5864 at u=2.5. The QR-count was a coarse proxy; the
+residual was real structure, now largely captured by two cheap features (~200 Euler tests +
+a mod count). H3 (nothing systematic) refuted.
+LEDGER: v1 bootstrap refit indexed the test-slice target instead of full (IndexError);
+inline takeover (agent silent 15 min).
+Paper 145, issue #246. Now 477 experiments. Assessment v254.
