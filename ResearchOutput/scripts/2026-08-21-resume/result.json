@@ -1,8 +1,8 @@
 {
- "experiment": "exp530",
- "codename": "TDIAL-U64",
- "round": 60,
- "date_utc": "2026-08-22T18:35:33Z",
+ "experiment": "exp532",
+ "codename": "TDIAL-U72",
+ "round": 63,
+ "date_utc": "2026-08-22T19:02:59Z",
  "host": "Victus",
  "environment": {
   "python": "3.12.3",
@@ -10,10 +10,10 @@
   "gmpy2": "2.3.0"
  },
  "hypotheses_preregistered": {
-  "H1": "Spearman(T, rate) stays within [0.55, 0.85] on uniform draws at bitlen 64, u=2.5.",
+  "H1": "Spearman(T, rate) stays within [0.55, 0.85] on uniform draws at bitlen 72, u=2.5.",
   "H2": "T beats count<=100 by > +0.05 (advantage = rho_T - rho_count > 0.05)."
  },
- "design_correction_flagged": "Brief's windows p~[2^16,2^22), q~[2^22,2^28) admit max product < 2^50 -- bitlen-64 rejection sampling is infeasible as stated (same copy-carried defect documented pre-data in exps 517/518/521/528/529). Pre-data correction per exp529's rule: both exponent windows shifted by the SAME +10, chosen so window-log midpoints sum to 64 (19+25=44 -> 29+35=64) -> p~[2^26,2^32), q~[2^32,2^38); preserves adjacency/equal-widths/p<q/uniform character; product-mode lands on 2^64. FLAGGED for parent.",
+ "design_correction_flagged": "Brief's windows p~[2^20,2^26), q~[2^26,2^32) admit max product < 2^58 -- bitlen-72 rejection sampling is infeasible as stated (same copy-carried defect documented pre-data in exps 517/518/521/528/529/530/531). Pre-data correction per exp529..531's rule: both exponent windows shifted by the SAME +10, chosen so window-log midpoints sum to 72 (23+29=52 -> 33+39=72) -> p~[2^30,2^36), q~[2^36,2^42); preserves adjacency/equal-widths/p<q/uniform character; product-mode lands on 2^72. FLAGGED for parent.",
  "interpretation_notes": {
   "qr_primes": "odd primes p<=400 with (N|p)=+1 by Euler criterion",
   "count_le_100": "number of odd QR primes p<=100, unit weights",
@@ -27,8 +27,6 @@
     0.801
    ],
    "uniform_52_exp518_pooled_adv": 0.121,
-   "balanced_56_paper178_rhoT": 0.405,
-   "balanced_60_paper179_rhoT": 0.437,
    "uniform_56_exp529_pooled": {
     "rho_T": 0.6848,
     "rho_T_ci": [
@@ -41,66 +39,107 @@
      0.095
     ],
     "mean_rate": 0.1386
+   },
+   "uniform_60_exp521": {
+    "rho_T": 0.6686,
+    "rho_T_ci": [
+     0.634,
+     0.7047
+    ],
+    "advantage": 0.1513,
+    "adv_ci": [
+     0.1065,
+     0.1934
+    ],
+    "mean_rate": 0.12647
+   },
+   "uniform_64_exp530_pooled": {
+    "rho_T": 0.64765,
+    "rho_T_ci": [
+     0.6285,
+     0.6654
+    ],
+    "advantage": 0.07357,
+    "adv_ci": [
+     0.04903,
+     0.09981
+    ],
+    "mean_rate": 0.1349,
+    "verdict": "U64-DIAL-HOLDS-COUNT-PARITY"
+   },
+   "uniform_68_exp531_pooled": {
+    "rho_T": 0.61116,
+    "rho_T_ci": [
+     0.5912,
+     0.6338
+    ],
+    "advantage": 0.07039,
+    "adv_ci": [
+     0.04607,
+     0.09389
+    ],
+    "mean_rate": 0.13572,
+    "verdict": "U68-DIAL-HOLDS-COUNT-PARITY"
    }
   }
  },
  "config": {
   "seeds": [
-   20261140,
-   20261141,
-   20261142
+   20261160,
+   20261161,
+   20261162
   ],
   "n_per_seed": 1200,
   "k_values": 240,
   "u_exp": 2.5,
-  "target_bits": 64,
+  "target_bits": 72,
   "p_window_corrected": [
-   26,
-   32
+   30,
+   36
   ],
   "q_window_corrected": [
-   32,
-   38
+   36,
+   42
   ],
   "windows_as_written_in_brief": [
    [
-    16,
-    22
+    20,
+    26
    ],
    [
-    22,
-    28
+    26,
+    32
    ]
   ],
   "dial_cutoff": 400,
   "count_cutoff": 100,
   "bootstrap": 300,
-  "sieve_ceiling": 20000,
+  "sieve_ceiling": 50000,
   "smoke_mode": false
  },
  "designed_checks": {
   "smoothness_unit_tests": true,
   "cf_remainder_qr_structure": {
    "semiprimes_tested": 3,
-   "prime_remainders_checked": 118,
+   "prime_remainders_checked": 114,
    "violations": 0
   },
   "primality_crosscheck_agree": "200/200",
   "all_pass": true,
   "generation_determinism": {
-   "digest_try1": "d3252845f3286c09",
-   "digest_try2": "d3252845f3286c09",
+   "digest_try1": "92d6b5f3cbed14e7",
+   "digest_try2": "92d6b5f3cbed14e7",
    "match": true
   }
  },
  "ledger": [
   {
-   "t_utc": "2026-08-22T18:35:33Z",
+   "t_utc": "2026-08-22T19:02:59Z",
    "line": "stage=config",
    "seeds": [
-    20261140,
-    20261141,
-    20261142
+    20261160,
+    20261161,
+    20261162
    ],
    "n": 1200,
    "k": 240,
@@ -109,282 +148,282 @@
    "smoke": false
   },
   {
-   "t_utc": "2026-08-22T18:35:33Z",
+   "t_utc": "2026-08-22T19:02:59Z",
    "line": "stage=designed_checks",
    "all_pass": true,
    "details": {
     "smoothness_unit_tests": true,
     "cf_remainder_qr_structure": {
      "semiprimes_tested": 3,
-     "prime_remainders_checked": 118,
+     "prime_remainders_checked": 114,
      "violations": 0
     },
     "primality_crosscheck_agree": "200/200",
     "all_pass": true,
     "generation_determinism": {
-     "digest_try1": "d3252845f3286c09",
-     "digest_try2": "d3252845f3286c09",
+     "digest_try1": "92d6b5f3cbed14e7",
+     "digest_try2": "92d6b5f3cbed14e7",
      "match": true
     }
    }
   },
   {
-   "t_utc": "2026-08-22T18:35:39Z",
+   "t_utc": "2026-08-22T19:03:13Z",
    "line": "stage=gen+features",
-   "seed": 20261140,
+   "seed": 20261160,
    "accepted": 1200,
-   "raw_draws": 36195,
-   "acceptance": 0.0332,
+   "raw_draws": 35785,
+   "acceptance": 0.0335,
    "envelope_ok": true,
-   "secs": 5.9
+   "secs": 13.8
   },
   {
-   "t_utc": "2026-08-22T18:35:39Z",
+   "t_utc": "2026-08-22T19:03:13Z",
    "line": "stage=stats",
-   "seed": 20261140,
-   "spearman_T": 0.6579,
+   "seed": 20261160,
+   "spearman_T": 0.605,
    "ci_T": [
-    0.6222,
-    0.6889
+    0.5674,
+    0.6429
    ],
-   "spearman_count": 0.562,
-   "advantage": 0.096,
-   "mean_rate": 0.1357
+   "spearman_count": 0.5377,
+   "advantage": 0.0673,
+   "mean_rate": 0.1358
   },
   {
-   "t_utc": "2026-08-22T18:35:46Z",
+   "t_utc": "2026-08-22T19:03:29Z",
    "line": "stage=gen+features",
-   "seed": 20261141,
+   "seed": 20261161,
    "accepted": 1200,
-   "raw_draws": 34028,
-   "acceptance": 0.0353,
+   "raw_draws": 32983,
+   "acceptance": 0.0364,
    "envelope_ok": true,
-   "secs": 6.8
+   "secs": 15.9
   },
   {
-   "t_utc": "2026-08-22T18:35:46Z",
+   "t_utc": "2026-08-22T19:03:29Z",
    "line": "stage=stats",
-   "seed": 20261141,
-   "spearman_T": 0.6418,
+   "seed": 20261161,
+   "spearman_T": 0.6056,
    "ci_T": [
-    0.6067,
-    0.6721
+    0.5668,
+    0.6351
    ],
-   "spearman_count": 0.5624,
-   "advantage": 0.0794,
-   "mean_rate": 0.1341
-  },
-  {
-   "t_utc": "2026-08-22T18:35:52Z",
-   "line": "stage=gen+features",
-   "seed": 20261142,
-   "accepted": 1200,
-   "raw_draws": 34562,
-   "acceptance": 0.0347,
-   "envelope_ok": true,
-   "secs": 6.0
-  },
-  {
-   "t_utc": "2026-08-22T18:35:52Z",
-   "line": "stage=stats",
-   "seed": 20261142,
-   "spearman_T": 0.6426,
-   "ci_T": [
-    0.6077,
-    0.6762
-   ],
-   "spearman_count": 0.597,
-   "advantage": 0.0456,
+   "spearman_count": 0.5875,
+   "advantage": 0.018,
    "mean_rate": 0.1351
   },
   {
-   "t_utc": "2026-08-22T18:35:53Z",
-   "line": "stage=pooled",
-   "n": 3600,
-   "spearman_T": 0.6477,
-   "advantage": 0.0736
+   "t_utc": "2026-08-22T19:03:44Z",
+   "line": "stage=gen+features",
+   "seed": 20261162,
+   "accepted": 1200,
+   "raw_draws": 34638,
+   "acceptance": 0.0346,
+   "envelope_ok": true,
+   "secs": 15.0
   },
   {
-   "t_utc": "2026-08-22T18:35:53Z",
+   "t_utc": "2026-08-22T19:03:45Z",
+   "line": "stage=stats",
+   "seed": 20261162,
+   "spearman_T": 0.6025,
+   "ci_T": [
+    0.565,
+    0.6386
+   ],
+   "spearman_count": 0.5739,
+   "advantage": 0.0286,
+   "mean_rate": 0.1346
+  },
+  {
+   "t_utc": "2026-08-22T19:03:46Z",
+   "line": "stage=pooled",
+   "n": 3600,
+   "spearman_T": 0.6051,
+   "advantage": 0.0384
+  },
+  {
+   "t_utc": "2026-08-22T19:03:46Z",
    "line": "stage=verdict",
-   "verdict": "U64-DIAL-HOLDS-COUNT-PARITY",
+   "verdict": "U72-DIAL-HOLDS-COUNT-PARITY",
    "H1": true,
    "H2": false
   },
   {
-   "t_utc": "2026-08-22T18:35:53Z",
+   "t_utc": "2026-08-22T19:03:46Z",
    "line": "stage=final",
-   "verdict": "U64-DIAL-HOLDS-COUNT-PARITY"
+   "verdict": "U72-DIAL-HOLDS-COUNT-PARITY"
   }
  ],
  "per_seed": [
   {
    "n": 1200,
-   "spearman_T": 0.6579370223521719,
+   "spearman_T": 0.6049526323869333,
    "spearman_T_ci": [
-    0.6222342506150002,
-    0.6889366268036089
+    0.5673908359248768,
+    0.6428903377215274
    ],
-   "spearman_count": 0.561954140249874,
+   "spearman_count": 0.5376919199749776,
    "spearman_count_ci": [
-    0.5131853373221165,
-    0.5999623752619918
+    0.502278529533168,
+    0.5810068343656978
    ],
-   "advantage": 0.09598288210229788,
+   "advantage": 0.06726071241195575,
    "advantage_ci": [
-    0.05962446881078072,
-    0.1306533218366574
+    0.02055406002914263,
+    0.11176610854781723
    ],
-   "mean_T": 1.5482143316089043,
-   "sd_T": 0.45045748097829874,
-   "mean_count": 11.920833333333333,
-   "sd_count": 2.422030684960223,
-   "mean_rate": 0.1356527777777778,
-   "sd_rate": 0.037425880969698296,
-   "feature_spearman_TC": 0.5651365711417996,
-   "seed": 20261140,
-   "raw_draws": 36195,
-   "acceptance": 0.0332,
-   "median_B": 8883.0,
-   "gen_feature_secs": 5.9,
+   "mean_T": 1.5754231647890338,
+   "sd_T": 0.43901741451662657,
+   "mean_count": 12.055833333333334,
+   "sd_count": 2.4422085576151944,
+   "mean_rate": 0.13584027777777777,
+   "sd_rate": 0.03285850977658077,
+   "feature_spearman_TC": 0.5402606089138627,
+   "seed": 20261160,
+   "raw_draws": 35785,
+   "acceptance": 0.0335,
+   "median_B": 26988.5,
+   "gen_feature_secs": 13.8,
    "stats_secs": 0.3
   },
   {
    "n": 1200,
-   "spearman_T": 0.6418240383604036,
+   "spearman_T": 0.6055675553829971,
    "spearman_T_ci": [
-    0.6066539272332079,
-    0.672125063019441
+    0.5668478203321996,
+    0.6350970653246621
    ],
-   "spearman_count": 0.5624375688371519,
+   "spearman_count": 0.5875450332266697,
    "spearman_count_ci": [
-    0.5245614462385251,
-    0.5996823692971031
+    0.5501188322898646,
+    0.6208206689726014
    ],
-   "advantage": 0.07938646952325168,
+   "advantage": 0.01802252215632738,
    "advantage_ci": [
-    0.041884785287712424,
-    0.12008219610766373
+    -0.028561496244839054,
+    0.05723683636413363
    ],
-   "mean_T": 1.5308467932498353,
-   "sd_T": 0.4482358358836055,
-   "mean_count": 11.835833333333333,
-   "sd_count": 2.4604639072518193,
-   "mean_rate": 0.13411805555555556,
-   "sd_rate": 0.036621546707589686,
-   "feature_spearman_TC": 0.567493026002478,
-   "seed": 20261141,
-   "raw_draws": 34028,
-   "acceptance": 0.0353,
-   "median_B": 8905.0,
-   "gen_feature_secs": 6.8,
-   "stats_secs": 0.3
+   "mean_T": 1.568773561792698,
+   "sd_T": 0.457187865969195,
+   "mean_count": 11.974166666666667,
+   "sd_count": 2.440320874848679,
+   "mean_rate": 0.13510416666666666,
+   "sd_rate": 0.03400819660526845,
+   "feature_spearman_TC": 0.5654133401774755,
+   "seed": 20261161,
+   "raw_draws": 32983,
+   "acceptance": 0.0364,
+   "median_B": 26850.0,
+   "gen_feature_secs": 15.9,
+   "stats_secs": 0.4
   },
   {
    "n": 1200,
-   "spearman_T": 0.642620714216931,
+   "spearman_T": 0.6025187014450154,
    "spearman_T_ci": [
-    0.6076644552754523,
-    0.6761502902261848
+    0.5650427058089011,
+    0.638572369509858
    ],
-   "spearman_count": 0.5970056871340401,
+   "spearman_count": 0.5739307782484181,
    "spearman_count_ci": [
-    0.5609912761307444,
-    0.6322238678331112
+    0.5333304953227566,
+    0.6099350764183008
    ],
-   "advantage": 0.04561502708289089,
+   "advantage": 0.02858792319659731,
    "advantage_ci": [
-    0.004038642800881831,
-    0.08632732491931634
+    -0.011919249555017946,
+    0.0710531213308277
    ],
-   "mean_T": 1.54499795999314,
-   "sd_T": 0.4529494769594707,
-   "mean_count": 11.885,
-   "sd_count": 2.421798574062949,
-   "mean_rate": 0.13505208333333332,
-   "sd_rate": 0.036382821105374004,
-   "feature_spearman_TC": 0.5453903342266258,
-   "seed": 20261142,
-   "raw_draws": 34562,
-   "acceptance": 0.0347,
-   "median_B": 8877.5,
-   "gen_feature_secs": 6.0,
+   "mean_T": 1.5331157086327076,
+   "sd_T": 0.43954138625330913,
+   "mean_count": 11.943333333333333,
+   "sd_count": 2.454272917903703,
+   "mean_rate": 0.13457291666666668,
+   "sd_rate": 0.03337081063750425,
+   "feature_spearman_TC": 0.5755669722441729,
+   "seed": 20261162,
+   "raw_draws": 34638,
+   "acceptance": 0.0346,
+   "median_B": 27103.0,
+   "gen_feature_secs": 15.0,
    "stats_secs": 0.3
   }
  ],
  "pooled": {
   "n": 3600,
-  "spearman_T": 0.6476530793411688,
+  "spearman_T": 0.6051422004261361,
   "spearman_T_ci": [
-   0.6285019685484935,
-   0.6653921355251364
+   0.5861614954300749,
+   0.6246437396904803
   ],
-  "spearman_count": 0.5740795151117368,
+  "spearman_count": 0.5667149996449526,
   "spearman_count_ci": [
-   0.5498043534576548,
-   0.6001108078268322
+   0.5443540584785965,
+   0.5875690631648579
   ],
-  "advantage": 0.07357356422943195,
+  "advantage": 0.038427200781183446,
   "advantage_ci": [
-   0.049027380243089294,
-   0.0998146053881807
+   0.014535244413355103,
+   0.06029349603348046
   ],
-  "mean_T": 1.5413530282839598,
-  "sd_T": 0.45061486859716493,
-  "mean_count": 11.880555555555556,
-  "sd_count": 2.4350815003979327,
-  "mean_rate": 0.13494097222222223,
-  "sd_rate": 0.036818202589969255,
-  "feature_spearman_TC": 0.5591703426084924,
-  "raw_draws_total": 104785,
-  "secs": 1.0
+  "mean_T": 1.5591041450714795,
+  "sd_T": 0.4457162296501416,
+  "mean_count": 11.991111111111111,
+  "sd_count": 2.4460691570329023,
+  "mean_rate": 0.1351724537037037,
+  "sd_rate": 0.03341985537798617,
+  "feature_spearman_TC": 0.5608537888362198,
+  "raw_draws_total": 103406,
+  "secs": 0.9
  },
  "hypothesis_verdicts": {
   "H1": {
-   "statement": "Spearman(T, rate) stays within [0.55, 0.85] on uniform draws at bitlen 64, u=2.5.",
+   "statement": "Spearman(T, rate) stays within [0.55, 0.85] on uniform draws at bitlen 72, u=2.5.",
    "per_seed_rho_T": [
-    0.6579370223521719,
-    0.6418240383604036,
-    0.642620714216931
+    0.6049526323869333,
+    0.6055675553829971,
+    0.6025187014450154
    ],
-   "pooled_rho_T": 0.6476530793411688,
+   "pooled_rho_T": 0.6051422004261361,
    "pooled_ci": [
-    0.6285019685484935,
-    0.6653921355251364
+    0.5861614954300749,
+    0.6246437396904803
    ],
    "per_seed_all_inside": true,
    "pooled_inside": true,
    "pass": true,
-   "margin_to_lower_bound": 0.0918,
-   "margin_to_upper_bound": 0.1921
+   "margin_to_lower_bound": 0.0525,
+   "margin_to_upper_bound": 0.2444
   },
   "H2": {
    "statement": "T beats count<=100 by > +0.05 (advantage = rho_T - rho_count > 0.05).",
    "per_seed_advantage": [
-    0.09598288210229788,
-    0.07938646952325168,
-    0.04561502708289089
+    0.06726071241195575,
+    0.01802252215632738,
+    0.02858792319659731
    ],
-   "pooled_advantage": 0.07357356422943195,
+   "pooled_advantage": 0.038427200781183446,
    "pooled_advantage_ci": [
-    0.049027380243089294,
-    0.0998146053881807
+    0.014535244413355103,
+    0.06029349603348046
    ],
-   "pass_point_estimate": true,
+   "pass_point_estimate": false,
    "pass_ci_lower_bound": false,
    "per_seed_all_above_005": false,
    "pass": false
   }
  },
- "verdict_name": "U64-DIAL-HOLDS-COUNT-PARITY",
- "decision": "See verdict_name U64-DIAL-HOLDS-COUNT-PARITY; H1=True H2=False",
+ "verdict_name": "U72-DIAL-HOLDS-COUNT-PARITY",
+ "decision": "See verdict_name U72-DIAL-HOLDS-COUNT-PARITY; H1=True H2=False",
  "artifacts": {
-  "script_sha256": "4ec13699b9a2089afab8817f46437f80de1009a0d69038ea0e3b5990532d164f"
+  "script_sha256": "69f4968332deda20e543944d7da7ccecda9285c8d442dd9ff0bd851040a50a63"
  },
  "barriers": {
   "barrier_5_rate_label_wall": "BARRIER-5 (rate/label wall; structural orthogonality): T(N) predicts only the group-level smooth-relation RATE; it carries no which-factor information and is no candidate filter -- any Spearman value measured here leaves the which-factor/symmetric-channel wall untouched (residue dials only).",
-  "barrier_8_zero_fit_discipline": "BARRIER-8 (zero-fit discipline; classical-invariant ceiling): dial form sum 2/p over QR primes <=400 and comparator count<=100 are fixed a priori with zero fitted parameters on this cell; bitlen-64-uniform is an out-of-sample intersection fill; no form/cutoff/weight was tuned against these data (the pre-data window correction is a feasibility fix, not a fit).",
-  "note": "wording reconstructed from lab semantics (barrier 5 = residue-dials-only structural orthogonality, barrier 8 = classical Galois/reciprocity invariants), consistent with papers 83/183/184 usage and the exp529 wording; repo untouched (read-only)."
+  "barrier_8_zero_fit_discipline": "BARRIER-8 (zero-fit discipline; classical-invariant ceiling): dial form sum 2/p over QR primes <=400 and comparator count<=100 are fixed a priori with zero fitted parameters on this cell; bitlen-72-uniform is an out-of-sample intersection fill; no form/cutoff/weight was tuned against these data (the pre-data window correction is a feasibility fix, not a fit).",
+  "note": "wording reconstructed from lab semantics (barrier 5 = residue-dials-only structural orthogonality, barrier 8 = classical Galois/reciprocity invariants), consistent with papers 83/183/184 usage and the exp529/exp530/exp531 wording; repo untouched (read-only)."
  },
- "wall_secs_total": 20.7
+ "wall_secs_total": 46.7
 }
