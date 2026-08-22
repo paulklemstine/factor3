@@ -9715,3 +9715,21 @@ break-even verdicts 20/20 cells. LEDGER (9 self-caught incl. label-space bug pro
 flat-alpha artifact). External info priced LINEARLY in bits — capacity synergy does NOT
 transfer to work bits (confirms paper 132's currency separation on the external side too).
 Paper 138, issue #235. Now 470 experiments. Assessment v247.
+
+## Part 211 - QR-SMOOTHNESS (round-39 #1 [cron iteration], exp 471, v248)
+
+Paper 136's queued follow-up, and a CORRECTION of it. Ensemble level (2500 Ns/cell x 40
+values = 100k/cell): x2-N smoothness equals UNRESTRICTED-random smoothness at every cell
+(emp/rho 0.871-0.985 = paper 130's finite-x factor; emp_rnd within noise) — the halved QR
+prime pool is compensated EXACTLY by two residue classes per QR prime (the classical QS
+heuristic, quantified). H1-as-pre-stated REFUTED: x2-N is NOT like randoms judged over the
+QR pool only — those run 21-56x lower (a small non-residue prime excludes its whole
+divisibility class). Paper 136's 'effective-u' mean-shift story RETIRED.
+PER-N VARIANCE IS THE REAL MECHANISM: corr(per-N smooth rate, #{odd primes <=100 that are
+QRs of N}) = 0.504/0.452/0.483/0.401 across the four cells; decile spread 0.077 vs 0.188 at
+u=2.5 (2.4x) and 0.0047 vs 0.0441 at u=3.5 (9.3x). RESOLVES exp470's 0.54-0.76 yield deficit:
+its ONE-N-PER-SCALE design sampled this variance. Actionable corollary: per-N relation yield
+is cheaply predictable a priori from ~20 Euler-criterion tests.
+LEDGER: legendre args swapped, then p=2 crash (sympy demands odd prime); gmpy2 powmod Euler
+path added for the per-N stage; rho anchors validated as in exp465.
+Paper 139, issue #236. Now 471 experiments. Assessment v248.
