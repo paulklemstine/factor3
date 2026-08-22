@@ -10032,6 +10032,18 @@ class, marginally below lite's 0.463; no toy-scale separation from L_p[1/2,sqrt2
 ADOPTED: true-lcm as the lab's canonical stage-1 operator.
 Paper 156, issue #258. Now 488 experiments. Assessment v265.
 
+## Part 231 - TABLE-CLOSURE lean (round-42 #6 [cron iteration], exp 491, v269)
+
+g/Is/A/X exact tables closed to n=25. H1 CONFIRMED: Is dominates max(g,A,X) at every n;
+A >= g everywhere; A overtakes X EXACTLY at n=8 (paper 74's crossover re-derived). H2
+CONFIRMED: all channels -> 0 (n=25: g 0.0007, Is 0.0120, A 0.0075, X 0.0047). H3 REFUTED:
+the guessed X->2g asymptotic is wrong — X/g rises 5.93->6.43 over n=5..25 and has not
+settled; the measured ratios are the data.
+LEDGER: two-stage bug hunt — unnormalized H() then non-summing distributions (Is middle
+element 1/n instead of ((n-1)/n)^2); both silently produced garbage before the exact
+complement forms were imposed.
+Paper 160, issue #262. Now 492 experiments. Assessment v269.
+
 ## Part 229 - DEGREE-SEVEN lean (round-42 #3 [cron iteration], exp 489, v266)
 
 The ladder's LAST gap below 10: cyclic degree-7 subfield of Q(zeta_29) (conductor 29,
