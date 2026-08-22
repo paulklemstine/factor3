@@ -1,5 +1,5 @@
 # FACTORING RESEARCH LOOP — cron prompt (ACTIVE 2026-08-21: resumed by user request;
-# 429 experiments, v205, papers 01–94, issues #16–#95 + #172–#186, round-27 4/4 done)
+# 466 experiments, v243, papers 01–134, issues #16–#95 + #172–#231 (shared with net lab), round-37 6/6 done 2026-08-22 via ARMY of parallel subagents)
 
 Run one iteration of the FACTORING RESEARCH LOOP (per memory file factoring-lab-state.md):
 (1) propose a NEW testable factoring hypothesis — check factoring-lab-state.md for open
