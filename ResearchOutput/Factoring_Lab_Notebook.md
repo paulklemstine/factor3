@@ -9535,3 +9535,22 @@ np.isqrt absent in numpy; 3x upstream agent-channel timeout, experiment taken ov
 What remains unmeasured in the fourth stratum is the sieve's algorithmic advantage, not the
 relation-pool statistics.
 Paper 130, issue #226. Now 462 experiments. Assessment v239.
+
+## Part 203 - POSTERIOR-FILTER (round-37 #3, exp 461, v240)
+
+THE DECISIVE UTILITY EXPERIMENT. Does the battery's measured capacity (1-3.49 bits here)
+convert into trial-division speedup? REAL-FILTER-EQUALS-SHAM: the Bayesian keep-set filter
+built from the exact type-channel posterior is INDISTINGUISHABLE from a same-size coin-flip
+keep-set at every dial (d2/d3/d5/bat2/bat4: max |real-sham| = 0.0075 vs batch SD 0.0073).
+Apparent gains <=1.25x are keep-rate mechanics (population-window artifact kappa=1.19;
+honest no-prefix ceiling ~1.16x); with per-candidate overhead priced, EVERY filter is a
+~2x LOSS (0.497-0.502). Channel validations exact (d2 analytic 1.0000 vs emp 0.9999);
+failure rates = 1/n exactly. Symmetry made algorithmic: the marginal posterior over the
+target's residue is flat no matter what N reveals, so posterior capacity cannot reweight
+candidates — 3.49 bits of battery capacity ride channels orthogonal to ordering decisions.
+Pre-stated 4/3x refuted; cap<=2 holds vacuously (theory agent 466 derives the sharp cap=1).
+LEDGER (9 catches): two SUBSTANTIVE cost-accounting bugs produced spurious >1.5x speedups
+(non-kept branch truncated at p; missing second-pass prefix) — caught by sham co-inflation
++ derivation; dummy dial v1 read a random table THROUGH THE FACTORS (not N-computable,
+leaked 1 bit) — rebuilt as public table on N mod 97 (I_emp 0.0014).
+Paper 131, issue #227. Now 463 experiments. Assessment v240.
