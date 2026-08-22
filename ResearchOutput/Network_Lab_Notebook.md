@@ -1869,3 +1869,14 @@ results ~/f3cache/net74_results.json; log /tmp/net74.log.
 (d) clean; (e) deterministic; (f) clean (ALL_DONE_NET74, cosmetic error after data);
 (g) fair; (h) DIRECT. Open: tail-shape analysis; sub-20 addendum @2048; 0.5B @4096;
 7B cell. Paper 159, issue #315. Now 74 network experiments. Assessment v74.
+
+## Part 75 — THE-FRENCH-KNEE-IS-FORTY: extended grid pins k*(fr@1024) = 40 — exactly DOUBLE English prose's 20; k=36 fails 0.9795, k=40 passes 0.9830; P1 CONFIRMED (knee exists ≤48), P2 REFUTED (40 ≠ predicted ~28–32); five-domain table @1024: code=12, EN=20, math=20, DE=24, FR=40; tokenizer-tax is a domain-dependent MULTIPLIER not a fixed +4 step (German +4, French +20); mechanism must be language-specific attention pattern structure; increment (+4/doubling) appears domain-universal; deployment: French needs the largest budget by far (NET-75; limited-memory axis round 47)
+
+**Method:** extended grid {36..64} on French prose (corpus-B = wikitext shard 1), 24 held-out
+windows @ctx=1024; gate exact. Script ResearchOutput/exp_net75_frenchext.py;
+results ~/f3cache/net75_results.json; log /tmp/net75.log.
+**Verdict:** THE-FRENCH-KNEE-IS-FORTY. Barriers: (a) clean; (b) clean (first beyond-coarse
+French measurement); (c) confronted (one source/context stated); (d) clean; (e)
+deterministic; (f) clean (ALL_DONE_NET75); (g) fair; (h) DIRECT. Open: French @512
+extended; increments@4096; more languages; 7B cell. Paper 160, issue #316.
+Now 75 network experiments. Assessment v75.
