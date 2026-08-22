@@ -10004,3 +10004,14 @@ td 0.84 / rho 0.52 / Fermat 0.50 / ECM-lite 0.48.
 LEDGER: v1 instant-degenerate bug (at j=2 running point equals base -> zero denominator ->
 every curve dead); fixed with explicit doubling step.
 Paper 155, issue #257. Now 487 experiments. Assessment v264.
+
+## Part 228 - TRUE-ECM (round-42 #2 [cron iteration], exp 488, v265)
+
+The deferred lcm-based true ECM. LCM-SUPERSET-DOMINANCE: paired on identical populations,
+lcm finds 1200/1200 at BOTH ks (ZERO censoring vs lite's 37/45) and STRICTLY CONTAINS
+lite's find set (all 45 lite-censored rescued, zero lost); per-curve success ~4.8x higher.
+H2 SPLIT: found-only meanT LOWER for lcm despite ~2.3x more ops per curve (needs ~4.4x fewer
+curves); total-ops-to-factor advantage confirmed (1.92x at k=20). Slope 0.398 — birthday-
+class, marginally below lite's 0.463; no toy-scale separation from L_p[1/2,sqrt2] (expected).
+ADOPTED: true-lcm as the lab's canonical stage-1 operator.
+Paper 156, issue #258. Now 488 experiments. Assessment v265.

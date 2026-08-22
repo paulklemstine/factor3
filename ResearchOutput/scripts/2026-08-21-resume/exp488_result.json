@@ -1,0 +1,187 @@
+{
+ "meta": {
+  "seed": 20260922,
+  "exp": 488,
+  "codename": "TRUE-ECM",
+  "B1": 50,
+  "curve_cap": 30,
+  "ops_convention": "dbl=4 add=3 (matches exp487); raw point-ops in *_raw",
+  "t_start": "2026-08-22 01:56:24",
+  "schedule_prime_powers": [
+   32,
+   27,
+   25,
+   49,
+   11,
+   13,
+   17,
+   19,
+   23,
+   29,
+   31,
+   37,
+   41,
+   43,
+   47
+  ],
+  "L_lcm_1_to_50": 3099044504245996706400,
+  "L_bit_length": 72,
+  "t_end": "2026-08-22 01:56:24",
+  "wall_seconds": 0.8
+ },
+ "cells": {
+  "lcm_k16": {
+   "k": 16,
+   "n": 1200,
+   "found": 1200,
+   "censored": 0,
+   "find_rate": 1.0,
+   "mean_ops_found": 216.94333333333333,
+   "med_ops_found": 139.0,
+   "total_ops_incl_failed": 260317,
+   "ops_per_instance_incl_failed": 216.9,
+   "total_ops_raw": 72660,
+   "mean_curves_used": 1.1575,
+   "alpha_fit_found_only": 0.0874,
+   "hit_position_top": {
+    "1": 298,
+    "4": 152,
+    "6": 135,
+    "3": 110,
+    "7": 74,
+    "11": 70,
+    "2": 67,
+    "5": 67
+   },
+   "paired_vs_lite": {
+    "both": 1200,
+    "lcm_only": 0,
+    "lite_only": 0,
+    "neither": 0
+   }
+  },
+  "lcm_k20": {
+   "k": 20,
+   "n": 1200,
+   "found": 1200,
+   "censored": 0,
+   "find_rate": 1.0,
+   "mean_ops_found": 654.0941666666666,
+   "med_ops_found": 456.0,
+   "total_ops_incl_failed": 784910,
+   "ops_per_instance_incl_failed": 654.1,
+   "total_ops_raw": 217834,
+   "mean_curves_used": 2.01,
+   "alpha_fit_found_only": 0.3445,
+   "hit_position_top": {
+    "1": 172,
+    "6": 112,
+    "7": 107,
+    "3": 101,
+    "4": 94,
+    "11": 86,
+    "5": 85,
+    "13": 72
+   },
+   "paired_vs_lite": {
+    "both": 1155,
+    "lcm_only": 45,
+    "lite_only": 0,
+    "neither": 0
+   }
+  },
+  "lite_k16": {
+   "k": 16,
+   "n": 1200,
+   "found": 1200,
+   "censored": 0,
+   "find_rate": 1.0,
+   "mean_ops_found": 314.0625,
+   "med_ops_found": 215.0,
+   "total_ops_incl_failed": 376862,
+   "ops_per_instance_incl_failed": 314.1,
+   "total_ops_raw": 124561,
+   "mean_curves_used": 2.6725,
+   "alpha_fit_found_only": 1.9482,
+   "hit_position_top": {
+    "32": 39,
+    "17": 38,
+    "22": 37,
+    "36": 36,
+    "14": 35,
+    "4": 33,
+    "7": 33,
+    "12": 32
+   }
+  },
+  "lite_k20": {
+   "k": 20,
+   "n": 1200,
+   "found": 1155,
+   "censored": 45,
+   "find_rate": 0.9625,
+   "mean_ops_found": 1134.5376623376624,
+   "med_ops_found": 867.0,
+   "total_ops_incl_failed": 1510189,
+   "ops_per_instance_incl_failed": 1258.5,
+   "total_ops_raw": 499806,
+   "mean_curves_used": 8.9925,
+   "alpha_fit_found_only": 0.4711,
+   "hit_position_top": {
+    "24": 36,
+    "27": 33,
+    "39": 31,
+    "7": 30,
+    "21": 30,
+    "46": 30,
+    "9": 29,
+    "45": 29
+   }
+  }
+ },
+ "population_sizes": {
+  "16": 1200,
+  "20": 1200
+ },
+ "scaling": {
+  "across_k_slope_lcm": 0.39804502385913954,
+  "across_k_slope_lite_paired": 0.4632452263762117,
+  "exp487_lite_published_slope": 0.48,
+  "exp487_note": "487 stored mean_ops(found) per k; failed-curve ops were not recorded there, so cross-exp TOTAL-ops comparison uses the paired lite arm run here on the same population"
+ },
+ "verdict": {
+  "H1_lcm_more_finds_than_lite": true,
+  "H1_paper155_anchor_found_gt_1163_cens_lt_37": true,
+  "H2a_mean_ops_found_higher_for_lcm": false,
+  "H2b_total_ops_per_instance_lower_or_equal": true,
+  "H3_slope_0.4_to_0.6": false,
+  "numbers": {
+   "lcm_k16": {
+    "found": 1200,
+    "censored": 0,
+    "mean_ops_found": 216.94333333333333,
+    "ops_per_instance_incl_failed": 216.9
+   },
+   "lcm_k20": {
+    "found": 1200,
+    "censored": 0,
+    "mean_ops_found": 654.0941666666666,
+    "ops_per_instance_incl_failed": 654.1
+   },
+   "lite_k16": {
+    "found": 1200,
+    "censored": 0,
+    "mean_ops_found": 314.0625,
+    "ops_per_instance_incl_failed": 314.1
+   },
+   "lite_k20": {
+    "found": 1155,
+    "censored": 45,
+    "mean_ops_found": 1134.5376623376624,
+    "ops_per_instance_incl_failed": 1258.5
+   },
+   "slope_lcm": 0.39804502385913954,
+   "slope_lite_paired": 0.4632452263762117
+  }
+ }
+}
