@@ -9623,4 +9623,23 @@ translations -> C5; polynomial 'one' init'd as np.ones_like; exponent bits scann
 under MSB-first Horner; ramified test q^2|disc missed squarefree-disc primes; two design
 misregistrations disclosed (null-z is dependence-significance, Miller-Madow adopted).
 THE LAB'S ~128-PAPER MEASUREMENT RECORD IS INTERNALLY CONSISTENT TO 5e-4 BITS.
-Paper 134, issue #230. Now 466 experiments. Assessment v243.
+Paper 134, issue #231. Now 466 experiments. Assessment v243.
+
+## Part 207 - DEGREE-NINE (round-38 #1, exp 469, v244)
+
+The abelian ladder's ninth rung: Q(zeta_19)+ (degree 9, C9, conductor 19). ALL PRE-STATED
+PREDICTIONS CONFIRMED. Prime level (295,946 unramified primes < 2^22): types = coset orders
+in C18/{±1} = C9, densities {order1: 1/9, order3: 2/9, order9: 6/9} matched to 2e-4;
+FULL PINNING I(p mod 19; T) = H(T) = 1.2244 bits EXACTLY (empirical 1.2246, per-class
+degenerate, perm z=+0.00); thickening structural (no mod-361 class mixes types); coprime
+mod 13 flat (2e-5). Polynomial cross-check 400/400 via factor-degree PATTERNS over GF(p):
+order 1 -> [1^9], order 3 -> [3,3,3], order 9 -> [9] — the nr readout is LOSSY at degree 9
+(order 3 and order 9 BOTH fix zero roots; pattern, not root count, separates them).
+Semiprime (30k): I(N mod 19; pair) = 0.5330 vs exact enumeration law 0.5302 (dev +0.0028);
+which-factor extra 0.00053 (null); H(pair) = 1.9587; split-count projection 0.0746 ~= Is(9),
+the new n=9 entry of the lab's g/Is tables.
+LEDGER: v1 crosscheck doubly wrong (expected nr=3 for order 3 — ignored that three 3-cycles
+fix nothing; plus unvalidated hand Horner) -> replaced by sympy factor_list patterns;
+min*3+max pair code collided ((2,2)->8 into a 6-slot table — paper-100 lesson LIVE);
+inline takeover after upstream agent timeout.
+Paper 135, issue #232. Now 467 experiments. Assessment v244.

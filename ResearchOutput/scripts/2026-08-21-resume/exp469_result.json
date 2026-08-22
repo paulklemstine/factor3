@@ -1,0 +1,90 @@
+{
+ "meta": {
+  "seed": 20260821,
+  "exp": 469,
+  "codename": "DEGREE-NINE",
+  "note": "inline takeover after upstream agent timeout"
+ },
+ "theory": {
+  "exact_type_densities": {
+   "1": 0.1111111111111111,
+   "3": 0.2222222222222222,
+   "9": 0.6666666666666666
+  },
+  "H_T_exact_bits": 1.224394445405986
+ },
+ "prime_level": {
+  "n_primes": 295946,
+  "hist": {
+   "1": 0.11127367830617747,
+   "3": 0.2220776763328445,
+   "9": 0.666648645360978
+  },
+  "exact": {
+   "1": 0.1111111111111111,
+   "3": 0.2222222222222222,
+   "9": 0.6666666666666666
+  },
+  "H_T_emp": 1.2245853360160464,
+  "H_T_exact": 1.224394445405986,
+  "full_pinning_per_class": true,
+  "I_equals_HT_dev": 0.0001908906100602792
+ },
+ "perm_null": {
+  "null_mean": 0.0001908906100602792,
+  "null_sd": 0.0,
+  "z": 0.0
+ },
+ "thickening": {
+  "structurally_invariant": true,
+  "no_class_mixes_types": true
+ },
+ "coprime_control": {
+  "I_p_mod13_T": 1.5550725940269782e-05
+ },
+ "minpoly_degree": 9,
+ "minpoly_coeffs": [
+  1,
+  1,
+  -8,
+  -7,
+  21,
+  15,
+  -20,
+  -10,
+  5,
+  1
+ ],
+ "poly_crosscheck": {
+  "n_checked": 400,
+  "mismatches": 0,
+  "pattern_by_type": {
+   "9": [
+    [
+     9
+    ]
+   ],
+   "1": [
+    [
+     1
+    ]
+   ],
+   "3": [
+    [
+     3
+    ]
+   ]
+  },
+  "ledger_v2": "crosscheck v1 was doubly wrong: (a) expected root-counts ignored that an order-3 Frobenius (three 3-cycles) fixes ZERO roots \u2014 nr cannot separate type 3 from type 9 (the known lossy-nr effect); the correct readout is the full factor-degree PATTERN via sympy factor_list over GF(p); (b) v1's hand-rolled Horner modexp was itself unvalidated. Replaced by pattern match."
+ },
+ "semiprime": {
+  "n": 30000,
+  "I_emp": 0.533038192067441,
+  "I_law_exact": 0.5301925794905993,
+  "dev": 0.002845612576841683,
+  "H_pair": 1.958652765797583,
+  "whichfactor_extra": 0.0005289114520805605
+ },
+ "Is_projection_note": "split-count s = [type=1] count; Is(9)-class value reported",
+ "split_count_I": 0.07462918496936966
+}
