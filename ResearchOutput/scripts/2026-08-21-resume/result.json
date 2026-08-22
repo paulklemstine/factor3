@@ -1,90 +1,489 @@
 {
- "exp": "539",
- "codename": "TDIAL-U96",
- "round": 56,
- "status": "04_final",
- "wall_s": 277.8,
- "hypotheses": {
-  "H1": "Spearman(T, rate) within [0.55, 0.85] on uniform draws at bitlen 96, u=2.5",
-  "H2": "T beats count<=100 by more than +0.05 Spearman"
- },
- "config": {
-  "seeds": [
-   20261210,
-   20261211,
-   20261212
+ "meta": {
+  "exp": 541,
+  "codename": "PERNDIAL-48-52",
+  "round": 59,
+  "population_seeds": [
+   20261200,
+   20261201,
+   20261202
   ],
-  "n_per_seed": 400,
-  "p_range": [
-   4398046511104,
-   281474976710656
+  "analysis_seed_root": 20261203,
+  "Ns_per_population": 1200,
+  "values_window": 240,
+  "u_targets": [
+   3.5
   ],
-  "q_range": [
-   281474976710656,
-   18014398509481984
-  ],
-  "bits_n": 96,
-  "n_rel": 240,
-  "h_off": 256,
-  "u_exp": 2.5,
-  "dial_max": 400,
-  "cnt_max": 100,
-  "n_boot": 300
- },
- "population": {
-  "total": 1200
- },
- "per_seed": [
-  {
-   "seed": 20261210,
-   "n": 400,
-   "rho_T": 0.5803102489666578,
-   "rho_cnt": 0.4500385634830715,
-   "advantage": 0.13027168548358636
+  "bitlens": {
+   "fit": 44,
+   "test": [
+    48,
+    52
+   ]
   },
-  {
-   "seed": 20261211,
-   "n": 400,
-   "rho_T": 0.5570465479196064,
-   "rho_cnt": 0.4949482351472894,
-   "advantage": 0.06209831277231698
+  "d_primes": [
+   2,
+   3,
+   5,
+   7,
+   11,
+   13
+  ],
+  "pp_odd_primes": [
+   3,
+   5,
+   7,
+   11,
+   13
+  ],
+  "nboot": 300,
+  "arms": {
+   "M0": "[1]",
+   "Mw": "[1, w]",
+   "Mwd": "[1, w, d]",
+   "Mfull": "[1, w, d, pp_sum]",
+   "Mfam(descriptive)": "[1, qrc, w, d, pp_sum]",
+   "Mb_pp2(descriptive)": "[1, w, d, pp_sum2]"
   },
-  {
-   "seed": 20261212,
-   "n": 400,
-   "rho_T": 0.5681463509598693,
-   "rho_cnt": 0.4143994342583974,
-   "advantage": 0.1537469167014719
+  "constructions": "verbatim exp515/506/505 balanced-window family; Fermat offsets j=1..240; vmed pooled per population",
+  "prestated": {
+   "H1": "Mfull transfer OOS R^2 >= 0.45 at u=3.5 on bitlen 52",
+   "H2": "calibration slope (obs~pred, intercept) in [0.8, 1.25]; primary test(52)",
+   "H3": "dR2_pp >= +0.02 at bitlen 52 (test(52))",
+   "bands": "thresholds on point estimates; CIs reported (PASS-with-CI if CI_low > 0)",
+   "names": [
+    "PERNDIAL-52-FULLY-VALIDATED",
+    "PERNDIAL-52-VALIDATED-PP-ABSENT",
+    "PERNDIAL-52-MISCALIBRATED-TRANSFER",
+    "PERNDIAL-52-PARTIAL-TRANSFER",
+    "PERNDIAL-52-ABSENT"
+   ]
   }
- ],
- "pooled": {
-  "n": 1200,
-  "rho_T": 0.5697433244140891,
-  "rho_T_ci95": [
-   0.5336736346635378,
-   0.6109768010465221
-  ],
-  "rho_cnt": 0.4527336009832049,
-  "rho_cnt_ci95": [
-   0.407520109824299,
-   0.4913258842564567
-  ],
-  "advantage": 0.11700972343088423,
-  "advantage_ci95": [
-   0.07468603967499193,
-   0.16672359232556078
+ },
+ "saved_at": "2026-08-22T16:43:28",
+ "elapsed_s": 6.4,
+ "populations": {
+  "s20261200_b44": {
+   "vmed": 851931452.5,
+   "B": 356,
+   "mean_rate": 0.018656,
+   "mean_w": 1.5659,
+   "std_rate": 0.013693
+  },
+  "s20261200_b48": {
+   "vmed": 3394394413.0,
+   "B": 529,
+   "mean_rate": 0.019198,
+   "mean_w": 1.556,
+   "std_rate": 0.013006
+  },
+  "s20261200_b52": {
+   "vmed": 13652833360.0,
+   "B": 787,
+   "mean_rate": 0.019993,
+   "mean_w": 1.5949,
+   "std_rate": 0.011831
+  },
+  "s20261201_b44": {
+   "vmed": 851888516.5,
+   "B": 356,
+   "mean_rate": 0.018767,
+   "mean_w": 1.5572,
+   "std_rate": 0.01314
+  },
+  "s20261201_b48": {
+   "vmed": 3410069536.5,
+   "B": 529,
+   "mean_rate": 0.019253,
+   "mean_w": 1.5689,
+   "std_rate": 0.012097
+  },
+  "s20261201_b52": {
+   "vmed": 13611576882.0,
+   "B": 786,
+   "mean_rate": 0.018615,
+   "mean_w": 1.5402,
+   "std_rate": 0.011967
+  },
+  "s20261202_b44": {
+   "vmed": 855146739.5,
+   "B": 356,
+   "mean_rate": 0.019191,
+   "mean_w": 1.5889,
+   "std_rate": 0.013821
+  },
+  "s20261202_b48": {
+   "vmed": 3400227147.0,
+   "B": 529,
+   "mean_rate": 0.01916,
+   "mean_w": 1.5597,
+   "std_rate": 0.012252
+  },
+  "s20261202_b52": {
+   "vmed": 13625409001.0,
+   "B": 786,
+   "mean_rate": 0.018413,
+   "mean_w": 1.549,
+   "std_rate": 0.011927
+  }
+ },
+ "point_transfer": {
+  "b48": {
+   "R2": {
+    "M0": -0.0007,
+    "Mw": 0.3763,
+    "Mwd": 0.4467,
+    "Mfull": 0.4611,
+    "Mfam": 0.4682,
+    "Mb_pp2": 0.5001
+   },
+   "slope": {
+    "M0": 0.0004,
+    "Mw": 0.864,
+    "Mwd": 0.8708,
+    "Mfull": 0.8742,
+    "Mfam": 0.8764,
+    "Mb_pp2": 0.882
+   },
+   "icept": {
+    "M0": 0.019197,
+    "Mw": 0.003054,
+    "Mwd": 0.002776,
+    "Mfull": 0.002731,
+    "Mfam": 0.002702,
+    "Mb_pp2": 0.002552
+   },
+   "coef": {
+    "M0": [
+     0.018872
+    ],
+    "Mw": [
+     -0.012143,
+     0.019746
+    ],
+    "Mwd": [
+     0.023089,
+     0.038987,
+     -0.080632
+    ],
+    "Mfull": [
+     0.005964,
+     0.042047,
+     -0.057164,
+     -0.035692
+    ],
+    "Mfam": [
+     0.002001,
+     0.000599,
+     0.035891,
+     -0.052108,
+     -0.023465
+    ],
+    "Mb_pp2": [
+     0.026155,
+     0.037674,
+     -0.088534,
+     0.01227
+    ]
+   },
+   "n_train": 3600,
+   "incr": {
+    "dR2_w": 0.377,
+    "dR2_d": 0.0704,
+    "dR2_pp": 0.0144
+   },
+   "floor": {
+    "binom_floor_var": 7.783e-05,
+    "total_var_test": 0.00015521,
+    "max_attainable_R2": 0.4985
+   }
+  },
+  "b52": {
+   "R2": {
+    "M0": -0.0001,
+    "Mw": 0.3253,
+    "Mwd": 0.3868,
+    "Mfull": 0.4046,
+    "Mfam": 0.4037,
+    "Mb_pp2": 0.4355
+   },
+   "slope": {
+    "M0": 0.0004,
+    "Mw": 0.8001,
+    "Mwd": 0.8038,
+    "Mfull": 0.8107,
+    "Mfam": 0.8072,
+    "Mb_pp2": 0.8132
+   },
+   "icept": {
+    "M0": 0.019,
+    "Mw": 0.004055,
+    "Mwd": 0.003942,
+    "Mfull": 0.003831,
+    "Mfam": 0.00392,
+    "Mb_pp2": 0.003733
+   },
+   "coef": {
+    "M0": [
+     0.018872
+    ],
+    "Mw": [
+     -0.012143,
+     0.019746
+    ],
+    "Mwd": [
+     0.023089,
+     0.038987,
+     -0.080632
+    ],
+    "Mfull": [
+     0.005964,
+     0.042047,
+     -0.057164,
+     -0.035692
+    ],
+    "Mfam": [
+     0.002001,
+     0.000599,
+     0.035891,
+     -0.052108,
+     -0.023465
+    ],
+    "Mb_pp2": [
+     0.026155,
+     0.037674,
+     -0.088534,
+     0.01227
+    ]
+   },
+   "n_train": 3600,
+   "incr": {
+    "dR2_w": 0.3254,
+    "dR2_d": 0.0615,
+    "dR2_pp": 0.0178
+   },
+   "floor": {
+    "binom_floor_var": 7.71e-05,
+    "total_var_test": 0.0001423,
+    "max_attainable_R2": 0.4582
+   }
+  }
+ },
+ "per_seed_descriptive": {
+  "20261200": {
+   "b48": {
+    "R2_Mfull": 0.4856,
+    "slope_Mfull": 0.9265
+   },
+   "b52": {
+    "R2_Mfull": 0.3861,
+    "slope_Mfull": 0.7823
+   }
+  },
+  "20261201": {
+   "b48": {
+    "R2_Mfull": 0.4365,
+    "slope_Mfull": 0.8381
+   },
+   "b52": {
+    "R2_Mfull": 0.417,
+    "slope_Mfull": 0.8309
+   }
+  },
+  "20261202": {
+   "b48": {
+    "R2_Mfull": 0.4578,
+    "slope_Mfull": 0.8576
+   },
+   "b52": {
+    "R2_Mfull": 0.4011,
+    "slope_Mfull": 0.8135
+   }
+  }
+ },
+ "bootstrap": {
+  "b48": {
+   "R2_CI": {
+    "M0": [
+     -0.0051,
+     -0.0
+    ],
+    "Mw": [
+     0.3431,
+     0.4035
+    ],
+    "Mwd": [
+     0.4107,
+     0.4729
+    ],
+    "Mfull": [
+     0.4281,
+     0.4862
+    ],
+    "Mfam": [
+     0.4354,
+     0.4926
+    ]
+   },
+   "slope_CI": {
+    "M0": [
+     0.0004,
+     0.0004
+    ],
+    "Mw": [
+     0.8031,
+     0.9142
+    ],
+    "Mwd": [
+     0.8193,
+     0.918
+    ],
+    "Mfull": [
+     0.8233,
+     0.9212
+    ],
+    "Mfam": [
+     0.8241,
+     0.9232
+    ]
+   },
+   "incr_CI": {
+    "dR2_w": {
+     "point": 0.377,
+     "CI95": [
+      0.3431,
+      0.4044
+     ],
+     "ci_excludes_0": true
+    },
+    "dR2_d": {
+     "point": 0.0704,
+     "CI95": [
+      0.0564,
+      0.085
+     ],
+     "ci_excludes_0": true
+    },
+    "dR2_pp": {
+     "point": 0.0144,
+     "CI95": [
+      0.0088,
+      0.0196
+     ],
+     "ci_excludes_0": true
+    }
+   }
+  },
+  "b52": {
+   "R2_CI": {
+    "M0": [
+     -0.0038,
+     -0.0
+    ],
+    "Mw": [
+     0.2933,
+     0.355
+    ],
+    "Mwd": [
+     0.3504,
+     0.4205
+    ],
+    "Mfull": [
+     0.3715,
+     0.4383
+    ],
+    "Mfam": [
+     0.3675,
+     0.4361
+    ]
+   },
+   "slope_CI": {
+    "M0": [
+     0.0003,
+     0.0004
+    ],
+    "Mw": [
+     0.7522,
+     0.8515
+    ],
+    "Mwd": [
+     0.7582,
+     0.8507
+    ],
+    "Mfull": [
+     0.765,
+     0.8535
+    ],
+    "Mfam": [
+     0.7604,
+     0.8514
+    ]
+   },
+   "incr_CI": {
+    "dR2_w": {
+     "point": 0.3254,
+     "CI95": [
+      0.2937,
+      0.3563
+     ],
+     "ci_excludes_0": true
+    },
+    "dR2_d": {
+     "point": 0.0615,
+     "CI95": [
+      0.0463,
+      0.0768
+     ],
+     "ci_excludes_0": true
+    },
+    "dR2_pp": {
+     "point": 0.0178,
+     "CI95": [
+      0.0113,
+      0.0226
+     ],
+     "ci_excludes_0": true
+    }
+   }
+  }
+ },
+ "verdict": {
+  "verdict_name": "PERNDIAL-52-PARTIAL-TRANSFER",
+  "H1": {
+   "pass": false,
+   "R2_Mfull_b52": 0.4046,
+   "threshold": 0.45,
+   "R2_Mfull_b48_descriptive": 0.4611
+  },
+  "H2": {
+   "pass": true,
+   "slope_b52": 0.8107,
+   "band": [
+    0.8,
+    1.25
+   ],
+   "slope_b48_descriptive": 0.8742
+  },
+  "H3": {
+   "pass": false,
+   "dR2_pp_b52_point": 0.0178,
+   "threshold": 0.02,
+   "dR2_pp_b52_CI95": [
+    0.0113,
+    0.0226
+   ]
+  },
+  "barrier_lines": {
+   "barrier_5": "Structural orthogonality: w/d/pp_sum are N-only natural coordinates; the dial predicts relation yield (difficulty), not (p,q) - no which-factor claim made or tested.",
+   "barrier_8": "Known-method-in-disguise: the measured object is the QS/CFRAC relation-yield dial - a cost predictor FOR known methods, not a new factoring route."
+  },
+  "artifacts": [
+   "/tmp/exp59_pd4852/exp541_perndial_48_52.py",
+   "/tmp/exp59_pd4852/result.json",
+   "/tmp/exp59_pd4852/ledger_exp541.jsonl",
+   "/tmp/exp59_pd4852/arrays_s20261200.npz",
+   "/tmp/exp59_pd4852/arrays_s20261201.npz",
+   "/tmp/exp59_pd4852/arrays_s20261202.npz"
   ]
- },
- "rate_summary": {
-  "mean": 0.1395347222222222,
-  "std": 0.028520581391090233,
-  "smooth_values": 40186,
-  "total_values": 288000,
-  "note": "total_values = 1200 N x 240 relations"
- },
- "verdicts": {
-  "H1_pass": true,
-  "H2_pass": true,
-  "verdict_name": "TDIAL-U96-CONFIRMED"
  }
 }
