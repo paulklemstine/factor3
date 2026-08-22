@@ -1,90 +1,376 @@
 {
- "exp": "540",
- "codename": "TDIAL-U100",
- "round": 67,
- "status": "04_final",
- "wall_s": 626.6,
- "hypotheses": {
-  "H1": "Spearman(T, rate) within [0.55, 0.85] on uniform draws at bitlen 100, u=2.5",
-  "H2": "T beats count<=100 by more than +0.05 Spearman"
+ "experiment": "exp542",
+ "codename": "TDIAL-U56B",
+ "round": 61,
+ "date_utc": "2026-08-22T22:00:53Z",
+ "host": "Victus",
+ "environment": {
+  "python": "3.12.3",
+  "numpy": "1.26.4",
+  "gmpy2": "2.3.0"
+ },
+ "hypotheses_preregistered": {
+  "H1": "Spearman(T, rate) stays within [0.55, 0.85] on uniform draws at bitlen 56, u=2.5.",
+  "H2": "T beats count<=100 by > +0.05 (advantage = rho_T - rho_count > 0.05)."
+ },
+ "design_correction_flagged": "Brief's windows p~[2^14,2^20), q~[2^20,2^26) admit max product < 2^46 -- bitlen-56 rejection sampling is infeasible as stated. Pre-data correction: both exponent windows shifted by +8 -> p~[2^22,2^28), q~[2^28,2^34), preserving adjacency/equal-widths/p<q/uniform character and matching the windows exp529 used for the round-59 bitlen-56 cell (identical +8 pattern as exp528 at bitlen 52). FLAGGED for parent.",
+ "interpretation_notes": {
+  "qr_primes": "odd primes p<=400 with (N|p)=+1 by Euler criterion",
+  "count_le_100": "number of odd QR primes p<=100, unit weights",
+  "relation_values": "first K CFRAC residues Q_1..Q_K of sqrt(N)",
+  "smoothness": "per-N factor base B_N=(2*(isqrt(N)+1))^(1/2.5), one base per N",
+  "rate": "fraction of the K values that are B_N-smooth"
+ },
+ "prior_cell_context_read_only": {
+  "source": "/tmp/exp59_tu56/result.json (exp529, round-59)",
+  "verdict": "U56-DIAL-CONFIRMED",
+  "seeds": [
+   20261130,
+   20261131,
+   20261132
+  ],
+  "pooled_rho_T": 0.6847549321110123,
+  "pooled_rho_T_ci": [
+   0.6650466573103561,
+   0.7024915941039849
+  ],
+  "pooled_advantage": 0.07515438451217205,
+  "pooled_advantage_ci": [
+   0.05006527038795312,
+   0.09497279687254458
+  ],
+  "note": "context only, not part of this run's data"
  },
  "config": {
   "seeds": [
-   20261210,
-   20261211,
-   20261212
+   20261140,
+   20261141,
+   20261142
   ],
-  "n_per_seed": 400,
-  "p_range": [
-   17592186044416,
-   1125899906842624
-  ],
-  "q_range": [
-   1125899906842624,
-   72057594037927936
-  ],
-  "bits_n": 100,
-  "n_rel": 240,
-  "h_off": 256,
+  "n_per_seed": 1200,
+  "k_values": 240,
   "u_exp": 2.5,
-  "dial_max": 400,
-  "cnt_max": 100,
-  "n_boot": 300
+  "target_bits": 56,
+  "p_window_corrected": [
+   22,
+   28
+  ],
+  "q_window_corrected": [
+   28,
+   34
+  ],
+  "windows_as_written_in_brief": [
+   [
+    14,
+    20
+   ],
+   [
+    20,
+    26
+   ]
+  ],
+  "dial_cutoff": 400,
+  "count_cutoff": 100,
+  "bootstrap": 300,
+  "smoke_mode": false
  },
- "population": {
-  "total": 1200
+ "designed_checks": {
+  "smoothness_unit_tests": true,
+  "cf_remainder_qr_structure": {
+   "semiprimes_tested": 3,
+   "prime_remainders_checked": 117,
+   "violations": 0
+  },
+  "primality_crosscheck_agree": "200/200",
+  "all_pass": true,
+  "generation_determinism": {
+   "digest_try1": "2acb56dbd7570cee",
+   "digest_try2": "2acb56dbd7570cee",
+   "match": true
+  }
  },
+ "ledger": [
+  {
+   "t_utc": "2026-08-22T22:00:53Z",
+   "line": "stage=config",
+   "seeds": [
+    20261140,
+    20261141,
+    20261142
+   ],
+   "n": 1200,
+   "k": 240,
+   "u": 2.5,
+   "boot": 300,
+   "smoke": false
+  },
+  {
+   "t_utc": "2026-08-22T22:00:53Z",
+   "line": "stage=designed_checks",
+   "all_pass": true,
+   "determinism_match": true
+  },
+  {
+   "t_utc": "2026-08-22T22:00:55Z",
+   "line": "stage=gen+features",
+   "seed": 20261140,
+   "accepted": 1200,
+   "raw_draws": 33959,
+   "acceptance": 0.0353,
+   "envelope_ok": true,
+   "secs": 2.7
+  },
+  {
+   "t_utc": "2026-08-22T22:00:56Z",
+   "line": "stage=stats",
+   "seed": 20261140,
+   "spearman_T": 0.6621,
+   "ci_T": [
+    0.622,
+    0.6944
+   ],
+   "spearman_count": 0.6136,
+   "advantage": 0.0485,
+   "mean_rate": 0.1387
+  },
+  {
+   "t_utc": "2026-08-22T22:00:58Z",
+   "line": "stage=gen+features",
+   "seed": 20261141,
+   "accepted": 1200,
+   "raw_draws": 33168,
+   "acceptance": 0.0362,
+   "envelope_ok": true,
+   "secs": 2.7
+  },
+  {
+   "t_utc": "2026-08-22T22:00:59Z",
+   "line": "stage=stats",
+   "seed": 20261141,
+   "spearman_T": 0.6903,
+   "ci_T": [
+    0.6614,
+    0.723
+   ],
+   "spearman_count": 0.6338,
+   "advantage": 0.0565,
+   "mean_rate": 0.1363
+  },
+  {
+   "t_utc": "2026-08-22T22:01:03Z",
+   "line": "stage=gen+features",
+   "seed": 20261142,
+   "accepted": 1200,
+   "raw_draws": 33359,
+   "acceptance": 0.036,
+   "envelope_ok": true,
+   "secs": 4.0
+  },
+  {
+   "t_utc": "2026-08-22T22:01:03Z",
+   "line": "stage=stats",
+   "seed": 20261142,
+   "spearman_T": 0.6534,
+   "ci_T": [
+    0.6188,
+    0.6923
+   ],
+   "spearman_count": 0.6224,
+   "advantage": 0.031,
+   "mean_rate": 0.1375
+  },
+  {
+   "t_utc": "2026-08-22T22:01:04Z",
+   "line": "stage=pooled",
+   "n": 3600,
+   "spearman_T": 0.6689,
+   "spearman_count": 0.6235,
+   "advantage": 0.0454
+  },
+  {
+   "t_utc": "2026-08-22T22:01:04Z",
+   "line": "stage=verdict",
+   "verdict": "U56B-DIAL-HOLDS-COUNT-PARITY",
+   "H1": true,
+   "H2": false
+  },
+  {
+   "t_utc": "2026-08-22T22:01:04Z",
+   "line": "stage=final",
+   "verdict": "U56B-DIAL-HOLDS-COUNT-PARITY"
+  }
+ ],
  "per_seed": [
   {
-   "seed": 20261210,
-   "n": 400,
-   "rho_T": 0.5460544215003094,
-   "rho_cnt": 0.47958365413353493,
-   "advantage": 0.06647076736677443
+   "n": 1200,
+   "spearman_T": 0.6620880556766143,
+   "spearman_T_ci": [
+    0.6219957764471127,
+    0.6944133925258322
+   ],
+   "spearman_count": 0.6136305482540092,
+   "spearman_count_ci": [
+    0.5728552184213865,
+    0.6477516761709368
+   ],
+   "advantage": 0.04845750742260513,
+   "advantage_ci": [
+    0.0022316937879261205,
+    0.09241502610633925
+   ],
+   "mean_T": 1.5566407142587797,
+   "sd_T": 0.44716968178564503,
+   "mean_count": 12.008333333333333,
+   "sd_count": 2.4127986286099845,
+   "mean_rate": 0.13868055555555556,
+   "sd_rate": 0.04038079498220734,
+   "feature_spearman_TC": 0.5687202200556929,
+   "seed": 20261140,
+   "raw_draws": 33959,
+   "acceptance": 0.0353,
+   "median_B": 2937.0,
+   "gen_feature_secs": 2.7,
+   "stats_secs": 0.3
   },
   {
-   "seed": 20261211,
-   "n": 400,
-   "rho_T": 0.5283305727260669,
-   "rho_cnt": 0.42805129794198565,
-   "advantage": 0.10027927478408122
+   "n": 1200,
+   "spearman_T": 0.6903394221843776,
+   "spearman_T_ci": [
+    0.6614041230432665,
+    0.7230275828785636
+   ],
+   "spearman_count": 0.6337994699305034,
+   "spearman_count_ci": [
+    0.5953440825724163,
+    0.6655600252640166
+   ],
+   "advantage": 0.056539952253874204,
+   "advantage_ci": [
+    0.01954092626126531,
+    0.09557972110108337
+   ],
+   "mean_T": 1.5308891855188196,
+   "sd_T": 0.44932605728645153,
+   "mean_count": 11.813333333333333,
+   "sd_count": 2.436217468855266,
+   "mean_rate": 0.1362604166666667,
+   "sd_rate": 0.04199157910304314,
+   "feature_spearman_TC": 0.5964706220283577,
+   "seed": 20261141,
+   "raw_draws": 33168,
+   "acceptance": 0.0362,
+   "median_B": 2934.0,
+   "gen_feature_secs": 2.7,
+   "stats_secs": 0.4
   },
   {
-   "seed": 20261212,
-   "n": 400,
-   "rho_T": 0.5485502070048359,
-   "rho_cnt": 0.42178526062053723,
-   "advantage": 0.1267649463842987
+   "n": 1200,
+   "spearman_T": 0.6533891752076295,
+   "spearman_T_ci": [
+    0.6187747707054146,
+    0.6923143652257326
+   ],
+   "spearman_count": 0.6223698738386563,
+   "spearman_count_ci": [
+    0.5877202571596304,
+    0.6539984535116029
+   ],
+   "advantage": 0.03101930136897324,
+   "advantage_ci": [
+    -0.006115963523749392,
+    0.07327586730165779
+   ],
+   "mean_T": 1.5697557924677166,
+   "sd_T": 0.4488622655037527,
+   "mean_count": 11.985833333333334,
+   "sd_count": 2.3456980422798575,
+   "mean_rate": 0.13751736111111112,
+   "sd_rate": 0.041431101324067576,
+   "feature_spearman_TC": 0.5617809681612638,
+   "seed": 20261142,
+   "raw_draws": 33359,
+   "acceptance": 0.036,
+   "median_B": 2940.0,
+   "gen_feature_secs": 4.0,
+   "stats_secs": 0.3
   }
  ],
  "pooled": {
-  "n": 1200,
-  "rho_T": 0.5435629003163817,
-  "rho_T_ci95": [
-   0.498218986495313,
-   0.5880800860272661
+  "n": 3600,
+  "spearman_T": 0.6688930677305105,
+  "spearman_T_ci": [
+   0.6498862871205446,
+   0.6895564495546367
   ],
-  "rho_cnt": 0.4460831691715971,
-  "rho_cnt_ci95": [
-   0.3998971974291003,
-   0.49684401317067706
+  "spearman_count": 0.6235242127522913,
+  "spearman_count_ci": [
+   0.6009787036180326,
+   0.6438521533724291
   ],
-  "advantage": 0.09747973114478453,
-  "advantage_ci95": [
-   0.0598740829834293,
-   0.14362480751248174
-  ]
+  "advantage": 0.045368854978219186,
+  "advantage_ci": [
+   0.021366120437079486,
+   0.069837329260452
+  ],
+  "mean_T": 1.552428564081772,
+  "sd_T": 0.4487441302641385,
+  "mean_count": 11.935833333333333,
+  "sd_count": 2.4001260094234866,
+  "mean_rate": 0.13748611111111111,
+  "sd_rate": 0.04128505571774469,
+  "feature_spearman_TC": 0.5764331413774347,
+  "raw_draws_total": 100486,
+  "secs": 1.0
  },
- "rate_summary": {
-  "mean": 0.13827430555555556,
-  "std": 0.02718558666284272,
-  "smooth_values": 39823,
-  "total_values": 1200
+ "hypothesis_verdicts": {
+  "H1": {
+   "statement": "Spearman(T, rate) stays within [0.55, 0.85] on uniform draws at bitlen 56, u=2.5.",
+   "per_seed_rho_T": [
+    0.6620880556766143,
+    0.6903394221843776,
+    0.6533891752076295
+   ],
+   "pooled_rho_T": 0.6688930677305105,
+   "pooled_ci": [
+    0.6498862871205446,
+    0.6895564495546367
+   ],
+   "per_seed_all_inside": true,
+   "pooled_inside": true,
+   "pass": true,
+   "margin_to_lower_bound": 0.1034,
+   "margin_to_upper_bound": 0.1597
+  },
+  "H2": {
+   "statement": "T beats count<=100 by > +0.05 (advantage = rho_T - rho_count > 0.05).",
+   "per_seed_advantage": [
+    0.04845750742260513,
+    0.056539952253874204,
+    0.03101930136897324
+   ],
+   "pooled_advantage": 0.045368854978219186,
+   "pooled_advantage_ci": [
+    0.021366120437079486,
+    0.069837329260452
+   ],
+   "pass_point_estimate": false,
+   "pass_ci_lower_bound": false,
+   "per_seed_all_above_005": false,
+   "pass": false
+  },
+  "replication_delta_vs_exp529": {
+   "delta_pooled_rho_T": -0.0159,
+   "delta_pooled_advantage": -0.0298
+  }
  },
- "verdicts": {
-  "H1_pass": false,
-  "H1_pass_per_seed": false,
-  "H2_pass": true,
-  "verdict_name": "TDIAL-U100-FADES-AT-100"
+ "verdict_name": "U56B-DIAL-HOLDS-COUNT-PARITY",
+ "decision": "See verdict_name U56B-DIAL-HOLDS-COUNT-PARITY; H1=True H2=False; replication deltas vs exp529 recorded.",
+ "artifacts": {
+  "script_sha256": "9c7b44bdf32c7a32da3eed7d9ffc9f8f675573d5e807f00157db5571bdccad68"
+ },
+ "barriers": {
+  "barrier_5_rate_label_wall": "BARRIER-5 (rate/label wall; structural orthogonality): T(N) predicts only the group-level smooth-relation RATE; it carries no which-factor information and is no candidate filter -- any Spearman value measured here leaves the which-factor/symmetric-channel wall untouched (residue dials only).",
+  "barrier_8_zero_fit_discipline": "BARRIER-8 (zero-fit discipline): dial form sum 2/p over QR primes <=400 and comparator count<=100 are fixed a priori with zero fitted parameters on this cell; bitlen-56-uniform is an out-of-sample intersection fill; no form/cutoff/weight was tuned against these data (the pre-data window correction is a feasibility fix, not a fit).",
+  "note": "wording reconstructed from lab semantics consistent with papers 83/183/184 usage; repo untouched (read-only)."
  }
 }
