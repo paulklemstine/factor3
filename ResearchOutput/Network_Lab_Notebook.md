@@ -1921,3 +1921,10 @@ NET-55/65/66. Script ResearchOutput/exp_net79_1p5b4096.py; results
 (ALL_DONE_NET79); (g) fair; (h) DIRECT. Open: fine grid 44–56; crossover localization;
 domain-jump @4096; 7B cell. Paper 163, issue #322. Now 79 network experiments.
 Assessment v79.
+
+## Part 80 — THE-INTEGRATED-DEPLOYMENT-TABLE: thirty-one limited-memory iterations (NET-49–79) distilled into a single engineering reference — complete knee chains for two scales across four domains at three contexts, quantization floors with compensation, streaming policy adjustments, scale × context × domain interaction terms — SEVEN LAWS + five-step engineering recipe for 6 GB serving (NET-80; synthesis round)
+
+**Content:** Complete deployment table (8 model-scale × context × domain cells); seven
+quantitative laws; five-step engineering recipe; full experiment ledger. All results
+machine-verified from NET-49–79 with committed scripts and replicated baselines.
+Paper 164 (synthesis). Now 80 network experiments. Assessment v80.
