@@ -10164,6 +10164,22 @@ coordinator lean v1's 9% attribution was manufactured by its own visibility conf
 a measurement knob; paper 168's driver (b) is empty by construction.
 Paper 169 amended, issue #271. Now 503 experiments. Assessment v278.
 
+## Part 241 - TIGHT-U-RECAL (round-45 #3 [cron iteration], exp 503, v279)
+
+Paper 169's named follow-up: can refitting the footprint weights at tight u recover the
+drop? VERDICT: NO-RECAL-RECOVERY. H1 REFUTED — recalibrated OOS sp(3.5) = 0.6050
+(CI [0.581, 0.626]) < 0.70; the refit lands BELOW the unrefit zero-fit dial (0.6288;
+paired gain -0.0238, CI [-0.030, -0.016], 5/5 negative; recovery -24% = negative). H2
+CONFIRMED as annotation: beta-vector rank-stability 0.869 split-half / 0.9433 LOPO — a
+consistent structural object that is informationally EMPTY; beta anti-correlated -0.93
+with the theory 2/p profile (hit-fraction encoding compensates its 2/p base rate). H3
+REFUTED: bitlen-48 transfer 0.5693 < 0.60 (baseline dial itself 0.5558 there). LEDGER: 2
+pre-launch catches (bitlen-check infinite loop; ledger kwarg collision).
+ADOPTED: paper 164's zero-fit form STANDS WITHOUT QUALIFICATION; the tight-u drop is NOT
+a weight-misallocation artifact — the lost content sits beyond the p<=29 footprint (mid
+primes 31-356 and/or non-footprint structure).
+Paper 170, issue #272. Now 504 experiments. Assessment v279.
+
 AMENDMENT (original agent's clean run + coordinator diagnostic): the ANTI-COINCIDENCE read
 is RETIRED — measured c_pq equals the exact CRT count on all 8000 points (corr 1.000000);
 the ~0.26 ratios were the coordinator comparing conditional-on-both-QR predictions against
