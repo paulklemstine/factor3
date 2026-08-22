@@ -9670,3 +9670,24 @@ smoke-catch: accumulator init + mixed-base u inflation (log2/ln).
 Follow-up queued: direct smoothness measurement of x^2-N against a QR-RESTRICTED
 reference pool at u in [3,4].
 Paper 136, issue #233. Now 468 experiments. Assessment v245.
+
+## Part 209 - POSITIONAL-FILTER (round-38 #3, exp 467, v246)
+
+Paper 132's open residual item (1), measured: how much does N-computable MAGNITUDE
+information buy? POSITION-PAYS-5.19X (H2 <2x REFUTED): sqrt-descending visitation order
+(= Fermat's order applied to divisibility tests) gives a sham-controlled 5.1936x expected
+trial-division speedup (sham 1.65x; real/sham = 3.16x — genuine N-dependence). TWO
+separable mechanisms with OPPOSITE gradients across balance strata q/p in {1-1.25, 1.25-2,
+2-4}: (a) Fermat-type BALANCE BET concentrated at near-squares — 20.67x / 4.74x / 1.97x;
+(b) learned RANGE-TRUNCATION signal running the opposite way (trunc-ascending 4.35/4.73/
+6.91x) — finite-pool feasibility r >= N/2^17 is revealed by N's magnitude. Learned Bayes
+ordering: 3.37x test-only vs predicted ~1x under my pre-stated smooth-posterior claim —
+which was itself REFUTED by the truncation mechanism (designed check d1==ascending passed
+30000/30000 exactly; the collapse holds for smooth posteriors, fails at the pool edge).
+HONEST FRONTIER: plain sqrt-descending IS the computable optimum here — the learned bucket
+selector's apparent 5.29x was train-inflation (test 5.03 < plain). Paper 132's converse cap
+(<=4/3) GENUINELY STOPS AT RESIDUES; the positional stratum is live, bounded by population
+ratio structure, not a universal constant. Accounting: expected divisibility-test counts
+(information), not wall-clock; features O(1) per N.
+LEDGER (7 incl. ML#4 self-refutation disclosed; ML#6 vacuous feature caught).
+Paper 137, issue #234. Now 469 experiments. Assessment v246.
