@@ -1,102 +1,48 @@
 {
- "experiment": 521,
- "codename": "T-DIAL-60-UNIF",
- "round": 51,
- "date": "2026-08-22",
- "seed": 20261050,
- "prestated": {
-  "H1": "Spearman(T,rate) within [0.55,0.85] on uniform draws, bitlen 60, u=2.5",
-  "H2": "Spearman(T,rate) - Spearman(count<=100,rate) > +0.05"
- },
- "design_deviation": "assigned windows p in [2^14,2^20) x q in [2^20,2^26) cap bitlen(p*q)<=46, contradicting 'exactly 60 bits' (same copy-carry defect as exp517/518, documented pre-data there too; literal arm impossible here -- empty population). Locked resolution extends exp518's shape-preserving rule one rung up, holding exp518's p-exponent set fixed so bitlen is the only moved variable: e~U{20..25}, p in [2^e,2^(e+1)), q in [2^(59-e),2^(60-e)), reject until bitlen(N)==60, p<=q.",
- "elapsed_s": 4.9,
- "population": {
-  "n": 1200,
-  "bits_exact": 60,
-  "seed": 20261050,
-  "mean_p_bits": 23.64,
-  "min_p_bits": 21,
-  "max_p_bits": 26,
-  "mean_q_bits": 37.36,
-  "min_q_bits": 35,
-  "max_q_bits": 40,
-  "distinct_N": 1200,
-  "p_exponent_bin_counts": {
-   "20": 191,
-   "21": 161,
-   "22": 192,
-   "23": 211,
-   "24": 235,
-   "25": 210
-  }
- },
- "features": {
-  "vmed": 230140100295.5,
-  "B": 35059,
-  "u": 2.5,
-  "mean_rate": 0.12647,
-  "sd_rate": 0.03287,
-  "frac_zero_hit_N": 0.0,
-  "max_rate": 0.2417,
-  "smooth_total": 36424,
-  "mean_T": 1.5574,
-  "sd_T": 0.4452,
-  "mean_count": 11.994
- },
- "audit_smoothness": {
-  "checked": 200,
-  "mismatches": 0,
-  "pass": true
- },
- "stats": {
-  "spearman_T": 0.6686,
-  "ci_T": [
-   0.634,
-   0.7047
-  ],
-  "spearman_count": 0.5173,
-  "ci_count": [
-   0.4718,
-   0.5524
-  ],
-  "advantage": 0.1513,
-  "ci_advantage": [
-   0.1065,
-   0.1934
-  ],
-  "spearman_T_vs_count": 0.5568,
-  "bootstrap_resamples": 300
- },
- "verdict": {
-  "H1_band_pass": true,
-  "H2_edge_pass": true,
-  "verdict_name": "CELL-CLOSED-DIAL-HOLDS-60",
-  "context": {
-   "balanced_56_paper178": 0.405,
-   "balanced_60_paper179": 0.437,
-   "balanced_60_count": 0.368,
-   "uniform_52_exp518": [
-    0.793,
-    0.808,
-    0.808
-   ],
-   "uniform_48_exp517": [
-    0.777,
-    0.755,
-    0.801
-   ]
+ "52": {
+  "2.5": {
+   "B": 11357,
+   "sp_T": 0.6858160031402023,
+   "sp_count": 0.5372097783351444,
+   "rate_mean": 0.12689583333333332,
+   "zero_frac": 0.0
   },
-  "descriptive": {
-   "distance_to_balanced60_plateau_0.437": 0.2316
+  "3.0": {
+   "B": 2395,
+   "sp_T": 0.6438917859225461,
+   "sp_count": 0.5318133342042906,
+   "rate_mean": 0.048651041666666665,
+   "zero_frac": 0.0025
+  },
+  "3.5": {
+   "B": 788,
+   "sp_T": 0.5729561605935416,
+   "sp_count": 0.49559525227552376,
+   "rate_mean": 0.017458333333333333,
+   "zero_frac": 0.04
   }
  },
- "barriers": [
-  "(5) WHICH-FACTOR WALL: T(N), count(N) and relation-rate(N) are symmetric functions of the composite alone -- every channel reported here is which-factor blind; nothing in this experiment reads which factor, consistent with the wall.",
-  "(8) KNOWN-METHOD-IN-DISGUISE / TOY-SCOPE: the measured object is the QS relation-yield dial -- a cost predictor FOR known methods, not a new factoring route; oracle primes were used only to CONSTRUCT the semiprimes, never inside measurement; single-toy-seed at bitlen 60, no scaling claim beyond the tested regime."
- ],
- "artifacts": [
-  "/tmp/exp51_t60u/exp521_t_dial_60_unif.py",
-  "/tmp/exp51_t60u/result.json",
-  "/tmp/exp51_t60u/ledger_exp521.jsonl"
- ]
+ "56": {
+  "2.5": {
+   "B": 19668,
+   "sp_T": 0.6887135896720039,
+   "sp_count": 0.5429940970734671,
+   "rate_mean": 0.12372395833333333,
+   "zero_frac": 0.0
+  },
+  "3.0": {
+   "B": 3786,
+   "sp_T": 0.6529734509045416,
+   "sp_count": 0.5332063116694508,
+   "rate_mean": 0.04631770833333333,
+   "zero_frac": 0.0
+  },
+  "3.5": {
+   "B": 1167,
+   "sp_T": 0.5266561778700559,
+   "sp_count": 0.4252609907166718,
+   "rate_mean": 0.015708333333333335,
+   "zero_frac": 0.0425
+  }
+ }
 }
