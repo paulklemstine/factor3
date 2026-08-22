@@ -1,0 +1,8 @@
+{
+ "exp": "540",
+ "codename": "TDIAL-U100",
+ "round": 67,
+ "status": "ERROR",
+ "wall_s": 157.0,
+ "traceback": "Traceback (most recent call last):\n  File \"/tmp/exp67_tu100/exp540_t_dial_unif_100.py\", line 464, in <module>\n    main()\n  File \"/tmp/exp67_tu100/exp540_t_dial_unif_100.py\", line 387, in main\n    r, bnds, nsm, smf, _ = smooth_rates(N_all[sl], si)\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/exp67_tu100/exp540_t_dial_unif_100.py\", line 319, in smooth_rates\n    assert mism == 0, \"smoothness classification disagrees with exact factoring\"\n           ^^^^^^^^^\nAssertionError: smoothness classification disagrees with exact factoring\n"
+}
