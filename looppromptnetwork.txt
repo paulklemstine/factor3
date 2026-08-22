@@ -28,7 +28,27 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # LAB PROTOCOL (same rigor as the factoring lab): exact measurable laws over a clean
 # hypothesis, honest negative results recorded, all 8 barriers checked every iteration,
 # commit+push each iteration with Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>.
-# Status: NET-48 done (issue #155): THE-DIRECT-TEST-SURVIVES-VIA-THE-MEDIAN —
+# Status: NET-49 done (issue #230): LIMITED-MEMORY AXIS OPENED — THE-REAL-MODEL-KNEE-COLLAPSES-
+# AND-SATURATES — first transfer of the speed-axis laws to a REAL PRETRAINED LLM (Qwen2.5-0.5B,
+# 24 layers, GQA kv=2, wikitext-103 held-out eval, fp32, own forward validated EXACTLY vs HF
+# eager BEFORE measurement (max|dlogit|=0.0000), GTX 1060 6GB ON-GPU ~35min vs 4h CPU toy rounds;
+# ALL_DONE_NET49+49B). Oracle top-k attention (global k, ALL layers, same 0.98-retention
+# protocol): knee k* = {16, 32, 24} at ctx = {512, 1024, 2048} vs toy product {384, 768, 1536}
+# — ratios 1/24, 1/24, 1/64; scaling x2.0 then x0.75 SUB-LINEAR/DECLINING (P3 confirmed; P1
+# refuted 16x past its floor; P2 linearity half-refuted, concentration half held k* <= ctx/8
+# everywhere). THE DEPTH MULTIPLIER COLLAPSES FROM d TO ~1 on pretrained weights — no r(k)^d
+# compounding binds trained attention. Selection importance inflates an ORDER OF MAGNITUDE:
+# random-k gaps +68-82 pts (toy range +1.7-11.7); local-window capped 0.598 retained @2048
+# while oracle k=32 gives 0.9867. Depth map: median layer eff ~10-12 keys CONTEXT-INDEPENDENT;
+# diffusion ONLY in L22/L23 (eff 128.5/72.1 @2048, sub-linear growth); min L16 (2.9).
+# Practical: 85x fewer KV reads / 64x fewer KV bytes at the oracle knee; deployable policy
+# (cheap selector) = open cell. Honest limits: TWO razor-thin knees (+0.44/+0.5 SE; 2048
+# bracket (16,24], 1024 (16,32] un-pinned at 24); ONE model ONE size ONE corpus (Gutenberg
+# rate-limited -> wikitext-103 fallback). Next (limited-memory axis): (1) per-layer ablation
+# (is L22 load-bearing?); (2) size transfer Qwen2.5-1.5B / quantized-offloaded 7B; (3)
+# oracle-to-policy eviction gap; (4) corpus robustness; (5) weight-quantization floors
+# (iteration 2). Paper 134, log /tmp/net49.log.
+# PREVIOUS STATUS — NET-48 done (issue #155): THE-DIRECT-TEST-SURVIVES-VIA-THE-MEDIAN —
 # k*=160 at (d=4, ctx=2048, seed=3) — ALL FOUR point-horns REFUTED (P1 224, P2 240,
 # P3 256, P4 192 — every pre-stated value passes but none is the knee), yet the
 # completed 16× three-seed knee distribution is {160, 224, 256} — MEDIAN EXACTLY 224

@@ -1408,3 +1408,79 @@ experiments. Assessment v31. Script: /tmp/exp_net_eos_freezek13.py; log:
 **Verdict:** THE-DIRECT-TEST-SURVIVES-VIA-THE-MEDIAN — k\*=160 at (d=4, ctx=2048, seed=3), all four point-horns (224/240/256/192) REFUTED, yet {160, 224, 256} has median exactly 224 = 7/8·256, replicating the 8× median 112 = 7/8·128: the 7/8-median law is 2/2-context, 6/6-seed; per-seed knees too noisy to predict on the point (0/4), the distribution's center robust (1/1). 16× spread ~50% wider than 8× (the low tail the context-growing quantity, product the pinned upper edge); product-point upper bound 3/3-sure at both long contexts; margin +0.0012 (tightest of recent cells); selection +4.7/+3.4 (16× spread {1.7,4.4,4.7} seed-dependent); concentration 498.13 (eff↔knee not sorting); deployable ≥8.0×/9.1×/12.8× best-ever.
 
 **Barriers:** (a) clean — four horns + the law's direct test stated before the run, measured 160 outside ALL horns yet the distribution's median landed exactly on the law's predicted center — the round distinguishes point-accuracy (0/4) from structural confirmation (1/1); (b) clean — three-seed 16× spread {0.625,0.875,1.0}, low tail widening with context: none in the Catalog re-scan or the literature; (c) confronted — d=4 × ctx=2048 real causal word LM, 4097 vocab, held-out loss+acc, three seeds at the longest cell; (d) clean (held-out last-10%, data-free top-k); (e) the SUBSTANCE, sharpened — the three-seed 16× distribution complete; honest limits: the s3=160 read is razor-thin (+0.0012, true knee ~150–160 between grid points), the 0.625 low tail is one of three seeds (a fourth decides s3-specific vs stable), the median law is 2 contexts × 3 seeds; (f) clean — same metrics/protocol, binom SE ≈ 0.11% acc (retained SE ≈ 0.007), the +0.0012 razor margin documented, k=512 recovers 1.000 / k=768 1.003 (loss Δ0.0016), monotone recovery, NO crash (ALL_DONE_NET48); (g) fair — full-attention reference + same 0.98 bar + random-k at the same k (seed 12345): gaps +4.7/+3.4, positive, the three-seed gap spread {1.7–4.7} informative; (h) sharpened — ≥8.0× guaranteed (3/3), 9.1× median, 12.8× best-ever, the widened spread the deployment-relevant uncertainty at the longest cell. Open: **a fourth seed at ctx=2048 (the low-tail test — s4=160/192 → 0.625 low tail real, s4 ∈ {224,256} → s3-specific; the highest-value open cell now; ~4–5h)**; a fourth seed at ctx=1024 (refine {96,112,128}; low value); d=8 @ ctx=256 s0 corner; d=8 compression floor check; carry chain at scale (the frontier). Paper 92, issue #155. Now 48 network experiments. Assessment v48. Script: /tmp/exp_net_attncost_ctx2048_s3.py; log: /tmp/net48.log.
+
+## Part 49 — The REAL-MODEL knee COLLAPSES and SATURATES: on pretrained Qwen2.5-0.5B the lossless attention knee is k\*=16/32/24 at ctx=512/1024/2048 — 24–64× BELOW the toy product law d·ctx/32 (which predicted 384/768/1536), sub-linear with the DEPTH MULTIPLIER collapsed from d to ~1, already DECLINING at 2048; selection importance inflates an ORDER OF MAGNITUDE (+68–82 pt random-k gaps, local-window capped at 0.60 retained); the only diffuse attention lives in the LAST TWO layers (eff 128/72 vs a ~12-key median layer); first LIMITED-MEMORY-AXIS cell, run ON-GPU in ~35 min (NET-49)
+
+**Question:** every speed-axis law (DIFFUSE-BUT-PRUNABLE NET-15, k\* = d·ctx/32
+NET-16→45, the 7/8-median NET-47/48) was measured on from-scratch toy CausalTFs; the
+new user-directed axis is running Qwen-class agentic models in very limited VRAM, and
+the knee bounds the KV-cache working set that governs long-context serving. First
+transfer cell: does the toy knee law survive on a REAL PRETRAINED LLM?
+**Predictions stated before the run: P1 TOY-LAW TRANSFERS (k\*(2048) ≥ 384); P2
+MORE-CONCENTRATED-BUT-LINEAR (k\* ≤ ctx/8 everywhere AND ratio ≥ 2.5); P3 SUB-LINEAR/
+SATURATING (ratio < 2.5 or saturation ≤ 256).**
+
+**Method:** Qwen2.5-0.5B fp32 on the GTX 1060 (torch 2.5.1+cu121, sm_61), hand-written
+forward replicating the Qwen2 stack so per-row oracle top-k applies GLOBALLY at all 24
+layers — the identical toy manipulation. VALIDATION GATE: own-forward vs HF eager
+BEFORE measurement — max|Δlogit| = 0.0000, argmax agreement 1.0000, CE identical to 4
+decimals. wikitext-103-raw text (Gutenberg rate-limited mid-round; automatic fallback —
+honest corpus deviation), 922k BPE tokens, last 10% held out, 40 disjoint windows/cell,
+next-token top-1 acc + CE, k\* = smallest k with retained ≥ 0.98·full; grids {8..192},
+{16..384}, {4..768} + a sub-32 addendum (NET-49B) after the 2048 grid floor passed;
+Part B2 random-k AND local-window at matched k; Part A per-layer concentration.
+Script /tmp/exp_net49_qwen_topk.py + exp_net49b_sub32.py; logs /tmp/net49.log,
+/tmp/net49b.log; full run ~35 min ON GPU.
+
+**Results:** knee chain **{16, 32, 24}** vs toy predictions **{384, 768, 1536}** —
+ratios **1/24, 1/24, 1/64**. Full acc 0.4460/0.4612/0.4787 (context monotone ✓).
+Sweeps (retained): 512: 8 0.9617 ✗ (−2.3 SE), **16 0.9834 ✓** (+0.44 SE razor), 32
+0.9931, …, 192 0.9997; 1024: 16 0.9771 ✗ (−0.55 SE thin), **32 0.9912 ✓** (+2.1 SE),
+…, 192 1.0016, 384 1.0003; 2048: 4 0.8762 ✗, 8 0.9408 ✗, 16 0.9708 ✗ (−2.5 SE),
+**24 0.9818 ✓** (+0.5 SE razor, bracket (16, 24]), 32 0.9867, …, 768 0.9997 (loss Δ
+0.0002). Scaling shape: ×2.0 then **×0.75 — SUB-LINEAR, DECLINING**: P3 CONFIRMED,
+P1 refuted 16× beyond its floor, P2's linearity refuted (its concentration half held:
+k\* ≤ ctx/8 everywhere). THE DEPTH MULTIPLIER COLLAPSES FROM d TO ~1: no compounding
+r(k)^d penalty binds trained weights; k\*/ctx ≈ 1/32 at both exact knees and FALLS by
+2048. **Part B2:** random-k gaps **+82.0/+71.8** @512 (k=32/64), **+81.9/+70.0** @1024,
+**+79.9/+68.0** @2048 — the toy programme's entire range was +1.7 to +11.7 (an ORDER
+OF MAGNITUDE inflation); **local-window** gaps +60.0/+50.5/+54.5/+46.3/+54.9/+47.3/
++40.1 — even k=256 local reaches only **0.5979** retained at 2048 while oracle top-k is
+0.9867 with 8× FEWER keys. **Part A:** median-layer effective support ≈ 9.7/9.0/11.7
+keys across contexts — context-INDEPENDENT for the bulk of the stack (toy: 46 → 526,
+×~1.85/doubling); the ONLY diffusion lives in L22/L23: eff 51.0 → 83.3 → **128.5** and
+32.8 → 49.5 → **72.1**, sub-linear growth (×1.54–1.63/doubling); even L22@2048 is 3.9×
+less diffuse than the toy MEAN layer (498) at the same context; mild front elevation
+L0–L2 (14–43); minimum at L16 (eff 2.9 — a ~3-key mid-stack layer).
+
+**Practical:** oracle working set at 2048 = 24 keys/query-row of 2048 → **85× fewer KV
+reads, 64× fewer KV bytes** (fp16 0.39 MB vs 25.2 MB per sequence). Honest caveat: the
+oracle sees full scores — a deployable policy needs a cheap selector; the
+oracle-to-policy gap is the next measurable cell. For the 6 GB host goal: knee-bounded
+KV budgets are what make quantized+offloaded long-context serving feasible.
+
+**Verdict:** THE-REAL-MODEL-KNEE-COLLAPSES-AND-SATURATES — the programme's speed axis
+transfers to real pretrained models with a BIGGER effect size than any toy cell: knees
+24–64× below the toy law, depth multiplier collapsed, selection importance inflated
+10×, and a two-layer diffuse tail. Barriers: (a) clean — data-free oracle from the
+model's own scores, horns were about position/scaling not existence; (b) confronted —
+sparse-attention/heavy-hitter lineage exists (H2O/StreamingLLM/SnapKV); NEW content =
+measured laws: first 0.98-retention-protocol transfer, depth-collapse, ctx/32-then-
+decline shape, gap inflation, depth map — none in Catalog re-scan or literature;
+(c) CONFRONTED HEAD-ON — this IS the real-scale cell (pretrained 0.5B, web text,
+151k vocab); limit: ONE model ONE size; (d) clean — last-10% held out, zero training;
+(e) the SUBSTANCE + limits — deterministic eval (addendum reproduced baseline EXACTLY),
+SEs 0.17–0.35%, TWO razor-thin knees documented (+0.44/+0.5 SE; 2048 bracket (16, 24]),
+1024 bracket (16, 32] with k=24 un-measured there (the decline could be flat ~24), one
+model one corpus; (f) clean — forward validated EXACTLY pre-measurement, fp32, loss
+tracks acc, NO crash (ALL_DONE_NET49 + ALL_DONE_NET49B); (g) fair — full reference +
+same bar as all 48 prior rounds + random-k AND local-window at matched k, both crushed;
+(h) DIRECT — 64× KV-byte reduction at the oracle knee vs the toy family's best-ever
+12.8× attention reading; deployable policy named as open work, not claimed.
+
+**Open:** (1) per-layer pruning ablation (the depth map's causal test — is L22's
+diffusion load-bearing?); (2) size transfer (Qwen2.5-1.5B / quantized-offloaded 7B —
+does ~ctx/32-saturation persist? does the two-layer tail recur?); (3) oracle-to-policy
+gap (online accumulated-score eviction vs this upper bound); (4) corpus robustness;
+(5) weight-quantization floors on the same harness (limited-memory iteration 2).
+Paper 134, issue #230. Now 49 network experiments. Assessment v49.
