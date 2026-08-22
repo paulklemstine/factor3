@@ -1600,3 +1600,20 @@ calibration); (e) deterministic, damping schedule pre-fixed; (f) clean (exact ba
 ALL_DONE_NET53); (g) fair (shared protocol/granularity); (h) DIRECT (deployment table cell).
 Open: act-order variant; joint weight+KV budgeting; tail-aware mixed precision; size transfer.
 Paper 138, issue #243. Now 53 network experiments. Assessment v53.
+
+## Part 54 — THE-TAIL-IS-LOAD-BEARING-BUT-UNPORTABLE: causal layer swaps between Qwen base and Instruct — bulk pair L10/11 transplants at ZERO measured cost (+0.004/−0.016 dCE; inst←base L10/11 slightly IMPROVES Instruct), while tail pair L22/23 DESTROYS the hybrid: agreement with BOTH parents collapses (0.83 cross-parent baseline → 0.54–0.63) at +0.47/+0.55 CE; P1 transferable-identity REFUTED (the discovery), P2 asymmetry CONFIRMED (+0.465 vs +0.546), P3 portability CONFIRMED (< +1.0 nat); the sharing boundary for multi-finetune serving is now CAUSALLY established — share everything except the tail, re-run the tail per model (NET-54; limited-memory axis round 6)
+
+**Method:** full-path parameter transplant surgery on fp16 models (12 held-out windows @ctx=512;
+chunked-head CE identical to harness semantics; backup/restore by complete parameter-path
+copy-back before each subsequent arm). Arms {L22,L23} vs {L10,L11}, both directions.
+Script /tmp/exp_net54_tailswap.py; log /tmp/net54.log.
+**Verdict:** convergent with NET-50 (only far-from-tropical layers) and NET-51 (only high-
+decision-divergence layers): L22/L23 are also the only NON-TRANSPLANTABLE layers. Barriers:
+(a) clean (P1 refutation pre-stated as possible outcome); (b) confronted (layer-amputation
+lit; NEW = fine-tune-pair portability asymmetry + both-parents-collapse signature); (c)
+confronted (one pair, 12 windows, ctx=512, fp16 noted); (d) clean (no training); (e)
+deterministic, restore-by-construction; (f) clean (ALL_DONE_NET54); (g) fair (matched-width
+controls, both directions); (h) DIRECT (sets the sharing boundary for KV servers and
+tail-aware quantization). Open: dose-response (one/three-layer swaps); swap+recalibration
+(entanglement depth); 1.5B pair; compensated-4-bit tail personality (GPTQ link).
+Paper 139, issue #246. Now 54 network experiments. Assessment v54.
