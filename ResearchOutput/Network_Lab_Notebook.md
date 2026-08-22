@@ -1891,3 +1891,10 @@ harness/bar. Script ResearchOutput/exp_net76_frenchext512.py; results
 (f) clean (ALL_DONE_NET76); (g) fair; (h) DIRECT (one-measurement prescription).
 Open: 4096 increments; more languages/domains; 7B scale test.
 Paper 161, issue #317. Now 76 network experiments. Assessment v76.
+
+## Part 77 — ADDENDUM to Part 67: k=14 fails at ctx=2048 on Qwen2.5-1.5B (ret=0.9757, ~2 SE below bar) — the bracket tightens from (16, 20] to (14, 18] and the knee is confirmed at exactly **18** — the one-octave shift stands: 1.5B chain {16, 16, 18} = 0.5B chain {16, 20, 24} shifted one context-doubling right with increment halved (+4 → +2 per doubling); baseline drift-assert passed exactly (0.5132); gate identical to NET-66 (agree 0.8906, ΔCE 0.0054) (NET-77 addendum; single-point bracket-tightening)
+
+**Method:** single k=14 measurement, identical harness/windows as NET-66; baseline drift-assert
+(0.5132 exact). Script ResearchOutput/exp_net77_1p5b2048.py; log /tmp/net77.log.
+Now 77 network experiments (NET-77 is an addendum to NET-67, not a new experiment number).
+Assessment remains v67 for the knee-chain line.
