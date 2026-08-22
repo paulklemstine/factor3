@@ -15,11 +15,22 @@ u ∈ {2.5, 3.5} — calibration slope bands [0.8, 1.25], bootstrap CIs.
   bl 48/52) and 0.9124 / 0.8335 (240 values/N) — all four cells inside the band.
 - **H3 CONFIRMED**: the direct divisibility feature d(N) stays independently significant in
   **12/12 cells** (min |t| = 3.92) after the footprint mass.
-- **H2 raw facts**: R² rises substantially with relation count — 0.41 → 0.60 (u=2.5/bl48),
-  0.40 → 0.57, 0.32 → 0.49, 0.27 → 0.42 from 80 to 240 values/N. The agent's ceiling COLUMN
-  is definition-inconsistent with the lab's convention (measured R² exceeds it by >2×), so it
-  is NOT adopted; only the raw R²-vs-n facts are cited. A dedicated ceiling re-derivation is
-  deferred.
+- **H2 REFUTED as stated, replaced by a sharper finding**: every ceiling measure rises
+  80→240 (~2×; the binomial floor quarters), and the dial's R² rises in step (8/8) — but it
+  does NOT converge to the leak-free split ceiling: it EXCEEDS it 1.6–2.1× at both arms.
+  Interpretation: residue symbols encode N-dependent window-phase structure of the
+  deterministic divisibility pattern (which j-slots hit which roots), which does not
+  replicate across disjoint j-subsets — so the split ceiling caps only the replicating rate
+  component, not this dial family. Against the fit-based π̂ yardstick the dial sits at
+  ~0.95–1.00× at n=80 and ~0.85–0.90× at n=240. Next experiment named: a phase-aware feature
+  (root-position profile mod p) rather than more values per N.
+
+**Correction note (amended post-recording)**: the duplicated-u-blocks bug was UPSTREAM in
+the build stage — the trial-division strip ran only to B(3.5) < B(2.5), making the u=2.5
+target byte-identical to u=3.5; fixed surgically in `build_bitlen` (strip once to the larger
+bound, derive both targets from remainder + largest-found-prime). Secondary u=3.5 transfer is
+3/4 cells (bl52@240 slips to 0.770 [0.714, 0.827]); d(N)'s marginal R² contribution is small
+(+0.01–0.03 over qrc+w) though consistently significant.
 
 ## 3. What this decides
 

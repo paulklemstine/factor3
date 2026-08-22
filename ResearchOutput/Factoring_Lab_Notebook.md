@@ -9871,3 +9871,26 @@ deferred to a dedicated check.
 LEDGER: reconciliation-on-demand worked (asked for surgical fix, got it); ceiling-definition
 mismatch flagged not silently adopted.
 Paper 147, issue #249. Now 479 experiments. Assessment v256.
+
+## Part 220 - ET-HINTS-FULL (round-40 #4 [cron iteration], exp 481, v257)
+
+The ORIGINAL ET-HINTS theory agent finished after ~70 minutes of channel-stalled work —
+the third and deepest of the three mutually-consistent interval-hint results (143 inline
+measurement grid; 146 reduced closed forms; THIS = the full theorem suite).
+HEDGE-AND-CAPACITY: (T7) E_opt(alpha) is concave piecewise-linear in alpha — intermediate
+trust can be WORSE than both endpoints AND than no-hint baseline (measured 196.09 vs 171.17
+at M=512): partial trust is the most expensive regime. (T8) placement-structured ceilings:
+cap = 2/(3x) for centered/uniform/left-placed windows but **cap -> 1/x for RIGHT-placed
+windows** (truncated w reproduces min-of-two-uniforms inside the interval) — placement
+doubles the attainable gain. Calibration gate: uniform-given-hit joints exist only at tiny
+alpha — that family can NEVER reach magnitude-ordering gains. Best measured cell:
+right-placed x=1/16, alpha=1 -> **14.69x**. Crossing table for paper 137's 5.19x:
+alpha* = 0.832 (x=1/64) to 0.996 (x=1/8); narrow AND near-certain. SCOPE INSIGHT: interval
+hints escape paper 138's which-factor ceiling because they act on ORDER via direct
+J-correlation while carrying MI(hint; factor) = 0 — the two functionals price orthogonally.
+Fermat named: 'start at sqrt(N)' = commitment to a rightmost interval with CAL capacity ->0.
+LEDGER (7): complement-mass bug (sum=1+alpha) invisible to consistency checks, caught only
+by MC z=-72 -> sum(pi)==1 assert added; Thm 8 refuted by own data and corrected; two infra
+kills + concurrent writers replaced deliverables mid-run (all runs preserved and
+cross-referenced: et_hints_*_canonical.* vs *_reduced_alt_otherwriter.*).
+Paper 148, issue #250. Now 480 experiments. Assessment v257.
