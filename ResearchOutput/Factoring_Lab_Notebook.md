@@ -9604,3 +9604,23 @@ THE OVERLAP LADDER IS CLOSED: coprime (+synergy) / shared-subfield (exactly -1 b
 the shared sign character) / same-field (full redundancy) — everything else in the fiber
 product provably invisible to any residue class.
 Paper 133, issue #229. Now 465 experiments. Assessment v242.
+
+## Part 206 - CHEBOTAREV-PRECISION (round-37 #6, exp 463, v243)
+
+First simultaneous re-measurement of the ENTIRE master table (15 canonical fields, one
+protocol, one seed): H0 PRECISION HOLDS — global max |I_meas - I_law| = 0.00048 bits
+(20x inside the pre-stated 0.01 budget), n ~ 295,946 unramified primes/field < 2^22.
+Every recorded headline reproduced within max(0.01, 3sigma); the only anomaly (S3d
+historical 1.0078 vs exact law 1.0000; simultaneous remeasurement 0.9998 +/- 0.001)
+diagnosed as historical small-population plug-in bias on the 229-class dial, NOT physics
+or dictionary drift. Law values computed fresh from explicit permutation groups matched
+hand-derived constants to 6 decimals on all 10 groups (incl. D4 1.655639, A4 0.918296).
+Controls: thickening -0.00044; coprime flatness (mod 101, 6 fields) all BELOW the null
+bias floor. sympy ground-truth 0 mismatches (150 primes x 15 fields); abelian residue-order
+dictionaries 100% agreement. LEDGER (7 catches, ALL before results): D4 generator was a
+transposition -> S4 closure (exposed by hand law constants); F20 seeded with two
+translations -> C5; polynomial 'one' init'd as np.ones_like; exponent bits scanned LSB-first
+under MSB-first Horner; ramified test q^2|disc missed squarefree-disc primes; two design
+misregistrations disclosed (null-z is dependence-significance, Miller-Madow adopted).
+THE LAB'S ~128-PAPER MEASUREMENT RECORD IS INTERNALLY CONSISTENT TO 5e-4 BITS.
+Paper 134, issue #230. Now 466 experiments. Assessment v243.
