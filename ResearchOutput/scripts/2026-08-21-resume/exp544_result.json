@@ -1,0 +1,98 @@
+{
+ "exp": "544",
+ "codename": "TDIAL-U108",
+ "round": 69,
+ "status": "04_final",
+ "wall_s": 641.1,
+ "hypotheses": {
+  "H1": "Spearman(T, rate) stays within [0.55, 0.85] on uniform draws at bitlen 108, u=2.5",
+  "H2": "T beats count <=100 by > +0.05"
+ },
+ "config": {
+  "seeds": [
+   20261210,
+   20261211,
+   20261212
+  ],
+  "n_per_seed": 400,
+  "p_range": [
+   281474976710656,
+   18014398509481984
+  ],
+  "q_range": [
+   18014398509481984,
+   1152921504606846976
+  ],
+  "bits_n": 108,
+  "n_rel": 240,
+  "h_off": 256,
+  "u_exp": 2.5,
+  "dial_max": 400,
+  "cnt_max": 100,
+  "n_boot": 300
+ },
+ "population": {
+  "total": 1200
+ },
+ "per_seed": [
+  {
+   "seed": 20261210,
+   "n": 400,
+   "rho_T": 0.489137016056973,
+   "rho_cnt": 0.36294430242470205,
+   "advantage": 0.12619271363227097
+  },
+  {
+   "seed": 20261211,
+   "n": 400,
+   "rho_T": 0.5252410173678568,
+   "rho_cnt": 0.38008416951911617,
+   "advantage": 0.1451568478487406
+  },
+  {
+   "seed": 20261212,
+   "n": 400,
+   "rho_T": 0.44941945717412984,
+   "rho_cnt": 0.44301456394779515,
+   "advantage": 0.006404893226334696
+  }
+ ],
+ "pooled": {
+  "n": 1200,
+  "rho_T": 0.48802300433331264,
+  "rho_T_ci95": [
+   0.44526729531950204,
+   0.5337493157049558
+  ],
+  "rho_cnt": 0.39644120610474765,
+  "rho_cnt_ci95": [
+   0.3461922788005619,
+   0.4456153577170621
+  ],
+  "advantage": 0.09158179822856499,
+  "advantage_ci95": [
+   0.04259081858220212,
+   0.1393226992945664
+  ]
+ },
+ "rate_summary": {
+  "mean": 0.13670486111111113,
+  "std": 0.02689014946791177,
+  "smooth_values": 39371,
+  "total_values": 1200
+ },
+ "comparisons": {
+  "prior_rho_96_fixed": 0.5739,
+  "prior_rho_100": 0.5436,
+  "prior_rho_104": 0.5005,
+  "delta_vs_104": -0.012476995666687307,
+  "ci95_vs_band_lower_edge": "below",
+  "further_decline_vs_104": true
+ },
+ "verdicts": {
+  "H1_pass": false,
+  "H1_pass_per_seed": false,
+  "H2_pass": true,
+  "verdict_name": "TDIAL-U108-CONTINUES-FADE"
+ }
+}
