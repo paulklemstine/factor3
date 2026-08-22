@@ -10213,6 +10213,16 @@ Coordinator lean run independently confirms (different implementation, same verd
 The prime-power term is a REAL, seed-stable, window-robust component of the per-N dial.
 Paper 173, issue #274. Now 506 experiments. Assessment v281.
 
+## Part 247 - EXTENDED-DIAL (round-51 #1 [agent], exp 515, v283)
+
+The full augmented dial (w + d + pp_sum) tested across 5 fresh populations. VERDICT:
+EXTENDED-DIAL-ABSENT. H1 FAIL (mean R2 = 0.502 at u=3.5, only 1/5 above 0.55); H2 PASS
+(transfer slope 0.898 in band); H3 FAIL (prime-power term adds ~0 on all populations).
+The prime-power feature from paper 172 does NOT replicate in this independent
+implementation — the +0.089 was population-specific or implementation-dependent.
+The per-N dial's best validated form remains the paper-145 footprint dial (w + qrc).
+Paper 181, issue #281. Now 516 experiments.
+
 ## Part 246 - DEGREE-11 (round-50 #1 [agent], exp 513, v282)
 
 FULL-PINNING-AT-DEGREE-11 CONFIRMED on Q(zeta_23)+ (C11, conductor 23): densities {1/11, 10/11},
