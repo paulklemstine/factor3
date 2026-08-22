@@ -10104,6 +10104,15 @@ prospectively). 5 independent populations (seeds 20260930-34): per-seed Spearman
 seed-stable; adoption stands without qualification.
 Paper 165, issue #267. Now 498 experiments. Assessment v274.
 
+## Part 244 - T-DIAL-BITLEN (round-47 #1 [cron iteration], exp 508, v282)
+
+Does the zero-fit dial hold at higher bitlens? ALL THREE VERDICTS CLEAN:
+H1 PASS (all 6 cells in [0.60, 0.85] across bitlen {48, 52} x 3 seeds); H2 PASS (T beats
+bare count everywhere, mean advantage +0.12/+0.14); H3: NEITHER decline NOR cliff — the
+dial's accuracy is BITLEN-STABLE, completing its validation alongside seed-stability
+(paper 165) and regime-invariance (paper 162).
+Paper 175, issue #277. Now 510 experiments. Assessment v282.
+
 ## Part 237 - T-DIAL-AXES (round-44 #2 [cron iteration], exp 499, v275)
 
 The adopted zero-fit dial's two validation axes. REGIME-HOLDS-U-BREAKS:
