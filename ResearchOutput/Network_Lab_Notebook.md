@@ -1751,3 +1751,15 @@ Paper 148, issue #299. Now 63 network experiments. Assessment v63.
 (c) confronted (12 windows stated); (d) clean; (e) deterministic; (f) clean (ALL_DONE);
 (g) fair (only corpus path changed); (h) DIRECT. Open: domain-jump corpora; 1.5B fine grids;
 7B cell. Paper 149, issue #300. Now 64 network experiments. Assessment v64.
+
+## Part 65 — SIXTEEN-IS-REAL: every sub-16 point fails at ctx=1024 on Qwen2.5-1.5B (k=4: 0.932, k=6: 0.953, k=8: 0.966, k=12: 0.976 razor ~2SE) — the 1.5B knee is EXACTLY k*=16 (bracket (12,16]); P1 scale-decline REFUTED, P2 CONFIRMED; refined scale law: 0.5B chain RISES with context ({16,20,24}) while 1.5B is FLAT ({16,16}) — larger models have more context-STABLE attention budgets; a 16-key budget covers both models to ctx=1024; new measurable: CONTEXT-SENSITIVITY of the attention budget, decreasing with scale in its first step (NET-65; limited-memory axis round 28)
+
+**Method:** fine sweep k∈{4,6,8,12} below NET-55's grid floor; bf16-storage/fp32-compute
+harness; gate identical to NET-55 (ΔCE 0.0054); baseline bit-identical (0.5004).
+Script ResearchOutput/exp_net65_1p5bsub16.py; results ~/f3cache/net65_results.json;
+log /tmp/net65.log.
+**Verdict:** SIXTEEN-IS-REAL. Barriers: (a) clean; (b) clean; (c) confronted (razor bracket
+(12,16]; one corpus stated); (d) clean; (e) deterministic baseline-replicating; (f) clean
+(ALL_DONE_NET65); (g) fair; (h) DIRECT. Open: 1.5B @2048 fine grid (does flat break?);
+domain-jump corpora; 7B cell. Paper 150, issue #302. Now 65 network experiments.
+Assessment v65.
