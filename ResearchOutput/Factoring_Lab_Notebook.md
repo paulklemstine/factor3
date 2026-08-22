@@ -9764,3 +9764,23 @@ mismatches while PATTERN itself was perfect); residue-vs-type dict lookup in the
 enumeration; inline takeover after the channel's 6th agent death (agent recovered the
 paper-78 anchor first).
 Paper 141, issue #241. Now 473 experiments. Assessment v250.
+
+## Part 214 - PER-N-PREDICTOR (round-39 #4 [cron iteration], exp 472, v251)
+
+Lean inline validation of paper 139's actionable corollary: predict per-N relation yield
+from QR-count of odd primes <=100 (~20 Euler tests). FORMAL verdicts H1/H2 FALSE BY
+NARROW MARGINS, substantive confirmation:
+- Same-scale (train40/test40): R2 = 0.2998 (u=2.5, calib slope 1.003) / 0.2246 (u=3.5,
+  slope 0.896) — u=3.5 misses the pre-stated R2>=0.25 band by 0.025.
+- Transfer to bitlen 44 (renormalized intercept): R2 = 0.226/0.173, slopes 0.839/0.788 —
+  u=3.5 slope just under the 0.8 band.
+- H3 DECISIVE: residual variance is only 1.12-1.24x the pure 60-draw binomial sampling
+  floor — the single QR-count feature captures essentially ALL systematic per-N structure;
+  what remains is measurement noise.
+CEILING ANALYSIS (computed post-hoc, disclosed): with 60 values/N the max achievable R2
+against sampling noise is ~0.45 (u=2.5) / ~0.31 (u=3.5); the one-feature predictor achieves
+66%/73% OF CEILING. A richer feature has little headroom at this sample size — collect more
+values/N first.
+LEDGER: lean inline takeover after 2 silent agent deaths; pre-stated bands were optimistic;
+H3's 'richer feature' branch dropped for runtime (disclosed).
+Paper 142, issue #242. Now 474 experiments. Assessment v251.

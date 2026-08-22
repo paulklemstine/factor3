@@ -1,0 +1,52 @@
+{
+ "meta": {
+  "seed": 20260827,
+  "exp": 472,
+  "codename": "PER-N-PREDICTOR-INLINE"
+ },
+ "results": [
+  {
+   "cell": "40/u2.5",
+   "role": "train40-test40",
+   "B": 1158,
+   "beta0": -0.026389740559452146,
+   "beta1": 0.012882229870358652,
+   "R2": 0.2997512906062103,
+   "calib_slope": 1.0030331039649698,
+   "residual_var": 0.002256707854899919,
+   "binom_floor": 0.001825832425925926,
+   "floor_frac": 1.2359884855016117
+  },
+  {
+   "cell": "40->44/u2.5",
+   "role": "transfer",
+   "B": 2022,
+   "R2": 0.22634300979211852,
+   "calib_slope": 0.8394572862549207
+  },
+  {
+   "cell": "40/u3.5",
+   "role": "train40-test40",
+   "B": 154,
+   "beta0": -0.03440644440303911,
+   "beta1": 0.004591750558942287,
+   "R2": 0.22460420582465002,
+   "calib_slope": 0.8957063892681102,
+   "residual_var": 0.0003677883177458993,
+   "binom_floor": 0.0003282664999999999,
+   "floor_frac": 1.1203955254218734
+  },
+  {
+   "cell": "40->44/u3.5",
+   "role": "transfer",
+   "B": 229,
+   "R2": 0.17262814193761777,
+   "calib_slope": 0.7878075608181251
+  }
+ ],
+ "verdict": {
+  "H1": false,
+  "H2": false,
+  "H3": "residual_var/binom_floor reported per cell (\u22481 => sampling noise explains rest)"
+ }
+}
