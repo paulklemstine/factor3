@@ -10104,6 +10104,20 @@ prospectively). 5 independent populations (seeds 20260930-34): per-seed Spearman
 seed-stable; adoption stands without qualification.
 Paper 165, issue #267. Now 498 experiments. Assessment v274.
 
+## Part 237 - T-DIAL-AXES (round-44 #2 [cron iteration], exp 499, v275)
+
+The adopted zero-fit dial's two validation axes. REGIME-HOLDS-U-BREAKS:
+H1 CONFIRMED — uniform draws fully in-band on 5/5 populations (mean Spearman(T) = 0.713,
+indistinguishable from balanced's 0.717 despite N spanning 2^27-2^38). H2 REFUTED —
+u=3.5 degrades SYSTEMATICALLY (all 5 seeds drop from u=2.5->3.5, sign test 5/5 p~0.03;
+one seed breaches deeply at 0.4866; column mean 0.598 below the band floor). H3 REFUTED
+(4/5 joint). Anchor cell bal@2.5 mean 0.7167 replicates paper 165's [0.71, 0.76] on five
+fresh seeds; determinism verified (two byte-identical runs).
+ADOPTED: deploy the zero-fit dial for uniform/heterogeneous draws at the paper-165
+operating point u=2.5; do NOT deploy at tighter thresholds (u>=3.5) without recalibration;
+multi-seed bal@u=3.5 sweep queued.
+Paper 166, issue #268. Now 500 experiments. Assessment v275.
+
 AMENDMENT (original agent's clean run + coordinator diagnostic): the ANTI-COINCIDENCE read
 is RETIRED — measured c_pq equals the exact CRT count on all 8000 points (corr 1.000000);
 the ~0.26 ratios were the coordinator comparing conditional-on-both-QR predictions against

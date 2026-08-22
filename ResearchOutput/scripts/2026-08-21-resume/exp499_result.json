@@ -1,0 +1,270 @@
+{
+ "meta": {
+  "base_seed": 20260940,
+  "exp": 499,
+  "codename": "T-DIAL-AXES",
+  "round": 44,
+  "populations": [
+   20260940,
+   20260941,
+   20260942,
+   20260943,
+   20260944
+  ],
+  "arms": {
+   "balanced": "p,q near 2^21, N exact bitlen 44, gap U[1,1e5)",
+   "uniform": "p~U prime [2^10,2^16), q~U prime [2^16,2^22)"
+  },
+  "relations_per_arm": 240,
+  "offsets_per_relation": 240,
+  "us": [
+   2.5,
+   3.5
+  ],
+  "prestated": {
+   "H1": "uni@2.5 Spearman in [0.60,0.85] all 5 populations",
+   "H2": "bal@3.5 Spearman in [0.60,0.85] all 5 populations",
+   "H3": "each population passes BOTH axes simultaneously"
+  }
+ },
+ "rows": [
+  {
+   "seed": 20260940,
+   "R2_base_seed": 20260940,
+   "cells": {
+    "balanced@u2.5": 0.7279,
+    "balanced@u3.5": 0.6508,
+    "uniform@u2.5": 0.7455,
+    "uniform@u3.5": 0.6625
+   },
+   "arm_info": {
+    "balanced": {
+     "vmed": 858576386.0,
+     "B25": 3746,
+     "B35": 357,
+     "bitlen_range": [
+      44,
+      44
+     ]
+    },
+    "uniform": {
+     "vmed": 45583115.5,
+     "B25": 1158,
+     "B35": 154,
+     "bitlen_range": [
+      31,
+      38
+     ]
+    }
+   }
+  },
+  {
+   "seed": 20260941,
+   "R2_base_seed": 20260941,
+   "cells": {
+    "balanced@u2.5": 0.6489,
+    "balanced@u3.5": 0.4866,
+    "uniform@u2.5": 0.7276,
+    "uniform@u3.5": 0.6152
+   },
+   "arm_info": {
+    "balanced": {
+     "vmed": 847864646.0,
+     "B25": 3727,
+     "B35": 356,
+     "bitlen_range": [
+      44,
+      44
+     ]
+    },
+    "uniform": {
+     "vmed": 46723721.5,
+     "B25": 1169,
+     "B35": 155,
+     "bitlen_range": [
+      30,
+      38
+     ]
+    }
+   }
+  },
+  {
+   "seed": 20260942,
+   "R2_base_seed": 20260942,
+   "cells": {
+    "balanced@u2.5": 0.7429,
+    "balanced@u3.5": 0.6022,
+    "uniform@u2.5": 0.721,
+    "uniform@u3.5": 0.6578
+   },
+   "arm_info": {
+    "balanced": {
+     "vmed": 847404344.5,
+     "B25": 3726,
+     "B35": 356,
+     "bitlen_range": [
+      44,
+      44
+     ]
+    },
+    "uniform": {
+     "vmed": 43651121.5,
+     "B25": 1138,
+     "B35": 152,
+     "bitlen_range": [
+      31,
+      38
+     ]
+    }
+   }
+  },
+  {
+   "seed": 20260943,
+   "R2_base_seed": 20260943,
+   "cells": {
+    "balanced@u2.5": 0.7643,
+    "balanced@u3.5": 0.6245,
+    "uniform@u2.5": 0.649,
+    "uniform@u3.5": 0.5943
+   },
+   "arm_info": {
+    "balanced": {
+     "vmed": 848401733.0,
+     "B25": 3728,
+     "B35": 356,
+     "bitlen_range": [
+      44,
+      44
+     ]
+    },
+    "uniform": {
+     "vmed": 46544528.5,
+     "B25": 1167,
+     "B35": 155,
+     "bitlen_range": [
+      29,
+      38
+     ]
+    }
+   }
+  },
+  {
+   "seed": 20260944,
+   "R2_base_seed": 20260944,
+   "cells": {
+    "balanced@u2.5": 0.6997,
+    "balanced@u3.5": 0.626,
+    "uniform@u2.5": 0.7235,
+    "uniform@u3.5": 0.6742
+   },
+   "arm_info": {
+    "balanced": {
+     "vmed": 857570171.0,
+     "B25": 3744,
+     "B35": 357,
+     "bitlen_range": [
+      44,
+      44
+     ]
+    },
+    "uniform": {
+     "vmed": 40723659.5,
+     "B25": 1106,
+     "B35": 149,
+     "bitlen_range": [
+      27,
+      38
+     ]
+    }
+   }
+  }
+ ],
+ "summary": {
+  "grid": {
+   "balanced@u2.5": [
+    0.7279,
+    0.6489,
+    0.7429,
+    0.7643,
+    0.6997
+   ],
+   "balanced@u3.5": [
+    0.6508,
+    0.4866,
+    0.6022,
+    0.6245,
+    0.626
+   ],
+   "uniform@u2.5": [
+    0.7455,
+    0.7276,
+    0.721,
+    0.649,
+    0.7235
+   ],
+   "uniform@u3.5": [
+    0.6625,
+    0.6152,
+    0.6578,
+    0.5943,
+    0.6742
+   ]
+  },
+  "col_stats": {
+   "balanced@u2.5": {
+    "mean": 0.7167,
+    "min": 0.6489,
+    "max": 0.7643,
+    "sd": 0.0446
+   },
+   "balanced@u3.5": {
+    "mean": 0.598,
+    "min": 0.4866,
+    "max": 0.6508,
+    "sd": 0.0646
+   },
+   "uniform@u2.5": {
+    "mean": 0.7133,
+    "min": 0.649,
+    "max": 0.7455,
+    "sd": 0.0372
+   },
+   "uniform@u3.5": {
+    "mean": 0.6408,
+    "min": 0.5943,
+    "max": 0.6742,
+    "sd": 0.0343
+   }
+  },
+  "anchor_paper165_band": [
+   0.71,
+   0.76
+  ],
+  "inband_counts": {
+   "H1_uni25": 5,
+   "H2_bal35": 4,
+   "H3_joint": 4
+  }
+ },
+ "verdict": {
+  "H1_regime_uniform_in_band_all5": true,
+  "H2_u_sensitivity_bal35_in_band_all5": false,
+  "H3_joint_both_axes_each_population": false,
+  "per_population_joint": {
+   "20260940": true,
+   "20260941": false,
+   "20260942": true,
+   "20260943": true,
+   "20260944": true
+  }
+ },
+ "barrier_lines": {
+  "barrier_5": "Structural orthogonality: T is an N-only natural coordinate; the dial predicts relation yield (difficulty), not (p,q) - no which-factor claim made or tested.",
+  "barrier_8": "Known-method-in-disguise: the measured object is the QS/CFRAC relation-yield dial - a cost predictor FOR known methods, not a new factoring route."
+ },
+ "artifacts": [
+  "/tmp/exp44_tax/exp499_t_dial_axes.py",
+  "/tmp/exp44_tax/result.json",
+  "/tmp/exp44_tax/ledger_exp499.jsonl"
+ ]
+}
