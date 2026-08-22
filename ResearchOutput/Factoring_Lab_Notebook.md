@@ -10067,6 +10067,19 @@ beats plain count by +0.16/+0.18 in both regimes. The dial's residue-structure s
 fully draw-regime-invariant — QS triage form holds for unbalanced keys too.
 Paper 162, issue #264. Now 494 experiments. Assessment v271.
 
+## Part 234 - COINCIDENCE-DEPTH (round-43 #3 [cron iteration], exp 494, v272)
+
+The mechanism question behind paper 152's pair features. H1 REFUTED SPECTACULARLY:
+measured pair coincidences run at only **23.5-28.4% of the independence prediction**
+(all 10 pairs far below the [0.7,1.4] calibration band) — the pair features do NOT
+measure coincidences; they measure ANTI-COINCIDENCE. The same N's root structures across
+different small primes are coupled through N itself (v_j's residue pattern is one object,
+not independent per-prime draws), so joint hits are strongly SUPPRESSSED relative to
+independence. The features are really joint-absence/clumping-avoidance statistics.
+H2 REFUTED: clumping variance adds nothing over pairs (-0.001). Pair lift on this
+population +0.015 (direction consistent with paper 152).
+Paper 163, issue #265. Now 495 experiments. Assessment v272.
+
 AMENDMENT (author-agent full replication): 4-cell design ({balanced,uniform} x {40,44})
 replicates every verdict — Spearman(qrc) 0.61-0.66 / (w) 0.72-0.76; augmented R2 0.55-0.64;
 dR2(w-count) +0.18-0.21 CI [0.145,0.235]. Arms verified genuinely different yet rate
