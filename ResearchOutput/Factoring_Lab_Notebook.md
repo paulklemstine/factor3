@@ -10213,6 +10213,13 @@ Coordinator lean run independently confirms (different implementation, same verd
 The prime-power term is a REAL, seed-stable, window-robust component of the per-N dial.
 Paper 173, issue #274. Now 506 experiments. Assessment v281.
 
+## Part 249 - BALANCED-BKEY comprehensive (round-55 #1 [agent], exp 523, v289)
+
+BKEY-MIXED-ZONE: the T-dial's Spearman declines GRADUALLY with both bitlen and u —
+no cliff, no convention artifact, no threshold effect. Full 4-bitlen × 3-u grid:
+sp(T) ranges 0.53–0.79; the decline is smooth and monotone in both variables.
+Paper 182, issue next. Now 522 experiments.
+
 ## Part 248 - T-DIAL-60-UNIF (round-51 #3 [agent], exp 521, v287)
 
 CELL-CLOSED-DIAL-HOLDS-60: Spearman(T, rate) = **0.669** on uniform draws at bitlen 60 —
