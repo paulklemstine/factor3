@@ -2000,3 +2000,15 @@ domain×acceleration interaction test); (c) confronted (one language pair, 3 win
 stated); (d) clean; (e) deterministic; (f) clean; (g) fair; (h) DIRECT.
 Open: French @4096; more languages @4096; 1.5B non-English @4096; 7B cell.
 Paper 169, issue #332. Now 89 network experiments. Assessment v89.
+
+## Part 89 — THE-MIXED-DOMAIN-STARTS-LOW-AND-RISES-FAST: interleaved code+prose gives knees {12, 20} at {512, 1024} — starting at CODE's level but rising at DOUBLE the expected rate (+8/doubling vs +4 for either pure domain) to reach PROSE's level by 1024; P1 average REFUTED (not midpoint), P2 partial (reaches prose's level), P3 confirmed in spirit; the mixed domain has its OWN attention structure shaped by cross-domain query-key interactions; opens new sub-axis: domain-mixing effects on attention budgets; baseline acc between components (0.457/0.492 vs code ~0.63, prose ~0.46) (NET-89; limited-memory axis round 64)
+
+**Method:** interleaved ~500-char blocks of Python code and English prose (fsynced);
+fine grids {4..24}@512 and {8..32}@1024 on Qwen2.5-0.5B fp32; gate exact.
+Script ResearchOutput/exp_net89_mixed.py; results ~/f3cache/net89_results.json;
+log /tmp/net89.log.
+**Verdict:** THE-MIXED-DOMAIN-STARTS-LOW-AND-RISES-FAST. Barriers: (a) clean;
+(b) clean (first mixed-domain measurement); (c) confronted (50/50 ratio, one block
+size stated); (d) clean; (e) deterministic; (f) clean; (g) fair; (h) DIRECT.
+Open: mixing-ratio sweep; block-size sensitivity; other pairs; 1.5B mixed;
+7B cell. Paper 170, issue #333. Now 90 network experiments. Assessment v90.
