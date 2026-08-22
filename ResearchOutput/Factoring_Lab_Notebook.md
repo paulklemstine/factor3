@@ -9643,3 +9643,30 @@ fix nothing; plus unvalidated hand Horner) -> replaced by sympy factor_list patt
 min*3+max pair code collided ((2,2)->8 into a 6-slot table — paper-100 lesson LIVE);
 inline takeover after upstream agent timeout.
 Paper 135, issue #232. Now 467 experiments. Assessment v244.
+
+## Part 208 - TOY-QS-YIELD (round-38 #2, exp 470, v245)
+
+First direct measurement of the sieve's algorithmic advantage (paper 130's open residual).
+H1 CONFIRMED: the sieve's advantage over naive trial division is EXACTLY the constant
+survivor-filtering factor — A_total 13.68-20.51x across 6 cells (3 scales x 2 windows,
+N up to 2^32), A/piFB flat at 0.12-0.22, no scale-emergent growth; mechanism measured:
+~100 divisions/value -> ~2 log-adds/value (shared additive structure along the line).
+H2 REFUTED (interesting): the paper-130-corrected model rho(u)x0.90 OVERPREDICTS relation
+yield by ~1.55x at u_med~3 (0/6 cells in the pre-stated [0.80,1.20] band; mean ratio
+0.645 +/- 0.071) — post-hoc reading: B-smoothness of x^2-N lives ENTIRELY on the
+QR-restricted prime pool ((N|p)=+1 — exact necessity for p|x^2-N), raising effective-u by
+lnB/(lnB-ln2) = 1.06-1.11, predicting ratios 0.44-0.52 (observed 0.54-0.76, cross-cell
+corr 0.72): the pool is random-equivalent to QR-RESTRICTED integers beyond paper 130's
+calibration regime, not to unrestricted ones — REFINES paper 130 (its gap=1 was measured
+at u in [2,3], v <= 2^23 where the QR bite is O(1)).
+Stretch completed: GF(2) elimination on collected relations actually FACTORED
+N = 103764863 = 9127 x 11369. Independent brute-force cross-check matched exactly
+(338/338 flagged; empirical advantage 14.07x vs full-window 15.29).
+LEDGER: 9 entries incl. two pre-data bugs caught by the brute force that the mandated
+gates could NOT catch (G3's prediction shared the omission — circular): single-prime
+sieve lines silently dropped ~20% of relations with p^2|v (fixed by Hensel-lifted
+prime-power lines); Hensel lift reused root-0's inverse killing the -r branch;
+smoke-catch: accumulator init + mixed-base u inflation (log2/ln).
+Follow-up queued: direct smoothness measurement of x^2-N against a QR-RESTRICTED
+reference pool at u in [3,4].
+Paper 136, issue #233. Now 468 experiments. Assessment v245.
