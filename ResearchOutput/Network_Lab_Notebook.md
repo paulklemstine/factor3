@@ -1694,3 +1694,16 @@ solo granularity stated); (d) clean; (e) deterministic monotone profiles; (f) cl
 simplest mixed-precision design). Open: pairwise/joint tail ablations; 1.5B replication;
 probe+recency hybrid; domain-jump corpora; 7B cell. Paper 144, issue #293.
 Now 59 network experiments. Assessment v59.
+
+## Part 60 — THE-EPISTASIS-LIVES-IN-THE-TAIL-PAIR: solo costs of L22+L23 sum to 0.06pts yet joint k=16 pruning costs 0.42pts — SUPER-ADDITIVE 7x, the largest of six pairs; tail triple {21,22,23} compounds (0.76 vs 0.19 summed, 4x); bulk pairs additive-or-sub ({12,15} 0.60 vs 0.79 sub; {22,12} cross sub); P1 CONFIRMED, P2 REFUTED (three of six super), P3 CONFIRMED — the interaction NET-59 proved must exist is localized in the last-two-layer block: the tail functions as a COORDINATED UNIT (co-adapted pretraining; sparsifying either alone absorbed, degrading both removes a joint capability) — treat the last two layers as ONE unit for bits/budgets, never differentiate between them (NET-60; limited-memory axis round 18)
+
+**Method:** six pair/triple arms pruned jointly at k=16/layer on Qwen2.5-0.5B ctx=512
+(24 held-out windows), each compared to its members' NET-59 solo-cost sum; gate exact.
+Script ResearchOutput/exp_net60_pairs.py; results ~/f3cache/net60_results.json;
+log /tmp/net60.log.
+**Verdict:** THE-EPISTASIS-LIVES-IN-THE-TAIL-PAIR. Barriers: (a) clean; (b) clean (pairwise
+super-additivity maps new); (c) confronted (one context/model, five chosen pairs stated);
+(d) clean; (e) deterministic, solo sums inherited from committed profile; (f) clean
+(ALL_DONE_NET60); (g) fair (identical budgets per arm); (h) DIRECT (unit-of-differentiation
+prescription). Open: 1.5B replication; deeper-tail units on bigger models; probe+recency
+hybrid; domain-jump corpora. Paper 145, issue #294. Now 60 network experiments. Assessment v60.
