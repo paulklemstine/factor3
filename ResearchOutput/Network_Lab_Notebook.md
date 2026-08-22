@@ -1857,3 +1857,15 @@ ResearchOutput/exp_net73_tpw.py; results ~/f3cache/net73_results.json; log /tmp/
 tokenizer stated); (d) clean; (e) deterministic; (f) clean (ALL_DONE_NET73); (g) fair;
 (h) DIRECT. Open: attention-pattern structural analysis; sub-32 French @1024; 0.5B @4096;
 7B cell. Paper 158, issue #314. Now 73 network experiments. Assessment v73.
+
+## Part 74 — TOP8-MASS-IS-THE-STRONGEST-STRUCTURAL-PREDICTOR: across 5 domains, Spearman(top8-mass, k*) = +0.80 (strongest of three measures); entropy anticorrelates −0.60; cross-head agreement does NOT predict (−0.40, ~8% everywhere — constant not differentiator); P1 PARTIAL (right sign), P2 CONFIRMED (+0.80 > 0.7), P3 REFUTED; the POSITIVE sign means the knee is set by the RESIDUAL spread after the top keys, not by top concentration — mechanism is in the TAIL of the attention distribution, not the head (NET-74; limited-memory axis round 46)
+
+**Method:** three structural quantities per domain on Qwen2.5-0.5B fp32: S1 entropy, S2
+top-8 mass, S3 cross-head top-key agreement; sampled at layers {2,11,21}, rows 64+,
+12 windows @ctx=512. Script ResearchOutput/exp_net74_attnstructure.py;
+results ~/f3cache/net74_results.json; log /tmp/net74.log.
+**Verdict:** TOP8-MASS-IS-THE-STRONGEST-STRUCTURAL-PREDICTOR. Barriers: (a) clean; (b) clean
+(first structural mechanism test); (c) confronted (5 domains, 3 layers, n=4 stated);
+(d) clean; (e) deterministic; (f) clean (ALL_DONE_NET74, cosmetic error after data);
+(g) fair; (h) DIRECT. Open: tail-shape analysis; sub-20 addendum @2048; 0.5B @4096;
+7B cell. Paper 159, issue #315. Now 74 network experiments. Assessment v74.
