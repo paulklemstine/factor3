@@ -1,0 +1,49 @@
+[    0.0s] sieve done: pi(1e6) = 78498
+[    0.0s] BLOCK A: m=31 hinted posterior/speedup
+[    0.4s]   alpha=0.5: sp=1.33350 pred=1.33333 | Phit 0.50076/0.50000 | post.dev 0.00060
+[    0.5s]   alpha=0.6: sp=1.37928 pred=1.37931 | Phit 0.54962/0.55018 | post.dev 0.00061
+[    0.6s]   alpha=0.75: sp=1.45524 pred=1.45455 | Phit 0.62573/0.62560 | post.dev 0.00084
+[    0.7s]   alpha=0.9: sp=1.54165 pred=1.53846 | Phit 0.70352/0.70104 | post.dev 0.00055
+[    0.7s] BLOCK B: exhaustive subsets, uninformative + partition hints
+[    0.7s]   m=3: subsets=3 maxdev=0.00536 maxsp=1.33869
+[    0.7s]   m=4: subsets=3 maxdev=0.00396 maxsp=1.33729
+[    0.8s]   m=5: subsets=15 maxdev=0.00711 maxsp=1.34044
+[    1.0s]   m=7: subsets=63 maxdev=0.00739 maxsp=1.34051
+[    1.0s]   m=8: subsets=15 maxdev=0.00890 maxsp=1.34223
+[    1.0s]   character_QR alpha=0.5: sp=1.33291 predW=1.33333 canon=1.33333
+[    1.1s]   character_QR alpha=0.6: sp=1.37999 predW=1.37931 canon=1.37931
+[    1.1s]   character_QR alpha=0.75: sp=1.45398 predW=1.45455 canon=1.45455
+[    1.1s]   character_QR alpha=0.9: sp=1.53917 predW=1.53846 canon=1.53846
+[    1.1s]   noncharacter alpha=0.5: sp=1.33202 predW=1.33333 canon=1.33333
+[    1.1s]   noncharacter alpha=0.6: sp=1.37856 predW=1.37931 canon=1.37931
+[    1.1s]   noncharacter alpha=0.75: sp=1.45870 predW=1.45455 canon=1.45455
+[    1.1s]   noncharacter alpha=0.9: sp=1.53980 predW=1.53846 canon=1.53846
+[    1.1s] part 1 done
+[    1.1s] BLOCK C: certain-hint ladder
+[    1.2s]   t=1: meas=1.0000 pred=1.0000 ratio=1.0000 classsize=78498.0
+[    1.2s]   t=2: meas=1.3394 pred=1.0000 ratio=1.3394 classsize=39249.0
+[    1.3s]   t=3: meas=2.2972 pred=2.0000 ratio=1.1486 classsize=19624.5
+[    1.4s]   t=4: meas=4.2868 pred=4.0000 ratio=1.0717 classsize=9812.2
+[    1.5s]   t=5: meas=8.2754 pred=8.0000 ratio=1.0344 classsize=4906.1
+[    1.5s]   t=6: meas=16.2568 pred=16.0000 ratio=1.0160 classsize=2453.1
+[    1.6s]   t=7: meas=32.2466 pred=32.0000 ratio=1.0077 classsize=1226.5
+[    1.7s]   t=8: meas=64.1596 pred=64.0000 ratio=1.0025 classsize=613.3
+[    1.9s]   t=10: meas=254.7689 pred=256.0000 ratio=0.9952 classsize=153.3
+[    2.3s]   t=12: meas=998.0587 pred=1024.0000 ratio=0.9747 classsize=38.3
+[    3.6s]   t=14: meas=3677.9052 pred=4096.0000 ratio=0.8979 classsize=9.6
+[    3.6s] BLOCK D: trace hints s=p+q mod 2^t
+[    3.8s]   t=2: C_t med=2.0 sp=1.0000 pred=1.0000 ratio=1.0000
+[    4.0s]   t=3: C_t med=2.0 sp=1.3398 pred=1.3369 ratio=1.0021
+[    4.3s]   t=4: C_t med=4.0 sp=2.0000 pred=2.0000 ratio=1.0000
+[    4.5s]   t=5: C_t med=4.0 sp=3.1994 pred=3.1967 ratio=1.0009
+[    4.8s]   t=6: C_t med=8.0 sp=5.3078 pred=5.3190 ratio=0.9979
+[    5.2s]   t=7: C_t med=8.0 sp=9.0606 pred=9.1134 ratio=0.9942
+[    5.5s]   t=8: C_t med=8.0 sp=15.8295 pred=15.9240 ratio=0.9941
+[    6.0s]   t=10: C_t med=8.0 sp=50.5130 pred=50.8471 ratio=0.9934
+[    6.0s] BLOCK E: break-even
+[    6.0s]   eps=0.1: alpha*=-0.136 nets=1.2112 1.2976 1.3943 1.4523
+[    6.1s]   eps=0.3: alpha*=0.423 nets=1.0308 1.0944 1.1816 1.2289
+[    6.1s]   eps=0.5: alpha*=0.833 nets=0.8884 0.9537 1.0243 1.0650
+[    6.1s]   eps=0.6: alpha*=1.000 nets=0.8349 0.8904 0.9610 0.9985
+[    6.2s]   eps=0.7: alpha*=1.147 nets=0.7837 0.8374 0.9033 0.9397
+[    6.2s] ALL DONE

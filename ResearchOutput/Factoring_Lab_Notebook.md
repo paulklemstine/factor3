@@ -9691,3 +9691,27 @@ ratio structure, not a universal constant. Accounting: expected divisibility-tes
 (information), not wall-clock; features O(1) per N.
 LEDGER (7 incl. ML#4 self-refutation disclosed; ML#6 vacuous feature caught).
 Paper 137, issue #234. Now 469 experiments. Assessment v246.
+
+## Part 210 - EXTERNAL-HINT-FILTER (round-38 #4, exp 468, v247)
+
+THE BARRIER-MAP TRIPTYCH COMPLETES. Master law PROVED + machine-verified:
+Speedup(H) = 1/(1-(1-theta)*P_hit), P_hit = P(min in K | H) = 1/2 sum_a w(a)[a in K] +
+1/2 sum_a w(a)[c a^-1 in K] — ALL information acts through the single scalar P_hit;
+paper 132's 1/(1-theta+theta^2) is exactly the H-perpendicular-to-p case (P_hit = theta,
+the UNINFORMATIVE POINT). Symmetry break located precisely (Thm A): internal readings die on
+the fiber-uniformity step; a hint's likelihood lives on the non-c-measurable coordinate and
+survives it verbatim. Canonical partition law: symmetric theta=1/2 hint -> 8/(7-2alpha);
+alpha=1/2 reproduces 4/3 exactly, alpha=1 gives only 8/5 < 2 — the WHICH-FACTOR CEILING:
+external hints are capped at 2x per dial by which-factor blindness; exceeding 2x requires
+theta -> 0 paid at ISOLATION-COST log2(pi(sqrt(N))) oracle queries (net-positive from t=5).
+Certain-hint ladder Speedup(t) = 2^(t-2)/(1-2^(1-t)) (4/3 at t=2, 16/7 at t=3 -> 2^(t-2));
+two bit-losses identified (parity + which-factor). Trace hints 2^(t-1)/C_t: GENERIC-RECOVERY's
+'~5x/bit' reinterpreted as a CONSTANT root-multiplicity divisor, zero rate penalty.
+Break-even alpha*(theta,eps) = 2eps/((1+eps)(1-theta)) - theta, feasible iff
+eps <= (1-theta^2)/(1+theta^2) (=3/5 at theta=1/2; INTERNAL filters tolerate only eps<=1/6).
+Verification: m=31/400k dev <=0.0032 across alpha; chi(c)-split pointwise exact; exhaustive
+m=3..8 max dev 0.0089; ladder ratios 0.9986-1.0045 (t=2..8); trace C_t saturation reproduced;
+break-even verdicts 20/20 cells. LEDGER (9 self-caught incl. label-space bug producing a
+flat-alpha artifact). External info priced LINEARLY in bits — capacity synergy does NOT
+transfer to work bits (confirms paper 132's currency separation on the external side too).
+Paper 138, issue #235. Now 470 experiments. Assessment v247.
