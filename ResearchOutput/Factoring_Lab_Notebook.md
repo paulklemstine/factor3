@@ -10213,6 +10213,14 @@ Coordinator lean run independently confirms (different implementation, same verd
 The prime-power term is a REAL, seed-stable, window-robust component of the per-N dial.
 Paper 173, issue #274. Now 506 experiments. Assessment v281.
 
+## Part 247 - T-DIAL-UNIF-52 (round-53 #1 [agent], exp 518, v286)
+
+The zero-fit dial's last open cell: UNIFORM draws at BITLEN 52.
+CELL-CLOSED-DIAL-HOLDS — Spearman(T, rate) = 0.793/0.808/0.808 across 3 seeds;
+H1 PASS; H2 CONFIRMED (pooled advantage +0.121 CI [0.103,0.140]); the dial survives the
+intersection of regime-invariance and bitlen-stability at its highest tested point.
+Paper 182, issue next. Now 517 experiments.
+
 ## Part 248 - T-DIAL-UNIF-48 (round-52 #1 [cron iteration], exp 517, v285)
 
 The zero-fit dial on uniform draws at bitlen 48: H1 CONFIRMED (Spearman(T) = 0.777/0.755/
