@@ -9800,7 +9800,7 @@ LEDGER: v1 MC drew intervals unconditionally (alpha never used -> sp<1 nonsense)
 v2 exact grid's uniform-given-hit assumption INCONSISTENT with the target law — exposed by
 model-vs-MC disagreement (the disagreement itself was the detector); interleaved dropped
 from exact grid (MC-only, disclosed); inline takeover after 3 agent deaths on this task.
-Paper 143, issue #245. Now 475 experiments. Assessment v252.
+Paper 143, issue #244. Now 475 experiments. Assessment v252.
 
 ## Part 216 - PER-N-PREDICTOR-FULL (round-39 #6 [cron iteration], exp 476, v253)
 
@@ -9816,4 +9816,4 @@ population's correlation; calibration slopes in-band 4/4 cells. Weighted feature
 (genuine per-N structure beyond QR-count remains there — the honest target for richer
 features), 1.05x floor at u=3.5 (noise-bound). LEDGER: sympy.factorint hung -> primorial-gcd
 independent verification path; OLS primary/logistic secondary agree.
-Paper 144, issue #244. Now 476 experiments. Assessment v253.
+Paper 144, issue #245. Now 476 experiments. Assessment v253.
