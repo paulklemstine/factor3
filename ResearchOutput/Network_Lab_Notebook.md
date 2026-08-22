@@ -1667,3 +1667,17 @@ validity; (f) clean; (g) fair (byte-identical harness); (h) DIRECT (licenses quo
 deployment table without per-domain re-measurement). Open: domain-jump corpora; learned
 importance heads; per-layer budgets; 1.5B tail map; 7B cell. Paper 142, issue #290.
 Now 57 network experiments. Assessment v57.
+
+## Part 58 — CONTENT-IS-A-WEAK-PREDICTOR-OF-IMPORTANCE: per-layer linear probes on key vectors recover only R²≈0.33 (0.11–0.64) of future attention, and content-based eviction lands {0.840, 0.894, 0.928} at B={32,64,128} — ~1 point over NET-56's accumulated HH, 10 pts below oracle at B=64; P1 (close ≥⅓ of gap) REFUTED (~11% closed), P2 CONFIRMED, P3 CONFIRMED (R² depth-structured, front-high/mid-low); the oracle-to-policy gap is STRUCTURAL: importance is relational+positional, not intrinsic to key identity — bounding all content-based KV policies (NET-58; limited-memory axis round 13)
+
+**Method:** ridge probes (64-d post-rope keys → log1p(total received attention)) fit on
+8 TRAIN-side sequences per (layer, kv-head); streaming eval with static probe-score eviction;
+identical harness/windows/budgets as NET-56. Script ResearchOutput/exp_net58_probe.py;
+log /tmp/net58.log.
+**Verdict:** CONTENT-IS-A-WEAK-PREDICTOR-OF-IMPORTANCE. Barriers: (a) clean; (b) confronted
+(probe folklore; NEW = measured ceiling as eviction policy + R²→retained conversion);
+(c) confronted (linear class; one model/context stated); (d) clean (train-side fits);
+(e) deterministic closed-form; (f) clean (ALL_DONE_NET58); (g) fair (matched everything vs
+NET-56); (h) DIRECT. Open: MLP heads (bounded by P2 logic); per-layer ablation (next);
+probe+recency hybrid; 1.5B tail map. Paper 143, issue #291. Now 58 network experiments.
+Assessment v58.
