@@ -1,0 +1,18 @@
+{
+ "meta": {
+  "seed": 20260926,
+  "exp": 495,
+  "codename": "QRLOTTO-DIAL"
+ },
+ "cells": {
+  "spearman_T": 0.7550232440929764,
+  "R2_indicators": 0.5412276523543329,
+  "R2_ind_plus_fractions": 0.5281358452784695,
+  "H3_delta_fractions_over_ind": -0.013091807075863438
+ },
+ "verdict": {
+  "H1_spearman_gt_05": true,
+  "H2_R2_ge_045": true,
+  "H3_fractions_add_lt_002": true
+ }
+}

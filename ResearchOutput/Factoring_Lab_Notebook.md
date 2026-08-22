@@ -10080,6 +10080,20 @@ H2 REFUTED: clumping variance adds nothing over pairs (-0.001). Pair lift on thi
 population +0.015 (direction consistent with paper 152).
 Paper 163, issue #265. Now 495 experiments. Assessment v272.
 
+## Part 235 - QRLOTTO-DIAL (round-43 #4 [cron iteration], exp 495, v273)
+
+The consolidation: is a NO-FIT closed-form dial available? YES — T(N) = sum(2/p) over
+QR primes p <= 400, zero fitted coefficients: Spearman vs rate = **0.755** (coordinator
+lean) / **0.7264** (agent full), OOS R2 with one global scale = **0.541/0.5335** — the
+agent's T-only BEATS the 8-fitted-bit model (0.4634). H2 split: bits meet the 0.45 bar but
+LOSE to the (w,d) dial by -0.13; vs d-only they WIN +0.15. H3 PASS STRONG in both runs:
+measured fractions add -0.0131/-0.0039 over the bits — the 9-bit QR indicator is
+SUFFICIENT (paper 163's lottery confirmed at the marginal level). Lottery table: mean n_p
+| QR = 2/p to 4 decimals, QNR = 0.0000 exactly. Cascade survival variant T2 UNDERPERFORMS
+T (0.40 vs 0.53) — retired. ADOPTED: T as the closed-form dial; keep w's full p<=400
+support over the bit truncation.
+Paper 164, issue #266. Now 496 experiments. Assessment v273.
+
 AMENDMENT (original agent's clean run + coordinator diagnostic): the ANTI-COINCIDENCE read
 is RETIRED — measured c_pq equals the exact CRT count on all 8000 points (corr 1.000000);
 the ~0.26 ratios were the coordinator comparing conditional-on-both-QR predictions against
