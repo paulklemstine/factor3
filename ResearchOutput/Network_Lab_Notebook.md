@@ -1763,3 +1763,16 @@ log /tmp/net65.log.
 (ALL_DONE_NET65); (g) fair; (h) DIRECT. Open: 1.5B @2048 fine grid (does flat break?);
 domain-jump corpora; 7B cell. Paper 150, issue #302. Now 65 network experiments.
 Assessment v65.
+
+## Part 66 — SCALE-DELAYS-CONTEXT-SENSITIVITY-BY-ONE-DOUBLING: the 1.5B chain breaks upward at 2048 — {16, 16, 20} at {512, 1024, 2048} (k=16 fails razor 0.9785; k=20 passes 0.9817) — and the broken curve EQUALS the 0.5B's shifted one octave: 1.5B@2048 = 20 = 0.5B@1024; P1 flat-breaks CONFIRMED, P2 flat-holds REFUTED, P3 sensitivity-increases REFUTED (20 < 0.5B's 24); scale POSTPONES context-sensitivity rather than eliminating or amplifying it — budget tables gain a scale-shift form (a 16-key budget covers 0.5B to 512 and 1.5B to 1024); k=16 razor fail leaves bracket (16, 20] partially open (NET-66; limited-memory axis round 30)
+
+**Method:** fine grid k∈{8,12,16,20,24,32} at ctx=2048 on Qwen2.5-1.5B (bf16-storage/
+fp32-compute, 12 held-out windows); gate identical to NET-55/65 (ΔCE 0.0054).
+Script ResearchOutput/exp_net66_1p5b2048.py; results ~/f3cache/net66_results.json;
+log /tmp/net66.log.
+**Verdict:** SCALE-DELAYS-CONTEXT-SENSITIVITY-BY-ONE-DOUBLING. Barriers: (a) clean;
+(b) clean (first 1.5B 2048 cell); (c) confronted (razor bracket stated); (d) clean;
+(e) deterministic monotone baseline; (f) clean (ALL_DONE_NET66); (g) fair; (h) DIRECT.
+Open: sub-20 addendum @2048; 0.5B @4096 (chain continues rising?); domain-jump corpora;
+7B cell (does the shift extend?). Paper 151, issue #304. Now 66 network experiments.
+Assessment v66.
