@@ -1,6 +1,6 @@
 # Paper 150 — PHASE-FEATURES: Low-Prime Phases Are Sub-Threshold and Window-Local
 
-**Verdict name: PHASE-SUBTHRESHOLD-LIFT / H3-FAIL.**
+**Verdict name: PHASE-NO-LIFT / H3-FAIL** (author-agent's final naming; amends the coordinator's earlier read).
 Round-41 #1 (cron iteration) · exp 482 · assessment v259 · script `ResearchOutput/scripts/2026-08-21-resume/exp482_phase_features.py` (+ `exp482_result.json`) · seed 20260901.
 
 ## 1. Paper 147's named follow-up, executed clean
@@ -22,8 +22,10 @@ recomputed per window half; paired bootstrap.
 
 - **H1 REFUTED**: phase lift is +0.008/+0.004 — nowhere near the pre-stated +0.05;
   phase-only is WORSE than baseline (−0.077).
-- **H2 CONFIRMED**: cross-window phase gain goes significantly NEGATIVE — window-locality is
-  supported as the mechanism behind paper 147's split-ceiling excess.
+- **H2 VOID** (amended per the author agent): no positive same-window gain existed to
+  localize — the cross-window shrinkage held only trivially because every augmented model
+  LOSES R² cross-window. Window-locality remains plausible but was not demonstrable here.
+  u=3.5 rows: phase gains negative at both windows (−0.009/−0.015).
 - **H3 REFUTED**: augmented R² = 0.608 < 0.70.
 
 ## 3. What this decides

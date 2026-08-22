@@ -9922,9 +9922,9 @@ cross-window arm trained AND tested on second-half targets, min-of-two-roots off
 non-QR/o=0 encoding collision).
 H1 REFUTED: phase features (o_p for p in {3,5,7,11,13} as cos/sin+QR-indicator, extended to
 30) add only +0.008/+0.004 out-of-sample R2 (CIs span 0) over the paper-145 dial; phase-only
-is WORSE than baseline (-0.077). H2 CONFIRMED: cross-window phase gain goes significantly
-NEGATIVE (dR2 -0.0120, CI upper < 0) — window-locality SUPPORTED as the mechanism behind
-paper 147's split-ceiling excess. H3 REFUTED: R2_aug = 0.608 < 0.70.
+is WORSE than baseline (-0.077). H2 VOID per author agent (no positive same-window gain
+to localize; every augmented model loses R2 cross-window). u3.5 phase gains negative both
+windows. Linear phase route CLOSED; follow-up = interaction/joint-alignment encodings. H3 REFUTED: R2_aug = 0.608 < 0.70.
 NET: low-prime phases are sub-threshold and window-local; the split-ceiling excess remains
 UNEXPLAINED by any tested feature class (candidates narrow: higher-prime phase patterns or
 same-window leakage of realized-divisibility features). Base dial R2 drops 0.60->0.40
