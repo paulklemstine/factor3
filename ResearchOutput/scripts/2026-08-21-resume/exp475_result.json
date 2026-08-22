@@ -1,0 +1,131 @@
+{
+ "meta": {
+  "seed": 20260826,
+  "exp": 475,
+  "codename": "QR-REPLICATION"
+ },
+ "rho_ok": {
+  "2": 9.595698045705703e-06,
+  "3": 3.154740370825415e-05,
+  "4": 0.00019223033391280175,
+  "5": 1.987306892647922e-05,
+  "6": 4.5665663201965856e-05
+ },
+ "per_N": [
+  {
+   "bits": 40,
+   "u_target": 2.5,
+   "corr_qrcount_vs_rate": 0.5030246675622,
+   "mean_per_N": 0.12858999999999998,
+   "lo_decile_rate": 0.07590000000000001,
+   "hi_decile_rate": 0.18810000000000002,
+   "qr_count_min": 3,
+   "qr_count_max": 19
+  },
+  {
+   "bits": 40,
+   "u_target": 3.5,
+   "corr_qrcount_vs_rate": 0.41525988128985086,
+   "mean_per_N": 0.020040000000000002,
+   "lo_decile_rate": 0.0063,
+   "hi_decile_rate": 0.039299999999999995,
+   "qr_count_min": 3,
+   "qr_count_max": 19
+  },
+  {
+   "bits": 44,
+   "u_target": 2.5,
+   "corr_qrcount_vs_rate": 0.48041726520875405,
+   "mean_per_N": 0.12854000000000002,
+   "lo_decile_rate": 0.082,
+   "hi_decile_rate": 0.18630000000000002,
+   "qr_count_min": 4,
+   "qr_count_max": 20
+  },
+  {
+   "bits": 44,
+   "u_target": 3.5,
+   "corr_qrcount_vs_rate": 0.4027463266699964,
+   "mean_per_N": 0.02004,
+   "lo_decile_rate": 0.007600000000000001,
+   "hi_decile_rate": 0.0433,
+   "qr_count_min": 4,
+   "qr_count_max": 20
+  }
+ ],
+ "cells": [
+  {
+   "bits": 40,
+   "u_target": 2.5,
+   "B": 986,
+   "n": 100000,
+   "qr_share": 0.5,
+   "emp_x2": 0.12859,
+   "emp_rnd": 0.12786,
+   "emp_qrrand": 0.00393,
+   "rho_unres": 0.14561306428935805,
+   "rho_ueff": 0.08833261749985509,
+   "se": 0.001058558509955874,
+   "secs": 0.3,
+   "x2_vs_qrrand_ratio": 32.720101781170484,
+   "qrrand_vs_rho_ueff": 0.044490926582204444,
+   "H1_in_band": false
+  },
+  {
+   "bits": 40,
+   "u_target": 3.5,
+   "B": 138,
+   "n": 100000,
+   "qr_share": 0.3636,
+   "emp_x2": 0.02004,
+   "emp_rnd": 0.02023,
+   "emp_qrrand": 0.00024,
+   "rho_unres": 0.021297376987811523,
+   "rho_ueff": 0.006227187175070575,
+   "se": 0.0004431523259557598,
+   "secs": 0.2,
+   "x2_vs_qrrand_ratio": 83.49999999999999,
+   "qrrand_vs_rho_ueff": 0.0385406754691423,
+   "H1_in_band": false
+  },
+  {
+   "bits": 44,
+   "u_target": 2.5,
+   "B": 1718,
+   "n": 100000,
+   "qr_share": 0.5169,
+   "emp_x2": 0.12854,
+   "emp_rnd": 0.12585,
+   "emp_qrrand": 0.00191,
+   "rho_unres": 0.14400123807811446,
+   "rho_ueff": 0.09082351164488471,
+   "se": 0.0010583830516405675,
+   "secs": 0.4,
+   "x2_vs_qrrand_ratio": 67.29842931937172,
+   "qrrand_vs_rho_ueff": 0.021029796859958493,
+   "H1_in_band": false
+  },
+  {
+   "bits": 44,
+   "u_target": 3.5,
+   "B": 204,
+   "n": 100000,
+   "qr_share": 0.5,
+   "emp_x2": 0.02004,
+   "emp_rnd": 0.01869,
+   "emp_qrrand": 0.0001,
+   "rho_unres": 0.020472150885023785,
+   "rho_ueff": 0.006519990959513953,
+   "se": 0.0004431523259557598,
+   "secs": 0.2,
+   "x2_vs_qrrand_ratio": 200.39999999999998,
+   "qrrand_vs_rho_ueff": 0.015337444579440754,
+   "H1_in_band": false
+  }
+ ],
+ "verdict": {
+  "H1_cells_in_band": 0,
+  "n_cells": 4,
+  "rule": "H1 iff emp_x2 CI contains emp_qrrand at every cell"
+ }
+}
