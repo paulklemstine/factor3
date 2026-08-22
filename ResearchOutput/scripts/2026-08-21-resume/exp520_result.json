@@ -1,0 +1,1379 @@
+{
+ "meta": {
+  "exp": 520,
+  "codename": "DEGREE-12-COMPOSITE",
+  "round": "54",
+  "seed": 20261060,
+  "script": "exp520_degree_12.py",
+  "wd": "/tmp/exp50_d12",
+  "started_utc": "2026-08-22T15:29:33Z",
+  "prime_cap": 2097152,
+  "control_mod": 97,
+  "n_perm": 200,
+  "n_semiprime": 15000
+ },
+ "candidates": [
+  {
+   "f": 35,
+   "phi": 24,
+   "n_orbits": 12,
+   "orbits": [
+    [
+     1,
+     34
+    ],
+    [
+     2,
+     33
+    ],
+    [
+     3,
+     32
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     6,
+     29
+    ],
+    [
+     8,
+     27
+    ],
+    [
+     9,
+     26
+    ],
+    [
+     11,
+     24
+    ],
+    [
+     12,
+     23
+    ],
+    [
+     13,
+     22
+    ],
+    [
+     16,
+     19
+    ],
+    [
+     17,
+     18
+    ]
+   ],
+   "orders_by_orbit": [
+    1,
+    12,
+    12,
+    6,
+    2,
+    4,
+    6,
+    3,
+    12,
+    4,
+    3,
+    12
+   ],
+   "order_histogram": {
+    "1": 1,
+    "2": 1,
+    "3": 2,
+    "4": 2,
+    "6": 2,
+    "12": 4
+   },
+   "cyclic": true,
+   "structure_guess": "C12",
+   "n_distinct_orders": 6
+  },
+  {
+   "f": 39,
+   "phi": 24,
+   "n_orbits": 12,
+   "orbits": [
+    [
+     1,
+     38
+    ],
+    [
+     2,
+     37
+    ],
+    [
+     4,
+     35
+    ],
+    [
+     5,
+     34
+    ],
+    [
+     7,
+     32
+    ],
+    [
+     8,
+     31
+    ],
+    [
+     10,
+     29
+    ],
+    [
+     11,
+     28
+    ],
+    [
+     14,
+     25
+    ],
+    [
+     16,
+     23
+    ],
+    [
+     17,
+     22
+    ],
+    [
+     19,
+     20
+    ]
+   ],
+   "orders_by_orbit": [
+    1,
+    12,
+    6,
+    4,
+    12,
+    4,
+    6,
+    12,
+    2,
+    3,
+    3,
+    12
+   ],
+   "order_histogram": {
+    "1": 1,
+    "2": 1,
+    "3": 2,
+    "4": 2,
+    "6": 2,
+    "12": 4
+   },
+   "cyclic": true,
+   "structure_guess": "C12",
+   "n_distinct_orders": 6
+  },
+  {
+   "f": 45,
+   "phi": 24,
+   "n_orbits": 12,
+   "orbits": [
+    [
+     1,
+     44
+    ],
+    [
+     2,
+     43
+    ],
+    [
+     4,
+     41
+    ],
+    [
+     7,
+     38
+    ],
+    [
+     8,
+     37
+    ],
+    [
+     11,
+     34
+    ],
+    [
+     13,
+     32
+    ],
+    [
+     14,
+     31
+    ],
+    [
+     16,
+     29
+    ],
+    [
+     17,
+     28
+    ],
+    [
+     19,
+     26
+    ],
+    [
+     22,
+     23
+    ]
+   ],
+   "orders_by_orbit": [
+    1,
+    12,
+    6,
+    12,
+    4,
+    6,
+    12,
+    3,
+    3,
+    4,
+    2,
+    12
+   ],
+   "order_histogram": {
+    "1": 1,
+    "2": 1,
+    "3": 2,
+    "4": 2,
+    "6": 2,
+    "12": 4
+   },
+   "cyclic": true,
+   "structure_guess": "C12",
+   "n_distinct_orders": 6
+  },
+  {
+   "f": 52,
+   "phi": 24,
+   "n_orbits": 12,
+   "orbits": [
+    [
+     1,
+     51
+    ],
+    [
+     3,
+     49
+    ],
+    [
+     5,
+     47
+    ],
+    [
+     7,
+     45
+    ],
+    [
+     9,
+     43
+    ],
+    [
+     11,
+     41
+    ],
+    [
+     15,
+     37
+    ],
+    [
+     17,
+     35
+    ],
+    [
+     19,
+     33
+    ],
+    [
+     21,
+     31
+    ],
+    [
+     23,
+     29
+    ],
+    [
+     25,
+     27
+    ]
+   ],
+   "orders_by_orbit": [
+    1,
+    6,
+    4,
+    12,
+    3,
+    12,
+    12,
+    6,
+    12,
+    4,
+    3,
+    2
+   ],
+   "order_histogram": {
+    "1": 1,
+    "2": 1,
+    "3": 2,
+    "4": 2,
+    "6": 2,
+    "12": 4
+   },
+   "cyclic": true,
+   "structure_guess": "C12",
+   "n_distinct_orders": 6
+  },
+  {
+   "f": 56,
+   "phi": 24,
+   "n_orbits": 12,
+   "orbits": [
+    [
+     1,
+     55
+    ],
+    [
+     3,
+     53
+    ],
+    [
+     5,
+     51
+    ],
+    [
+     9,
+     47
+    ],
+    [
+     11,
+     45
+    ],
+    [
+     13,
+     43
+    ],
+    [
+     15,
+     41
+    ],
+    [
+     17,
+     39
+    ],
+    [
+     19,
+     37
+    ],
+    [
+     23,
+     33
+    ],
+    [
+     25,
+     31
+    ],
+    [
+     27,
+     29
+    ]
+   ],
+   "orders_by_orbit": [
+    1,
+    6,
+    6,
+    3,
+    6,
+    2,
+    2,
+    6,
+    6,
+    6,
+    3,
+    2
+   ],
+   "order_histogram": {
+    "1": 1,
+    "2": 3,
+    "3": 2,
+    "6": 6
+   },
+   "cyclic": false,
+   "structure_guess": "C6xC2",
+   "n_distinct_orders": 4
+  },
+  {
+   "f": 70,
+   "phi": 24,
+   "n_orbits": 12,
+   "orbits": [
+    [
+     1,
+     69
+    ],
+    [
+     3,
+     67
+    ],
+    [
+     9,
+     61
+    ],
+    [
+     11,
+     59
+    ],
+    [
+     13,
+     57
+    ],
+    [
+     17,
+     53
+    ],
+    [
+     19,
+     51
+    ],
+    [
+     23,
+     47
+    ],
+    [
+     27,
+     43
+    ],
+    [
+     29,
+     41
+    ],
+    [
+     31,
+     39
+    ],
+    [
+     33,
+     37
+    ]
+   ],
+   "orders_by_orbit": [
+    1,
+    12,
+    6,
+    3,
+    4,
+    12,
+    3,
+    12,
+    4,
+    2,
+    6,
+    12
+   ],
+   "order_histogram": {
+    "1": 1,
+    "2": 1,
+    "3": 2,
+    "4": 2,
+    "6": 2,
+    "12": 4
+   },
+   "cyclic": true,
+   "structure_guess": "C12",
+   "n_distinct_orders": 6
+  },
+  {
+   "f": 72,
+   "phi": 24,
+   "n_orbits": 12,
+   "orbits": [
+    [
+     1,
+     71
+    ],
+    [
+     5,
+     67
+    ],
+    [
+     7,
+     65
+    ],
+    [
+     11,
+     61
+    ],
+    [
+     13,
+     59
+    ],
+    [
+     17,
+     55
+    ],
+    [
+     19,
+     53
+    ],
+    [
+     23,
+     49
+    ],
+    [
+     25,
+     47
+    ],
+    [
+     29,
+     43
+    ],
+    [
+     31,
+     41
+    ],
+    [
+     35,
+     37
+    ]
+   ],
+   "orders_by_orbit": [
+    1,
+    6,
+    6,
+    6,
+    6,
+    2,
+    2,
+    3,
+    3,
+    6,
+    6,
+    2
+   ],
+   "order_histogram": {
+    "1": 1,
+    "2": 3,
+    "3": 2,
+    "6": 6
+   },
+   "cyclic": false,
+   "structure_guess": "C6xC2",
+   "n_distinct_orders": 4
+  },
+  {
+   "f": 78,
+   "phi": 24,
+   "n_orbits": 12,
+   "orbits": [
+    [
+     1,
+     77
+    ],
+    [
+     5,
+     73
+    ],
+    [
+     7,
+     71
+    ],
+    [
+     11,
+     67
+    ],
+    [
+     17,
+     61
+    ],
+    [
+     19,
+     59
+    ],
+    [
+     23,
+     55
+    ],
+    [
+     25,
+     53
+    ],
+    [
+     29,
+     49
+    ],
+    [
+     31,
+     47
+    ],
+    [
+     35,
+     43
+    ],
+    [
+     37,
+     41
+    ]
+   ],
+   "orders_by_orbit": [
+    1,
+    4,
+    12,
+    12,
+    3,
+    12,
+    3,
+    2,
+    6,
+    4,
+    6,
+    12
+   ],
+   "order_histogram": {
+    "1": 1,
+    "2": 1,
+    "3": 2,
+    "4": 2,
+    "6": 2,
+    "12": 4
+   },
+   "cyclic": true,
+   "structure_guess": "C12",
+   "n_distinct_orders": 6
+  },
+  {
+   "f": 84,
+   "phi": 24,
+   "n_orbits": 12,
+   "orbits": [
+    [
+     1,
+     83
+    ],
+    [
+     5,
+     79
+    ],
+    [
+     11,
+     73
+    ],
+    [
+     13,
+     71
+    ],
+    [
+     17,
+     67
+    ],
+    [
+     19,
+     65
+    ],
+    [
+     23,
+     61
+    ],
+    [
+     25,
+     59
+    ],
+    [
+     29,
+     55
+    ],
+    [
+     31,
+     53
+    ],
+    [
+     37,
+     47
+    ],
+    [
+     41,
+     43
+    ]
+   ],
+   "orders_by_orbit": [
+    1,
+    6,
+    6,
+    2,
+    6,
+    6,
+    6,
+    3,
+    2,
+    6,
+    3,
+    2
+   ],
+   "order_histogram": {
+    "1": 1,
+    "2": 3,
+    "3": 2,
+    "6": 6
+   },
+   "cyclic": false,
+   "structure_guess": "C6xC2",
+   "n_distinct_orders": 4
+  },
+  {
+   "f": 90,
+   "phi": 24,
+   "n_orbits": 12,
+   "orbits": [
+    [
+     1,
+     89
+    ],
+    [
+     7,
+     83
+    ],
+    [
+     11,
+     79
+    ],
+    [
+     13,
+     77
+    ],
+    [
+     17,
+     73
+    ],
+    [
+     19,
+     71
+    ],
+    [
+     23,
+     67
+    ],
+    [
+     29,
+     61
+    ],
+    [
+     31,
+     59
+    ],
+    [
+     37,
+     53
+    ],
+    [
+     41,
+     49
+    ],
+    [
+     43,
+     47
+    ]
+   ],
+   "orders_by_orbit": [
+    1,
+    12,
+    6,
+    12,
+    4,
+    2,
+    12,
+    3,
+    3,
+    4,
+    6,
+    12
+   ],
+   "order_histogram": {
+    "1": 1,
+    "2": 1,
+    "3": 2,
+    "4": 2,
+    "6": 2,
+    "12": 4
+   },
+   "cyclic": true,
+   "structure_guess": "C12",
+   "n_distinct_orders": 6
+  }
+ ],
+ "selection": {
+  "rule": "non-cyclic > more distinct orders > smallest f (pre-stated)",
+  "selected_f": 56,
+  "selected_tag": "non-cyclic",
+  "Gplus_structure": "C6xC2",
+  "Gplus_order_histogram": {
+   "1": 1,
+   "2": 3,
+   "3": 2,
+   "6": 6
+  },
+  "types": {
+   "1": {
+    "count": 1,
+    "density": 0.08333333333333333
+   },
+   "2": {
+    "count": 3,
+    "density": 0.25
+   },
+   "3": {
+    "count": 2,
+    "density": 0.16666666666666666
+   },
+   "6": {
+    "count": 6,
+    "density": 0.5
+   }
+  },
+  "H_T_theory_bits": 1.7295739585136223,
+  "shape_legend": "Frobenius order k => factors all of degree k, count 12/k; k=1: twelve linear (nr=12); k=2: six quadratics; k=3: four cubics; k=6: two sextics",
+  "defining_polynomial": {
+   "degree": 12,
+   "coeffs_desc": [
+    1,
+    0,
+    -12,
+    0,
+    53,
+    0,
+    -104,
+    0,
+    86,
+    0,
+    -24,
+    0,
+    1
+   ],
+   "eval_at_2cos_2pi_over_f": -2.1600499167107046e-12,
+   "power_sums": [
+    0,
+    24,
+    0,
+    76,
+    0,
+    264,
+    0,
+    948,
+    0,
+    3464,
+    0,
+    12808
+   ]
+  }
+ },
+ "sieve": {
+  "primes_total": 155610,
+  "unit_primes": 155608,
+  "cap": 2097152
+ },
+ "ddf_check": {
+  "n_checked": 160,
+  "n_fail": 0,
+  "barrier5_pass": true,
+  "sample": [
+   {
+    "p": 1494137,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 387911,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 217111,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 1221751,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 1491953,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 1043897,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 3191,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 1016569,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 232681,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 579881,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 1700161,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 365513,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 96097,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 1384993,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 1517881,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 281791,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 372511,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 1269241,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 895777,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 1548623,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 523207,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 2014151,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 160049,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 780191,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 616729,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 1782929,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 531551,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 1796759,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 609113,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 445031,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 164471,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 1837529,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 149689,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 200983,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 1350607,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 1646287,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 587441,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 1582337,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 1258937,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   },
+   {
+    "p": 59359,
+    "pred_order": 1,
+    "pattern": {
+     "1": 12
+    },
+    "match": true
+   }
+  ]
+ },
+ "channel": {
+  "modulus": 56,
+  "n_orbits": 12,
+  "n_types": 4,
+  "orbit_purity": {
+   "pure_orbits": 12,
+   "total_orbits": 12
+  },
+  "conditional_entropy_bits": 12.528350609555666,
+  "H_T_empirical_bits": 1.728651826474274,
+  "H_T_theory_bits": 1.7295739585136223,
+  "I_obs_bits": 1.728651826474274,
+  "abs_I_minus_H": 0.0,
+  "type_freq_empirical": {
+   "1": 0.08304842938666393,
+   "2": 0.2501992185491749,
+   "3": 0.16642460541874454,
+   "6": 0.5003277466454167
+  },
+  "type_density_theory": {
+   "1": 0.08333333333333333,
+   "2": 0.25,
+   "3": 0.16666666666666666,
+   "6": 0.5
+  },
+  "perm_null": {
+   "n": 200,
+   "mean": 0.00015370189259992497,
+   "sd": 3.5698577584746947e-05,
+   "max": 0.00028493370202723833,
+   "z_of_observed": 48419.24360930747
+  },
+  "control_mod97": {
+   "I_bits": 0.0005646751250340741,
+   "null_mean": 0.0013231505705404113,
+   "null_sd": 0.00010907108207375139,
+   "z": -6.95395544891969,
+   "bias_floor_bits": 0.0013350732988535985,
+   "flat": true,
+   "decay_const_bitcount": 88.4512567869526,
+   "decay_spread_tail": 0.11503830266002213,
+   "note": "shuffle-null z=-6.95 is NEGATIVE because the null is mis-centered for deterministically equidistributed data (AP equidistribution beats random re-pairing); operative test: n*I_ctl ~= 88.5 bit*count constant (spread 12% over tail) -> I_ctl ~ bias only, -> 0 as n grows"
+  },
+  "thickening": [
+   {
+    "n": 15560,
+    "I_bits": 1.7252635383005828,
+    "H_bits": 1.7252635383005828,
+    "abs_gap": 0.0,
+    "I_control_bits": 0.007025254839536757
+   },
+   {
+    "n": 31121,
+    "I_bits": 1.7283534059633947,
+    "H_bits": 1.7283534059633947,
+    "abs_gap": 0.0,
+    "I_control_bits": 0.0030627020433101684
+   },
+   {
+    "n": 46682,
+    "I_bits": 1.7279044954671774,
+    "H_bits": 1.7279044954671774,
+    "abs_gap": 0.0,
+    "I_control_bits": 0.001875781120740798
+   },
+   {
+    "n": 62243,
+    "I_bits": 1.728665434821316,
+    "H_bits": 1.7286654348213164,
+    "abs_gap": 4.440892098500626e-16,
+    "I_control_bits": 0.0013418896335491135
+   },
+   {
+    "n": 77804,
+    "I_bits": 1.7287954179715848,
+    "H_bits": 1.7287954179715852,
+    "abs_gap": 4.440892098500626e-16,
+    "I_control_bits": 0.0011789147538771476
+   },
+   {
+    "n": 93364,
+    "I_bits": 1.7286065376796846,
+    "H_bits": 1.7286065376796844,
+    "abs_gap": 2.220446049250313e-16,
+    "I_control_bits": 0.0009738526961540015
+   },
+   {
+    "n": 108925,
+    "I_bits": 1.7280377290477023,
+    "H_bits": 1.728037729047702,
+    "abs_gap": 2.220446049250313e-16,
+    "I_control_bits": 0.0008602113280689855
+   },
+   {
+    "n": 124486,
+    "I_bits": 1.727757754651578,
+    "H_bits": 1.727757754651578,
+    "abs_gap": 0.0,
+    "I_control_bits": 0.000698008664985943
+   },
+   {
+    "n": 140047,
+    "I_bits": 1.7283771118675324,
+    "H_bits": 1.7283771118675322,
+    "abs_gap": 2.220446049250313e-16,
+    "I_control_bits": 0.0006099077058856319
+   },
+   {
+    "n": 155608,
+    "I_bits": 1.728651826474274,
+    "H_bits": 1.728651826474274,
+    "abs_gap": 0.0,
+    "I_control_bits": 0.0005646751250340741
+   }
+  ],
+  "bias_floor_main_bits": 0.00015297714882697483
+ },
+ "semiprime": {
+  "draws": 15000,
+  "law_class_bits": 0.7685881074135275,
+  "emp_class_bits": 0.7778343608452238,
+  "diff_class_bits": 0.009246253431696383,
+  "boot_sd": 0.006130893377657709,
+  "z_class": 1.5081412874332008,
+  "law_orbit_bits": 0.7685881074135276,
+  "emp_orbit_bits": 0.7737924413957017,
+  "diff_orbit_bits": 0.005204333982174125,
+  "boot_sd_orbit": 0.006079981937692301,
+  "z_orbit": 0.8559785268292203,
+  "H_pair_law_bits": 3.4591479170272446,
+  "marginal_law_bits": 4.0042831297686473e-16,
+  "marginal_emp_bits": 0.004231276822943603
+ },
+ "verdict": {
+  "name": "DEGREE-12-FULL-PINNED",
+  "H1_full_pinning": true,
+  "H2_semiprime_pair_law": true,
+  "H3_controls": {
+   "coprime_flat": true,
+   "thickening_structural": true
+  },
+  "barriers": {
+   "barrier_5_designed_checks": {
+    "poly_integrality_and_degree": true,
+    "root_evaluation": true,
+    "ddf_vs_group_pattern": {
+     "checked": 160,
+     "failed": 0,
+     "pass": true
+    },
+    "orbit_purity": {
+     "pure": 12,
+     "of": 12
+    }
+   },
+   "barrier_6_pre_registration": {
+    "field_rule": "non-cyclic > richer type alphabet > smallest conductor",
+    "applied_before_prime_data": true,
+    "all_candidates_logged": true
+   },
+   "barrier_8_power": {
+    "unit_primes": 155608,
+    "rarest_type_cell_expected": 12967,
+    "binomial_se_rare_cell_rel": 0.00878,
+    "mi_bias_floor_main_bits": 0.00015297714882697483,
+    "mi_bias_floor_control_bits": 0.0013350732988535985,
+    "headline_claims_are_exact_equalities": true
+   }
+  },
+  "elapsed_s": 0.9
+ }
+}
