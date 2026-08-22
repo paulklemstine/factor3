@@ -10147,6 +10147,17 @@ Caveat disclosed: nested windows conflate sample size with bound growth (B356 ->
 crosses dial cap 400). Continuity anchor matches paper 167 on independent seeds.
 Paper 168, issue #270. Now 502 experiments. Assessment v277.
 
+## Part 240 - FIXED-BOUND lean (round-45 #3 [cron iteration], exp 502, v278)
+
+Paper 168's named follow-up: decouple the strip bound from u. H1 REFUTED — attribution
+**9.1%**: with ONE strip pass to PB=4000 recording (remainder, maxp), the fixed-bound drop
+d = +0.0578 (8 populations, sd 0.0138) is ~91% of paper 168's variable-B reference
+(+0.0636). H2 CONFIRMED: the genuine-reweighting residual is well above 0.03. The
+u-sensitivity is REAL threshold reweighting (tighter u shifts which QR primes dominate the
+rate), with bound-shrinkage contributing only ~9%. Paper 168's "mostly intrinsic" reading
+CONFIRMED and sharpened.
+Paper 169, issue #271. Now 503 experiments. Assessment v278.
+
 AMENDMENT (original agent's clean run + coordinator diagnostic): the ANTI-COINCIDENCE read
 is RETIRED — measured c_pq equals the exact CRT count on all 8000 points (corr 1.000000);
 the ~0.26 ratios were the coordinator comparing conditional-on-both-QR predictions against
