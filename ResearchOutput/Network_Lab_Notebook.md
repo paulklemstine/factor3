@@ -1969,3 +1969,11 @@ Paper 166, issue #328. Now 85 network experiments. Assessment v85.
 **Method:** rtn_quant with group-128 at varying bit widths; identical harness/windows.
 Script ResearchOutput/exp_net85_8bittail.py; log /tmp/net85.log.
 Now 85 network experiments. Assessment v85 (addendum).
+
+## Part 86 — ZERO-COST-KNEE-ESTIMATOR-FAILS: linear predictor top8→knee achieves only R²=0.11, Spearman ρ=0.40, MAE=2.35 — top-8 mass does NOT predict knee position across domains; French predicted ~14 vs actual >32 (wildly wrong); code is an outlier (top8=0.488 identical to EN prose but knee=12 vs 16); NET-74's +0.80 Spearman was an artifact of n=4; the knee depends on the FULL attention distribution shape, not just the top-8 mass; P1/P2/P3 all effectively resolved (P3 confirmed — TPW was insufficient, top8 is also insufficient) (NET-86; compact negative result)
+
+**Method:** measured top-8 mass for all 5 domains at 3 sampled layers {2,11,21}, 12
+windows @ctx=512; linear regression on 4 known-knee domains; French prediction compared
+to NET-76's measured value. Gate exact. Script ResearchOutput/exp_net86_predict.py;
+log /tmp/net86.log.
+Now 86 network experiments. Assessment v86 (compact negative result).
