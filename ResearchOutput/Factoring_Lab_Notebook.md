@@ -10080,6 +10080,14 @@ H2 REFUTED: clumping variance adds nothing over pairs (-0.001). Pair lift on thi
 population +0.015 (direction consistent with paper 152).
 Paper 163, issue #265. Now 495 experiments. Assessment v272.
 
+AMENDMENT (original agent's clean run + coordinator diagnostic): the ANTI-COINCIDENCE read
+is RETIRED — measured c_pq equals the exact CRT count on all 8000 points (corr 1.000000);
+the ~0.26 ratios were the coordinator comparing conditional-on-both-QR predictions against
+unconditional measurements (the x1/4 gap IS the QR lottery). True mechanism: c_pq is an
+exact CRT function of root phases; its entire dial content is the per-prime QR lottery;
+marginals alone (+0.0376) >= pairs (+0.0349) — retire the 10 pair columns for the 5
+marginal fractions.
+
 AMENDMENT (author-agent full replication): 4-cell design ({balanced,uniform} x {40,44})
 replicates every verdict — Spearman(qrc) 0.61-0.66 / (w) 0.72-0.76; augmented R2 0.55-0.64;
 dR2(w-count) +0.18-0.21 CI [0.145,0.235]. Arms verified genuinely different yet rate
