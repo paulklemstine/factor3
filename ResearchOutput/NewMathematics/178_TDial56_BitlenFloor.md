@@ -27,3 +27,13 @@ seed-stable, regime-invariant, and bitlen-stable through ~52 but degrades at 56 
 smooth rate drops below ~1%. Barriers: (5)/(8) unchanged.
 
 Now 512 experiments. Assessment v284.
+
+
+## Addendum — author-agent mechanism attribution
+
+The original agent's final report attributes the H1 miss to a B-CONVENTION/REGIME-SPARSITY
+effect: at bitlen 56 the design convention realizes u_eff = 3.75 on the remainder scale
+(not the designed 2.5). A post-hoc secondary arm re-keying B to the remainder median shows
+rho_T = **0.593** [0.554, 0.626] — INSIDE the [0.55, 0.85] band. So the QR dial does not
+die past 52 bits; the miss is a smoothness-bound convention mismatch at starved rates.
+Recommendation: re-key B to the remainder scale before any further bitlen push.
