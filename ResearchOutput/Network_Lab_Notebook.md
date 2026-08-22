@@ -1653,3 +1653,17 @@ acceptance documented; (f) clean (ALL_DONE_NET56); (g) fair (matched budgets, id
 harness/data for both arms); (h) DIRECT (policy-adjusted serving table).
 Open: learned importance heads; per-layer budgets; 1.5B replication; corpus robustness (next).
 Paper 141, issue #287. Now 56 network experiments. Assessment v56.
+
+## Part 57 — THE-KNEES-ARE-CORPUS-ROBUST: independent wikitext shard gives Qwen2.5-0.5B knees {16, 32, 32} at ctx {512, 1024, 2048} — EXACT matches to corpus-A at 512/1024 and controls replicating to four decimals (random-k 0.1775/0.3004 = corpus-A exactly); the 2048 reading (32 vs A's razor-thin 24) lands inside NET-49B's documented bracket — joint reading: knee ≈ 24–32 at 2048, corpus-insensitive within grid; ~30-key budget now holds across 3 contexts × 2 corpora × 2 model sizes; barrier-(e)'s single-corpus limit carried since NET-49 is CLOSED (domain-jump corpora still open) (NET-57; limited-memory axis round 11)
+
+**Method:** byte-identical NET-49 harness, only the text swapped (wikitext shard 1 vs shard 0,
+fsynced durable cache); bonus third context (2048) beyond the pre-registered two. One OOM
+incident (stray GPU process from a killed hub-hung run) diagnosed and cleared before any
+recorded measurement. Script ResearchOutput/exp_net57_corpusB.py; log /tmp/net57.log.
+**Verdict:** THE-KNEES-ARE-CORPUS-ROBUST. Barriers: (a) clean; (b) clean; (c) confronted —
+this WAS the corpus test (wikitext-family both sides; domain jump open); (d) clean per-corpus
+held-out splits; (e) deterministic + 4-decimal cross-corpus control agreement as measurement
+validity; (f) clean; (g) fair (byte-identical harness); (h) DIRECT (licenses quoting the
+deployment table without per-domain re-measurement). Open: domain-jump corpora; learned
+importance heads; per-layer budgets; 1.5B tail map; 7B cell. Paper 142, issue #290.
+Now 57 network experiments. Assessment v57.
