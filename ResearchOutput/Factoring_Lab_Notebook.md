@@ -9831,4 +9831,4 @@ residual was real structure, now largely captured by two cheap features (~200 Eu
 a mod count). H3 (nothing systematic) refuted.
 LEDGER: v1 bootstrap refit indexed the test-slice target instead of full (IndexError);
 inline takeover (agent silent 15 min).
-Paper 145, issue #246. Now 477 experiments. Assessment v254.
+Paper 145, issue #247. Now 477 experiments. Assessment v254.
