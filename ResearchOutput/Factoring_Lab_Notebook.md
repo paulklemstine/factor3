@@ -9943,3 +9943,18 @@ signal beyond the footprint dial at either range; the split-ceiling excess remai
 unlocated (candidates narrow to interaction/joint-alignment encodings per paper 150's
 redirect, or it is intrinsic to the dial family).
 Paper 151, issue #253. Now 483 experiments. Assessment v260.
+
+## Part 224 - JOINT-ALIGN (round-41 #3 [cron iteration], exp 484, v261)
+
+Paper 150's redirect executed: cross-prime offset COINCIDENCES (pair counts c_pq = #{j:
+p|v_j AND q|v_j} over the 10 pairs of {3,5,7,11,13}, + triple). H1 CONFIRMED: pair
+coincidences add **+0.0310** out-of-sample R2 (CI [0.010, 0.053]) over the paper-145 dial —
+clears the pre-stated +0.03; combined R2 = 0.6339. H2 CONFIRMED: joint features TRANSFER
+cross-window at ratio 0.51 (> 0.5) — unlike singleton phases' negative transfer: coincidence
+structure is window-position-invariant, exactly the pre-stated guess. H3 FAIL narrowly
+(0.634 < 0.65). Triple coincidences sub-threshold (+0.0085).
+FLAG (unresolved): this implementation's ph13 arm reads +0.0305 same-window where exp482's
+read +0.0082 — population variance or convention drift; the PAIR result stands independently.
+The split-ceiling excess now has its first POSITIVE explanatory lever: joint-alignment
+structure beyond union-counts and singleton phases.
+Paper 152, issue #254. Now 484 experiments. Assessment v261.
