@@ -1726,4 +1726,6 @@ Assessment v80. 80 experiments (NET-1 through NET-80).
 Assessment v84. 84 experiments (NET-1 through NET-84).
 - **NET-82 — CROSSOVER-REPLICATION-RESTORES-MONOTONE (limited-memory axis round 31; crossover replication with 12 windows): k\*(2560) = 28 and k\*(3072) = 28 — IDENTICAL, confirming NET-81's non-monotone was sampling variation; the 0.5B chain {16, 20, 24, 28, 28} is properly monotone; the size × context crossover is SHARP between 3072 and 4096. Paper 165 addendum.
 
-Assessment v82. 82 experiments (NET-1 through NET-82).
+- **NET-84 — TAIL-AWARE-MIXED-PRECISION-WORKS (limited-memory axis round 32; mixed-precision cell): keeping L22/L23 at fp32 while quantizing all other layers to GPTQ 4-bit gains +1.8 pts over full 4-bit (0.926 vs 0.908 retained); tail-only quantization costs 2.3% (0.977); P1 CONFIRMED, P2 REFUTED — the tail DOES benefit from protection; the prescription from three independent lines (epistasis NET-60, unportability NET-54, super-additive interaction NET-83) converges: treat the tail as ONE unit in every optimization dimension — weights, attention, AND precision; memory cost 7.2MB fp32 = 1.4% of 4-bit model. Gate exact. Barriers: (a) clean; (b) clean; (c) confronted; (d) clean; (e) deterministic; (f) clean; (g) fair; (h) DIRECT. Open: 8-bit tail; 1.5B replication; 4096; 7B cell. Paper 166, issue #328.
+
+Assessment v85. 85 experiments (NET-1 through NET-85).

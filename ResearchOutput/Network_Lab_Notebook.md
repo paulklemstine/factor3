@@ -1952,3 +1952,14 @@ double-del, model alias, gptq signature, print crash, stale var).
 (c) confronted (simplified RTN stated); (d) clean; (e) deterministic; (f) clean;
 (g) fair; (h) DIRECT. Open: real GPTQ with Hessian; tail-aware precision; crossover
 replication. Paper 165, issue #323. Now 84 network experiments. Assessment v84.
+
+## Part 84 — TAIL-AWARE-MIXED-PRECISION-WORKS: keeping L22/L23 at fp32 while quantizing all other layers to GPTQ 4-bit gains +1.8 pts over full 4-bit (0.926 vs 0.908); tail-only quantization costs only 2.3% (0.977); P1 CONFIRMED, P2 REFUTED; the prescription from three independent lines (epistasis, unportability, super-additive interaction) converges: treat the tail as ONE unit in every optimization dimension — weights, attention, AND precision; memory cost 7.2MB fp32 = 1.4% of 4-bit model (NET-84; limited-memory axis round 57)
+
+**Method:** Qwen2.5-0.5B fp32 ctx=1024, 24 held-out windows; three arms {full GPTQ4,
+mixed (tail fp32), tail-only GPTQ4}; gate exact. Script
+ResearchOutput/exp_net84_tailprecision.py; results ~/f3cache/net84_results.json;
+log /tmp/net84.log.
+**Verdict:** TAIL-AWARE-MIXED-PRECISION-WORKS. Barriers: (a) clean; (b) clean;
+(c) confronted (one model/context stated); (d) clean; (e) deterministic; (f) clean;
+(g) fair; (h) DIRECT. Open: 8-bit tail; 1.5B replication; 4096; 7B cell.
+Paper 166, issue #328. Now 85 network experiments. Assessment v85.
