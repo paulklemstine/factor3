@@ -1,8 +1,8 @@
 {
- "experiment": "exp535",
- "codename": "TDIAL-U84-CROSS",
- "round": 67,
- "date_utc": "2026-08-22T20:04:37Z",
+ "experiment": "exp536",
+ "codename": "TDIAL-U88",
+ "round": 68,
+ "date_utc": "2026-08-22T20:20:11Z",
  "host": "Victus",
  "environment": {
   "python": "3.12.3",
@@ -10,17 +10,17 @@
   "gmpy2": "2.3.0"
  },
  "hypotheses_preregistered": {
-  "H1-crossing": "Spearman(T, rate) drops BELOW 0.55 decisively at bitlen 84 on uniform draws.",
-  "H2-stable": "Spearman(T, rate) stays >= 0.55 at bitlen 84 -- the floor is a plateau not a cliff edge."
+  "H1-band": "Spearman(T, rate) stays within [0.55, 0.85] on uniform draws at bitlen 88, u = 2.5.",
+  "H2-beats": "T beats count <=100 by > +0.05."
  },
- "design_correction_flagged": "Brief's windows p~[2^28,2^34), q~[2^34,2^40) admit max product < 2^74 -- bitlen-84 rejection sampling is infeasible as stated (same copy-carried defect documented pre-data in exps 517/518/521/528/529/530/531/532/533/534; stated windows center bitlen 68). Pre-data correction per exp529..534's rule: both exponent windows shifted by the SAME +8, chosen so window-log midpoints sum to 84 (31+37=68 -> 39+45=84) -> p~[2^36,2^42), q~[2^42,2^48); preserves adjacency/equal-widths/p<q/uniform character; analytic pre-data acceptance (224*ln2-32)/63^2 ~= 3.1% (integer-uniform draws make bitlen-84 the same ~3-4% conditional slice as every prior cell; same rejection protocol as exps 517..534). FLAGGED for parent.",
+ "design_correction_flagged": "Brief's windows p~[2^32,2^38), q~[2^38,2^44) admit max product < 2^82 -- bitlen-88 rejection sampling is infeasible as stated (same copy-carried defect documented pre-data in exps 517/518/521/528/529/530/531/532/533/534/535; stated windows center bitlen 76). Pre-data correction per exp529..535's rule: both exponent windows shifted by the SAME +6, chosen so window-log midpoints sum to 88 (35+41=76 -> 41+47=88) -> p~[2^38,2^44), q~[2^44,2^50); preserves adjacency/equal-widths/p<q/uniform character; analytic pre-data acceptance (224*ln2-32)/63^2 ~= 3.1% (integer-uniform draws make bitlen-88 the same ~3-4% conditional slice as every prior cell; same rejection protocol as exps 517..535). FLAGGED for parent.",
  "interpretation_notes": {
   "qr_primes": "odd primes p<=400 with (N|p)=+1 by Euler criterion",
   "count_le_100": "number of odd QR primes p<=100, unit weights",
   "relation_values": "first K CFRAC residues Q_1..Q_K of sqrt(N)",
   "smoothness": "per-N factor base B_N=(2*(isqrt(N)+1))^(1/2.5), one base per N",
   "rate": "fraction of the K values that are B_N-smooth",
-  "classifier": "ONE GLOBAL two-level block-gcd structure (LEAF=24/MID=18, tree products) with per-N masked descent; proven + cross-checked identical to the exp533/534-verbatim classifier (see script header); checked on 2000 random values at multiple bounds and on the first 25 populations of every seed",
+  "classifier": "ONE GLOBAL two-level block-gcd structure (LEAF=24/MID=18, tree products) with per-N masked descent, carried over unchanged from exp535 (proven + cross-checked identical to the exp528..534-verbatim classifier); checked on 2000 random values at multiple bounds and on the first 25 populations of every seed",
   "context_prior_cells": {
    "uniform_44_exp517_rhoT": [
     0.777,
@@ -106,47 +106,57 @@
      0.542,
      0.587
     ],
-    "note": "AT the 0.55 floor; seed 20261181 cleared by +0.001; paper 187 queued bitlen 84 as THE CROSSING TEST"
+    "note": "AT the 0.55 floor"
+   },
+   "uniform_84_exp535_pooled_paper188": {
+    "rho_T": 0.558,
+    "rho_T_ci": [
+     0.536,
+     0.581
+    ],
+    "note": "margin to floor +0.008; gradual erosion, no cliff; this cell is the next rung on that path"
    }
   }
  },
  "config": {
   "seeds": [
-   20261190,
-   20261191,
-   20261192
+   20261200,
+   20261201,
+   20261202
   ],
   "n_per_seed": 1200,
   "k_values": 240,
   "u_exp": 2.5,
-  "target_bits": 84,
+  "target_bits": 88,
   "p_window_corrected": [
-   36,
-   42
+   38,
+   44
   ],
   "q_window_corrected": [
-   42,
-   48
+   44,
+   50
   ],
   "windows_as_written_in_brief": [
    [
-    28,
-    34
+    32,
+    38
    ],
    [
-    34,
-    40
+    38,
+    44
    ]
   ],
   "dial_cutoff": 400,
   "count_cutoff": 100,
   "bootstrap": 300,
-  "fb_ceiling": 250000,
+  "fb_ceiling": 350000,
   "floor": 0.55,
-  "anchor80_rho": 0.565,
-  "anchor80_ci": [
-   0.542,
-   0.587
+  "band_top": 0.85,
+  "h2_margin": 0.05,
+  "anchor84_rho": 0.558,
+  "anchor84_ci": [
+   0.536,
+   0.581
   ],
   "leaf_block": 24,
   "mid_block": 18,
@@ -161,45 +171,46 @@
     100,
     997,
     54179,
-    150000
+    262144
    ]
   },
   "cf_remainder_qr_structure": {
    "semiprimes_tested": 3,
-   "prime_remainders_checked": 113,
+   "prime_remainders_checked": 118,
    "violations": 0
   },
   "primality_crosscheck_agree": "200/200",
   "bn_coverage": {
-   "max_possible_B": 150562,
-   "fb_ceiling": 250000,
+   "max_possible_B": 262144,
+   "fb_ceiling": 350000,
    "covered": true
   },
   "all_pass": true,
   "generation_determinism": {
-   "digest_try1": "7d17f102fee238aa",
-   "digest_try2": "7d17f102fee238aa",
+   "digest_try1": "a6e4ce6fe99a7558",
+   "digest_try2": "a6e4ce6fe99a7558",
    "match": true
   }
  },
  "ledger": [
   {
-   "t_utc": "2026-08-22T20:04:37Z",
+   "t_utc": "2026-08-22T20:20:11Z",
    "line": "stage=config",
    "seeds": [
-    20261190,
-    20261191,
-    20261192
+    20261200,
+    20261201,
+    20261202
    ],
    "n": 1200,
    "k": 240,
    "u": 2.5,
    "boot": 300,
    "smoke": false,
-   "floor": 0.55
+   "floor": 0.55,
+   "band_top": 0.85
   },
   {
-   "t_utc": "2026-08-22T20:04:38Z",
+   "t_utc": "2026-08-22T20:20:11Z",
    "line": "stage=designed_checks",
    "all_pass": true,
    "details": {
@@ -210,37 +221,312 @@
       100,
       997,
       54179,
-      150000
+      262144
      ]
     },
     "cf_remainder_qr_structure": {
      "semiprimes_tested": 3,
-     "prime_remainders_checked": 113,
+     "prime_remainders_checked": 118,
      "violations": 0
     },
     "primality_crosscheck_agree": "200/200",
     "bn_coverage": {
-     "max_possible_B": 150562,
-     "fb_ceiling": 250000,
+     "max_possible_B": 262144,
+     "fb_ceiling": 350000,
      "covered": true
     },
     "all_pass": true,
     "generation_determinism": {
-     "digest_try1": "7d17f102fee238aa",
-     "digest_try2": "7d17f102fee238aa",
+     "digest_try1": "a6e4ce6fe99a7558",
+     "digest_try2": "a6e4ce6fe99a7558",
      "match": true
     }
    }
+  },
+  {
+   "t_utc": "2026-08-22T20:20:51Z",
+   "line": "stage=gen+features",
+   "seed": 20261200,
+   "accepted": 1200,
+   "raw_draws": 33260,
+   "acceptance": 0.0361,
+   "envelope_ok": true,
+   "equivalence_mismatches": 0,
+   "secs": 39.2
+  },
+  {
+   "t_utc": "2026-08-22T20:20:51Z",
+   "line": "stage=stats",
+   "seed": 20261200,
+   "spearman_T": 0.5161,
+   "ci_T": [
+    0.4741,
+    0.5617
+   ],
+   "spearman_count": 0.4602,
+   "advantage": 0.0559,
+   "mean_rate": 0.1347
+  },
+  {
+   "t_utc": "2026-08-22T20:21:31Z",
+   "line": "stage=gen+features",
+   "seed": 20261201,
+   "accepted": 1200,
+   "raw_draws": 37124,
+   "acceptance": 0.0323,
+   "envelope_ok": true,
+   "equivalence_mismatches": 0,
+   "secs": 39.8
+  },
+  {
+   "t_utc": "2026-08-22T20:21:31Z",
+   "line": "stage=stats",
+   "seed": 20261201,
+   "spearman_T": 0.5547,
+   "ci_T": [
+    0.5123,
+    0.589
+   ],
+   "spearman_count": 0.4805,
+   "advantage": 0.0742,
+   "mean_rate": 0.1342
+  },
+  {
+   "t_utc": "2026-08-22T20:22:10Z",
+   "line": "stage=gen+features",
+   "seed": 20261202,
+   "accepted": 1200,
+   "raw_draws": 35561,
+   "acceptance": 0.0337,
+   "envelope_ok": true,
+   "equivalence_mismatches": 0,
+   "secs": 39.0
+  },
+  {
+   "t_utc": "2026-08-22T20:22:10Z",
+   "line": "stage=stats",
+   "seed": 20261202,
+   "spearman_T": 0.5324,
+   "ci_T": [
+    0.4903,
+    0.5738
+   ],
+   "spearman_count": 0.4898,
+   "advantage": 0.0426,
+   "mean_rate": 0.1349
+  },
+  {
+   "t_utc": "2026-08-22T20:22:11Z",
+   "line": "stage=pooled",
+   "n": 3600,
+   "spearman_T": 0.5344,
+   "advantage": 0.059
+  },
+  {
+   "t_utc": "2026-08-22T20:22:11Z",
+   "line": "stage=verdict",
+   "verdict": "U88-DRIFT-INCONCLUSIVE",
+   "H1": false,
+   "H2": true,
+   "pooled_rho_T": 0.5344,
+   "pooled_ci": [
+    0.5088,
+    0.5551
+   ],
+   "pooled_advantage": 0.059,
+   "n_seeds_ge_floor": 1
+  },
+  {
+   "t_utc": "2026-08-22T20:22:11Z",
+   "line": "stage=final",
+   "verdict": "U88-DRIFT-INCONCLUSIVE",
+   "wall_secs": 120.8
   }
  ],
- "per_seed": [],
- "pooled": null,
- "hypothesis_verdicts": {},
- "barriers": {},
- "verdict_name": null,
- "decision": null,
+ "per_seed": [
+  {
+   "n": 1200,
+   "spearman_T": 0.5161024757534748,
+   "spearman_T_ci": [
+    0.4740927785894049,
+    0.5616857398107762
+   ],
+   "spearman_count": 0.4601846016682532,
+   "spearman_count_ci": [
+    0.4097530799604204,
+    0.5074631136332752
+   ],
+   "advantage": 0.055917874085221586,
+   "advantage_ci": [
+    0.007455544727133237,
+    0.10412567313331826
+   ],
+   "mean_T": 1.5603035130837029,
+   "sd_T": 0.44942349239613566,
+   "mean_count": 11.910833333333333,
+   "sd_count": 2.4666879222057165,
+   "mean_rate": 0.1346875,
+   "sd_rate": 0.02970954347309345,
+   "feature_spearman_TC": 0.5357228658769252,
+   "seed": 20261200,
+   "raw_draws": 33260,
+   "acceptance": 0.0361,
+   "median_B": 248918.5,
+   "min_B": 228229,
+   "max_B": 262128,
+   "gen_feature_secs": 39.2,
+   "stats_secs": 0.3
+  },
+  {
+   "n": 1200,
+   "spearman_T": 0.5547199243494079,
+   "spearman_T_ci": [
+    0.5123260374037248,
+    0.5890013208461523
+   ],
+   "spearman_count": 0.4804736201950554,
+   "spearman_count_ci": [
+    0.4342763537728437,
+    0.5229865016909027
+   ],
+   "advantage": 0.07424630415435246,
+   "advantage_ci": [
+    0.031558373649291906,
+    0.12176795286782782
+   ],
+   "mean_T": 1.5550863462732707,
+   "sd_T": 0.45203451469095146,
+   "mean_count": 12.005,
+   "sd_count": 2.3878110617606803,
+   "mean_rate": 0.13417708333333334,
+   "sd_rate": 0.029857346137004664,
+   "feature_spearman_TC": 0.5891974485727338,
+   "seed": 20261201,
+   "raw_draws": 37124,
+   "acceptance": 0.0323,
+   "median_B": 247408.5,
+   "min_B": 228258,
+   "max_B": 262141,
+   "gen_feature_secs": 39.8,
+   "stats_secs": 0.3
+  },
+  {
+   "n": 1200,
+   "spearman_T": 0.5324211530397966,
+   "spearman_T_ci": [
+    0.49029893064638497,
+    0.5737662426704141
+   ],
+   "spearman_count": 0.48980932746925787,
+   "spearman_count_ci": [
+    0.4527665746681448,
+    0.5316944961969184
+   ],
+   "advantage": 0.042611825570538775,
+   "advantage_ci": [
+    0.001456245030057294,
+    0.08775596465395474
+   ],
+   "mean_T": 1.5565271775438918,
+   "sd_T": 0.45328386856230013,
+   "mean_count": 11.986666666666666,
+   "sd_count": 2.558285015830375,
+   "mean_rate": 0.13486458333333332,
+   "sd_rate": 0.029721637901512277,
+   "feature_spearman_TC": 0.5845970780700582,
+   "seed": 20261202,
+   "raw_draws": 35561,
+   "acceptance": 0.0337,
+   "median_B": 247754.5,
+   "min_B": 228225,
+   "max_B": 262133,
+   "gen_feature_secs": 39.0,
+   "stats_secs": 0.3
+  }
+ ],
+ "pooled": {
+  "n": 3600,
+  "spearman_T": 0.5343762192132976,
+  "spearman_T_ci": [
+   0.508784311743378,
+   0.5551404851734103
+  ],
+  "spearman_count": 0.47535403355647154,
+  "spearman_count_ci": [
+   0.4520617628584092,
+   0.5036381748415323
+  ],
+  "advantage": 0.05902218565682604,
+  "advantage_ci": [
+   0.032163197737792,
+   0.08322065711828648
+  ],
+  "mean_T": 1.5573056789669553,
+  "sd_T": 0.4515888476625947,
+  "mean_count": 11.9675,
+  "sd_count": 2.4722458020098963,
+  "mean_rate": 0.1345763888888889,
+  "sd_rate": 0.029764344989246592,
+  "feature_spearman_TC": 0.5700081268971702,
+  "raw_draws_total": 105945,
+  "secs": 1.0
+ },
+ "hypothesis_verdicts": {
+  "H1-band": {
+   "statement": "Spearman(T, rate) stays within [0.55, 0.85] on uniform draws at bitlen 88, u = 2.5.",
+   "operationalization": "pooled rho_T in [0.55, 0.85] (point) AND >= 2/3 per-seed rho_T >= 0.55 (floor edge corroborated across seeds)",
+   "per_seed_rho_T": [
+    0.5161024757534748,
+    0.5547199243494079,
+    0.5324211530397966
+   ],
+   "n_seeds_ge_floor": 1,
+   "pooled_rho_T": 0.5343762192132976,
+   "pooled_ci": [
+    0.508784311743378,
+    0.5551404851734103
+   ],
+   "margin_to_floor_point": -0.0156,
+   "ci_excludes_floor_above": false,
+   "ci_excludes_floor_below": false,
+   "pass": false
+  },
+  "H2-beats": {
+   "statement": "T beats count <=100 by > +0.05.",
+   "operationalization": "pooled advantage = rho_T - rho_count > +0.05",
+   "per_seed_advantages": [
+    0.055917874085221586,
+    0.07424630415435246,
+    0.042611825570538775
+   ],
+   "pooled_advantage": 0.05902218565682604,
+   "pooled_advantage_ci": [
+    0.032163197737792,
+    0.08322065711828648
+   ],
+   "margin_to_h2_margin_point": 0.009,
+   "pass": true
+  },
+  "anchor_comparison": {
+   "anchor84_pooled": 0.558,
+   "anchor84_ci": [
+    0.536,
+    0.581
+   ],
+   "delta_pooled_vs_anchor84": -0.0236,
+   "cis_overlap": true
+  }
+ },
+ "barriers": {
+  "barrier_5_factor_use_line": "BARRIER-5 (factor-use line): CLOSED-CHANNEL BOOKKEEPING ONLY -- T(N) and count(N) pin correlations of classical quadratic-residue statistics with the group-level smooth-relation rate; per the which-factor wall (papers 93/102) no reading here is a candidate filter or a factoring route; no extraction claim is made.",
+  "barrier_8_scope_line": "BARRIER-8 (scope line): all statements bounded to the measured/diagnostic range -- uniform semiprimes of bitlen exactly 88 (p ~ U[2^38,2^44), q ~ U[2^44,2^50)), u = 2.5, 240 CFRAC values/N, n = 1200 x 3 seeds; no extrapolation to cryptographic parameterizations; zero fitted parameters on this cell (dial form sum 2/p over QR primes <=400 and count<=100 fixed a priori per paper-164; the pre-data window correction is a feasibility fix, not a fit; the global masked classifier is carried over semantics-preserved from exp535 and was locked before data)."
+ },
+ "verdict_name": "U88-DRIFT-INCONCLUSIVE",
+ "decision": "See verdict_name U88-DRIFT-INCONCLUSIVE; H1=False H2=True",
  "artifacts": {
-  "script_sha256": "d82ed52e4e4cf3761b79b19221cca76d4270234311c9740c32ad02fca3a6c67d",
-  "global_classifier_top_bits": 360018
- }
+  "script_sha256": "24df899a5f60fbee3530c7c21b21e14339c2fe233139e592fcc1c62aa94bbae1",
+  "global_classifier_top_bits": 504300
+ },
+ "wall_secs_total": 120.8,
+ "equivalence_pairs_checked_total": 18000
 }
