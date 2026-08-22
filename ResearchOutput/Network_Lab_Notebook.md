@@ -1963,3 +1963,9 @@ log /tmp/net84.log.
 (c) confronted (one model/context stated); (d) clean; (e) deterministic; (f) clean;
 (g) fair; (h) DIRECT. Open: 8-bit tail; 1.5B replication; 4096; 7B cell.
 Paper 166, issue #328. Now 85 network experiments. Assessment v85.
+
+## Part 85 — THE-PRECISION-LADDER: 4-bit-all=0.908, 6-bit-tail=0.924, 8-bit-tail=0.927, fp32-tail=0.926 (from NET-84) — 8-bit IS sufficient for the identity tail (P1 CONFIRMED, within 0.5 pts of fp32); monotone quality ordering confirmed (P2); practical prescription: use 8-bit for L22/L23 and 4-bit everywhere else — same quality as fp32-tail at HALF the memory overhead (2 vs 4 bytes per param) (NET-85 addendum; compact recording)
+
+**Method:** rtn_quant with group-128 at varying bit widths; identical harness/windows.
+Script ResearchOutput/exp_net85_8bittail.py; log /tmp/net85.log.
+Now 85 network experiments. Assessment v85 (addendum).
