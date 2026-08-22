@@ -9746,3 +9746,21 @@ Per-N: corr(QR-count<=100, per-N rate) = 0.503/0.415/0.480/0.403 vs original
 0.186-0.188 high at u=2.5; 0.006-0.008 / 0.039-0.043 at u=3.5).
 Verdict: THE-QR-BITE-IS-VARIANCE is seed-robust; paper 139 stands without qualification.
 Paper 140, issue #240. Now 472 experiments. Assessment v249.
+
+## Part 213 - DEGREE-TEN (round-39 #3 [cron iteration], exp 473, v250)
+
+The abelian ladder's tenth rung: FULL cyclotomic Q(zeta_11) (degree 10, C10 = (Z/11)^*,
+conductor 11). ALL PRE-STATED PREDICTIONS CONFIRMED. Prime level (295,946 unramified
+primes < 2^22): T(p) = ord_11(p) in {1,2,5,10}, densities {1/10, 1/10, 4/10, 4/10};
+FULL PINNING I(p mod 11; T) = H(T) = 1.7219 bits EXACTLY (empirical 1.7221, per-class
+degenerate); thickening structural; coprime flat. Polynomial cross-check 400/400 via
+factor-degree patterns: order t acts as 10/t cycles of length t -> [1^10] / [2^5] / [5,5] /
+[10] (lossy-nr: only order 1 fixes roots). Semiprime (30k): I(N mod 11; pair) = 1.2002 vs
+fresh class-enumeration law 1.1999 (dev +0.0003) and paper-78 closed-form anchor 1.2027
+(dev -0.0025, within the empirical-marginal offset); which-factor wall 0.0005;
+Is(10)-projection measured 0.0586 — new n=10 entries of the g/Is tables.
+LEDGER: v1 comparison double-wrapped the expect tuple (pats != (expect,) -> 400/400 false
+mismatches while PATTERN itself was perfect); residue-vs-type dict lookup in the pair
+enumeration; inline takeover after the channel's 6th agent death (agent recovered the
+paper-78 anchor first).
+Paper 141, issue #241. Now 473 experiments. Assessment v250.
