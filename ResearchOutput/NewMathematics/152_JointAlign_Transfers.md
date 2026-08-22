@@ -21,9 +21,16 @@ beyond-union structure).
 | +triple coincidence | 0.6114 | +0.0085 [CI spans 0] | — | — |
 
 - **H1 CONFIRMED**: pair coincidences clear the pre-stated +0.03 band; combined R² = 0.634.
-- **H2 CONFIRMED**: joint features transfer cross-window at ratio 0.51 (> 0.5), unlike
-  singleton phases' negative transfer in exp 482 — coincidence structure is
-  window-position-invariant, exactly the pre-stated guess.
+- **H2 technically PASS, substantively a match**: ratio 0.509 > 0.5, but within this
+  population the singleton-phase comparator itself transfers at 0.577 — joint features do
+  NOT beat phases; both fully transfer at u=3.5 (ratio 1.06).
+- **phpair ≤ max(component) at every cell**: phase cos/sin and coincidence counts are the
+  SAME information (the divisibility-hit geometry); the redirect's premise that interactions
+  express something linear encodings cannot is not borne out at this scale.
+- **SEED-VARIANCE CAVEAT (amended per author report)**: identical ph13 features gave
+  +0.0082 on exp 482's seed vs +0.0310 here — the "+0.008 sub-threshold" closures of papers
+  150/151 sit inside a wide seed distribution; multi-seed replication of the +0.03 lift
+  class is the actionable next step before any closure claim is treated as final.
 - **H3 FAIL narrowly**: 0.6339 < 0.65.
 - FLAG (unresolved): this implementation's ph13 arm reads +0.0305 where exp 482's read
   +0.0082 — population variance or convention drift between implementations; the pair result

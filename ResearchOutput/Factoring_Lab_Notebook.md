@@ -9953,8 +9953,10 @@ clears the pre-stated +0.03; combined R2 = 0.6339. H2 CONFIRMED: joint features 
 cross-window at ratio 0.51 (> 0.5) — unlike singleton phases' negative transfer: coincidence
 structure is window-position-invariant, exactly the pre-stated guess. H3 FAIL narrowly
 (0.634 < 0.65). Triple coincidences sub-threshold (+0.0085).
-FLAG (unresolved): this implementation's ph13 arm reads +0.0305 same-window where exp482's
-read +0.0082 — population variance or convention drift; the PAIR result stands independently.
-The split-ceiling excess now has its first POSITIVE explanatory lever: joint-alignment
-structure beyond union-counts and singleton phases.
+AMENDED per author report: H2 technical-pass only (singleton comparator itself transfers
+at 0.577 here — joint MATCHES phases); phpair <= max(component) at every cell (same
+information); SEED-VARIANCE CAVEAT: ph13 +0.0082 (exp482 seed) vs +0.0310 (this seed) —
+papers 150/151's 'linear closed' verdicts sit inside a wide seed distribution; ACTIONABLE
+NEXT STEP = multi-seed replication of the +0.03 lift class before closure claims stand.
+The split-ceiling excess has its first positive lever: joint-alignment structure.
 Paper 152, issue #254. Now 484 experiments. Assessment v261.
