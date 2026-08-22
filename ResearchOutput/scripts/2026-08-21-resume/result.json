@@ -1,0 +1,763 @@
+{
+ "experiment": 464,
+ "codename": "HINT-SIZE-SCALING",
+ "seed": 20260821,
+ "date": "2026-08-21",
+ "sizes": [
+  10,
+  14,
+  18,
+  22
+ ],
+ "n_draws_target": 15000,
+ "dials": {
+  "by_size": {
+   "10": {
+    "pool_size": 75,
+    "n_draws": 15000,
+    "verify_mismatches": {
+     "S3_cubic_x3+x+1_m31": 0,
+     "D4_x4-2_m8": 0,
+     "cyc3_x3+x2-2x-1_m7": 0,
+     "C5_zeta11real_m11": 0
+    }
+   },
+   "14": {
+    "pool_size": 872,
+    "n_draws": 15000,
+    "verify_mismatches": {
+     "S3_cubic_x3+x+1_m31": 0,
+     "D4_x4-2_m8": 0,
+     "cyc3_x3+x2-2x-1_m7": 0,
+     "C5_zeta11real_m11": 0
+    }
+   },
+   "18": {
+    "pool_size": 10749,
+    "n_draws": 15000,
+    "verify_mismatches": {
+     "S3_cubic_x3+x+1_m31": 0,
+     "D4_x4-2_m8": 0,
+     "cyc3_x3+x2-2x-1_m7": 0,
+     "C5_zeta11real_m11": 0
+    }
+   },
+   "22": {
+    "pool_size": 140336,
+    "n_draws": 15000,
+    "verify_mismatches": {
+     "S3_cubic_x3+x+1_m31": 0,
+     "D4_x4-2_m8": 0,
+     "cyc3_x3+x2-2x-1_m7": 0,
+     "C5_zeta11real_m11": 0
+    }
+   }
+  },
+  "S3_cubic_x3+x+1_m31": {
+   "k10": {
+    "k": 10,
+    "n": 15000,
+    "label_rates": {
+     "0": 0.25543333333333335,
+     "1": 0.5851333333333333,
+     "2": 0.15943333333333334
+    },
+    "theory_rates": {
+     "2": 0.16666666666666666,
+     "1": 0.5,
+     "0": 0.3333333333333333
+    },
+    "label_rate_max_dev": 0.08513333333333328,
+    "product_MI": 1.0063994764225677,
+    "hint_MI": 1.7486846125947098,
+    "hint_value": 0.7422851361721421,
+    "hint_ci95_boot": [
+     0.7487314256966631,
+     0.7728328342134531
+    ],
+    "hint_ci95_halfsample": [
+     0.7335459875693859,
+     0.7510242847748982
+    ],
+    "H_unordered_labels": 2.1842023033010785,
+    "residual_label_bits_given_pair": 0.4355176907063687,
+    "distinct_primes_drawn": 75,
+    "occupied_pair_codes": 890,
+    "pool_primes_per_residue_class": 2.5,
+    "null_prod_mean": 0.006973704372229014,
+    "null_hint_mean": 0.22362554138891777,
+    "z_product": 1308.2811007857333,
+    "z_hint": 395.98308506093196,
+    "ordered_label_MI": 1.0088162351121968,
+    "wall_W": 0.0024167586896292836,
+    "wall_null_mean": 0.001986211438142337,
+    "wall_null_sd": 0.00043435635132317384,
+    "wall_z": 0.9912304728027491,
+    "label_time_s": 0.78
+   },
+   "k14": {
+    "k": 14,
+    "n": 15000,
+    "label_rates": {
+     "0": 0.3344,
+     "1": 0.4947666666666667,
+     "2": 0.17083333333333334
+    },
+    "theory_rates": {
+     "2": 0.16666666666666666,
+     "1": 0.5,
+     "0": 0.3333333333333333
+    },
+    "label_rate_max_dev": 0.005233333333333312,
+    "product_MI": 1.0028313704532905,
+    "hint_MI": 1.5612626429024976,
+    "hint_value": 0.5584312724492071,
+    "hint_ci95_boot": [
+     0.5879384449482277,
+     0.6096202748868439
+    ],
+    "hint_ci95_halfsample": [
+     0.5514270117261078,
+     0.5654355331723064
+    ],
+    "H_unordered_labels": 2.319496228432921,
+    "residual_label_bits_given_pair": 0.7582335855304234,
+    "distinct_primes_drawn": 872,
+    "occupied_pair_codes": 900,
+    "pool_primes_per_residue_class": 29.066666666666666,
+    "null_prod_mean": 0.00693264269380023,
+    "null_hint_mean": 0.23575233426184344,
+    "z_product": 1224.5181234720064,
+    "z_hint": 290.872073014915,
+    "ordered_label_MI": 1.0048613894602507,
+    "wall_W": 0.0020300190069601314,
+    "wall_null_mean": 0.002036863579320755,
+    "wall_null_sd": 0.0004335791433674839,
+    "wall_z": -0.015786212195226225,
+    "label_time_s": 1.0
+   },
+   "k18": {
+    "k": 18,
+    "n": 15000,
+    "label_rates": {
+     "0": 0.3355,
+     "1": 0.4998666666666667,
+     "2": 0.16463333333333333
+    },
+    "theory_rates": {
+     "2": 0.16666666666666666,
+     "1": 0.5,
+     "0": 0.3333333333333333
+    },
+    "label_rate_max_dev": 0.0021666666666667056,
+    "product_MI": 1.003155923004436,
+    "hint_MI": 1.5456462371115873,
+    "hint_value": 0.5424903141071513,
+    "hint_ci95_boot": [
+     0.5734507070734453,
+     0.5942817449187582
+    ],
+    "hint_ci95_halfsample": [
+     0.5365492100366832,
+     0.5484314181776194
+    ],
+    "H_unordered_labels": 2.3051179901547343,
+    "residual_label_bits_given_pair": 0.759471753043147,
+    "distinct_primes_drawn": 10098,
+    "occupied_pair_codes": 900,
+    "pool_primes_per_residue_class": 358.3,
+    "null_prod_mean": 0.007001078155339156,
+    "null_hint_mean": 0.2351729737494237,
+    "z_product": 1210.2221555493393,
+    "z_hint": 295.734791196155,
+    "ordered_label_MI": 1.0048219590306986,
+    "wall_W": 0.0016660360262626007,
+    "wall_null_mean": 0.0019987689702536254,
+    "wall_null_sd": 0.0004356890408778765,
+    "wall_z": -0.7636936272727817,
+    "label_time_s": 1.36
+   },
+   "k22": {
+    "k": 22,
+    "n": 15000,
+    "label_rates": {
+     "0": 0.33353333333333335,
+     "1": 0.5014333333333333,
+     "2": 0.16503333333333334
+    },
+    "theory_rates": {
+     "2": 0.16666666666666666,
+     "1": 0.5,
+     "0": 0.3333333333333333
+    },
+    "label_rate_max_dev": 0.00163333333333332,
+    "product_MI": 1.0019543022751438,
+    "hint_MI": 1.5434302789962708,
+    "hint_value": 0.541475976721127,
+    "hint_ci95_boot": [
+     0.5731379907169846,
+     0.5936084938359799
+    ],
+    "hint_ci95_halfsample": [
+     0.5331383993015546,
+     0.5498135541406994
+    ],
+    "H_unordered_labels": 2.299665139083675,
+    "residual_label_bits_given_pair": 0.756234860087404,
+    "distinct_primes_drawn": 26981,
+    "occupied_pair_codes": 900,
+    "pool_primes_per_residue_class": 4677.866666666667,
+    "null_prod_mean": 0.007027452786813626,
+    "null_hint_mean": 0.2357150342616923,
+    "z_product": 1250.074986752431,
+    "z_hint": 296.65792852445395,
+    "ordered_label_MI": 1.004073857696364,
+    "wall_W": 0.0021195554212202453,
+    "wall_null_mean": 0.0020395273632666053,
+    "wall_null_sd": 0.00043204103868210047,
+    "wall_z": 0.1852325376259575,
+    "label_time_s": 1.67
+   }
+  },
+  "cyc3_x3+x2-2x-1_m7": {
+   "k10": {
+    "k": 10,
+    "n": 15000,
+    "label_rates": {
+     "0": 0.6538666666666667,
+     "1": 0.34613333333333335
+    },
+    "theory_rates": {
+     "1": 0.3333333333333333,
+     "0": 0.6666666666666666
+    },
+    "label_rate_max_dev": 0.012800000000000034,
+    "product_MI": 0.5001645065501271,
+    "hint_MI": 1.4050950636285027,
+    "hint_value": 0.9049305570783756,
+    "hint_ci95_boot": [
+     0.8963662542799402,
+     0.9118367692625718
+    ],
+    "hint_ci95_halfsample": [
+     0.8997009282864968,
+     0.9101601858702543
+    ],
+    "H_unordered_labels": 1.4050950636285027,
+    "residual_label_bits_given_pair": 0.0,
+    "distinct_primes_drawn": 75,
+    "occupied_pair_codes": 36,
+    "pool_primes_per_residue_class": 12.5,
+    "null_prod_mean": 0.00048280978396709594,
+    "null_hint_mean": 0.0033822263156586528,
+    "z_product": 2272.7779372680125,
+    "z_hint": 2386.25444908073,
+    "ordered_label_MI": 0.500208110456543,
+    "wall_W": 4.360390641581287e-05,
+    "wall_null_mean": 0.00014793729378745243,
+    "wall_null_sd": 0.0001156929549106538,
+    "wall_z": -0.9018127979548375,
+    "label_time_s": 0.0
+   },
+   "k14": {
+    "k": 14,
+    "n": 15000,
+    "label_rates": {
+     "0": 0.6652666666666667,
+     "1": 0.3347333333333333
+    },
+    "theory_rates": {
+     "1": 0.3333333333333333,
+     "0": 0.6666666666666666
+    },
+    "label_rate_max_dev": 0.0014000000000000123,
+    "product_MI": 0.47583604190587664,
+    "hint_MI": 1.387358601622154,
+    "hint_value": 0.9115225597162773,
+    "hint_ci95_boot": [
+     0.9033474272538897,
+     0.9184460493495877
+    ],
+    "hint_ci95_halfsample": [
+     0.9063665667357275,
+     0.9166785526968271
+    ],
+    "H_unordered_labels": 1.3873586016221537,
+    "residual_label_bits_given_pair": -2.220446049250313e-16,
+    "distinct_primes_drawn": 872,
+    "occupied_pair_codes": 36,
+    "pool_primes_per_residue_class": 145.33333333333334,
+    "null_prod_mean": 0.0004655738986813346,
+    "null_hint_mean": 0.003335097329960635,
+    "z_product": 2383.848196520492,
+    "z_hint": 2449.1482472128214,
+    "ordered_label_MI": 0.47605573316387473,
+    "wall_W": 0.00021969125799813313,
+    "wall_null_mean": 0.0001526378690193683,
+    "wall_null_sd": 0.00011902036106935281,
+    "wall_z": 0.5633774622788534,
+    "label_time_s": 0.0
+   },
+   "k18": {
+    "k": 18,
+    "n": 15000,
+    "label_rates": {
+     "0": 0.6641666666666667,
+     "1": 0.3358333333333333
+    },
+    "theory_rates": {
+     "1": 0.3333333333333333,
+     "0": 0.6666666666666666
+    },
+    "label_rate_max_dev": 0.0025000000000000022,
+    "product_MI": 0.4811950482132036,
+    "hint_MI": 1.3952176096901365,
+    "hint_value": 0.914022561476933,
+    "hint_ci95_boot": [
+     0.9050556245276855,
+     0.9216840771789984
+    ],
+    "hint_ci95_halfsample": [
+     0.9084636017670336,
+     0.9195815211868323
+    ],
+    "H_unordered_labels": 1.3952176096901368,
+    "residual_label_bits_given_pair": 2.220446049250313e-16,
+    "distinct_primes_drawn": 10098,
+    "occupied_pair_codes": 36,
+    "pool_primes_per_residue_class": 1791.5,
+    "null_prod_mean": 0.0004620189539385365,
+    "null_hint_mean": 0.003352327369027447,
+    "z_product": 2220.347484969195,
+    "z_hint": 2301.6025492989625,
+    "ordered_label_MI": 0.4812224265305809,
+    "wall_W": 2.737831737722155e-05,
+    "wall_null_mean": 0.00013910103280751965,
+    "wall_null_sd": 0.00010904354705678734,
+    "wall_z": -1.0245697104122586,
+    "label_time_s": 0.0
+   },
+   "k22": {
+    "k": 22,
+    "n": 15000,
+    "label_rates": {
+     "0": 0.6677333333333333,
+     "1": 0.33226666666666665
+    },
+    "theory_rates": {
+     "1": 0.3333333333333333,
+     "0": 0.6666666666666666
+    },
+    "label_rate_max_dev": 0.0010666666666666602,
+    "product_MI": 0.4761990052824356,
+    "hint_MI": 1.393096567720438,
+    "hint_value": 0.9168975624380025,
+    "hint_ci95_boot": [
+     0.9083456629137208,
+     0.9241058132560778
+    ],
+    "hint_ci95_halfsample": [
+     0.9112923858978836,
+     0.9225027389781213
+    ],
+    "H_unordered_labels": 1.3930965677204379,
+    "residual_label_bits_given_pair": -2.220446049250313e-16,
+    "distinct_primes_drawn": 26981,
+    "occupied_pair_codes": 36,
+    "pool_primes_per_residue_class": 23389.333333333332,
+    "null_prod_mean": 0.00046762274205143923,
+    "null_hint_mean": 0.003394377850691055,
+    "z_product": 2352.9246711111214,
+    "z_hint": 2612.6865735776482,
+    "ordered_label_MI": 0.47626020226251564,
+    "wall_W": 6.119698007999921e-05,
+    "wall_null_mean": 0.0001400344416102348,
+    "wall_null_sd": 0.00011307595987583177,
+    "wall_z": -0.69720797963428,
+    "label_time_s": 0.0
+   }
+  },
+  "D4_x4-2_m8": {
+   "k10": {
+    "k": 10,
+    "n": 15000,
+    "label_rates": {
+     "0": 0.6917,
+     "1": 0.0,
+     "2": 0.22703333333333334,
+     "3": 0.08126666666666667
+    },
+    "theory_rates": null,
+    "label_rate_max_dev": null,
+    "product_MI": 0.41228144252971477,
+    "hint_MI": 1.409159184954931,
+    "hint_value": 0.9968777424252162,
+    "hint_ci95_boot": [
+     0.9896227337458847,
+     1.0026769130212332
+    ],
+    "hint_ci95_halfsample": [
+     0.9922307989072492,
+     1.0015246859431832
+    ],
+    "H_unordered_labels": 1.8246022290970092,
+    "residual_label_bits_given_pair": 0.4154430441420782,
+    "distinct_primes_drawn": 75,
+    "occupied_pair_codes": 16,
+    "pool_primes_per_residue_class": 10.714285714285714,
+    "null_prod_mean": 0.000671428913475457,
+    "null_hint_mean": 0.0035269487068867026,
+    "z_product": 1617.141448361018,
+    "z_hint": 2385.881609086457,
+    "ordered_label_MI": 0.4123205663419318,
+    "wall_W": 3.912381221686287e-05,
+    "wall_null_mean": 0.00018026853751913774,
+    "wall_null_sd": 0.00013249397536976542,
+    "wall_z": -1.0652916474757954,
+    "label_time_s": 0.42
+   },
+   "k14": {
+    "k": 14,
+    "n": 15000,
+    "label_rates": {
+     "0": 0.6221333333333333,
+     "1": 0.0,
+     "2": 0.2543,
+     "3": 0.12356666666666667
+    },
+    "theory_rates": null,
+    "label_rate_max_dev": null,
+    "product_MI": 0.5370307692778336,
+    "hint_MI": 1.591060151955095,
+    "hint_value": 1.0540293826772615,
+    "hint_ci95_boot": [
+     1.0482018230923786,
+     1.0598663201178602
+    ],
+    "hint_ci95_halfsample": [
+     1.050006120137187,
+     1.058052645217336
+    ],
+    "H_unordered_labels": 2.0652019735076768,
+    "residual_label_bits_given_pair": 0.47414182155258167,
+    "distinct_primes_drawn": 872,
+    "occupied_pair_codes": 16,
+    "pool_primes_per_residue_class": 124.57142857142857,
+    "null_prod_mean": 0.000716082744322957,
+    "null_hint_mean": 0.0035997135305157048,
+    "z_product": 1955.7430318435804,
+    "z_hint": 2560.8410635952264,
+    "ordered_label_MI": 0.5370589577903427,
+    "wall_W": 2.8188512509203173e-05,
+    "wall_null_mean": 0.00019109754779916268,
+    "wall_null_sd": 0.00013388288281101314,
+    "wall_z": -1.216802565567095,
+    "label_time_s": 0.5
+   },
+   "k18": {
+    "k": 18,
+    "n": 15000,
+    "label_rates": {
+     "0": 0.6213333333333333,
+     "1": 0.0,
+     "2": 0.25383333333333336,
+     "3": 0.12483333333333334
+    },
+    "theory_rates": null,
+    "label_rate_max_dev": null,
+    "product_MI": 0.5574977787299247,
+    "hint_MI": 1.6111408174457154,
+    "hint_value": 1.0536430387157907,
+    "hint_ci95_boot": [
+     1.0467373509840234,
+     1.0595682331107892
+    ],
+    "hint_ci95_halfsample": [
+     1.049028497052534,
+     1.0582575803790473
+    ],
+    "H_unordered_labels": 2.0785482045376518,
+    "residual_label_bits_given_pair": 0.4674073870919364,
+    "distinct_primes_drawn": 10098,
+    "occupied_pair_codes": 16,
+    "pool_primes_per_residue_class": 1535.5714285714287,
+    "null_prod_mean": 0.0007135487255534914,
+    "null_hint_mean": 0.003597115057230546,
+    "z_product": 2179.841445945887,
+    "z_hint": 2698.672862350592,
+    "ordered_label_MI": 0.5575521829071565,
+    "wall_W": 5.440417723163007e-05,
+    "wall_null_mean": 0.00017726619550962586,
+    "wall_null_sd": 0.00012086130959835086,
+    "wall_z": -1.0165537564195999,
+    "label_time_s": 0.63
+   },
+   "k22": {
+    "k": 22,
+    "n": 15000,
+    "label_rates": {
+     "0": 0.6283666666666666,
+     "1": 0.0,
+     "2": 0.24693333333333334,
+     "3": 0.1247
+    },
+    "theory_rates": null,
+    "label_rate_max_dev": null,
+    "product_MI": 0.5310998409069652,
+    "hint_MI": 1.5818244694863597,
+    "hint_value": 1.0507246285793945,
+    "hint_ci95_boot": [
+     1.043197298986394,
+     1.0573887530096153
+    ],
+    "hint_ci95_halfsample": [
+     1.0456307927234407,
+     1.0558184644353483
+    ],
+    "H_unordered_labels": 2.0557708477213548,
+    "residual_label_bits_given_pair": 0.4739463782349951,
+    "distinct_primes_drawn": 26981,
+    "occupied_pair_codes": 16,
+    "pool_primes_per_residue_class": 20048.0,
+    "null_prod_mean": 0.000696897086345097,
+    "null_hint_mean": 0.0036194098564691075,
+    "z_product": 2043.4664451415342,
+    "z_hint": 2777.298502053872,
+    "ordered_label_MI": 0.5314249760880373,
+    "wall_W": 0.0003251351810721597,
+    "wall_null_mean": 0.0001851851125872969,
+    "wall_null_sd": 0.00013207016392301538,
+    "wall_z": 1.0596645323045157,
+    "label_time_s": 0.73
+   }
+  },
+  "C5_zeta11real_m11": {
+   "k10": {
+    "k": 10,
+    "n": 15000,
+    "label_rates": {
+     "0": 0.7997666666666666,
+     "1": 0.20023333333333335
+    },
+    "theory_rates": {
+     "1": 0.2,
+     "0": 0.8
+    },
+    "label_rate_max_dev": 0.00023333333333341866,
+    "product_MI": 0.19986555975902526,
+    "hint_MI": 1.1162877573995151,
+    "hint_value": 0.9164221976404898,
+    "hint_ci95_boot": [
+     0.9086400458912233,
+     0.9217686951119511
+    ],
+    "hint_ci95_halfsample": [
+     0.9113074124326007,
+     0.9215369828483789
+    ],
+    "H_unordered_labels": 1.1162877573995151,
+    "residual_label_bits_given_pair": 0.0,
+    "distinct_primes_drawn": 75,
+    "occupied_pair_codes": 100,
+    "pool_primes_per_residue_class": 7.5,
+    "null_prod_mean": 0.0008710026685940312,
+    "null_hint_mean": 0.009731562575999966,
+    "z_product": 656.4803982414837,
+    "z_hint": 1074.7471274772722,
+    "ordered_label_MI": 0.20004768324902905,
+    "wall_W": 0.00018212349000375978,
+    "wall_null_mean": 0.00033365639344384645,
+    "wall_null_sd": 0.000167649760323769,
+    "wall_z": -0.9038659115732878,
+    "label_time_s": 0.0
+   },
+   "k14": {
+    "k": 14,
+    "n": 15000,
+    "label_rates": {
+     "0": 0.8112333333333334,
+     "1": 0.18876666666666667
+    },
+    "theory_rates": {
+     "1": 0.2,
+     "0": 0.8
+    },
+    "label_rate_max_dev": 0.011233333333333345,
+    "product_MI": 0.18704026075538538,
+    "hint_MI": 1.090086783680585,
+    "hint_value": 0.9030465229251996,
+    "hint_ci95_boot": [
+     0.8947069368940032,
+     0.9090580465500031
+    ],
+    "hint_ci95_halfsample": [
+     0.8974395945564527,
+     0.9086534512939465
+    ],
+    "H_unordered_labels": 1.090086783680585,
+    "residual_label_bits_given_pair": 0.0,
+    "distinct_primes_drawn": 872,
+    "occupied_pair_codes": 100,
+    "pool_primes_per_residue_class": 87.2,
+    "null_prod_mean": 0.0008656384329121736,
+    "null_hint_mean": 0.009751159088469871,
+    "z_product": 671.7825125073874,
+    "z_hint": 1227.0291757249418,
+    "ordered_label_MI": 0.1871361953710151,
+    "wall_W": 9.593461562968661e-05,
+    "wall_null_mean": 0.00033417631637261733,
+    "wall_null_sd": 0.00016779372725326318,
+    "wall_z": -1.419848671597451,
+    "label_time_s": 0.0
+   },
+   "k18": {
+    "k": 18,
+    "n": 15000,
+    "label_rates": {
+     "0": 0.7994,
+     "1": 0.2006
+    },
+    "theory_rates": {
+     "1": 0.2,
+     "0": 0.8
+    },
+    "label_rate_max_dev": 0.0006000000000000449,
+    "product_MI": 0.2049894191828211,
+    "hint_MI": 1.1239694268011244,
+    "hint_value": 0.9189800076183033,
+    "hint_ci95_boot": [
+     0.910180900688625,
+     0.9260510686647151
+    ],
+    "hint_ci95_halfsample": [
+     0.9143589885771733,
+     0.9236010266594333
+    ],
+    "H_unordered_labels": 1.1239694268011249,
+    "residual_label_bits_given_pair": 4.440892098500626e-16,
+    "distinct_primes_drawn": 10098,
+    "occupied_pair_codes": 100,
+    "pool_primes_per_residue_class": 1074.9,
+    "null_prod_mean": 0.0008588750023441089,
+    "null_hint_mean": 0.009762478087918476,
+    "z_product": 701.6110745672103,
+    "z_hint": 1071.2452570285748,
+    "ordered_label_MI": 0.20543267583997243,
+    "wall_W": 0.0004432566571512855,
+    "wall_null_mean": 0.0003157460076861938,
+    "wall_null_sd": 0.00015164963242545067,
+    "wall_z": 0.840823992948183,
+    "label_time_s": 0.0
+   },
+   "k22": {
+    "k": 22,
+    "n": 15000,
+    "label_rates": {
+     "0": 0.7966,
+     "1": 0.2034
+    },
+    "theory_rates": {
+     "1": 0.2,
+     "0": 0.8
+    },
+    "label_rate_max_dev": 0.0034000000000000696,
+    "product_MI": 0.20734245433211204,
+    "hint_MI": 1.1341473599958127,
+    "hint_value": 0.9268049056637007,
+    "hint_ci95_boot": [
+     0.9190802751619258,
+     0.9334043664703894
+    ],
+    "hint_ci95_halfsample": [
+     0.9215661265150364,
+     0.9320436848123649
+    ],
+    "H_unordered_labels": 1.134147359995813,
+    "residual_label_bits_given_pair": 2.220446049250313e-16,
+    "distinct_primes_drawn": 26981,
+    "occupied_pair_codes": 100,
+    "pool_primes_per_residue_class": 14033.6,
+    "null_prod_mean": 0.0008422706156445799,
+    "null_hint_mean": 0.00974268208786033,
+    "z_product": 685.3207181109644,
+    "z_hint": 1185.829598928606,
+    "ordered_label_MI": 0.20798458727182592,
+    "wall_W": 0.0006421329397138725,
+    "wall_null_mean": 0.00034154575032599964,
+    "wall_null_sd": 0.00019350508275471105,
+    "wall_z": 1.5533813639867027,
+    "label_time_s": 0.0
+   }
+  }
+ },
+ "verdicts": {
+  "S3_cubic_x3+x+1_m31": {
+   "hints": [
+    0.7422851361721421,
+    0.5584312724492071,
+    0.5424903141071513,
+    0.541475976721127
+   ],
+   "median": 0.5504607932781792,
+   "max_rel_drift": 0.3484795742701027,
+   "spearman_rho": -1.0,
+   "spearman_p": 0.08333333333333333,
+   "wall_all_inside_null": true,
+   "dial_verdict": "H2_drift"
+  },
+  "cyc3_x3+x2-2x-1_m7": {
+   "hints": [
+    0.9049305570783756,
+    0.9115225597162773,
+    0.914022561476933,
+    0.9168975624380025
+   ],
+   "median": 0.912772560596605,
+   "max_rel_drift": 0.008591410233786852,
+   "spearman_rho": 1.0,
+   "spearman_p": 0.08333333333333333,
+   "wall_all_inside_null": true,
+   "dial_verdict": "H1_stable"
+  },
+  "D4_x4-2_m8": {
+   "hints": [
+    0.9968777424252162,
+    1.0540293826772615,
+    1.0536430387157907,
+    1.0507246285793945
+   ],
+   "median": 1.0521838336475926,
+   "max_rel_drift": 0.05256314481723926,
+   "spearman_rho": 0.2,
+   "spearman_p": 0.9166666666666666,
+   "wall_all_inside_null": true,
+   "dial_verdict": "H1_stable"
+  },
+  "C5_zeta11real_m11": {
+   "hints": [
+    0.9164221976404898,
+    0.9030465229251996,
+    0.9189800076183033,
+    0.9268049056637007
+   ],
+   "median": 0.9177011026293966,
+   "max_rel_drift": 0.01596879382863194,
+   "spearman_rho": 0.8,
+   "spearman_p": 0.3333333333333333,
+   "wall_all_inside_null": true,
+   "dial_verdict": "H1_stable"
+  }
+ },
+ "global_verdict": "H2_DRIFT",
+ "wall_invariant": "HELD_at_every_size",
+ "method_ledger": [
+  "L1 (design): brief's first cyclic-cubic phrasing (p=1 split / p=6 -> [3]) contradicts its own correction; correct abelian rule is p = +-1 mod 7 -> [1,1,1] (conjugation acts trivially on the real field), rates 1/3 vs 2/3; verified numerically against direct factorization.",
+  "L2 (design): D4 label conflation documented -- root count nr merges [1,1,2] with [2,2]; chose plain nr over the brief's 'nr mod 4' because mod-4 would additionally merge [4] with [1,1,1,1].",
+  "L3 (pre-data bug, caught by sympy cross-check): F_CYC3 constant term encoded +1 instead of -1 (x^3+x^2-2x+1); 83/480 poly-engine mismatches, all confined to this dial; fixed to [-1,-2,1,1], re-verified 0/200.",
+  "L4 (smoke bug): abelian-rule verification sampled 100 primes from pools as small as 75 (k=10); clamped to min(100, pool).",
+  "L5 (smoke, statistical instrument rejected BEFORE data collection): naive wall statistic D = I(N;ordered) - I(N;unordered) under the unconditional label-shuffle null mis-centers -- its plug-in bias asymmetry depends on the dependence structure, which shuffling destroys (spurious z to -4.7 in smoke). Replaced with conditional orientation-permutation test W: hold (N mod m*, unordered pair) fixed, fair-coin swap orientations within heterogeneous strata, 300 shuffles.",
+  "L6 (statistical): Spearman t/df=2 approximation invalid at n=4 (reports p~0 at |rho|=1; exact two-sided permutation floor is 2/24=0.083, so the trend leg alone can never reach p<0.05 at n=4). Replaced with exact permutation p; disclosed in advance that the drift leg decides.",
+  "L7 (post-first-full-run, before verdict interpretation): percentile bootstrap of the hint value sits entirely ABOVE its own point estimate in every cell -- known tie-inflation artifact: resampling with replacement duplicates rows, inflating the plug-in bias of the LARGE alphabet (pair residues, up to m^2 bins) more than the small one, and the hint is a difference. The bootstrap CI is disclosed but NOT used; verdicts use point estimates per the pre-stated rule, variability is reported additionally as a 40-half-sample scaled 95% spread."
+ ],
+ "runtime_s": 11.8
+}

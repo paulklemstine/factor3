@@ -9504,3 +9504,16 @@ Paper 127, issue #223. Now 459 experiments. Assessment v236.
 Ramified primes add negligible info: x2-3 ramified {2,3} gives I=1.0020 all vs 1.0000 unramified only.
 +0.002 bits from including two ramified primes out of thousands. Exclusion fully justified.
 Now 460 experiments. Assessment v237.
+
+## Part 201 - HINT-SIZE-SCALING (round-37 #1, exp 464, v238)
+
+First test of the hint programme's size axis (all prior measurements at one toy size ~2^12).
+Four dials (S3@31, C3@7, D4@8, C5@11) x four factor sizes k={10,14,18,22}, n=15k/cell, seed 20260821.
+SIZE-STABLE-PLATEAU: on-plateau drift <=5.3% across k=14->22 (16,384x span); abelian dials <=1.6%;
+abelian residual entropy EXACTLY 0 at every size. POOL-FLOOR EXCEPTION: S3@k=10 reads 0.7423 vs
+plateau ~0.55 — prime-identity leakage through the pair-residue channel (75-prime pool = 2.5
+primes/class), not a size law. Which-factor wall inside conditional orientation null at ALL 16 cells
+(max |z| = 1.55); the naive unconditional wall test would have FALSELY cried violation (|z| to 4.7)
+— the conditional instrument was required (ledger L5). Hint values transfer across factor sizes
+wherever the pool resolves the conductor classes (observed floor ~30 primes/class).
+Paper 129, issue #225. Now 461 experiments. Assessment v238.
