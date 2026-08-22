@@ -158,6 +158,39 @@ class Runner:
             del out, kr, vr, q, acc
         return m.model.norm(h)
 
+
+    @torch.no_grad()
+    def forward_layerk(self, ids, layer_k):
+        """Full attention except per-layer top-k where layer_k specifies {layer: k}."""
+        B, L = ids.shape
+        m = self.m
+        h = m.model.embed_tokens(ids).float()
+        causal = torch.ones(L, L, dtype=torch.bool, device=ids.device).tril()
+        neg = float("-inf")
+        for li, layer in enumerate(m.model.layers):
+            sa = layer.self_attn
+            k = layer_k.get(li) if layer_k else None
+            r = h
+            x = layer.input_layernorm(h)
+            q, kr, vr = self._attn_proj(layer, x)
+            out = torch.empty(B, self.H, L, self.hd, device=ids.device)
+            for qs in range(0, L, 256):
+                qe = min(qs + 256, L)
+                sc = q[:, :, qs:qe] @ kr.transpose(-2, -1) / math.sqrt(self.hd)
+                sc = sc.masked_fill(~causal[qs:qe], neg)
+                if k is not None:
+                    kk = int(min(k, L))
+                    thr = sc.topk(kk, dim=-1).values[..., -1:]
+                    sc = sc.masked_fill(sc < thr, neg)
+                p = torch.softmax(sc, dim=-1)
+                out[:, :, qs:qe] = p @ vr
+                del sc, p
+            out = out.transpose(1, 2).reshape(B, L, self.H * self.hd)
+            h = r + sa.o_proj(out)
+            h = h + layer.mlp(layer.post_attention_layernorm(h))
+            del out, kr, vr, q
+        return m.model.norm(h)
+
     @torch.no_grad()
     def loss_acc(self, ids, **kw):
         B, L = ids.shape

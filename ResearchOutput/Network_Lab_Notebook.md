@@ -1681,3 +1681,16 @@ log /tmp/net58.log.
 NET-56); (h) DIRECT. Open: MLP heads (bounded by P2 logic); per-layer ablation (next);
 probe+recency hybrid; 1.5B tail map. Paper 143, issue #291. Now 58 network experiments.
 Assessment v58.
+
+## Part 59 — NO-SINGLE-LAYER-IS-THE-BOTTLENECK: solo-layer oracle top-k profiles are FLAT — every one of 24 layers tolerates k=16 alone at ≤0.5% cost (spread 0.6 pts; L23 the BEST at 1.0008, L22 mid-pack), k=32 even flatter (0.5 pts); P1 tail-is-critical REFUTED, P2 confirmed trivially (all ≥0.995), P3 non-uniform REFUTED; EPISTASIS resolution: the tail's four-fold specialness (NET-50/51/54: diffuse/divergent/unportable/personal) lives in INTERACTION with upstream representations, not individual fragility; joint all-layer k=16 cost (1.7%) is SUB-ADDITIVE over solo costs (~4.8% if additive); no per-layer budget hierarchy to exploit in mixed-precision serving at this scale (NET-59; limited-memory axis round 15)
+
+**Method:** for each layer independently, oracle top-k applied ONLY to that layer (k∈{16,32}),
+all others full; retained accuracy on 24 held-out wikitext windows @ctx=512; gate exact.
+Script ResearchOutput/exp_net59_perlayer.py; log /tmp/net59.log.
+**Verdict:** NO-SINGLE-LAYER-IS-THE-BOTTLENECK. Barriers: (a) clean (two refuted horns
+pre-stated); (b) clean (causal solo profiles new in-programme); (c) confronted (one context,
+solo granularity stated); (d) clean; (e) deterministic monotone profiles; (f) clean
+(ALL_DONE_NET59); (g) fair (identical budget/protocol per layer); (h) DIRECT (rules out the
+simplest mixed-precision design). Open: pairwise/joint tail ablations; 1.5B replication;
+probe+recency hybrid; domain-jump corpora; 7B cell. Paper 144, issue #293.
+Now 59 network experiments. Assessment v59.
