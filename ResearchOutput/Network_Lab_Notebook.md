@@ -1742,3 +1742,12 @@ gate exact. Script ResearchOutput/exp_net63_fine2048.py; results
 (12 windows stated); (d) clean; (e) deterministic; (f) clean (ALL_DONE_NET63); (g) fair;
 (h) DIRECT. Open: corpus-B fine sweep @2048; domain-jump corpora; 1.5B fine grids; 7B cell.
 Paper 148, issue #299. Now 63 network experiments. Assessment v63.
+
+## Part 64 — THE-CORPUS-B-DISAGREEMENT-WAS-A-GRID-ARTIFACT: corpus-B fine sweep @2048 gives k*=24 — IDENTICAL to corpus-A; the full 0.5B fine-grid chain {16, 20, 24} now replicates EXACTLY across two disjoint shards at all three contexts (every deployment-table entry dual-corpus-confirmed); baseline accuracies differ (0.495 vs 0.476) yet knees identical — text difficulty and attention-budget structure independent; P1/P3 REFUTED, P2 CONFIRMED (NET-64; limited-memory axis round 26)
+
+**Method:** byte-identical NET-63 harness except corpus path (wikitext shard 1); gate exact;
+12 windows @ctx=2048. Script ResearchOutput/exp_net64_fine2048B.py; log /tmp/net64.log.
+**Verdict:** THE-CORPUS-B-DISAGREEMENT-WAS-A-GRID-ARTIFACT. Barriers: (a) clean; (b) clean;
+(c) confronted (12 windows stated); (d) clean; (e) deterministic; (f) clean (ALL_DONE);
+(g) fair (only corpus path changed); (h) DIRECT. Open: domain-jump corpora; 1.5B fine grids;
+7B cell. Paper 149, issue #300. Now 64 network experiments. Assessment v64.
