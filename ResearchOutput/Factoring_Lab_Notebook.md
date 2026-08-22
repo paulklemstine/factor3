@@ -10180,6 +10180,19 @@ a weight-misallocation artifact — the lost content sits beyond the p<=29 footp
 primes 31-356 and/or non-footprint structure).
 Paper 170, issue #272. Now 504 experiments. Assessment v279.
 
+## Part 242 - MID-PRIME-HUNT (round-46 #1 [cron iteration], exp 505, v280)
+
+The hunt for the tight-u residual (paper 170's open question). VERDICT:
+PRIME-POWER-CARRIES. H1 FAIL: mid-prime hit fractions (31..97) add only +0.019 (CI spans
+0); PC1 nothing. H2 FAIL: QR-density features nothing (+0.004). H3's ALTERNATIVE
+CONFIRMED DECISIVELY: **prime-power hits — count of values divisible by p^2 for p <= 13 —
+add +0.0892 out-of-sample R2 (CI [0.041, 0.125])** over the full baseline. The tight-u
+residual is carried by SQUAREFULL divisibility: at smaller B, a value with p^2 | v has its
+smoothness budget disproportionately consumed by small-prime powers, which marginal
+squarefree-hit features cannot see. The per-N yield dial's final form gains a prime-power
+term.
+Paper 172, issue #273. Now 505 experiments. Assessment v280.
+
 AMENDMENT (original agent's clean run + coordinator diagnostic): the ANTI-COINCIDENCE read
 is RETIRED — measured c_pq equals the exact CRT count on all 8000 points (corr 1.000000);
 the ~0.26 ratios were the coordinator comparing conditional-on-both-QR predictions against
