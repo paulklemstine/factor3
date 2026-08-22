@@ -1823,3 +1823,15 @@ math prose only, no modern LaTeX stated); (d) clean per-corpus split; (e) determ
 (f) clean (ALL_DONE_NET70); (g) fair (only text changed); (h) DIRECT (three-domain table
 complete). Open: modern LaTeX notation; non-English; increments@4096; 7B cell.
 Paper 155, issue #310. Now 70 network experiments. Assessment v70.
+
+## Part 71 — THE-TOKENIZER-TAX-IS-FOUR-KEYS: German prose shifts the knee chain UP exactly one fine step — {20, 24} at {512, 1024} vs English prose's {16, 20} — mirroring code's −4 below; FOUR-DOMAIN table complete: base(code)=12, base(prose-EN)=16, base(math)=16, base(prose-DE)=20, +4/doubling increment UNIVERSAL; P1 CONFIRMED (exactly +4 at both contexts), P2/P3 REFUTED; tokenizer-tax mechanism: German compounds pack more content per word → more positions needed per idea; deployment: multilingual workloads need highest-base budget (24 keys covers all four domains to 1024) (NET-71; limited-memory axis round 39)
+
+**Method:** German prose corpus (Goethe's Faust + classic from Gutenberg, fsynced), fine
+grids {4..24}@512 and {8..32}@1024 on Qwen2.5-0.5B fp32; gate exact. Script
+ResearchOutput/exp_net71_nonenglish.py; results ~/f3cache/net71_results.json;
+log /tmp/net71.log.
+**Verdict:** THE-TOKENIZER-TAX-IS-FOUR-KEYS. Barriers: (a) clean; (b) clean (first
+non-English leg); (c) confronted (German only, two classics stated); (d) clean; (e)
+deterministic; (f) clean (ALL_DONE_NET71); (g) fair (only text changed); (h) DIRECT.
+Open: more languages; modern LaTeX; increments@4096; 7B cell. Paper 156, issue #310.
+Now 71 network experiments. Assessment v71.
