@@ -12,12 +12,22 @@ committed scanning at the extracted window reproduces descending-order's gain.
 
 ## 2. Results
 
-- Descending order reproduced at **5.23×** on this population (anchor 5.19×).
-- **H1 REFUTED**: the extracted pooled window is (α=0.9, μ/M=0.79) — far outside paper 143's
-  band ([0.02, 0.05] at α=0.9) — and committed scanning there recovers only **69.7%** of the
-  descending gain; per-draw corr(desc, committed) = −0.32.
-- **H2 confirmed in direction**: balance strata drive everything — local descending speedup
-  **35.96×** in the most-balanced quartile down to <1 in low-M deciles.
+- Descending order reproduced at **5.23×** on this population (anchor 5.19×, ratio 1.008).
+- **H1 REFUTED (strong form)**: the extracted pooled window is (α=0.9, μ/M=0.79) — far
+  outside paper 143's band ([0.02, 0.05] at α=0.9) — committed scanning there recovers only
+  **69.7%** of the descending gain (corr −0.32: the interval policy misranks which Ns are
+  cheap); and even COST-OPTIMAL committed windows per decile (DC1-verified to 9e-11) reach
+  only **4.707× = 90.0%** of desc population-wide.
+- **The refined diagnosis — ORDER-NOT-SUPPORT**: what descending exploits is likelihood
+  ORDER (scan from √N downward, adaptive stop; mean stopped width E[c_d]/E[M] = 16% with
+  effective coverage 1.0) — a third coordinate that (α, μ/M) cannot price. Recommendation
+  adopted into the programme queue: extend paper 143's hint plane with an ordered-adaptive-
+  scan coordinate.
+- **H2 confirmed with inverted detail**: balance strata drive everything — local descending
+  speedup **35.96×** (most-balanced quartile) down to <1 (low-M deciles), monotone across
+  q/p quintiles (μ/M falls 0.79 → 0.29); near-square Ns map to WIDE within-stratum windows
+  despite huge local speedup, because their advantage lives in the pointwise relation
+  J ≈ M_N — invisible to absolute-window summaries.
 - FLAG: the agent's DC1 closed-form cross-check diverged (max err 1.6e7) while the DC2 brute
   force agrees with direct measurement (0 mismatches) — analytic path buggy, brute paths
   consistent; disclosed, analytic numbers not used.
