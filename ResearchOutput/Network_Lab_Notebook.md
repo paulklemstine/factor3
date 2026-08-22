@@ -1776,3 +1776,14 @@ log /tmp/net66.log.
 Open: sub-20 addendum @2048; 0.5B @4096 (chain continues rising?); domain-jump corpora;
 7B cell (does the shift extend?). Paper 151, issue #304. Now 66 network experiments.
 Assessment v66.
+
+## Part 67 — SCALE-HALVES-THE-CONTEXT-INCREMENT: the 1.5B knee at 2048 is 18 (k=14 fails 0.9757 ~2SE, k=18 passes 0.9811) — refining the chain to {16, 16, 18} and revealing the cleaner law: both models START at 16 keys, and scale HALVES the context-increment (+4/doubling at 0.5B → +2/doubling at 1.5B); NET-66's one-octave reading was a coarse-grid approximation; P1 CONFIRMED, P2 REFUTED; baseline drift-assert passed exactly; deployment: a 20-key budget covers BOTH models to 2048 with margin (NET-67; limited-memory axis round 32)
+
+**Method:** two-point addendum k∈{14,18} at ctx=2048 on Qwen2.5-1.5B, same harness/windows
+as NET-66; baseline drift-assert (must equal 0.5132). Script
+ResearchOutput/exp_net67_sub20.py; results ~/f3cache/net67_results.json; log /tmp/net67.log.
+**Verdict:** SCALE-HALVES-THE-CONTEXT-INCREMENT. Barriers: (a) clean; (b) clean;
+(c) confronted (two-point addendum stated); (d) clean; (e) deterministic drift-assert;
+(f) clean (ALL_DONE_NET67); (g) fair; (h) DIRECT (2048 entry refined). Open: increments at
+4096; domain-jump corpora; 7B cell (does halving extend?). Paper 152, issue #305.
+Now 67 network experiments. Assessment v67.
