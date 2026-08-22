@@ -10015,3 +10015,28 @@ curves); total-ops-to-factor advantage confirmed (1.92x at k=20). Slope 0.398 �
 class, marginally below lite's 0.463; no toy-scale separation from L_p[1/2,sqrt2] (expected).
 ADOPTED: true-lcm as the lab's canonical stage-1 operator.
 Paper 156, issue #258. Now 488 experiments. Assessment v265.
+
+## Part 229 - DEGREE-SEVEN lean (round-42 #3 [cron iteration], exp 489, v266)
+
+The ladder's LAST gap below 10: cyclic degree-7 subfield of Q(zeta_29) (conductor 29,
+C28/<g^7> = C7). FULL PINNING CONFIRMED: T(p)=1 iff dlog_g29(p)==0 mod 7 else 7; densities
+{1/7, 6/7} exact; H(T) = 0.5917 EXACTLY (empirical 0.5914 on 295k primes, per-class
+degenerate); semiprime pair 0.0112 vs law 0.0111; Is(7)-projection 0.1161 = Bin(2,1/7)
+closed form. LEDGER: coordinator-supplied anchor 0.0103 was G(7) (the OR channel) not
+Is(7) — labeling error caught by the measurement itself.
+Paper 157, issue #259. Now 489 experiments. Assessment v266.
+
+## Part 230 - ECM-PLANE-COMPLETION (round-42 #4 [cron iteration], exp 490, v267)
+
+The ECM arm's author-agent completed paper 154's deferred column properly (its own script;
+marks exp487 SUPERSEDED). ECM-PLANE-COMPLETION, all three hypotheses confirmed:
+ECM across-k alpha = 0.761 (B1=50) / 0.718 (B1=250) — inside the predicted (0.52, 0.84)
+window strictly between rho and TD; factor-locality SHARP for every non-TD method under
+uniform-vs-balanced draws (delta-alpha <= 0.03, only intercepts move; TD shifts 1.00 -> 1.14
+replicating paper 89's 1.09); ECM-over-rho intercept +3.04 bits common-currency /
+10.29x wall — H3's order-of-magnitude bound confirmed AT THE EDGE. Full (alpha, c) table
+for five methods x two draw regimes recorded. LEDGER: rho CYCLE-LOCK pathology found and
+fixed (lambda_q | lambda_p -> every sync is an exact meeting; ~6% draws burned cap);
+batched-gcd quantization erased the sqrt-p law (first run alpha ~ 0) — per-iteration gcd
+restored alpha = 0.512 vs paper 154's 0.52.
+Paper 158, issue #260. Now 490 experiments. Assessment v267.
