@@ -10067,6 +10067,12 @@ beats plain count by +0.16/+0.18 in both regimes. The dial's residue-structure s
 fully draw-regime-invariant — QS triage form holds for unbalanced keys too.
 Paper 162, issue #264. Now 494 experiments. Assessment v271.
 
+AMENDMENT (author-agent full replication): 4-cell design ({balanced,uniform} x {40,44})
+replicates every verdict — Spearman(qrc) 0.61-0.66 / (w) 0.72-0.76; augmented R2 0.55-0.64;
+dR2(w-count) +0.18-0.21 CI [0.145,0.235]. Arms verified genuinely different yet rate
+distributions near-identical — invariance is real. LAB-WIDE HAZARD FLAGGED: hash()-based
+RNG seeding drifts under PYTHONHASHSEED randomization — audit other experiments.
+
 ## Part 229 - DEGREE-SEVEN lean (round-42 #3 [cron iteration], exp 489, v266)
 
 The ladder's LAST gap below 10: cyclic degree-7 subfield of Q(zeta_29) (conductor 29,

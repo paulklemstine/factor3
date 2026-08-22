@@ -31,3 +31,17 @@ dilutes nor distorts under unbalanced keys, so the QS triage form holds for the 
 key-shape mix. Barriers: (5)/(8) unchanged.
 
 Now 494 experiments. Assessment v271.
+
+
+## Addendum — independent full-scale replication (author agent)
+
+The author agent's full design (4 cells: {balanced, uniform} × bitlen {40, 44}, 1500 Ns,
+240 values, bootstrap n=300) replicates every verdict: Spearman(qrc) 0.61–0.66 /
+Spearman(w) 0.72–0.76; R² base 0.37–0.43; augmented 0.55–0.64; ΔR²(w−count) +0.18–0.21
+with CI [0.145, 0.235] under uniform draws. Arms verified genuinely different
+(log₂(q/p) spans −0.49..+0.49 balanced vs −4.95..+19.1 uniform) yet rate distributions
+near-identical — the invariance is real, not an artifact of matched marginals.
+
+Lab-wide hazard flagged by the author: seeding RNGs with Python `hash()` of arm names
+drifts run-to-run under PYTHONHASHSEED randomization — replaced with deterministic index
+maps; other experiments should audit for the same pattern.

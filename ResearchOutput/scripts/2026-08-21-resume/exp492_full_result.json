@@ -1,0 +1,568 @@
+{
+ "exp": "492",
+ "codename": "UNIFORM-DIAL",
+ "seed": 20260924,
+ "round": 43,
+ "script": "exp492_uniform_dial_full.py",
+ "started": "2026-08-22T02:48:02",
+ "takeover_note": "exp492_uniform_dial.py was overwritten mid-task by a foreign lean implementation; preserved as exp492_uniform_dial_LEAN_TAKEOVER_foreign.py and result_lean_takeover.json. That independent run agrees directionally (H1 true / H2 false / H3 true).",
+ "hypotheses": {
+  "H1": "Spearman(rate,qrc) > 0.4 AND Spearman(rate,w) > 0.4 in both uniform cells, top-ranked",
+  "H2": "R2_aug_uniform < R2_aug_balanced - 0.05 (bitlen-averaged)",
+  "H3": "DeltaR2_uniform = R2_aug - R2_base >= +0.02 under uniform draws (secondary: exceeds balanced Delta)"
+ },
+ "design_observations": [
+  "D1 d1 structurally zero under both arms (min factor >= 2^10 > 13)",
+  "D2 relation values v_i = (isqrt(N)+i)^2 - N, i=1..240 (QS window)",
+  "D3 B may exceed small p for ~0.1% of uniform draws; convention kept"
+ ],
+ "stages": {
+  "populations": {
+   "summary": {
+    "balanced_40": {
+     "n": 1500,
+     "log2_qp_quantiles": [
+      -0.479,
+      -0.151,
+      -0.004,
+      0.145,
+      0.484
+     ],
+     "min_factor_quantiles": [
+      741509.0,
+      832165.0,
+      1044931.0
+     ],
+     "d1_possible": false
+    },
+    "balanced_44": {
+     "n": 1500,
+     "log2_qp_quantiles": [
+      -0.489,
+      -0.147,
+      -0.005,
+      0.147,
+      0.494
+     ],
+     "min_factor_quantiles": [
+      2966389.0,
+      3309003.0,
+      4154347.0
+     ],
+     "d1_possible": false
+    },
+    "uniform_40": {
+     "n": 1500,
+     "log2_qp_quantiles": [
+      -4.95,
+      -3.561,
+      -2.394,
+      -0.292,
+      17.658
+     ],
+     "min_factor_quantiles": [
+      2063.0,
+      340480.0,
+      1031047.0
+     ],
+     "d1_possible": false
+    },
+    "uniform_44": {
+     "n": 1500,
+     "log2_qp_quantiles": [
+      -0.931,
+      0.365,
+      1.578,
+      3.533,
+      19.111
+     ],
+     "min_factor_quantiles": [
+      4931.0,
+      2116033.0,
+      4144663.0
+     ],
+     "d1_possible": false
+    }
+   },
+   "sec": 0.0
+  },
+  "features": {
+   "sec": 0.1,
+   "per_cell": {
+    "balanced_40": {
+     "qrc_mean": 12.026,
+     "qrc_sd": 2.4201909015612797,
+     "w_mean": 1.570061724679581,
+     "w_sd": 0.4472344770574116,
+     "d1_nonzero": 0
+    },
+    "balanced_44": {
+     "qrc_mean": 11.944666666666667,
+     "qrc_sd": 2.504184143033859,
+     "w_mean": 1.5622914774969885,
+     "w_sd": 0.4595308928557091,
+     "d1_nonzero": 0
+    },
+    "uniform_40": {
+     "qrc_mean": 12.020666666666667,
+     "qrc_sd": 2.4582323369084182,
+     "w_mean": 1.5521302863862738,
+     "w_sd": 0.4475977952327446,
+     "d1_nonzero": 0
+    },
+    "uniform_44": {
+     "qrc_mean": 11.942666666666666,
+     "qrc_sd": 2.3926372246725762,
+     "w_mean": 1.5402934784143685,
+     "w_sd": 0.4481408746619978,
+     "d1_nonzero": 0
+    }
+   }
+  },
+  "rates": {
+   "sec": 3.3,
+   "per_cell": {
+    "balanced_40": {
+     "rate_mean": 0.1275888888888889,
+     "rate_median": 0.125,
+     "rate_sd": 0.043109856081388453,
+     "rate_q": [
+      0.075,
+      0.125,
+      0.1875
+     ],
+     "B_median": 2146.887204409394,
+     "d2_mean": 0.8108138888888888
+    },
+    "balanced_44": {
+     "rate_mean": 0.12684166666666666,
+     "rate_median": 0.125,
+     "rate_sd": 0.04166027089801861,
+     "rate_q": [
+      0.0792,
+      0.125,
+      0.1833
+     ],
+     "B_median": 3739.6370943857737,
+     "d2_mean": 0.8076555555555556
+    },
+    "uniform_40": {
+     "rate_mean": 0.12655,
+     "rate_median": 0.12083333333333333,
+     "rate_sd": 0.042117068986338546,
+     "rate_q": [
+      0.075,
+      0.1208,
+      0.1833
+     ],
+     "B_median": 2160.840920641458,
+     "d2_mean": 0.8078305555555556
+    },
+    "uniform_44": {
+     "rate_mean": 0.1255388888888889,
+     "rate_median": 0.12083333333333333,
+     "rate_sd": 0.039343411687471595,
+     "rate_q": [
+      0.0792,
+      0.1208,
+      0.1754
+     ],
+     "B_median": 3773.44317002123,
+     "d2_mean": 0.8043777777777777
+    }
+   }
+  },
+  "stats": {
+   "cells": {
+    "balanced_40": {
+     "spearman": {
+      "qrc": 0.6439,
+      "w": 0.755,
+      "d1": NaN,
+      "d2": 0.6333,
+      "log2qp": 0.0064
+     },
+     "spearman_ci": {
+      "qrc": [
+       0.61094,
+       0.67096
+      ],
+      "w": [
+       0.73071,
+       0.77626
+      ],
+      "d1": [
+       NaN,
+       NaN
+      ],
+      "d2": [
+       0.6016,
+       0.66121
+      ],
+      "log2qp": [
+       -0.05618,
+       0.05674
+      ]
+     },
+     "r2": {
+      "base": 0.42702,
+      "aug": 0.63946,
+      "aug_d2": 0.67013
+     },
+     "r2_ci": {
+      "base": [
+       0.33149,
+       0.50882
+      ],
+      "aug": [
+       0.56826,
+       0.69817
+      ],
+      "aug_d2": [
+       0.60459,
+       0.72523
+      ]
+     },
+     "delta_aug_minus_base": 0.21244,
+     "delta_aug_minus_base_ci": [
+      0.15459,
+      0.27217
+     ],
+     "coefs": {
+      "base": [
+       -0.013359,
+       0.011753
+      ],
+      "aug": [
+       -0.02726,
+       0.005643,
+       0.055569,
+       0.0
+      ],
+      "aug_d2": [
+       0.042664,
+       0.00388,
+       0.093565,
+       -0.133593
+      ]
+     }
+    },
+    "balanced_44": {
+     "spearman": {
+      "qrc": 0.6081,
+      "w": 0.7354,
+      "d1": NaN,
+      "d2": 0.6217,
+      "log2qp": 0.0416
+     },
+     "spearman_ci": {
+      "qrc": [
+       0.57233,
+       0.64152
+      ],
+      "w": [
+       0.71121,
+       0.76004
+      ],
+      "d1": [
+       NaN,
+       NaN
+      ],
+      "d2": [
+       0.59201,
+       0.65174
+      ],
+      "log2qp": [
+       -0.01103,
+       0.08986
+      ]
+     },
+     "r2": {
+      "base": 0.40205,
+      "aug": 0.59941,
+      "aug_d2": 0.61381
+     },
+     "r2_ci": {
+      "base": [
+       0.29284,
+       0.4883
+      ],
+      "aug": [
+       0.50813,
+       0.66416
+      ],
+      "aug_d2": [
+       0.51311,
+       0.68344
+      ]
+     },
+     "delta_aug_minus_base": 0.19736,
+     "delta_aug_minus_base_ci": [
+      0.12664,
+      0.27321
+     ],
+     "coefs": {
+      "base": [
+       0.001124,
+       0.010568
+      ],
+      "aug": [
+       -0.014733,
+       0.00492,
+       0.053082,
+       0.0
+      ],
+      "aug_d2": [
+       0.058576,
+       0.003073,
+       0.092421,
+       -0.139557
+      ]
+     }
+    },
+    "uniform_40": {
+     "spearman": {
+      "qrc": 0.6585,
+      "w": 0.7456,
+      "d1": NaN,
+      "d2": 0.6124,
+      "log2qp": -0.0077
+     },
+     "spearman_ci": {
+      "qrc": [
+       0.62797,
+       0.68779
+      ],
+      "w": [
+       0.71783,
+       0.76756
+      ],
+      "d1": [
+       NaN,
+       NaN
+      ],
+      "d2": [
+       0.57319,
+       0.63982
+      ],
+      "log2qp": [
+       -0.05908,
+       0.03999
+      ]
+     },
+     "r2": {
+      "base": 0.4171,
+      "aug": 0.61827,
+      "aug_d2": 0.64019
+     },
+     "r2_ci": {
+      "base": [
+       0.33678,
+       0.49586
+      ],
+      "aug": [
+       0.55818,
+       0.68009
+      ],
+      "aug_d2": [
+       0.57993,
+       0.7081
+      ]
+     },
+     "delta_aug_minus_base": 0.20118,
+     "delta_aug_minus_base_ci": [
+      0.14095,
+      0.25938
+     ],
+     "coefs": {
+      "base": [
+       -0.010526,
+       0.011347
+      ],
+      "aug": [
+       -0.023747,
+       0.005588,
+       0.053275,
+       0.0
+      ],
+      "aug_d2": [
+       0.059262,
+       0.00344,
+       0.098718,
+       -0.158085
+      ]
+     }
+    },
+    "uniform_44": {
+     "spearman": {
+      "qrc": 0.6116,
+      "w": 0.7178,
+      "d1": NaN,
+      "d2": 0.6004,
+      "log2qp": 0.0156
+     },
+     "spearman_ci": {
+      "qrc": [
+       0.57821,
+       0.64618
+      ],
+      "w": [
+       0.69293,
+       0.74213
+      ],
+      "d1": [
+       NaN,
+       NaN
+      ],
+      "d2": [
+       0.57059,
+       0.63087
+      ],
+      "log2qp": [
+       -0.0367,
+       0.06332
+      ]
+     },
+     "r2": {
+      "base": 0.3712,
+      "aug": 0.55124,
+      "aug_d2": 0.57206
+     },
+     "r2_ci": {
+      "base": [
+       0.25881,
+       0.45058
+      ],
+      "aug": [
+       0.47582,
+       0.61253
+      ],
+      "aug_d2": [
+       0.48914,
+       0.63473
+      ]
+     },
+     "delta_aug_minus_base": 0.18005,
+     "delta_aug_minus_base_ci": [
+      0.11648,
+      0.25885
+     ],
+     "coefs": {
+      "base": [
+       0.002294,
+       0.010299
+      ],
+      "aug": [
+       -0.006605,
+       0.004875,
+       0.047903,
+       0.0
+      ],
+      "aug_d2": [
+       0.064548,
+       0.002949,
+       0.088221,
+       -0.137117
+      ]
+     }
+    }
+   },
+   "sec": 4.2,
+   "contrasts": {
+    "H2_drop_per_bitlen": {
+     "40": {
+      "point": 0.02119,
+      "ci95": [
+       -0.06709,
+       0.10611
+      ]
+     },
+     "44": {
+      "point": 0.04817,
+      "ci95": [
+       -0.0596,
+       0.14808
+      ]
+     }
+    },
+    "H2_drop_mean": {
+     "point": 0.03468,
+     "ci95": [
+      -0.03905,
+      0.09326
+     ]
+    },
+    "H3_delta_uniform": {
+     "point": 0.19061,
+     "ci95": [
+      0.1446,
+      0.23513
+     ]
+    },
+    "H3_delta_balanced": {
+     "point": 0.2049,
+     "ci95": [
+      0.15993,
+      0.25412
+     ]
+    }
+   }
+  }
+ },
+ "verdicts": {
+  "H1": {
+   "verdict": "TRUE",
+   "uniform_sp_qrc": {
+    "uniform_40": 0.6585,
+    "uniform_44": 0.6116
+   },
+   "uniform_sp_w": {
+    "uniform_40": 0.7456,
+    "uniform_44": 0.7178
+   },
+   "top_rank_ok": true
+  },
+  "H2": {
+   "verdict": "REFUTED",
+   "drop_mean": 0.03468,
+   "drop_ci95": [
+    -0.03905,
+    0.09326
+   ],
+   "per_bitlen": {
+    "40": {
+     "point": 0.02119,
+     "ci95": [
+      -0.06709,
+      0.10611
+     ]
+    },
+    "44": {
+     "point": 0.04817,
+     "ci95": [
+      -0.0596,
+      0.14808
+     ]
+    }
+   }
+  },
+  "H3": {
+   "verdict": "TRUE",
+   "delta_uniform": 0.19061,
+   "delta_uniform_ci95": [
+    0.1446,
+    0.23513
+   ],
+   "delta_balanced": 0.2049,
+   "delta_balanced_ci95": [
+    0.15993,
+    0.25412
+   ],
+   "secondary_uniform_exceeds_balanced": false
+  }
+ },
+ "barrier_lines": {
+  "barrier_5": "Structural orthogonality: qrc/w/d are N-only natural coordinates; the dial predicts relation yield (difficulty), not (p,q) - no which-factor claim made or tested.",
+  "barrier_8": "Known-method-in-disguise: the measured object is the QS/CFRAC relation-yield dial - a cost predictor FOR known methods, not a new factoring route."
+ }
+}
