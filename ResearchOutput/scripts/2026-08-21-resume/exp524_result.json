@@ -1,0 +1,271 @@
+{
+ "meta": {
+  "exp": 524,
+  "codename": "D12-SEMIPRIME",
+  "round": "55",
+  "seeds": {
+   "population": 20261110,
+   "channel": 20261111,
+   "aux": 20261112
+  },
+  "script": "exp524_d12_semiprime.py",
+  "wd": "/tmp/exp50_d12sp",
+  "field": "Q(zeta_56)+",
+  "conductor": 56,
+  "Gplus": "C6xC2",
+  "n_pop": 1200,
+  "n_relvals": 240,
+  "u_exp": 2.5,
+  "n_semiprime": 15000,
+  "n_boot": 200,
+  "n_perm": 200,
+  "started_utc": "2026-08-22T16:54:00Z"
+ },
+ "group": {
+  "f": 56,
+  "structure": "C6xC2",
+  "n_orbits": 12,
+  "orbits": [
+   [
+    1,
+    55
+   ],
+   [
+    3,
+    53
+   ],
+   [
+    5,
+    51
+   ],
+   [
+    9,
+    47
+   ],
+   [
+    11,
+    45
+   ],
+   [
+    13,
+    43
+   ],
+   [
+    15,
+    41
+   ],
+   [
+    17,
+    39
+   ],
+   [
+    19,
+    37
+   ],
+   [
+    23,
+    33
+   ],
+   [
+    25,
+    31
+   ],
+   [
+    27,
+    29
+   ]
+  ],
+  "orders_by_orbit": [
+   1,
+   6,
+   6,
+   3,
+   6,
+   2,
+   2,
+   6,
+   6,
+   6,
+   3,
+   2
+  ],
+  "order_histogram": {
+   "1": 1,
+   "2": 3,
+   "3": 2,
+   "6": 6
+  },
+  "types_orders": [
+   1,
+   2,
+   3,
+   6
+  ],
+  "type_densities_theory": {
+   "1": 0.08333333333333333,
+   "2": 0.25,
+   "3": 0.16666666666666666,
+   "6": 0.5
+  },
+  "H_T_theory_bits": 1.7295739585136223,
+  "shape_legend": "Frobenius order k => factors all of degree k, count 12/k; k=1: twelve linears; k=2: six quadratics; k=3: four cubics; k=6: two sextics",
+  "designed_checks": {
+   "inverses": true,
+   "abelian": true
+  }
+ },
+ "polynomial": {
+  "degree": 12,
+  "coeffs_desc": [
+   1,
+   0,
+   -12,
+   0,
+   53,
+   0,
+   -104,
+   0,
+   86,
+   0,
+   -24,
+   0,
+   1
+  ],
+  "eval_at_2cos_2pi_over_f": -2.1600499167107046e-12
+ },
+ "smoothness": {
+  "median_V": 974535791.5,
+  "B": 3940,
+  "u": 2.5,
+  "cap_primes": 200000
+ },
+ "dial": {
+  "T_definition": "T(N)=sum(2/q) over QR primes q<=400 (paper-164)",
+  "qr_primes_used": 77,
+  "T_mean": 1.5650984777145012,
+  "T_sd": 0.437391409594547,
+  "T_range": [
+   0.4540445248716261,
+   2.6921430267007542
+  ]
+ },
+ "armA_dial": {
+  "n": 1200,
+  "relvals": 240,
+  "u": 2.5,
+  "B": 3940,
+  "spearman_T_rate_full": 0.6923880780472764,
+  "spearman_T_rate_test": 0.7099324995781223,
+  "spearman_boot_ci95": [
+   0.6518147722798268,
+   0.7627675313595708
+  ],
+  "advantage_oos_R2_T": 0.5401868299276777,
+  "advantage_boot_ci95": [
+   0.5321720302088814,
+   0.5432817691577929
+  ],
+  "replication_gate_spearman_gt_05": true,
+  "mean_count": 30.740833333333335
+ },
+ "armB_channel": {
+  "draws": 15000,
+  "window": [
+   3932160,
+   4194304
+  ],
+  "window_primes": 17210,
+  "pair_channel": {
+   "law_class_bits": 0.7685881074135275,
+   "emp_class_bits": 0.7629722873852032,
+   "diff_bits": -0.005615820028324281,
+   "boot_sd_bits": 0.006359103338903975,
+   "z": -0.8831150759836837,
+   "law_orbit_bits": 0.7685881074135276,
+   "emp_orbit_bits": 0.7592475634326028,
+   "diff_orbit_bits": -0.009340543980924765,
+   "boot_sd_orbit_bits": 0.005922720764076421,
+   "z_orbit": -1.5770697881924054,
+   "H_pair_law_bits": 3.4591479170272446,
+   "bias_floor_bits": 0.0396741136244465
+  },
+  "split_count": {
+   "definition": "s=[T(p)=1]+[T(q)=1]; identity density 1/12",
+   "law_bits": 0.0445172987931955,
+   "emp_bits": 0.04222981112738649,
+   "diff_bits": -0.00228748766580901,
+   "boot_sd_bits": 0.0025113960250755106,
+   "z": -0.9108430701367503
+  },
+  "ideal_factor_count": {
+   "definition": "S_id = 12/k_a + 12/k_b",
+   "law_bits": 0.6958352960008978,
+   "emp_bits": 0.6982517545887381,
+   "diff_bits": 0.002416458587840342,
+   "boot_sd_bits": 0.006640325240687027,
+   "z": 0.3639066612331068
+  },
+  "coprime_control": {
+   "moduli": [
+    9,
+    97
+   ],
+   "per_modulus": {
+    "9": {
+     "I_bits": 0.003331756588423815,
+     "bias_floor_bits": 0.005770780163555854,
+     "decay_const_bitcount": 111.38124043553536,
+     "decay_spread_thirds": 0.63080952918656,
+     "shuffle_null_mean": 0.0035822736845597903,
+     "shuffle_z_advisory": -0.39176741713977153,
+     "flat": false
+    },
+    "97": {
+     "I_bits": 0.06794064114026253,
+     "bias_floor_bits": 0.06924936196267024,
+     "decay_const_bitcount": 2771.5071060159034,
+     "decay_spread_thirds": 0.8052527656793702,
+     "shuffle_null_mean": 0.07260053572450269,
+     "shuffle_z_advisory": -1.7851414904891316,
+     "flat": false
+    }
+   },
+   "all_flat": false,
+   "note": "shuffle null advisory only (can be mis-centered for deterministic AP equidistribution); operative tests are bias floor + n*I decay (exp520 honest diagnosis)"
+  },
+  "which_factor_wall": {
+   "channels": {
+    "orbit_class12": {
+     "bins": 12,
+     "I_bits": 0.0005484211128801305,
+     "null_mean": 0.0005174129693455704,
+     "null_sd": 0.00020620413633765181,
+     "null_max": 0.0011572145158219283,
+     "z": 0.15037595309817284
+    },
+    "tau_N4": {
+     "bins": 4,
+     "I_bits": 0.0003036994014628091,
+     "null_mean": 0.00013472823233566438,
+     "null_sd": 0.00012082311208204492,
+     "null_max": 0.0007498232145171989,
+     "z": 1.3985003880085747
+    }
+   },
+   "holds": true,
+   "sensitivity_bits": 0.00016897116912714474
+  },
+  "type_freq_factors": {
+   "1": 0.08373333333333334,
+   "2": 0.25266666666666665,
+   "3": 0.16013333333333332,
+   "6": 0.5034666666666666
+  },
+  "chebotarev_density_max_z": 2.1818977863662092
+ },
+ "ddf_real_scale": {
+  "checked": 80,
+  "failed": 0,
+  "pass": true
+ }
+}
