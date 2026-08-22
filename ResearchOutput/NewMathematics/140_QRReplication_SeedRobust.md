@@ -1,7 +1,7 @@
 # Paper 140 — QR-REPLICATION: The Variance Law Is Seed-Robust
 
 **Verdict name: SEED-ROBUST (paper 139 stands without qualification).**
-Round-39 #2 (cron iteration) · exp 475 · assessment v249 · script `ResearchOutput/scripts/2026-08-21-resume/exp475_qr_replication.py` (+ `exp475_result.json`) · seed 20260826.
+Round-39 #2 (cron iteration) · exp 475 · assessment v249 · issue [#240](https://github.com/paulklemstine/Lean/issues/240) · script `ResearchOutput/scripts/2026-08-21-resume/exp475_qr_replication.py` (+ `exp475_result.json`) · seed 20260826.
 
 ## 1. Fresh-seed audit, one firing after a seed-luck embarrassment
 

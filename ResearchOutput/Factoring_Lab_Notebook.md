@@ -9745,4 +9745,4 @@ Per-N: corr(QR-count<=100, per-N rate) = 0.503/0.415/0.480/0.403 vs original
 0.504/0.452/0.483/0.401 (max drift 0.037); decile spreads replicate (0.076-0.082 low /
 0.186-0.188 high at u=2.5; 0.006-0.008 / 0.039-0.043 at u=3.5).
 Verdict: THE-QR-BITE-IS-VARIANCE is seed-robust; paper 139 stands without qualification.
-Paper 140, issue #237. Now 472 experiments. Assessment v249.
+Paper 140, issue #240. Now 472 experiments. Assessment v249.
