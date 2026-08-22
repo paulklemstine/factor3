@@ -9517,3 +9517,21 @@ primes/class), not a size law. Which-factor wall inside conditional orientation 
 — the conditional instrument was required (ledger L5). Hint values transfer across factor sizes
 wherever the pool resolves the conductor classes (observed floor ~30 primes/class).
 Paper 129, issue #225. Now 461 experiments. Assessment v238.
+
+## Part 202 - SUBEXP-SCALE (round-37 #2, exp 465, v239)
+
+Scale extension of paper 90's honest-inconclusive: 1.2M smoothness tests (150k/cell x 8 cells
+= 500x paper 90), N in {2^32..2^44}, matched-u ladder u in {2,3}, per-value u(v)=ln v/ln B,
+size-matched random control. THE RELATION POOL IS RANDOM: x2-N vs random gap = 1.00 at EVERY
+scale (gaps 0.993-1.020, tight CIs) — paper 90's non-monotone 0.26-9.27 scatter RESOLVED as
+a design artifact (N-scale u-binning + underpower). Formal verdict H2 per pre-stated rule:
+absolute ratio emp/rho = 0.88-0.91 at 2^44, 1 outside CI — but the deficit is shared equally
+by the random control = the Dickman model's finite-x correction (order ln ln v/ln v ~ 17-20%
+at these sizes), shrinking logarithmically (+2.6% per 2^12 of scale at u=2). No x2-N structure
+anywhere. Leading-term Dickman invalid until u ~ 14.75 (pre-stated guess u>=12 confirmed).
+LEDGER: v1 rho reference constants mis-recalled from memory beyond u=4 (true rho(5)=3.55e-4,
+not 3.49e-3) — caught by attested-anchors + Richardson self-check before contamination;
+np.isqrt absent in numpy; 3x upstream agent-channel timeout, experiment taken over inline.
+What remains unmeasured in the fourth stratum is the sieve's algorithmic advantage, not the
+relation-pool statistics.
+Paper 130, issue #226. Now 462 experiments. Assessment v239.
