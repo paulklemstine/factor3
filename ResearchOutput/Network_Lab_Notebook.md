@@ -1787,3 +1787,15 @@ ResearchOutput/exp_net67_sub20.py; results ~/f3cache/net67_results.json; log /tm
 (f) clean (ALL_DONE_NET67); (g) fair; (h) DIRECT (2048 entry refined). Open: increments at
 4096; domain-jump corpora; 7B cell (does halving extend?). Paper 152, issue #305.
 Now 67 network experiments. Assessment v67.
+
+## Part 68 — CODE-NEEDS-FEWER-KEYS: the domain jump to Python source shifts the 0.5B knee chain DOWN one fine step — {12, 16} at {512, 1024} vs prose's {16, 20} (−4 keys at BOTH contexts, structure preserved) — while baseline accuracy jumps UP (0.630/0.652 vs 0.446/0.461); P1 transfer CONFIRMED, P2 CONFIRMED, P3 REFUTED; budget law now domain-parameterized: k*(domain, ctx) = base(domain) + increment(scale) × doublings(ctx), base(prose)=16, base(code)=12; THIRD confirmation accuracy-level ⊥ knee-position; deployment: size KV by largest-base domain present (NET-68; limited-memory axis round 34)
+
+**Method:** Python source corpus (10 CPython stdlib files, fsynced), fine grids
+{4..24}@512 and {8..32}@1024 on Qwen2.5-0.5B fp32; gate exact; identical harness/bar.
+Script ResearchOutput/exp_net68_domainjump.py; results ~/f3cache/net68_results.json;
+log /tmp/net68.log.
+**Verdict:** CODE-NEEDS-FEWER-KEYS. Barriers: (a) clean; (b) clean; (c) confronted (one
+code language, single repo, 24 windows stated); (d) clean per-corpus split; (e)
+deterministic; (f) clean (ALL_DONE_NET68); (g) fair (only text changed); (h) DIRECT.
+Open: math/non-English domains; increments@4096; 7B cell; probe+recency on code.
+Paper 153, issue #306. Now 68 network experiments. Assessment v68.
