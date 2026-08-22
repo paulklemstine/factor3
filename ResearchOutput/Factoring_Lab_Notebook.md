@@ -10057,6 +10057,16 @@ all four channels collapse at n=2 (g=A=0.311278 reproduces the OR cap; Is=X=1.00
 the A/X sign flip lives exactly in (7,8); MC tie at n=17 z=-0.10.
 Paper 161, issue #263. Now 493 experiments. Assessment v270.
 
+## Part 233 - UNIFORM-DIAL lean (round-43 #2 [cron iteration], exp 493, v271)
+
+Paper 154's noted follow-up: does the per-N yield dial survive GENUINELY UNBALANCED draws?
+DIAL-IS-DRAW-INVARIANT: H1 confirmed (Spearman(w, rate) = 0.666 uniform vs 0.696 balanced);
+H2 REFUTED IN THE GOOD DIRECTION — R2 does NOT dilute: base 0.3028 uniform vs 0.3019
+balanced, augmented 0.5202 vs 0.5251 (identical within noise); H3 confirmed: footprint w
+beats plain count by +0.16/+0.18 in both regimes. The dial's residue-structure signal is
+fully draw-regime-invariant — QS triage form holds for unbalanced keys too.
+Paper 162, issue #264. Now 494 experiments. Assessment v271.
+
 ## Part 229 - DEGREE-SEVEN lean (round-42 #3 [cron iteration], exp 489, v266)
 
 The ladder's LAST gap below 10: cyclic degree-7 subfield of Q(zeta_29) (conductor 29,
