@@ -10131,6 +10131,22 @@ caveat disclosed). Dial deployment guidance stands: u=2.5 full strength; u=3.5 d
 but above floor everywhere.
 Paper 167, issue #269. Now 501 experiments. Assessment v276.
 
+## Part 239 - U-HARDEN (round-45 #2 [cron iteration], exp 501, v277)
+
+Is the u-drop sampling-driven or intrinsic? VERDICT: NEITHER — intermediate. Four-cell
+design (window {240, 960} x u {2.5, 3.5}, 8 populations): sp(2.5) 0.734->0.798 and sp(3.5)
+0.627->0.734 from 240->960 values; paired deltas d(240) = +0.1073 CI [0.0973, 0.1148]
+(reproduces paper 167's 0.106 on fresh seeds), d(960) = +0.0636 CI [0.0597, 0.0680];
+difference-of-differences D = +0.0437 CI [0.0346, 0.0533] — excludes zero and the ±0.03
+band: H1 FAIL (4x values recover 41%, not "most"), H2 FAIL (not "none"). Reading: the
+u-sensitivity is MOSTLY intrinsic to threshold reweighting with a real minority share
+(~41%) from per-N rank resolution. Mean rate at u=3.5 does NOT rise with window — the
+sp(3.5) gain came from finer rate granularity, not more smooth mass.
+Named follow-up: decouple B from vmed (hold the strip bound fixed across u).
+Caveat disclosed: nested windows conflate sample size with bound growth (B356 -> 529
+crosses dial cap 400). Continuity anchor matches paper 167 on independent seeds.
+Paper 168, issue #270. Now 502 experiments. Assessment v277.
+
 AMENDMENT (original agent's clean run + coordinator diagnostic): the ANTI-COINCIDENCE read
 is RETIRED — measured c_pq equals the exact CRT count on all 8000 points (corr 1.000000);
 the ~0.26 ratios were the coordinator comparing conditional-on-both-QR predictions against
