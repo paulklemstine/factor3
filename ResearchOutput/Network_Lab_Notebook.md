@@ -1811,3 +1811,15 @@ cross-domain probe comparison); (c) confronted (one language/repo stated); (d) c
 (e) deterministic; (f) clean (ALL_DONE_NET69); (g) fair (identical methodology/budgets);
 (h) DIRECT. Open: math/non-English domains; learned online predictors; increments@4096;
 7B cell. Paper 154, issue #309. Now 69 network experiments. Assessment v69.
+
+## Part 70 — MATH-READS-AS-PROSE: the domain jump to mathematical text leaves the knee chain EXACTLY at prose values — {16, 20} at {512, 1024} — while baseline accuracy drops 12 pts (0.326/0.342 vs 0.446/0.461); P1 math-needs-more REFUTED, P2 CONFIRMED trivially, P3 CONFIRMED; THREE-DOMAIN table complete: base(prose)=16, base(code)=12, base(math)=16, increments by scale; THIRD+STRONGEST confirmation prediction-difficulty ⊥ attention-sparsity-structure (harder text, identical budgets); deployment: prose+math share one entry, only code shifts (NET-70; limited-memory axis round 37)
+
+**Method:** mathematical prose corpus (Hardy's Pure Mathematics + Hilbert's Foundations of
+Geometry from Gutenberg, fsynced), fine grids {4..24}@512 and {8..32}@1024 on Qwen2.5-0.5B
+fp32; gate exact; identical harness/bar. Script ResearchOutput/exp_net70_mathdomain.py;
+results ~/f3cache/net70_results.json; log /tmp/net70.log.
+**Verdict:** MATH-READS-AS-PROSE. Barriers: (a) clean; (b) clean; (c) confronted (classic
+math prose only, no modern LaTeX stated); (d) clean per-corpus split; (e) deterministic;
+(f) clean (ALL_DONE_NET70); (g) fair (only text changed); (h) DIRECT (three-domain table
+complete). Open: modern LaTeX notation; non-English; increments@4096; 7B cell.
+Paper 155, issue #310. Now 70 network experiments. Assessment v70.
