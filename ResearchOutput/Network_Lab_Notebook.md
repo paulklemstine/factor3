@@ -1898,3 +1898,14 @@ Paper 161, issue #317. Now 76 network experiments. Assessment v76.
 (0.5132 exact). Script ResearchOutput/exp_net77_1p5b2048.py; log /tmp/net77.log.
 Now 77 network experiments (NET-77 is an addendum to NET-67, not a new experiment number).
 Assessment remains v67 for the knee-chain line.
+
+## Part 78 — THE-INCREMENT-ACCELERATES-AT-4096: the 0.5B knee at ctx=4096 is k*=40 (k=32 fails 0.979, k=40 passes 0.984) — the increment jumps from +4/doubling to +16/doubling, a 4× ACCELERATION that breaks the linear-increment law after three doublings; complete chain {16,20,24,40}: +4,+4,+16; P1/P2 REFUTED, P3 CONFIRMED dramatically; first evidence of a PHASE TRANSITION in context-sensitivity — attention budgets stable for first ~2000 tokens then sharply more expensive; deployment: 24-key cache at 2048 will NOT work at 4096 (NET-78; limited-memory axis round 52)
+
+**Method:** sweep k∈{16,20,24,28,32,40} at ctx=4096 on Qwen2.5-0.5B fp32, 6 held-out
+windows; gate exact. Script ResearchOutput/exp_net78_0p5b4096.py;
+results ~/f3cache/net78_results.json; log /tmp/net78.log.
+**Verdict:** THE-INCREMENT-ACCELERATES-AT-4096. Barriers: (a) clean; (b) clean (first
+4096 cell); (c) confronted (6 windows, grid gap stated); (d) clean; (e) deterministic;
+(f) clean (ALL_DONE_NET78); (g) fair; (h) DIRECT. Open: fine grid between 32 and 40;
+1.5B @4096; domain-jump @4096; 7B cell. Paper 162, issue #320.
+Now 78 network experiments. Assessment v78.
