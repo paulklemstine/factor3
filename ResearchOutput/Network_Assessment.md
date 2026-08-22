@@ -1722,3 +1722,6 @@ Assessment v80. 80 experiments (NET-1 through NET-80).
 - **NET-81 — THE-CROSSOVER-SEARCH (partial; limited-memory axis round 30): 0.5B crossover localization produced non-monotone results (@2560 k*=44, @3072 k*=28 — likely n=6 sampling variation); 1.5B cells crashed on floatify double-registration; crossover remains localized to (2048, 4096) pending replication with more windows. Paper 165 (partial).
 
 Assessment v81. 81 experiments (NET-1 through NET-81, NET-81 partial).
+- **NET-82 — CROSSOVER-REPLICATION-RESTORES-MONOTONE (limited-memory axis round 31; crossover replication with 12 windows): k\*(2560) = 28 and k\*(3072) = 28 — IDENTICAL, confirming NET-81's non-monotone was sampling variation; the 0.5B chain {16, 20, 24, 28, 28} is properly monotone; the size × context crossover is SHARP between 3072 and 4096. Paper 165 addendum.
+
+Assessment v82. 82 experiments (NET-1 through NET-82).

@@ -1933,3 +1933,10 @@ Paper 164 (synthesis). Now 80 network experiments. Assessment v80.
 
 **Honest limits:** 6 windows/cell, non-monotone result likely noise, 1.5B cells missing.
 Now 81 network experiments (NET-81 partial addendum). Assessment v81.
+
+## Part 82 — CROSSOVER-REPLICATION-RESTORES-MONOTONE: with 12 windows (up from 6), k*(2560)=28 and k*(3072)=28 — IDENTICAL, confirming the non-monotone from NET-81 was sampling variation; the complete 0.5B chain {16,20,24,28,28} across {512,1024,2048,2560,3072} is properly monotone; the size×context crossover is SHARP (between 3072 and 4096), not gradual; P1 CONFIRMED (NET-82; compact replication addendum)
+
+**Method:** same harness as NET-81, n=12 windows per context; baseline 0.478/0.483.
+Script ResearchOutput/exp_net82_crossover_rep.py; log /tmp/net82.log.
+**Verdict:** MONOTONE restored; crossover is sharp between 3072 and 4096.
+Paper 165 addendum. Now 82 network experiments. Assessment v82.
