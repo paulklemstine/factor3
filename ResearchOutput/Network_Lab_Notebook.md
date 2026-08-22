@@ -1578,3 +1578,25 @@ ctx=512, RTN-only, embeddings/norms unquantized); (d) clean (bit-exact determini
 deployment table). Open: GPTQ/AWQ compensation on these floors; joint weight+KV budgets;
 tail-aware mixed precision (quantize the NET-51 shared core harder than the personal tail).
 Paper 137, issue #239. Now 52 network experiments. Assessment v52.
+
+## Part 53 — COMPENSATION-WORKS-ON-THE-REAL-FLOORS: sequential layer-wise GPTQ 4-bit group-128 lands at +0.151 dCE on Qwen2.5-0.5B — 2.1× better than grouped RTN (+0.318), 5.2× better than per-channel RTN (+0.788); P1 CONFIRMED at the boundary, P2 floor-target REFUTED by a hair (+0.151 vs ≤0.14), P3 tail-share REFUTED (18% < 25% — compensation shrinks the L22/L23 disproportionate cost that RTN suffered); 3-bit rescued across the axis +9.23 → +2.72 → +1.19 (retained 0.71) (NET-53; limited-memory axis round 5)
+
+**Method:** faithful GPTQ — SEQUENTIAL layer-wise quantization with input recapture through the
+partially-quantized model, hooks on the actual linear modules (container-hook bug found via
+width diagnostics: all captures had been the 896-wide block input), group-aligned blocks,
+escalating-damping Cholesky (partially-quantized activations go out-of-distribution → near-
+singular Hessians; ×1→10⁶ retry + eigenvalue fallback). Calibration train-side only.
+Script /tmp/exp_net53_gptq.py; log /tmp/net53.log; unit-test regression gate
+/tmp/test_gptq.py (single-matrix GPTQ-beats-RTN check).
+**Results:** gptq_b4_g128_all **+0.1512** (ret 0.9546); core-only L0–21 +0.1235 (ret 0.9641);
+b3_all **+1.1932** (ret 0.7086). Tail increment +0.0277 = 18.3% of total.
+**Verdict:** deployment table complete for the host: RTN <6 bits unusable; grouped RTN viable@4;
+grouped GPTQ viable@4, survivable@3; each structural lever multiplies the previous floor down.
+Three silent-science hazards caught en route (hook targets, column broadcasting, Cholesky PD)
+— documented as engineering record. Barriers: (a) clean (two refuted horns pre-stated);
+(b) confronted (GPTQ = prior art; NEW = fixed-protocol ladder + tail-share + shrinkage law);
+(c) confronted (one model, ctx=512, no act-order, 16-seq calib noted); (d) clean (train-side
+calibration); (e) deterministic, damping schedule pre-fixed; (f) clean (exact baseline,
+ALL_DONE_NET53); (g) fair (shared protocol/granularity); (h) DIRECT (deployment table cell).
+Open: act-order variant; joint weight+KV budgeting; tail-aware mixed precision; size transfer.
+Paper 138, issue #243. Now 53 network experiments. Assessment v53.
