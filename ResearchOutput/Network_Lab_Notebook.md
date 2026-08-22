@@ -1988,3 +1988,15 @@ log /tmp/net87.log.
 (d) clean; (e) deterministic; (f) clean; (g) fair; (h) DIRECT. Open: fine grid 24–32;
 domain-jump @4096 for math/German/French; 7B cell. Paper 168, issue #330.
 Now 88 network experiments. Assessment v88.
+
+## Part 88 — THE-TOKENIZER-TAX-EXPLODES: German prose at ctx=4096 needs >56 keys — ALL FIVE POINTS FAIL (k=56 retains only 0.976); the +4 fine-step tax becomes ≥+16 at 4096, a 4× AMPLIFICATION matching the increment acceleration exactly; P1 CONFIRMED dramatically; P2/P3 REFUTED; domain/language shifts and context acceleration are MULTIPLICATIVE — the phase transition magnifies language differences rather than washing them out; multilingual agentic workloads face disproportionate KV costs for non-English languages at long context (NET-88; limited-memory axis round 62)
+
+**Method:** German corpus from durable cache, sweep k∈{24..56} at ctx=4096 on
+Qwen2.5-0.5B fp32, 3 held-out windows; gate exact. Script
+ResearchOutput/exp_net88_de4096.py; results ~/f3cache/net88_results.json;
+log /tmp/net88.log.
+**Verdict:** THE-TOKENIZER-TAX-EXPLODES. Barriers: (a) clean; (b) clean (first
+domain×acceleration interaction test); (c) confronted (one language pair, 3 windows
+stated); (d) clean; (e) deterministic; (f) clean; (g) fair; (h) DIRECT.
+Open: French @4096; more languages @4096; 1.5B non-English @4096; 7B cell.
+Paper 169, issue #332. Now 89 network experiments. Assessment v89.
