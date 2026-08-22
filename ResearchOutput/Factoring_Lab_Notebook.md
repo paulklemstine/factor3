@@ -9991,6 +9991,22 @@ draws + ECM. LEDGER: missing import; zero-cost Fermat hits dropped from x but ke
 (length mismatch); inline takeover after channel death #10.
 Paper 154, issue #256. Now 486 experiments. Assessment v263.
 
+## Part 231 - FACTOR-LOCAL-ET FULL (round-42 #5 [cron iteration], exp 486-full, v268)
+
+The original agent's full version supersedes the lean probe with bootstrap-CI pooled fits
+(n=6000/arm): PLANE-MEASURED-ECM-WALL. TD alpha = 1.0009 [1.000, 1.002] EXACT; rho-bal
+0.4994 [0.485, 0.510] — birthday bound to three decimals; Fermat-uniform 0.9932 = the exact
+p/2 law; arm-invariance (factor-locality) first-order for td/rho (delta-alpha <= 0.04),
+Fermat strongly non-invariant as predicted (balance explains residuals r=+0.966).
+HEADLINE: ECM REFUSES A SINGLE ALPHA on toy scale — slopes -0.86 to +0.04 across B1 arms,
+plus a hard SELF-DESTRUCTION WALL (B1 >= min(p,q) => every Hasse-window order divides
+lcm(1..B1) => all curves degenerate => uncapped E[T] = infinity); honest object =
+{(alpha,c)(B1)} family behind validity edge B1 <~ min(p,q)/2. H2b refuted: lpf/omega
+proxies capture none of ECM's cost drivers (powersmoothness across the 4sqrt(p) window is
+the real driver). Supersedes the lean probe's single-row framing; its ECM-lite column and
+across-k facts stand.
+Paper 159, issue #261. Now 491 experiments. Assessment v268.
+
 ## Part 227 - ECM-COMPLETION lean (round-42 #1 [cron iteration], exp 487, v264)
 
 Paper 154's deferred ECM arm, as ECM-LITE (sequential multiples j=3..B1=50 over random
