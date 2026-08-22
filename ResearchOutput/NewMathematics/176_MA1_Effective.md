@@ -25,3 +25,14 @@ equidistribution assumption introduces < 0.05% error into the 4/3 cap. Barriers:
 (5)/(8) unchanged.
 
 Now 511 experiments. Assessment v283.
+
+
+## Addendum — the original agent's comprehensive run (C/OpenMP wheel-30 sieve to 2^40)
+
+Supersedes the lean v2's sampling-based measurement with EXACT enumeration at x = 2^40:
+worst core per-class deviation **|π−Li/φ|/x = 1.96e-8** (m=31), worst pair modulus m=93 at
+**2.18e-5 relative**; cap moves by **< 4.4e-10**. Chebyshev race confirmed (π(2⁴⁰;4,3) −
+π(2⁴⁰;4,1) = +41,427). H2 refined: no single Siegel-zero analogue — deviations are
+character-structured (corr with quadratic character < 0 in 15/16 cells). H3: clean
+x^(−1/2) law on relative deviation across all moduli. π(2⁴⁰) = 41,203,088,796 verified
+via sympy's independent primepi. Ledger: 4 pre-data C-sieve bugs caught by validation gates.
