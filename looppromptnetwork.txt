@@ -28,7 +28,18 @@ Run one iteration of the NETWORK RESEARCH LOOP (per memory file network-lab-stat
 # LAB PROTOCOL (same rigor as the factoring lab): exact measurable laws over a clean
 # hypothesis, honest negative results recorded, all 8 barriers checked every iteration,
 # commit+push each iteration with Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>.
-# Status: NET-49 done (issue #230): LIMITED-MEMORY AXIS OPENED — THE-REAL-MODEL-KNEE-COLLAPSES-
+# Status: NET-51 done (issue #238): THE-KV-CORE-IS-SHARED-THE-TAIL-IS-PERSONAL — base-vs-Instruct
+# Qwen2.5-0.5B on identical prompts: layer-0 keys EXACT (cosK=1.0000), all layers >=0.976; delta
+# HUMP-shaped peaking mid-stack L12-16 then falling (P2 monotone REFUTED); mean top-1 decision
+# agreement 0.894 BUT collapses to 0.568/0.627 in exactly the L22/L23 diffuse tail — three-way
+# convergence with NET-49/50 (bulk = shared machinery; two-layer tail = identity). Serving: ~22/24
+# layers shareable at >=0.92 agreement, tail personal.
+# Status (NET-50, issue #237): THE-TROPICAL-LIMIT-IS-LOSSY-BUT-THE-RECOVERY-IS-FAST — argmax
+# attention retains {0.364, 0.289, 0.250} at ctx{512,1024,2048} (worse at LONG context); k=4 -> ~0.9;
+# knees {16,32,24} replicate NET-49 EXACTLY cross-session; Maslov gaps bulk medians 0.17-1.9 nats,
+# tail L22/L23 2.3-2.7 the only far-from-tropical region; crystallization loss 0.34-0.97 refutes the
+# near-tropical-everywhere picture: regime = "tropical core + thin soft correction".
+# Status (NET-49, issue #230): LIMITED-MEMORY AXIS OPENED — THE-REAL-MODEL-KNEE-COLLAPSES-
 # AND-SATURATES — first transfer of the speed-axis laws to a REAL PRETRAINED LLM (Qwen2.5-0.5B,
 # 24 layers, GQA kv=2, wikitext-103 held-out eval, fp32, own forward validated EXACTLY vs HF
 # eager BEFORE measurement (max|dlogit|=0.0000), GTX 1060 6GB ON-GPU ~35min vs 4h CPU toy rounds;

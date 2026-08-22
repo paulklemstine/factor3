@@ -1553,3 +1553,28 @@ gated; two gate-caught bugs fixed before any measurement counted); (g) fair (eac
 its own weights); (h) DIRECT (shared-KV server design quantified). Open: tail-swap causal test;
 bigger pairs; SFT vs RLHF vs DPO tails; link to NET-52 (quantize core harder than tail?).
 Paper 136, issue #238. Now 51 network experiments. Assessment v51.
+
+## Part 52 — THE-TOY-FOUR-BIT-FLOOR-DOES-NOT-TRANSFER: naive per-channel RTN on Qwen2.5-0.5B costs +0.0044/+0.035/+0.128/+0.79/+9.23/+14.06 CE at 8/6/5/4/3/2 bits — the toy programme's per-channel-uniform-4 optimum (NET-11/14) REFUTED on a real LM by 16× its budget; group-128 repairs ~60% of the 4-bit damage (+0.318) and rescues 3-bit from death (+2.72); depth gradient CONFIRMED weakly (last-12 +0.41 vs first-12 +0.39 — NET-18's direction); mesh monotone + 8-bit measurably nonzero exactly as the catalogue sharpness theorem demands (NET-52; limited-memory axis round 4)
+
+**Method:** identical validated harness (shared Runner; baseline reproduced EXACTLY 0.4460/
+2.8697); RTN symmetric quantization of all linear weights, fp32 master restored per arm;
+40 held-out windows @ctx=512; arms {8,6,5,4,3,2}-bit per-channel + 4-bit depth split (first-12/
+last-12) + {4,3}-bit group-128. Script /tmp/exp_net52_quant.py; log /tmp/net52.log.
+**Predictions stated before the run:** P1 4-bit per-channel ΔCE ≤ 0.05 (toy floor transfers);
+P2 last-12 worse than first-12; P3 2-bit collapse ≥ 0.5; P4 monotone mesh with nonzero 8-bit.
+**Results:** **P1 REFUTED SPECTACULARLY (+0.79)**; P2 CONFIRMED weakly (0.863 vs 0.890
+retained); P3 CONFIRMED dramatically (+14 CE, acc 0.0001); P4 CONFIRMED (strictly monotone,
+8-bit +0.0044 real). Cliff structure: mild through 5 bits, severe at 4, catastrophic at 3;
+grouping is the lever production quantizers (GPTQ/AWQ/GGUF) use — here measured cleanly.
+**Verdict:** barrier (c) strikes the programme's own compression conclusion — the toy floor
+was an artifact of the from-scratch setting; what transfers is STRUCTURE (depth direction,
+mesh sharpness, grouping lever). For the 6 GB host: RTN < 6 bits not deployable; group-wise
+≥4-bit the entry point; further compression needs error compensation, not scale choice.
+Barriers: (a) clean (refuted horn pre-stated); (b) clean (exact constant structure new);
+(c) DECISIVE (this IS the compression transfer test, honestly negative; limits: one model,
+ctx=512, RTN-only, embeddings/norms unquantized); (d) clean (bit-exact deterministic);
+(e) no noise floor issue (deltas ≥ 0.0004 resolvable); (f) clean (ALL_DONE_NET52);
+(g) fair (matched protocol across arms); (h) DIRECT (the bits×grouping surface is the
+deployment table). Open: GPTQ/AWQ compensation on these floors; joint weight+KV budgets;
+tail-aware mixed precision (quantize the NET-51 shared core harder than the personal tail).
+Paper 137, issue #239. Now 52 network experiments. Assessment v52.
