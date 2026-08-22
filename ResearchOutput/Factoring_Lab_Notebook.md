@@ -9990,3 +9990,17 @@ slopes measured on one population for the first time; the full alpha-table needs
 draws + ECM. LEDGER: missing import; zero-cost Fermat hits dropped from x but kept in y
 (length mismatch); inline takeover after channel death #10.
 Paper 154, issue #256. Now 486 experiments. Assessment v263.
+
+## Part 227 - ECM-COMPLETION lean (round-42 #1 [cron iteration], exp 487, v264)
+
+Paper 154's deferred ECM arm, as ECM-LITE (sequential multiples j=3..B1=50 over random
+curves, 30-curve cap, ops = point additions — NOT lcm-based true ECM; disclosed scope).
+Fixed implementation finds 1200/1200 at k=16 and 1163/1200 at k=20 (censoring 3.1%);
+mean ops 305 -> 1160; ACROSS-K SLOPE = **0.48 per log2 p** — rho-like birthday-bound
+scaling exactly as the lite structure predicts (H1's [0.6,0.8] band refuted FOR THE LITE
+variant; true lcm-based ECM's faster scaling remains deferred). Within-k alphas unstable
+(censored tail), not cited. The unified plane now has FOUR methods on one population:
+td 0.84 / rho 0.52 / Fermat 0.50 / ECM-lite 0.48.
+LEDGER: v1 instant-degenerate bug (at j=2 running point equals base -> zero denominator ->
+every curve dead); fixed with explicit doubling step.
+Paper 155, issue #257. Now 487 experiments. Assessment v264.

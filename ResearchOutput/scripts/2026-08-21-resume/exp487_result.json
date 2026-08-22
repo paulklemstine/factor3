@@ -1,0 +1,34 @@
+{
+ "meta": {
+  "seed": 20260921,
+  "exp": 487,
+  "codename": "ECM-COMPLETION",
+  "B1": 50,
+  "curve_cap": 30
+ },
+ "cells": [
+  {
+   "k": 16,
+   "n": 1200,
+   "found": 1200,
+   "censored": 0,
+   "mean_ops": 305.1425,
+   "alpha_ecm": 0.9852500560192815,
+   "log2_meanT": 8.253
+  },
+  {
+   "k": 20,
+   "n": 1200,
+   "found": 1163,
+   "censored": 37,
+   "mean_ops": 1160.3817712811694,
+   "alpha_ecm": 0.10414131851704668,
+   "log2_meanT": 10.18
+  }
+ ],
+ "across_k_slope_per_log2p": 0.4817,
+ "verdict": {
+  "H1_0.6_to_0.8": false,
+  "H3_note": "intercept comparison needs rho re-run on same pop \u2014 deferred"
+ }
+}
