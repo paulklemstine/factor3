@@ -10118,6 +10118,19 @@ operating point u=2.5; do NOT deploy at tighter thresholds (u>=3.5) without reca
 multi-seed bal@u=3.5 sweep queued.
 Paper 166, issue #268. Now 500 experiments. Assessment v275.
 
+## Part 238 - U35-LOCALIZE (round-45 #1 [cron iteration], exp 500, v276)
+
+The queued 14-seed localization of paper 166's u=3.5 breach. VERDICT: NEITHER — and
+decisive. sp(3.5) over 14 fresh populations: mean **0.6282**, bootstrap CI [0.620, 0.636]
+(EXCLUDES the 0.60 floor), sd 0.0155, 0/14 sub-floor seeds. H1 (center-below) refuted;
+H2 (wide-tail) refuted — paper 166's sub-floor column mean was 240-Ns/population sampling
+noise, and its deep-breach seed has no analogue at 5x N. What SURVIVES: the systematic
+paired u-drop — delta = +0.1057, bootstrap CI [0.0999, 0.1112], 14/14 positive. Context:
+mean smooth rate 12.84% (u2.5) vs 1.88% (u3.5); B35 ~ 356 < dial cap 400 (bound-coverage
+caveat disclosed). Dial deployment guidance stands: u=2.5 full strength; u=3.5 degraded
+but above floor everywhere.
+Paper 167, issue #269. Now 501 experiments. Assessment v276.
+
 AMENDMENT (original agent's clean run + coordinator diagnostic): the ANTI-COINCIDENCE read
 is RETIRED — measured c_pq equals the exact CRT count on all 8000 points (corr 1.000000);
 the ~0.26 ratios were the coordinator comparing conditional-on-both-QR predictions against
