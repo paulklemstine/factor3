@@ -1,0 +1,239 @@
+{
+ "exp": "472_PER-N-PREDICTOR_rerun",
+ "round": "39",
+ "seed": 20260827,
+ "barriers": [
+  "(5) residue dial predicting a METHOD's input statistics -- zero factor information",
+  "(8) QS calibration context: informs sieve/candidate triage, not factoring"
+ ],
+ "stage": "COMPLETE",
+ "ts": "2026-08-21T23:14:44",
+ "populations": {
+  "40": {
+   "n": 3000,
+   "mean_qr": 11.940666666666667,
+   "std_qr": 2.4396337612209114,
+   "u2.5": {
+    "mean_B": 1247.11,
+    "mean_rate": 0.13434,
+    "std_rate": 0.05739,
+    "frac_all_smooth": 0.0,
+    "pearson_qr_rate": 0.5139,
+    "spearman_qr_rate": 0.4915,
+    "pearson_w_rate": 0.3583
+   },
+   "u3.5": {
+    "mean_B": 162.68,
+    "mean_rate": 0.02097,
+    "std_rate": 0.02142,
+    "frac_all_smooth": 0.0,
+    "pearson_qr_rate": 0.4632,
+    "spearman_qr_rate": 0.4485,
+    "pearson_w_rate": 0.3564
+   }
+  },
+  "44": {
+   "n": 3000,
+   "mean_qr": 12.018666666666666,
+   "std_qr": 2.4598749742393187,
+   "u2.5": {
+    "mean_B": 2170.04,
+    "mean_rate": 0.13141,
+    "std_rate": 0.05594,
+    "frac_all_smooth": 0.0,
+    "pearson_qr_rate": 0.5214,
+    "spearman_qr_rate": 0.5061,
+    "pearson_w_rate": 0.3574
+   },
+   "u3.5": {
+    "mean_B": 241.64,
+    "mean_rate": 0.01952,
+    "std_rate": 0.02057,
+    "frac_all_smooth": 0.0,
+    "pearson_qr_rate": 0.4463,
+    "spearman_qr_rate": 0.428,
+    "pearson_w_rate": 0.3454
+   }
+  },
+  "48": {
+   "n": 3000,
+   "mean_qr": 11.974333333333334,
+   "std_qr": 2.454181714724663,
+   "u2.5": {
+    "mean_B": 3779.67,
+    "mean_rate": 0.13181,
+    "std_rate": 0.05482,
+    "frac_all_smooth": 0.0,
+    "pearson_qr_rate": 0.4968,
+    "spearman_qr_rate": 0.4816,
+    "pearson_w_rate": 0.349
+   },
+   "u3.5": {
+    "mean_B": 359.17,
+    "mean_rate": 0.01858,
+    "std_rate": 0.01968,
+    "frac_all_smooth": 0.0,
+    "pearson_qr_rate": 0.431,
+    "spearman_qr_rate": 0.4224,
+    "pearson_w_rate": 0.3231
+   }
+  }
+ },
+ "results": {
+  "u2.5": {
+   "coef_linear": {
+    "intercept": -0.003504,
+    "slope_per_QR": 0.011558
+   },
+   "M1_test": {
+    "R2": 0.3041,
+    "calib_slope": 1.1283,
+    "calib_intercept": -0.01789,
+    "spearman": 0.5384,
+    "pearson": 0.5551,
+    "resid_var": 0.00246986
+   },
+   "M1_logistic_test": {
+    "R2": 0.3011,
+    "calib_slope": 1.0876,
+    "calib_intercept": -0.01273,
+    "spearman": 0.5384,
+    "pearson": 0.5507,
+    "resid_var": 0.00248022
+   },
+   "transfer_renormed": {
+    "44": {
+     "R2": 0.2717,
+     "calib_slope": 1.0258,
+     "calib_intercept": -0.00339,
+     "spearman": 0.5061,
+     "pearson": 0.5214,
+     "resid_var": 0.00227911
+    },
+    "48": {
+     "R2": 0.2464,
+     "calib_slope": 0.9601,
+     "calib_intercept": 0.00526,
+     "spearman": 0.4816,
+     "pearson": 0.4968,
+     "resid_var": 0.00226472
+    }
+   },
+   "M2_weighted_test": {
+    "R2": 0.3134,
+    "calib_slope": 1.1321,
+    "calib_intercept": -0.01832,
+    "spearman": 0.5486,
+    "pearson": 0.5637,
+    "resid_var": 0.00243667
+   },
+   "coef_M2": {
+    "w_coef": 0.00029357
+   },
+   "floor": {
+    "binomial_floor_var_60draws": 0.00188872,
+    "total_var_test": 0.00354898,
+    "max_attainable_R2": 0.4678,
+    "resid_over_floor_M1": 1.308,
+    "resid_over_floor_M2": 1.29
+   },
+   "H1": {
+    "R2_pass": true,
+    "slope_pass": true,
+    "verdict": "CONFIRMED"
+   },
+   "H2": {
+    "per_scale": {
+     "44": {
+      "R2_pass": true,
+      "slope_pass": true
+     },
+     "48": {
+      "R2_pass": false,
+      "slope_pass": true
+     }
+    },
+    "verdict": "REFUTED"
+   },
+   "H3": {
+    "lift_R2": 0.0093,
+    "verdict": "NOT-CONFIRMED",
+    "attribution": "residual variance 1.31x the floor: genuine unexplained structure beyond QR features remains."
+   }
+  },
+  "u3.5": {
+   "coef_linear": {
+    "intercept": -0.025757,
+    "slope_per_QR": 0.003929
+   },
+   "M1_test": {
+    "R2": 0.2525,
+    "calib_slope": 1.1,
+    "calib_intercept": -0.00273,
+    "spearman": 0.5008,
+    "pearson": 0.5053,
+    "resid_var": 0.0003516
+   },
+   "M1_logistic_test": {
+    "R2": 0.2497,
+    "calib_slope": 0.9665,
+    "calib_intercept": -0.00017,
+    "spearman": 0.5008,
+    "pearson": 0.5018,
+    "resid_var": 0.00035294
+   },
+   "transfer_renormed": {
+    "44": {
+     "R2": 0.1986,
+     "calib_slope": 0.9499,
+     "calib_intercept": 0.00098,
+     "spearman": 0.428,
+     "pearson": 0.4463,
+     "resid_var": 0.00033926
+    },
+    "48": {
+     "R2": 0.1822,
+     "calib_slope": 0.8795,
+     "calib_intercept": 0.00224,
+     "spearman": 0.4224,
+     "pearson": 0.431,
+     "resid_var": 0.00031675
+    }
+   },
+   "M2_weighted_test": {
+    "R2": 0.2597,
+    "calib_slope": 1.108,
+    "calib_intercept": -0.00291,
+    "spearman": 0.5126,
+    "pearson": 0.5127,
+    "resid_var": 0.00034826
+   },
+   "coef_M2": {
+    "w_coef": 9.15e-05
+   },
+   "floor": {
+    "binomial_floor_var_60draws": 0.00033428,
+    "total_var_test": 0.0004704,
+    "max_attainable_R2": 0.2894,
+    "resid_over_floor_M1": 1.052,
+    "resid_over_floor_M2": 1.042
+   }
+  }
+ },
+ "ledger": [
+  "u per-value from ln v/ln B; B_N = exp(ln v_med/u_target)",
+  "exact isqrt via gmpy2.isqrt; relation values asserted positive",
+  "Legendre via gmpy2.powmod(N,(p-1)//2,p)==1, ODD primes only (p=2 excluded)",
+  "B-smooth via trial division stripping primes<=B_max(scale,u); remainder==1",
+  "semiprime factors: distinct h-bit primes, top two bits set -> bitlen(N)=k",
+  "split: scale-40 indices 0..1999 train, 2000..2999 test",
+  "OLS primary (pre-stated 'logistic/linear'); weighted-IRLS logistic secondary"
+ ],
+ "verification": {
+  "smooth_vs_primorial_gcd": "108 classifications (6 Ns x u{2.5,3.5} x 9 values) match v | primorial(B) identity",
+  "qr_vs_pure_pow_euler": "4/4 counts match pow(N,(p-1)//2,p)==1 outside gmpy2",
+  "relation_identity": "v_j == (isqrt(N)+j)^2 - N exact, positive, strictly increasing",
+  "bitlen_discipline": "{40:[40],44:[44],48:[48]} on fresh 200-draws",
+  "note": "sympy.factorint hung (>3min CPU on <=2^26 ints); replaced with primorial-gcd check"
+ }
+}

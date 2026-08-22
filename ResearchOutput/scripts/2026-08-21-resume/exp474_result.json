@@ -1,0 +1,200 @@
+{
+ "meta": {
+  "seed": 20260828,
+  "exp": 474,
+  "codename": "ET-HINTS"
+ },
+ "exact_M300": [
+  {
+   "mu": 6,
+   "E_base": 100.50055555555556,
+   "E_committed": 53.99358333333334,
+   "sp_committed": 1.861342577230113,
+   "sp_interleaved": null,
+   "bayes_optimal_is_committed": true,
+   "alpha": 0.5,
+   "muf": 0.02
+  },
+  {
+   "mu": 6,
+   "E_base": 100.50055555555556,
+   "E_committed": 28.722097222222224,
+   "sp_committed": 3.499067452421215,
+   "sp_interleaved": null,
+   "bayes_optimal_is_committed": true,
+   "alpha": 0.75,
+   "muf": 0.02
+  },
+  {
+   "mu": 6,
+   "E_base": 100.50055555555556,
+   "E_committed": 13.559205555555554,
+   "sp_committed": 7.411979643186242,
+   "sp_interleaved": null,
+   "bayes_optimal_is_committed": true,
+   "alpha": 0.9,
+   "muf": 0.02
+  },
+  {
+   "mu": 6,
+   "E_base": 100.50055555555556,
+   "E_committed": 3.4506111111111113,
+   "sp_committed": 29.125436718133663,
+   "sp_interleaved": null,
+   "bayes_optimal_is_committed": true,
+   "alpha": 1.0,
+   "muf": 0.02
+  },
+  {
+   "mu": 15,
+   "E_base": 100.50055555555556,
+   "E_committed": 59.19591666666667,
+   "sp_committed": 1.6977616230098453,
+   "sp_interleaved": null,
+   "bayes_optimal_is_committed": true,
+   "alpha": 0.5,
+   "muf": 0.05
+  },
+  {
+   "mu": 15,
+   "E_base": 100.50055555555556,
+   "E_committed": 33.42859722222222,
+   "sp_committed": 3.006424555821509,
+   "sp_interleaved": null,
+   "bayes_optimal_is_committed": true,
+   "alpha": 0.75,
+   "muf": 0.05
+  },
+  {
+   "mu": 15,
+   "E_base": 100.50055555555556,
+   "E_committed": 17.968205555555553,
+   "sp_committed": 5.593243868722439,
+   "sp_interleaved": null,
+   "bayes_optimal_is_committed": true,
+   "alpha": 0.9,
+   "muf": 0.05
+  },
+  {
+   "mu": 15,
+   "E_base": 100.50055555555556,
+   "E_committed": 7.661277777777777,
+   "sp_committed": 13.11798873120962,
+   "sp_interleaved": null,
+   "bayes_optimal_is_committed": true,
+   "alpha": 1.0,
+   "muf": 0.05
+  },
+  {
+   "mu": 30,
+   "E_base": 100.50055555555556,
+   "E_committed": 67.76613888888889,
+   "sp_committed": 1.4830497532158187,
+   "sp_interleaved": null,
+   "bayes_optimal_is_committed": true,
+   "alpha": 0.5,
+   "muf": 0.1
+  },
+  {
+   "mu": 30,
+   "E_base": 100.50055555555556,
+   "E_committed": 40.955597222222224,
+   "sp_committed": 2.45389061256381,
+   "sp_interleaved": null,
+   "bayes_optimal_is_committed": true,
+   "alpha": 0.75,
+   "muf": 0.1
+  },
+  {
+   "mu": 30,
+   "E_base": 100.50055555555556,
+   "E_committed": 24.86927222222222,
+   "sp_committed": 4.041153864798349,
+   "sp_interleaved": null,
+   "bayes_optimal_is_committed": true,
+   "alpha": 0.9,
+   "muf": 0.1
+  },
+  {
+   "mu": 30,
+   "E_base": 100.50055555555556,
+   "E_committed": 14.145055555555558,
+   "sp_committed": 7.1049954636681045,
+   "sp_interleaved": null,
+   "bayes_optimal_is_committed": true,
+   "alpha": 1.0,
+   "muf": 0.1
+  },
+  {
+   "mu": 60,
+   "E_base": 100.50055555555556,
+   "E_committed": 84.53033333333333,
+   "sp_committed": 1.1889288920611012,
+   "sp_interleaved": null,
+   "bayes_optimal_is_committed": true,
+   "alpha": 0.5,
+   "muf": 0.2
+  },
+  {
+   "mu": 60,
+   "E_base": 100.50055555555556,
+   "E_committed": 54.95522222222222,
+   "sp_committed": 1.8287717070665614,
+   "sp_interleaved": null,
+   "bayes_optimal_is_committed": true,
+   "alpha": 0.75,
+   "muf": 0.2
+  },
+  {
+   "mu": 60,
+   "E_base": 100.50055555555556,
+   "E_committed": 37.21015555555555,
+   "sp_committed": 2.7008904976359505,
+   "sp_interleaved": null,
+   "bayes_optimal_is_committed": true,
+   "alpha": 0.9,
+   "muf": 0.2
+  },
+  {
+   "mu": 60,
+   "E_base": 100.50055555555556,
+   "E_committed": 25.38011111111111,
+   "sp_committed": 3.959815428528901,
+   "sp_interleaved": null,
+   "bayes_optimal_is_committed": true,
+   "alpha": 1.0,
+   "muf": 0.2
+  }
+ ],
+ "mc_M1e5": [
+  {
+   "alpha": 0.9,
+   "muf": 0.05,
+   "sp_committed_mc": 5.70349198964254,
+   "sp_interleaved_mc": 4.836951556471957
+  },
+  {
+   "alpha": 1.0,
+   "muf": 0.02,
+   "sp_committed_mc": 33.98574025829327,
+   "sp_interleaved_mc": 33333.524675
+  },
+  {
+   "alpha": 0.75,
+   "muf": 0.1,
+   "sp_committed_mc": 2.4757220715830295,
+   "sp_interleaved_mc": 1.9187962555901785
+  }
+ ],
+ "crossing_5p19": {
+  "muf0.02": 0.9,
+  "muf0.05": 0.9,
+  "muf0.1": 0.99,
+  "muf0.2": null
+ },
+ "verdict": {
+  "P1_bayes_eq_committed_in_all_cells": true,
+  "P2_monotone": true,
+  "note": "see table"
+ }
+}

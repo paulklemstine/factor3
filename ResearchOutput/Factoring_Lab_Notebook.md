@@ -9784,3 +9784,36 @@ values/N first.
 LEDGER: lean inline takeover after 2 silent agent deaths; pre-stated bands were optimistic;
 H3's 'richer feature' branch dropped for runtime (disclosed).
 Paper 142, issue #242. Now 474 experiments. Assessment v251.
+
+## Part 215 - ET-HINTS (round-39 #5 [cron iteration], exp 474, v252)
+
+Interval hints priced in the expected-cost functional (paper 138's residual), truthful
+conditioning (J ~ real min-law; oracle covers J w.p. alpha with start uniform over covering
+starts; else uniform non-covering). Exact grid at M=300 + MC 200k at M=1e5 AGREE (5.59 vs
+5.70; 29.1 vs 34.0 — the gap = M-difference + miss-tail noise, disclosed). Committed
+(interval-first-then-rest) is Bayes-optimal in EVERY cell (posterior-mass argument).
+Speedup table: 1.19x (a=0.5, mu=0.2M) to **29.1x** (a=1.0, mu=0.02M); monotone in both.
+CROSSING: paper 137's magnitude-ordering gain (5.19x) equals an oracle knowing p's position
+within a 2-5%-wide window with ~90% reliability (alpha~0.9 at muf in {0.02,0.05}); or 99%
+at muf=0.10. External interval hints are priced by exactly TWO numbers: coverage x width.
+LEDGER: v1 MC drew intervals unconditionally (alpha never used -> sp<1 nonsense);
+v2 exact grid's uniform-given-hit assumption INCONSISTENT with the target law — exposed by
+model-vs-MC disagreement (the disagreement itself was the detector); interleaved dropped
+from exact grid (MC-only, disclosed); inline takeover after 3 agent deaths on this task.
+Paper 143, issue #245. Now 475 experiments. Assessment v252.
+
+## Part 216 - PER-N-PREDICTOR-FULL (round-39 #6 [cron iteration], exp 476, v253)
+
+The full-scale version of exp 472 (agent survived after a ~15-min first turn; superset:
+3 scales, weighted features, logistic cross-check). PER-N-PREDICTOR-REPLICATED AND EXTENDED:
+base effect replicates at all three scales (Pearson r 0.497-0.521 at u=2.5; 0.431-0.463 at
+u=3.5). H1 CONFIRMED here (R2=0.3041, slope 1.128 at u=2.5 test; R2=0.2525/slope 1.100 at
+u=3.5 — passes where the lean version missed by hair-widths: population-construction and
+split differences). Transfer shape PERFECT: transfer R2 equals target scale's own corr^2
+(0.5214^2=0.2719 vs measured 0.2717) — the SHAPE carries over, the level just tracks each
+population's correlation; calibration slopes in-band 4/4 cells. Weighted feature NULL
+(+0.009 lift; collinear with count). Floor attribution: residual 1.31x floor at u=2.5
+(genuine per-N structure beyond QR-count remains there — the honest target for richer
+features), 1.05x floor at u=3.5 (noise-bound). LEDGER: sympy.factorint hung -> primorial-gcd
+independent verification path; OLS primary/logistic secondary agree.
+Paper 144, issue #244. Now 476 experiments. Assessment v253.
