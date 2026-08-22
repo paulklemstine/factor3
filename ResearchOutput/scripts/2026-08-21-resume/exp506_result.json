@@ -1,0 +1,547 @@
+{
+ "meta": {
+  "exp": 506,
+  "codename": "PPOW-MULTISEED",
+  "round": 46,
+  "population_seeds": [
+   20260940,
+   20260941,
+   20260942,
+   20260943,
+   20260944
+  ],
+  "analysis_seed_root": 20260945,
+  "Ns_per_population": 1200,
+  "values_full_window": 960,
+  "values_short_window": 240,
+  "us": [
+   3.5,
+   2.5
+  ],
+  "d_primes": [
+   2,
+   3,
+   5,
+   7,
+   11,
+   13
+  ],
+  "nboot": 300,
+  "split": "900/300",
+  "arms": {
+   "base": "[1, w(<=400 QR), qrc(<=100), d(any-hit p<=13)]",
+   "aug": "base + pp_sum"
+  },
+  "constructions": "verbatim exp497/505 bitlen-44 balanced window arm, Fermat offsets j=1..960, vmed pooled per population PER WINDOW (see ledger L2)",
+  "prestated": {
+   "H1": "paper-172 lift replicates: per-seed dR2 > 0.03 at (u=3.5, w=240) on >= 4/5 fresh seeds",
+   "H2": "lift persists at u=2.5 as well as 3.5: dR2 bootstrap CI excludes 0 on >= 3/5 populations at BOTH u (window 240)",
+   "H3": "lift grows with window 240->960: PASS iff mean dR2(960) > mean dR2(240) at BOTH u; GROWTH-MIXED at exactly one; ABSENT otherwise",
+   "bands": "PASS = point >= t and CI_low > 0 where CI demanded; MARGINAL = point >= t, CI straddles 0"
+  }
+ },
+ "saved_at": "2026-08-22T05:58:59",
+ "elapsed_s": 31.8,
+ "populations": {
+  "pop20260940": {
+   "seed": 20260940,
+   "n_unique": 1200,
+   "bitlen_min": 44,
+   "bitlen_max": 44,
+   "wall_s": 0.0,
+   "targets": {
+    "vmed_short": 856137191.0,
+    "vmed_full": 3425169046.0,
+    "B": {
+     "u3.5_w240": 357,
+     "u3.5_w960": 530,
+     "u2.5_w240": 3741,
+     "u2.5_w960": 6514
+    },
+    "BMAX": 6514,
+    "n_strip_primes": 842,
+    "mean_rate": {
+     "u3.5_w240": 0.018236,
+     "u3.5_w960": 0.017075,
+     "u2.5_w240": 0.127104,
+     "u2.5_w960": 0.125793
+    },
+    "wall_s": 6.0
+   },
+   "features": {
+    "feature_conventions": {
+     "w/T": "sum 2/p over odd QR primes p<=400 (Euler criterion)",
+     "qrc": "count of odd QR primes p<=100",
+     "d": "fraction of WINDOW values divisible by >=1 prime in {2,3,5,7,11,13}",
+     "pp_sum": "sum over p<=13 of fraction of WINDOW values divisible by p^2"
+    },
+    "mean_d13": {
+     "w240": 0.80573,
+     "w960": 0.80564
+    },
+    "mean_pp_sum": {
+     "w240": 0.43354,
+     "w960": 0.43332
+    },
+    "ppany_mean_w240": 0.380437,
+    "corr_ppsum_rate35_240": 0.4138,
+    "corr_ppsum_rate25_240": 0.5056,
+    "anchor_sp_T_3.5_w240": 0.6278,
+    "anchor_sp_T_2.5_w240": 0.7415,
+    "wall_s": 0.1
+   },
+   "fits": {
+    "u3.5_w240": {
+     "R2_base": 0.4611,
+     "R2_aug": 0.5159,
+     "dR2": 0.0548,
+     "CI95": [
+      0.0122,
+      0.0739
+     ],
+     "ci_excludes_0": true
+    },
+    "u3.5_w960": {
+     "R2_base": 0.5975,
+     "R2_aug": 0.668,
+     "dR2": 0.0705,
+     "CI95": [
+      0.0419,
+      0.1049
+     ],
+     "ci_excludes_0": true
+    },
+    "u2.5_w240": {
+     "R2_base": 0.6179,
+     "R2_aug": 0.6812,
+     "dR2": 0.0634,
+     "CI95": [
+      0.0364,
+      0.0982
+     ],
+     "ci_excludes_0": true
+    },
+    "u2.5_w960": {
+     "R2_base": 0.691,
+     "R2_aug": 0.7697,
+     "dR2": 0.0787,
+     "CI95": [
+      0.0577,
+      0.1076
+     ],
+     "ci_excludes_0": true
+    }
+   }
+  },
+  "pop20260941": {
+   "seed": 20260941,
+   "n_unique": 1200,
+   "bitlen_min": 44,
+   "bitlen_max": 44,
+   "wall_s": 0.0,
+   "targets": {
+    "vmed_short": 853994813.0,
+    "vmed_full": 3416132544.5,
+    "B": {
+     "u3.5_w240": 356,
+     "u3.5_w960": 530,
+     "u2.5_w240": 3738,
+     "u2.5_w960": 6507
+    },
+    "BMAX": 6507,
+    "n_strip_primes": 842,
+    "mean_rate": {
+     "u3.5_w240": 0.01858,
+     "u3.5_w960": 0.01748,
+     "u2.5_w240": 0.128042,
+     "u2.5_w960": 0.126541
+    },
+    "wall_s": 6.5
+   },
+   "features": {
+    "feature_conventions": {
+     "w/T": "sum 2/p over odd QR primes p<=400 (Euler criterion)",
+     "qrc": "count of odd QR primes p<=100",
+     "d": "fraction of WINDOW values divisible by >=1 prime in {2,3,5,7,11,13}",
+     "pp_sum": "sum over p<=13 of fraction of WINDOW values divisible by p^2"
+    },
+    "mean_d13": {
+     "w240": 0.80788,
+     "w960": 0.80796
+    },
+    "mean_pp_sum": {
+     "w240": 0.4298,
+     "w960": 0.42964
+    },
+    "ppany_mean_w240": 0.378031,
+    "corr_ppsum_rate35_240": 0.3936,
+    "corr_ppsum_rate25_240": 0.4688,
+    "anchor_sp_T_3.5_w240": 0.5956,
+    "anchor_sp_T_2.5_w240": 0.7112,
+    "wall_s": 0.1
+   },
+   "fits": {
+    "u3.5_w240": {
+     "R2_base": 0.4715,
+     "R2_aug": 0.5207,
+     "dR2": 0.0492,
+     "CI95": [
+      0.0231,
+      0.0881
+     ],
+     "ci_excludes_0": true
+    },
+    "u3.5_w960": {
+     "R2_base": 0.6005,
+     "R2_aug": 0.67,
+     "dR2": 0.0695,
+     "CI95": [
+      0.0299,
+      0.0915
+     ],
+     "ci_excludes_0": true
+    },
+    "u2.5_w240": {
+     "R2_base": 0.5866,
+     "R2_aug": 0.6538,
+     "dR2": 0.0672,
+     "CI95": [
+      0.0358,
+      0.1007
+     ],
+     "ci_excludes_0": true
+    },
+    "u2.5_w960": {
+     "R2_base": 0.6895,
+     "R2_aug": 0.7884,
+     "dR2": 0.0989,
+     "CI95": [
+      0.0619,
+      0.1109
+     ],
+     "ci_excludes_0": true
+    }
+   }
+  },
+  "pop20260942": {
+   "seed": 20260942,
+   "n_unique": 1200,
+   "bitlen_min": 44,
+   "bitlen_max": 44,
+   "wall_s": 0.0,
+   "targets": {
+    "vmed_short": 851872642.0,
+    "vmed_full": 3407029359.5,
+    "B": {
+     "u3.5_w240": 356,
+     "u3.5_w960": 529,
+     "u2.5_w240": 3734,
+     "u2.5_w960": 6501
+    },
+    "BMAX": 6501,
+    "n_strip_primes": 842,
+    "mean_rate": {
+     "u3.5_w240": 0.019052,
+     "u3.5_w960": 0.017839,
+     "u2.5_w240": 0.128899,
+     "u2.5_w960": 0.127984
+    },
+    "wall_s": 6.1
+   },
+   "features": {
+    "feature_conventions": {
+     "w/T": "sum 2/p over odd QR primes p<=400 (Euler criterion)",
+     "qrc": "count of odd QR primes p<=100",
+     "d": "fraction of WINDOW values divisible by >=1 prime in {2,3,5,7,11,13}",
+     "pp_sum": "sum over p<=13 of fraction of WINDOW values divisible by p^2"
+    },
+    "mean_d13": {
+     "w240": 0.81195,
+     "w960": 0.81192
+    },
+    "mean_pp_sum": {
+     "w240": 0.44341,
+     "w960": 0.44338
+    },
+    "ppany_mean_w240": 0.387115,
+    "corr_ppsum_rate35_240": 0.4585,
+    "corr_ppsum_rate25_240": 0.52,
+    "anchor_sp_T_3.5_w240": 0.6324,
+    "anchor_sp_T_2.5_w240": 0.7385,
+    "wall_s": 0.1
+   },
+   "fits": {
+    "u3.5_w240": {
+     "R2_base": 0.5253,
+     "R2_aug": 0.5767,
+     "dR2": 0.0514,
+     "CI95": [
+      0.0318,
+      0.1032
+     ],
+     "ci_excludes_0": true
+    },
+    "u3.5_w960": {
+     "R2_base": 0.636,
+     "R2_aug": 0.6848,
+     "dR2": 0.0488,
+     "CI95": [
+      0.0346,
+      0.0869
+     ],
+     "ci_excludes_0": true
+    },
+    "u2.5_w240": {
+     "R2_base": 0.6495,
+     "R2_aug": 0.7226,
+     "dR2": 0.0731,
+     "CI95": [
+      0.048,
+      0.1115
+     ],
+     "ci_excludes_0": true
+    },
+    "u2.5_w960": {
+     "R2_base": 0.7103,
+     "R2_aug": 0.8042,
+     "dR2": 0.0939,
+     "CI95": [
+      0.06,
+      0.1127
+     ],
+     "ci_excludes_0": true
+    }
+   }
+  },
+  "pop20260943": {
+   "seed": 20260943,
+   "n_unique": 1200,
+   "bitlen_min": 44,
+   "bitlen_max": 44,
+   "wall_s": 0.0,
+   "targets": {
+    "vmed_short": 850287954.5,
+    "vmed_full": 3401572153.0,
+    "B": {
+     "u3.5_w240": 356,
+     "u3.5_w960": 529,
+     "u2.5_w240": 3731,
+     "u2.5_w960": 6496
+    },
+    "BMAX": 6496,
+    "n_strip_primes": 842,
+    "mean_rate": {
+     "u3.5_w240": 0.018767,
+     "u3.5_w960": 0.017532,
+     "u2.5_w240": 0.129118,
+     "u2.5_w960": 0.127174
+    },
+    "wall_s": 6.0
+   },
+   "features": {
+    "feature_conventions": {
+     "w/T": "sum 2/p over odd QR primes p<=400 (Euler criterion)",
+     "qrc": "count of odd QR primes p<=100",
+     "d": "fraction of WINDOW values divisible by >=1 prime in {2,3,5,7,11,13}",
+     "pp_sum": "sum over p<=13 of fraction of WINDOW values divisible by p^2"
+    },
+    "mean_d13": {
+     "w240": 0.80814,
+     "w960": 0.80804
+    },
+    "mean_pp_sum": {
+     "w240": 0.42978,
+     "w960": 0.42957
+    },
+    "ppany_mean_w240": 0.377035,
+    "corr_ppsum_rate35_240": 0.4076,
+    "corr_ppsum_rate25_240": 0.4891,
+    "anchor_sp_T_3.5_w240": 0.6391,
+    "anchor_sp_T_2.5_w240": 0.7527,
+    "wall_s": 0.1
+   },
+   "fits": {
+    "u3.5_w240": {
+     "R2_base": 0.5204,
+     "R2_aug": 0.5707,
+     "dR2": 0.0503,
+     "CI95": [
+      0.0144,
+      0.0768
+     ],
+     "ci_excludes_0": true
+    },
+    "u3.5_w960": {
+     "R2_base": 0.6853,
+     "R2_aug": 0.74,
+     "dR2": 0.0547,
+     "CI95": [
+      0.037,
+      0.085
+     ],
+     "ci_excludes_0": true
+    },
+    "u2.5_w240": {
+     "R2_base": 0.6295,
+     "R2_aug": 0.6659,
+     "dR2": 0.0365,
+     "CI95": [
+      0.0353,
+      0.0949
+     ],
+     "ci_excludes_0": true
+    },
+    "u2.5_w960": {
+     "R2_base": 0.7638,
+     "R2_aug": 0.8287,
+     "dR2": 0.0648,
+     "CI95": [
+      0.0588,
+      0.1106
+     ],
+     "ci_excludes_0": true
+    }
+   }
+  },
+  "pop20260944": {
+   "seed": 20260944,
+   "n_unique": 1200,
+   "bitlen_min": 44,
+   "bitlen_max": 44,
+   "wall_s": 0.0,
+   "targets": {
+    "vmed_short": 854185715.5,
+    "vmed_full": 3417155158.5,
+    "B": {
+     "u3.5_w240": 356,
+     "u3.5_w960": 530,
+     "u2.5_w240": 3738,
+     "u2.5_w960": 6508
+    },
+    "BMAX": 6508,
+    "n_strip_primes": 842,
+    "mean_rate": {
+     "u3.5_w240": 0.01958,
+     "u3.5_w960": 0.018072,
+     "u2.5_w240": 0.13033,
+     "u2.5_w960": 0.128455
+    },
+    "wall_s": 6.0
+   },
+   "features": {
+    "feature_conventions": {
+     "w/T": "sum 2/p over odd QR primes p<=400 (Euler criterion)",
+     "qrc": "count of odd QR primes p<=100",
+     "d": "fraction of WINDOW values divisible by >=1 prime in {2,3,5,7,11,13}",
+     "pp_sum": "sum over p<=13 of fraction of WINDOW values divisible by p^2"
+    },
+    "mean_d13": {
+     "w240": 0.81269,
+     "w960": 0.81273
+    },
+    "mean_pp_sum": {
+     "w240": 0.44992,
+     "w960": 0.4497
+    },
+    "ppany_mean_w240": 0.393128,
+    "corr_ppsum_rate35_240": 0.42,
+    "corr_ppsum_rate25_240": 0.5168,
+    "anchor_sp_T_3.5_w240": 0.6288,
+    "anchor_sp_T_2.5_w240": 0.7513,
+    "wall_s": 0.1
+   },
+   "fits": {
+    "u3.5_w240": {
+     "R2_base": 0.4348,
+     "R2_aug": 0.4832,
+     "dR2": 0.0484,
+     "CI95": [
+      0.0154,
+      0.0759
+     ],
+     "ci_excludes_0": true
+    },
+    "u3.5_w960": {
+     "R2_base": 0.63,
+     "R2_aug": 0.6769,
+     "dR2": 0.0469,
+     "CI95": [
+      0.0296,
+      0.0827
+     ],
+     "ci_excludes_0": true
+    },
+    "u2.5_w240": {
+     "R2_base": 0.5915,
+     "R2_aug": 0.6407,
+     "dR2": 0.0491,
+     "CI95": [
+      0.0363,
+      0.1029
+     ],
+     "ci_excludes_0": true
+    },
+    "u2.5_w960": {
+     "R2_base": 0.7133,
+     "R2_aug": 0.789,
+     "dR2": 0.0757,
+     "CI95": [
+      0.0558,
+      0.1131
+     ],
+     "ci_excludes_0": true
+    }
+   }
+  }
+ },
+ "verdict": {
+  "verdict_name": "PPOW-LIFT-REPLICATES-AND-GROWS",
+  "H1": {
+   "pass": true,
+   "count_gt_0.03": 5,
+   "of": 5,
+   "threshold": "point dR2 > 0.03 on >= 4/5",
+   "per_seed_dR2_u3.5_w240": [
+    0.0548,
+    0.0492,
+    0.0514,
+    0.0503,
+    0.0484
+   ],
+   "mean": 0.0508,
+   "cross_seed_sd": 0.0025,
+   "SE_mean": 0.0011
+  },
+  "H2": {
+   "pass": true,
+   "ci_excl0_counts_w240": {
+    "u3.5": 5,
+    "u2.5": 5
+   },
+   "required": ">=3/5 at BOTH u"
+  },
+  "H3": {
+   "result": "PASS",
+   "mean_dR2": {
+    "u3.5_w240": 0.0508,
+    "u3.5_w960": 0.0581,
+    "u2.5_w240": 0.0579,
+    "u2.5_w960": 0.0824
+   }
+  },
+  "barrier_lines": {
+   "barrier_5": "Structural orthogonality: T/w and all features here are N-only natural coordinates; the dial predicts relation yield (difficulty), not (p,q) - no which-factor claim made or tested.",
+   "barrier_8": "Known-method-in-disguise: the measured object is the QS/CFRAC relation-yield dial - a cost predictor FOR known methods, not a new factoring route."
+  },
+  "artifacts": [
+   "/tmp/exp46_pms/exp506_ppow_multiseed.py",
+   "/tmp/exp46_pms/result.json",
+   "/tmp/exp46_pms/ledger_exp506.jsonl",
+   "/tmp/exp46_pms/arrays_pop20260940.npz",
+   "/tmp/exp46_pms/arrays_pop20260941.npz",
+   "/tmp/exp46_pms/arrays_pop20260942.npz",
+   "/tmp/exp46_pms/arrays_pop20260943.npz",
+   "/tmp/exp46_pms/arrays_pop20260944.npz"
+  ]
+ }
+}

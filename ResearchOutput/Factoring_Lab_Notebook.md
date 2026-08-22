@@ -10193,6 +10193,17 @@ squarefree-hit features cannot see. The per-N yield dial's final form gains a pr
 term.
 Paper 172, issue #273. Now 505 experiments. Assessment v280.
 
+## Part 243 - PPOW-MULTISEED (round-46 #2 [cron iteration], exp 506, v281)
+
+The mandatory multi-seed replication of paper 172's prime-power lift. ALL THREE
+HYPOTHESES PASS: per-seed dR2(ppow over base) at (u=3.5, w=240) = [0.055, 0.049, 0.051,
+0.050, 0.048] across 5 fresh populations — cross-seed sd **0.0025**, SE(mean) 0.0011
+(remarkably tight vs papers 150-152's seed variance); CI excludes 0 on 5/5 at BOTH u;
+lift GROWS with window 240->960 at u=2.5 (mean dR2 0.058->0.082) and mildly at u=3.5.
+Coordinator lean run independently confirms (different implementation, same verdict).
+The prime-power term is a REAL, seed-stable, window-robust component of the per-N dial.
+Paper 173, issue #274. Now 506 experiments. Assessment v281.
+
 AMENDMENT (original agent's clean run + coordinator diagnostic): the ANTI-COINCIDENCE read
 is RETIRED — measured c_pq equals the exact CRT count on all 8000 points (corr 1.000000);
 the ~0.26 ratios were the coordinator comparing conditional-on-both-QR predictions against
