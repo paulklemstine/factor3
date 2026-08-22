@@ -1799,3 +1799,15 @@ code language, single repo, 24 windows stated); (d) clean per-corpus split; (e)
 deterministic; (f) clean (ALL_DONE_NET68); (g) fair (only text changed); (h) DIRECT.
 Open: math/non-English domains; increments@4096; 7B cell; probe+recency on code.
 Paper 153, issue #306. Now 68 network experiments. Assessment v68.
+
+## Part 69 — CONTENT-WEAKNESS-IS-DOMAIN-UNIVERSAL: on Python source (the strongest candidate for content-based importance), probes recover only R²=0.3185 (vs prose 0.329 — statistically identical), probe-only eviction LOSES to accumulated usage by 12 pts (0.815 vs 0.934 @B=64), and the hybrid is NON-DEGRADING (+0.3 pts vs prose's monotone harm) — P1 REFUTED decisively, P2 CONFIRMED both clauses, P3 CONFIRMED; importance is relational in structured domains too; content is neutral-at-best even where syntax repeats; code-domain picture complete: fewer keys (12/16), content useless for choosing them, recency+accumulation still deployable (NET-69; limited-memory axis round 36)
+
+**Method:** NET-58/61 methodology, corpus swapped to Python source; per-(layer,kv-head)
+ridge probes fit train-side; streaming arms {acc-HH, probe-only, hybrid λ=1} at B=64;
+gate exact. Script ResearchOutput/exp_net69_probe_code.py; results
+~/f3cache/net69_results.json; log /tmp/net69.log.
+**Verdict:** CONTENT-WEAKNESS-IS-DOMAIN-UNIVERSAL. Barriers: (a) clean; (b) clean (first
+cross-domain probe comparison); (c) confronted (one language/repo stated); (d) clean;
+(e) deterministic; (f) clean (ALL_DONE_NET69); (g) fair (identical methodology/budgets);
+(h) DIRECT. Open: math/non-English domains; learned online predictors; increments@4096;
+7B cell. Paper 154, issue #309. Now 69 network experiments. Assessment v69.
