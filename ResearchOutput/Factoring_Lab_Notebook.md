@@ -9832,3 +9832,25 @@ a mod count). H3 (nothing systematic) refuted.
 LEDGER: v1 bootstrap refit indexed the test-slice target instead of full (IndexError);
 inline takeover (agent silent 15 min).
 Paper 145, issue #247. Now 477 experiments. Assessment v254.
+
+## Part 218 - ET-HINTS-THEORY (round-40 #2 [cron iteration], exp 480, v255)
+
+The long-lost reduced-scope agent finished (survived the channel stalls) and SHARPENS
+paper 143 into closed form. HINT-COST-PRICED: exact closed forms for baseline
+(E_base=(M+1)(2M+1)/6M), COMMITTED and INTERLEAVED; closed==brute-exact at M=300
+(Fraction arithmetic, relgap 0.0); MC max |z|=1.52 over 16 cells. BAYES=COMMITTED PROVEN
+(two-valued posterior q_in=alpha/mu vs q_out=(1-alpha)/(M-mu) + rearrangement); any
+hint-blind order costs exactly (M+1)/2. INTERLEAVED strictly dominated everywhere.
+THE CROSSING LAW: 5.19x requires alpha > alpha_min = 1 - 2/(3*5.19) = **0.87155 — a HARD
+RELIABILITY GATE regardless of width**; for alpha above it, mu/M = alpha - 0.87155
+(bisection: 0.88->0.0085, 0.90->0.0285, 0.95->0.0785, 1.00->0.1285). Paper 137's magnitude
+gain = (alpha=0.90, mu/M~0.028) — consistent with exp 474's numerical estimate. Width alone
+can never substitute for reliability. Robustness leg: under w-anchored conditioning speedups
+move UP (7.62x vs 5.56x) — the stipulated pricing is CONSERVATIVE. LEDGER (7 machine-caught):
+V_A off-by-mu caught over 12 anchors; Bayes block marginalized instead of conditioning
+(degenerated to (M+1)/2); enum mixed alphas (relgap 0.955) -> per-cell 0.0; plus 4 more.
+Caveat noted: another writer's *_canonical.* files (the dead seed-20260824 line) appeared
+in the work dir mid-run — untouched, not cited.
+Pairs with exp 474/paper 143 (measurement grid under oracle-contract conditioning): this
+paper adds the closed forms, the optimality proof, and the conservative-pricing bound.
+Paper 146, issue #248. Now 478 experiments. Assessment v255.

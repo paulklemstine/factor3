@@ -1,0 +1,741 @@
+{
+ "experiment": "ET-HINTS-REDUCED",
+ "round": 39,
+ "exp_id": 474,
+ "note_prior_attempts": "two earlier runs died silently; remnants (seed 20260824, M=256/4096, w-anchored posteriors) superseded by this reduced-task spec",
+ "model": {
+  "window_start": "A ~ Uniform{1..L}, L=M-mu+1",
+  "hit": "H ~ Bernoulli(alpha)",
+  "J_given_hit": "Uniform on [a, a+mu-1]",
+  "J_given_miss": "Uniform on the complement of W_a in [1,M]",
+  "baseline_law_w": "(2(M-j)+1)/M^2 enters via E_base only",
+  "coherence_note": "stipulated conditionals are honored EXACTLY; consequence: J's unconditional law under hints is near-uniform, not w"
+ },
+ "stages": {
+  "selftest": "done",
+  "enum": "done",
+  "mc": "done",
+  "tables": "done",
+  "crossing": "done",
+  "alt": "done"
+ },
+ "selftest": {
+  "status": "OK",
+  "detail": "E_base exact on M={2,3,50,301}; interleaved rank==zigzag construction on 10 (M,a) cells x all j; closed==brute on 10 (M,mu) x 3 alpha x 2 procs = 60 exact equalities (tol 1e-12)",
+  "n_exact_equalities": 60
+ },
+ "exhaustive_M300": {
+  "rows": [
+   {
+    "alpha": 0.5,
+    "mu_over_M": 0.02,
+    "mu": 6,
+    "E_committed_closed": 78.5,
+    "E_committed_enum": 78.5,
+    "relgap_committed": 0.0,
+    "E_interleaved_closed": 79.71480456589416,
+    "E_interleaved_enum": 79.71480456589416,
+    "relgap_interleaved": 0.0
+   },
+   {
+    "alpha": 0.75,
+    "mu_over_M": 0.02,
+    "mu": 6,
+    "E_committed_closed": 41.0,
+    "E_committed_enum": 41.0,
+    "relgap_committed": 0.0,
+    "E_interleaved_closed": 42.84751527729736,
+    "E_interleaved_enum": 42.84751527729736,
+    "relgap_interleaved": 0.0
+   },
+   {
+    "alpha": 0.9,
+    "mu_over_M": 0.02,
+    "mu": 6,
+    "E_committed_closed": 18.499999999999996,
+    "E_committed_enum": 18.499999999999996,
+    "relgap_committed": 0.0,
+    "E_interleaved_closed": 20.727141704139278,
+    "E_interleaved_enum": 20.727141704139278,
+    "relgap_interleaved": 0.0
+   },
+   {
+    "alpha": 1.0,
+    "mu_over_M": 0.02,
+    "mu": 6,
+    "E_committed_closed": 3.5,
+    "E_committed_enum": 3.5,
+    "relgap_committed": 0.0,
+    "E_interleaved_closed": 5.980225988700565,
+    "E_interleaved_enum": 5.980225988700565,
+    "relgap_interleaved": 0.0
+   },
+   {
+    "alpha": 0.5,
+    "mu_over_M": 0.05,
+    "mu": 15,
+    "E_committed_closed": 83.0,
+    "E_committed_enum": 83.0,
+    "relgap_committed": 0.0,
+    "E_interleaved_closed": 86.25395656974604,
+    "E_interleaved_enum": 86.25395656974604,
+    "relgap_interleaved": 0.0
+   },
+   {
+    "alpha": 0.75,
+    "mu_over_M": 0.05,
+    "mu": 15,
+    "E_committed_closed": 45.5,
+    "E_committed_enum": 45.5,
+    "relgap_committed": 0.0,
+    "E_interleaved_closed": 50.561710219604954,
+    "E_interleaved_enum": 50.561710219604954,
+    "relgap_interleaved": 0.0
+   },
+   {
+    "alpha": 0.9,
+    "mu_over_M": 0.05,
+    "mu": 15,
+    "E_committed_closed": 22.999999999999996,
+    "E_committed_enum": 22.999999999999996,
+    "relgap_committed": 0.0,
+    "E_interleaved_closed": 29.1463624095203,
+    "E_interleaved_enum": 29.1463624095203,
+    "relgap_interleaved": 0.0
+   },
+   {
+    "alpha": 1.0,
+    "mu_over_M": 0.05,
+    "mu": 15,
+    "E_committed_closed": 8.0,
+    "E_committed_enum": 8.0,
+    "relgap_committed": 0.0,
+    "E_interleaved_closed": 14.86946386946387,
+    "E_interleaved_enum": 14.86946386946387,
+    "relgap_interleaved": 0.0
+   },
+   {
+    "alpha": 0.5,
+    "mu_over_M": 0.1,
+    "mu": 30,
+    "E_committed_closed": 90.5,
+    "E_committed_enum": 90.5,
+    "relgap_committed": 0.0,
+    "E_interleaved_closed": 96.69871532048654,
+    "E_interleaved_enum": 96.69871532048654,
+    "relgap_interleaved": 0.0
+   },
+   {
+    "alpha": 0.75,
+    "mu_over_M": 0.1,
+    "mu": 30,
+    "E_committed_closed": 53.0,
+    "E_committed_enum": 53.0,
+    "relgap_committed": 0.0,
+    "E_interleaved_closed": 63.072912395790624,
+    "E_interleaved_enum": 63.072912395790624,
+    "relgap_interleaved": 0.0
+   },
+   {
+    "alpha": 0.9,
+    "mu_over_M": 0.1,
+    "mu": 30,
+    "E_committed_closed": 30.499999999999996,
+    "E_committed_enum": 30.499999999999996,
+    "relgap_committed": 0.0,
+    "E_interleaved_closed": 42.89743064097307,
+    "E_interleaved_enum": 42.89743064097307,
+    "relgap_interleaved": 0.0
+   },
+   {
+    "alpha": 1.0,
+    "mu_over_M": 0.1,
+    "mu": 30,
+    "E_committed_closed": 15.5,
+    "E_committed_enum": 15.5,
+    "relgap_committed": 0.0,
+    "E_interleaved_closed": 29.44710947109471,
+    "E_interleaved_enum": 29.44710947109471,
+    "relgap_interleaved": 0.0
+   },
+   {
+    "alpha": 0.5,
+    "mu_over_M": 0.2,
+    "mu": 60,
+    "E_committed_closed": 105.5,
+    "E_committed_enum": 105.5,
+    "relgap_committed": 0.0,
+    "E_interleaved_closed": 115.62914937759336,
+    "E_interleaved_enum": 115.62914937759336,
+    "relgap_interleaved": 0.0
+   },
+   {
+    "alpha": 0.75,
+    "mu_over_M": 0.2,
+    "mu": 60,
+    "E_committed_closed": 68.0,
+    "E_committed_enum": 68.0,
+    "relgap_committed": 0.0,
+    "E_interleaved_closed": 86.5701071922545,
+    "E_interleaved_enum": 86.5701071922545,
+    "relgap_interleaved": 0.0
+   },
+   {
+    "alpha": 0.9,
+    "mu_over_M": 0.2,
+    "mu": 60,
+    "E_committed_closed": 45.5,
+    "E_committed_enum": 45.5,
+    "relgap_committed": 0.0,
+    "E_interleaved_closed": 69.13468188105118,
+    "E_interleaved_enum": 69.13468188105118,
+    "relgap_interleaved": 0.0
+   },
+   {
+    "alpha": 1.0,
+    "mu_over_M": 0.2,
+    "mu": 60,
+    "E_committed_closed": 30.5,
+    "E_committed_enum": 30.5,
+    "relgap_committed": 0.0,
+    "E_interleaved_closed": 57.51106500691563,
+    "E_interleaved_enum": 57.51106500691563,
+    "relgap_interleaved": 0.0
+   }
+  ],
+  "worst_relgap_closed_vs_enum": 0.0,
+  "bayes_checks_per_mu": {
+   "6": {
+    "bayes_minus_committed_abs": 0.0,
+    "descent_sink_worst_excess_over_opt": 0.0,
+    "randomperm_mean_z_vs_(M+1)/2": 1.3407576889902517
+   },
+   "15": {
+    "bayes_minus_committed_abs": 0.0,
+    "descent_sink_worst_excess_over_opt": 0.0,
+    "randomperm_mean_z_vs_(M+1)/2": 2.0241757313789916
+   },
+   "30": {
+    "bayes_minus_committed_abs": 0.0,
+    "descent_sink_worst_excess_over_opt": 0.0,
+    "randomperm_mean_z_vs_(M+1)/2": 1.3631560729862153
+   },
+   "60": {
+    "bayes_minus_committed_abs": 0.0,
+    "descent_sink_worst_excess_over_opt": 0.0,
+    "randomperm_mean_z_vs_(M+1)/2": 0.9392305729174413
+   }
+  }
+ },
+ "monte_carlo": {
+  "seed": 20260828,
+  "draws_per_cell": 200000,
+  "M": 100000,
+  "generator": "numpy PCG64 single stream, cells in grid order",
+  "E_base_mc": 33362.18944,
+  "E_base_closed": 33333.833335,
+  "E_base_dev": 28.356104999998934,
+  "E_base_z": 0.5386844223630716,
+  "cells": [
+   {
+    "alpha": 0.5,
+    "mu_over_M": 0.02,
+    "mu": 2000,
+    "E_base_closed": 33333.833335,
+    "committed_mc": 26029.118965,
+    "committed_sem": 71.65020008402155,
+    "committed_closed": 26000.5,
+    "committed_dev": 28.61896500000148,
+    "committed_z": 0.3994261700098684,
+    "interleaved_mc": 26562.313125,
+    "interleaved_sem": 70.81043721399325,
+    "interleaved_closed": 26486.719110217327,
+    "interleaved_dev": 75.59401478267318,
+    "interleaved_z": 1.067554696127969
+   },
+   {
+    "alpha": 0.5,
+    "mu_over_M": 0.05,
+    "mu": 5000,
+    "E_base_closed": 33333.833335,
+    "committed_mc": 27469.430665,
+    "committed_sem": 70.73871827420702,
+    "committed_closed": 27500.5,
+    "committed_dev": -31.069335000000137,
+    "committed_z": -0.43921258057807844,
+    "interleaved_mc": 28636.84547,
+    "interleaved_sem": 68.83516406650756,
+    "interleaved_closed": 28663.698280461314,
+    "interleaved_dev": -26.85281046131422,
+    "interleaved_z": -0.3901030937526264
+   },
+   {
+    "alpha": 0.5,
+    "mu_over_M": 0.1,
+    "mu": 10000,
+    "E_base_closed": 33333.833335,
+    "committed_mc": 30036.36754,
+    "committed_sem": 69.47191562050324,
+    "committed_closed": 30000.5,
+    "committed_dev": 35.86753999999928,
+    "committed_z": 0.5162883401103985,
+    "interleaved_mc": 32240.712425,
+    "interleaved_sem": 66.2220207659412,
+    "interleaved_closed": 32140.196388558645,
+    "interleaved_dev": 100.51603644135685,
+    "interleaved_z": 1.51786422822442
+   },
+   {
+    "alpha": 0.5,
+    "mu_over_M": 0.2,
+    "mu": 20000,
+    "E_base_closed": 33333.833335,
+    "committed_mc": 34939.2504,
+    "committed_sem": 67.27860172745382,
+    "committed_closed": 35000.5,
+    "committed_dev": -61.24960000000283,
+    "committed_z": -0.9103875292790042,
+    "interleaved_mc": 38394.614595,
+    "interleaved_sem": 62.804229405505374,
+    "interleaved_closed": 38437.81640698241,
+    "interleaved_dev": -43.201811982413346,
+    "interleaved_z": -0.687880615546989
+   },
+   {
+    "alpha": 0.75,
+    "mu_over_M": 0.02,
+    "mu": 2000,
+    "E_base_closed": 33333.833335,
+    "committed_mc": 13517.394385,
+    "committed_sem": 57.88209022853549,
+    "committed_closed": 13500.5,
+    "committed_dev": 16.894384999999602,
+    "committed_z": 0.2918758623487094,
+    "interleaved_mc": 14242.02942,
+    "interleaved_sem": 57.0983378057262,
+    "interleaved_closed": 14239.958230122184,
+    "interleaved_dev": 2.0711898778172326,
+    "interleaved_z": 0.03627408357953145
+   },
+   {
+    "alpha": 0.75,
+    "mu_over_M": 0.05,
+    "mu": 5000,
+    "E_base_closed": 33333.833335,
+    "committed_mc": 14998.544285,
+    "committed_sem": 57.4301325826816,
+    "committed_closed": 15000.5,
+    "committed_dev": -1.9557150000000547,
+    "committed_z": -0.03405381307773286,
+    "interleaved_mc": 16739.988765,
+    "interleaved_sem": 55.44050669676196,
+    "interleaved_closed": 16809.919547384266,
+    "interleaved_dev": -69.93078238426824,
+    "interleaved_z": -1.2613662203118465
+   },
+   {
+    "alpha": 0.75,
+    "mu_over_M": 0.1,
+    "mu": 10000,
+    "E_base_closed": 33333.833335,
+    "committed_mc": 17502.736165,
+    "committed_sem": 56.698208504323745,
+    "committed_closed": 17500.5,
+    "committed_dev": 2.2361649999984365,
+    "committed_z": 0.03943978229625913,
+    "interleaved_mc": 21007.13046,
+    "interleaved_sem": 53.83641596225336,
+    "interleaved_closed": 20977.5066314078,
+    "interleaved_dev": 29.62382859220088,
+    "interleaved_z": 0.550256328596822
+   },
+   {
+    "alpha": 0.75,
+    "mu_over_M": 0.2,
+    "mu": 20000,
+    "E_base_closed": 33333.833335,
+    "committed_mc": 22442.96156,
+    "committed_sem": 55.91605083635349,
+    "committed_closed": 22500.5,
+    "committed_dev": -57.538440000000264,
+    "committed_z": -1.0290147308220126,
+    "interleaved_mc": 28792.91589,
+    "interleaved_sem": 52.570631664509655,
+    "interleaved_closed": 28802.246746134424,
+    "interleaved_dev": -9.330856134423811,
+    "interleaved_z": -0.17749180177195886
+   },
+   {
+    "alpha": 0.9,
+    "mu_over_M": 0.02,
+    "mu": 2000,
+    "E_base_closed": 33333.833335,
+    "committed_mc": 5993.05002,
+    "committed_sem": 39.096386290476964,
+    "committed_closed": 6000.499999999999,
+    "committed_dev": -7.449979999999414,
+    "committed_z": -0.19055418433427102,
+    "interleaved_mc": 6906.694425,
+    "interleaved_sem": 38.64136604249445,
+    "interleaved_closed": 6891.901702065096,
+    "interleaved_dev": 14.792722934903395,
+    "interleaved_z": 0.38282091059191936
+   },
+   {
+    "alpha": 0.9,
+    "mu_over_M": 0.05,
+    "mu": 5000,
+    "E_base_closed": 33333.833335,
+    "committed_mc": 7456.047235,
+    "committed_sem": 38.70365719534681,
+    "committed_closed": 7500.499999999999,
+    "committed_dev": -44.45276499999909,
+    "committed_z": -1.1485417198595764,
+    "interleaved_mc": 9657.544245,
+    "interleaved_sem": 37.767942877881346,
+    "interleaved_closed": 9697.652307538036,
+    "interleaved_dev": -40.10806253803639,
+    "interleaved_z": -1.061960474461677
+   },
+   {
+    "alpha": 0.9,
+    "mu_over_M": 0.1,
+    "mu": 10000,
+    "E_base_closed": 33333.833335,
+    "committed_mc": 9994.26487,
+    "committed_sem": 38.776082817722354,
+    "committed_closed": 10000.499999999998,
+    "committed_dev": -6.235129999997298,
+    "committed_z": -0.16079834647834962,
+    "interleaved_mc": 14304.09357,
+    "interleaved_sem": 37.65236099283105,
+    "interleaved_closed": 14279.892777117291,
+    "interleaved_dev": 24.20079288270972,
+    "interleaved_z": 0.6427430377425074
+   },
+   {
+    "alpha": 0.9,
+    "mu_over_M": 0.2,
+    "mu": 20000,
+    "E_base_closed": 33333.833335,
+    "committed_mc": 14959.07331,
+    "committed_sem": 39.00982025542235,
+    "committed_closed": 15000.499999999998,
+    "committed_dev": -41.426689999998416,
+    "committed_z": -1.0619554186292393,
+    "interleaved_mc": 23030.357495,
+    "interleaved_sem": 39.72602632834678,
+    "interleaved_closed": 23020.90494962563,
+    "interleaved_dev": 9.452545374369947,
+    "interleaved_z": 0.23794338996410067
+   },
+   {
+    "alpha": 1.0,
+    "mu_over_M": 0.02,
+    "mu": 2000,
+    "E_base_closed": 33333.833335,
+    "committed_mc": 998.82539,
+    "committed_sem": 1.2892094713474782,
+    "committed_closed": 1000.5,
+    "committed_dev": -1.6746100000000297,
+    "committed_z": -1.2989432960415128,
+    "interleaved_mc": 1989.849915,
+    "interleaved_sem": 2.5716764219367803,
+    "interleaved_closed": 1993.1973500270406,
+    "interleaved_dev": -3.3474350270405466,
+    "interleaved_z": -1.3016548265895471
+   },
+   {
+    "alpha": 1.0,
+    "mu_over_M": 0.05,
+    "mu": 5000,
+    "E_base_closed": 33333.833335,
+    "committed_mc": 2498.946045,
+    "committed_sem": 3.226815344965628,
+    "committed_closed": 2500.5,
+    "committed_dev": -1.5539549999998599,
+    "committed_z": -0.4815754339411736,
+    "interleaved_mc": 4953.683035,
+    "interleaved_sem": 6.411779692346351,
+    "interleaved_closed": 4956.140814307218,
+    "interleaved_dev": -2.4577793072176064,
+    "interleaved_z": -0.3833224822355363
+   },
+   {
+    "alpha": 1.0,
+    "mu_over_M": 0.1,
+    "mu": 10000,
+    "E_base_closed": 33333.833335,
+    "committed_mc": 5005.912565,
+    "committed_sem": 6.4609356117783365,
+    "committed_closed": 5000.5,
+    "committed_dev": 5.412564999999631,
+    "committed_z": 0.8377370283852517,
+    "interleaved_mc": 9824.047135,
+    "interleaved_sem": 12.737321393799714,
+    "interleaved_closed": 9814.816874256952,
+    "interleaved_dev": 9.230260743048348,
+    "interleaved_z": 0.724662623928251
+   },
+   {
+    "alpha": 1.0,
+    "mu_over_M": 0.2,
+    "mu": 20000,
+    "E_base_closed": 33333.833335,
+    "committed_mc": 10003.046935,
+    "committed_sem": 12.877889563605079,
+    "committed_closed": 10000.5,
+    "committed_dev": 2.5469350000003033,
+    "committed_z": 0.1977758069302239,
+    "interleaved_mc": 19170.7917,
+    "interleaved_sem": 24.8591180331353,
+    "interleaved_closed": 19166.677085286436,
+    "interleaved_dev": 4.11461471356597,
+    "interleaved_z": 0.16551732479332149
+   }
+  ],
+  "pass_rule": "|z| <= 4",
+  "max_abs_z_committed": 1.2989432960415128,
+  "max_abs_z_interleaved": 1.51786422822442
+ },
+ "speedup_table_M100000": {
+  "E_base": 33333.833335,
+  "tables": {
+   "committed": {
+    "0.5": {
+     "0.02": 1.282045858156574,
+     "0.05": 1.2121173555026272,
+     "0.1": 1.1111092593456775,
+     "0.2": 0.9523816326909615
+    },
+    "0.75": {
+     "0.02": 2.4690813921706605,
+     "0.05": 2.2221814829505684,
+     "0.1": 1.904736055255564,
+     "0.2": 1.4814707822048399
+    },
+    "0.9": {
+     "0.02": 5.555175957836848,
+     "0.05": 4.444214830344644,
+     "0.1": 3.3332166726663672,
+     "0.2": 2.2221814829505684
+    },
+    "1.0": {
+     "0.02": 33.31717474762619,
+     "0.05": 13.330867160567886,
+     "0.1": 6.666100056994301,
+     "0.2": 3.333216672666367
+    }
+   },
+   "interleaved": {
+    "0.5": {
+     "0.02": 1.2585112258067999,
+     "0.05": 1.162928558933447,
+     "0.1": 1.0371384459513218,
+     "0.2": 0.8672145415873507
+    },
+    "0.75": {
+     "0.02": 2.340865948924485,
+     "0.05": 1.9829858935991733,
+     "0.1": 1.5890274245029743,
+     "0.2": 1.1573344825772582
+    },
+    "0.9": {
+     "0.02": 4.836666971760757,
+     "0.05": 3.437309595961637,
+     "0.1": 2.334319581755933,
+     "0.2": 1.4479810158610678
+    },
+    "1.0": {
+     "0.02": 16.72379974544306,
+     "0.05": 6.725763973205328,
+     "0.1": 3.396276646019806,
+     "0.2": 1.7391555764556175
+    }
+   },
+   "bayes_optimal": {
+    "0.5": {
+     "0.02": 1.282045858156574,
+     "0.05": 1.2121173555026272,
+     "0.1": 1.1111092593456775,
+     "0.2": 0.9523816326909615
+    },
+    "0.75": {
+     "0.02": 2.4690813921706605,
+     "0.05": 2.2221814829505684,
+     "0.1": 1.904736055255564,
+     "0.2": 1.4814707822048399
+    },
+    "0.9": {
+     "0.02": 5.555175957836848,
+     "0.05": 4.444214830344644,
+     "0.1": 3.3332166726663672,
+     "0.2": 2.2221814829505684
+    },
+    "1.0": {
+     "0.02": 33.31717474762619,
+     "0.05": 13.330867160567886,
+     "0.1": 6.666100056994301,
+     "0.2": 3.333216672666367
+    }
+   }
+  },
+  "asymptotic_M_inf_committed": {
+   "0.5": {
+    "0.02": 1.2825445684237526,
+    "0.05": 1.2148823082763855,
+    "0.1": 1.1204481792717085,
+    "0.2": 0.9803921568627452
+   },
+   "0.75": {
+    "0.02": 2.4700506360380383,
+    "0.05": 2.226861517049408,
+    "0.1": 1.9184652278177454,
+    "0.2": 1.5151515151515151
+   },
+   "0.9": {
+    "0.02": 5.557408024897188,
+    "0.05": 4.451864218141346,
+    "0.1": 3.350083752093802,
+    "0.2": 2.2522522522522523
+   },
+   "1.0": {
+    "0.02": 33.33333333333333,
+    "0.05": 13.333333333333332,
+    "0.1": 6.666666666666666,
+    "0.2": 3.333333333333333
+   }
+  }
+ },
+ "crossing_5p19": {
+  "target_speedup": 5.19,
+  "E_over_M_target": 0.06422607578676942,
+  "alpha_min_any_width_asymptotic": 0.8715478484264612,
+  "curve": [
+   {
+    "alpha": 0.8,
+    "x_star_mu_over_M": null
+   },
+   {
+    "alpha": 0.85,
+    "x_star_mu_over_M": null
+   },
+   {
+    "alpha": 0.87,
+    "x_star_mu_over_M": null
+   },
+   {
+    "alpha": 0.88,
+    "x_star_mu_over_M": 0.008445000000000001
+   },
+   {
+    "alpha": 0.9,
+    "x_star_mu_over_M": 0.028445000000000005
+   },
+   {
+    "alpha": 0.92,
+    "x_star_mu_over_M": 0.048445
+   },
+   {
+    "alpha": 0.95,
+    "x_star_mu_over_M": 0.07844500000000001
+   },
+   {
+    "alpha": 0.99,
+    "x_star_mu_over_M": 0.11844500000000002
+   },
+   {
+    "alpha": 0.5,
+    "x_star_mu_over_M": null
+   },
+   {
+    "alpha": 0.75,
+    "x_star_mu_over_M": null
+   },
+   {
+    "alpha": 0.9,
+    "x_star_mu_over_M": 0.028445000000000005
+   },
+   {
+    "alpha": 1.0,
+    "x_star_mu_over_M": 0.12844500000000003
+   }
+  ],
+  "interleaved_x_star": {
+   "0.5": null,
+   "0.75": null,
+   "0.9": 0.015025,
+   "1.0": 0.064975,
+   "0.95": 0.040554999999999994,
+   "0.99": 0.060185
+  },
+  "nearest_grid_cells_committed": [
+   {
+    "alpha": 0.9,
+    "mu_over_M": 0.02,
+    "speedup": 5.555175957836848
+   },
+   {
+    "alpha": 0.9,
+    "mu_over_M": 0.05,
+    "speedup": 4.444214830344644
+   },
+   {
+    "alpha": 1.0,
+    "mu_over_M": 0.1,
+    "speedup": 6.666100056994301
+   },
+   {
+    "alpha": 0.9,
+    "mu_over_M": 0.1,
+    "speedup": 3.3332166726663672
+   }
+  ]
+ },
+ "w_anchored_robustness": {
+  "model": "J~w always; hit-window uniform among containing windows; miss-window uniform among avoiding windows; committed ordering; MC seed SEED+1",
+  "caveat": "hit positions are w-weighted within the window and miss posteriors prop-to-w, so this model does NOT satisfy the brief's literal uniform clauses; it keeps J's true marginal instead",
+  "cells": [
+   {
+    "alpha": 0.9,
+    "mu_over_M": 0.02,
+    "E_committed_wanchored_mc": 4373.28421,
+    "sem": 27.969199448253114,
+    "speedup_wanchored": 7.622151164742162,
+    "speedup_stipulated_same_cell": 5.555175957836848
+   },
+   {
+    "alpha": 0.9,
+    "mu_over_M": 0.05,
+    "E_committed_wanchored_mc": 5858.6242,
+    "sem": 28.27060758198587,
+    "speedup_wanchored": 5.689703281360836,
+    "speedup_stipulated_same_cell": 4.444214830344644
+   },
+   {
+    "alpha": 1.0,
+    "mu_over_M": 0.02,
+    "E_committed_wanchored_mc": 979.88629,
+    "sem": 1.2985409916493642,
+    "speedup_wanchored": 34.018062784611466,
+    "speedup_stipulated_same_cell": 33.31717474762619
+   },
+   {
+    "alpha": 0.75,
+    "mu_over_M": 0.05,
+    "E_committed_wanchored_mc": 10970.845925,
+    "sem": 41.66002794869409,
+    "speedup_wanchored": 3.0384013742313134,
+    "speedup_stipulated_same_cell": 2.2221814829505684
+   }
+  ]
+ },
+ "verdict": "HINT-COST-PRICED",
+ "verdict_detail": {
+  "closed_forms": "E_base=(M+1)(2M+1)/(6M); committed: alpha(mu+1)/2 + (1-alpha)[(L^2-1)/6+mu(L-1)/2+M(M+1)/2-(G(M)-G(mu-1))/(2L)]/(M-mu); interleaved: piecewise-quadratic regime sums (proofs.md sec 4); BAYES-OPTIMAL == COMMITTED exactly (two-point posterior, rearrangement inequality)",
+  "headline": "5.19x crossing law mu/M = alpha - 1 + 2/(3*5.19) = alpha - 0.87155 (alpha in [0.8716,1]); alpha<0.8716 cannot reach 5.19x at ANY width; paper 137's gain ~ (alpha=0.90, mu/M=0.028)",
+  "verification": "closed==brute exact at M=300 (relgap 0.0); MC M=1e5 seed 20260828 200k/cell: max|z|=1.52, all pass |z|<=4",
+  "robustness": "w-anchored alt model moves speedups UP (stipulated pricing conservative)"
+ },
+ "decision": "Adopt the linear crossing law mu/M = alpha - 0.87155 as the effective-hint-quality readout for paper 137-style magnitude orderings; report BAYES==COMMITTED identity and the alpha>0.8716 reliability gate."
+}
