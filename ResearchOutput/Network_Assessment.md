@@ -1719,3 +1719,6 @@ Assessment v79. 79 experiments (NET-1 through NET-79).
 - **NET-80 — THE-INTEGRATED-DEPLOYMENT-TABLE (synthesis round): thirty-one limited-memory iterations (NET-49–79) distilled into a single engineering reference — complete knee chains for two scales across four domains at three contexts, quantization floors with compensation, streaming policy adjustments, scale × context × domain interaction terms, SEVEN quantitative laws, and a five-step engineering recipe for 6 GB serving. Paper 164 (synthesis).
 
 Assessment v80. 80 experiments (NET-1 through NET-80).
+- **NET-81 — THE-CROSSOVER-SEARCH (partial; limited-memory axis round 30): 0.5B crossover localization produced non-monotone results (@2560 k*=44, @3072 k*=28 — likely n=6 sampling variation); 1.5B cells crashed on floatify double-registration; crossover remains localized to (2048, 4096) pending replication with more windows. Paper 165 (partial).
+
+Assessment v81. 81 experiments (NET-1 through NET-81, NET-81 partial).

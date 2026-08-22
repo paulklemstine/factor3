@@ -1928,3 +1928,8 @@ Assessment v79.
 quantitative laws; five-step engineering recipe; full experiment ledger. All results
 machine-verified from NET-49–79 with committed scripts and replicated baselines.
 Paper 164 (synthesis). Now 80 network experiments. Assessment v80.
+
+## Part 81 — THE-CROSSOVER-SEARCH (partial): 0.5B @2560 k*=44, @3072 k*=28 — NON-MONOTONE (higher ctx needing fewer keys), likely n=6 sampling variation; 1.5B cells crashed on floatify double-registration; crossover remains localized to (2048,4096) pending replication (NET-81 partial; compact recording)
+
+**Honest limits:** 6 windows/cell, non-monotone result likely noise, 1.5B cells missing.
+Now 81 network experiments (NET-81 partial addendum). Assessment v81.
