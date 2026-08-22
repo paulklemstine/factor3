@@ -1846,3 +1846,14 @@ beyond-grid result); (c) confronted (one source, sub-knee ceiling stated); (d) c
 (e) deterministic; (f) clean (ALL_DONE_NET72); (g) fair (only text changed); (h) DIRECT.
 Open: tokens-per-word mechanism test; extended grid {48,64}; more languages; 7B cell.
 Paper 157, issue #312. Now 72 network experiments. Assessment v72.
+
+## Part 73 — TOKENIZATION-DENSITY-DOES-NOT-EXPLAIN-THE-DOMAIN-SHIFT: Spearman(TPW, k*) = −0.40 (wrong sign), linear R² = 0.004 — code has the HIGHEST TPW (1.95) yet LOWEST knee (12); French has near-English TPW (1.25) yet HIGHEST knee (>32); the tokenization-mediated hypothesis is refuted by its strongest counterexample; P1/P2 REFUTED, P3 CONFIRMED decisively; the domain mechanism is NOT tokenization density — it is the RELATIONAL/SEMANTIC structure of attention patterns within each domain, redirecting search from surface to deep-level explanations; French extended grid pins k*(fr@512) ≤ 32 (NET-73; limited-memory axis round 43)
+
+**Method:** Part A: TPW across all 5 domains using Qwen's own BPE tokenizer on 5000-word
+samples; Part B: extended French grid {32,48,64}@512. Gate exact. Script
+ResearchOutput/exp_net73_tpw.py; results ~/f3cache/net73_results.json; log /tmp/net73.log.
+**Verdict:** TOKENIZATION-DENSITY-DOES-NOT-EXPLAIN-THE-DOMAIN-SHIFT. Barriers: (a) clean;
+(b) clean (first mechanism-test); (c) confronted (5 domains, 5000-word samples, one
+tokenizer stated); (d) clean; (e) deterministic; (f) clean (ALL_DONE_NET73); (g) fair;
+(h) DIRECT. Open: attention-pattern structural analysis; sub-32 French @1024; 0.5B @4096;
+7B cell. Paper 158, issue #314. Now 73 network experiments. Assessment v73.
