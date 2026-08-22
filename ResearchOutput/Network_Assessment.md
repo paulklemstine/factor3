@@ -1721,7 +1721,9 @@ Assessment v79. 79 experiments (NET-1 through NET-79).
 Assessment v80. 80 experiments (NET-1 through NET-80).
 - **NET-81 — THE-CROSSOVER-SEARCH (partial; limited-memory axis round 30): 0.5B crossover localization produced non-monotone results (@2560 k*=44, @3072 k*=28 — likely n=6 sampling variation); 1.5B cells crashed on floatify double-registration; crossover remains localized to (2048, 4096) pending replication with more windows. Paper 165 (partial).
 
-Assessment v81. 81 experiments (NET-1 through NET-81, NET-81 partial).
+- **NET-83 — THE-INTEGRATION-IS-SUPER-ADDITIVE (limited-memory axis round 33; the integration test combining weight and attention axes): GPTQ 4-bit group-128 combined with top-k=16 attention degrades to 0.860 retained — WORSE than the sum of individual degradations (attention −2.3% + quantization −9.2% = −11.5% expected, but combined −14.0%); P1 sub-additive REFUTED, P2 super-additive CONFIRMED, P3 independent REFUTED; sparse attention AMPLIFIES quantization noise (perturbed keys shift top-k selection boundary; selected values carry uncompensated error); deployment: budget tables need INTERACTION PENALTY when both optimizations active. SEVEN debug iterations caught six bugs including critical runner-layers reference bug. Gate exact. Barriers: (a) clean; (b) clean; (c) confronted (simplified RTN stated); (d) clean; (e) deterministic; (f) clean (ALL_DONE_NET83); (g) fair; (h) DIRECT. Open: real GPTQ with Hessian; tail-aware precision; crossover replication. Paper 165, issue #323.
+
+Assessment v84. 84 experiments (NET-1 through NET-84).
 - **NET-82 — CROSSOVER-REPLICATION-RESTORES-MONOTONE (limited-memory axis round 31; crossover replication with 12 windows): k\*(2560) = 28 and k\*(3072) = 28 — IDENTICAL, confirming NET-81's non-monotone was sampling variation; the 0.5B chain {16, 20, 24, 28, 28} is properly monotone; the size × context crossover is SHARP between 3072 and 4096. Paper 165 addendum.
 
 Assessment v82. 82 experiments (NET-1 through NET-82).

@@ -1940,3 +1940,15 @@ Now 81 network experiments (NET-81 partial addendum). Assessment v81.
 Script ResearchOutput/exp_net82_crossover_rep.py; log /tmp/net82.log.
 **Verdict:** MONOTONE restored; crossover is sharp between 3072 and 4096.
 Paper 165 addendum. Now 82 network experiments. Assessment v82.
+
+## Part 83 — THE-INTEGRATION-IS-SUPER-ADDITIVE: GPTQ 4-bit + top-k=16 attention degrades to 0.860 retained — WORSE than the sum of individual degradations (expected −11.5%, got −14.0%); P1 sub-additive REFUTED, P2 super-additive CONFIRMED, P3 independent REFUTED; sparse attention AMPLIFIES quantization noise (perturbed keys shift top-k selection boundary + selected values carry uncompensated error); deployment: budget tables need an INTERACTION PENALTY when both optimizations active; SEVEN debug iterations caught six bugs including critical runner-layers reference bug (NET-83; limited-memory axis round 55)
+
+**Method:** Qwen2.5-0.5B fp32 ctx=1024, 24 held-out windows; arms {attn-only k={16,20,24},
+GPTQ4-alone, GPTQ4+top-k combined}; gate exact; weight-change magnitude printed per arm.
+Script ResearchOutput/exp_net83_integration.py; results ~/f3cache/net83_results.json;
+log /tmp/net83.log. SIX bugs caught by sanity gates before recording (runner-layers ref,
+double-del, model alias, gptq signature, print crash, stale var).
+**Verdict:** THE-INTEGRATION-IS-SUPER-ADDITIVE. Barriers: (a) clean; (b) clean;
+(c) confronted (simplified RTN stated); (d) clean; (e) deterministic; (f) clean;
+(g) fair; (h) DIRECT. Open: real GPTQ with Hessian; tail-aware precision; crossover
+replication. Paper 165, issue #323. Now 84 network experiments. Assessment v84.
