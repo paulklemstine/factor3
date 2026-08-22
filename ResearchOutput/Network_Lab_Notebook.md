@@ -1909,3 +1909,15 @@ results ~/f3cache/net78_results.json; log /tmp/net78.log.
 (f) clean (ALL_DONE_NET78); (g) fair; (h) DIRECT. Open: fine grid between 32 and 40;
 1.5B @4096; domain-jump @4096; 7B cell. Paper 162, issue #320.
 Now 78 network experiments. Assessment v78.
+
+## Part 79 — THE-ACCELERATION-IS-UNIVERSAL: the 1.5B knee at ctx=4096 is k*=56 — every point from 16 to 44 fails; P1 shift-delays REFUTED, P2 acceleration-universal CONFIRMED (56 ≥ 48), P3 REFUTED; complete two-scale × four-context table: 0.5B {16,20,24,40} increments +4,+4,+16; 1.5B {16,16,18,56} increments 0,+2,+38; scale doesn't delay the acceleration — it AMPLIFIES it (0.5B 4×, 1.5B 19×); CROSSOVER: larger models more efficient at short contexts, LESS efficient at long contexts; deployment tables need scale × context interaction term (NET-79; limited-memory axis round 54)
+
+**Method:** fine grid k∈{16,20,24,28,36,44,56} at ctx=4096 on Qwen2.5-1.5B (bf16-storage/
+fp32-compute, expandable-segments allocator, 2 held-out windows); gate identical to
+NET-55/65/66. Script ResearchOutput/exp_net79_1p5b4096.py; results
+~/f3cache/net79_results.json; log /tmp/net79.log.
+**Verdict:** THE-ACCELERATION-IS-UNIVERSAL. Barriers: (a) clean; (b) clean; (c) confronted
+(2 windows, bf16 stated); (d) clean; (e) deterministic baseline-replicating; (f) clean
+(ALL_DONE_NET79); (g) fair; (h) DIRECT. Open: fine grid 44–56; crossover localization;
+domain-jump @4096; 7B cell. Paper 163, issue #322. Now 79 network experiments.
+Assessment v79.
