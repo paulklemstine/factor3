@@ -10147,7 +10147,7 @@ Caveat disclosed: nested windows conflate sample size with bound growth (B356 ->
 crosses dial cap 400). Continuity anchor matches paper 167 on independent seeds.
 Paper 168, issue #270. Now 502 experiments. Assessment v277.
 
-## Part 240 - FIXED-BOUND lean (round-45 #3 [cron iteration], exp 502, v278)
+## Part 240 - FIXED-BOUND (round-45 #3 [cron iteration], exp 502, v278) -- AMENDED by corrected v2 run
 
 Paper 168's named follow-up: decouple the strip bound from u. H1 REFUTED — attribution
 **9.1%**: with ONE strip pass to PB=4000 recording (remainder, maxp), the fixed-bound drop
@@ -10156,7 +10156,13 @@ d = +0.0578 (8 populations, sd 0.0138) is ~91% of paper 168's variable-B referen
 u-sensitivity is REAL threshold reweighting (tighter u shifts which QR primes dominate the
 rate), with bound-shrinkage contributing only ~9%. Paper 168's "mostly intrinsic" reading
 CONFIRMED and sharpened.
-Paper 169, issue #271. Now 503 experiments. Assessment v278.
+AMENDMENT (v2 corrected run, same exp): attribution = 0.0000 EXACTLY — acceptance masks
+BITWISE IDENTICAL between arms in 8/8 populations, verifying the pre-registered structural
+identity (rem==1 ∧ PB >= max B_u makes the strip bound INVISIBLE to the accepted set). The
+coordinator lean v1's 9% attribution was manufactured by its own visibility confound
+(PB=4000 < B(2.5)~6500 at 960 values). FINAL: the strip bound is a compute-cost knob, not
+a measurement knob; paper 168's driver (b) is empty by construction.
+Paper 169 amended, issue #271. Now 503 experiments. Assessment v278.
 
 AMENDMENT (original agent's clean run + coordinator diagnostic): the ANTI-COINCIDENCE read
 is RETIRED — measured c_pq equals the exact CRT count on all 8000 points (corr 1.000000);

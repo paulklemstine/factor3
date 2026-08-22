@@ -1,6 +1,14 @@
 # Paper 169 — FIXED-BOUND: The u-Sensitivity Is Genuine Reweighting
 
-**Verdict name: REWEIGHTING-REAL (H1 refuted at 9% attribution; H2 confirmed).**
+**Verdict name: REWEIGHTING-REAL (amended: attribution EXACTLY ZERO — the strip bound is
+a compute-cost knob, not a measurement knob).**
+Round-45 #3 · exp 502-v2 (corrected run superseding the coordinator's lean v1, which had a
+visibility confound: its PB=4000 sat below B(u=2.5)≈4666–6510, blinding the fixed arm to
+factors in (4000, B₂.₅] and manufacturing the spurious 9% "attribution"). The agent's
+redesigned run (PB=8000 ≥ max B_u, plus the literal PB=4000 as a side cell showing exactly
+that distortion) verified the PRE-REGISTERED structural identity: under rem==1 with
+PB ≥ max B_u, the acceptance masks are BITWISE IDENTICAL between arms in 8/8 populations —
+attribution = 0.0000 exactly, Δ_fixed ≡ Δ_varB = +0.0632.
 Round-45 #3 (cron iteration) · exp 502 · assessment v278 · script `ResearchOutput/scripts/2026-08-21-resume/exp502_fixed_bound.py` (+ `exp502_result.json`) · seeds 20260980–87.
 
 ## 1. Paper 168's named follow-up: decouple the strip bound from u

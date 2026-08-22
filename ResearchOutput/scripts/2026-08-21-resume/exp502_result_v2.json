@@ -1,0 +1,356 @@
+{
+ "meta": {
+  "base_seed": 20260980,
+  "exp": 502,
+  "codename": "FIXED-BOUND",
+  "round": 45,
+  "populations": [
+   20260980,
+   20260981,
+   20260982,
+   20260983,
+   20260984,
+   20260985,
+   20260986,
+   20260987
+  ],
+  "Ns_per_population": 1200,
+  "window": 960,
+  "us": [
+   2.5,
+   3.5
+  ],
+  "PB_fixed": 8000,
+  "PB_literal_sidecell": 4000,
+  "boot_resamples": 500,
+  "constructions": "verbatim exp497/exp499/exp500/exp501 bitlen-44 balanced arm; SINGLE window j=1..960; vmed pooled per population; B(u)=max(int(round(exp(ln vmed/u))),50)",
+  "deviation": "design sheet PB=4000 presumed both B_u<=PB (240-window numbers 356/3736); at the mandated 960 window B(2.5)~6510 > 4000, so PB raised to 8000 to satisfy the sheet's own 'both <= PB' precondition; literal PB=4000 kept as side cell",
+  "prestated": {
+   "H1_sheet_boundshrinkage": "attribution=(dVarB-dFix)/dVarB > 0.5",
+   "H2_sheet_intrinsic": "Delta_fixed >= 0.03",
+   "preregistered_structure": "mask_FIXED==mask_VAR elementwise both u (logical identity under rem==1, PB>=max B_u); predict attribution=0, H1 FALSE, H2 TRUE",
+   "rule": "H1 iff attribution>0.5; H2 iff Delta_fixed>=0.03; both->BOTH, neither->NEITHER"
+  }
+ },
+ "rows": [
+  {
+   "seed": 20260980,
+   "vmed": 3431467244.0,
+   "B25": 6519,
+   "B35": 530,
+   "sp_var_2.5": 0.8214782579710124,
+   "sp_var_3.5": 0.7581091861869348,
+   "sp_fix_2.5": 0.8214782579710124,
+   "sp_fix_3.5": 0.7581091861869348,
+   "sp_fix4000_2.5": 0.8200020625014323,
+   "sp_fix4000_3.5": 0.7581091861869348,
+   "mean_rate_var_2.5": 0.12582552083333332,
+   "mean_rate_var_3.5": 0.01724913194444444,
+   "mean_rate_fix_2.5": 0.12582552083333332,
+   "mean_rate_fix_3.5": 0.01724913194444444,
+   "zero_frac_var_2.5": 0.0,
+   "zero_frac_var_3.5": 0.0008333333333333334,
+   "delta_var": 0.06336907178407758,
+   "delta_fix": 0.06336907178407758,
+   "delta_fix4000": 0.06189287631449747,
+   "identity_masks_hold": true,
+   "bitlen_range": [
+    44,
+    44
+   ]
+  },
+  {
+   "seed": 20260981,
+   "vmed": 3418187814.0,
+   "B25": 6509,
+   "B35": 530,
+   "sp_var_2.5": 0.7920805570003869,
+   "sp_var_3.5": 0.717523963558308,
+   "sp_fix_2.5": 0.7920805570003869,
+   "sp_fix_3.5": 0.717523963558308,
+   "sp_fix4000_2.5": 0.7862399071110466,
+   "sp_fix4000_3.5": 0.717523963558308,
+   "mean_rate_var_2.5": 0.12622309027777778,
+   "mean_rate_var_3.5": 0.0172109375,
+   "mean_rate_fix_2.5": 0.12622309027777778,
+   "mean_rate_fix_3.5": 0.0172109375,
+   "zero_frac_var_2.5": 0.0,
+   "zero_frac_var_3.5": 0.0,
+   "delta_var": 0.07455659344207888,
+   "delta_fix": 0.07455659344207888,
+   "delta_fix4000": 0.06871594355273858,
+   "identity_masks_hold": true,
+   "bitlen_range": [
+    44,
+    44
+   ]
+  },
+  {
+   "seed": 20260982,
+   "vmed": 3413975141.0,
+   "B25": 6506,
+   "B35": 529,
+   "sp_var_2.5": 0.7882970335396066,
+   "sp_var_3.5": 0.7335851136007733,
+   "sp_fix_2.5": 0.7882970335396066,
+   "sp_fix_3.5": 0.7335851136007733,
+   "sp_fix4000_2.5": 0.790549750381771,
+   "sp_fix4000_3.5": 0.7335851136007733,
+   "mean_rate_var_2.5": 0.1269713541666667,
+   "mean_rate_var_3.5": 0.01751215277777778,
+   "mean_rate_fix_2.5": 0.1269713541666667,
+   "mean_rate_fix_3.5": 0.01751215277777778,
+   "zero_frac_var_2.5": 0.0,
+   "zero_frac_var_3.5": 0.0,
+   "delta_var": 0.05471191993883329,
+   "delta_fix": 0.05471191993883329,
+   "delta_fix4000": 0.056964636780997724,
+   "identity_masks_hold": true,
+   "bitlen_range": [
+    44,
+    44
+   ]
+  },
+  {
+   "seed": 20260983,
+   "vmed": 3401013353.0,
+   "B25": 6496,
+   "B35": 529,
+   "sp_var_2.5": 0.8091138257734901,
+   "sp_var_3.5": 0.7356139136207734,
+   "sp_fix_2.5": 0.8091138257734901,
+   "sp_fix_3.5": 0.7356139136207734,
+   "sp_fix4000_2.5": 0.807178845263087,
+   "sp_fix4000_3.5": 0.7356139136207734,
+   "mean_rate_var_2.5": 0.12523003472222224,
+   "mean_rate_var_3.5": 0.01722309027777778,
+   "mean_rate_fix_2.5": 0.12523003472222224,
+   "mean_rate_fix_3.5": 0.01722309027777778,
+   "zero_frac_var_2.5": 0.0,
+   "zero_frac_var_3.5": 0.0016666666666666668,
+   "delta_var": 0.07349991215271667,
+   "delta_fix": 0.07349991215271667,
+   "delta_fix4000": 0.07156493164231359,
+   "identity_masks_hold": true,
+   "bitlen_range": [
+    44,
+    44
+   ]
+  },
+  {
+   "seed": 20260984,
+   "vmed": 3413319530.0,
+   "B25": 6505,
+   "B35": 529,
+   "sp_var_2.5": 0.7939382596793471,
+   "sp_var_3.5": 0.7317325914809663,
+   "sp_fix_2.5": 0.7939382596793471,
+   "sp_fix_3.5": 0.7317325914809663,
+   "sp_fix4000_2.5": 0.7830167798727637,
+   "sp_fix4000_3.5": 0.7317325914809663,
+   "mean_rate_var_2.5": 0.1263967013888889,
+   "mean_rate_var_3.5": 0.017322916666666667,
+   "mean_rate_fix_2.5": 0.1263967013888889,
+   "mean_rate_fix_3.5": 0.017322916666666667,
+   "zero_frac_var_2.5": 0.0,
+   "zero_frac_var_3.5": 0.0,
+   "delta_var": 0.062205668198380804,
+   "delta_fix": 0.062205668198380804,
+   "delta_fix4000": 0.05128418839179749,
+   "identity_masks_hold": true,
+   "bitlen_range": [
+    44,
+    44
+   ]
+  },
+  {
+   "seed": 20260985,
+   "vmed": 3416539208.5,
+   "B25": 6508,
+   "B35": 530,
+   "sp_var_2.5": 0.7751006493754511,
+   "sp_var_3.5": 0.7193779370680119,
+   "sp_fix_2.5": 0.7751006493754511,
+   "sp_fix_3.5": 0.7193779370680119,
+   "sp_fix4000_2.5": 0.7703539933013843,
+   "sp_fix4000_3.5": 0.7193779370680119,
+   "mean_rate_var_2.5": 0.12648784722222223,
+   "mean_rate_var_3.5": 0.01735329861111111,
+   "mean_rate_fix_2.5": 0.12648784722222223,
+   "mean_rate_fix_3.5": 0.01735329861111111,
+   "zero_frac_var_2.5": 0.0,
+   "zero_frac_var_3.5": 0.0008333333333333334,
+   "delta_var": 0.05572271230743919,
+   "delta_fix": 0.05572271230743919,
+   "delta_fix4000": 0.050976056233372424,
+   "identity_masks_hold": true,
+   "bitlen_range": [
+    44,
+    44
+   ]
+  },
+  {
+   "seed": 20260986,
+   "vmed": 3424873822.0,
+   "B25": 6514,
+   "B35": 530,
+   "sp_var_2.5": 0.7961332125925087,
+   "sp_var_3.5": 0.7389090964646504,
+   "sp_fix_2.5": 0.7961332125925087,
+   "sp_fix_3.5": 0.7389090964646504,
+   "sp_fix4000_2.5": 0.7919852999897916,
+   "sp_fix4000_3.5": 0.7389090964646504,
+   "mean_rate_var_2.5": 0.12688368055555557,
+   "mean_rate_var_3.5": 0.017575520833333334,
+   "mean_rate_fix_2.5": 0.12688368055555557,
+   "mean_rate_fix_3.5": 0.017575520833333334,
+   "zero_frac_var_2.5": 0.0,
+   "zero_frac_var_3.5": 0.0025,
+   "delta_var": 0.05722411612785827,
+   "delta_fix": 0.05722411612785827,
+   "delta_fix4000": 0.0530762035251412,
+   "identity_masks_hold": true,
+   "bitlen_range": [
+    44,
+    44
+   ]
+  },
+  {
+   "seed": 20260987,
+   "vmed": 3430074285.0,
+   "B25": 6518,
+   "B35": 530,
+   "sp_var_2.5": 0.7749521492723259,
+   "sp_var_3.5": 0.7109256186983463,
+   "sp_fix_2.5": 0.7749521492723259,
+   "sp_fix_3.5": 0.7109256186983463,
+   "sp_fix4000_2.5": 0.7678340123847308,
+   "sp_fix4000_3.5": 0.7109256186983463,
+   "mean_rate_var_2.5": 0.12619184027777777,
+   "mean_rate_var_3.5": 0.017174479166666666,
+   "mean_rate_fix_2.5": 0.12619184027777777,
+   "mean_rate_fix_3.5": 0.017174479166666666,
+   "zero_frac_var_2.5": 0.0,
+   "zero_frac_var_3.5": 0.0008333333333333334,
+   "delta_var": 0.06402653057397967,
+   "delta_fix": 0.06402653057397967,
+   "delta_fix4000": 0.05690839368638456,
+   "identity_masks_hold": true,
+   "bitlen_range": [
+    44,
+    44
+   ]
+  }
+ ],
+ "summary": {
+  "cells": {
+   "var_2.5": {
+    "mean": 0.7939,
+    "sd": 0.0158
+   },
+   "var_3.5": {
+    "mean": 0.7307,
+    "sd": 0.0149
+   },
+   "fix_2.5": {
+    "mean": 0.7939,
+    "sd": 0.0158
+   },
+   "fix_3.5": {
+    "mean": 0.7307,
+    "sd": 0.0149
+   },
+   "fix4000_2.5": {
+    "mean": 0.7896,
+    "sd": 0.0175
+   },
+   "fix4000_3.5": {
+    "mean": 0.7307,
+    "sd": 0.0149
+   }
+  },
+  "delta_fixed": {
+   "mean": 0.0632,
+   "sd": 0.0076,
+   "bootstrap_CI": [
+    0.0586,
+    0.0683
+   ]
+  },
+  "delta_varB_reproduction": {
+   "mean": 0.0632,
+   "sd": 0.0076,
+   "bootstrap_CI": [
+    0.0587,
+    0.0684
+   ],
+   "paper168_delta960_reference": 0.0636
+  },
+  "delta_fixed4000_sidecell": {
+   "mean": 0.0589,
+   "sd": 0.0078
+  },
+  "attribution": {
+   "mean": 0.0,
+   "bootstrap_CI": [
+    0.0,
+    0.0
+   ],
+   "formula": "(Delta_varB - Delta_fixed)/Delta_varB"
+  },
+  "mean_rates": {
+   "var_2.5": 0.12628,
+   "var_3.5": 0.01733,
+   "fix_2.5": 0.12628,
+   "fix_3.5": 0.01733
+  },
+  "zero_fracs": {
+   "var_2.5": 0.0,
+   "var_3.5": 0.0008
+  },
+  "bounds": {
+   "B25_per_population": [
+    6519,
+    6509,
+    6506,
+    6496,
+    6505,
+    6508,
+    6514,
+    6518
+   ],
+   "B35_per_population": [
+    530,
+    530,
+    529,
+    529,
+    529,
+    530,
+    530,
+    530
+   ],
+   "PB_fixed": 8000
+  },
+  "identity_masks_hold_all": true
+ },
+ "verdict": {
+  "H1_bound_shrinkage": false,
+  "H2_intrinsic_residual": true,
+  "verdict_name": "H2",
+  "rule_detail": {
+   "attribution_mean": 0.0,
+   "Delta_fixed_mean": 0.0632,
+   "Delta_varB_mean": 0.0632,
+   "paper168_Delta960": 0.0636
+  }
+ },
+ "barrier_lines": {
+  "barrier_5": "Structural orthogonality: T is an N-only natural coordinate; the dial predicts relation yield (difficulty), not (p,q) - no which-factor claim made or tested.",
+  "barrier_8": "Known-method-in-disguise: the measured object is the QS/CFRAC relation-yield dial - a cost predictor FOR known methods, not a new factoring route."
+ },
+ "artifacts": [
+  "/tmp/exp45_fixb/exp502_fixed_bound.py",
+  "/tmp/exp45_fixb/result.json",
+  "/tmp/exp45_fixb/ledger_exp502.jsonl"
+ ]
+}
