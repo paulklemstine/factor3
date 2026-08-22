@@ -1633,3 +1633,23 @@ trained attention, not model capacity, sets the knee. Barriers: (a) clean; (b) c
 (same bar as all real-model rounds); (h) DIRECT. Open: sub-16 addendum; 1.5B tail map (P2);
 7B cell; oracle-to-policy (next); corpus robustness. Paper 140, issue #284.
 Now 55 network experiments. Assessment v55.
+
+## Part 56 — THE-ORACLE-OVERSTATES-THE-DEPLOYABLE-WIN: a causally-honest streaming KV policy (accumulated-score heavy-hitters, block-128, current block always cached, strict per-row causality) retains only {0.863, 0.882, 0.919} at budgets {32, 64, 128} where the omniscient oracle posts {0.991, 0.995} at {32, 64} — an 11.3-point gap at matched budget B=64; the fixed hybrid (HH + recency) dominates pure HH everywhere (+4–6 pts: {0.921, 0.938, 0.961}) but even a 128-key cache reaches only 0.961; P1 gap-real CONFIRMED emphatically, P2 recency-matters CONFIRMED, P3 still-large-win REFUTED — trained attention is prunable in RETROSPECT, not predictable ONLINE; deployment table must be policy-adjusted, not oracle-quoted (NET-56)
+
+**Method:** Qwen2.5-0.5B fp32 ctx=1024, 24 held-out windows; streaming = per-layer/head
+top-(B−W)-by-accumulated-prob + last-W recency (W=min(32,B/2)), block-128, faithful server
+semantics. Gate exact (argmax-agree 1.0000); oracle arms cross-replicate NET-49's knee
+(0.9913@32 vs 0.9912). SEVEN pre-recording variants rejected by sanity gates (shape bugs ×2;
+stale kept-set starving local context → 0.35–0.46; per-block causal leak → retained 2.06>1
+impossible; strict-mask NaN; duplicate recency; unbound variable) — invalid variants kept in
+git as bracketing negative controls; recorded run passes retained∈(0,1) + monotone budgets +
+exact oracle anchor. Script ResearchOutput/exp_net56_policy.py; log /tmp/net56.log.
+**Verdict:** THE-ORACLE-OVERSTATES-THE-DEPLOYABLE-WIN — accumulated attention is a biased
+estimator of future importance (the catalogue's min-plus decoder-reliability barrier made
+measurable). Barriers: (a) clean (P3 refuted was pre-stated); (b) confronted (H2O lineage;
+NEW = quantified oracle-to-policy gap on the knee-measuring harness itself); (c) confronted
+(one model/context/policy-granularity stated); (d) clean; (e) deterministic, sanity-band
+acceptance documented; (f) clean (ALL_DONE_NET56); (g) fair (matched budgets, identical
+harness/data for both arms); (h) DIRECT (policy-adjusted serving table).
+Open: learned importance heads; per-layer budgets; 1.5B replication; corpus robustness (next).
+Paper 141, issue #287. Now 56 network experiments. Assessment v56.
