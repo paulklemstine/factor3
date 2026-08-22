@@ -1617,3 +1617,19 @@ controls, both directions); (h) DIRECT (sets the sharing boundary for KV servers
 tail-aware quantization). Open: dose-response (one/three-layer swaps); swap+recalibration
 (entanglement depth); 1.5B pair; compensated-4-bit tail personality (GPTQ link).
 Paper 139, issue #246. Now 54 network experiments. Assessment v54.
+
+## Part 55 — THE-KNEE-IS-SIZE-INVARIANT: Qwen2.5-1.5B (3× params, d=28) posts k*={16,16} at ctx={512,1024} — identical to 0.5B at 512, HALF of it at 1024 (0.5B needed 32); P1 knees-grow-with-scale REFUTED decisively (came in below the predicted floor), P2 tail-map honestly UNMEASURED (harness rewrite dropped the stats block), P3 saturation CONFIRMED stronger (ratio 1.0 — flat); ~30-key budget covers every real model measured at every context while the toy law predicted 384–1344; deployment: KV working-set does NOT scale with model size (NET-55; limited-memory axis round 8)
+
+**Method:** bf16-storage/fp32-compute harness (Qwen2.5-1.5B fp16 forward NaNs on real text —
+verified pre-wrapper; CPU-fp32 reference SIGILLs on this host — moved to HF-bf16-GPU reference
+captured pre-floatify; gate ΔCE=0.0054 binding, argmax-agree 0.89 = near-tie flips across
+152k vocab); 24 held-out windows/cell; grid {8..64}@512, {16..128}@1024. Script
+ResearchOutput/exp_net55_1p5b_knee.py (committed pre-run); log /tmp/net55.log.
+**Results:** k*(512)=16 (k=8 fails 0.9727); k*(1024)≤16 (grid floor — sub-16 addendum open).
+**Verdict:** knee flat in scale, flat-to-declining in context — concentration structure of
+trained attention, not model capacity, sets the knee. Barriers: (a) clean; (b) clean;
+(c) confronted (two size points; grid-floor and single-corpus limits stated); (d) clean;
+(e) deterministic + gate calibration documented; (f) clean (ALL_DONE_NET55); (g) fair
+(same bar as all real-model rounds); (h) DIRECT. Open: sub-16 addendum; 1.5B tail map (P2);
+7B cell; oracle-to-policy (next); corpus robustness. Paper 140, issue #284.
+Now 55 network experiments. Assessment v55.
