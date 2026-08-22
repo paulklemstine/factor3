@@ -1977,3 +1977,14 @@ windows @ctx=512; linear regression on 4 known-knee domains; French prediction c
 to NET-76's measured value. Gate exact. Script ResearchOutput/exp_net86_predict.py;
 log /tmp/net86.log.
 Now 86 network experiments. Assessment v86 (compact negative result).
+
+## Part 87 — CODE-AT-4096-IS-PROTECTED: code knee @4096 is k*=32 (k=28 fails ~0.976, k=32 passes 0.986) — LOWER than prose's 40 at same context; complete code chain {12,16,32} across {512,1024,4096}; code starts lower AND accelerates less sharply; domain factor narrows at long context (code/prose ≈0.75 short → ≈0.80 long); P2 acceleration-universal CONFIRMED; baseline acc 0.677 remarkably high for 4096 tokens of source code (NET-87; limited-memory axis round 60)
+
+**Method:** Python source corpus, sweep k∈{12,16,20,24,32,40} at ctx=4096 on
+Qwen2.5-0.5B fp32, 3 held-out windows; gate exact. Script
+ResearchOutput/exp_net87_code4096.py; results ~/f3cache/net87_results.json;
+log /tmp/net87.log.
+**Verdict:** CODE-AT-4096-IS-PROTECTED. Barriers: (a) clean; (b) clean; (c) confronted;
+(d) clean; (e) deterministic; (f) clean; (g) fair; (h) DIRECT. Open: fine grid 24–32;
+domain-jump @4096 for math/German/French; 7B cell. Paper 168, issue #330.
+Now 88 network experiments. Assessment v88.
