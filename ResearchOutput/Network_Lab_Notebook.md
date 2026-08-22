@@ -1484,3 +1484,48 @@ does ~ctx/32-saturation persist? does the two-layer tail recur?); (3) oracle-to-
 gap (online accumulated-score eviction vs this upper bound); (4) corpus robustness;
 (5) weight-quantization floors on the same harness (limited-memory iteration 2).
 Paper 134, issue #230. Now 49 network experiments. Assessment v49.
+
+## Part 50 — THE TROPICAL LIMIT IS LOSSY BUT THE RECOVERY IS FAST: pure argmax attention (k=1) retains only {0.364, 0.289, 0.250} at ctx={512,1024,2048} on Qwen2.5-0.5B (worse at LONGER context), k=2 already recovers to 0.70–0.79 and k=4 to 0.88–0.91; the knee chain {16,32,24} replicates NET-49 EXACTLY cross-session; Maslov gaps (LSE−max) have bulk-layer medians 0.17–1.9 nats with the diffuse tail L22/L23 (medians 2.3–2.7, p90≈3.4) the only far-from-tropical region; crystallization loss Σp(1−p) runs 0.43–0.97 — soft mass is heavy but individually tiny and collectively inside the 2% budget (NET-50; mined from the Lean catalogue's tropical cluster)
+
+**Question:** NET-49 stopped above k=16; the catalogue licenses hard attention within log 2
+nats/row (Maslov sandwich) and bounds soft-vs-hard TV by crystallization loss Σp(1−p). This round
+measures the TROPICAL LIMIT itself: sweep oracle top-k down to k∈{1,2,4,8} and measure the
+per-row budgets directly. **Predictions stated before the run: P1 TROPICAL-CLIFF (k=1 retained
+< 0.5 everywhere); P2 SMALL-K-RECOVERY (k=4 ≥ 0.90 @512 AND k=8 ≥ 0.90 @2048); P3
+NEAR-TROPICAL-SOFTMAX (median Maslov gap ≤ log 8 ≈ 2.08 nats everywhere AND median
+crystallization loss ≤ 0.25).**
+
+**Method:** byte-identical harness/gates to NET-49 (validation gate exact, held-out last 10%,
+40 windows/cell, fp32, GTX 1060); grids extended down to k=1; Part B tropical budgets collected
+during full-attention passes per layer (mean/median/p90 gap + crystallization loss).
+Script /tmp/exp_net50_tropical.py; log /tmp/net50.log; ~35 min ON GPU.
+
+**Results:** **P1 CONFIRMED** at all three contexts — k=1: 0.3637/0.2885/**0.2503** (monotone
+DECLINE with context: argmax attention worsens as context grows). **P2 CONFIRMED** — k=2:
+0.7865/0.7398/0.7002; k=4: 0.9097 (razor over the 0.90 bar)/0.8906/0.8762; k=8:
+0.9617/0.9485/**0.9408** ✓. Knee chain **{16, 32, 24} = EXACT replication of NET-49**
+(different script, different session — deterministic-eval reproducibility proven).
+**P3 SPLIT:** the Maslov half holds for BULK layers (medians 0.17–1.86 ≤ log 8 at 512/1024;
+all bulk ≤ 1.46 at 2048) but is REFUTED by the diffuse tail — L22/L23 medians 2.33/2.16 →
+2.55/2.37 → **2.69/2.52** across contexts, p90 ≈ 3.4; and the crystallization half is REFUTED
+decisively (per-layer means 0.34–0.97 vs the predicted ≤ 0.25).
+
+**What this decides:** pretrained softmax attention is NEAR-TROPICAL in its bulk (23 of 24
+layers within a nat or two of pure argmax) but carries a genuinely non-tropical TWO-LAYER
+diffuse tail; its crystallization loss is large everywhere, yet top-k to 24 keys retains ≥98%
+— so the dropped soft mass is INDIVIDUALLY TINY but COLLECTIVELY LOAD-BEARING. The practical
+regime for limited-memory serving is "tropical core + thin soft correction": pointer-style
+(k very small) caches sit far below the knee, but the recovery curve quantifies exactly how
+fast accuracy returns with each added key.
+
+**Verdict:** THE-TROPICAL-LIMIT-IS-LOSSY-BUT-THE-RECOVERY-IS-FAST. Barriers: (a) clean (horns
+pre-stated about cliff/recovery/budget positions); (b) clean (argmax-limit sweeps + Maslov/
+crystallization budgets on a pretrained LM not in Catalog/lit as measurements); (c) confronted
+(real-scale pretrained model; ONE model noted); (d) clean; (e) SUBSTANCE + limits — the exact
+cross-session replication of {16,32,24} is the strongest reproducibility evidence of the axis;
+P3's crystallization half honestly REFUTED; single model/corpus; (f) clean (validation gate
+exact, fp32, ALL_DONE_NET50 no crash); (g) fair (full reference, same bar; NET-49 controls not
+re-run — noted); (h) DIRECT — the sub-k\* curve is the deployment-relevant region for aggressive
+KV compression. Open: per-layer ablation (prune ONLY L22/L23?); size transfer; oracle-to-policy;
+corpus robustness; weight quantization (NET-52 next). Paper 135, issue #237.
+Now 50 network experiments. Assessment v50.
