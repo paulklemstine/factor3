@@ -9930,3 +9930,16 @@ UNEXPLAINED by any tested feature class (candidates narrow: higher-prime phase p
 same-window leakage of realized-divisibility features). Base dial R2 drops 0.60->0.40
 cross-window regardless — same-window information is real in the current dial.
 Paper 150, issue #252. Now 482 experiments. Assessment v259.
+
+## Part 223 - HIGH-PHASE (round-41 #2 [cron iteration], exp 483, v260)
+
+Phases extended to p <= 97 (exp482 clean protocol verbatim, inline takeover after channel
+death #8). H1 FAIL: high-prime phases add +0.0215 same-window (CI [-0.0025, +0.0429] —
+excludes +0.05, straddles zero); H2: ratio cross/same = 0.922 — the (small) gain TRANSFERS
+across windows, unlike low-primes' negative transfer; H3 FAIL: 0.6286 < 0.70. Baseline
+reproduces (same-window base R2 = 0.6270 ~ paper 145). NET with paper 150: the LINEAR
+PHASE ROUTE IS CLOSED at both prime ranges — singleton offsets carry no out-of-sample
+signal beyond the footprint dial at either range; the split-ceiling excess remains
+unlocated (candidates narrow to interaction/joint-alignment encodings per paper 150's
+redirect, or it is intrinsic to the dial family).
+Paper 151, issue #253. Now 483 experiments. Assessment v260.
