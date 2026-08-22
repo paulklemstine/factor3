@@ -290,6 +290,39 @@ def smooth_rates(N_list, tag):
     decide(np.arange(len(Valive)))
     compact()
 
+    # FIX (exp540): a row may only be pulled by primes <= ITS OWN bound.
+    # The inherited exp539 loop pulled every prime <= Bmax for every live row,
+    # so a value with a prime factor f in (B_row, Bmax] had f divided out,
+    # dropping the residual to <= B_row -- and was wrongly counted smooth
+    # (observed: V=394915212308380297 = 77999*444589*11388227, B=11215754,
+    # largest factor 11388227 in (B, Bmax] -> spurious 'smooth').  Masking
+    # pull by BVlive >= p restores the exact definition: after all primes
+    # <= B_row have been tried, a live residual has only factors > B_row.
+    def pull(p):
+        """divide out ALL factors of p from ELIGIBLE live values (own bound
+        still allows p); return touched locals"""
+        hl = np.flatnonzero((BVlive >= np.uint64(p))
+                            & (Valive % np.uint64(p) == 0))
+        if hl.size == 0:
+            return hl
+        touched = hl.copy()
+        while hl.size:
+            Valive[hl] //= np.uint64(p)
+            hl = hl[(BVlive[hl] >= np.uint64(p))
+                    & (Valive[hl] % np.uint64(p) == 0)]
+            if hl.size:
+                touched = np.union1d(touched, hl)
+        return touched
+
+    def expire(p):
+        """park rows whose own bound the loop has passed: all their remaining
+        prime factors exceed their bound -> definitively NOT smooth."""
+        gone = np.flatnonzero((Olive >= 0) & (BVlive < np.uint64(p)))
+        if gone.size:
+            Valive[gone] = np.uint64(2**63 - 1)
+            BVlive[gone] = np.uint64(0)
+            Olive[gone] = -1
+
     t0 = time.time()
     nbig = len(BIG)
     for j in range(nbig):
@@ -297,6 +330,7 @@ def smooth_rates(N_list, tag):
         decide(pull(p))
         if ndead > 0.3 * len(Valive):
             compact()
+            expire(p)
         if j % 50000 == 0:
             print(f"    [{tag}] big-prime {j}/{nbig} (p={p}) "
                   f"live={len(Valive)} elapsed={time.time()-t0:.0f}s",
