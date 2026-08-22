@@ -1835,3 +1835,14 @@ non-English leg); (c) confronted (German only, two classics stated); (d) clean; 
 deterministic; (f) clean (ALL_DONE_NET71); (g) fair (only text changed); (h) DIRECT.
 Open: more languages; modern LaTeX; increments@4096; 7B cell. Paper 156, issue #310.
 Now 71 network experiments. Assessment v71.
+
+## Part 72 — THE-FRENCH-KNEE-EXCEEDS-THE-GRID: on French prose NO grid point reaches the bar — k=24 retains only 0.965 @512 and k=32 only 0.968 @1024 — a domain shift FAR larger than German's +4 (brackets: knee >24 and >32); ALL THREE HORNS REFUTED; the domain-shift law is NOT ±4 fine-steps — language families differ by whole grid ranges; accuracy/knee decoupling has BOTH SIGNS (French easier AND needs more); mechanism hypothesis: tokenization-mediated (Qwen spends more tokens/French word, diluting per-token attention); deployment: multilingual serving CANNOT interpolate budgets — per-language measurement required (NET-72; limited-memory axis round 40)
+
+**Method:** French prose corpus (one Gutenberg source; second 404'd — honest limit), fine
+grids {4..24}@512 and {8..32}@1024 on Qwen2.5-0.5B fp32; gate exact. Script
+ResearchOutput/exp_net72_french.py; results ~/f3cache/net72_results.json; log /tmp/net72.log.
+**Verdict:** THE-FRENCH-KNEE-EXCEEDS-THE-GRID. Barriers: (a) clean; (b) clean (first
+beyond-grid result); (c) confronted (one source, sub-knee ceiling stated); (d) clean;
+(e) deterministic; (f) clean (ALL_DONE_NET72); (g) fair (only text changed); (h) DIRECT.
+Open: tokens-per-word mechanism test; extended grid {48,64}; more languages; 7B cell.
+Paper 157, issue #312. Now 72 network experiments. Assessment v72.
