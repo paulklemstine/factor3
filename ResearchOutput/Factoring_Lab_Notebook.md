@@ -9894,3 +9894,21 @@ by MC z=-72 -> sum(pi)==1 assert added; Thm 8 refuted by own data and corrected;
 kills + concurrent writers replaced deliverables mid-run (all runs preserved and
 cross-referenced: et_hints_*_canonical.* vs *_reduced_alt_otherwriter.*).
 Paper 148, issue #250. Now 480 experiments. Assessment v257.
+
+## Part 221 - MAGNITUDE-INTERVAL (round-40 #5 [cron iteration], exp 479, v258)
+
+Can paper 137's magnitude information be expressed as a single interval hint on paper
+143/146's plane? H1 REFUTED — and the refutation maps the interval law's SCOPE. Descending
+order reproduced at 5.23x on this population (anchor 5.19x), but the extracted pooled
+window is (alpha=0.9, mu/M=0.79) — FAR outside the p143 band ([0.02,0.05]) — and the
+committed-scan identity recovers only **69.7%** of the descending gain, with per-draw
+corr(desc, committed) = -0.32: position information is MULTI-MODAL across balance strata,
+not single-interval. Balance strata confirm the gradient (H2 direction): local descending
+speedup 35.96x in the most-balanced quartile down to <1 in low-M deciles. The two-number
+law prices the SINGLE-WINDOW oracle family; real magnitude posteriors need the full
+ordering functional (paper 137 remains the correct measurement object). FLAG: agent's DC1
+closed-form cross-check diverged (max err 1.6e7) while DC2 brute force agrees with direct
+measurement (0 mismatches) — analytic path buggy, brute paths consistent; disclosed.
+LEDGER: zombie-completion pattern again (~40 min to first files); population balance
+distribution differs from paper 137's (disclosed by the agent itself).
+Paper 149, issue #251. Now 481 experiments. Assessment v258.
