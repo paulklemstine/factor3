@@ -1,7 +1,7 @@
 {
- "experiment": 526,
- "codename": "TDIAL-BITLEN",
- "round": 56,
+ "experiment": 527,
+ "codename": "TDIAL-U48B",
+ "round": 57,
  "date": "2026-08-22",
  "seeds": [
   20261110,
@@ -9,188 +9,264 @@
   20261112
  ],
  "prestated": {
-  "H1": "Spearman(T,rate) within [0.60,0.85] on uniform draws at bitlen 48, u=2.5, ALL 3 seeds",
-  "H2": "mean advantage Spearman(T)-Spearman(count<=100) > +0.05 and >= 2/3 individual seeds > +0.05"
+  "H1": "Spearman(T,rate) within [0.55,0.85] on uniform draws at exact bitlen 48, u=2.5, ALL 3 seeds (pooled alongside)",
+  "H2": "mean-over-seeds advantage Spearman(T)-Spearman(count<=100) > +0.05 AND >= 2/3 individual seeds > +0.05"
  },
- "design_resolution": "parent gave no factor windows; locked ladder-shape operationalization e~U{20..25}, p~nextprime(U[2^e,2^(e+1))), q~nextprime(U[2^(47-e),2^(48-e))), reject overflow/p==q/bitlen!=48, p<=q labeled; extends exp518 one rung down, bitlen the only moved variable; note exp517's official 'unif-48' arm actually measured N at 26..38 bits",
+ "design_resolution": "assigned windows [2^14,2^16)x[2^16,2^18) cap N below 2^34 -- unsatisfiable jointly with exact bitlen 48; preserved literal SHAPE (adjacent 2-octave windows, q floor = p ceiling, q larger) shifted +8 octaves: p~Uprime[2^22,2^24), q~Uprime[2^24,2^26), reject until bitlen(N)==48, label p<=q; unbiased rejection prime draws",
  "verdict_names": {
-  "both": "CELL-CLOSED-DIAL-HOLDS-UNIF-48",
-  "h1_only": "DIAL-HOLDS-NO-EDGE-OVER-COUNT-48",
-  "h2_only": "BAND-BREAK-EDGE-PERSISTS-48",
-  "neither": "DOUBLE-BREAK-48-UNIFORM"
+  "both": "CELL-CLOSED-DIAL-HOLDS-UNIF-48B",
+  "h1_only": "DIAL-HOLDS-NO-EDGE-OVER-COUNT-48B",
+  "h2_only": "BAND-BREAK-EDGE-PERSISTS-48B",
+  "neither": "DOUBLE-BREAK-48B-UNIFORM"
  },
- "elapsed_s": 5.7,
- "populations": [
-  {
-   "seed": 20261110,
-   "n": 1200,
-   "bits_exact": 48,
-   "mean_p_bits": 22.86,
-   "min_p_bits": 21,
-   "max_p_bits": 24,
-   "mean_q_bits": 26.14,
-   "min_q_bits": 25,
-   "max_q_bits": 28,
-   "distinct_N": 1200,
-   "p_exponent_bin_counts": {
-    "20": 192,
-    "21": 199,
-    "22": 394,
-    "23": 415
-   },
-   "draw_s": 0.0
-  },
-  {
-   "seed": 20261111,
-   "n": 1200,
-   "bits_exact": 48,
-   "mean_p_bits": 22.83,
-   "min_p_bits": 21,
-   "max_p_bits": 24,
-   "mean_q_bits": 26.17,
-   "min_q_bits": 25,
-   "max_q_bits": 28,
-   "distinct_N": 1200,
-   "p_exponent_bin_counts": {
-    "20": 199,
-    "21": 203,
-    "22": 402,
-    "23": 396
-   },
-   "draw_s": 0.0
-  },
-  {
-   "seed": 20261112,
-   "n": 1200,
-   "bits_exact": 48,
-   "mean_p_bits": 22.77,
-   "min_p_bits": 21,
-   "max_p_bits": 24,
-   "mean_q_bits": 26.23,
-   "min_q_bits": 25,
-   "max_q_bits": 28,
-   "distinct_N": 1200,
-   "p_exponent_bin_counts": {
-    "20": 216,
-    "21": 213,
-    "22": 398,
-    "23": 373
-   },
-   "draw_s": 0.0
-  }
- ],
- "rows": [
-  {
-   "seed": 20261110,
-   "spearman_T": 0.7192,
-   "ci_T": [
-    0.6885,
-    0.7452
-   ],
-   "spearman_count": 0.6214,
-   "ci_count": [
-    0.5815,
-    0.6547
-   ],
-   "advantage": 0.0979,
-   "ci_advantage": [
-    0.0567,
-    0.1338
-   ],
-   "spearman_T_vs_count": 0.6025,
-   "B": 6656,
-   "mean_rate": 0.1248,
-   "audit_mismatches": 0
-  },
-  {
-   "seed": 20261111,
-   "spearman_T": 0.7202,
-   "ci_T": [
-    0.6898,
-    0.7463
-   ],
-   "spearman_count": 0.575,
-   "ci_count": [
-    0.537,
-    0.6124
-   ],
-   "advantage": 0.1452,
-   "ci_advantage": [
-    0.1021,
-    0.1852
-   ],
-   "spearman_T_vs_count": 0.5369,
-   "B": 6676,
-   "mean_rate": 0.12652,
-   "audit_mismatches": 0
-  },
-  {
-   "seed": 20261112,
-   "spearman_T": 0.7198,
-   "ci_T": [
-    0.6898,
-    0.7519
-   ],
-   "spearman_count": 0.6109,
-   "ci_count": [
-    0.5714,
-    0.6487
-   ],
-   "advantage": 0.1089,
-   "ci_advantage": [
-    0.0694,
-    0.1468
-   ],
-   "spearman_T_vs_count": 0.566,
-   "B": 6664,
-   "mean_rate": 0.12474,
-   "audit_mismatches": 0
-  }
- ],
- "summary": {
-  "mean_T": 0.7197,
-  "min_T": 0.7192,
-  "max_T": 0.7202,
-  "per_seed_T": [
-   0.7192,
-   0.7202,
-   0.7198
+ "config": {
+  "seeds": [
+   20261110,
+   20261111,
+   20261112
   ],
-  "mean_advantage": 0.1173,
-  "min_advantage": 0.0979,
-  "max_advantage": 0.1452,
-  "wins_gt_0.05": 3,
-  "mean_rate_over_seeds": 0.12535
+  "pop_per_seed": 1200,
+  "relation_values_per_N": 240,
+  "u_smooth": 2.5,
+  "bits_exact": 48,
+  "bootstrap_resamples": 300,
+  "windows": {
+   "p": "[2^22,2^24)",
+   "q": "[2^24,2^26)"
+  },
+  "dial": "T = sum_{odd QR primes d<=400} 2/d (Euler powmod)",
+  "baseline": "count of odd QR primes d<=100",
+  "rate_convention": "paper-164 verbatim: global B=max(round(exp(ln vmed/u)),50); strip primes<=B; smooth := residual==1",
+  "secondary_rate": "exp518 convention (strip<=400, cofactor<=floor(N^(2/5)))"
  },
- "verdict": {
-  "H1_band_all_seeds_pass": true,
-  "H2_edge_pass": true,
-  "verdict_name": "CELL-CLOSED-DIAL-HOLDS-UNIF-48",
-  "context": {
-   "balanced_48_exp508_rhoT": [
-    0.6916,
-    0.7279,
-    0.7125
+ "elapsed_s": 6.5,
+ "seed_20261110_pop": {
+  "n": 1200,
+  "draw_attempts": 1200,
+  "bitlen_min": 48,
+  "bitlen_max": 48,
+  "p_bitlens": {
+   "23": 780,
+   "24": 420
+  },
+  "q_bitlens": {
+   "25": 751,
+   "26": 449
+  },
+  "gap_oct_mean": 2.014,
+  "gap_oct_min": 0.043,
+  "gap_oct_max": 3.934,
+  "T_mean": 1.5586,
+  "T_sd": 0.448,
+  "count_mean": 12.04
+ },
+ "seed_20261110_rate": {
+  "vmed": 3520640166.5,
+  "B": 6586,
+  "rate_mean": 0.12634,
+  "rate_sd": 0.03718,
+  "rate_min": 0.02917,
+  "rate_max": 0.28333,
+  "zero_rate_Ns": 0,
+  "secondary_exp518_rate_mean": 0.22294,
+  "audit_checks": 200
+ },
+ "stats": {
+  "seed_20261110": {
+   "spm_T": 0.7291,
+   "spm_count": 0.5724,
+   "advantage": 0.1567,
+   "mean_T": 1.5586,
+   "mean_count": 12.04,
+   "mean_rate": 0.1263,
+   "sd_rate": 0.0372,
+   "spm_T_ci95": [
+    0.7018,
+    0.756
    ],
-   "balanced_56_paper178_rhoT": 0.405,
-   "balanced_60_paper179_rhoT": 0.437,
-   "uniform_52_exp518_rhoT": [
-    0.793,
-    0.808,
-    0.808
+   "spm_count_ci95": [
+    0.5332,
+    0.616
    ],
-   "exp517_official_armA_note": "measured N at 26..38 bits, not 48",
-   "descriptive_dist_to_balanced48_mean_0.7107": 0.009
+   "advantage_ci95": [
+    0.1156,
+    0.1977
+   ],
+   "secondary_spm_T_vs_exp518rate": 0.8238
+  },
+  "seed_20261111": {
+   "spm_T": 0.7286,
+   "spm_count": 0.5939,
+   "advantage": 0.1347,
+   "mean_T": 1.558,
+   "mean_count": 11.995,
+   "mean_rate": 0.1261,
+   "sd_rate": 0.0381,
+   "spm_T_ci95": [
+    0.6999,
+    0.7548
+   ],
+   "spm_count_ci95": [
+    0.5566,
+    0.6326
+   ],
+   "advantage_ci95": [
+    0.0951,
+    0.1764
+   ],
+   "secondary_spm_T_vs_exp518rate": 0.8105
+  },
+  "seed_20261112": {
+   "spm_T": 0.7087,
+   "spm_count": 0.5968,
+   "advantage": 0.1119,
+   "mean_T": 1.5542,
+   "mean_count": 12.0075,
+   "mean_rate": 0.1263,
+   "sd_rate": 0.0393,
+   "spm_T_ci95": [
+    0.6771,
+    0.735
+   ],
+   "spm_count_ci95": [
+    0.5619,
+    0.631
+   ],
+   "advantage_ci95": [
+    0.0767,
+    0.1447
+   ],
+   "secondary_spm_T_vs_exp518rate": 0.819
   }
  },
- "barriers": [
-  "(5) WHICH-FACTOR WALL / STRUCTURAL ORTHOGONALITY: T(N), count(N) and relation-rate(N) are symmetric functions of the composite alone -- every channel reported here is which-factor blind; nothing reads which factor, consistent with the wall.",
-  "(8) KNOWN-METHOD-IN-DISGUISE / TOY-SCOPE: the measured object is the QS relation-yield dial -- a cost predictor FOR known methods, not a new factoring route; oracle primes were used only to CONSTRUCT the semiprimes, never inside measurement; three-toy-seed at bitlen 48, no scaling claim beyond the tested regime."
- ],
- "artifacts": [
-  "/tmp/exp56_tbl/exp526_t_dial_bitlen.py",
-  "/tmp/exp56_tbl/result.json",
-  "/tmp/exp56_tbl/ledger_exp526.jsonl",
-  "/tmp/exp56_tbl/HEADLINE.txt"
- ]
+ "seed_20261111_pop": {
+  "n": 1200,
+  "draw_attempts": 1200,
+  "bitlen_min": 48,
+  "bitlen_max": 48,
+  "p_bitlens": {
+   "23": 768,
+   "24": 432
+  },
+  "q_bitlens": {
+   "25": 756,
+   "26": 444
+  },
+  "gap_oct_mean": 2.012,
+  "gap_oct_min": 0.059,
+  "gap_oct_max": 3.933,
+  "T_mean": 1.558,
+  "T_sd": 0.4535,
+  "count_mean": 11.995
+ },
+ "seed_20261111_rate": {
+  "vmed": 3492249357.0,
+  "B": 6565,
+  "rate_mean": 0.12612,
+  "rate_sd": 0.03814,
+  "rate_min": 0.03333,
+  "rate_max": 0.2875,
+  "zero_rate_Ns": 0,
+  "secondary_exp518_rate_mean": 0.22299,
+  "audit_checks": 200
+ },
+ "seed_20261112_pop": {
+  "n": 1200,
+  "draw_attempts": 1200,
+  "bitlen_min": 48,
+  "bitlen_max": 48,
+  "p_bitlens": {
+   "23": 760,
+   "24": 440
+  },
+  "q_bitlens": {
+   "25": 780,
+   "26": 420
+  },
+  "gap_oct_mean": 1.981,
+  "gap_oct_min": 0.017,
+  "gap_oct_max": 3.971,
+  "T_mean": 1.5542,
+  "T_sd": 0.4472,
+  "count_mean": 12.0075
+ },
+ "seed_20261112_rate": {
+  "vmed": 3494886860.0,
+  "B": 6567,
+  "rate_mean": 0.12629,
+  "rate_sd": 0.03929,
+  "rate_min": 0.0375,
+  "rate_max": 0.29167,
+  "zero_rate_Ns": 0,
+  "secondary_exp518_rate_mean": 0.2241,
+  "audit_checks": 200
+ },
+ "pooled": {
+  "spm_T": 0.7223,
+  "spm_count": 0.5881,
+  "advantage": 0.1342,
+  "mean_T": 1.5569,
+  "mean_count": 12.0142,
+  "mean_rate": 0.1262,
+  "sd_rate": 0.0382,
+  "spm_T_ci95": [
+   0.7061,
+   0.7363
+  ],
+  "spm_count_ci95": [
+   0.5647,
+   0.6102
+  ],
+  "advantage_ci95": [
+   0.1131,
+   0.1577
+  ]
+ },
+ "verdicts": {
+  "verdict_name": "CELL-CLOSED-DIAL-HOLDS-UNIF-48B",
+  "H1": {
+   "pass": true,
+   "pass_pooled_only": true,
+   "partial": false,
+   "band": [
+    0.55,
+    0.85
+   ],
+   "per_seed_in_band": {
+    "20261110": true,
+    "20261111": true,
+    "20261112": true
+   },
+   "per_seed_spm_T": {
+    "20261110": 0.7291,
+    "20261111": 0.7286,
+    "20261112": 0.7087
+   },
+   "pooled_spm_T": 0.7223,
+   "pooled_ci95": [
+    0.7061,
+    0.7363
+   ]
+  },
+  "H2": {
+   "pass": true,
+   "mean_over_seeds_advantage": 0.1344,
+   "n_seeds_adv_gt_005": 3,
+   "per_seed_advantage": {
+    "20261110": 0.1567,
+    "20261111": 0.1347,
+    "20261112": 0.1119
+   },
+   "pooled_advantage": 0.1342,
+   "pooled_advantage_ci95": [
+    0.1131,
+    0.1577
+   ]
+  },
+  "barrier_lines": {
+   "(5)": "Barrier 5 (structural orthogonality, unchanged): T and count are computable from N alone and predict relation-yield variation across same-band semiprimes; they carry NO which-factor information -- consistent with the which-factor wall (papers 93/102).",
+   "(8)": "Barrier 8 (known-method-in-disguise, unchanged): the QS relation polynomial and trial-division target are the classical sieve machinery; the dial only re-weights candidate yield, it is not a new factoring route."
+  },
+  "elapsed_total_s": 6.5
+ }
 }
