@@ -1529,3 +1529,27 @@ re-run — noted); (h) DIRECT — the sub-k\* curve is the deployment-relevant r
 KV compression. Open: per-layer ablation (prune ONLY L22/L23?); size transfer; oracle-to-policy;
 corpus robustness; weight quantization (NET-52 next). Paper 135, issue #237.
 Now 50 network experiments. Assessment v50.
+
+## Part 51 — THE-KV-CORE-IS-SHARED-THE-TAIL-IS-PERSONAL: Qwen2.5-0.5B base vs Instruct on identical prompts — layer-0 keys EXACTLY identical (cosK=1.0000, relK=0.26%), every layer cosK ≥ 0.976; divergence is a HUMP (relK peaks 0.217 at L16 then falls — P2 monotone-growth REFUTED); top-1 attention agreement 0.84–0.98 across the bulk but COLLAPSES to 0.568/0.627 in exactly the same L22/L23 diffuse-tail layers NET-50 found far-from-tropical — three measurements (tropical gap, crystallization loss, fine-tune decision divergence) converge: the bulk is shared machinery, the two-layer tail is identity (NET-51; mined from the catalogue's amortized model-delta law n·r+min(D,n))
+
+**Method:** both models' own-forward capture executors validated vs HF eager BEFORE measurement
+(argmax-agree 0.9922 / 0.9971); fp16 weights + fp32 score math; 4×1025-token held-out prompts;
+per-layer post-rope q/k/v captured; Part A K/V cosine + relative-L2; Part B top-1 key-choice
+agreement under each model's OWN scores; Part C hidden-state divergence. Script
+/tmp/exp_net51_delta.py; log /tmp/net51.log.
+
+**Results:** **P1 EARLY-SHARE CONFIRMED** (L0 cosK 1.0000); **P2 MONOTONE-DIVERGENCE REFUTED**
+(hump: relK 0.003 → 0.217 @L16 → ~0.16; hidden ‖Δh‖/‖h‖ peaks ~0.22 at L12–16); **P3 DELTA-WIN
+CONFIRMED with caveat** (mean cosK 0.990, mean decision agreement 0.894 → shared-core-plus-delta
+viable) BUT the tail dissociates: L22/L23 keep cosine-similar keys (0.983/0.988) yet decide
+differently in 43%/37% of rows — vector-level similarity does NOT bound functional divergence.
+**Verdict:** THE-KV-CORE-IS-SHARED-THE-TAIL-IS-PERSONAL — convergent with NET-49/50 depth maps:
+bulk = shared machinery; two-layer tail = model identity. Serving law: ~22/24 layers shareable
+at ≥0.92 agreement; tail personal. Barriers: (a) clean; (b) confronted (task-vector folklore;
+NEW = hump constants, decision-vs-vector dissociation, three-way convergence); (c) confronted
+(ONE pair, ONE context, n=4 prompts noted); (d) clean (no training); (e) honest limits (cosine
+does not bound impact — hence Part B; prompt variance uncharacterized); (f) clean (both forwards
+gated; two gate-caught bugs fixed before any measurement counted); (g) fair (each model under
+its own weights); (h) DIRECT (shared-KV server design quantified). Open: tail-swap causal test;
+bigger pairs; SFT vs RLHF vs DPO tails; link to NET-52 (quantize core harder than tail?).
+Paper 136, issue #238. Now 51 network experiments. Assessment v51.
