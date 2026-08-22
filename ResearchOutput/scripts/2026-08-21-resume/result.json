@@ -1,74 +1,117 @@
 {
- "experiment": "exp512_t_dial_60",
- "codename": "T-DIAL-60",
- "round": 49,
- "seed": 20261040,
- "prestated": {
-  "H1": "Spearman(T, rate) < 0.405 at bitlen 60 (monotone continuation of the bitlen-56 degradation; paper-178 anchor rho_T = 0.4053).",
-  "H2": "Spearman(T, rate) >= 0.405 -- the degradation plateaus rather than continuing.",
-  "H3": "Spearman(T, rate) recovers above 0.55 -- the bitlen-56 drop was a transient.",
-  "decision_rules": {
-   "precedence": "H3 checked first, then H1, then H2.",
-   "H3_recovery": "PASS iff rho_T > 0.55 -> verdict T-DIAL-60-RECOVERY.",
-   "H1_monotone": "PASS iff rho_T < 0.405 AND bootstrap 95% CI upper bound < 0.405 -> verdict T-DIAL-60-MONOTONE-CONTINUATION.",
-   "H2_plateau": "PASS iff rho_T >= 0.405 -> verdict T-DIAL-60-PLATEAU.",
-   "marginal": "if rho_T < 0.405 but CI straddles 0.405 (H1 not decisive, H2 excluded by point) -> verdict T-DIAL-60-MARGINAL-DEGRADATION (H1 direction, not decisive)."
+ "meta": {
+  "seed": 20261050,
+  "exp": 513,
+  "codename": "DEGREE-11",
+  "field": "Q(zeta_23)^+ maximal real subfield",
+  "gal": "C11 = (Z/23)^*/{pm 1}",
+  "conductor": 23
+ },
+ "theory": {
+  "prestated_hypotheses": {
+   "H1": "FULL PINNING I(p mod 23; T) = H(T) = H(1/11,10/11)",
+   "H2": "s ~ Bin(2,1/11); I(N mod 23; s) = I_law(11) exact enumeration",
+   "H3": "thickening structural; coprime control flat"
   },
-  "design": {
-   "population": "1200 balanced semiprimes; p,q distinct uniform primes in [ceil(2^29.5), 2^30-1]; guarantees bitlen(N)=60 exactly.",
-   "draws": "per N: 240 relation values v = isqrt(N)+1+offset with offset ~ Uniform{0..W-1}, W = round(N**0.25) (QS-style window above sqrt).",
-   "dial_B": "B = exp(ln(vmed)/u), u=2.5; vmed = median of that N's 240 v values (so u = ln(vmed)/ln(B) exactly on the v scale -- the SAME convention as paper-178/exp511, whose 0.4053 is the comparator).",
-   "hit": "rem = v*v - N; strip primes <= B ascending; HIT iff rem==1 after strip or leftover prime cofactor <= B (early-break rescue); maxp<=B checked literally on every hit.",
-   "features_paper164_verbatim": "T(N) = sum over odd primes p<=400 with Euler criterion powmod(N,(p-1)//2,p)==1 of 2/p ; count(N) = #{odd primes q<=100 : Euler criterion ==1} (odd-only, mirroring T's definition).",
-   "stats": "Spearman rho(T,rate), rho(count,rate), advantage=rho_T-rho_count; bootstrap 300 resamples (seed SEED+2), percentile 95% CIs; monotonicity quantified as delta = rho_T(bitlen60) - 0.4053 (paper-178/exp511 anchor; unpaired, independent seeds).",
-   "rng_split": "Random(SEED) population, Random(SEED+1) draw offsets, Random(SEED+2) bootstrap, Random(SEED+3) secondary bootstrap.",
-   "secondary_arm_posthoc": "same draws, B2 = exp(ln(remmed)/2.5), remmed = median of that N's 240 remainders (u=2.5 realized ON THE REMAINDER scale) -- designed check on whether any continued drop is rate-starvation (primary convention) or genuine dial breakdown; clearly labeled POST-HOC, primary untouched."
+  "exact_densities": {
+   "1": 0.09090909090909091,
+   "11": 0.9090909090909091
+  },
+  "H_T_exact": 0.4394969869215134,
+  "H_T_hand": 0.4395,
+  "I_law_exact_enumeration": 0.0518973227981403,
+  "mixture_equals_bin2_1_11_maxdev": 5.551115123125783e-17,
+  "coset_orders_verified": "rule (t odd->t else t/2) == brute force for all 22 classes"
+ },
+ "prime_level": {
+  "n": 295946,
+  "hist": {
+   "1": 0.090908,
+   "11": 0.909092
+  },
+  "exact": {
+   "1": 0.09090909090909091,
+   "11": 0.9090909090909091
+  },
+  "H_emp": 0.4394949460495255,
+  "H_exact": 0.4394969869215134,
+  "dev_H": -2.0408719879072557e-06,
+  "I_p_mod_23_T": 0.43949494604952194,
+  "full_pinning_per_class": true,
+  "perm_null_mean": 5.103894306503216e-05,
+  "perm_z": 28787.957268165967,
+  "T1_sign_breakdown": {
+   "res_eq_1": 13471,
+   "res_eq_22": 13433
   }
  },
- "have_gmpy2": true,
- "have_numpy": true,
- "stages": {
-  "sanity": {
-   "ok": true,
-   "n_primes_le400": 77,
-   "n_primes_le100": 24,
-   "ts": 0.016776561737060547
-  },
-  "population": {
-   "n": 1200,
-   "lo": 759250125,
-   "hi": 1073741823,
-   "bitlen_check": "all==60",
-   "ts": 0.09029436111450195
-  },
-  "features": {
-   "T_mean": 1.5402,
-   "T_range": [
-    0.514,
-    2.658
+ "thickening": {
+  "mod": 529,
+  "no_mixing": true,
+  "worst_class_types": 0
+ },
+ "coprime_control": {
+  "mod": 13,
+  "I": 5.639848919002644e-06,
+  "perm_z": -1.8975145691662256,
+  "null_mean": 2.880690218446982e-05
+ },
+ "poly_crosscheck": {
+  "n": 400,
+  "mismatches": 0,
+  "minpoly_path": "sympy_minpoly_confirmed",
+  "minpoly_degree": 11,
+  "patterns": {
+   "1": [
+    [
+     11
+    ]
    ],
-   "count_mean": 11.995,
-   "ts": 0.12596392631530762
+   "0": [
+    [
+     1
+    ]
+   ]
+  },
+  "split_primes_by_sign": {
+   "1": 15,
+   "22": 21
   }
  },
- "population": {
-  "n": 1200,
-  "bitlen": 60,
-  "prime_range": [
-   759250125,
-   1073741823
+ "semiprime": {
+  "n": 30000,
+  "primes_lo_hi": [
+   32768,
+   131072
   ],
-  "distinct_primes": 2400,
-  "dup_N": 0
+  "s_hist": [
+   0.8260666666666666,
+   0.16553333333333334,
+   0.0084
+  ],
+  "bin_2_1_11": [
+   0.8264462809917356,
+   0.1652892561983471,
+   0.008264462809917356
+  ],
+  "chi2_s": 0.08272799999999982,
+  "chi2_df2_crit_0.05": 5.991,
+  "I_split_emp": 0.05262384960724384,
+  "I_pair_emp": 0.05262384960724384,
+  "identity_gap": 0.0,
+  "I_law_exact": 0.0518973227981403,
+  "dev_vs_law": 0.0007265268091035393,
+  "perm_null_mean": 0.0010347615803592294,
+  "perm_z": 231.50942364576784,
+  "whichfactor_extra": 0.00032183415504770385,
+  "n_pair_labels": 3
  },
- "features": {
-  "T_min": 0.5138696574975842,
-  "T_max": 2.658263396216869,
-  "T_mean": 1.5402057063427252,
-  "T_sd": 0.4468138080374746,
-  "count_min": 5,
-  "count_max": 20,
-  "count_mean": 11.995,
-  "theoretical_T_ceiling": 3.117553052844928
+ "timing_sec": 5.3,
+ "verdict_inputs": {
+  "H1_full_pinning": true,
+  "H2_binomial": true,
+  "H2_channel_law": true,
+  "H3_thickening_structural": true,
+  "H3_coprime_flat": true
  }
 }
