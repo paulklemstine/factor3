@@ -2012,3 +2012,16 @@ log /tmp/net89.log.
 size stated); (d) clean; (e) deterministic; (f) clean; (g) fair; (h) DIRECT.
 Open: mixing-ratio sweep; block-size sensitivity; other pairs; 1.5B mixed;
 7B cell. Paper 170, issue #333. Now 90 network experiments. Assessment v90.
+
+## Part 90 — THE-SYMMETRIC-MIXTURE-BUMP: sweeping the mixing ratio refutes ALL THREE pre-registered shapes — the knee is NOT linear in ratio (P1✗), NOT a dip below the pure domains (P2✗ — it is a BUMP ABOVE both), NOT monotone in prose fraction (P3✗): 50/50 needs {16, 20} keys at {512, 1024} while BOTH pure endpoints AND BOTH asymmetric mixtures sit at {12, 16}; symmetric mixing pays a +4-key (+25–33%) premium at both contexts; 50/50 also has the LOWEST full accuracy of any arm (0.441/0.467 vs code 0.611/0.651) — a DOUBLE TAX (harder to model outright AND costlier per key); fresh endpoint reads: code replicates NET-68 exactly {12, 16}, prose one grid step low {12, 16} vs {16, 20} (±1-step knee fuzz on razor-thin curves; within-round comparisons valid under one harness); NET-89-vs-90 mixed-knee jitter (12→16 @512 across independent corpus draws) reveals construction-draw variance in mixed budgets LARGER than pure-domain replication; practical: balanced agentic code+prose workloads are underestimated by pure-corpus budget tables by a grid step per context level plus draw variance (NET-90; limited-memory axis round 65)
+
+**Method:** ratio sweep {pure-code, 25/75, 50/50, 75/25, pure-prose} × ctx
+{512, 1024}, grids k∈{8..24}, oracle top-k on Qwen2.5-0.5B fp32, 12 held-out
+windows, gate exact (0.98·full). Script ResearchOutput/exp_net90_mixratio.py;
+results ~/f3cache/net90_results.json; log /tmp/net90.log.
+**Verdict:** THE-SYMMETRIC-MIXTURE-BUMP. Barriers: (a) clean (all three horns
+honestly refuted); (b) clean; (c) confronted (five-point ratio grid, one block
+size stated); (d) clean; (e) deterministic; (f) clean; (g) fair (identical
+harness across ratios); (h) DIRECT. Open: other pairs (math+prose, German+code);
+block-size sensitivity; 1.5B mixed; bump × 4096-acceleration interaction; 7B cell.
+Paper 171, issue #334. Now 91 network experiments. Assessment v91.
