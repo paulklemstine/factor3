@@ -33,8 +33,8 @@ import statistics
 import subprocess
 import time
 
-COMPLETION = "/tmp/llama.cpp/build/bin/llama-completion"
-SPEC = "/tmp/llama.cpp/build/bin/llama-speculative"
+COMPLETION = os.path.expanduser("~/f3cache/llama.cpp/build/bin/llama-completion")
+SPEC = os.path.expanduser("~/f3cache/llama.cpp/build/bin/llama-speculative")
 GGUF_DIR = os.path.expanduser("~/f3cache/gguf")
 TARGET = os.environ.get(
     "NET91_TARGET",
