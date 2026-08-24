@@ -149,7 +149,7 @@ def main():
     mode = sys.argv[1] if len(sys.argv) > 1 else "smoke"
     smoke = mode == "smoke"
     n_pool = 16 if smoke else N_PER_POOL
-    jsamples = 400 if smoke else 150000  # per N per worker-chunk pass (~9 min @4.3k val/s/worker)
+    jsamples = 400 if smoke else (int(sys.argv[2]) if len(sys.argv) > 2 else 150000)  # per N per worker-chunk
     print(f"[{mode}] building primorials...", flush=True)
     P5 = build_primorial(100000)
     P6 = build_primorial(1000000)
@@ -219,7 +219,8 @@ def main():
             "(higher event rate => better powered, weight disclosed)",
         ],
     }
-    fn = f"exp569_{'smoke_' if smoke else ''}result.json"
+    tag = sys.argv[3] if len(sys.argv) > 3 else ("smoke_" if smoke else "")
+    fn = f"exp569_{tag}result.json"
     with open(fn, "w") as f:
         json.dump(out, f, indent=1)
     print(json.dumps(out["stats"], indent=1))
