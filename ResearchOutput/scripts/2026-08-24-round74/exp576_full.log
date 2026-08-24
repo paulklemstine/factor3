@@ -1,0 +1,61 @@
+[full] building primorials...
+primorials: bits P5=143816 P6=1440509
+[full] population: 128 semiprimes bitlen 96, master seed 20260826
+[full] 8 workers x 16 N x 150000 j-samples...
+{
+ "stats": {
+  "mean_hits_per_N": 76.72,
+  "var_hits": 558.12,
+  "D_raw_index_of_dispersion": 7.27,
+  "phi_null_poisson_dispersion": 7.33,
+  "top3_hits": [
+   172,
+   151,
+   130
+  ],
+  "min_hits": 29,
+  "max_hits": 172,
+  "zero_hit_N_count": 0,
+  "rate_min": 0.00019333,
+  "rate_max": 0.00114667,
+  "rate_extremal_ratio": 5.931,
+  "rate_top_decile_over_bottom_decile": 3.112,
+  "dial_correlations": {
+   "S_indiv~S_prod": -0.01,
+   "S_indiv~S139": -0.055,
+   "S_prod~S139": 0.568
+  }
+ },
+ "verdicts": {
+  "H1_QR_explains": false,
+  "H0_unexplained_new_structure": true,
+  "rule": "H1 iff R2_log>=0.25 AND Dred>=30.0% (primary S_indiv); H0/new-structure iff R2_log<0.1 OR Dred<10.0%; else PARTIAL",
+  "verdict": "NEW-STRUCTURE-MAP-ENTRY",
+  "secondary_dial_notes": {
+   "S_prod": [
+    0.0781,
+    "+",
+    14.22
+   ],
+   "S139": [
+    0.0565,
+    "+",
+    9.07
+   ]
+  },
+  "slope_direction_expected": "POSITIVE on QR-count (fewer QR primes => lower yield)"
+ },
+ "regression_S_indiv": {
+  "R2_log_ols": 0.0127,
+  "slope_sign": "-",
+  "slope_std_lograte_per_sd": -0.0352,
+  "glm_b_per_dial_unit": -0.008327,
+  "rate_multiplier_per_unit": 0.9917,
+  "glm_wald_z": -2.82,
+  "pseudo_R2_mcfadden": -0.0001,
+  "pearson_phi_model": 7.36,
+  "D_cond": 7.21,
+  "D_reduction_pct": 0.88
+ }
+}
+[full] distinct=True wall=368.9s -> exp576_result.json

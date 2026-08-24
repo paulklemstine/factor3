@@ -11005,3 +11005,53 @@ reporting prior b~r^-3/2; admissibility rule S_meas counts iff mu_eff<=1/S AND r
 AND kappa_desc reported. Converse roadmap now EMPTY of open gaps: T1/T2 verified · D witnessed ·
 L7' proven-sketch · L8 closed · L4 closed by this framework. PAPERS-ONLY BUMP: count UNCHANGED
 at 564 (theory deliverable, no new experiment). Assessment v331 -> v332. Paper 225, issue #373.
+
+## Part 268 - QR-VS-OVERDISPERSION (round-78 #2, exp 576, v333)
+
+NEW-STRUCTURE-MAP-ENTRY (pre-registered H0 fires; H1 rejected): the recorded small-prime QR
+dial does NOT explain u~10 overdispersion of per-N candidate hit-counts. Population: 128
+balanced bitlen-96 semiprimes, FRESH master seed 20260826, stream-distinctness ASSERTED+RECORDED
+vs seeds 20260824/20260825 (pairwise-disjoint N sets, distinct orderings, hashes e8d89a29a03779d5
+/ 9cb9cc800ee45a38 / 81acc9b5e1be619b); 150k j-samples/N (19.2M total) via exp569 gcd-chain
+tester verbatim, cut 1e6; sympy.jacobi_symbol; wall 368.9 s. Overdispersion REPLICATED fresh-seed:
+mean 76.7 hits/N, Var/mean D_raw = 7.27 (Poisson would be ~1), range 29-172, top-3 clusters
+172/151/130 = paper-220 envelope rescaled exactly. Regressions (per-N log-rates vs dial):
+PRIMARY S_indiv (task-specified sum-of-individual-Jacobi form, l<=100): R2_log=0.0127,
+slope NEGATIVE z=-2.82 (rate x0.9917/unit), D-reduction only 0.88% — H0 fires on BOTH legs.
+Mechanistic secondary S_prod (=#{l<=100: N QR mod l}, the primes that CAN divide x^2-N):
+R2_log=0.0781, slope + z=10.9, D-red 14.22%, phi 7.33->6.07. Tertiary S139@400 (recorded
+paper-136/139 form): R2_log=0.0565, + z=8.7, D-red 9.07%. ALL far below H1's bars
+(R2>=0.25 AND D-red>=30%). CONSEQUENCE: the <=400 QR dial explains at most ~14% of the excess
+variance; >=86% is N-structure beyond every recorded mechanism — papers 136/139 line does not
+extend to scale; map entry NAMED. ANALYTIC CATCH (robustness): under independent characters
+Cov(S_indiv,S_prod)=0 EXACTLY by multinomial algebra (A,B,C classes), measured r=-0.01 — the
+task-specified primary dial is orthogonal by construction to the divisibility carrier
+(l | x^2-N iff Jac(l,N)=+1); verdict robust to dial choice since secondaries also miss H1.
+Scale-shift hypothesis for WHY the recorded law fades: hits require LPF<=1e6 but tested dials
+cover l<=400 only; bitlen-96 pools span ~2^49-51 so the informative prime window has shifted
+into 400..1e6 where the dial is blind (paper-136/139 calibrated at bitlen 40-48 where small
+primes dominate). NAMED FOLLOW-UP: product-form dial over ALL l<=1e6 (computable from p,q mod
+l, ~78k symbols, cheap) — capture => papers 136/139 and 220 unify with a scale-dependent dial
+bound; miss => genuinely new N-structure at u~10. LEDGER CATCHES: (1) first-smoke GLM
+divergence — bare Newton overflowed, fixed with Fisher scoring + deviance step-halving BEFORE
+the full run; (2) smoke/full slope-sign instability flagged (n=16 +, n=128 -, pseudo-R2~-0.001)
+— do NOT cite the negative direction as reversal of paper-139 without replication; (3) monitor
+double-fire — result verified directly from JSON, no data impact.
+
+RIDER — P-hat RESOLUTION-LIMIT NOTE (pertains to paper 225's erratum thread action (a);
+artifact pthat_extraction.md in this directory; no recorded file modified). NO raw P_hit exists
+in any papers-137/143 artifact: exp467 stored per-ordering/per-stratum MEAN COSTS only (no hit
+indicator, orderings are full reorderings with no committed window R); exp474's P_hit was a
+DESIGNED oracle alpha=1.0 exactly at the 29.1x cell (exact enum M=300, no sampling). All four
+booked P-hat are DRAFTED-LAW INVERSIONS of speedups, recovered here to <=2e-4. Full-precision
+anchors extracted: S_meas = 5.193592154916 (n=30000), 6.914724537168 (n=6732), 4.353075657862
+(n=9651), 29.125436718134 (exact enum M=300). Certified-law-implied P-hat =
+0.841617 / 0.894868 / 0.800308 / 0.985068 — the booked 0.9853 OVERSTATES by ~2.3e-4 (p225's own
+0.98504 used the rounded 29.1; true input 29.125437 shifts it +3.1e-5 -> 29.3152 overstates the
+certified reading by ~0.19). Paper 225's corrected-table arithmetic is EXACT at all four loci;
+feasibility margins hold at full precision (mu<=1/S_raw x4; S_A@booked>=S_raw margins
++0.212/+0.242/+0.183/+0.190). RECOMMENDATION: book all four anchors "at resolution limit" not
+"at stored P-hat" (raw-P-hit-stored admissibility clause NOT met; loci carry inversion
+provenance).
+
+Count 564 -> 565. Assessment v332 -> v333. Paper 226, issue #374.

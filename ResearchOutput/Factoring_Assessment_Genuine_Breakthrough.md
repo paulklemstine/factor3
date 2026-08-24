@@ -2595,3 +2595,30 @@ future papers: F1-form + F2-calibration, never bare-(μ,P) closed forms; raw P̂
 baseline named wherever a guarantee is claimed. Converse roadmap EMPTY of open gaps:
 T1/T2 verified · D witnessed · L7′ proven-sketch · L8 closed · L4 closed by this framework.
 Paper 225, issue #373.
+
+**Assessment addendum v333 — 2026-08-24 (round-78 #2).** Experiment recorded (count 564 → 565);
+papers 225 → 226; version v332 → v333. Content: exp576 QR-VS-OVERDISPERSION — NEW-STRUCTURE-MAP-ENTRY
+(pre-registered H0 fires, H1 rejected): the recorded small-prime QR dial does NOT explain u≈10
+overdispersion. Fresh-seed replication of the phenomenon itself: 128 balanced bitlen-96
+semiprimes, seed 20260826 stream-distinctness asserted vs 20260824/20260825; D_raw = 7.27,
+top-3 clusters 172/151/130 = paper-220 envelope rescaled. Dial regressions all far below H1 bars:
+primary S_indiv R²_log=0.0127 / D-red 0.88% (both H0 legs fire); mechanistic S_prod best at
+R²=0.078 / D-red 14.2%; S139@400 0.057 / 9.1% — ≥86% of excess variance is N-structure beyond
+every recorded mechanism; papers 136/139 line does not extend to scale. Robustness is ANALYTIC:
+Cov(S_indiv,S_prod)=0 exactly by multinomial algebra (measured r=−0.01) — primary dial
+orthogonal-by-construction to the divisibility carrier, and secondaries miss H1 too either way.
+Scale-shift hypothesis named (informative window moved past 400 into 400..1e6 where ≤400 dials
+are blind); follow-up NAMED: full product-form dial over ℓ≤1e6 — capture ⇒ papers 136/139 + 220
+unify under a scale-dependent dial bound, miss ⇒ genuinely new N-structure at u≈10. Ledger
+catches honest: first-smoke GLM divergence fixed pre-full (Fisher scoring + step-halving);
+smoke/full slope-sign instability flagged — negative S_indiv slope NOT citable as paper-139
+reversal without replication. RIDER (paper 225 erratum thread action (a), artifact
+pthat_extraction.md): NO raw P_hit exists in any papers-137/143 artifact (exp467 mean costs only;
+exp474's P_hit was a designed oracle α=1.0 exactly at the 29.1× cell) — all four booked P̂ are
+drafted-law inversions recovered to ≤2e-4; full-precision anchors extracted
+(5.193592154916/6.914724537168/4.353075657862/29.125436718134); certified-law-implied P̂ =
+0.841617/0.894868/0.800308/0.985068 (booked 0.9853 overstates ~2.3e-4 → 29.3152 overstates the
+certified reading ~0.19); p225 corrected-table arithmetic EXACT at all loci; feasibility margins
+hold ×4; anchors to be booked "at resolution limit" per p225's own admissibility rule. Barrier
+framing: scale-smoothness frontier — opens "what carries per-N clustering at u≥10"; residue cap
+4/3 untouched; no breakthrough claimed. Paper 226, issue #374.
