@@ -1,0 +1,178 @@
+{
+ "config": {
+  "exp": 586,
+  "codename": "WEIGHT-EXPONENT-FIT",
+  "mode": "full",
+  "source_file": "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp577_result.json",
+  "master_seed": 20260827,
+  "bits": 96,
+  "n_pool": 128,
+  "jsamples_per_N": 150000,
+  "prime_range": [
+   3,
+   400
+  ],
+  "n_odd_primes": 77,
+  "alpha_grid": [
+   0.25,
+   0.5,
+   0.75,
+   1.0,
+   1.25,
+   1.5,
+   2.0
+  ],
+  "alpha_anchor": 0.0,
+  "bootstrap_reps": 500,
+  "bootstrap_seed": 586,
+  "refine_dR2_thresh": 0.03,
+  "confirm_dR2_thresh": 0.02,
+  "regeneration_verified": true,
+  "regen_matches": "128/128"
+ },
+ "regression": {
+  "form": "log((hits+0.5)/total) ~ S_alpha, OLS; S_alpha = sum_{odd prime l<=400} [jacobi(N mod l,l)==+1]/l^alpha",
+  "per_alpha": [
+   {
+    "alpha": 0.0,
+    "R2": 0.320695,
+    "r": 0.566299,
+    "slope": 0.030938,
+    "intercept": -8.801991,
+    "slope_se": 0.004011
+   },
+   {
+    "alpha": 0.25,
+    "R2": 0.498498,
+    "r": 0.706044,
+    "slope": 0.12211,
+    "intercept": -9.097645,
+    "slope_se": 0.010911
+   },
+   {
+    "alpha": 0.5,
+    "R2": 0.624219,
+    "r": 0.790076,
+    "slope": 0.332538,
+    "intercept": -9.029868,
+    "slope_se": 0.022986
+   },
+   {
+    "alpha": 0.75,
+    "R2": 0.575197,
+    "r": 0.758418,
+    "slope": 0.576444,
+    "intercept": -8.590898,
+    "slope_se": 0.044132
+   },
+   {
+    "alpha": 1.0,
+    "R2": 0.47308,
+    "r": 0.687808,
+    "slope": 0.795709,
+    "intercept": -8.230138,
+    "slope_se": 0.074813
+   },
+   {
+    "alpha": 1.25,
+    "R2": 0.396867,
+    "r": 0.629974,
+    "slope": 1.034994,
+    "intercept": -8.029727,
+    "slope_se": 0.113668
+   },
+   {
+    "alpha": 1.5,
+    "R2": 0.347888,
+    "r": 0.58982,
+    "slope": 1.336011,
+    "intercept": -7.921935,
+    "slope_se": 0.162954
+   },
+   {
+    "alpha": 2.0,
+    "R2": 0.29443,
+    "r": 0.542614,
+    "slope": 2.246104,
+    "intercept": -7.821371,
+    "slope_se": 0.309759
+   }
+  ]
+ },
+ "alpha_curve": [
+  {
+   "alpha": 0.0,
+   "R2": 0.320695
+  },
+  {
+   "alpha": 0.25,
+   "R2": 0.498498
+  },
+  {
+   "alpha": 0.5,
+   "R2": 0.624219
+  },
+  {
+   "alpha": 0.75,
+   "R2": 0.575197
+  },
+  {
+   "alpha": 1.0,
+   "R2": 0.47308
+  },
+  {
+   "alpha": 1.25,
+   "R2": 0.396867
+  },
+  {
+   "alpha": 1.5,
+   "R2": 0.347888
+  },
+  {
+   "alpha": 2.0,
+   "R2": 0.29443
+  }
+ ],
+ "stats": {
+  "alpha_hat": 0.5,
+  "R2_at_alpha_hat": 0.624219,
+  "R2_at_alpha_1": 0.47308,
+  "delta_R2_vs_harmonic": 0.15114,
+  "bootstrap_ci95": [
+   0.5,
+   0.5
+  ],
+  "ci_contains_1": false,
+  "bootstrap_mean_alpha": 0.504,
+  "bootstrap_distribution": {
+   "0.5": 492,
+   "0.75": 8
+  },
+  "R2_unweighted_alpha0": 0.320695,
+  "delta_best_vs_unweighted": 0.303524,
+  "delta_harmonic_vs_unweighted": 0.152385,
+  "S400_regen_crosscheck": {
+   "corr_mine_vs_stored": 0.9999999999999998,
+   "diff_min": 0.0,
+   "diff_max": 0.0,
+   "note": "stored S400 may include l=2; diff should be in {0,1}-ish constant band if Ns identical"
+  },
+  "mean_hits_per_N": 77.58
+ },
+ "verdicts": {
+  "rule": "H1 iff alpha_hat!=1 AND dR2>=0.03; H0 iff CI contains 1 OR dR2<0.02; else BORDERLINE",
+  "fired": "H1_HARMONIC_REFINED",
+  "H1_harmonic_refined": true,
+  "H0_harmonic_confirmed": false,
+  "any_fitted_alpha_beats_unweighted_materially": true,
+  "harmonic_beats_unweighted_by": 0.152385
+ },
+ "honest_notes": [
+  "Pure reanalysis of exp577 stored per-N hit counts; no new j-sampling.",
+  "alpha_hat is discrete over the pre-named grid; CI endpoints are grid points.",
+  "S400 crosscheck: exp577's dial definition may include l=2 whereas this analysis uses odd primes l>=3 only (paper 231), so an offset is expected.",
+  "population regeneration verified against stored N strings: True",
+  "R2 on log-rate attenuated by per-N Poisson noise (~150k samples, mean hits 77.6), same attenuation regime as exp577 itself."
+ ],
+ "wall_s": 0.2
+}

@@ -1,0 +1,14 @@
+{
+ "fired": "H1_HARMONIC_REFINED",
+ "alpha_hat": 0.5,
+ "R2_hat": 0.6242,
+ "R2_harm": 0.4731,
+ "dR2": 0.1511,
+ "CI": [
+  0.5,
+  0.5
+ ],
+ "R2_unw": 0.3207,
+ "wall_s": 0.2,
+ "out": "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp586_result.json"
+}

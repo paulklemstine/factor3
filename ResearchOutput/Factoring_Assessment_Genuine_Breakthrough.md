@@ -2828,3 +2828,26 @@ claim), shape confirmation closed by 233. Barrier framing: consolidation that pr
 synthesizing around a contradiction — caught the correlated-artifact chain 229/231/232 that
 would otherwise have read as robust triangulation, sealed corrections WITH mechanisms; residue
 cap untouched; no breakthrough claimed. Paper 234, issue #382.
+
+**Assessment addendum v342 — 2026-08-24 (round-83 #2).** Experiment recorded (count 572 → 573;
+max-id tracker 572 → 586); papers 234 → 235; version v341 → v342. Content: WEIGHT-EXPONENT-FIT
+(exp 586) — pure reanalysis of exp577's per-N hit counts fitting the scale-smoothness dial's
+weight exponent α properly; paper 227 had adopted 1/ℓ BY INSPECTION. Verdict
+**H1_HARMONIC_REFINED**: α-curve single-peaked interior max at **α̂ = 0.5 (√-weight)** —
+R² = .3207/.4985/**.6242**/.5752/.4731/.3969/.3479/.2944 over α = 0/0.25/0.5/0.75/1.0/1.25/1.5/2.0;
+harmonic sits on the FALLING limb; ΔR²(α̂) − R²(1) = +0.151 ≥ 0.03 bar; bootstrap CI95 [0.5,0.5]
+(492/500 pick 0.5, 8/500 pick 0.75, mean 0.504) EXCLUDES 1 decisively. Sanity anchors: even
+harmonic beats unweighted +0.152 (227 right that weighting matters), best beats unweighted +0.304
+(wrong about the exponent). **ERRATUM-GRADE SUPERSESSION of paper 227's adopted covariate:
+1/ℓ → 1/√ℓ lab-wide** — large primes carry ~√ℓ× more relative weight than assumed; dial power
++31% relative on identical data (R² .473 → .624). Downstream: every future scale-smoothness dial
+computation uses √-weight; NAMED OPEN CHECK: window-location saturation B*=400 was measured under
+1/ℓ and its transfer to √-weight is UNVERIFIED before reuse. Integrity: 128/128 Ns regenerated
+byte-identical from recipe seed 20260827; odd-prime QR counts match stored S400 EXACTLY (diff 0.0,
+corr ≈1.0 — exp577's dial effectively excluded ℓ=2 despite config ambiguity). Limits disclosed:
+grid ±0.25 resolution; one seed; log-rate Poisson attenuation uniform across α (argmax robust,
+absolute R² attenuated); smoke n=16 grid-edge 0.25 was small-n noise. Ledger catch: task-brief
+schema drift only (raw_counts keys vs rows layout) — no data issue. Barrier framing: instrument
+hardening of the map's canonical covariate — not asymptotic-class itself, but every downstream
+scale-smoothness measurement inherits the corrected weight; residue cap 4/3 untouched; no
+breakthrough claimed. Paper 235, issue #383.
