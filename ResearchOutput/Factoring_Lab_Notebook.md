@@ -11055,3 +11055,59 @@ feasibility margins hold at full precision (mu<=1/S_raw x4; S_A@booked>=S_raw ma
 provenance).
 
 Count 564 -> 565. Assessment v332 -> v333. Paper 226, issue #374.
+
+## Part 269 - PRODUCT-DIAL-SCALESHIFT (round-79 #1, exp 577 + verifyL7b, v334)
+
+WINDOW-STRONGER-NOT-SHIFTED (pre-registered): H1 scale-shift REFUTED, H0 blocked (the <=400 dial
+alone clears the 30% bar this seed) — PLUS a verified two-artifact diagnosis making paper 226's
+SECONDARY conclusions erratum-grade while its PRIMARY null stands. Population: 128 balanced
+bitlen-96 semiprimes, FRESH master seed 20260827, lineage discipline exemplary — prior trio hashes
+e8d89a29a03779d5/9cb9cc800ee45a38/81acc9b5e1be619b REGENERATED exactly, new hash
+a15e2877dd1dac7a, four pairwise disjoint; exp569 tester verbatim, 150k j-samples/N cut 1e6;
+wall 380.8 s. Overdispersion REPLICATED 3rd time: mean 77.58 hits/N, Var/mean D_raw=4.90
+(phi_null 4.93), top-3 135/135/130, range 37-135, decile ratio 2.416. SWEEP CURVE (cumulative
+QR-count dial vs log-rate): B=400 R2=.3207/D-red 33.43% | 4000 .0241/2.40% | 4e4 .0150/1.68% |
+1e5 .0000/0.0% | 1e6 .0277/4.11%; all four shift candidates fail BOTH pre-registered legs
+(R2 margins to abs bar -0.132..-0.160); extension DILUTES because equal-weight counting buries
+primes informative ~1/l. B*=400 — paper-136/139 window location CONFIRMED scale-independent.
+WEIGHTED DIAL IS THE LAW: W(B)=sum_{QR l<=B} 1/l gives W400 R2=.4731/z=16.77/D-red 48.11%,
+W1e6 .4786/16.83/48.51%; corr(W1e6,W400)=0.999 (independent verifier population 0.9991 pearson /
+0.9985 spearman); signal SATURATES BY 400 once harmonically weighted. ADOPTED AS CANONICAL
+scale-smoothness covariate (replaces count dial of papers 136/139/220/226);
+corr(W400,C400-count)=0.365 — same carry, different allocation, weighted dominates everywhere.
+
+VERIFIED THREE-PART DIAGNOSIS OF PAPER 226 (verifyL7b independent script/log/result, own seed
+20260831 n=64, wall 187.1 s): (1) 226's SECONDARY E-forms are composite-bottom dials
+(l|lo)(l|hi) whose reciprocity sign vs clean Legendre (l|N mod l) flips IFF l=3 mod 4 AND N=3
+mod 4 — %N3=52.3%, conditional flip rate 100% (2680/2680, zero violations), unconditional
+27.19%=52.3%x0.5195 MATCHED TO 2ND DECIMAL (replicated on verifier pop: 45.3%, 1160/1160,
+23.54%). Flipped forms reproduce the published weakness class (S_prod@100flip .030/4.11%;
+S139@400flip .0456/5.46% vs printed .0781/14.22% and .0565/9.07%) while CLEAN C100 Legendre is
+STRONG on same rows (.3728/34.45%, r-vs-C400=.476) -> 226's S_prod and S139@400 rows and all
+downstream "at most ~14%"/">=86% N-structure" sentences RETRACTED-AS-ARTIFACT. (2) 226's
+PRIMARY S_indiv null REPLICATES as TRUE NULL here (.0019/0.09%, z=0.72) — flip mechanism
+inapplicable (no composite bottom) — consistent null, only secondary retracted. (3)
+exp576-vs-exp577 S400 discrepancy (0.078 vs 0.32) TRACED to form difference + estimator spread:
+verifyL7b recomputed C400==recorded S400 on 128/128 rows, but its own 64-N pop reads C400 at
+19.01% while C100-clean stays strong in BOTH pops (34.45%/34.75%) and flipped E400 weak in both
+(5.46%/2.43%) — documented, not a reproducibility failure; quote effect sizes as bands.
+DISPERSION BOOKKEEPING both readings: count@400 = 33.4% raw = 42.1% of excess-above-Poisson;
+W1e6 = 48.5% raw = 61.0% excess; residual ~51.4% raw / ~39.0% excess, STILL OVERDISPERSED
+(D_cond>1 all dials: 3.26/2.52); caveat: D_red identity vs Var-ratio does not hold exactly
+across columns (GLM deviance vs Var-ratio definitions), readings reported separately. PAPER
+226'S ">=86% NEW STRUCTURE" SHRINKS TO ~39-58% RESIDUAL NON-QR (dial/reading dependent).
+
+LEDGER CATCHES (adversarial BOTH directions): (1) first-draft ORTHOGONALITY claim ("reciprocity
+signs cancel") RETRACTED by verification — sign flips iff l=3mod4 AND N=3mod4, annotated
+in-script; via label-swap clarification verifyL7b's "formA" column IS clean C100 (its build_cols
+codes gjac(lo%p,p)*gjac(hi%p,p)=(N|p)), so r(flipP100,C400)=0.058 STANDS for the FLIPPED form;
+(2) verifier addendum leg "removing l=2 makes formA strong" REJECTED empirically by author —
+flipped-without-l=2 stays weak .0322/4.34% (l=2 shifts counts 0/1 only); (3) pre-reg header error
+caught+annotated; (4) l=2 even-modulus Jacobi crash caught in smoke, fixed pre-full; (5) self-
+catches pre-ledger: first-draft T1 bound mismatch, missing-/n correlation slips; (6) smoke n=16
+SPURIOUSLY FIRED H1 (QR-WINDOW-SHIFTED via S4000 leg-ii 35.31%) — full n=128 refutes, smoke
+verdict marked NON-EVIDENTIARY. Barrier validation: closes paper 226's named follow-up under
+fixed bars; canonical covariate upgrade count->weighted; residual non-QR target ~39-58%;
+papers 136/139 stand at their own scale with window location vindicated and form upgraded;
+residue cap untouched; no complexity claim. Count 565 -> 566. Assessment v333 -> v334. Paper 227,
+issue #375.

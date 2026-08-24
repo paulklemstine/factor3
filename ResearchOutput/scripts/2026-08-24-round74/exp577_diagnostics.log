@@ -1,0 +1,92 @@
+{
+ "status": "POST-HOC diagnostics (not pre-registered)",
+ "T1_gmpy_vs_sympy_max_abs_diff_at_100": 0,
+ "T3_pct_N_eq_3_mod_4": 52.3,
+ "T3_reciprocity_flip_events_on_l3mod4_N3mod4": 2680,
+ "T3_agree_events": 0,
+ "T3_flip_rate_pct": 100.0,
+ "T3_corr_Sprod576_vs_clean_C400_pearson_r": 0.058,
+ "T4_corr_W400_vs_C400": 0.365,
+ "T4_corr_W1e6_vs_W400": 0.999,
+ "regressions": [
+  {
+   "dial": "C100_sympy_crosscheck",
+   "R2_log_ols": 0.3728,
+   "slope_sign": "+",
+   "glm_wald_z": 14.72,
+   "D_reduction_pct": 34.45
+  },
+  {
+   "dial": "C400_clean_gmpy",
+   "R2_log_ols": 0.3207,
+   "slope_sign": "+",
+   "glm_wald_z": 14.16,
+   "D_reduction_pct": 33.43
+  },
+  {
+   "dial": "S_prod@100_EXP576_FORM",
+   "R2_log_ols": 0.03,
+   "slope_sign": "+",
+   "glm_wald_z": 5.17,
+   "D_reduction_pct": 4.11
+  },
+  {
+   "dial": "S139@400_EXP576_FORM",
+   "R2_log_ols": 0.0454,
+   "slope_sign": "+",
+   "glm_wald_z": 5.88,
+   "D_reduction_pct": 5.49
+  },
+  {
+   "dial": "W400_weighted_1_over_l",
+   "R2_log_ols": 0.4731,
+   "slope_sign": "+",
+   "glm_wald_z": 16.77,
+   "D_reduction_pct": 48.11
+  },
+  {
+   "dial": "W1e6_weighted_1_over_l",
+   "R2_log_ols": 0.4786,
+   "slope_sign": "+",
+   "glm_wald_z": 16.83,
+   "D_reduction_pct": 48.51
+  }
+ ],
+ "revision_2026_08_24_verifyL7b": {
+  "note": "verifier's 'formA strong' column is CLEAN C100 (label swap in verifyL7b build_cols line 'gjac(lo % p, p)*gjac(hi % p, p)'); flipped forms stay weak with or without l=2 -> the proposed 'l=2 mishandling' leg is REJECTED (bounded +-1 count); exp576 PRIMARY S_indiv null confirmed here -> remains OPEN",
+  "columns": {
+   "P100flip_with2": {
+    "dial": "P100flip_with2",
+    "R2_log_ols": 0.03,
+    "slope_sign": "+",
+    "glm_wald_z": 5.17,
+    "D_reduction_pct": 4.11,
+    "pearson_vs_C400": 0.05804046375414087
+   },
+   "P100flip_no2": {
+    "dial": "P100flip_no2",
+    "R2_log_ols": 0.0322,
+    "slope_sign": "+",
+    "glm_wald_z": 5.3,
+    "D_reduction_pct": 4.34,
+    "pearson_vs_C400": 0.09655362955787124
+   },
+   "C100clean_no2": {
+    "dial": "C100clean_no2",
+    "R2_log_ols": 0.3728,
+    "slope_sign": "+",
+    "glm_wald_z": 14.72,
+    "D_reduction_pct": 34.45,
+    "pearson_vs_C400": 0.47626105432079047
+   },
+   "SIndiv576_with2": {
+    "dial": "SIndiv576_with2",
+    "R2_log_ols": 0.0019,
+    "slope_sign": "+",
+    "glm_wald_z": 0.72,
+    "D_reduction_pct": 0.09,
+    "pearson_vs_C400": -0.03147776044900215
+   }
+  }
+ }
+}

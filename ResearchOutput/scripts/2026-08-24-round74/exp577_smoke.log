@@ -1,0 +1,66 @@
+[smoke] building primorials...
+primorials: bits P5=143816 P6=1440509
+[smoke] population: 16 semiprimes bitlen 96, master seed 20260827
+population built (0.0s); distinct=True
+[smoke] 2 workers x 8 N x 20000 j-samples...
+hit counts done (19.6s)
+[smoke] product dial: all ODD primes <= 4000, cutoffs [400, 4000]...
+549 odd primes
+dial built (0.0s, pure pass 0.0s)
+{
+ "stats": {
+  "mean_hits_per_N": 10.94,
+  "var_hits": 22.81,
+  "D_raw_index_of_dispersion": 2.09,
+  "phi_null_poisson_dispersion": 2.22,
+  "top3_hits": [
+   21,
+   17,
+   16
+  ],
+  "min_hits": 5,
+  "max_hits": 21,
+  "zero_hit_N_count": 0,
+  "rate_top_decile_over_bottom_decile": 4.2,
+  "segment_s": {
+   "population": 0.0,
+   "hits": 19.6,
+   "dial_incl_primes": 0.0,
+   "dial_pure_pass": 0.0
+  }
+ },
+ "verdicts": {
+  "H1_scale_shift_real": true,
+  "H0_no_qr_carry_any_scale": false,
+  "rule": "leg(i) at B: R2_log>=0.16 AND >=2x base_R2@400(this run); leg(ii): D_reduction>=30%; shift candidates B in {4000,4e4,1e5,1e6}; H1 iff any candidate clears either leg (pre-named primary B=1e6); else WINDOW-STRONGER-NOT-SHIFTED if Dred@400>=30%; else H0 NO-QR-CARRY-ANY-SCALE-LE-1E6",
+  "base_R2_at_400_this_run": 0.2524,
+  "fired_per_candidate": {
+   "S4000": {
+    "leg_i_R2_ge_abs_and_2x_base": false,
+    "leg_ii_Dred_ge_30": true,
+    "margin_R2_to_abs_bar": 0.126
+   }
+  },
+  "one_e6_leg_fired": false,
+  "B_star_argmax_R2": "S4000",
+  "B_star_R2": 0.286,
+  "B_star_D_reduction_pct": 35.31,
+  "verdict": "QR-WINDOW-SHIFTED",
+  "slope_direction_expected": "POSITIVE on QR-count at the informative bound"
+ },
+ "curve": {
+  "S400": {
+   "R2_log_ols": 0.2524,
+   "slope_sign": "+",
+   "glm_wald_z": 2.779,
+   "D_reduction_pct": 21.02
+  },
+  "S4000": {
+   "R2_log_ols": 0.286,
+   "slope_sign": "+",
+   "glm_wald_z": 3.295,
+   "D_reduction_pct": 35.31
+  }
+ }
+}
+[smoke] distinct=True wall=20.1s -> exp577_smoke_result.json

@@ -2622,3 +2622,36 @@ certified reading ~0.19); p225 corrected-table arithmetic EXACT at all loci; fea
 hold ×4; anchors to be booked "at resolution limit" per p225's own admissibility rule. Barrier
 framing: scale-smoothness frontier — opens "what carries per-N clustering at u≥10"; residue cap
 4/3 untouched; no breakthrough claimed. Paper 226, issue #374.
+
+**Assessment addendum v334 — 2026-08-24 (round-79 #1).** Experiment + independent verification
+recorded (count 565 → 566); papers 226 → 227; version v333 → v334. Content: exp577
+PRODUCT-DIAL-SCALESHIFT (+ verifyL7b) — WINDOW-STRONGER-NOT-SHIFTED (pre-registered): paper 226's
+scale-shift hypothesis REFUTED, its H0 blocked by the disclosed branch (≤400 dial alone clears
+the 30% bar). Sweep of the cumulative QR-count dial to ℓ≤1e6 (128 bitlen-96 semiprimes, fresh
+seed 20260827, four-seed lineage asserted pairwise disjoint; overdispersion replicated 3rd time:
+D_raw=4.90, top-3 135/135/130): B=400 R²=.3207/D-red 33.4% | 4000 .0241/2.4% | 4e4 .0150/1.7% |
+1e5 .0000/0.0% | 1e6 .0277/4.1% — NO shift past 400; equal-weight counting buries primes
+informative ~1/ℓ; B*=400 ⇒ papers-136/139 window location CONFIRMED scale-independent. THE
+WEIGHTED DIAL IS THE LAW: Σ_{QR ℓ≤B} 1/ℓ gives W400 R²=.4731/D-red 48.1%, W1e6 .4786/48.5%
+(z≈16.8), corr(W1e6,W400)=0.999 (.9991 verifier population) — signal saturates BY 400 once
+harmonically weighted; ADOPTED as canonical scale-smoothness covariate, superseding the count
+dial throughout papers 136/139/220/226. VERIFIED THREE-PART DIAGNOSIS OF PAPER 226 (erratum-grade
+for its SECONDARY conclusions): (1) its S_prod/S139@400 rows are composite-bottom dials whose
+reciprocity sign vs clean Legendre flips iff ℓ≡3 mod 4 ∧ N≡3 mod 4 (52.3% of N; conditional flip
+100%, 2680/2680; unconditional 27.19% predicted=measured to 2nd decimal) — published weakness is
+DIAL-FORM ARTIFACT (flipped forms reproduce it: .030/4.11% and .0456/5.46%) while clean C100
+Legendre is STRONG (.3728/34.45%) — rows and all downstream "≤14%"/"≥86%" sentences
+RETRACTED-AS-ARTIFACT; (2) its PRIMARY S_indiv null REPLICATES as true null here (.0019/0.09%,
+z=0.72 — flip inapplicable), consistent, not contradicted; (3) exp576-vs-577 S400 discrepancy
+(0.078 vs 0.32) traced to form difference + estimator spread (C400==recorded S400 on 128/128
+rows; verifier pop reads 19.01% while C100-clean strong in both pops) — documented, not a
+reproducibility failure. Bookkeeping both readings: count@400 = 33.4% raw / 42.1% excess;
+W1e6 = 48.5% raw / 61.0% excess; residual ~39–58% still overdispersed (D_cond>1) — 226's "≥86%
+new structure" SHRINKS accordingly. Ledger catches adversarial BOTH directions: first-draft
+"(signs cancel)" orthogonality claim RETRACTED (r(flipP100,C400)=0.058 stands for the FLIPPED
+form via label-swap clarification); verifier addendum "removing ℓ=2 rescues formA" REJECTED
+empirically (.0322/4.34% without ℓ=2); ℓ=2 Jacobi crash caught in smoke; smoke n=16 spuriously
+fired H1 — marked NON-EVIDENTIARY. Barrier framing: closes 226's named follow-up under fixed
+bars; canonical-covariate upgrade; residual non-QR target refined; papers 136/139 stand at their
+own scale with location vindicated and form upgraded; residue cap untouched; no breakthrough
+claimed. Paper 227, issue #375.

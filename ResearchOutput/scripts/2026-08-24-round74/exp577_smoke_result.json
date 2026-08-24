@@ -1,0 +1,310 @@
+{
+ "exp": "577",
+ "codename": "PRODUCT-DIAL-SCALESHIFT",
+ "mode": "smoke",
+ "config": {
+  "master_seed": 20260827,
+  "bits": 96,
+  "n_pool": 16,
+  "jsamples_per_N": 20000,
+  "cut": 1000000,
+  "tester": "exp569 gcd-chain verbatim (exp576 code path)",
+  "jacobi_impl": "gmpy2.jacobi(N mod l, l)",
+  "primes_impl": "sympy.primerange",
+  "prime_max": 4000,
+  "sweep_bounds": [
+   400,
+   4000
+  ],
+  "dial_def": "#{prime l <= B : jacobi(N mod l, l)==+1}",
+  "bars": {
+   "R2_H1_ABS": 0.16,
+   "R2_H1_MULT_x_base400": 2.0,
+   "DRED_H1_PCT": 30.0
+  },
+  "seed_distinctness": {
+   "pairwise_disjoint_N_sets": true,
+   "ordering_differs_vs_each_prior": {
+    "20260824": true,
+    "20260825": true,
+    "20260826": true
+   },
+   "hashes": {
+    "20260824": "04add3ab15298520",
+    "20260825": "65a9b34dfb22249e",
+    "20260826": "bdcd5b90c19d7d48",
+    "20260827": "68dea10048280f9e"
+   },
+   "prior_lineage_hash_reproduction_vs_exp576": {
+    "20260824": false,
+    "20260825": false,
+    "20260826": false
+   }
+  }
+ },
+ "rows": [
+  {
+   "i": 0,
+   "N": "70572387211049146496371712059",
+   "lo": "260824191038251",
+   "hi": "270574546517809",
+   "hits": 16,
+   "total": 20000,
+   "rate": 0.0008,
+   "S400": 37,
+   "S4000": 265
+  },
+  {
+   "i": 1,
+   "N": "54352873658720499605839003643",
+   "lo": "209283836006603",
+   "hi": "259708894369681",
+   "hits": 10,
+   "total": 20000,
+   "rate": 0.0005,
+   "S400": 43,
+   "S4000": 274
+  },
+  {
+   "i": 2,
+   "N": "45658693881266353857069711049",
+   "lo": "178242435587929",
+   "hi": "256160626007281",
+   "hits": 5,
+   "total": 20000,
+   "rate": 0.00025,
+   "S400": 33,
+   "S4000": 249
+  },
+  {
+   "i": 3,
+   "N": "57781318417812964505450005687",
+   "lo": "219807381959771",
+   "hi": "262872510934997",
+   "hits": 8,
+   "total": 20000,
+   "rate": 0.0004,
+   "S400": 39,
+   "S4000": 273
+  },
+  {
+   "i": 4,
+   "N": "63862809555889131258781046309",
+   "lo": "241351433645857",
+   "hi": "264605055752837",
+   "hits": 16,
+   "total": 20000,
+   "rate": 0.0008,
+   "S400": 38,
+   "S4000": 287
+  },
+  {
+   "i": 5,
+   "N": "42544996869909188406878323679",
+   "lo": "192205506268421",
+   "hi": "221351602750099",
+   "hits": 8,
+   "total": 20000,
+   "rate": 0.0004,
+   "S400": 38,
+   "S4000": 288
+  },
+  {
+   "i": 6,
+   "N": "42001273867523469952352686603",
+   "lo": "164045645139569",
+   "hi": "256034068028987",
+   "hits": 5,
+   "total": 20000,
+   "rate": 0.00025,
+   "S400": 41,
+   "S4000": 273
+  },
+  {
+   "i": 7,
+   "N": "45137859873142969246674110083",
+   "lo": "212324986168849",
+   "hi": "212588544982867",
+   "hits": 10,
+   "total": 20000,
+   "rate": 0.0005,
+   "S400": 34,
+   "S4000": 258
+  },
+  {
+   "i": 8,
+   "N": "52747438673196331163685885289",
+   "lo": "209316721915649",
+   "hi": "251998207264361",
+   "hits": 21,
+   "total": 20000,
+   "rate": 0.00105,
+   "S400": 41,
+   "S4000": 296
+  },
+  {
+   "i": 9,
+   "N": "46780334439330706328350553573",
+   "lo": "187518228114169",
+   "hi": "249470864298317",
+   "hits": 6,
+   "total": 20000,
+   "rate": 0.0003,
+   "S400": 34,
+   "S4000": 265
+  },
+  {
+   "i": 10,
+   "N": "42314405545448267629764786479",
+   "lo": "200857160214649",
+   "hi": "210669141693671",
+   "hits": 13,
+   "total": 20000,
+   "rate": 0.00065,
+   "S400": 42,
+   "S4000": 281
+  },
+  {
+   "i": 11,
+   "N": "53934292446977412959107151111",
+   "lo": "195418551404827",
+   "hi": "275993717378693",
+   "hits": 5,
+   "total": 20000,
+   "rate": 0.00025,
+   "S400": 35,
+   "S4000": 276
+  },
+  {
+   "i": 12,
+   "N": "48688625094345136267674500131",
+   "lo": "181584406059787",
+   "hi": "268132193456713",
+   "hits": 14,
+   "total": 20000,
+   "rate": 0.0007,
+   "S400": 40,
+   "S4000": 276
+  },
+  {
+   "i": 13,
+   "N": "58146172283546972133351317749",
+   "lo": "207316929027409",
+   "hi": "280469967196261",
+   "hits": 17,
+   "total": 20000,
+   "rate": 0.00085,
+   "S400": 44,
+   "S4000": 288
+  },
+  {
+   "i": 14,
+   "N": "44238193516083238815964517987",
+   "lo": "206920126638781",
+   "hi": "213793574528927",
+   "hits": 8,
+   "total": 20000,
+   "rate": 0.0004,
+   "S400": 41,
+   "S4000": 281
+  },
+  {
+   "i": 15,
+   "N": "44277848548161389686134476791",
+   "lo": "163693862532061",
+   "hi": "270491806248931",
+   "hits": 13,
+   "total": 20000,
+   "rate": 0.00065,
+   "S400": 41,
+   "S4000": 276
+  }
+ ],
+ "regression": {
+  "primary_dial": "S1000000 (pre-named; full product dial)",
+  "dial_def": "#{prime l <= B : jacobi(N mod l, l)==+1}",
+  "per_dial": {
+   "S400": {
+    "bound": 400,
+    "R2_log_ols": 0.2524,
+    "slope_sign": "+",
+    "slope_std_lograte_per_sd": 0.2187,
+    "glm_b_per_dial_unit": 0.06508801,
+    "rate_multiplier_per_unit": 1.0673,
+    "glm_wald_z": 2.779,
+    "pseudo_R2_mcfadden": -0.0156,
+    "pearson_phi_model": 1.86,
+    "D_cond": 1.65,
+    "D_reduction_pct": 21.02
+   },
+   "S4000": {
+    "bound": 4000,
+    "R2_log_ols": 0.286,
+    "slope_sign": "+",
+    "slope_std_lograte_per_sd": 0.2328,
+    "glm_b_per_dial_unit": 0.0220901,
+    "rate_multiplier_per_unit": 1.0223,
+    "glm_wald_z": 3.295,
+    "pseudo_R2_mcfadden": -0.022,
+    "pearson_phi_model": 1.6,
+    "D_cond": 1.35,
+    "D_reduction_pct": 35.31
+   }
+  }
+ },
+ "stats": {
+  "mean_hits_per_N": 10.94,
+  "var_hits": 22.81,
+  "D_raw_index_of_dispersion": 2.09,
+  "phi_null_poisson_dispersion": 2.22,
+  "top3_hits": [
+   21,
+   17,
+   16
+  ],
+  "min_hits": 5,
+  "max_hits": 21,
+  "zero_hit_N_count": 0,
+  "rate_top_decile_over_bottom_decile": 4.2,
+  "dial_correlations": {
+   "S400~S4000": 0.675
+  },
+  "segment_s": {
+   "population": 0.0,
+   "hits": 19.6,
+   "dial_incl_primes": 0.0,
+   "dial_pure_pass": 0.0
+  }
+ },
+ "verdicts": {
+  "H1_scale_shift_real": true,
+  "H0_no_qr_carry_any_scale": false,
+  "rule": "leg(i) at B: R2_log>=0.16 AND >=2x base_R2@400(this run); leg(ii): D_reduction>=30%; shift candidates B in {4000,4e4,1e5,1e6}; H1 iff any candidate clears either leg (pre-named primary B=1e6); else WINDOW-STRONGER-NOT-SHIFTED if Dred@400>=30%; else H0 NO-QR-CARRY-ANY-SCALE-LE-1E6",
+  "base_R2_at_400_this_run": 0.2524,
+  "fired_per_candidate": {
+   "S4000": {
+    "leg_i_R2_ge_abs_and_2x_base": false,
+    "leg_ii_Dred_ge_30": true,
+    "margin_R2_to_abs_bar": 0.126
+   }
+  },
+  "one_e6_leg_fired": false,
+  "B_star_argmax_R2": "S4000",
+  "B_star_R2": 0.286,
+  "B_star_D_reduction_pct": 35.31,
+  "verdict": "QR-WINDOW-SHIFTED",
+  "consequence_if_H1": "papers 136/139/220 unify under a scale-dependent QR dial bound; u~10 overdispersion is QR-carried once the window tracks LPF<=1e6",
+  "consequence_if_H0": "clustering not QR-carried at any symbol-reachable scale -> deepens to non-QR N-structure (factor-local/non-character) map entry",
+  "slope_direction_expected": "POSITIVE on QR-count at the informative bound"
+ },
+ "honest_notes": [
+  "sweep columns are NESTED (monotone in B) hence strongly correlated; B*=argmax on the same data is selection-optimistic -- the absolute 0.16 floor on leg(i) mitigates",
+  "expected hits/N moderate -> per-N Poisson noise attenuates R2_log; GLM carries the inference (Fisher scoring, cannot diverge)",
+  "single fresh master seed 20260827; lineage distinctness asserted vs regenerated 20260824/25/26 streams (+hash reproduction of the exp576-recorded trio in full mode)",
+  "D_reduction denominator = raw Var/mean exactly as exp576 (comparable)",
+  "B=400 column is form-identical to exp576's S_prod/S139 family (reciprocity signs cancel in the product form)",
+  "zeros smoothed +0.5 only in the OLS-on-log leg; GLM unsmoothed",
+  "l=2 excluded from the dial (Jacobi undefined at even modulus; gmpy2 raises) -- N odd makes N mod 2 trivial, omission bounded by 1 count/N; base_R2@400 measured under the SAME definition so the pre-registered comparison is internally consistent"
+ ],
+ "wall_s": 20.1
+}

@@ -1,0 +1,99 @@
+[full] building primorials...
+primorials: bits P5=143816 P6=1440509
+[full] population: 128 semiprimes bitlen 96, master seed 20260827
+population built (0.0s); distinct=True
+[full] 8 workers x 16 N x 150000 j-samples...
+hit counts done (378.1s)
+[full] product dial: all ODD primes <= 1000000, cutoffs [400, 4000, 40000, 100000, 1000000]...
+78497 odd primes
+dial built (2.2s, pure pass 1.8s)
+{
+ "stats": {
+  "mean_hits_per_N": 77.58,
+  "var_hits": 379.81,
+  "D_raw_index_of_dispersion": 4.9,
+  "phi_null_poisson_dispersion": 4.93,
+  "top3_hits": [
+   135,
+   135,
+   130
+  ],
+  "min_hits": 37,
+  "max_hits": 135,
+  "zero_hit_N_count": 0,
+  "rate_top_decile_over_bottom_decile": 2.416,
+  "segment_s": {
+   "population": 0.0,
+   "hits": 378.1,
+   "dial_incl_primes": 2.2,
+   "dial_pure_pass": 1.8
+  }
+ },
+ "verdicts": {
+  "H1_scale_shift_real": false,
+  "H0_no_qr_carry_any_scale": false,
+  "rule": "leg(i) at B: R2_log>=0.16 AND >=2x base_R2@400(this run); leg(ii): D_reduction>=30%; shift candidates B in {4000,4e4,1e5,1e6}; H1 iff any candidate clears either leg (pre-named primary B=1e6); else WINDOW-STRONGER-NOT-SHIFTED if Dred@400>=30%; else H0 NO-QR-CARRY-ANY-SCALE-LE-1E6",
+  "base_R2_at_400_this_run": 0.3207,
+  "fired_per_candidate": {
+   "S4000": {
+    "leg_i_R2_ge_abs_and_2x_base": false,
+    "leg_ii_Dred_ge_30": false,
+    "margin_R2_to_abs_bar": -0.1359
+   },
+   "S40000": {
+    "leg_i_R2_ge_abs_and_2x_base": false,
+    "leg_ii_Dred_ge_30": false,
+    "margin_R2_to_abs_bar": -0.145
+   },
+   "S100000": {
+    "leg_i_R2_ge_abs_and_2x_base": false,
+    "leg_ii_Dred_ge_30": false,
+    "margin_R2_to_abs_bar": -0.16
+   },
+   "S1000000": {
+    "leg_i_R2_ge_abs_and_2x_base": false,
+    "leg_ii_Dred_ge_30": false,
+    "margin_R2_to_abs_bar": -0.1323
+   }
+  },
+  "one_e6_leg_fired": false,
+  "B_star_argmax_R2": "S400",
+  "B_star_R2": 0.3207,
+  "B_star_D_reduction_pct": 33.43,
+  "verdict": "WINDOW-STRONGER-NOT-SHIFTED",
+  "slope_direction_expected": "POSITIVE on QR-count at the informative bound"
+ },
+ "curve": {
+  "S400": {
+   "R2_log_ols": 0.3207,
+   "slope_sign": "+",
+   "glm_wald_z": 14.16,
+   "D_reduction_pct": 33.43
+  },
+  "S4000": {
+   "R2_log_ols": 0.0241,
+   "slope_sign": "+",
+   "glm_wald_z": 3.839,
+   "D_reduction_pct": 2.4
+  },
+  "S40000": {
+   "R2_log_ols": 0.015,
+   "slope_sign": "-",
+   "glm_wald_z": -3.246,
+   "D_reduction_pct": 1.68
+  },
+  "S100000": {
+   "R2_log_ols": 0.0,
+   "slope_sign": "-",
+   "glm_wald_z": 0.142,
+   "D_reduction_pct": 0.0
+  },
+  "S1000000": {
+   "R2_log_ols": 0.0277,
+   "slope_sign": "+",
+   "glm_wald_z": 5.023,
+   "D_reduction_pct": 4.11
+  }
+ }
+}
+[full] distinct=True wall=380.8s -> exp577_result.json
