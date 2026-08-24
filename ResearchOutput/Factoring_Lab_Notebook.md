@@ -10657,3 +10657,56 @@ any full data existed, fixed, verified 29/29 on completed smoke curves; smoke
 regenerated after fix. Barrier framing: barrier-8 bookkeeping audit completing
 paper 215's evidence chain; no barrier breached, no constant shaved. Paper 218,
 issue #364. Now 561 experiments (max id 572). Assessment v325.
+
+## Part 261 - BARRIER4-POSITIONAL-CONVERSE draft, VERIFIED (round-75 #4, THEORY deliverable — no new experiment id, v326)
+
+THE POSITIONAL/MAGNITUDE STRATUM OF THE BARRIER-4 CONVERSE, drafted and
+independently verified; recorded as DRAFT-WITH-CAVEATS per verifier recommendation.
+Companion to papers 132 (residue cap), 137/143 (position measured), 138 (class
+hints), 212/exp563 (adaptive magnitude). Finite checks: author's own
+exp574b_saturation_check.py -> exp574b_result.json; independent recheck artifact
+verify_t1_t2_recheck.py -> verify_t1_t2_recheck.json + verify_run_stdout.log (all in
+ResearchOutput/scripts/2026-08-24-round74/). Setup: touch-floor axiom splits all
+trial-division actions into COST-class (per-touch cost changes; touches every
+candidate; paper-132 stratum) and SET-class (which candidates touched and in what
+order; savings from the untouched O(M) tail). THEOREM CANDIDATE T1 (fixed-window
+oracle): CERTIFIED-SILENCE law S_A = 1/[mu*P_hit + (1-P_hit)(1-mu)] EXACT for
+protocol A committed policy (finite-M rational verified, 0 failures) — the DRAFTED
+fire-or-silent form 1/(1-(1-mu)P_hit) SUPERSEDED: its silence is non-certifying and
+re-scans R, 14 algebra consistency failures caught by the verifier (strictly weaker:
+(.05,.85) 5.1948 vs certified 5.4054); protocol B optimal response S_B =
+1/(1+mu-P_hit) <= S_A, R-first iff P_hit >= mu [VERIFIED]; block-first dominance UNCONDITIONAL
+for protocol A, RESTRICTED to P_hit >= mu for protocol B (exhaustive orders + insertion
+sweep M in {16,33,64}: all 12 counterexamples have P < mu, first slot always wins);
+universality geometry-free (value depends only on (mu,P_hit)); cap = 1/mu at P_hit=1,
+NO CONSTANT CAP. Witness anchors survive via feasibility mu <= 1/S: 5.19x <-> (.05,.85),
+6.91x <-> (.05,.9003), 4.35x <-> (.05,.8106), 29.1x <-> (.02,.9853), all feasible;
+infeasible locus rows honestly reported (29.1x at mu=.05 would need P=1.0165 > 1).
+THEOREM CANDIDATE T2 (adaptive saturation): dyadic identity V(W) = log2 W + 1/2 EXACT
+on every W in [2,4096] (INDEPENDENT DP reproduction — both author exp574b and verifier);
+general-L closed form an upper bound with deepest undercut -0.499349 @ L=3073, NEVER
+crossing -1/2 (0 crossings to 4096); cost-offset bracket corrected to [.415,.5011]
+(draft's [-0.53,+0.5] conflated cost offset with location wobble -1.5288 / argmin
+offsets {-2,-1}); drafted marginal-value identity DELETED as gross-saving conflation
+(231 failures) but verifier's exact NET form holds cost(k)-cost(k+1) = W/2^(k+2) - 1
+in 250/250 cells; census k_opt offsets {-2,-1} rel log2W everywhere (C* = 19.5 @ 2^19,
+20.5 @ 2^20) — gain-saturation k_pin = log2W vs cost-optimal stop are DIFFERENT k's,
+and exp563's economic optimum 10/18 sits at its own convention ~1 query above T2's
+k_opt: THREE distinct k's must stay distinguished. CONJECTURE D (SET/COST dichotomy):
+residue cap 4/3 governs COST-class actions (sup_F S(F) = 4/3 attained theta=1/2),
+position works the SET-class tail, multiplicative factorization S(R o F) = S(R)*S(F)
+with S(R) <= min(1/mu_eff, 2^k_bits) — 5.19x > 4/3 is class-crossing, not
+cap-breaking; identity check: paper-138 master law at uninformative point reproduces
+the paper-132 formula exactly. VERIFICATION CENSUS: zero arithmetic errors across all
+numeric claims (exp574b stored-value discrepancies: none); ~60% of PROVEN tags
+upgraded to VERIFIED where independently recomputed; named GAPs remain — L4 stratum
+measure Delta(pi,R) (LOAD-BEARING for D), L7 extremality of sqrt-descending among
+N-computable orders (Siegel-type ineffectivity expected), L8 k*-naming. Objections
+recorded: O1 no uniform-in-N SET-class constant exists (per-stratum or
+mixture-weighted only); O2 balance-stratum coupling means universal statements must
+carry the population measure explicitly; O3 epsilon=0 collapses COST into SET; O4
+138-linear vs 212-multiplicative regime boundary drawn by T2(e) martingale; O5 name
+the k before writing identities into future records. Status: DRAFT-WITH-CAVEATS — NOT
+a sealed theorem; the GAPs are the named next work. Count unchanged by experiment
+(papers-only bump): still 561 experiments (max id 572), papers now 219. Assessment
+v326. Paper 219, issue #365.

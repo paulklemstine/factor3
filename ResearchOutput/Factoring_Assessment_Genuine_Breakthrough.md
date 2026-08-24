@@ -2384,3 +2384,32 @@ chunks (len doubles/popcount adds, not len−1/popcount−1) — caught by trace
 closed assert pre-data, fixed, verified 29/29, smoke regenerated. Barrier framing:
 barrier-8 bookkeeping audit completing paper 215's evidence chain; no barrier
 breached, no constant shaved. No breakthrough.
+
+**Assessment addendum v326 — 2026-08-24 (round-75 #4).** THEORY deliverable
+recorded: paper 219, the VERIFIED positional/magnitude stratum of the barrier-4
+converse (draft `barrier4_positional_converse_draft.md` + author finite checks
+exp574b + independent verifier `verify_t1_t2_recheck.json`). COUNT CONVENTION
+(stated explicitly — no prior synthesis-paper counting precedent found in these
+addenda for a no-new-experiment record): this deliverable ran NO new experiment id,
+so the experiment count is UNCHANGED — still 561 recorded experiments (max id 572);
+the papers-only ledger advances to 219; version bumps v325 → v326 on the strength
+of the verified draft alone. Content: touch-floor axiom splits trial-division
+actions into COST-class (paper-132 stratum, capped exactly 4/3) and SET-class
+(positional/magnitude, uncapped in constant form); T1 CERTIFIED-SILENCE law
+S_A = 1/[μP+(1−P)(1−μ)] supersedes the drafted fire-or-silent form (14 algebra
+failures caught by the verifier), block-first dominance unconditional for protocol
+A / restricted to P≥μ for protocol B, cap 1/μ with NO constant cap; T2 adaptive
+saturation V(W)=log₂W+½ EXACT dyadic 2..4096 independently DP-reproduced, general-L
+upper bound never crossing −½ (deepest −0.4993 @ L=3073), census k_opt offsets
+{−2,−1} ≠ k_pin = log₂W (and exp563's economic optimum a THIRD convention ~1 query
+above k_opt — three distinct k's must stay distinguished). CONJECTURE D reconciles:
+S(R∘F)=S(R)·S(F), sup_F S(F)=4/3, all four measured anchors feasible under μ ≤ 1/S
+(5.19× ≡ (.05,.85), 29.1× ≡ (.02,.985)); 5.19× > 4/3 is class-crossing, not
+cap-breaking — the residue cap and position coexist, barrier map INTERNALLY
+CONSISTENT. Verification census: zero arithmetic errors across all numeric claims;
+~60% of PROVEN upgraded to VERIFIED where independently recomputed; named GAPs
+remain and are load-bearing: L4 stratum measure, L7 extremality of sqrt-descending
+among N-computable orders, L8 k-naming. Status DRAFT-WITH-CAVEATS per verifier
+recommendation — NOT a sealed theorem; the GAPs are the formal program's next work.
+No breakthrough claimed: this is the barrier map's own converse being made precise.
+Paper 219, issue #365.

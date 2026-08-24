@@ -1,0 +1,362 @@
+{
+ "T1a_algebra_consistency_failures": 0,
+ "T1a_silence_certified_alternative": [
+  {
+   "mu": 0.05,
+   "P": 0.85,
+   "stated_law": 5.1948,
+   "certifying_silence": 5.4054
+  },
+  {
+   "mu": 0.05,
+   "P": 0.9,
+   "stated_law": 6.8966,
+   "certifying_silence": 7.1429
+  },
+  {
+   "mu": 0.02,
+   "P": 0.985,
+   "stated_law": 28.8184,
+   "certifying_silence": 29.0698
+  },
+  {
+   "mu": 0.115,
+   "P": 0.87,
+   "stated_law": 4.3469,
+   "certifying_silence": 4.649
+  }
+ ],
+ "T1a_finiteM_formula_failures_and_Rfirst_iff_P_ge_mu": 0,
+ "T1b_exhaustive_orders": {
+  "protocol_A_blockfirst_always_optimal": true,
+  "protocol_B_counterexamples_P_lt_mu": [
+   [
+    4,
+    0.25,
+    0.0625,
+    2.875,
+    2.125
+   ],
+   [
+    4,
+    0.25,
+    0.1875,
+    2.625,
+    2.375
+   ],
+   [
+    4,
+    0.25,
+    0.2475,
+    2.505,
+    2.495
+   ],
+   [
+    4,
+    0.5,
+    0.125,
+    3.25,
+    1.75
+   ],
+   [
+    4,
+    0.5,
+    0.375,
+    2.75,
+    2.25
+   ],
+   [
+    4,
+    0.5,
+    0.495,
+    2.51,
+    2.49
+   ],
+   [
+    4,
+    0.75,
+    0.1875,
+    3.625,
+    1.375
+   ],
+   [
+    4,
+    0.75,
+    0.5625,
+    2.875,
+    2.125
+   ],
+   [
+    4,
+    0.75,
+    0.7425,
+    2.515,
+    2.485
+   ],
+   [
+    5,
+    0.2,
+    0.05,
+    3.375,
+    2.625
+   ],
+   [
+    5,
+    0.2,
+    0.15,
+    3.125,
+    2.875
+   ],
+   [
+    5,
+    0.2,
+    0.198,
+    3.005,
+    2.995
+   ]
+  ],
+  "protocol_B_all_failures_have_P_lt_mu": true
+ },
+ "T1b_block_insertion_sweep_M16_33_64_first_slot_wins": true,
+ "T2_dyadic": {
+  "2": {
+   "dp": 1.5,
+   "closed": 1.5,
+   "exact": true,
+   "argmin_rel_log2W": [
+    -1
+   ]
+  },
+  "4": {
+   "dp": 2.5,
+   "closed": 2.5,
+   "exact": true,
+   "argmin_rel_log2W": [
+    -2,
+    -1
+   ]
+  },
+  "8": {
+   "dp": 3.5,
+   "closed": 3.5,
+   "exact": true,
+   "argmin_rel_log2W": [
+    -2,
+    -1
+   ]
+  },
+  "16": {
+   "dp": 4.5,
+   "closed": 4.5,
+   "exact": true,
+   "argmin_rel_log2W": [
+    -2,
+    -1
+   ]
+  },
+  "32": {
+   "dp": 5.5,
+   "closed": 5.5,
+   "exact": true,
+   "argmin_rel_log2W": [
+    -2,
+    -1
+   ]
+  },
+  "64": {
+   "dp": 6.5,
+   "closed": 6.5,
+   "exact": true,
+   "argmin_rel_log2W": [
+    -2,
+    -1
+   ]
+  },
+  "128": {
+   "dp": 7.5,
+   "closed": 7.5,
+   "exact": true,
+   "argmin_rel_log2W": [
+    -2,
+    -1
+   ]
+  },
+  "256": {
+   "dp": 8.5,
+   "closed": 8.5,
+   "exact": true,
+   "argmin_rel_log2W": [
+    -2,
+    -1
+   ]
+  },
+  "512": {
+   "dp": 9.5,
+   "closed": 9.5,
+   "exact": true,
+   "argmin_rel_log2W": [
+    -2,
+    -1
+   ]
+  },
+  "1024": {
+   "dp": 10.5,
+   "closed": 10.5,
+   "exact": true,
+   "argmin_rel_log2W": [
+    -2,
+    -1
+   ]
+  },
+  "2048": {
+   "dp": 11.5,
+   "closed": 11.5,
+   "exact": true,
+   "argmin_rel_log2W": [
+    -2,
+    -1
+   ]
+  },
+  "4096": {
+   "dp": 12.5,
+   "closed": 12.5,
+   "exact": true,
+   "argmin_rel_log2W": [
+    -2,
+    -1
+   ]
+  }
+ },
+ "T2_dyadic_all_exact_2_to_4096": true,
+ "T2_dyadic_closed_form_V_equals_log2W_plus_half": true,
+ "T2_general_L": {
+  "upper_bound_holds_to_4096": true,
+  "deepest_undercut_to_4096": {
+   "delta": -0.499349,
+   "at_L": 3073
+  },
+  "undercut_below_half_count": 0,
+  "spot_L_3_5_7_17": [
+   {
+    "L": 3,
+    "V": 2.0,
+    "cf": 2.0,
+    "undercut": 0.0
+   },
+   {
+    "L": 5,
+    "V": 2.8,
+    "cf": 3.0,
+    "undercut": -0.2
+   },
+   {
+    "L": 7,
+    "V": 3.285714,
+    "cf": 3.5,
+    "undercut": -0.214286
+   },
+   {
+    "L": 17,
+    "V": 4.588235,
+    "cf": 5.0,
+    "undercut": -0.411765
+   }
+  ]
+ },
+ "T2_census_2p19_2p20": {
+  "524288": {
+   "C_star": 19.5,
+   "k_opt_set_rel_log2W": [
+    -2,
+    -1
+   ]
+  },
+  "1048576": {
+   "C_star": 20.5,
+   "k_opt_set_rel_log2W": [
+    -2,
+    -1
+   ]
+  }
+ },
+ "T2_additive_constant": {
+  "continuous_relaxed_offset_vs_log2W": 0.4139,
+  "discrete_dyadic_offset": 0.5,
+  "empirical_min_over_L2_4096": {
+   "val": 0.415,
+   "at_L": 3
+  },
+  "empirical_max_over_L2_4096": {
+   "val": 0.5011,
+   "at_L": 2129
+  },
+  "continuous_kopt_location_offset": -1.5288,
+  "discrete_argmin_location_offsets": [
+   -2,
+   -1
+  ],
+  "note": "draft's '[\u22120.53,+0.5]' matches neither cost offset bracket; +0.5288/-0.4712 = |discrete argmin minus continuous k_opt| location wobble"
+ },
+ "T2_marginal_identity": {
+  "cells": 250,
+  "failures": 0,
+  "form": "cost(k)-cost(k+1)=W/2^(k+2)-1 exactly; draft's 'marginal value=W/2^(k+2)' is the GROSS saving"
+ },
+ "D_witnesses": {
+  "5.19x": {
+   "anchor": 5.1936,
+   "at_(mu,P)": [
+    0.05,
+    0.85
+   ],
+   "S_A_at_rounded_P": 5.1948,
+   "exact_P_for_anchor": 0.85,
+   "feasible_mu_le_1_over_S": true
+  },
+  "6.91x": {
+   "anchor": 6.91,
+   "at_(mu,P)": [
+    0.05,
+    0.9
+   ],
+   "S_A_at_rounded_P": 6.8966,
+   "exact_P_for_anchor": 0.9003,
+   "feasible_mu_le_1_over_S": true
+  },
+  "4.35x": {
+   "anchor": 4.35,
+   "at_(mu,P)": [
+    0.05,
+    0.81
+   ],
+   "S_A_at_rounded_P": 4.3384,
+   "exact_P_for_anchor": 0.8106,
+   "feasible_mu_le_1_over_S": true
+  },
+  "29.1x": {
+   "anchor": 29.1,
+   "at_(mu,P)": [
+    0.02,
+    0.985
+   ],
+   "S_A_at_rounded_P": 28.8184,
+   "exact_P_for_anchor": 0.9853,
+   "feasible_mu_le_1_over_S": true
+  }
+ },
+ "D_locus_infeasible_rows_mu_gt_1_over_S": [
+  [
+   "INFEASIBLE",
+   29.1,
+   0.05,
+   1.0165
+  ],
+  [
+   "INFEASIBLE",
+   29.1,
+   0.115,
+   1.0911
+  ]
+ ],
+ "exp574b_stored_value_discrepancies": []
+}
