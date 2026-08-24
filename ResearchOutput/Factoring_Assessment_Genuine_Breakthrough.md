@@ -2268,3 +2268,30 @@ itself (interim sub-powered write had flashed DEVIATION-UNCONFIRMED before
 supersession). Barrier framing: NO barrier breached; null STRENGTHENS the randomness
 picture into new territory; variance-side accounting upgraded (variance N-covariant,
 means matched); no constant shaved. No breakthrough.
+
+**Assessment addendum v322 — 2026-08-24 (round-74 #6).** Experiment 568 recorded; count
+now 558 recorded experiments (max id 568). Exp 568 ECM-STAGE2-WALL (paper 215, issue
+#360) is a SELF-AUDIT of a recorded headline: paper 159's ECM destruction wall
+("B1 ≳ min(p,q) ⇒ every Hasse-window order divides lcm(1..B1), all curves degenerate
+simultaneously, uncapped E[T] infinite"; validity edge B1 ≲ min(p,q)/2) tested under
+outcome-separated accounting {found_p, found_q, dead, nothing} on a bitlen-26 q≫p
+stratum, n_N=40/cell, B1/p ∈ {0.125…1.05} × arms B2/B1 ∈ {1,4,16}; EC machinery reused
+verbatim from exp488. VERDICT H3 CONFIRMED STRONG (pre-registered before data with
+timing disclosed): ZERO 'dead' outcomes in 600 trials; success 1.000 in every cell at
+B1/p ≥ 0.25 and 6/6 cells at B1/p = 0.9 AND 1.05 — exactly the region 159 declared
+infinite-E[T]. Mechanism vindicated: B1 ≥ p+1+2√p ⇒ every Hasse order divides
+lcm(1..B1) ⇒ [L]P = O mod p on every curve ⇒ guarded inversion returns gcd = p:
+guaranteed success, not death; "all curves degenerate" can only read as death if an
+accounting conflated gcd=p wins with gcd=N losses or lacked p-vs-q separation.
+STRUCTURAL INSIGHT: any guarded-affine accounting carries a scale-independent random-
+collision baseline ≈1−exp(−c·B1/p) (~17% predicted vs 68% found-p observed at 0.125) —
+future ECM accounting must separate collision-hits from order-hits; named follow-up =
+larger-p rerun with per-op outcome tracing before amending 159 either way. H1/H0 moot-
+by-absence (no w* anywhere; slope never arms). Honest limits: stage-2 arms UNTESTED
+DEAD CODE this run (stage 1 succeeded first everywhere — zero s2 outcomes; new
+difference-stage validated only by smoke buckets); toy scale; recorder catch —
+findings.md understated one low-edge cell (canonical JSON has two sub-1.000 cells,
+0.875/0.95, both at B1/p=0.125, zero 'dead'). Barrier framing: barrier-8 adjacency;
+genre precedent paper 91 stands / paper 99 retraction-by-reconstruction; if the
+follow-up confirms, paper 159's wall sentence gets an AMENDMENT, not a silent rewrite.
+No breakthrough.

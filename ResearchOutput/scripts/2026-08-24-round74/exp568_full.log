@@ -1,0 +1,143 @@
+[full] 600 cells / 8 workers
+[
+ {
+  "B1frac": 0.125,
+  "arm_mult": 1,
+  "total": 40,
+  "success": 40,
+  "rate": 1.0,
+  "s1_found_p": 27,
+  "s1_found_q": 13
+ },
+ {
+  "B1frac": 0.125,
+  "arm_mult": 4,
+  "total": 40,
+  "success": 35,
+  "rate": 0.875,
+  "found_other_gcd": 1,
+  "nothing": 4,
+  "s1_found_p": 26,
+  "s1_found_q": 9
+ },
+ {
+  "B1frac": 0.125,
+  "arm_mult": 16,
+  "total": 40,
+  "success": 38,
+  "rate": 0.95,
+  "nothing": 2,
+  "s1_found_p": 27,
+  "s1_found_q": 11
+ },
+ {
+  "B1frac": 0.25,
+  "arm_mult": 1,
+  "total": 40,
+  "success": 40,
+  "rate": 1.0,
+  "s1_found_p": 25,
+  "s1_found_q": 15
+ },
+ {
+  "B1frac": 0.25,
+  "arm_mult": 4,
+  "total": 40,
+  "success": 40,
+  "rate": 1.0,
+  "s1_found_p": 31,
+  "s1_found_q": 9
+ },
+ {
+  "B1frac": 0.25,
+  "arm_mult": 16,
+  "total": 40,
+  "success": 40,
+  "rate": 1.0,
+  "s1_found_p": 26,
+  "s1_found_q": 14
+ },
+ {
+  "B1frac": 0.5,
+  "arm_mult": 1,
+  "total": 40,
+  "success": 40,
+  "rate": 1.0,
+  "s1_found_p": 28,
+  "s1_found_q": 12
+ },
+ {
+  "B1frac": 0.5,
+  "arm_mult": 4,
+  "total": 40,
+  "success": 40,
+  "rate": 1.0,
+  "s1_found_p": 30,
+  "s1_found_q": 10
+ },
+ {
+  "B1frac": 0.5,
+  "arm_mult": 16,
+  "total": 40,
+  "success": 40,
+  "rate": 1.0,
+  "s1_found_p": 23,
+  "s1_found_q": 17
+ },
+ {
+  "B1frac": 0.9,
+  "arm_mult": 1,
+  "total": 40,
+  "success": 40,
+  "rate": 1.0,
+  "s1_found_p": 30,
+  "s1_found_q": 10
+ },
+ {
+  "B1frac": 0.9,
+  "arm_mult": 4,
+  "total": 40,
+  "success": 40,
+  "rate": 1.0,
+  "s1_found_p": 28,
+  "s1_found_q": 12
+ },
+ {
+  "B1frac": 0.9,
+  "arm_mult": 16,
+  "total": 40,
+  "success": 40,
+  "rate": 1.0,
+  "s1_found_p": 31,
+  "s1_found_q": 9
+ },
+ {
+  "B1frac": 1.05,
+  "arm_mult": 1,
+  "total": 40,
+  "success": 40,
+  "rate": 1.0,
+  "s1_found_p": 29,
+  "s1_found_q": 11
+ },
+ {
+  "B1frac": 1.05,
+  "arm_mult": 4,
+  "total": 40,
+  "success": 40,
+  "rate": 1.0,
+  "s1_found_p": 31,
+  "s1_found_q": 9
+ },
+ {
+  "B1frac": 1.05,
+  "arm_mult": 16,
+  "total": 40,
+  "success": 40,
+  "rate": 1.0,
+  "s1_found_p": 29,
+  "s1_found_q": 11
+ }
+]
+[full] wall=1.1s
+EXP568-FULL-DONE

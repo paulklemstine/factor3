@@ -1,0 +1,46 @@
+{
+ "exp": "568",
+ "codename": "ECM-STAGE2-WALL",
+ "mode": "smoke",
+ "seed": 20260824,
+ "n_N": 12,
+ "rows": [
+  {
+   "B1frac": 0.5,
+   "arm_mult": 1,
+   "total": 12,
+   "success": 12,
+   "rate": 1.0,
+   "s1_found_p": 8,
+   "s1_found_q": 4
+  },
+  {
+   "B1frac": 0.5,
+   "arm_mult": 4,
+   "total": 12,
+   "success": 12,
+   "rate": 1.0,
+   "s1_found_p": 7,
+   "s1_found_q": 5
+  },
+  {
+   "B1frac": 1.05,
+   "arm_mult": 1,
+   "total": 12,
+   "success": 12,
+   "rate": 1.0,
+   "s1_found_p": 8,
+   "s1_found_q": 4
+  },
+  {
+   "B1frac": 1.05,
+   "arm_mult": 4,
+   "total": 12,
+   "success": 12,
+   "rate": 1.0,
+   "s1_found_p": 10,
+   "s1_found_q": 2
+  }
+ ],
+ "wall_s": 0.3
+}

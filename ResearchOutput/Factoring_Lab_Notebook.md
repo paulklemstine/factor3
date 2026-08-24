@@ -10501,3 +10501,45 @@ new territory (no barrier breached, constant-shaving risk none); variance-side
 accounting upgraded (variance N-covariant, means matched). Wall pilot 157s +
 shipped three-band leg 20.8s (time-capped). Paper 214, issue #359. Now 557
 experiments (max id 567). Assessment v321.
+
+## Part 257 - ECM-STAGE2-WALL (round-74 #6, exp 568, v322)
+
+SELF-AUDIT of a recorded headline: is paper 159's ECM destruction wall ("when
+B1 >~ min(p,q), every Hasse-window order divides lcm(1..B1), all curves degenerate
+simultaneously, uncapped E[T] infinite"; validity edge B1 <~ min(p,q)/2) a budget
+law, intrinsic death - or an accounting boundary? Pre-registered verbatim before any
+data: H1 log w* vs log(B2/B1) slope CI covers 1 / H0 slope covers 0 / MIXED; w* =
+smallest B1/p with success < 10% of arm plateau; H3 ADDED after reading the
+mechanism sentence, BEFORE data (timing disclosed): "all curves degenerate" is a
+DETECTION/ACCOUNTING artifact - gcd(den,N)==N ('dead') events or missing p-vs-q
+separation - not method failure; with outcome-separated accounting ({found_p,
+found_q, dead, nothing}) success is monotone in B1 with no collapse at any arm.
+Mechanism note recorded pre-data: B1 >= p+1+2sqrt(p) => every Hasse order n <= B1 =>
+n | lcm(1..B1) => [L]P = O mod p on EVERY curve => first guarded inversion with den
+== 0 mod p returns gcd = p: GUARANTEED SUCCESS not death; simultaneous degeneracy
+mod q impossible for q >> B1. Grid: bitlen-26 q>>p stratum, n_N=40/cell, B1/p in
+{0.125,0.25,0.5,0.9,1.05} x arms B2/B1 {1,4,16}; guarded affine EC ops reused
+VERBATIM from exp488_true_ecm.py (10/10 ladder + 100/100 mod-12 there); NEW true
+difference-stage stage-2. VERDICT H3 CONFIRMED STRONG: zero 'dead' outcomes in all
+600 trials; success 1.000 in every cell at B1/p >= 0.25 and 6/6 cells at 1.000 at
+B1/p = 0.9 AND 1.05 - exactly where 159 records infinite E[T]; only misses are two
+low-edge cells at B1/p=0.125 (0.875 arm-4, 0.95 arm-16, 'nothing' never 'dead').
+H1/H0 moot-by-absence: no w* exists, slope test never arms. STRUCTURAL INSIGHT:
+guarded-affine accounting carries a scale-independent random-collision baseline
+~1-exp(-c*B1/p) (#ops ~ 1.44*B1, per-op hit ~1/p; ~17% predicted at 0.125 vs 68%
+observed found-p share = collision-luck + order-divisibility mixed); any historical
+accounting that conflated collision-hits with order-hits could have manufactured the
+wall sentence - named follow-up: larger-p rerun with per-op outcome tracing
+(order-hit vs collision-hit) before citing either way. CAVEATS PROMINENT: (a) toy
+bitlen 26; (b) stage-2 arms UNTESTED DEAD CODE this run - stage 1 succeeded first
+everywhere, zero s2_* outcomes, new difference machinery validated only by smoke
+buckets + sign-convention note, arm differences at fixed B1 are per-cell RNG drift;
+(c) inline coordinator implementation after 3x agent-channel failures (stall
+watchdog x2, silent no-write x1); (d) RECORDER CATCH: findings.md says "14/15 cells
+at 1.000" but canonical result.json has TWO sub-1.000 cells (0.875/0.95, both at
+B1/p=0.125) - JSON canonical, verdict unaffected. Barrier framing: barrier-8
+adjacency (known-method bookkeeping); genre precedent paper 91 stands / paper 99
+retraction by side-by-side reconstruction; if the independent follow-up confirms,
+paper 159's wall sentence gets an AMENDMENT not a silent rewrite - until then 159
+stands as recorded with this audit appended. Wall 1.1s. Paper 215, issue #360. Now
+558 experiments (max id 568). Assessment v322.
