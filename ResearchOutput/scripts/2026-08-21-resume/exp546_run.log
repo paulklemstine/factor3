@@ -1,0 +1,107 @@
+=== exp546 ENERGY-ASCENT-ORACLE ===
+config: NS/stratum=1000 (x3 strata), perms=300, windows=(1024, 4096), gauss=(64, 128, 256), bins<=12, seed=20260823
+[gen] 3000 semiprimes in 0.1s
+[pipeline] ascent matches: 3000/3000
+[descend] depths: mean=70.5 median=38 range=[15,18650]; 0.1s
+[pop] per-stratum dB:
+   indep : n=1000 dB mean=68.9 med=41 max=5563 rho=[1.009,1289.1]
+   unilog: n=1000 dB mean=61.2 med=38 max=2137 rho=[1.009,664.7]
+   ratio : n=1000 dB mean=81.4 med=34 max=18650 rho=[1.034,158.1]
+   b1 dist: [2350, 259, 391]  depth>=2: 3000
+[features] 45 N-only features + 3 negative controls in 12.7s
+[stats] 9/45 N-only features scanned (1s)
+[stats] 18/45 N-only features scanned (2s)
+[stats] 27/45 N-only features scanned (3s)
+[stats] 36/45 N-only features scanned (3s)
+[stats] 45/45 N-only features scanned (4s)
+[controls] POSITIVE band->b1 match=1.0000 I=0.9642 vs H(b1)=0.9642 -> PASS
+[controls] NEGATIVE mod-3^k worst z=+1.97 -> PASS (null)
+[mech] Fermat-hit-in-window rate by b1 (factor-derived diagnostic): W1024: {'1': 0.0, '2': 0.0, '3': 0.3299}; W4096: {'1': 0.0, '2': 0.0193, '3': 0.6726}
+[mech] I(hit_in_window@4096 ; b1)=0.3035 z=629.812; corr(log dB, log d_fermat)=+0.193
+
+================ DIGEST ================
+VERDICT: ENERGY-ASCENT-SIGNAL
+H1 (no N-only feature beats null on b1): REFUTED
+flagged z>=3.0 N-only cells: 69 / 225 (multiplicity: expected-by-chance ~= 0.30); OOS-passed: 68
+  FLAG f1_w1024_ent x b1: I=0.183601 z=109.93 OOS acc=0.79 CI95=[0.7779,0.8017] chance=0.333 pass=True | majority_base=0.7833 beats_maj=True
+  FLAG f1_w1024_ent x joint12: I=0.273643 z=77.212 OOS acc=0.6593 CI95=[0.6454,0.673] chance=0.111 pass=True | majority_base=0.6623 beats_maj=False
+  FLAG f1_w1024_ent x dbq: I=0.072227 z=31.069 OOS acc=0.3253 CI95=[0.3118,0.3392] chance=0.25 pass=True | majority_base=0.2637 beats_maj=True
+  FLAG f1_w1024_ent x comp: I=0.011877 z=4.258 OOS acc=0.616 CI95=[0.6017,0.6301] chance=0.333 pass=True | majority_base=0.625 beats_maj=False
+  FLAG f1_w1024_cent x b1: I=0.183601 z=108.339 OOS acc=0.7742 CI95=[0.7618,0.7862] chance=0.333 pass=True | majority_base=0.7833 beats_maj=False
+  FLAG f1_w1024_cent x joint12: I=0.273643 z=75.004 OOS acc=0.6613 CI95=[0.6474,0.675] chance=0.111 pass=True | majority_base=0.6623 beats_maj=False
+  FLAG f1_w1024_cent x dbq: I=0.072227 z=32.487 OOS acc=0.3242 CI95=[0.3107,0.338] chance=0.25 pass=True | majority_base=0.2637 beats_maj=True
+  FLAG f1_w1024_cent x comp: I=0.011877 z=4.594 OOS acc=0.6156 CI95=[0.6012,0.6297] chance=0.333 pass=True | majority_base=0.625 beats_maj=False
+  FLAG f1_w1024_hratio x b1: I=0.183601 z=112.86 OOS acc=0.7747 CI95=[0.7622,0.7866] chance=0.333 pass=True | majority_base=0.7833 beats_maj=False
+  FLAG f1_w1024_hratio x joint12: I=0.273643 z=77.219 OOS acc=0.6742 CI95=[0.6604,0.6878] chance=0.111 pass=True | majority_base=0.6623 beats_maj=True
+  FLAG f1_w1024_hratio x dbq: I=0.072227 z=33.153 OOS acc=0.3253 CI95=[0.3118,0.3392] chance=0.25 pass=True | majority_base=0.2637 beats_maj=True
+  FLAG f1_w1024_hratio x comp: I=0.011877 z=4.404 OOS acc=0.6111 CI95=[0.5968,0.6253] chance=0.333 pass=True | majority_base=0.625 beats_maj=False
+  FLAG f1_w1024_third_lo x b1: I=0.183601 z=115.421 OOS acc=0.7833 CI95=[0.7711,0.7951] chance=0.333 pass=True | majority_base=0.7833 beats_maj=False
+  FLAG f1_w1024_third_lo x joint12: I=0.273643 z=74.707 OOS acc=0.6553 CI95=[0.6413,0.6691] chance=0.111 pass=True | majority_base=0.6623 beats_maj=False
+  FLAG f1_w1024_third_lo x dbq: I=0.072227 z=33.339 OOS acc=0.3264 CI95=[0.3129,0.3403] chance=0.25 pass=True | majority_base=0.2637 beats_maj=True
+  FLAG f1_w1024_third_lo x comp: I=0.011877 z=4.716 OOS acc=0.6231 CI95=[0.6089,0.6372] chance=0.333 pass=True | majority_base=0.625 beats_maj=False
+  FLAG f1_w1024_third_mid x b1: I=0.183601 z=105.898 OOS acc=0.7898 CI95=[0.7776,0.8014] chance=0.333 pass=True | majority_base=0.7833 beats_maj=True
+  FLAG f1_w1024_third_mid x joint12: I=0.273643 z=82.612 OOS acc=0.6704 CI95=[0.6566,0.684] chance=0.111 pass=True | majority_base=0.6623 beats_maj=True
+  FLAG f1_w1024_third_mid x dbq: I=0.072227 z=31.518 OOS acc=0.33 CI95=[0.3164,0.3439] chance=0.25 pass=True | majority_base=0.2637 beats_maj=True
+  FLAG f1_w1024_third_mid x comp: I=0.011877 z=5.111 OOS acc=0.6291 CI95=[0.6149,0.6431] chance=0.333 pass=True | majority_base=0.625 beats_maj=True
+  FLAG f1_w1024_third_hi x b1: I=0.183601 z=114.244 OOS acc=0.7833 CI95=[0.7711,0.7951] chance=0.333 pass=True | majority_base=0.7833 beats_maj=False
+  FLAG f1_w1024_third_hi x joint12: I=0.273643 z=76.166 OOS acc=0.66 CI95=[0.646,0.6737] chance=0.111 pass=True | majority_base=0.6623 beats_maj=False
+  FLAG f1_w1024_third_hi x dbq: I=0.072227 z=32.989 OOS acc=0.3204 CI95=[0.307,0.3342] chance=0.25 pass=True | majority_base=0.2637 beats_maj=True
+  FLAG f1_w1024_third_hi x comp: I=0.011877 z=4.633 OOS acc=0.6153 CI95=[0.601,0.6294] chance=0.333 pass=True | majority_base=0.625 beats_maj=False
+  FLAG f1_w1024_slope x b1: I=0.183601 z=114.924 OOS acc=0.7818 CI95=[0.7695,0.7936] chance=0.333 pass=True | majority_base=0.7833 beats_maj=False
+  FLAG f1_w1024_slope x joint12: I=0.273643 z=73.927 OOS acc=0.664 CI95=[0.6501,0.6777] chance=0.111 pass=True | majority_base=0.6623 beats_maj=True
+  FLAG f1_w1024_slope x dbq: I=0.072227 z=33.138 OOS acc=0.3271 CI95=[0.3136,0.341] chance=0.25 pass=True | majority_base=0.2637 beats_maj=True
+  FLAG f1_w1024_slope x comp: I=0.011877 z=4.55 OOS acc=0.6209 CI95=[0.6066,0.635] chance=0.333 pass=True | majority_base=0.625 beats_maj=False
+  FLAG f2_w1024_hratio x b1: I=0.152182 z=91.708 OOS acc=0.7827 CI95=[0.7704,0.7945] chance=0.333 pass=True | majority_base=0.7833 beats_maj=False
+  FLAG f2_w1024_hratio x joint12: I=0.212228 z=54.585 OOS acc=0.6624 CI95=[0.6485,0.6761] chance=0.111 pass=True | majority_base=0.6623 beats_maj=True
+  FLAG f2_w1024_hratio x dbq: I=0.066749 z=30.711 OOS acc=0.3296 CI95=[0.316,0.3434] chance=0.25 pass=True | majority_base=0.2637 beats_maj=True
+  FLAG f2_w1024_hratio x comp: I=0.013555 z=5.973 OOS acc=0.618 CI95=[0.6037,0.6321] chance=0.333 pass=True | majority_base=0.625 beats_maj=False
+  FLAG f1_w4096_ent x b1: I=0.183601 z=115.785 OOS acc=0.7833 CI95=[0.7711,0.7951] chance=0.333 pass=True | majority_base=0.7833 beats_maj=False
+  FLAG f1_w4096_ent x joint12: I=0.273643 z=78.473 OOS acc=0.6707 CI95=[0.6568,0.6842] chance=0.111 pass=True | majority_base=0.6623 beats_maj=True
+  FLAG f1_w4096_ent x dbq: I=0.072227 z=32.666 OOS acc=0.3311 CI95=[0.3175,0.345] chance=0.25 pass=True | majority_base=0.2637 beats_maj=True
+  FLAG f1_w4096_ent x comp: I=0.011877 z=4.566 OOS acc=0.6213 CI95=[0.6071,0.6354] chance=0.333 pass=True | majority_base=0.625 beats_maj=False
+  FLAG f1_w4096_cent x b1: I=0.183601 z=103.432 OOS acc=0.7738 CI95=[0.7613,0.7858] chance=0.333 pass=True | majority_base=0.7833 beats_maj=False
+  FLAG f1_w4096_cent x joint12: I=0.273643 z=71.414 OOS acc=0.6631 CI95=[0.6492,0.6768] chance=0.111 pass=True | majority_base=0.6623 beats_maj=True
+  FLAG f1_w4096_cent x dbq: I=0.072227 z=34.95 OOS acc=0.3253 CI95=[0.3118,0.3392] chance=0.25 pass=True | majority_base=0.2637 beats_maj=True
+  FLAG f1_w4096_cent x comp: I=0.011877 z=4.454 OOS acc=0.6138 CI95=[0.5995,0.6279] chance=0.333 pass=True | majority_base=0.625 beats_maj=False
+  FLAG f1_w4096_hratio x b1: I=0.183601 z=119.635 OOS acc=0.7771 CI95=[0.7647,0.789] chance=0.333 pass=True | majority_base=0.7833 beats_maj=False
+  FLAG f1_w4096_hratio x joint12: I=0.273643 z=77.218 OOS acc=0.6582 CI95=[0.6442,0.6719] chance=0.111 pass=True | majority_base=0.6623 beats_maj=False
+  FLAG f1_w4096_hratio x dbq: I=0.072227 z=32.238 OOS acc=0.3338 CI95=[0.3201,0.3477] chance=0.25 pass=True | majority_base=0.2637 beats_maj=True
+  FLAG f1_w4096_hratio x comp: I=0.011877 z=4.676 OOS acc=0.6229 CI95=[0.6086,0.6369] chance=0.333 pass=True | majority_base=0.625 beats_maj=False
+  FLAG f1_w4096_third_lo x b1: I=0.183601 z=108.762 OOS acc=0.7951 CI95=[0.7831,0.8066] chance=0.333 pass=True | majority_base=0.7833 beats_maj=True
+  FLAG f1_w4096_third_lo x joint12: I=0.273643 z=80.458 OOS acc=0.6691 CI95=[0.6552,0.6827] chance=0.111 pass=True | majority_base=0.6623 beats_maj=True
+  FLAG f1_w4096_third_lo x dbq: I=0.072227 z=35.134 OOS acc=0.3242 CI95=[0.3107,0.338] chance=0.25 pass=True | majority_base=0.2637 beats_maj=True
+  FLAG f1_w4096_third_lo x comp: I=0.011877 z=4.459 OOS acc=0.6204 CI95=[0.6062,0.6345] chance=0.333 pass=True | majority_base=0.625 beats_maj=False
+  FLAG f1_w4096_third_mid x b1: I=0.183601 z=105.99 OOS acc=0.7789 CI95=[0.7665,0.7908] chance=0.333 pass=True | majority_base=0.7833 beats_maj=False
+  FLAG f1_w4096_third_mid x joint12: I=0.273643 z=85.412 OOS acc=0.6689 CI95=[0.655,0.6825] chance=0.111 pass=True | majority_base=0.6623 beats_maj=True
+  FLAG f1_w4096_third_mid x dbq: I=0.072227 z=32.386 OOS acc=0.3262 CI95=[0.3127,0.3401] chance=0.25 pass=True | majority_base=0.2637 beats_maj=True
+  FLAG f1_w4096_third_mid x comp: I=0.011877 z=4.495 OOS acc=0.6244 CI95=[0.6102,0.6385] chance=0.333 pass=True | majority_base=0.625 beats_maj=False
+  FLAG f1_w4096_third_hi x b1: I=0.183601 z=112.756 OOS acc=0.784 CI95=[0.7717,0.7958] chance=0.333 pass=True | majority_base=0.7833 beats_maj=True
+  FLAG f1_w4096_third_hi x joint12: I=0.273643 z=74.568 OOS acc=0.6609 CI95=[0.6469,0.6746] chance=0.111 pass=True | majority_base=0.6623 beats_maj=False
+  FLAG f1_w4096_third_hi x dbq: I=0.072227 z=32.564 OOS acc=0.3258 CI95=[0.3122,0.3396] chance=0.25 pass=True | majority_base=0.2637 beats_maj=True
+  FLAG f1_w4096_third_hi x comp: I=0.011877 z=5.017 OOS acc=0.6182 CI95=[0.6039,0.6323] chance=0.333 pass=True | majority_base=0.625 beats_maj=False
+  FLAG f1_w4096_slope x b1: I=0.183601 z=108.821 OOS acc=0.782 CI95=[0.7697,0.7938] chance=0.333 pass=True | majority_base=0.7833 beats_maj=False
+  FLAG f1_w4096_slope x joint12: I=0.273643 z=76.677 OOS acc=0.6689 CI95=[0.655,0.6825] chance=0.111 pass=True | majority_base=0.6623 beats_maj=True
+  FLAG f1_w4096_slope x dbq: I=0.072227 z=33.727 OOS acc=0.3271 CI95=[0.3136,0.341] chance=0.25 pass=True | majority_base=0.2637 beats_maj=True
+  FLAG f1_w4096_slope x comp: I=0.011877 z=4.995 OOS acc=0.6222 CI95=[0.608,0.6363] chance=0.333 pass=True | majority_base=0.625 beats_maj=False
+  FLAG f2_w4096_ent x b1: I=0.077567 z=43.594 OOS acc=0.7789 CI95=[0.7665,0.7908] chance=0.333 pass=True | majority_base=0.7833 beats_maj=False
+  FLAG f2_w4096_ent x joint12: I=0.118615 z=28.175 OOS acc=0.6547 CI95=[0.6406,0.6684] chance=0.111 pass=True | majority_base=0.6623 beats_maj=False
+  FLAG f2_w4096_ent x dbq: I=0.048645 z=20.525 OOS acc=0.3127 CI95=[0.2993,0.3264] chance=0.25 pass=True | majority_base=0.2637 beats_maj=True
+  FLAG f2_w4096_ent x comp: I=0.013271 z=5.472 OOS acc=0.63 CI95=[0.6158,0.644] chance=0.333 pass=True | majority_base=0.625 beats_maj=True
+  FLAG f2_w4096_cent x dbq: I=0.014123 z=3.261 OOS acc=0.2611 CI95=[0.2485,0.2741] chance=0.25 pass=False | majority_base=0.2637 beats_maj=False
+  FLAG f2_w4096_hratio x b1: I=0.183601 z=112.118 OOS acc=0.7736 CI95=[0.7611,0.7855] chance=0.333 pass=True | majority_base=0.7833 beats_maj=False
+  FLAG f2_w4096_hratio x joint12: I=0.273643 z=73.543 OOS acc=0.6629 CI95=[0.6489,0.6766] chance=0.111 pass=True | majority_base=0.6623 beats_maj=True
+  FLAG f2_w4096_hratio x dbq: I=0.072295 z=33.537 OOS acc=0.3224 CI95=[0.3089,0.3362] chance=0.25 pass=True | majority_base=0.2637 beats_maj=True
+  FLAG f2_w4096_hratio x comp: I=0.011941 z=4.482 OOS acc=0.6236 CI95=[0.6093,0.6376] chance=0.333 pass=True | majority_base=0.625 beats_maj=False
+BEST N-only cell overall: f1_w4096_hratio x b1 I=0.183601 z=119.635
+CONTROLS: positive band->b1 PASS (match 1.0000); negative mod3^k PASS (worst z=+1.97)
+POPULATION: n=3000 (3 strata x 1000); dB mean=70.50 median=38 range=[15,18650]
+RUNTIME: total=17s (gen 0 | descend 0 | features 13 | stats 5)
+LEDGER:
+  - L1: Gauss-sum phases scaled by (N mod M') -- literal formula has no N and would be constant across N (see header note).
+  - L2: unilog stratum rounds log-uniform reals up to next odd candidate.
+  - L3: mod-27 control grouped contiguously to 12 classes to honor the <=12-bin rule; mod 3 and mod 9 kept at natural cardinality.
+  - L4 (smoke-run catch): letter targets were 1-based and crashed the OOS gate (IndexError, class index out of bounds); all targets re-coded 0-based.
+  - L5: OOS gate reports BOTH the pre-stated uniform-chance rule AND the empirical majority-class baseline (skewed letter distributions make 1/3 weak); beats_majority_ptest is a point-estimate supplement, not the pre-stated gate.
+  - L6: added factor-derived Fermat-hit-distance diagnostic to localize WHERE the spectral b1 information lives (zero-crossing of E(a) inside the FFT window).
+
+wrote /home/raver1975/factor3/ResearchOutput/scripts/2026-08-21-resume/exp546_result.json and exp546_data.npz
