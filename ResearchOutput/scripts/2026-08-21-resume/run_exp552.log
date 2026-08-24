@@ -1,0 +1,66 @@
+[exp552] start smoke=True POP=240 PERMS=40
+[exp552] population NR=240 emb_fail=0 term_fail=0 re-ascent OK, min_dP=17, strata=15
+[exp552] start smoke=True POP=240 PERMS=40
+[exp552] population NR=240 emb_fail=0 term_fail=0 re-ascent OK, min_dP=17, strata=15
+[exp552] P1 rule agreement 100.0% | pos0 law 100.00% (viol 0) | pos1 law 100.00% (viol 0) | BC size rule 100.00% | bijection exact=False | neg-clean=False | marg0={'A': 0.525, 'B': 0.2125, 'C': 0.2625}
+[exp552] P2 t=0: I(Nmod8;L0)=0.998262 strat-z=78.758 cond=96.924
+[exp552] P2 t=1: I(Nmod8;L1)=0.992834 strat-z=84.154 cond=94.869
+[exp552] P2 t=2: I(Nmod8;L2)=0.056294 strat-z=5.558 cond=0.0
+[exp552] P2 t=3: I(Nmod8;L3)=0.068211 strat-z=4.742 cond=None
+[exp552] P2 t=4: I(Nmod8;L4)=0.015269 strat-z=-0.165 cond=None
+[exp552] P2 t=5: I(Nmod8;L5)=0.013706 strat-z=-0.405 cond=None
+[exp552] P3 wall pair z=-1.333 sens=0.030235b path z=0.072 sens=0.002328b
+[exp552] P3 capacity I(N mod 2^1; unordered pair)=0.0 z=None
+[exp552] P3 capacity I(N mod 2^2; unordered pair)=0.505105 z=41.213
+[exp552] P3 capacity I(N mod 2^3; unordered pair)=1.495101 z=84.767
+[exp552] P3 capacity I(N mod 2^4; unordered pair)=1.496389 z=57.768
+[exp552] P3 capacity I(N mod 2^5; unordered pair)=1.540229 z=29.313
+[exp552] VERDICT main=MAP-REFUTED-CHECK-DERIVATION | WHICH-FACTOR-WALL-HOLDS-JOINS-SEALED-RESIDUE-DIAL-FAMILY | ORDER-UNIVERSAL-ABELIANIZATION-FIT-CAPACITY-SATURATES-MOD8 | wall=0.1s -> /home/raver1975/factor3/ResearchOutput/scripts/2026-08-21-resume/exp552_result.json
+[exp552] start smoke=True POP=240 PERMS=40
+[exp552] population NR=240 emb_fail=0 term_fail=0 re-ascent OK, min_dP=17, strata=15
+[exp552] P1 rule agreement 100.0% | pos0 law 100.00% (viol 0) | pos1 law 100.00% (viol 0) | BC size rule 100.00% | bijection exact=True | neg-clean=True | marg0={'A': 0.525, 'B': 0.2125, 'C': 0.2625}
+[exp552] P2 t=0: I(Nmod8;L0)=0.998262 strat-z=78.758 cond=96.924
+[exp552] P2 t=1: I(Nmod8;L1)=0.992834 strat-z=84.154 cond=94.869
+[exp552] P2 t=2: I(Nmod8;L2)=0.056294 strat-z=5.558 cond=0.0
+[exp552] P2 t=3: I(Nmod8;L3)=0.068211 strat-z=4.742 cond=0.0
+[exp552] P2 t=4: I(Nmod8;L4)=0.015269 strat-z=-0.165 cond=0.0
+[exp552] P2 t=5: I(Nmod8;L5)=0.013706 strat-z=-0.405 cond=INSUFFICIENT_COVERAGE
+[exp552] P3 wall pair z=-1.333 sens=0.030235b path z=0.072 sens=0.002328b
+[exp552] P3 capacity I(N mod 2^1; unordered pair)=0.0 z=None
+[exp552] P3 capacity I(N mod 2^2; unordered pair)=0.505105 z=41.213
+[exp552] P3 capacity I(N mod 2^3; unordered pair)=1.495101 z=84.767
+[exp552] P3 capacity I(N mod 2^4; unordered pair)=1.496389 z=57.768
+[exp552] P3 capacity I(N mod 2^5; unordered pair)=1.540229 z=29.313
+[exp552] VERDICT main=TWO-ADIC-PATH-TWO-CLICKS-THEN-SEALED | WHICH-FACTOR-WALL-HOLDS-JOINS-SEALED-RESIDUE-DIAL-FAMILY | ORDER-UNIVERSAL-ABELIANIZATION-FIT-CAPACITY-SATURATES-MOD8 | wall=0.1s -> /home/raver1975/factor3/ResearchOutput/scripts/2026-08-21-resume/exp552_result.json
+[exp552] start smoke=False POP=4000 PERMS=300
+[exp552] population NR=4000 emb_fail=0 term_fail=0 re-ascent OK, min_dP=15, strata=15
+[exp552] P1 rule agreement 100.0% | pos0 law 100.00% (viol 0) | pos1 law 100.00% (viol 0) | BC size rule 100.00% | bijection exact=True | neg-clean=True | marg0={'A': 0.4993, 'B': 0.2772, 'C': 0.2235}
+[exp552] P2 t=0: I(Nmod8;L0)=1.001336 strat-z=1438.34 cond=1556.606
+[exp552] P2 t=1: I(Nmod8;L1)=1.004882 strat-z=1626.244 cond=1723.637
+[exp552] P2 t=2: I(Nmod8;L2)=0.035278 strat-z=51.514 cond=0.0
+[exp552] P2 t=3: I(Nmod8;L3)=0.002761 strat-z=2.604 cond=0.0
+[exp552] P2 t=4: I(Nmod8;L4)=0.003299 strat-z=3.565 cond=-0.998
+[exp552] P2 t=5: I(Nmod8;L5)=0.001701 strat-z=0.996 cond=0.0
+[exp552] P3 wall pair z=0.363 sens=0.000297b path z=1.355 sens=0.009585b
+[exp552] P3 capacity I(N mod 2^1; unordered pair)=0.0 z=None
+[exp552] P3 capacity I(N mod 2^2; unordered pair)=0.524236 z=906.377
+[exp552] P3 capacity I(N mod 2^3; unordered pair)=1.523446 z=1545.709
+[exp552] P3 capacity I(N mod 2^4; unordered pair)=1.524015 z=964.066
+[exp552] P3 capacity I(N mod 2^5; unordered pair)=1.524738 z=698.079
+[exp552] VERDICT main=TWO-ADIC-PATH-TWO-CLICKS-THEN-SEALED | WHICH-FACTOR-WALL-HOLDS-JOINS-SEALED-RESIDUE-DIAL-FAMILY | ORDER-UNIVERSAL-ABELIANIZATION-FIT-CAPACITY-SATURATES-MOD8 | wall=5.4s -> /home/raver1975/factor3/ResearchOutput/scripts/2026-08-21-resume/exp552_result.json
+[exp552] start smoke=False POP=4000 PERMS=300
+[exp552] population NR=4000 emb_fail=0 term_fail=0 re-ascent OK, min_dP=15, strata=15
+[exp552] P1 rule agreement 100.0% | pos0 law 100.00% (viol 0) | pos1 law 100.00% (viol 0) | BC size rule 100.00% | bijection exact=True | neg-clean=True | marg0={'A': 0.4993, 'B': 0.2772, 'C': 0.2235}
+[exp552] P2 t=0: I(Nmod8;L0)=1.001336 strat-z=1438.34 cond=1556.606
+[exp552] P2 t=1: I(Nmod8;L1)=1.004882 strat-z=1626.244 cond=1723.637
+[exp552] P2 t=2: I(Nmod8;L2)=0.035278 strat-z=51.514 cond=0.0
+[exp552] P2 t=3: I(Nmod8;L3)=0.002761 strat-z=2.604 cond=0.0
+[exp552] P2 t=4: I(Nmod8;L4)=0.003299 strat-z=3.565 cond=-0.998
+[exp552] P2 t=5: I(Nmod8;L5)=0.001701 strat-z=0.996 cond=0.0
+[exp552] P3 wall pair z=0.363 sens=0.000297b path z=1.355 sens=0.009585b
+[exp552] P3 capacity I(N mod 2^1; unordered pair)=0.0 z=None
+[exp552] P3 capacity I(N mod 2^2; unordered pair)=0.524236 z=906.377
+[exp552] P3 capacity I(N mod 2^3; unordered pair)=1.523446 z=1545.709
+[exp552] P3 capacity I(N mod 2^4; unordered pair)=1.524015 z=964.066
+[exp552] P3 capacity I(N mod 2^5; unordered pair)=1.524738 z=698.079
+[exp552] VERDICT main=TWO-ADIC-PATH-TWO-CLICKS-THEN-SEALED | WHICH-FACTOR-WALL-HOLDS-JOINS-SEALED-RESIDUE-DIAL-FAMILY | ORDER-UNIVERSAL-ABELIANIZATION-FIT-CAPACITY-SATURATES-MOD8 | wall=5.8s -> /home/raver1975/factor3/ResearchOutput/scripts/2026-08-21-resume/exp552_result.json

@@ -1,0 +1,578 @@
+{
+ "exp": "552",
+ "codename": "TWO-ADIC-PRICE-LAW",
+ "smoke": false,
+ "status": "04_final",
+ "config": {
+  "seed": 20260825,
+  "pop": 4000,
+  "broad": 3200,
+  "balanced": 800,
+  "perms": 300,
+  "p_range": "[2^13,2^17]",
+  "q_range": "[2^15,2^21]",
+  "balanced_def": "p in [2^15,2^17], q in primes (p,3p)",
+  "positions": "0..5",
+  "negative_claim_moduli": [
+   16,
+   32,
+   64,
+   128,
+   256
+  ],
+  "min_prefix_group": 60
+ },
+ "derivation": {
+  "done_before_measurement": true,
+  "descent_rule": "m odd->A; m even&2n<m->B; m even&2n>m->C",
+  "mechanism": "Every Price step halves exactly one of U=p+q, V=q-p (A halves V; B,C halve U). letter_t='A' <=> v2(U_t)=1 (m-coordinate odd); A SEES V (halves it, admissible iff v2(U)=1), B/C SEE U (halve it, admissible iff v2(U)>=2); B-vs-C is the SIGN of V-U/2, a size comparison, never a congruence.",
+  "first_A_position": "u0-1 with u0=v2(p+q); non-A steps halve U exactly, decrementing v2(U) by 1",
+  "exact_map": {
+   "pos0": "N=1 mod 4 => 'A'; N=3 mod 4 => B iff q<3p else C",
+   "pos1": "'A' <=> N mod 8 in {1,3}; else B/C by size",
+   "bijection_first_two_vs_Nmod8": "(A,A)<->1, (A,~A)<->5, (~A,A)<->3, (~A,~A)<->7"
+  },
+  "determinism_depth": "EXACTLY positions 0,1 (two clicks)",
+  "scrambling_lemma": "For j>=3, N = 2^j*p*o - p^2 (o odd); odd squares fill {1 mod 8} classes uniformly, so N mod 2^k is uniform on {7 mod 8} for every k>j, identical across u0=j and u0>j. No modulus determines anything from position 2 on.",
+  "B_rarity": "B needs N=3 mod 4 (prob 1/2) AND q<3p (near square); P(B) ~ (1/2)*P(q<3p) ~ 0.05-0.15 by stratum mix; C absorbs the far field.",
+  "predictions": [
+   "P1 rule==truth 100%",
+   "P2 pos0 law 100%",
+   "P3 pos1 law 100%",
+   "P4 marginal z huge at t<=1, leakage tail",
+   "P5 conditional EXACT zero at t>=2",
+   "P6 capacity saturates at M=8",
+   "P7 which-factor wall holds"
+  ]
+ },
+ "pipeline_checks": {
+  "population_embedded": 4000,
+  "embedding_failures": 0,
+  "embedding_identity_m2_minus_n2_eq_N_pass": true,
+  "termination_rate": 1.0,
+  "termination_failures": 0,
+  "reversed_descent_ascent_lands_on_start": true,
+  "min_depth_observed": 15,
+  "strata_cells": 15
+ },
+ "part1": {
+  "rule_vs_true_descent": {
+   "steps_checked": 89947,
+   "failures": 0,
+   "agreement_pct": 100.0
+  },
+  "pos0_law_A_iff_Nmod4_1": {
+   "agreement_pct": 100.0,
+   "violations": 0
+  },
+  "pos1_law_A_iff_Nmod8_in_13": {
+   "agreement_pct": 100.0,
+   "violations": 0
+  },
+  "pos0_BC_size_rule_q_lt_3p": {
+   "agreement_pct": 100.0
+  },
+  "bijection_first_two_letters_vs_Nmod8": {
+   "map_observed": {
+    "(True, False)": [
+     5
+    ],
+    "(True, True)": [
+     1
+    ],
+    "(False, False)": [
+     7
+    ],
+    "(False, True)": [
+     3
+    ]
+   },
+   "bijective_and_exact": true
+  },
+  "negative_claims_positions_2_to_5": [
+   {
+    "cell_family": "N mod 16 vs letter2",
+    "n_residue_cells": 8,
+    "n_cells_with_support_ge_20": 8,
+    "pure_cells_with_support": 0,
+    "tiny_pure_cells_disclosed": 0,
+    "max_cell_purity_supported": 0.5419,
+    "claim": "NO determinism (no supported pure cells)"
+   },
+   {
+    "cell_family": "N mod 16 vs letter3",
+    "n_residue_cells": 8,
+    "n_cells_with_support_ge_20": 8,
+    "pure_cells_with_support": 0,
+    "tiny_pure_cells_disclosed": 0,
+    "max_cell_purity_supported": 0.5224,
+    "claim": "NO determinism (no supported pure cells)"
+   },
+   {
+    "cell_family": "N mod 16 vs letter4",
+    "n_residue_cells": 8,
+    "n_cells_with_support_ge_20": 8,
+    "pure_cells_with_support": 0,
+    "tiny_pure_cells_disclosed": 0,
+    "max_cell_purity_supported": 0.553,
+    "claim": "NO determinism (no supported pure cells)"
+   },
+   {
+    "cell_family": "N mod 16 vs letter5",
+    "n_residue_cells": 8,
+    "n_cells_with_support_ge_20": 8,
+    "pure_cells_with_support": 0,
+    "tiny_pure_cells_disclosed": 0,
+    "max_cell_purity_supported": 0.536,
+    "claim": "NO determinism (no supported pure cells)"
+   },
+   {
+    "cell_family": "N mod 32 vs letter2",
+    "n_residue_cells": 16,
+    "n_cells_with_support_ge_20": 16,
+    "pure_cells_with_support": 0,
+    "tiny_pure_cells_disclosed": 0,
+    "max_cell_purity_supported": 0.5672,
+    "claim": "NO determinism (no supported pure cells)"
+   },
+   {
+    "cell_family": "N mod 32 vs letter3",
+    "n_residue_cells": 16,
+    "n_cells_with_support_ge_20": 16,
+    "pure_cells_with_support": 0,
+    "tiny_pure_cells_disclosed": 0,
+    "max_cell_purity_supported": 0.5516,
+    "claim": "NO determinism (no supported pure cells)"
+   },
+   {
+    "cell_family": "N mod 32 vs letter4",
+    "n_residue_cells": 16,
+    "n_cells_with_support_ge_20": 16,
+    "pure_cells_with_support": 0,
+    "tiny_pure_cells_disclosed": 0,
+    "max_cell_purity_supported": 0.5669,
+    "claim": "NO determinism (no supported pure cells)"
+   },
+   {
+    "cell_family": "N mod 32 vs letter5",
+    "n_residue_cells": 16,
+    "n_cells_with_support_ge_20": 16,
+    "pure_cells_with_support": 0,
+    "tiny_pure_cells_disclosed": 0,
+    "max_cell_purity_supported": 0.5537,
+    "claim": "NO determinism (no supported pure cells)"
+   },
+   {
+    "cell_family": "N mod 64 vs letter2",
+    "n_residue_cells": 32,
+    "n_cells_with_support_ge_20": 32,
+    "pure_cells_with_support": 0,
+    "tiny_pure_cells_disclosed": 0,
+    "max_cell_purity_supported": 0.592,
+    "claim": "NO determinism (no supported pure cells)"
+   },
+   {
+    "cell_family": "N mod 64 vs letter3",
+    "n_residue_cells": 32,
+    "n_cells_with_support_ge_20": 32,
+    "pure_cells_with_support": 0,
+    "tiny_pure_cells_disclosed": 0,
+    "max_cell_purity_supported": 0.5725,
+    "claim": "NO determinism (no supported pure cells)"
+   },
+   {
+    "cell_family": "N mod 64 vs letter4",
+    "n_residue_cells": 32,
+    "n_cells_with_support_ge_20": 32,
+    "pure_cells_with_support": 0,
+    "tiny_pure_cells_disclosed": 0,
+    "max_cell_purity_supported": 0.6,
+    "claim": "NO determinism (no supported pure cells)"
+   },
+   {
+    "cell_family": "N mod 64 vs letter5",
+    "n_residue_cells": 32,
+    "n_cells_with_support_ge_20": 32,
+    "pure_cells_with_support": 0,
+    "tiny_pure_cells_disclosed": 0,
+    "max_cell_purity_supported": 0.605,
+    "claim": "NO determinism (no supported pure cells)"
+   },
+   {
+    "cell_family": "N mod 128 vs letter2",
+    "n_residue_cells": 64,
+    "n_cells_with_support_ge_20": 64,
+    "pure_cells_with_support": 0,
+    "tiny_pure_cells_disclosed": 0,
+    "max_cell_purity_supported": 0.6567,
+    "claim": "NO determinism (no supported pure cells)"
+   },
+   {
+    "cell_family": "N mod 128 vs letter3",
+    "n_residue_cells": 64,
+    "n_cells_with_support_ge_20": 64,
+    "pure_cells_with_support": 0,
+    "tiny_pure_cells_disclosed": 0,
+    "max_cell_purity_supported": 0.6349,
+    "claim": "NO determinism (no supported pure cells)"
+   },
+   {
+    "cell_family": "N mod 128 vs letter4",
+    "n_residue_cells": 64,
+    "n_cells_with_support_ge_20": 64,
+    "pure_cells_with_support": 0,
+    "tiny_pure_cells_disclosed": 0,
+    "max_cell_purity_supported": 0.625,
+    "claim": "NO determinism (no supported pure cells)"
+   },
+   {
+    "cell_family": "N mod 128 vs letter5",
+    "n_residue_cells": 64,
+    "n_cells_with_support_ge_20": 64,
+    "pure_cells_with_support": 0,
+    "tiny_pure_cells_disclosed": 0,
+    "max_cell_purity_supported": 0.6842,
+    "claim": "NO determinism (no supported pure cells)"
+   },
+   {
+    "cell_family": "N mod 256 vs letter2",
+    "n_residue_cells": 128,
+    "n_cells_with_support_ge_20": 125,
+    "pure_cells_with_support": 0,
+    "tiny_pure_cells_disclosed": 0,
+    "max_cell_purity_supported": 0.7353,
+    "claim": "NO determinism (no supported pure cells)"
+   },
+   {
+    "cell_family": "N mod 256 vs letter3",
+    "n_residue_cells": 128,
+    "n_cells_with_support_ge_20": 125,
+    "pure_cells_with_support": 0,
+    "tiny_pure_cells_disclosed": 0,
+    "max_cell_purity_supported": 0.7667,
+    "claim": "NO determinism (no supported pure cells)"
+   },
+   {
+    "cell_family": "N mod 256 vs letter4",
+    "n_residue_cells": 128,
+    "n_cells_with_support_ge_20": 125,
+    "pure_cells_with_support": 0,
+    "tiny_pure_cells_disclosed": 0,
+    "max_cell_purity_supported": 0.7241,
+    "claim": "NO determinism (no supported pure cells)"
+   },
+   {
+    "cell_family": "N mod 256 vs letter5",
+    "n_residue_cells": 128,
+    "n_cells_with_support_ge_20": 125,
+    "pure_cells_with_support": 0,
+    "tiny_pure_cells_disclosed": 0,
+    "max_cell_purity_supported": 0.7391,
+    "claim": "NO determinism (no supported pure cells)"
+   }
+  ],
+  "no_determinism_at_t_ge_2_any_modulus": true,
+  "letter_marginal_pos0": {
+   "A": 0.4993,
+   "B": 0.2772,
+   "C": 0.2235
+  },
+  "B_rarity_explained": "B = [N=3 mod 4] AND [q<3p]; both needed; C absorbs far field"
+ },
+ "part2": {
+  "ladder_marginal_Nmod8_vs_letter_t": [
+   {
+    "t": 0,
+    "global": {
+     "mi_bits": 1.001336,
+     "null_mean": 0.00107,
+     "null_sd": 0.000617,
+     "z": 1622.075,
+     "perms": 300
+    },
+    "stratified": {
+     "mi_bits": 1.001336,
+     "null_mean": 0.001317,
+     "null_sd": 0.000695,
+     "z": 1438.34,
+     "perms": 300,
+     "n_strata": 15
+    }
+   },
+   {
+    "t": 1,
+    "global": {
+     "mi_bits": 1.004882,
+     "null_mean": 0.001094,
+     "null_sd": 0.000604,
+     "z": 1660.629,
+     "perms": 300
+    },
+    "stratified": {
+     "mi_bits": 1.004882,
+     "null_mean": 0.001016,
+     "null_sd": 0.000617,
+     "z": 1626.244,
+     "perms": 300,
+     "n_strata": 15
+    }
+   },
+   {
+    "t": 2,
+    "global": {
+     "mi_bits": 0.035278,
+     "null_mean": 0.001137,
+     "null_sd": 0.000681,
+     "z": 50.131,
+     "perms": 300
+    },
+    "stratified": {
+     "mi_bits": 0.035278,
+     "null_mean": 0.001186,
+     "null_sd": 0.000662,
+     "z": 51.514,
+     "perms": 300,
+     "n_strata": 15
+    }
+   },
+   {
+    "t": 3,
+    "global": {
+     "mi_bits": 0.002761,
+     "null_mean": 0.001106,
+     "null_sd": 0.000614,
+     "z": 2.696,
+     "perms": 300
+    },
+    "stratified": {
+     "mi_bits": 0.002761,
+     "null_mean": 0.001102,
+     "null_sd": 0.000637,
+     "z": 2.604,
+     "perms": 300,
+     "n_strata": 15
+    }
+   },
+   {
+    "t": 4,
+    "global": {
+     "mi_bits": 0.003299,
+     "null_mean": 0.001132,
+     "null_sd": 0.000618,
+     "z": 3.506,
+     "perms": 300
+    },
+    "stratified": {
+     "mi_bits": 0.003299,
+     "null_mean": 0.001113,
+     "null_sd": 0.000613,
+     "z": 3.565,
+     "perms": 300,
+     "n_strata": 15
+    }
+   },
+   {
+    "t": 5,
+    "global": {
+     "mi_bits": 0.001701,
+     "null_mean": 0.001059,
+     "null_sd": 0.000615,
+     "z": 1.044,
+     "perms": 300
+    },
+    "stratified": {
+     "mi_bits": 0.001701,
+     "null_mean": 0.001074,
+     "null_sd": 0.00063,
+     "z": 0.996,
+     "perms": 300,
+     "n_strata": 15
+    }
+   }
+  ],
+  "ladder_conditional_given_prefix": [
+   {
+    "t": 0,
+    "within_prefix": {
+     "mi_bits": 1.001336,
+     "null_mean": 0.001125,
+     "null_sd": 0.000643,
+     "z": 1556.606,
+     "perms": 300
+    }
+   },
+   {
+    "t": 1,
+    "within_prefix": {
+     "covered_rows": 4000,
+     "n_groups": 3,
+     "obs_minus_null": 0.996873,
+     "null_mean": 0.000999,
+     "null_sd": 0.000578,
+     "z": 1723.637
+    }
+   },
+   {
+    "t": 2,
+    "within_prefix": {
+     "covered_rows": 4000,
+     "n_groups": 9,
+     "obs_minus_null": 0.0,
+     "status": "EXACT_ZERO_ZERO_VARIANCE_NULL",
+     "z": 0.0,
+     "note": "x is constant inside every prefix group (predicted by the bijection)"
+    }
+   },
+   {
+    "t": 3,
+    "within_prefix": {
+     "covered_rows": 3777,
+     "n_groups": 21,
+     "obs_minus_null": 0.0,
+     "status": "EXACT_ZERO_ZERO_VARIANCE_NULL",
+     "z": 0.0,
+     "note": "x is constant inside every prefix group (predicted by the bijection)"
+    }
+   },
+   {
+    "t": 4,
+    "within_prefix": {
+     "covered_rows": 3417,
+     "n_groups": 42,
+     "obs_minus_null": -0.0,
+     "null_mean": 0.0,
+     "null_sd": 0.0,
+     "z": -0.998
+    }
+   },
+   {
+    "t": 5,
+    "within_prefix": {
+     "covered_rows": 2141,
+     "n_groups": 36,
+     "obs_minus_null": 0.0,
+     "status": "EXACT_ZERO_ZERO_VARIANCE_NULL",
+     "z": 0.0,
+     "note": "x is constant inside every prefix group (predicted by the bijection)"
+    }
+   }
+  ],
+  "death_point": {
+   "conditional_visibility_dead_from_t": 2,
+   "untestable_positions_insufficient_coverage": [],
+   "marginal_z_t0_t1_stratified": [
+    1438.34,
+    1626.244
+   ],
+   "reading": "conditional dies exactly at t=2 (zero-variance nulls: N mod 8 constant inside every prefix cell, per the bijection)"
+  },
+  "leakage_note": "Any surviving marginal MI at t>=2 is leakage of the first two letters' residue-lock (the bijection), not new 2-adic visibility."
+ },
+ "part3": {
+  "which_factor_wall": {
+   "definition": "I(channel ; WF=[smaller prime = 1 mod 4]) pooled within N mod 16 cells; null shuffles WF inside cells (exp524 recipe); wall HOLDS if max|z| < 4",
+   "wf_note": "given N mod 16, the smaller prime's class is uniform over units (Corollary A2 symmetry), P(WF)=1/2",
+   "pair_channel": {
+    "channel": "labeled_letter_pair",
+    "n_cells_S16_used": 8,
+    "I_bits": 0.002106,
+    "null_mean": 0.001809,
+    "null_sd": 0.000819,
+    "sensitivity_bits": 0.000297,
+    "z": 0.363
+   },
+   "path_channel_exploratory": {
+    "channel": "labeled_letter_path_len6",
+    "n_cells_S16_used": 8,
+    "I_bits": 0.229965,
+    "null_mean": 0.22038,
+    "null_sd": 0.007072,
+    "sensitivity_bits": 0.009585,
+    "z": 1.355
+   },
+   "wall_holds": true
+  },
+  "symmetric_channel_capacity": {
+   "target": "I(N mod 2^k ; UNORDERED letter-pair at positions 0,1)",
+   "curve": [
+    {
+     "modulus": 2,
+     "mi_bits": 0.0,
+     "null_mean": 0.0,
+     "null_sd": 0.0,
+     "z": null,
+     "perms": 300
+    },
+    {
+     "modulus": 4,
+     "mi_bits": 0.524236,
+     "null_mean": 0.000927,
+     "null_sd": 0.000577,
+     "z": 906.377,
+     "perms": 300
+    },
+    {
+     "modulus": 8,
+     "mi_bits": 1.523446,
+     "null_mean": 0.002789,
+     "null_sd": 0.000984,
+     "z": 1545.709,
+     "perms": 300
+    },
+    {
+     "modulus": 16,
+     "mi_bits": 1.524015,
+     "null_mean": 0.006271,
+     "null_sd": 0.001574,
+     "z": 964.066,
+     "perms": 300
+    },
+    {
+     "modulus": 32,
+     "mi_bits": 1.524738,
+     "null_mean": 0.013623,
+     "null_sd": 0.002165,
+     "z": 698.079,
+     "perms": 300
+    }
+   ],
+   "saturation_gap_mod16_vs_mod8_bits": 0.000569,
+   "per_class_outcome_counts_Nmod8": {
+    "1": [
+     "AA"
+    ],
+    "3": [
+     "AB",
+     "AC"
+    ],
+    "5": [
+     "AB",
+     "AC"
+    ],
+    "7": [
+     "BB",
+     "BC",
+     "CC"
+    ]
+   }
+  }
+ },
+ "ledger": [
+  "DERIVATION-FIRST: the exact map (Steps 1-4) was derived on paper and encoded in this file BEFORE any population draw; measurement only verifies.",
+  "BALANCED-STRATUM ADJUSTMENT: to honor q in [2^15,2^21] while forcing the B-regime q<3p, the balanced stratum draws p in [2^15,2^17] (not [2^13,2^17]) and q in primes (p,3p). Disclosed as a deviation from an naive reading of the spec.",
+  "ROUND-70 MARGINAL CONTEXT: exp548-era marginal {A:.48,B:.05,C:.47} is explained analytically: A owns the N=1 mod 4 half; B needs the intersection (opposite mod-4 residues AND q<3p). This experiment's pos0 marginal (see part1) is higher on B because the 20% balanced stratum forces q<3p (B-rate ~= P(N=3 mod 4) = 1/2 there) and uniform-over-primes drawing tilts q low; the MECHANISM (double condition) is identical.",
+  "ZERO-VARIANCE NULLS ARE A RESULT, NOT A BUG: within-prefix conditional at t>=2 has N mod 8 constant inside every prefix group (the bijection); these cells are reported as exact zeros, not undefined z.",
+  "MEASURED MARGINAL RECONCILIATION: pos0 letters A=0.4993, B=0.2772, C=0.2235; analytic P(B) = P(N=3 mod 4)*P(q<3p) per stratum (balanced forces q<3p)."
+ ],
+ "verdicts": {
+  "main": "TWO-ADIC-PATH-TWO-CLICKS-THEN-SEALED",
+  "which_factor_wall": "WHICH-FACTOR-WALL-HOLDS-JOINS-SEALED-RESIDUE-DIAL-FAMILY",
+  "capacity_family": "ORDER-UNIVERSAL-ABELIANIZATION-FIT-CAPACITY-SATURATES-MOD8",
+  "part1_all_laws_100pct": true,
+  "conditional_death_exact_at_t2": true,
+  "no_determinism_beyond_pos1": true,
+  "capacity_saturates_mod8": true,
+  "statement": "The Price descent's first two letters ARE the low bits of N: letter0='A' iff N=1 mod 4, letter1='A' iff N mod 8 in {1,3}, with (A-ness0,A-ness1) bijective with N mod 8. Mechanism: every step halves exactly one of U=p+q,V=q-p; letter_t='A' iff v2(U_t)=1; the first A lands at u0-1, u0=v2(p+q), and N mod 2^k sees u0 only capped at {1,2,>=3} (odd squares = 1 mod 8; higher bits scrambled by the unknown odd multiplier). Positions >=2 are provably invisible to EVERY modulus and B-vs-C is a size comparison, never a congruence: the residue-visible path is exactly two clicks deep. The channel is which-factor blind and its symmetric capacity saturates at modulus 8 -- it joins the sealed order-universal/abelianization residue-dial family rather than opening a factoring route."
+ },
+ "wall_s": 5.8
+}
