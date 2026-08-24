@@ -1,0 +1,557 @@
+{
+ "exp": 560,
+ "codename": "PORTFOLIO",
+ "round": 71,
+ "smoke": false,
+ "status": "04_final",
+ "wall_s": 6.4,
+ "hypotheses": {
+  "H1": "crossover structure: max oracle-winner share < 0.90; Fermat winner-share top balance-quintile >= 0.25 AND bottom quintile <= 0.05",
+  "H2": "PRIMARY dial (rule) beats best static pipeline on TEST mean regret: paired bootstrap CI95 < 0 and relative reduction >= 10%",
+  "H3": "structural eliminations: TD and PM1_1024 oracle shares exactly 0 (pre-computed from cost model)"
+ },
+ "reconstruction_note": "tasking channel specified exp id/path/population (600 semiprimes, bitlen 32-40, seed 20260827)/smoke n=30/deliverables only; method set {TD, RHO, FERMAT, PM1_256, PM1_1024}, caps, pricing, split, and adaptive policies were fixed HERE pre-data and are recorded in this config block",
+ "config": {
+  "seed_pop": 20260827,
+  "seed_split": 20260828,
+  "seed_boot": 20260829,
+  "seed_ml": 20260831,
+  "seed_rho": 20260830,
+  "total_n": 600,
+  "bitlen_targets": [
+   32,
+   33,
+   34,
+   35,
+   36,
+   37,
+   38,
+   39,
+   40
+  ],
+  "p_range": [
+   1024,
+   1048576
+  ],
+  "q_range": [
+   4096,
+   4194304
+  ],
+  "methods": [
+   "TD",
+   "RHO",
+   "FERMAT",
+   "PM1_256",
+   "PM1_1024"
+  ],
+  "td_bound": 65536,
+  "rho_cap_iters": 250000,
+  "fer_cap_steps": 100000,
+  "pm_bases": [
+   2,
+   3,
+   5,
+   7
+  ],
+  "cap_ops": {
+   "td_mods": 6542,
+   "rho_iters": 250000,
+   "rho_gcds": 8000,
+   "fer_steps": 100000,
+   "pm_mul": 9000,
+   "pm_gcd": 1400
+  },
+  "pricings": {
+   "MAIN": {
+    "td_mods": 1,
+    "rho_iters": 1,
+    "rho_gcds": 3,
+    "fer_steps": 2,
+    "pm_mul": 1,
+    "pm_gcd": 3
+   },
+   "FLAT1": {
+    "td_mods": 1,
+    "rho_iters": 1,
+    "rho_gcds": 1,
+    "fer_steps": 1,
+    "pm_mul": 1,
+    "pm_gcd": 1
+   },
+   "HEAVY_FER": {
+    "td_mods": 1,
+    "rho_iters": 1,
+    "rho_gcds": 3,
+    "fer_steps": 4,
+    "pm_mul": 1,
+    "pm_gcd": 3
+   }
+  },
+  "primary_pricing": "MAIN",
+  "primary_adaptive": "DIAL-RULE",
+  "n_boot": 10000,
+  "features": [
+   "bitlen",
+   "log2N",
+   "gap0",
+   "log2gap_p1",
+   "bal",
+   "frac_sqrt",
+   "cntQR100",
+   "T400",
+   "mod3",
+   "mod5",
+   "mod7",
+   "mod11",
+   "mod13",
+   "bl_odd"
+  ]
+ },
+ "population": {
+  "total": 600,
+  "hist_by_bitlen": {
+   "32": 67,
+   "33": 67,
+   "34": 67,
+   "35": 67,
+   "36": 67,
+   "37": 67,
+   "38": 66,
+   "39": 66,
+   "40": 66
+  }
+ },
+ "traceback": "Traceback (most recent call last):\n  File \"/home/raver1975/factor3/ResearchOutput/scripts/2026-08-21-resume/exp560_portfolio.py\", line 901, in <module>\n    main()\n  File \"/home/raver1975/factor3/ResearchOutput/scripts/2026-08-21-resume/exp560_portfolio.py\", line 885, in main\n    + [rr[f\"regret_{n}\"] for n in (\"STATIC\", \"DIAL_RULE\",\n       ~~^^^^^^^^^^^^^^^\nKeyError: 'regret_STATIC'\n",
+ "split": {
+  "train": 300,
+  "test": 300
+ },
+ "static_order_by_cost": [
+  "RHO",
+  "TD",
+  "FERMAT",
+  "PM1_256",
+  "PM1_1024"
+ ],
+ "static_order_by_regret": [
+  "RHO",
+  "TD",
+  "FERMAT",
+  "PM1_256",
+  "PM1_1024"
+ ],
+ "rule_params": {
+  "tau1": 0.0011708605187795292,
+  "tau2": 0.0011708605187795292,
+  "promote_pm1_256": false
+ },
+ "test_summary": {
+  "STATIC": {
+   "mean_cost": 711.9166666666666,
+   "mean_regret": 3.1171482160068194,
+   "median_regret": 1.0,
+   "p90_regret": 5.18681149668365,
+   "successes": 600,
+   "censored": 0
+  },
+  "STATIC_REGRETSEL": {
+   "mean_cost": 711.9166666666666,
+   "mean_regret": 3.1171482160068194,
+   "median_regret": 1.0,
+   "p90_regret": 5.18681149668365,
+   "successes": 600,
+   "censored": 0
+  },
+  "DIAL_RULE": {
+   "mean_cost": 711.9166666666666,
+   "mean_regret": 3.1171482160068194,
+   "median_regret": 1.0,
+   "p90_regret": 5.18681149668365,
+   "successes": 600,
+   "censored": 0
+  },
+  "DIAL_ML": {
+   "mean_cost": 1219.2233333333334,
+   "mean_regret": 4.683331877259817,
+   "median_regret": 1.082073102246749,
+   "p90_regret": 6.746733722690896,
+   "successes": 600,
+   "censored": 0
+  }
+ },
+ "paired_bootstrap": {
+  "DIAL_RULE": {
+   "delta_mean_regret": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "rel_reduction_vs_static": 0.0
+  },
+  "DIAL_ML": {
+   "delta_mean_regret": 1.5661836612529974,
+   "ci95": [
+    0.5889502231416276,
+    2.883468845013463
+   ],
+   "rel_reduction_vs_static": -0.5024411907045394
+  }
+ },
+ "hypotheses_verdicts": {
+  "H1_pass": false,
+  "H2_pass": false,
+  "H3_pass": false,
+  "verdict_name": "PORTFOLIO-RHO-UNIVERSAL+H3-FAIL"
+ },
+ "oracle_winner_shares_overall": {
+  "TD": 0.0016666666666666668,
+  "RHO": 0.58,
+  "FERMAT": 0.028333333333333332,
+  "PM1_256": 0.345,
+  "PM1_1024": 0.045
+ },
+ "fermat_share_most_balanced_quintile": 0.016666666666666666,
+ "fermat_share_least_balanced_quintile": 0.016666666666666666,
+ "crossover_map_by_bitlen": {
+  "32": {
+   "n": 67,
+   "oracle_winner_shares": {
+    "n": 67,
+    "TD": 0.0,
+    "RHO": 0.5223880597014925,
+    "FERMAT": 0.04477611940298507,
+    "PM1_256": 0.40298507462686567,
+    "PM1_1024": 0.029850746268656716
+   },
+   "regret_STATIC": 2.2716345791304033,
+   "regret_DIAL_RULE": 2.2716345791304033,
+   "regret_DIAL_ML": 5.161432050994402
+  },
+  "33": {
+   "n": 67,
+   "oracle_winner_shares": {
+    "n": 67,
+    "TD": 0.014925373134328358,
+    "RHO": 0.5970149253731343,
+    "FERMAT": 0.04477611940298507,
+    "PM1_256": 0.34328358208955223,
+    "PM1_1024": 0.0
+   },
+   "regret_STATIC": 5.818776274898038,
+   "regret_DIAL_RULE": 5.818776274898038,
+   "regret_DIAL_ML": 5.798559306457217
+  },
+  "34": {
+   "n": 67,
+   "oracle_winner_shares": {
+    "n": 67,
+    "TD": 0.0,
+    "RHO": 0.6865671641791045,
+    "FERMAT": 0.04477611940298507,
+    "PM1_256": 0.26865671641791045,
+    "PM1_1024": 0.0
+   },
+   "regret_STATIC": 3.5711317158520703,
+   "regret_DIAL_RULE": 3.5711317158520703,
+   "regret_DIAL_ML": 3.8686489421934422
+  },
+  "35": {
+   "n": 67,
+   "oracle_winner_shares": {
+    "n": 67,
+    "TD": 0.0,
+    "RHO": 0.6417910447761194,
+    "FERMAT": 0.014925373134328358,
+    "PM1_256": 0.29850746268656714,
+    "PM1_1024": 0.04477611940298507
+   },
+   "regret_STATIC": 1.8896120036980275,
+   "regret_DIAL_RULE": 1.8896120036980275,
+   "regret_DIAL_ML": 3.2358809415824794
+  },
+  "36": {
+   "n": 67,
+   "oracle_winner_shares": {
+    "n": 67,
+    "TD": 0.0,
+    "RHO": 0.5671641791044776,
+    "FERMAT": 0.014925373134328358,
+    "PM1_256": 0.40298507462686567,
+    "PM1_1024": 0.014925373134328358
+   },
+   "regret_STATIC": 4.971875402679775,
+   "regret_DIAL_RULE": 4.971875402679775,
+   "regret_DIAL_ML": 6.381657058864153
+  },
+  "37": {
+   "n": 67,
+   "oracle_winner_shares": {
+    "n": 67,
+    "TD": 0.0,
+    "RHO": 0.5671641791044776,
+    "FERMAT": 0.029850746268656716,
+    "PM1_256": 0.34328358208955223,
+    "PM1_1024": 0.05970149253731343
+   },
+   "regret_STATIC": 2.1882561692723805,
+   "regret_DIAL_RULE": 2.1882561692723805,
+   "regret_DIAL_ML": 1.6745715778860686
+  },
+  "38": {
+   "n": 66,
+   "oracle_winner_shares": {
+    "n": 66,
+    "TD": 0.0,
+    "RHO": 0.5909090909090909,
+    "FERMAT": 0.0,
+    "PM1_256": 0.3181818181818182,
+    "PM1_1024": 0.09090909090909091
+   },
+   "regret_STATIC": 2.8032541529015784,
+   "regret_DIAL_RULE": 8.47797892874995,
+   "regret_DIAL_ML": 3.117096600053146
+  },
+  "39": {
+   "n": 66,
+   "oracle_winner_shares": {
+    "n": 66,
+    "TD": 0.0,
+    "RHO": 0.5757575757575758,
+    "FERMAT": 0.015151515151515152,
+    "PM1_256": 0.3181818181818182,
+    "PM1_1024": 0.09090909090909091
+   },
+   "regret_STATIC": 2.6614303513890785,
+   "regret_DIAL_RULE": 2.6614303513890785,
+   "regret_DIAL_ML": 2.6614303513890785
+  },
+  "40": {
+   "n": 66,
+   "oracle_winner_shares": {
+    "n": 66,
+    "TD": 0.0,
+    "RHO": 0.4696969696969697,
+    "FERMAT": 0.045454545454545456,
+    "PM1_256": 0.4090909090909091,
+    "PM1_1024": 0.07575757575757576
+   },
+   "regret_STATIC": 6.83604782987054,
+   "regret_DIAL_RULE": 6.83604782987054,
+   "regret_DIAL_ML": 6.83604782987054
+  }
+ },
+ "crossover_map_by_balance_quintile": {
+  "0": {
+   "n": 120,
+   "TD": 0.0,
+   "RHO": 0.5583333333333333,
+   "FERMAT": 0.016666666666666666,
+   "PM1_256": 0.375,
+   "PM1_1024": 0.05
+  },
+  "1": {
+   "n": 120,
+   "TD": 0.008333333333333333,
+   "RHO": 0.5083333333333333,
+   "FERMAT": 0.025,
+   "PM1_256": 0.425,
+   "PM1_1024": 0.03333333333333333
+  },
+  "2": {
+   "n": 120,
+   "TD": 0.0,
+   "RHO": 0.6333333333333333,
+   "FERMAT": 0.03333333333333333,
+   "PM1_256": 0.2833333333333333,
+   "PM1_1024": 0.05
+  },
+  "3": {
+   "n": 120,
+   "TD": 0.0,
+   "RHO": 0.6083333333333333,
+   "FERMAT": 0.05,
+   "PM1_256": 0.30833333333333335,
+   "PM1_1024": 0.03333333333333333
+  },
+  "4": {
+   "n": 120,
+   "TD": 0.0,
+   "RHO": 0.5916666666666667,
+   "FERMAT": 0.016666666666666666,
+   "PM1_256": 0.3333333333333333,
+   "PM1_1024": 0.058333333333333334
+  }
+ },
+ "method_census_MAIN_pricing": {
+  "TD": {
+   "success_rate": 0.47,
+   "n_success": 282,
+   "mean_cost_given_success": 2714.0567375886526,
+   "median_cost_given_success": 2334.5,
+   "mean_cost_all_incl_caps": 4742.866666666667,
+   "max_cost_observed": 6542.0
+  },
+  "RHO": {
+   "success_rate": 1.0,
+   "n_success": 600,
+   "mean_cost_given_success": 727.6133333333333,
+   "median_cost_given_success": 534.0,
+   "mean_cost_all_incl_caps": 727.6133333333333,
+   "max_cost_observed": 3505.0
+  },
+  "FERMAT": {
+   "success_rate": 0.4266666666666667,
+   "n_success": 256,
+   "mean_cost_given_success": 63472.078125,
+   "median_cost_given_success": 44998.0,
+   "mean_cost_all_incl_caps": 141748.08666666667,
+   "max_cost_observed": 200000.0
+  },
+  "PM1_256": {
+   "success_rate": 0.48333333333333334,
+   "n_success": 290,
+   "mean_cost_given_success": 296.31724137931036,
+   "median_cost_given_success": 261.0,
+   "mean_cost_all_incl_caps": 1555.0066666666667,
+   "max_cost_observed": 2740.0
+  },
+  "PM1_1024": {
+   "success_rate": 0.7366666666666667,
+   "n_success": 442,
+   "mean_cost_given_success": 689.4773755656108,
+   "median_cost_given_success": 450.0,
+   "mean_cost_all_incl_caps": 3286.555,
+   "max_cost_observed": 10680.0
+  }
+ },
+ "strategy_summary_TEST": {
+  "STATIC": {
+   "mean_cost": 711.9166666666666,
+   "mean_regret": 3.1171482160068194,
+   "median_regret": 1.0,
+   "p90_regret": 5.18681149668365,
+   "successes": 600,
+   "censored": 0
+  },
+  "STATIC_REGRETSEL": {
+   "mean_cost": 711.9166666666666,
+   "mean_regret": 3.1171482160068194,
+   "median_regret": 1.0,
+   "p90_regret": 5.18681149668365,
+   "successes": 600,
+   "censored": 0
+  },
+  "DIAL_RULE": {
+   "mean_cost": 711.9166666666666,
+   "mean_regret": 3.1171482160068194,
+   "median_regret": 1.0,
+   "p90_regret": 5.18681149668365,
+   "successes": 600,
+   "censored": 0
+  },
+  "DIAL_ML": {
+   "mean_cost": 1219.2233333333334,
+   "mean_regret": 4.683331877259817,
+   "median_regret": 1.082073102246749,
+   "p90_regret": 6.746733722690896,
+   "successes": 600,
+   "censored": 0
+  }
+ },
+ "strategy_summary_FULLPOP": {
+  "STATIC": {
+   "mean_cost": 727.6133333333333,
+   "mean_regret": 3.665840843008659,
+   "median_regret": 1.0,
+   "p90_regret": 5.51731920773837,
+   "successes": 600,
+   "censored": 0
+  },
+  "STATIC_REGRETSEL": {
+   "mean_cost": 727.6133333333333,
+   "mean_regret": 3.665840843008659,
+   "median_regret": 1.0,
+   "p90_regret": 5.51731920773837,
+   "successes": 600,
+   "censored": 0
+  },
+  "DIAL_RULE": {
+   "mean_cost": 1060.9466666666667,
+   "mean_regret": 4.29006056835198,
+   "median_regret": 1.0,
+   "p90_regret": 5.557250519750524,
+   "successes": 600,
+   "censored": 0
+  },
+  "DIAL_ML": {
+   "mean_cost": 985.6666666666666,
+   "mean_regret": 4.304420295651921,
+   "median_regret": 1.0,
+   "p90_regret": 6.168918918918919,
+   "successes": 600,
+   "censored": 0
+  }
+ },
+ "paired_bootstrap_dial_minus_static": {
+  "DIAL_RULE": {
+   "delta_mean_regret": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "rel_reduction_vs_static": 0.0
+  },
+  "DIAL_ML": {
+   "delta_mean_regret": 1.5661836612529974,
+   "ci95": [
+    0.5889502231416276,
+    2.883468845013463
+   ],
+   "rel_reduction_vs_static": -0.5024411907045394
+  }
+ },
+ "pricing_robustness": {
+  "FLAT1": {
+   "static_order": [
+    "RHO",
+    "TD",
+    "FERMAT",
+    "PM1_256",
+    "PM1_1024"
+   ],
+   "static_mean_regret_test": 4.288822400187434,
+   "rule_mean_regret_test": 4.288822400187434,
+   "ml_mean_regret_test": 5.7233778548658245,
+   "rel_reduction_rule_vs_static": 0.0,
+   "sign_holds": false
+  },
+  "HEAVY_FER": {
+   "static_order": [
+    "RHO",
+    "TD",
+    "FERMAT",
+    "PM1_256",
+    "PM1_1024"
+   ],
+   "static_mean_regret_test": 2.6385760520630006,
+   "rule_mean_regret_test": 2.6385760520630006,
+   "ml_mean_regret_test": 4.2047597133159975,
+   "rel_reduction_rule_vs_static": 0.0,
+   "sign_holds": false
+  }
+ },
+ "oracle_cost_MAIN": {
+  "mean": 495.965,
+  "median": 296.0
+ },
+ "ledger_catches": [
+  "brief under-specification: method set/caps/pricing/split/policies not given by tasking channel -> fixed pre-data and recorded at stage 00 (reconstruction_note)",
+  "leakage guard: feature function isolated from factor variables; runtime assert that every claimed factor divides its N"
+ ],
+ "ledger_addendum_post_run": [
+  "H3 REFUTED - mechanism caught: the pre-data 'structural elimination' of TD and PM1_1024 compared MEAN rho cost against a constant PM1/TD cost. Realized rho cost is random (heavy right tail) while PM1 cost is nearly constant, so wins occur wherever the distributions overlap: TD 1/600 (its 47% success rate still almost never WINS - median cost|success 2334 vs rho 534), PM1_1024 4.5% (73.7% success). Elimination claims need distributional-dominance arguments, not mean comparisons.",
+  "H1 decomposition: the 'no universal winner' clause PASSED (max oracle share 0.58 < 0.90) but the balance-gradient clause FAILED flat (Fermat winner share 1.7% in BOTH extreme balance quintiles; every method's winner share is balance-flat). At this sampler the crossover is organized by p-1/q-1 powersmoothness (N-invisible), not by balance: the script verdict PORTFOLIO-RHO-UNIVERSAL+H3-FAIL encodes the pre-stated clause bundle, but rho is a 58% PLURALITY, not universal.",
+  "sampler-dependence scope note: the tasking brief fixed only '600 semiprimes bitlen 32-40'; the within-bitlen factor-size spread (independent wide ranges) dilutes near-square N, which is why the position/Fermat channel is marginal here (2.8% winner share) unlike balanced-bet samplers (cf. position 5.19x law).",
+  "DIAL_ML harm mechanism: depth-4 trees on 300 train rows overfit success labels; FERMAT's asymmetric cap (200k priced units on a miss) makes false positives brutally expensive -> TEST mean regret 4.68 vs static 3.12, paired CI [+0.59,+2.88] (significantly WORSE, not merely neutral). Sign direction stable under all three pricings."
+ ]
+}

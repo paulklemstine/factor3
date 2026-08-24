@@ -1,0 +1,24 @@
+[     0.0s] stage 00 done (hypotheses + config checkpointed)
+[     0.2s] population: 600 semiprimes in 29654 pair-attempts (2.0% accept); hist={32: 67, 33: 67, 34: 67, 35: 67, 36: 67, 37: 67, 38: 66, 39: 66, 40: 66}
+[     0.2s] stage 01 done (population written)
+[     0.6s] methods done 50/600
+[     1.1s] methods done 100/600
+[     1.5s] methods done 150/600
+[     1.9s] methods done 200/600
+[     2.3s] methods done 250/600
+[     2.7s] methods done 300/600
+[     3.1s] methods done 350/600
+[     3.5s] methods done 400/600
+[     3.9s] methods done 450/600
+[     4.4s] methods done 500/600
+[     4.9s] methods done 550/600
+[     5.3s] methods done 600/600
+[     5.3s] stage 02 done (portfolio outcomes)
+[     5.4s] static search done (0s): order=('RHO', 'TD', 'FERMAT', 'PM1_256', 'PM1_1024') train_mean_cost=743
+[     5.6s] rule dial tuned: tau1=0.0012 tau2=0.0012 promote_pm1=False train_mean_regret=5.4630
+[     6.0s] stage 03 done: STATIC test mean regret 3.1171 | DIAL_RULE 3.1171
+[     6.4s] FINAL: shares={'TD': 0.002, 'RHO': 0.58, 'FERMAT': 0.028, 'PM1_256': 0.345, 'PM1_1024': 0.045}
+[     6.4s] FINAL: TEST mean regret STATIC=3.1171 DIAL_RULE=3.1171 DIAL_ML=4.6833
+[     6.4s] FINAL: delta(rule-static)=+0.0000 CI[0.0, 0.0] rel=+0.000
+[     6.4s] FINAL: H1=False H2=False H3=False VERDICT=PORTFOLIO-RHO-UNIVERSAL+H3-FAIL
+RUN_DONE
