@@ -1,0 +1,10 @@
+[exp556] smoke=False start
+[phase0] {'lemma1_violations': 0, 'lemma2_violations': 0, 'checked': 20000}
+[phase1] {'expanded': 50000, 'max_depth': 10, 'max_val': 68662375, 'max_val_bits': 27, 'in_window': 0, 'frontier_left': 100001, 'dup_children': 0, 'seen_nodes': 150001} -> P1 CONFIRMED
+[phase2] unique=49732 tries=50022 depth med=21
+[phase3:B100] tree=0.00074 rand=0.000116 xsq=0.000121 T/R=6.43[4.13,9.88] T/X=6.17[3.93,9.47] X/R=1.04[0.69,1.58]
+[phase3:B1000] tree=0.03648 rand=0.004992 xsq=0.005138 T/R=7.31[6.86,7.78] T/X=7.10[6.67,7.56] X/R=1.03[0.97,1.09]
+[phase4-pool] extra nodes=50000 tries=50053
+[phase4] pool=8011 dim=168 deps=40
+[done] 24.4s
+result -> /home/raver1975/factor3/ResearchOutput/scripts/2026-08-21-resume/exp556_result.json

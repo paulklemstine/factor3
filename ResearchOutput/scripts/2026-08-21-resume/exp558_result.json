@@ -1,0 +1,334 @@
+{
+ "exp": 558,
+ "codename": "MULTI-TARGET-HITTING",
+ "smoke": false,
+ "status": "06_final",
+ "wall_s": 205.1,
+ "question": "Relaxing the exact-target demand (a == N) to ANY tree node with gcd(a,N) > 1: how much does expected hitting time drop, and does B1 enter a new scaling class?",
+ "prestated": {
+  "E1": "B1 collapses toward B3/B4 behavior; slope < 0.6 would be NEW and major; reference bands TD 0.84-1.14, rho ~0.52",
+  "E2": "energy-guidance ~ reordering noise (magnitude-mirror seal)"
+ },
+ "config": {
+  "seed": 20260826,
+  "n_pop": 1500,
+  "p_range_odd": [
+   2049,
+   32767
+  ],
+  "q_range_odd": [
+   8193,
+   524287
+  ],
+  "node_budget": 200000,
+  "K_values": [
+   1,
+   4
+  ],
+  "workers": 8,
+  "pricing": {
+   "visit": 4,
+   "division": 1,
+   "rho_iter": 1,
+   "rho_gcd": 3
+  }
+ },
+ "population": {
+  "embedding_exact": 1500,
+  "embedding_failures": 0,
+  "log2s": {
+   "n": 1500,
+   "mean": 13.8306,
+   "q10": 12.4081,
+   "q25": 13.2528,
+   "q50": 14.0323,
+   "q75": 14.617,
+   "q90": 14.8593
+  },
+  "bitlen_N": {
+   "n": 1500,
+   "mean": 31.85,
+   "q10": 30.0,
+   "q25": 31.0,
+   "q50": 32.0,
+   "q75": 33.0,
+   "q90": 34.0
+  }
+ },
+ "part_a_multitarget_census": {
+  "K1": {
+   "total_hits": 17917,
+   "frac_N_with_ge1hit": 0.4547,
+   "hits_per_N": {
+    "n": 1500,
+    "mean": 11.9447,
+    "q10": 0.0,
+    "q25": 0.0,
+    "q50": 0.0,
+    "q75": 7.0,
+    "q90": 38.2
+   },
+   "hit_depth": {
+    "n": 17917,
+    "mean": 10.8115,
+    "q10": 10.0,
+    "q25": 11.0,
+    "q50": 11.0,
+    "q75": 11.0,
+    "q90": 11.0
+   },
+   "maxdepth_reached": {
+    "n": 1500,
+    "mean": 11.0,
+    "q10": 11.0,
+    "q25": 11.0,
+    "q50": 11.0,
+    "q75": 11.0,
+    "q90": 11.0
+   },
+   "kratio_a_over_trigger_prime": {
+    "n": 17917,
+    "mean": 3951.6122,
+    "q10": 846.2,
+    "q25": 1395.0,
+    "q50": 2401.0,
+    "q75": 5075.0,
+    "q90": 8791.0
+   },
+   "depth_minus_crossing_depth": {
+    "n": 17917,
+    "mean": 6.1803,
+    "q10": 6.0,
+    "q25": 6.0,
+    "q50": 6.0,
+    "q75": 7.0,
+    "q90": 7.0
+   },
+   "trigger_p_only": 17874,
+   "trigger_q_only": 43,
+   "trigger_both": 0,
+   "pruned_by_cap_total": 2097917,
+   "budget_bound_frac": 1.0,
+   "frontier_exhausted_frac": 0.0
+  },
+  "K4": {
+   "total_hits": 17964,
+   "frac_N_with_ge1hit": 0.4547,
+   "hits_per_N": {
+    "n": 1500,
+    "mean": 11.976,
+    "q10": 0.0,
+    "q25": 0.0,
+    "q50": 0.0,
+    "q75": 7.0,
+    "q90": 38.2
+   },
+   "hit_depth": {
+    "n": 17964,
+    "mean": 10.812,
+    "q10": 10.0,
+    "q25": 11.0,
+    "q50": 11.0,
+    "q75": 11.0,
+    "q90": 11.0
+   },
+   "maxdepth_reached": {
+    "n": 1500,
+    "mean": 11.0,
+    "q10": 11.0,
+    "q25": 11.0,
+    "q50": 11.0,
+    "q75": 11.0,
+    "q90": 11.0
+   },
+   "kratio_a_over_trigger_prime": {
+    "n": 17964,
+    "mean": 4008.8585,
+    "q10": 847.0,
+    "q25": 1399.0,
+    "q50": 2411.0,
+    "q75": 5115.0,
+    "q90": 8875.8
+   },
+   "depth_minus_crossing_depth": {
+    "n": 17964,
+    "mean": 6.1805,
+    "q10": 6.0,
+    "q25": 6.0,
+    "q50": 6.0,
+    "q75": 7.0,
+    "q90": 7.0
+   },
+   "trigger_p_only": 17892,
+   "trigger_q_only": 72,
+   "trigger_both": 0,
+   "pruned_by_cap_total": 202725,
+   "budget_bound_frac": 1.0,
+   "frontier_exhausted_frac": 0.0
+  },
+  "K4_reused_K1_walk_frac": 0.32,
+  "K4_minus_K1_total_hits": 47,
+  "concentration_verdict": "HITS-AT-FIRST-CROSSING: median(hit depth - minimal crossing depth) = 6.0; 0.0% of hits land within depth +1 of where values first reach min(p,q) scale."
+ },
+ "part_b_methods": {
+  "B1_intree_multi_target": {
+   "n": 682,
+   "units_mul_eq_median": "2^18.77",
+   "log2_units_q10_q25_q50_q75_q90": [
+    17.01,
+    17.539,
+    18.768,
+    19.264,
+    19.416
+   ],
+   "alpha": 1.1687,
+   "alpha_intercept": 3.1011,
+   "r2": 0.7926,
+   "n_fit": 682,
+   "fit_log2s_range": [
+    11.004,
+    14.746
+   ],
+   "uncensored_frac": 0.4547,
+   "censored_at_budget": 818
+  },
+  "B1g_guided_multitarget": {
+   "n": 1500,
+   "units_mul_eq_median": "2^16.31",
+   "log2_units_q10_q25_q50_q75_q90": [
+    14.541,
+    15.462,
+    16.307,
+    16.94,
+    17.202
+   ],
+   "alpha": 1.087,
+   "alpha_intercept": 1.0531,
+   "r2": 1.0,
+   "n_fit": 1500,
+   "fit_log2s_range": [
+    11.004,
+    14.999
+   ],
+   "uncensored_frac": 1.0,
+   "censored_at_budget": 0
+  },
+  "B2_blind_exact_aN_analytic": {
+   "n": 1500,
+   "units_mul_eq_median": "2^56.47",
+   "log2_units_q10_q25_q50_q75_q90": [
+    35.869,
+    43.794,
+    56.474,
+    83.418,
+    132.552
+   ],
+   "alpha": -5.0319,
+   "alpha_intercept": 163.1617,
+   "r2": 0.0003,
+   "n_fit": 1500,
+   "fit_log2s_range": [
+    11.004,
+    14.999
+   ],
+   "median_dB": 34.0,
+   "dB_mean": 57.4,
+   "dB_min": 13,
+   "dB_max": 4580,
+   "note": "analytic FIFO visits (3^(dB+1)-1)/2 x4 units; infeasible to simulate"
+  },
+  "B3_trial_division": {
+   "n": 1500,
+   "units_mul_eq_median": "2^10.92",
+   "log2_units_q10_q25_q50_q75_q90": [
+    9.487,
+    10.233,
+    10.92,
+    11.438,
+    11.654
+   ],
+   "alpha": 0.8802,
+   "alpha_intercept": -1.4304,
+   "r2": 1.0,
+   "n_fit": 1500,
+   "fit_log2s_range": [
+    11.004,
+    14.999
+   ],
+   "convention": "1 division := 1 unit"
+  },
+  "B4_pollard_rho_brent": {
+   "n": 1500,
+   "units_mul_eq_median": "2^8.10",
+   "log2_units_q10_q25_q50_q75_q90": [
+    7.17,
+    7.17,
+    8.103,
+    9.061,
+    9.114
+   ],
+   "alpha": 0.4579,
+   "alpha_intercept": 1.8014,
+   "r2": 0.1761,
+   "n_fit": 1500,
+   "fit_log2s_range": [
+    11.004,
+    14.999
+   ],
+   "failures": 0,
+   "tries_mean": 1.002
+  },
+  "_pairwise_median_log2_diffs": {
+   "B1_minus_B3": 7.848,
+   "B1_minus_B4": 10.665,
+   "B2_minus_B1": 37.706
+  }
+ },
+ "part_b_B1_equivalence_verdict": "HYBRID / BUDGET-DOMINATED-WITH-MEASURABLE-TAIL: 55% of Ns censored at budget, but the finished 682 Ns span log2s [11.004, 14.746] and give alpha=1.169 (r2=0.7926) -- NOT below 0.6, so the pre-stated NEW-and-major sub-linear regime is REFUTED; where it finishes at all, multi-target FIFO behaves like trial division or worse. Slope fitted on the FINISHED subset only -- that subset is size-biased toward smaller min(p,q) (hits need a >= min(p,q) to exist and depth-ordered BFS reaches large a late), so treat alpha as indicative, not a clean scaling law. Value-ordered expansion (part c) finishes 100% of Ns with alpha=1.087: the relaxation pays off ONLY under value ordering, and then lands in the trial-division class.",
+ "part_b_B1_theory_gap_log2": 3.744,
+ "part_c_energy_guidance": {
+  "priority": "dist(a, nearest multiple of N), best-first, cap 4N, same budget",
+  "fifo_wins_guided_wins_ties": [
+   0,
+   1500,
+   0
+  ],
+  "sign_test_z": 38.73,
+  "p_two_sided_normal_approx": 0.0,
+  "median_paired_ratio_guided_over_fifo": 0.1109,
+  "n_both_finished": 682,
+  "mechanism_probe": {
+   "n_guided_hits": 1500,
+   "hit_a_over_minpq": {
+    "n": 1500,
+    "mean": 1.0,
+    "q10": 1.0,
+    "q25": 1.0,
+    "q50": 1.0,
+    "q75": 1.0,
+    "q90": 1.0
+   },
+   "frac_hit_a_below_N": 1.0,
+   "frac_hit_a_exactly_minpq": 1.0
+  },
+  "verdict": "GUIDANCE-HELPS: z=38.73 (FIFO wins 0, guided wins 1500, ties 0), median paired ratio 0.1109318843770785 -- AGAINST the pre-stated magnitude-mirror-seal expectation, stated plainly. Mechanism (from data): guided first-hits land at small multiples of min(p,q) (median hit_a/min(p,q) = 1.00, 100.0% of them at a < N, 100.0% exactly at a = min(p,q)); the priority dist(a,N)=min(a mod N, N-a mod N) is monotone increasing in a on [0, N/2], so best-first DEGENERATES TO AN ASCENDING-VALUE SWEEP over the tree's dense value set until it enters divisibility territory (a >= min(p,q)). The guidance sweeps VALUES toward multiples of the prime factors; it does not sense modular structure."
+ },
+ "ledger": [
+  "PRICING: 1 visit = 4 units (1 mul + 1 gcd@3); child-value arithmetic excluded uniformly from B1/B2/guided; TD division := 1 unit (x3 shifts constants only, not slopes); rho iter := 1, gcd batch := 3, failed restarts counted.",
+  "B2 is ANALYTIC: visits = (3^(dB+1)-1)//2 from the exact unique parent-climb depth dB (median 34, range 13..4580); simulating is computationally impossible at median dB.",
+  "K4 walk REUSED the K1 walk on 32.0% of Ns (rule: K1 budget-bound AND zero cap-prunes => identical FIFO prefix); K4-minus-K1 total hits = 47.",
+  "Value cap binding within the 200000-node budget: K4 walk cap-pruned >0 nodes on 374/1500 Ns (202725 prunes total).",
+  "B1 censored (no hit within budget) on 818/1500 Ns; slope fitted on uncensored only.",
+  "LEDGER CATCH: FIFO first-hit times exceed the uniform-modular-random prediction E~pq/(p+q); the median gap is 3.744 log2 units (see part_b_B1_theory_gap_log2) -- tree values are NOT uniform mod p at fixed depth (small-a nodes overrepresented), so 'multiple targets = modular luck' FAILS as a model of depth-ordered search; it holds only for value-ordered search, where hits arrive exactly AT a=min(p,q).",
+  "Pollard rho failures: 0/1500.",
+  "Guidance overhead (heap push/pop) excluded from the matched-compute unit count; mean/max heap watermark 42546/83723 entries.",
+  "Embedding exactness asserted: 1500/1500 (binding lesson L1).",
+  "NOTE s-range: min(p,q) in [11.00,15.00] log2 -- q's lower bound (2^13) exceeds p's floor, so s spans [2^11+1, 2^15-1] regardless of q."
+ ],
+ "artifacts": {
+  "script": "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-21-resume/exp558_multi_target.py",
+  "result": "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-21-resume/exp558_result.json",
+  "per_n_csv": "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-21-resume/exp558_per_n.csv",
+  "run_log": "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-21-resume/exp558_run.log"
+ }
+}

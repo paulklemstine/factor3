@@ -1,0 +1,384 @@
+{
+ "exp": 556,
+ "name": "TREE-RELATION-SIEVE",
+ "seed": 20260823,
+ "smoke": false,
+ "started": "2026-08-23 22:08:03",
+ "phase0_lemma_checks": {
+  "lemma1_violations": 0,
+  "lemma2_violations": 0,
+  "checked": 20000
+ },
+ "phase1_spec_bfs": {
+  "expanded": 50000,
+  "max_depth": 10,
+  "max_val": 68662375,
+  "max_val_bits": 27,
+  "in_window": 0,
+  "frontier_left": 100001,
+  "dup_children": 0,
+  "seen_nodes": 150001
+ },
+ "P1_spec_bfs_starvation": {
+  "verdict": "CONFIRMED",
+  "detail": "max_val=68662375 (27 bits), depth=10, in_window=0"
+ },
+ "phase2_collector": {
+  "requested": 50000,
+  "emitted": 50000,
+  "unique": 49732,
+  "attempts": 50022,
+  "dup_nodes": 268,
+  "lemma2_violations_on_sample": 0,
+  "depth_min": 12,
+  "depth_med": 21,
+  "depth_max": 39,
+  "balance_log2_ratio_quartiles": [
+   0.827,
+   1.268,
+   1.292
+  ]
+ },
+ "phase3_design": {
+  "tree_n": 49732,
+  "ctrl_mult": 8,
+  "rand_n": 397856,
+  "xsq_n": 397856,
+  "bitlen_buckets": {
+   "31": 757,
+   "32": 1381,
+   "33": 1570,
+   "34": 1616,
+   "35": 1575,
+   "36": 1669,
+   "37": 1631,
+   "38": 1600,
+   "39": 1607,
+   "40": 1646,
+   "41": 1748,
+   "42": 1714,
+   "43": 1697,
+   "44": 1644,
+   "45": 1623,
+   "46": 1703,
+   "47": 1685,
+   "48": 1589,
+   "49": 1649,
+   "50": 1699,
+   "51": 1695,
+   "52": 1623,
+   "53": 1672,
+   "54": 1707,
+   "55": 1720,
+   "56": 1710,
+   "57": 1600,
+   "58": 1706,
+   "59": 1823,
+   "60": 2673
+  }
+ },
+ "phase3_smoothness": {
+  "B100": {
+   "tree_rate": 0.0007439877744711655,
+   "rand_rate": 0.00011561972170835679,
+   "xsq_rate": 0.00012064666613045926,
+   "k_tree": 37,
+   "k_rand": 46,
+   "k_xsq": 48,
+   "tree_vs_rand": {
+    "ratio": 6.434782608695652,
+    "ci": [
+     4.129032258064516,
+     9.882352941176471
+    ],
+    "inf_frac": 0.0
+   },
+   "tree_vs_xsq": {
+    "ratio": 6.166666666666667,
+    "ci": [
+     3.929824561403509,
+     9.474051407588707
+    ],
+    "inf_frac": 0.0
+   },
+   "xsq_vs_rand": {
+    "ratio": 1.0434782608695652,
+    "ci": [
+     0.689655172413793,
+     1.5789473684210527
+    ],
+    "inf_frac": 0.0
+   },
+   "dose_response": [
+    {
+     "quartile": 1,
+     "bal_range": [
+      0.23,
+      0.83
+     ],
+     "k": 8,
+     "n": 12433,
+     "rate": 0.0006434488860291161,
+     "ci": [
+      0.000326082448551568,
+      0.0012693065286627115
+     ]
+    },
+    {
+     "quartile": 2,
+     "bal_range": [
+      0.83,
+      1.27
+     ],
+     "k": 8,
+     "n": 12433,
+     "rate": 0.0006434488860291161,
+     "ci": [
+      0.000326082448551568,
+      0.0012693065286627115
+     ]
+    },
+    {
+     "quartile": 3,
+     "bal_range": [
+      1.27,
+      1.29
+     ],
+     "k": 8,
+     "n": 12433,
+     "rate": 0.0006434488860291161,
+     "ci": [
+      0.000326082448551568,
+      0.0012693065286627115
+     ]
+    },
+    {
+     "quartile": 4,
+     "bal_range": [
+      1.29,
+      4.93
+     ],
+     "k": 13,
+     "n": 12433,
+     "rate": 0.0010456044397973137,
+     "ci": [
+      0.000611175818323129,
+      0.001788275823804403
+     ]
+    }
+   ]
+  },
+  "B1000": {
+   "tree_rate": 0.03647550872677552,
+   "rand_rate": 0.004991755811147752,
+   "xsq_rate": 0.005137537199388724,
+   "k_tree": 1814,
+   "k_rand": 1986,
+   "k_xsq": 2044,
+   "tree_vs_rand": {
+    "ratio": 7.307150050352468,
+    "ci": [
+     6.8603769028350685,
+     7.782654663069658
+    ],
+    "inf_frac": 0.0
+   },
+   "tree_vs_xsq": {
+    "ratio": 7.099804305283758,
+    "ci": [
+     6.67488022766574,
+     7.559679012345679
+    ],
+    "inf_frac": 0.0
+   },
+   "xsq_vs_rand": {
+    "ratio": 1.0292044310171198,
+    "ci": [
+     0.9677251347760975,
+     1.094069662512914
+    ],
+    "inf_frac": 0.0
+   },
+   "dose_response": [
+    {
+     "quartile": 1,
+     "bal_range": [
+      0.23,
+      0.83
+     ],
+     "k": 474,
+     "n": 12433,
+     "rate": 0.038124346497225126,
+     "ci": [
+      0.03489839843452606,
+      0.041635630912603354
+     ]
+    },
+    {
+     "quartile": 2,
+     "bal_range": [
+      0.83,
+      1.27
+     ],
+     "k": 424,
+     "n": 12433,
+     "rate": 0.034102790959543154,
+     "ci": [
+      0.031053671480783206,
+      0.03743973121721369
+     ]
+    },
+    {
+     "quartile": 3,
+     "bal_range": [
+      1.27,
+      1.29
+     ],
+     "k": 462,
+     "n": 12433,
+     "rate": 0.03715917316818145,
+     "ci": [
+      0.033974681927208344,
+      0.040629597024129264
+     ]
+    },
+    {
+     "quartile": 4,
+     "bal_range": [
+      1.29,
+      4.93
+     ],
+     "k": 454,
+     "n": 12433,
+     "rate": 0.036515724282152336,
+     "ci": [
+      0.03335920455638341,
+      0.039958574131092994
+     ]
+    }
+   ]
+  }
+ },
+ "P2_coprime_split_boost": {
+  "verdict": "CONFIRMED",
+  "tree_vs_rand_ratio": {
+   "ratio": 7.307150050352468,
+   "ci": [
+    6.8603769028350685,
+    7.782654663069658
+   ],
+   "inf_frac": 0.0
+  },
+  "magnitude": "below-naive",
+  "dose_response_monotone": false
+ },
+ "P3_pool_law_parity": {
+  "verdict": "CONSISTENT",
+  "xsq_vs_rand_B100": {
+   "ratio": 1.0434782608695652,
+   "ci": [
+    0.689655172413793,
+    1.5789473684210527
+   ],
+   "inf_frac": 0.0
+  },
+  "xsq_vs_rand_B1000": {
+   "ratio": 1.0292044310171198,
+   "ci": [
+    0.9677251347760975,
+    1.094069662512914
+   ],
+   "inf_frac": 0.0
+  }
+ },
+ "phase4_pool": {
+  "collector": {
+   "note": "reduced window [2^25,2^40] extra pass",
+   "nodes": 50000,
+   "tries": 50053,
+   "window_bits": [
+    26,
+    41
+   ]
+  },
+  "note": "FB=B1000 dim=168",
+  "pool": 8011,
+  "dim": 168
+ },
+ "phase4_relations_needed": {
+  "trials": 30,
+  "mean": 120.1,
+  "min": 105,
+  "max": 133
+ },
+ "phase4_subsets": {
+  "rank": 153,
+  "n": 40,
+  "support_sizes": [
+   36,
+   32,
+   26,
+   30,
+   32,
+   38,
+   30,
+   34,
+   36,
+   24,
+   32,
+   28,
+   37,
+   33,
+   43,
+   33,
+   17,
+   43,
+   31,
+   21,
+   32,
+   29,
+   35,
+   35,
+   32,
+   31,
+   38,
+   36,
+   28,
+   41,
+   22,
+   32,
+   39,
+   30,
+   27,
+   24,
+   32,
+   35,
+   27,
+   27
+  ]
+ },
+ "phase4_end_to_end": {
+  "n_semiprimes": 300,
+  "tickets_total": 12000,
+  "tree_success": 8,
+  "tree_trivial_gcd_eq_N": 0,
+  "tree_fail": 11992,
+  "tree_rate": 0.0006666666666666666,
+  "tree_ci": [
+   0.0003378498920458056,
+   0.001315087614227186
+  ],
+  "baseline_success": 4,
+  "baseline_rate": 0.0003333333333333333,
+  "baseline_ci": [
+   0.000129632121796811,
+   0.0008568520717300344
+  ],
+  "heuristic_per_ticket": 0.0006553042181257635
+ },
+ "P4_lottery_end_to_end": {
+  "verdict": "CONSISTENT-LOTTERY"
+ },
+ "part_a_verdict": "INVALID AS STATED: the identity Pi a_i = Y^2 is over Z and never reduces mod N; success requires N | Pi m_i - Y, which nothing in the construction supplies. The only square root of Y^2 mod N available without factoring is Y itself (X:=Y gives gcd = N, trivial). For a fixed pool the pairs (X_S, Y_S) are independent of N, so per-ticket success is the generic-gcd luck 1/p + 1/q = O(N^-1/2) -- the equivalence class is random-gcd, i.e. guessing a nontrivial square root mod N, which is polynomial-time equivalent to factoring. Any corrected variant forcing u = v (mod N) with uv square collapses to Dixon/QS proper, at which point the tree contributes nothing but a (possibly boosted-yield, Part B) smooth-integer farm that cannot be coupled to N without already factoring.",
+ "runtime_s": 24.4
+}

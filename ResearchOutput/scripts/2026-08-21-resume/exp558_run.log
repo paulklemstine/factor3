@@ -1,0 +1,353 @@
+[exp558] MULTI-TARGET-HITTING smoke=False pop=1500 budget=200000 workers=8
+[exp558] population drawn: 1500, embedding failures: 0 (require 0)
+[exp558] 24/1500 Ns done (26s)
+[exp558] 48/1500 Ns done (26s)
+[exp558] 72/1500 Ns done (27s)
+[exp558] 96/1500 Ns done (28s)
+[exp558] 120/1500 Ns done (28s)
+[exp558] 144/1500 Ns done (29s)
+[exp558] 168/1500 Ns done (29s)
+[exp558] 192/1500 Ns done (31s)
+[exp558] 216/1500 Ns done (64s)
+[exp558] 240/1500 Ns done (65s)
+[exp558] 264/1500 Ns done (71s)
+[exp558] 288/1500 Ns done (71s)
+[exp558] 312/1500 Ns done (71s)
+[exp558] 336/1500 Ns done (72s)
+[exp558] 360/1500 Ns done (72s)
+[exp558] 384/1500 Ns done (77s)
+[exp558] 408/1500 Ns done (87s)
+[exp558] 432/1500 Ns done (88s)
+[exp558] 456/1500 Ns done (90s)
+[exp558] 480/1500 Ns done (91s)
+[exp558] 504/1500 Ns done (92s)
+[exp558] 528/1500 Ns done (92s)
+[exp558] 552/1500 Ns done (93s)
+[exp558] 576/1500 Ns done (96s)
+[exp558] 600/1500 Ns done (110s)
+[exp558] 624/1500 Ns done (113s)
+[exp558] 648/1500 Ns done (115s)
+[exp558] 672/1500 Ns done (115s)
+[exp558] 696/1500 Ns done (117s)
+[exp558] 720/1500 Ns done (119s)
+[exp558] 744/1500 Ns done (121s)
+[exp558] 768/1500 Ns done (123s)
+[exp558] 792/1500 Ns done (131s)
+[exp558] 816/1500 Ns done (135s)
+[exp558] 840/1500 Ns done (135s)
+[exp558] 864/1500 Ns done (138s)
+[exp558] 888/1500 Ns done (144s)
+[exp558] 912/1500 Ns done (144s)
+[exp558] 936/1500 Ns done (147s)
+[exp558] 960/1500 Ns done (148s)
+[exp558] 984/1500 Ns done (156s)
+[exp558] 1008/1500 Ns done (158s)
+[exp558] 1032/1500 Ns done (158s)
+[exp558] 1056/1500 Ns done (159s)
+[exp558] 1080/1500 Ns done (163s)
+[exp558] 1104/1500 Ns done (165s)
+[exp558] 1128/1500 Ns done (167s)
+[exp558] 1152/1500 Ns done (167s)
+[exp558] 1176/1500 Ns done (179s)
+[exp558] 1200/1500 Ns done (181s)
+[exp558] 1224/1500 Ns done (182s)
+[exp558] 1248/1500 Ns done (184s)
+[exp558] 1272/1500 Ns done (186s)
+[exp558] 1296/1500 Ns done (188s)
+[exp558] 1320/1500 Ns done (189s)
+[exp558] 1344/1500 Ns done (192s)
+[exp558] 1356/1500 Ns done (197s)
+[exp558] 1380/1500 Ns done (200s)
+[exp558] 1404/1500 Ns done (201s)
+[exp558] 1428/1500 Ns done (201s)
+[exp558] 1452/1500 Ns done (203s)
+[exp558] 1476/1500 Ns done (204s)
+[exp558] 1500/1500 Ns done (205s)
+{
+ "exp": 558,
+ "codename": "MULTI-TARGET-HITTING",
+ "smoke": false,
+ "status": "06_final",
+ "wall_s": 205.1,
+ "question": "Relaxing the exact-target demand (a == N) to ANY tree node with gcd(a,N) > 1: how much does expected hitting time drop, and does B1 enter a new scaling class?",
+ "prestated": {
+  "E1": "B1 collapses toward B3/B4 behavior; slope < 0.6 would be NEW and major; reference bands TD 0.84-1.14, rho ~0.52",
+  "E2": "energy-guidance ~ reordering noise (magnitude-mirror seal)"
+ },
+ "config": {
+  "seed": 20260826,
+  "n_pop": 1500,
+  "p_range_odd": [
+   2049,
+   32767
+  ],
+  "q_range_odd": [
+   8193,
+   524287
+  ],
+  "node_budget": 200000,
+  "K_values": [
+   1,
+   4
+  ],
+  "workers": 8,
+  "pricing": {
+   "visit": 4,
+   "division": 1,
+   "rho_iter": 1,
+   "rho_gcd": 3
+  }
+ },
+ "population": {
+  "embedding_exact": 1500,
+  "embedding_failures": 0,
+  "log2s": {
+   "n": 1500,
+   "mean": 13.8306,
+   "q10": 12.4081,
+   "q25": 13.2528,
+   "q50": 14.0323,
+   "q75": 14.617,
+   "q90": 14.8593
+  },
+  "bitlen_N": {
+   "n": 1500,
+   "mean": 31.85,
+   "q10": 30.0,
+   "q25": 31.0,
+   "q50": 32.0,
+   "q75": 33.0,
+   "q90": 34.0
+  }
+ },
+ "part_a_multitarget_census": {
+  "K1": {
+   "total_hits": 17917,
+   "frac_N_with_ge1hit": 0.4547,
+   "hits_per_N": {
+    "n": 1500,
+    "mean": 11.9447,
+    "q10": 0.0,
+    "q25": 0.0,
+    "q50": 0.0,
+    "q75": 7.0,
+    "q90": 38.2
+   },
+   "hit_depth": {
+    "n": 17917,
+    "mean": 10.8115,
+    "q10": 10.0,
+    "q25": 11.0,
+    "q50": 11.0,
+    "q75": 11.0,
+    "q90": 11.0
+   },
+   "maxdepth_reached": {
+    "n": 1500,
+    "mean": 11.0,
+    "q10": 11.0,
+    "q25": 11.0,
+    "q50": 11.0,
+    "q75": 11.0,
+    "q90": 11.0
+   },
+   "kratio_a_over_trigger_prime": {
+    "n": 17917,
+    "mean": 3951.6122,
+    "q10": 846.2,
+    "q25": 1395.0,
+    "q50": 2401.0,
+    "q75": 5075.0,
+    "q90": 8791.0
+   },
+   "depth_minus_crossing_depth": {
+    "n": 17917,
+    "mean": 6.1803,
+    "q10": 6.0,
+    "q25": 6.0,
+    "q50": 6.0,
+    "q75": 7.0,
+    "q90": 7.0
+   },
+   "trigger_p_only": 17874,
+   "trigger_q_only": 43,
+   "trigger_both": 0,
+   "pruned_by_cap_total": 2097917,
+   "budget_bound_frac": 1.0,
+   "frontier_exhausted_frac": 0.0
+  },
+  "K4": {
+   "total_hits": 17964,
+   "frac_N_with_ge1hit": 0.4547,
+   "hits_per_N": {
+    "n": 1500,
+    "mean": 11.976,
+    "q10": 0.0,
+    "q25": 0.0,
+    "q50": 0.0,
+    "q75": 7.0,
+    "q90": 38.2
+   },
+   "hit_depth": {
+    "n": 17964,
+    "mean": 10.812,
+    "q10": 10.0,
+    "q25": 11.0,
+    "q50": 11.0,
+    "q75": 11.0,
+    "q90": 11.0
+   },
+   "maxdepth_reached": {
+    "n": 1500,
+    "mean": 11.0,
+    "q10": 11.0,
+    "q25": 11.0,
+    "q50": 11.0,
+    "q75": 11.0,
+    "q90": 11.0
+   },
+   "kratio_a_over_trigger_prime": {
+    "n": 17964,
+    "mean": 4008.8585,
+    "q10": 847.0,
+    "q25": 1399.0,
+    "q50": 2411.0,
+    "q75": 5115.0,
+    "q90": 8875.8
+   },
+   "depth_minus_crossing_depth": {
+    "n": 17964,
+    "mean": 6.1805,
+    "q10": 6.0,
+    "q25": 6.0,
+    "q50": 6.0,
+    "q75": 7.0,
+    "q90": 7.0
+   },
+   "trigger_p_only": 17892,
+   "trigger_q_only": 72,
+   "trigger_both": 0,
+   "pruned_by_cap_total": 202725,
+   "budget_bound_frac": 1.0,
+   "frontier_exhausted_frac": 0.0
+  },
+  "K4_reused_K1_walk_frac": 0.32,
+  "K4_minus_K1_total_hits": 47,
+  "concentration_verdict": "HITS-AT-FIRST-CROSSING: median(hit depth - minimal crossing depth) = 6.0; 0.0% of hits land within depth +1 of where values first reach min(p,q) scale."
+ },
+ "part_b_methods": {
+  "B1_intree_multi_target": {
+   "n": 682,
+   "units_mul_eq_median": "2^18.77",
+   "log2_units_q10_q25_q50_q75_q90": [
+    17.01,
+    17.539,
+    18.768,
+    19.264,
+    19.416
+   ],
+   "alpha": 1.1687,
+   "alpha_intercept": 3.1011,
+   "r2": 0.7926,
+   "n_fit": 682,
+   "fit_log2s_range": [
+    11.004,
+    14.746
+   ],
+   "uncensored_frac": 0.4547,
+   "censored_at_budget": 818
+  },
+  "B1g_guided_multitarget": {
+   "n": 1500,
+   "units_mul_eq_median": "2^16.31",
+   "log2_units_q10_q25_q50_q75_q90": [
+    14.541,
+    15.462,
+    16.307,
+    16.94,
+    17.202
+   ],
+   "alpha": 1.087,
+   "alpha_intercept": 1.0531,
+   "r2": 1.0,
+   "n_fit": 1500,
+   "fit_log2s_range": [
+    11.004,
+    14.999
+   ],
+   "uncensored_frac": 1.0,
+   "censored_at_budget": 0
+  },
+  "B2_blind_exact_aN_analytic": {
+   "n": 1500,
+   "units_mul_eq_median": "2^56.47",
+   "log2_units_q10_q25_q50_q75_q90": [
+    35.869,
+    43.794,
+    56.474,
+    83.418,
+    132.552
+   ],
+   "alpha": -5.0319,
+   "alpha_intercept": 163.1617,
+   "r2": 0.0003,
+   "n_fit": 1500,
+   "fit_log2s_range": [
+    11.004,
+    14.999
+   ],
+   "median_dB": 34.0,
+   "dB_mean": 57.4,
+   "dB_min": 13,
+   "dB_max": 4580,
+   "note": "analytic FIFO visits (3^(dB+1)-1)/2 x4 units; infeasible to simulate"
+  },
+  "B3_trial_division": {
+   "n": 1500,
+   "units_mul_eq_median": "2^10.92",
+   "log2_units_q10_q25_q50_q75_q90": [
+    9.487,
+    10.233,
+    10.92,
+    11.438,
+    11.654
+   ],
+   "alpha": 0.8802,
+   "alpha_intercept": -1.4304,
+   "r2": 1.0,
+   "n_fit": 1500,
+   "fit_log2s_range": [
+    11.004,
+    14.999
+   ],
+   "convention": "1 division := 1 unit"
+  },
+  "B4_pollard_rho_brent": {
+   "n": 1500,
+   "units_mul_eq_median": "2^8.10",
+   "log2_units_q10_q25_q50_q75_q90": [
+    7.17,
+    7.17,
+    8.103,
+    9.061,
+    9.114
+   ],
+   "alpha": 0.4579,
+   "alpha_intercept": 1.8014,
+   "r2": 0.1761,
+   "n_fit": 1500,
+   "fit_log2s_range": [
+    11.004,
+    14.999
+   ],
+   "failures": 0,
+   "tries_mean": 1.002
+  },
+  "_pairwise_median_log2_diffs": {
+   "B1_minus_B3": 7.848,
+   "B1_minus_B4": 10.665,
+   "B2_minus_B1": 37.706
+  }
+ },
+ "part_b_B1_equivalence_verdict": "HYBRID / BUDGET-DOMINATED-WITH-MEASURABLE-TAIL: 55% of Ns censored at budget, but the finished 682 Ns span log2s [11.004, 14.746] and give alpha=1.169 (r2=0.7926) -- NOT below 0.6, so the pre-stated NEW-and-major sub-linear regime is REFUTED; where it finishes at all, multi-target FIFO behaves like trial division or worse. Slope fitted on the FINISHED subset only -- that subset is size-biased toward sma
+[exp558] DONE wall=205s -> /home/raver1975/factor3/ResearchOutput/scripts/2026-08-21-resume/exp558_result.json
