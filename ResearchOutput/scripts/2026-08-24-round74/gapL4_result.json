@@ -1,0 +1,120 @@
+{
+ "A1_anchor_precision": [
+  {
+   "anchor": "5.19x frontier",
+   "S_meas": 5.19,
+   "mu": 0.05,
+   "P_hat_quoted": 0.85,
+   "S_cert_at_Phat": 5.4054,
+   "P_law_value_computed_at": 0.85,
+   "S_cert_at_Plaw": 5.4054,
+   "precision_gap": 0.0,
+   "P_implied_by_S_at_mu": 0.841469
+  },
+  {
+   "anchor": "6.91x trunc-high",
+   "S_meas": 6.91,
+   "mu": 0.05,
+   "P_hat_quoted": 0.9003,
+   "S_cert_at_Phat": 7.1567,
+   "P_law_value_computed_at": 0.9,
+   "S_cert_at_Plaw": 7.1429,
+   "precision_gap": 0.0138,
+   "P_implied_by_S_at_mu": 0.894758
+  },
+  {
+   "anchor": "4.35x trunc-low",
+   "S_meas": 4.35,
+   "mu": 0.05,
+   "P_hat_quoted": 0.8106,
+   "S_cert_at_Phat": 4.536,
+   "P_implied_by_S_at_mu": 0.800128
+  },
+  {
+   "anchor": "29.1x alpha=1",
+   "S_meas": 29.1,
+   "mu": 0.02,
+   "P_hat_quoted": 0.9853,
+   "S_cert_at_Phat": 29.3152,
+   "P_law_value_computed_at": 0.985,
+   "S_cert_at_Plaw": 29.0698,
+   "precision_gap": 0.2454,
+   "P_implied_by_S_at_mu": 0.985037
+  }
+ ],
+ "A2_F2_canonical_measure": {
+  "capture_curve_canon": {
+   "mu=0.02": {
+    "R=1.042": 0.9823,
+    "R=1.129": 0.3398,
+    "R=1.21": 0.22,
+    "R=2.0": 0.0683,
+    "R=4.0": 0.04,
+    "R=9.0": 0.03
+   },
+   "mu=0.05": {
+    "R=1.042": 1.0,
+    "R=1.129": 0.8494,
+    "R=1.21": 0.55,
+    "R=2.0": 0.1707,
+    "R=4.0": 0.1,
+    "R=9.0": 0.075
+   },
+   "mu=0.1": {
+    "R=1.042": 1.0,
+    "R=1.129": 1.0,
+    "R=1.21": 1.0,
+    "R=2.0": 0.3414,
+    "R=4.0": 0.2,
+    "R=9.0": 0.15
+   }
+  },
+  "required_R_per_anchor": {
+   "5.19x frontier": 1.1289,
+   "6.91x trunc-high": 1.1211,
+   "4.35x trunc-low": 1.1358,
+   "29.1x alpha=1": 1.0419
+  },
+  "reference_populations": {
+   "alpha=1-arm implied": {
+    "P(mu=.05)": 1.0,
+    "P(mu=.02)": 0.9823
+   },
+   "frontier-arm implied": {
+    "P(mu=.05)": 0.8494,
+    "P(mu=.02)": 0.3398
+   },
+   "RSA-like r<=1.21": {
+    "P(mu=.05)": 0.55,
+    "P(mu=.02)": 0.22
+   },
+   "hard-balance U[1,2]": {
+    "P(mu=.05)": 0.1707,
+    "P(mu=.02)": 0.0683
+   },
+   "wide r<=9": {
+    "P(mu=.05)": 0.075,
+    "P(mu=.02)": 0.03
+   }
+  },
+  "cross_anchor_monotonicity_violation": {
+   "P(mu=.02)=0.9853 vs P(mu=.05)=0.85 pooled": true,
+   "verdict": "anchors from DIFFERENT generator settings; pooling into one prior is ill-posed (O2 quantified)"
+  }
+ },
+ "A3_F1_shape_audit": {
+  "M": 64,
+  "trials": 4000,
+  "uniform_diagonal_max_abs_err": 0.0,
+  "offdiagonal_S_gt_SA_violations": 1757,
+  "violation_rate": 0.4395,
+  "max_S_over_SA_observed": 1.54,
+  "note": "closed form in (mu,P) alone is NOT an upper bound off uniform-within-cells (window-away-from-head priors exceed it unboundedly); the universal object is the rbar-identity EC_A = P*rbar_R + (1-P)*rbar_C"
+ },
+ "A3_explicit_offdiag_witness": {
+  "S_measured": 62.0,
+  "S_cert(mu,P)": 21.33,
+  "tail_loading_tau_R": 0.333,
+  "comment": "single prior drives S far above the booked closed form => any fixed (mu,P) law needs shape bookkeeping (tau, Lambda); supports F1/F3 framing"
+ }
+}

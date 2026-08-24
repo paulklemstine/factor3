@@ -10963,3 +10963,45 @@ hygiene serving barrier-8 audit trail — future k-stop claims must name functio
 anchor/price so saturation is never conflated with optimality across papers; residue
 cap 4/3 untouched; no breakthrough claimed. PAPERS-ONLY BUMP: count UNCHANGED at
 564 (no new experiment recorded). Assessment v330 -> v331. Paper 224, issue #371.
+
+## Part 267 - GAP-L4 MEASURE FRAMEWORK + PAPER-219 ERRATUM (round-78 #1, theory, record-with-fixes, v332, papers-only)
+
+GAP-L4 of paper 219's roadmap CLOSED — "over what measure does T1 hold?" answered by a
+THREE-FORMULATION framework ranked F1>F2>F3, recorded with fixes applied from an independent
+adversarial verifier (verifyL4_verdict.md; machine evidence verifyL4_recheck.py ->
+verifyL4_recheck_result.json). Structural core: the **r-bar IDENTITY** EC_A = P*rbar_R +
+(1-P)*rbar_C — unconditional, prior-free (form-universality), MC-validated max rel err 0.23%
+(8 cells); T1a's certified form S_A=1/[mu*P+(1-P)*(1-mu)] emerges EXACTLY at
+uniform-within-cells (Theta==1 iff uniform). VALUE-universality FALSE off uniform cells:
+bare-(mu,P) closed form not an upper bound — A3 sweep M=64 x 4000 tilts: violation rate .4395
+concentrated at HEAD placements (.60/.37/.34 head/mid/tail), max S/S_A=1.54, explicit witness
+S=62 vs booked 21.3 (asymptote 4/mu-3). F1 RECOMMENDED: worst-case with bookings Theta
+(E_piC/K_booked), mu_eff=|R_eff|/M, k_bits (saturating k_pin=log2W per paper 224 naming rule),
+Lambda=C_sort/C_desc — MASTER INEQUALITY PROVEN unconditional:
+S_vs_desc <= min(1/(Lambda*Theta*qhat), 2^k_bits/(Lambda*Theta)), qhat=mu_eff*P_eff+(1-P_eff)(1-mu_eff);
+proof chain r-bar identity => sorted_desc majorizes flat => C_sort<=C0, compose; no constant cap;
+D survives as inequality chain (cost-side 4/3 untouched), loses pathwise product; remaining
+theorem = sharpness/attainment (days not hours). F2: scale x balance prior — s=r^-1/2 so
+BALANCE IS POSITION given scale; canonical kernel b ~ r^-3/2 = uniform-in-x positional prior =
+T1a's exact kernel; capture curve P(mu)=mu/(1-R_max^-1/2) (= integral 2mu exactly, linear iff
+canonical); required-R for all four anchors 1.04-1.14 (ultra-balanced populations demanded) —
+witnesses demoted to GENERATOR SHAPE ESTIMATORS; D best-posed in expectation here.
+F3 BASELINE-CONDITIONAL (verifier item 3 caught the unstated payoff convention):
+simultaneous-commitment value = certified law EXACTLY only vs full-scan-M baseline; HALVES vs
+T1a's own C0=(M+1)/2; same-prior-descending adversary UNDERCUTS certified (5.365<5.4054);
+corner-is-max-EC brute-force confirmed at every locus; genealogy survives modulo convention.
+Witnesses re-read: 5.19 explained structurally — measured sits in (drafted 5.1948, certified
+5.4054) window pinning rho_R~0.59 mild adverse loading, NOT a corner identity (REVISION corrects
+former tail-corner reading: both historical laws are rho=1/2 values under two silence semantics);
+29.1 AT RESOLUTION LIMIT — P_implied=0.98504 lives in Phat's 4th decimal.
+ERRATUM to paper 219 (genuine table error, caught by L4 verification): 29.1x row prints
+(0.02,0.9853)|29.0698 but that value was computed at ROUNDED P=0.985 — certified law at stored
+Phat=0.9853 gives 29.3152; rows 5.19/6.91/4.35 still print SUPERSEDED drafted-form values
+(certified there: 5.4054 / 7.1567 / 4.536); prose "4.649" belongs to stale locus (.115,.87).
+Feasibility of ALL FOUR anchors UNAFFECTED (mu<=1/S holds regardless; verifier re-check all true).
+Recommendation ADOPTED: F1-form + F2-calibration convention — state positional-stratum laws as
+the r-bar identity with bookings (mu_eff,P_eff,rho_R,rho_C;Lambda), never bare-(mu,P); canonical
+reporting prior b~r^-3/2; admissibility rule S_meas counts iff mu_eff<=1/S AND raw-Phat stored
+AND kappa_desc reported. Converse roadmap now EMPTY of open gaps: T1/T2 verified · D witnessed ·
+L7' proven-sketch · L8 closed · L4 closed by this framework. PAPERS-ONLY BUMP: count UNCHANGED
+at 564 (theory deliverable, no new experiment). Assessment v331 -> v332. Paper 225, issue #373.

@@ -2569,3 +2569,29 @@ definitional result verified by own check script + reproduction of existing-reco
 values only; no separate adversarial verifier run. Barrier framing: bookkeeping
 hygiene for the barrier-8 audit trail; residue cap 4/3 untouched, no breakthrough
 claimed. Paper 224, issue #371.
+
+**Assessment addendum v332 — 2026-08-24 (round-78 #1).** THEORY deliverable recorded,
+NO new experiment (count UNCHANGED at 564); papers 224 → 225; version v331 → v332.
+Content: GAP-L4 of paper 219's converse roadmap CLOSED — the positional-stratum measure
+framework, three formulations ranked F1>F2>F3 and recorded WITH FIXES from an independent
+adversarial verifier. Core: the r̄-identity EC_A=P·r̄_R+(1−P)·r̄_C is the universal object
+(form-universality proven, MC max rel err 0.23%); value-universality FALSE off uniform cells
+(A3 sweep violation rate .4395, witness S=62 vs booked 21.3); T1's certified form is EXACTLY
+the uniform-within-cells special case (Θ≡1 iff uniform). F1 master inequality now formally
+defined (Θ, μ_eff, k_bits, Λ bookings) and PROVEN unconditional:
+S ≤ min(1/(Λ·Θ·q̂), 2^{k_bits}/(Λ·Θ)) via r̄-identity + majorization C_sort≤C₀ + Λ-chain;
+no constant cap; D survives as inequality chain (cost-side 4/3 untouched). F2: scale×balance
+prior, balance IS position (s=r^{−1/2}), canonical kernel b∝r^{−3/2}, capture curve
+P(μ)=μ/(1−R_max^{−1/2}); witnesses demoted to generator shape estimators (required-R
+1.04–1.14 across all four anchors). F3 downgraded to BASELINE-CONDITIONAL by verifier
+(certified law exactly only vs full-scan-M baseline; halves vs C₀=(M+1)/2; same-prior-descending
+undercuts certified 5.365<5.4054). ERRATUM to recorded paper 219: genuine D-witness-table
+error — 29.0698 was computed at rounded P=0.985; certified at stored P̂=0.9853 gives 29.3152;
+three further rows print superseded drafted-form values (corrected 5.4054/7.1567/4.536);
+prose 4.649 belongs to stale locus (.115,.87); feasibility of all four anchors UNAFFECTED.
+Witness re-reads: 5.19 = within-window mean-rank fraction ρ_R≈0.59 (mild adverse loading),
+not a corner identity; 29.1 at resolution limit (P_implied=0.98504). Convention ADOPTED for
+future papers: F1-form + F2-calibration, never bare-(μ,P) closed forms; raw P̂ stored;
+baseline named wherever a guarantee is claimed. Converse roadmap EMPTY of open gaps:
+T1/T2 verified · D witnessed · L7′ proven-sketch · L8 closed · L4 closed by this framework.
+Paper 225, issue #373.
