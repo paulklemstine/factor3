@@ -2793,3 +2793,38 @@ budget; perm/boot capped designs disclosed; wall 273.4 s; seeds P/B/S 20260902/0
 framing: scale-smoothness mechanism frontier — clean closure blocking a wrong positional-mode
 hunt while re-confirming the power-law binning-free; residue cap untouched; no breakthrough
 claimed. Paper 233, issue #381.
+
+**Assessment addendum v341 — 2026-08-24 (round-83 #1).** THEORY deliverable recorded,
+papers-only bump: experiment count UNCHANGED at 572 (explicitly no new physics run);
+papers 233 → 234; version v340 → v341. Content: SYNTHESIS-R73-80 — consolidation synthesis of
+recorded papers 208–233 (rounds 73–80 plus flight-recorded 81–82), read-only from
+synth_r73_80_synthesis.md + paper headers/verdicts. Verdict **MAP-CONSOLIDATED-ONE-TENSION**.
+FIVE CLOSURES confirmed with load-bearing numbers: C1 Berggren all-faces incl. REALIZABILITY
+(oracle peak 0.4798 bits bit-exact yet unrealized, N-only ≤0.50% of within-strata core); C2 MA-1
+effectivity both routes (magnitude R²=0.019/0.0785 under bars; sign 15.07% [0.120,0.186] z=−7.74);
+C3 u≈10 gate rejection (fresh seed r=1.1536 UPWARD vs 20260824 family's deficit → ±5–15% measured
+envelope, multi-seed pooling mandatory henceforth); C4 positional converse roadmap EMPTY (master
+inequality PROVEN via majorization chain); C5 canonical covariate FIXED (1/ℓ-weighted product dial
+saturates by ℓ=400, corr=0.999). TWO RECORD CORRECTIONS mechanism-named: paper 159's
+destruction-wall sentence rejected (early-fire trace law + subdominant collision floor +
+B1≥Hasse-max structural identity replace it); paper 226 secondaries retracted as reciprocity-flip
+dial-form artifacts and paper 229's residual-peaked-mid-window retracted as baseline-curvature
+leakage (power-law headline STANDS AND IS STRENGTHENED). THREE NEW LAWS enter the map:
+early-fire trace law; Λ prior-shape channel WITH measured scope boundaries (hard-balance gain
+1.58× does NOT deploy — RSA pools top-heavy, ascending LOSES ~44% there); harmonic-weight dial
+saturation (∝1/ℓ). CONTRADICTION SCAN (headline value): 7 same-quantity pairs checked → 4 clean,
+2 resolved each covering both readings — 227-vs-226 by dial-form difference (unweighted null vs
+weighted product), and 232-u*≈0.65-vs-229-.67 as AGREEMENT-ABOUT-A-GHOST (229/231/232 share ONE
+M_pred construction, so the leakage is correlated across all three, not triangulated) — plus
+**1 UNRESOLVED MINOR TENSION carried forward on the ledger**: power-law bulk exponent −1.10 vs a
+STEEPER-THAN-HARMONIC LEFT EDGE (edge frac .2346 implied ≈.22 z=10.08; peak/end 2.54 [2.24,2.80]
+implied ≈2.10) — named refinement: harmonic bulk × steeper-edge kernel. Bookkeeping ledger items:
+D-red identity mismatch across GLM-deviance/Var-ratio conventions (226/227/230); 230 control-arm-B
+spurious fire (perm p=0.012) flagged fragile. OPEN ITEMS ranked per standing directive: rate-layer
+N-covariate first (sole survivor on the live thread; ≥86% of u≈10 overdispersion is N-structure
+beyond QR; pure-reanalysis infra exists), then positional-stratum converse sketches, then
+larger-p ECM tracing; mid-window excess DISSOLVED (revival only as baseline-mis-specification
+claim), shape confirmation closed by 233. Barrier framing: consolidation that prevents
+synthesizing around a contradiction — caught the correlated-artifact chain 229/231/232 that
+would otherwise have read as robust triangulation, sealed corrections WITH mechanisms; residue
+cap untouched; no breakthrough claimed. Paper 234, issue #382.

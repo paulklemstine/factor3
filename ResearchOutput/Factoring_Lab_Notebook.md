@@ -11362,3 +11362,63 @@ Barrier framing: scale-smoothness mechanism frontier — CLEAN CLOSURE that prev
 continuation (hunting a positional mode that does not exist) AND prevents a wrong closure of the
 power-law law itself (re-confirmed, now binning-free). Residue cap untouched; no breakthrough
 claimed. Count 571 -> 572. Assessment v339 -> v340. Paper 233, issue #381.
+
+## Part 276 - SYNTHESIS-R73-80 (round-83 #1, papers-only, v341)
+
+CONSOLIDATION SYNTHESIS of recorded papers 208–233 (rounds 73–80 plus flight-recorded 81–82).
+Read-only synthesis; no compute; no new experiment id; sources:
+ResearchOutput/scripts/2026-08-24-round74/synth_r73_80_synthesis.md + NewMathematics/208–233
+headers/verdict sections + round74 findings files. Verdict name: **MAP-CONSOLIDATED-ONE-TENSION**.
+
+FIVE CLOSURES confirmed with load-bearing numbers: C1 Berggren triplet-tree ALL FACES incl.
+REALIZABILITY (oracle peak 0.4798 bits @B=22758 bit-exact yet unrealized, N-only policy ≤0.50%
+of within-strata core, orbit max|z|=2.29/48 cells = zero per-N factor info); C2 MA-1
+computable-effectivity BOTH routes (magnitude R²=0.019/0.0785 far under bars; sign agreement
+15.07% [0.120,0.186], z=−7.74; Chebyshev 84.7% negative-twist byproduct); C3 u≈10 gate REJECTION
+(fresh seed r=1.1536 [1.0540,1.2611] UPWARD vs the 20260824 family's 0.95–0.99 → ±5–15% measured
+single-run envelope, multi-seed pooling henceforth mandatory); C4 positional converse roadmap
+EMPTY (master inequality S ≤ min(1/(Λ·Θ·q̂), 2^k_bits/(Λ·Θ)) PROVEN via majorization chain;
+EC_A at MC err 0.23%); C5 scale-smoothness covariate law FIXED (1/ℓ-weighted product dial
+saturates by ℓ=400: W400 .4731/48.1% vs W1e6 .4786/48.5%, corr=0.999 — adopted lab-wide).
+
+TWO RECORD CORRECTIONS with mechanisms named: (A) paper 159's destruction-wall sentence REJECTED
+— zero dead outcomes/600 trials, success persists at B1/p=1.05 exactly where 159 records
+infinite-E[T]; replaced by the early-fire trace law + subdominant collision floor (65.0%/62.5%
+vs baseline 16.5%, cross-bitlen z p=0.82) + structural identity B1 ≥ Hasse-max ⟹ order | lcm(1..B1);
+(B) paper 226 SECONDARIES retracted as reciprocity-flip dial-form artifacts (flip 100% iff
+ℓ≡3 mod 4 AND N≡3 mod 4, 2680/2680; primary S_indiv null NOT retracted, fresh-seed true null
+R²=.0019 z=0.72) and paper 229 RESIDUAL-PEAKED-MID-WINDOW retracted as baseline-curvature leakage
+(power-law headline T≈0.0295·(1+x)^−1.104 STANDS and is STRENGTHENED).
+
+THREE NEW LAWS entering the map: early-fire trace law (hit position ~ step ZERO, median index
+0.09–0.10, final-tail 0/55 binom p≈0.004); Λ prior-shape channel WITH MEASURED SCOPE BOUNDARIES
+(hard-balance ascending 1.58×±0.03 but deployed RSA pools TOP-HEAVY z=0.6356 where ascending
+LOSES ~44% — no deployable gain without enforced q<2p at keygen; paper 137 refined not
+contradicted); harmonic-weight dial saturation law (primes informative ∝1/ℓ; equal-weight
+counting manufactures apparent window movement).
+
+CONTRADICTION SCAN — headline value of this deliverable: 7 same-quantity pairs checked → 4 clean,
+2 RESOLVED each covering BOTH readings ((b) 227-saturation-vs-226-≤14% resolved by dial-form
+difference unweighted-vs-1/ℓ-weighted; (c) 232-u*≈0.65 vs 229-x≈0.67 confirmed numerically then
+resolved as AGREEMENT-ABOUT-A-GHOST — 229/231/232 share ONE M_pred construction so the leakage is
+CORRELATED across all three, stability across shifts/bins was stability of the artifact), and
+exactly **1 UNRESOLVED MINOR TENSION carried forward**: power-law bulk exponent −1.10 vs a
+STEEPER-THAN-HARMONIC LEFT EDGE (edge frac .2346 implied ≈.22, z=10.08 stratified; peak/end 2.54
+[2.24,2.80] implied ≈2.10; first decile .162 implied ≈.14) — named open refinement: harmonic
+bulk × steeper-edge kernel. Ledgered bookkeeping items (not verdict conflicts): D-red identity
+mismatch GLM-deviance vs Var-ratio conventions (226/227/230); 230 control-arm-B spurious fire
+(perm p=0.012, quasi-separation) flagged fragile.
+
+OPEN ITEMS ranked by asymptotic-class value per standing directive: (1) rate-layer N-covariate —
+the SOLE surviving item on the live thread, ≥86% of u≈10 overdispersion is N-structure beyond QR,
+pure-reanalysis infrastructure exists; (2) formal converse sketches beyond the residue-dial
+stratum (positional witnesses, Siegel-ineffectivity); (3) larger-p ECM tracing (early-fire
+transfer past bitlen-32, cheap hygiene); mid-window excess DISSOLVED (revival must be a
+baseline-mis-specification claim only); shape confirmation DELIVERED by 233, closed.
+
+PAPERS-ONLY bump convention stated explicitly: experiment count UNCHANGED at 572 (no new physics
+run). Assessment v340 -> v341. Paper 234, issue #382. Barrier framing: consolidation that
+PREVENTS synthesizing around a contradiction — the scan caught the correlated-artifact chain
+229/231/232 that would otherwise have read as robust triangulation; corrections sealed WITH
+mechanisms so wrong readings cannot silently return; one quantitative residue named honestly
+rather than smoothed over. Residue cap 4/3 untouched; no breakthrough claimed.
