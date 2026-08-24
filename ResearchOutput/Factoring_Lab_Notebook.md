@@ -11731,3 +11731,43 @@ drift noted). Assessment v346 → v347. Paper 240, issue #388. Barrier framing: 
 positional layer's shape description — residue cap 4/3, position 5.19×, external-hint laws, quantum
 frontier, four-class rate closure all untouched; scale-carrying mechanisms (exact-arithmetic inclusion
 bound grows with scale); .2346 provenance flag still travels forward until reconciled.
+
+## Part 283 - U065-FEATURE-MECHANISM [FINAL, EXACT-REGENERATION] (round-86 #1, exp 588b, v348)
+
+Completes paper 232's named mechanism probe: name the ARITHMETIC carrier of the shift-invariant u*≈0.65
+mid-window hump of j^2-N smoothness. Verdict **MIXED-PARTIAL** — hump REAL over the EXACT Dickman
+baseline rho(ln v/ln 1e6) with alpha flank-fit: amp 0.116 ± 0.036 (z = 3.23), paired-random control null
+(0.027). Yet NO single carrier: removal_pct = 0.0 for ALL candidates, worst strata keep significant excess
+— parity z 3.51/4.16; 3|v 4.36/2.38; 5|v 4.56/1.84 (yes-stratum dips to 1.84 < 2 → H0 strict letter also
+unmet → MIXED-PARTIAL per registered tree); 7|v 3.91/2.44; omega_100 tercile 4.14/2.49/4.19;
+gcd(j,N)>1 stratum STRUCTURALLY EMPTY at bitlen 96 (p~2^48 cannot divide j<=8.4e14) — vacuous, not tested.
+READING: m|v conditioning CONSISTENTLY ABSORBS part of the excess (~45-60% of yes-stratum point-amplitude)
+while parity/omega absorb none → excess is DISTRIBUTED ACROSS THE SMALL-PRIME DIVISIBILITY STRUCTURE of
+v = j^2-N (arithmetic-internal). CONSEQUENCE: paper 232's feature routes to a DIVISIBILITY-MIXTURE BASELINE
+MODEL (mixture over v mod small primes), NOT per-hit binary covariates — that family is refuted here.
+
+TWO-PASS HISTORY (amendment log A1-A3 timed in script+json): A1 coordinator brief allowed ONLY npz +
+exp582_findings.md → blind recipe reconstruction (window-law discriminator r_i=jlo/isqrt(N)) — 13 recipes,
+ALL NO_MATCH. Pass-1 smoke diagnostics showed hit density peaking at t~0 ⇒ window above sqrt(N) ⇒ surrogate
+flank baseline MISPECIFIED → VOIDed PRE-verdict (A2), zero conditioned statistics contaminated. A3
+coordinator lifted the restriction → exact seed-20260828 exp578 lineage verbatim; lnB fixed ln(1e6);
+registered grid-fit retired (disclosed). EXACT REGENERATION VERIFIED: population/window int64-equal all
+samples; stream order-walk EXACT 128/128; stored hits re-validated smooth / controls non-smooth under exact
+N via verbatim exp569 tester B=1e6. Disclosed limit: no full 150k-draw rescan-and-reclassify (budget) —
+equivalence strictly weaker than byte-level reproduction. Degraded arm retained in json labeled DEGRADED:
+statistical N-mod-{3,5,7} labels from residue-enrichment argmax (noise attenuates removal toward 0),
+strongest read z = 1.22 vs exact-baseline 3.23 — the blind path would have reported sub-bar noise;
+exactness load-bearing for DETECTION.
+
+LEDGER CATCHES: coordinator-brief over-restriction disclosed BOTH ways (restriction forced failing blind
+design; lifting enabled exact result — lesson: grant recipe-lineage access up front when the population is
+procedurally reproducible); surrogate baseline voided pre-verdict (clean catch); grid-fit retirement
+information-forced not data-tuned; control-bar restatement pre-full-run disclosed; gcd vacuous; omega_100
+ignores factors >100 by definition.
+
+Count 578 → 579; assessment v347 → v348. Paper 241, issue #389. Barrier framing: closure INSIDE the rate
+layer's baseline-shape question — residue cap 4/3, position 5.19×, external-hint laws, quantum frontier,
+four-class rate closure, spike-origin resolution (papers 238–240) untouched; carrier class identified
+(v-divisibility distribution) is SCALE-CARRYING, mixture weights evolve smoothly in u; per-hit binary
+family removed from search space. Open: non-QR per-N structure at u=2.5, factor-local beyond scan-order,
+MA-1 effectivity; .2346 provenance flag still traveling.

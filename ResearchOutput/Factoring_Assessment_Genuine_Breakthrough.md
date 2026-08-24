@@ -3017,3 +3017,30 @@ shape description — residue cap 4/3, position 5.19×, external-hint laws, quan
 rate closure untouched; both surviving mechanisms are scale-carrying (exact-arithmetic inclusion bound,
 magnitude gradients strengthen under truncation). Paper 238's .2346 provenance flag still travels forward.
 Paper 240, issue #388.
+
+**Assessment addendum v348 — 2026-08-24 (round-86 #1).** Experiment recorded (count 578 → 579;
+papers 240 → 241; version v347 → v348. Content: **U065-FEATURE-MECHANISM [FINAL,
+EXACT-REGENERATION] (issue #389)** — exp 588b completes paper 232's named mechanism probe: name
+the arithmetic carrier of the shift-invariant u*≈0.65 mid-window hump of j²−N smoothness. Verdict
+**MIXED-PARTIAL**: the hump is REAL over the exact Dickman baseline ρ(ln v/ln 1e6), alpha
+flank-fit — amp 0.116 ± 0.036 (z = 3.23), paired-random control null (0.027) — yet carried by NO
+single feature: removal_pct = 0.0 for ALL candidates (parity z 3.51/4.16; 3|v 4.36/2.38; 5|v
+4.56/1.84, whose yes-stratum dip below 2 also unmet the H0 strict letter; 7|v 3.91/2.44; ω₁₀₀
+tercile 4.14/2.49/4.19; gcd(j,N)>1 stratum STRUCTURALLY EMPTY at bitlen 96 — vacuous). Reading:
+m|v conditioning consistently ABSORBS ~45–60% of yes-stratum point-amplitude while parity/ω absorb
+none → excess is DISTRIBUTED ACROSS THE SMALL-PRIME DIVISIBILITY STRUCTURE of v = j²−N;
+CONSEQUENCE: paper 232's feature routes to a DIVISIBILITY-MIXTURE BASELINE MODEL, not per-hit
+binary covariates (that family refuted and removed from the search space). TWO-PASS HISTORY told
+honestly: A1 coordinator-brief read restriction forced a blind recipe reconstruction (13 recipes,
+ALL NO_MATCH); pass-1 surrogate flank baseline VOIDed PRE-verdict when smoke diagnostics showed the
+window lies above √N (A2 — zero verdict contamination); A3 lifted the restriction → exact
+seed-20260828 exp578 lineage: population/window int64-equal, stream order-walk EXACT 128/128,
+hits/controls re-validated under verbatim exp569 tester B=1e6; no full rescan-and-reclassify
+(strictly weaker than byte-level reproduction, disclosed); degraded statistical-label arm retained
+labeled in json (strongest read z 1.22 vs exact 3.23 — exactness load-bearing for DETECTION).
+Ledger lesson: grant recipe-lineage access up front when the population is procedurally
+reproducible. Barrier framing: closure INSIDE the rate layer's baseline-shape question — residue
+cap 4/3, position 5.19×, external-hint laws, quantum frontier, four-class rate closure, papers
+238–240 spike-origin arc untouched; the identified carrier class (v-divisibility distribution) is
+SCALE-CARRYING. Open unchanged: non-QR per-N structure at u=2.5, factor-local beyond scan-order,
+MA-1 effectivity; .2346 flag traveling. Paper 241, issue #389.
