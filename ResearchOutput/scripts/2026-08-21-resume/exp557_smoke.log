@@ -1,0 +1,35 @@
+[SMOKE] exp557 EULER-TWO-SQUARES seed=20260826
+[stage00] prereg: {"A_prediction": "U>=2 iff p=q=1 mod 4 (exactly U=2); U=0 for mixed and (3,3); eligible fraction among random prime pairs = 1/4", "B_expectation": "two-square search is another gap scan with comparable-or-worse constants than Fermat; Euler needs two scans, so end-to-end Euler/Fermat >= 2x on balanced instances", "C_expectation": "gcd(|ad-bc|,N) in {p,q} on 100% of constructed cases (derived in D3); classical k/l/m/n likewise (D2)"}
+[stage01] primes in [4096,1048576]: 81461 (class1: 40676, class3: 40785) 0.1s
+[stage02] Part A table (0.0s): {"(1,1)": {"n": 40, "count_U_ge2": 40, "P_U_ge2": 1.0, "mean_U": 2.0}, "(1,3)": {"n": 40, "count_U_ge2": 0, "P_U_ge2": 0.0, "mean_U": 0.0}, "(3,1)": {"n": 40, "count_U_ge2": 0, "P_U_ge2": 0.0, "mean_U": 0.0}, "(3,3)": {"n": 40, "count_U_ge2": 0, "P_U_ge2": 0.0, "mean_U": 0.0}}
+[stage02] Part A verdict: CONFIRMED: U>=2 iff both primes =1 mod 4; (1,1) gives exactly U=2, all other classes U=0
+[stage03] validation: 16 cases, 0 mismatches, 4 gaussian-triangle checks (1.2s)
+[stage04] Part B on 24/160 eligible draws (frac=0.1500, prediction 0.25)
+  ...partB 0/24 (0.1s)
+[stage04] Part B verdict: EULER-LOSES: median end-to-end Euler/Fermat iteration ratio 4.73x (>1) -- two-square search is another gap scan and Euler needs two of it; plain Fermat wins on identical instances
+[stage04] medians: rep1=100933 rep2extra=57673 fermat=42953 ; ratio(firstrep/fermat) med=1.834 ; ratio(euler/fermat) med=4.731
+[stage05] Part C: FORMULA-VERIFIED: both extractions recover a proper factor on 100%% of constructed cases (0.0s)
+[done] result written to /home/raver1975/factor3/ResearchOutput/scripts/2026-08-21-resume/exp557_result.json (2.5s total)
+
+===== RAW DIGEST =====
+PART A  P(U>=2) by (p mod 4, q mod 4):
+  (1,1) : 40/40 = 1.0000 (mean U=2.000)
+  (1,3) : 0/40 = 0.0000 (mean U=0.000)
+  (3,1) : 0/40 = 0.0000 (mean U=0.000)
+  (3,3) : 0/40 = 0.0000 (mean U=0.000)
+  verdict: CONFIRMED: U>=2 iff both primes =1 mod 4; (1,1) gives exactly U=2, all other classes U=0
+  validation: 16 small cases, 0 mismatches, 4 gaussian checks
+ELIGIBLE FRACTION: 0.1500 (prediction 0.25)
+PART B  costs (iterations, caps=1000000):
+  rep1 search : {"n": 24, "min": 3869, "q25": 40372, "median": 100933, "q75": 188935, "max": 339899, "mean": 117628.16666666667}
+  rep2 extra  : {"n": 24, "min": 736, "q25": 19895, "median": 57673, "q75": 166725, "max": 435085, "mean": 107591.79166666667}
+  fermat      : {"n": 24, "min": 845, "q25": 16827, "median": 42953, "q75": 96049, "max": 282794, "mean": 63915.75}
+  ratio rep1/fermat      : {"n": 24, "min": 0.09147207412753475, "q25": 0.5862982347098221, "median": 1.8344234736200733, "q75": 9.733485193621869, "max": 295.3075586446568, "mean": 25.955383741607537}
+  ratio euler/fermat     : {"n": 24, "min": 0.4344823440384167, "q25": 1.7531933533035664, "median": 4.730695176327523, "q75": 23.343376715992154, "max": 489.3136403127715, "mean": 52.620255837317075}
+  fermat censored: 0
+  real-instance formula pass: cross 24/24, classical 24/24
+  verdict: EULER-LOSES: median end-to-end Euler/Fermat iteration ratio 4.73x (>1) -- two-square search is another gap scan and Euler needs two of it; plain Fermat wins on identical instances
+PART C: cross 40/40, classical 40/40, identity fails 0, parity {"even": 17, "odd": 23}
+  verdict: FORMULA-VERIFIED: both extractions recover a proper factor on 100%% of constructed cases
+LEDGER: clean
+ARTIFACTS: /home/raver1975/factor3/ResearchOutput/scripts/2026-08-21-resume/exp557_euler_two_squares.py , /home/raver1975/factor3/ResearchOutput/scripts/2026-08-21-resume/exp557_result.json
