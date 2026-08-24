@@ -11179,3 +11179,32 @@ multiplicative gradient to hunt; bounded mid-window excess redirects attention t
 residue cap untouched; no complexity claim. Count 567 -> 568. Assessment v335 -> v336. Paper 229,
 issue #377. JOINT CONSEQUENCE with Part 272: positional entry law-complete, layers SEPARATE.
 
+## Part 272 - POSITIONAL-RATE-LINK (round-80 #2, exp 580, v337)
+
+H0-INDEPENDENT-LAYERS (pre-registered) — paper-228 named follow-up (b) answered NO: the small-j
+locus does NOT preferentially concentrate around hit-rich Ns; WITHIN-N positional geometry and
+BETWEEN-N rate variance enter the map as TWO separate entries. Pure re-analysis of
+exp578_positions.npz verbatim (9594 hits); terciles by per-N hit count poor<=64/mid 64-80/rich>=80
+(42/42/44); families A = 3 pairwise pooled KS + per-decile minima Bonferroni p_adj<0.01, B =
+logistic hits-in-bin ~ rich+bin+rich*bin joint LRT df=49 p<0.01 + permutation p<0.05; control arm
+paired ctl_* grouped by host-N label SIZE-MATCHED to hit counts (constant-4000 degenerate split
+pre-disclosed unusable). RESULTS: A NO FIRE — rich-poor KS D=0.0462 raw p=0.0038 -> Bonferroni
+p_adj=0.049 does not clear (13 tests), per-decile min raw p=0.425, control A clean min p_adj=0.235.
+B NO FIRE — LRT chi2=51.31/49 p=0.383, perm p=0.34, 0/49 Wald bins; treatment far from bar.
+CONTROL B FIRED SPURIOUSLY (LRT p=0.0215, perm p=0.012): occupancy regression fragile on dense
+size-matched controls — quasi-separation in sparse tail bins, ORs clipped at e^±30; H0 stands
+without family B but design-B flagged UNRELIABLE for control arms (flag travels with the paper).
+PROFILES near-identical across terciles (bin-1 mass 0.042/0.047/0.041 overlapping CIs);
+exp578's edge-decile excess REPLICATES UNIVERSALLY 0.229/0.245/0.230 rich/mid/poor (~0.20 control)
+— the positional law is a property of EVERY rate class. POST-HOC DESCRIPTIVE ONLY (chosen after
+seeing profiles, below every bar): poor-Ns' hits at larger mean_u (0.4556 vs rich 0.4351),
+rich-minus-poor -0.0205 cluster-boot95 [-0.0337,-0.0075], SIGN FLIPS in matched-control arm
+(+0.012 CI straddles 0) — candidate motive for a powered follow-up (continuous count~mean_u corr),
+NOT a map claim. Wall 30.5 s single run after plumbing fixes (no result changed). CONSEQUENCE:
+paper-228's map keeps TWO SEPARATE entries — positional (now law-complete via papers 228/229) and
+rate; the ~39-61% unexplained overdispersion is NOT carried by profile-shape heterogeneity across
+terciles — whatever makes Ns hit-rich affects HOW MANY smooth values j^2-N produces, not where
+along j they land. Barrier framing: closes the merge-fork cleanly both ways; informative negative
+redirects residual hunt to N-level covariates with a cleaner boundary; family-B control lesson
+recorded; residue cap untouched; no breakthrough claimed. Count 568 -> 569. Assessment v336 ->
+v337. Paper 230, issue #378.

@@ -2701,3 +2701,21 @@ boot_fits_ok = 2000 × 4); uniform-r prior + random-integer-v caveats disclosed 
 Barrier framing: characterization that prevents a wrong turn on 228's opened frontier; residue cap
 untouched; no breakthrough claimed. Paper 229, issue #377.
 
+**Assessment addendum v337 — 2026-08-24 (round-80 #2).** Experiment recorded (count 568 → 569);
+papers 229 → 230; version v336 → v337. Content: exp580 POSITIONAL-RATE-LINK — H0-INDEPENDENT-
+LAYERS (pre-registered): hit-rich vs hit-poor positional profiles do NOT differ at the registered
+bars. Family A NO FIRE — pooled rich-poor KS D = 0.0462 raw p = 0.0038 fails Bonferroni at
+p_adj = 0.049 (bar 0.01), per-decile minima nowhere near, control A clean. Family B NO FIRE —
+interaction LRT χ² = 51.31/df 49, p = 0.383, permutation p = 0.34, 0/49 Wald bins. CONTROL FAMILY
+B FIRED SPURIOUSLY (perm p = 0.012): occupancy regression fragile on dense size-matched controls
+(quasi-separation, ORs clipped) — H0 stands without family B but the design is flagged UNRELIABLE
+for control arms. Profiles near-identical across terciles while 228's edge-decile excess
+REPLICATES UNIVERSALLY (0.229/0.245/0.230 rich/mid/poor). Post-hoc only: poor-Ns' hits at larger
+mean_u (gap −0.021 [−0.034, −0.007], sign flips under matching) — motive for a powered follow-up,
+not a map claim. CONSEQUENCE (joint with v336): paper-228's positional entry (now law-complete via
+papers 228/229: harmonic profile + mid-window excess hump) and its rate entry remain TWO SEPARATE
+layers; the ~39–61% unexplained overdispersion is NOT carried by profile-shape heterogeneity across
+hit-rate terciles — the carrier affects how many smooth values j²−N produces per N, not where along
+j they land. Barrier framing: merge-fork closed cleanly both ways; informative negative redirects
+the residual hunt to N-level covariates; residue cap untouched; no breakthrough claimed.
+Paper 230, issue #378.
