@@ -1,0 +1,110 @@
+[smoke] building primorials...
+primorials: bits P5=143816 P6=1440509
+[smoke] population: 16 semiprimes bitlen 96, master seed 20260828
+population built (0.0s); distinct=True
+[smoke] 2 workers x 8 N x 20000 j-samples (recording positions)...
+position capture done (21.2s)
+{
+ "stats": {
+  "mean_hits_per_N": 10.44,
+  "var_hits": 5.87,
+  "D_raw_index_of_dispersion": 0.56,
+  "min_hits": 6,
+  "max_hits": 16,
+  "zero_hit_N_count": 0,
+  "total_hits": 167,
+  "segment_s": {
+   "population": 0.0,
+   "positions": 21.2,
+   "stats": 0.0
+  }
+ },
+ "treatment": {
+  "n_hitrich30": 0,
+  "leg_a_pooled_KS": {
+   "n": 0,
+   "D": NaN,
+   "p": NaN,
+   "fires": false
+  },
+  "leg_b_lag_autocorr": {
+   "n_Ns": 0,
+   "mean_rho_lags1_10": NaN,
+   "boot95": [
+    NaN,
+    NaN
+   ],
+   "ci_excludes_0": false,
+   "per_lag_mean_rho": [
+    NaN,
+    NaN,
+    NaN,
+    NaN,
+    NaN,
+    NaN,
+    NaN,
+    NaN,
+    NaN,
+    NaN
+   ],
+   "fires": false
+  },
+  "leg_c_edge_decile": {
+   "n": 0,
+   "frac": NaN,
+   "k": 0,
+   "p_two_sided": NaN,
+   "fires": false
+  }
+ },
+ "control": {
+  "n_hitrich30": 0,
+  "leg_a_pooled_KS": {
+   "n": 0,
+   "D": NaN,
+   "p": NaN,
+   "fires": false
+  },
+  "leg_b_lag_autocorr": {
+   "n_Ns": 0,
+   "mean_rho_lags1_10": NaN,
+   "boot95": [
+    NaN,
+    NaN
+   ],
+   "ci_excludes_0": false,
+   "per_lag_mean_rho": [
+    NaN,
+    NaN,
+    NaN,
+    NaN,
+    NaN,
+    NaN,
+    NaN,
+    NaN,
+    NaN,
+    NaN
+   ],
+   "fires": false
+  },
+  "leg_c_edge_decile": {
+   "n": 0,
+   "frac": NaN,
+   "k": 0,
+   "p_two_sided": NaN,
+   "fires": false
+  }
+ },
+ "verdicts": {
+  "H1_positional_structure_real": false,
+  "H0_uniform_no_positional_geometry": true,
+  "verdict": "UNIFORM-NO-POSITIONAL-GEOMETRY",
+  "treatment_fired_legs": [],
+  "control_fired_legs": []
+ }
+}
+[smoke] verdict=UNIFORM-NO-POSITIONAL-GEOMETRY wall=21.8s -> exp578_smoke_result.json
+
+real	0m22.837s
+user	0m43.454s
+sys	0m0.821s

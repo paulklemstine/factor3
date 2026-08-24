@@ -2655,3 +2655,31 @@ fired H1 — marked NON-EVIDENTIARY. Barrier framing: closes 226's named follow-
 bars; canonical-covariate upgrade; residual non-QR target refined; papers 136/139 stand at their
 own scale with location vindicated and form upgraded; residue cap untouched; no breakthrough
 claimed. Paper 227, issue #375.
+
+**Assessment addendum v335 — 2026-08-24 (round-79 #2).** Experiment recorded (count 566 → 567);
+papers 227 → 228; version v334 → v335. Content: exp578 HIT-POSITION-STRUCTURE —
+POSITIONAL-STRUCTURE-REAL, amended BEYOND-MAGNITUDE after the coordinator-directed confound check:
+the FIRST POSITIVE carrier candidate for the ~39–61% unexplained per-N overdispersion. First
+within-N question of the overdispersion era: do hits have positional structure in j? Population
+128 balanced bitlen-96 semiprimes, fresh seed 20260828 (hash 06931068f8f3ca9b), lineage quartet
+reproduced exactly, five-seed family pairwise disjoint; exp569 tester verbatim, every hit position
+persisted to npz; wall 363 s. Overdispersion REPLICATED 4th time (mean 74.95 hits/N, D_raw = 6.37,
+range 29–136). Primary legs (treatment | paired non-hit control): pooled KS D = 0.09519 /
+p = 6.9·10⁻⁷⁶ over 9565 hits / 127 hit-rich Ns FIRES | control D = 0.00693 / p = 0.744 null;
+lag-autocorr ρ = +0.00283 CI [0.00112, 0.00475] excludes 0 but « the 0.05 bar → no fire;
+edge-decile frac 0.2346 p = 1.1·10⁻¹⁶ vs 0.20 but < the 0.25 bar → no fire. THE STRATIFIED ANSWER
+(decisive): conditioning on all 8 (bitlen(v) × mantissa-octant) cells containing every hit,
+pooled stratified D = 0.10423 EXCEEDS unstratified, within-cell permutation p < 0.0005 (0/2000),
+7/8 cells fire at p < 0.01 (median cell p = 1.9·10⁻⁵), stratified-edge z = 10.08 — structure
+fully survives size-conditioning ⇒ BEYOND-MAGNITUDE, not a smoothness-decay artifact of v = j²−N's
+monotonicity. Decile profile declines monotonically [.162 → .072] vs flat control — hits cluster
+toward small-j ~10× stronger than magnitude predicts. CONSEQUENCE: real within-N positional
+geometry in the smooth locus of j²−N opens POLYNOMIAL-SEQUENCE LOCAL STRUCTURE as carrier
+candidate for the residual (papers 220/222/226/227 thread); named follow-ups: (a) functional form
+of the small-j profile, (b) does j-local clustering predict WHICH N are hit-rich (positional ↔
+rate link). Ledger catches disclosed: run-1 control-arm leg-b mirrored treatment — repaired from
+npz before verdicts (leg-b fired nowhere either way); confound-check rule pre-stated by
+coordinator before running it, amendment labeled post-hoc everywhere; legs a/c overlap registered.
+Barrier framing: scale-smoothness mechanism frontier — opens rather than closes; H0-route also
+cleanly closed via control nulls; residue cap untouched; no breakthrough claimed. Paper 228,
+issue #376.

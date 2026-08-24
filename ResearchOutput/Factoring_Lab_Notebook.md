@@ -11111,3 +11111,41 @@ fixed bars; canonical covariate upgrade count->weighted; residual non-QR target 
 papers 136/139 stand at their own scale with window location vindicated and form upgraded;
 residue cap untouched; no complexity claim. Count 565 -> 566. Assessment v333 -> v334. Paper 227,
 issue #375.
+
+## Part 270 - HIT-POSITION-STRUCTURE (round-79 #2, exp 578, v335)
+
+POSITIONAL-STRUCTURE-REAL, amended BEYOND-MAGNITUDE after the coordinator-directed confound check
+— the FIRST POSITIVE carrier candidate for the ~39-61% unexplained per-N overdispersion. First
+within-N question of the overdispersion era: do hits have positional structure in j? Population
+128 balanced bitlen-96 semiprimes, FRESH master seed 20260828 (hash 06931068f8f3ca9b), lineage
+quartet e8d89a29a03779d5/9cb9cc800ee45a38/81acc9b5e1be619b/a15e2877dd1dac7a REPRODUCED exactly,
+five-seed family pairwise disjoint; exp569 tester verbatim, 150k j-samples/N on
+[isqrt+1, 3*isqrt], cut 1e6; every hit position persisted (exp578_positions.npz); wall 363 s full
+/ 21.8 s smoke (plumbing only, HITRICH empty as pre-disclosed). Overdispersion REPLICATED 4th
+time: mean 74.95 hits/N, D_raw 6.37, range 29-136, total hits 9594. PRIMARY LEGS (treatment |
+paired non-hit control from same rng stream): (a) pooled KS u vs U[0,1] over 9565 hits / 127
+HITRICH(>=30) Ns D=0.09519 p=6.9e-76 FIRES | control D=0.00693 p=0.744 null — pipeline clean;
+sensitivity at >=10 fires identically (D=0.09474). (b) lag-1..10 autocorr (1000 bins) mean rho
++0.00283 boot95 [0.00112,0.00475] — CI excludes 0 but « 0.05 bar → no fire | TRUE repaired control
+rho=-0.00112 null. (c) edge-decile frac 0.2346 binomial p=1.1e-16 vs p0=0.20 but < 0.25 bar → no
+fire | control 0.1935 null. Registered any-leg rule ⇒ H1; controls fire NOWHERE ⇒ not
+ARTIFACT-CONTAMINATED. THE STRATIFIED ANSWER (decisive): confound = v=j^2-N monotone ⇒ pure
+smoothness decay would skew small-u; rule PRE-STATED by coordinator BEFORE running it (order on
+record); stratify all 9594 hits into the 8 (bitlen(v) x mantissa-octant) cells containing them;
+vs SIZE-MATCHED paired non-hits per cell: 7/8 cells fire two-sample KS at p<0.01 (null expects
+~0.08), median cell p=1.86e-5; pooled STRATIFIED D=0.10423 EXCEEDS unstratified 0.09519;
+within-cell label permutation p<0.0005 (0/2000, seed 20260830); stratified-edge z=10.08 (2248 obs
+vs 1858 expected). Decile profile declines monotonically [.162,.123,.109,.097,.091,.091,.090,
+.084,.081,.072] vs control flat ≈[.095..108]: hits concentrate toward small-j ~10x stronger than
+magnitude predicts ⇒ BEYOND-MAGNITUDE-POSITIONAL-STRUCTURE — real WITHIN-N positional geometry in
+the smooth locus of j^2-N. CONSEQUENCE: opens POLYNOMIAL-SEQUENCE LOCAL STRUCTURE as carrier
+candidate for the ~39-61% residual (papers 220/222/226/227 thread). Named follow-ups: (a)
+functional form of the small-j profile; (b) does j-local clustering predict WHICH N are hit-rich
+(linking positional and rate views)? LEDGER CATCHES (all disclosed): run-1 control-arm leg-b
+mirrored treatment (acf read hit arrays unconditionally) — repaired from npz by
+exp578_stratified_check.py BEFORE verdicts, leg-b fired nowhere either way, no verdict change;
+confound-check order on record as post-hoc-by-construction and labeled everywhere; legs a/c
+overlap disclosed up front with registered any-fires multiplicity. Barrier framing:
+scale-smoothness mechanism frontier — opens rather than closes; H0-route also cleanly closed
+(control nulls prove pipe); residue cap untouched; no complexity claim. Count 566 -> 567.
+Assessment v334 -> v335. Paper 228, issue #376.
