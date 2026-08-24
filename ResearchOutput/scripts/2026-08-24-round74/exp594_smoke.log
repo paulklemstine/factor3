@@ -1,0 +1,23 @@
+treatment: pooled normalized hits x=(p-jlo)/(jhi-jlo), n=9594, trials=128
+control:   pooled normalized controls, same trial normalization, subsampled to n=9594
+[treatment]
+  cap= 10: b_bulk=  0.432 b_edge=  10.000 w=0.4675 | b_single=1.147 d_aicc=   -82.38 interior=False
+  cap= 40: b_bulk=  0.858 b_edge=  40.000 w=0.478 | b_single=1.147 d_aicc=   -99.00 interior=False
+  best cap = 40
+[control]
+  cap= 10: b_bulk=  0.076 b_edge=   0.076 w=0.03213 | b_single=0.076 d_aicc=     5.28 interior=True
+  cap= 40: b_bulk=  0.076 b_edge=   0.078 w=8.316e-07 | b_single=0.076 d_aicc=     5.28 interior=True
+  best cap = 10
+Traceback (most recent call last):
+  File "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp594_edge_cap.py", line 275, in <module>
+    main()
+  File "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp594_edge_cap.py", line 246, in main
+    v, det = verdict_treatment(res["fits"]["treatment"])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp594_edge_cap.py", line 188, in verdict_treatment
+    traj_ok = all(fits[c]["d_aicc"] < -6 and fits[c]["interior"] for c in (20, 40, 80))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp594_edge_cap.py", line 188, in <genexpr>
+    traj_ok = all(fits[c]["d_aicc"] < -6 and fits[c]["interior"] for c in (20, 40, 80))
+                  ~~~~^^^
+KeyError: 20

@@ -1,0 +1,314 @@
+{
+ "config": {
+  "caps": [
+   10,
+   20,
+   40,
+   80
+  ],
+  "nbins": 28,
+  "nboot_best_cap": 300,
+  "nboot_other_caps": 100,
+  "seed": 594,
+  "sub_per_bin": 16,
+  "single_law_ref": 1.1,
+  "model": "T(x)=A(1+x)^-b_bulk + K(1+x)^-b_edge, cap delta on b_edge",
+  "selection": {
+   "treatment_key": "pooled normalized hits x=(p-jlo)/(jhi-jlo), n=9594, trials=128",
+   "control_key": "pooled normalized controls, same trial normalization, subsampled to n=9594"
+  }
+ },
+ "fits": {
+  "treatment": {
+   "fits": {
+    "10": {
+     "b_bulk": 29.999999999999652,
+     "b_edge": 0.8325990471485895,
+     "weight_edge": 0.5451699503780694,
+     "b_single": 1.159602966443502,
+     "chi2_single": 158.22862571847085,
+     "chi2_two": 53.81578207668646,
+     "aicc_single": 160.382471872317,
+     "aicc_two": 60.81578207668646,
+     "d_aicc": -99.56668979563055,
+     "interior": true
+    },
+    "20": {
+     "b_bulk": 29.999999999999996,
+     "b_edge": 0.8325990495219112,
+     "weight_edge": 0.5451699512702267,
+     "b_single": 1.159602966443502,
+     "chi2_single": 158.22862571847085,
+     "chi2_two": 53.81578209397157,
+     "aicc_single": 160.382471872317,
+     "aicc_two": 60.81578209397157,
+     "d_aicc": -99.56668977834545,
+     "interior": true
+    },
+    "40": {
+     "b_bulk": 0.8806996865400669,
+     "b_edge": 39.99999999999999,
+     "weight_edge": 0.47483409842385843,
+     "b_single": 1.159602966443502,
+     "chi2_single": 158.22862571847085,
+     "chi2_two": 52.10659264647646,
+     "aicc_single": 160.382471872317,
+     "aicc_two": 59.10659264647646,
+     "d_aicc": -101.27587922584055,
+     "interior": false
+    },
+    "80": {
+     "b_bulk": 0.8824062920719563,
+     "b_edge": 40.46352043780491,
+     "weight_edge": 0.47574578823467767,
+     "b_single": 1.159602966443502,
+     "chi2_single": 158.22862571847085,
+     "chi2_two": 52.04998978291042,
+     "aicc_single": 160.382471872317,
+     "aicc_two": 59.04998978291042,
+     "d_aicc": -101.3324820894066,
+     "interior": true
+    }
+   },
+   "boots": {
+    "80": {
+     "b_bulk": {
+      "point": 0.8824062920719563,
+      "lo": 0.6065589161243897,
+      "hi": 1.0474746472622056,
+      "cap_hit_frac": 0.0
+     },
+     "b_edge": {
+      "point": 40.46352043780491,
+      "lo": 15.24775447377288,
+      "hi": 79.99999999999999,
+      "cap_hit_frac": 0.26666666666666666
+     },
+     "nboot_ok": 300,
+     "nboot_fail": 0
+    },
+    "10": {
+     "b_bulk": {
+      "point": 29.999999999999652,
+      "lo": 13.917311061348203,
+      "hi": 29.999999999999996,
+      "cap_hit_frac": 1.0
+     },
+     "b_edge": {
+      "point": 0.8325990471485895,
+      "lo": 0.5518524061517751,
+      "hi": 0.9232098348496639,
+      "cap_hit_frac": 0.0
+     },
+     "nboot_ok": 100,
+     "nboot_fail": 0
+    },
+    "20": {
+     "b_bulk": {
+      "point": 29.999999999999996,
+      "lo": 12.606504080019402,
+      "hi": 29.999999999999996,
+      "cap_hit_frac": 0.86
+     },
+     "b_edge": {
+      "point": 0.8325990495219112,
+      "lo": 0.5171192785361689,
+      "hi": 0.9453879663742947,
+      "cap_hit_frac": 0.0
+     },
+     "nboot_ok": 100,
+     "nboot_fail": 0
+    },
+    "40": {
+     "b_bulk": {
+      "point": 0.8806996865400669,
+      "lo": 0.5537494821589952,
+      "hi": 0.9945300405690156,
+      "cap_hit_frac": 0.0
+     },
+     "b_edge": {
+      "point": 39.99999999999999,
+      "lo": 14.84766212109648,
+      "hi": 39.99999999999999,
+      "cap_hit_frac": 0.6
+     },
+     "nboot_ok": 100,
+     "nboot_fail": 0
+    }
+   },
+   "best_cap": 80,
+   "support": [
+    2.6156669199127615e-05,
+    0.9999962689919528
+   ],
+   "nbins": 28,
+   "n": 9594
+  },
+  "control": {
+   "fits": {
+    "10": {
+     "b_bulk": 0.08381408835645376,
+     "b_edge": 0.08891337947804379,
+     "weight_edge": 8.315284617627306e-07,
+     "b_single": 0.08381409231905625,
+     "chi2_single": 23.9679021180472,
+     "chi2_two": 23.96790211789501,
+     "aicc_single": 26.121748271893352,
+     "aicc_two": 30.96790211789501,
+     "d_aicc": 4.846153846001659,
+     "interior": true
+    },
+    "20": {
+     "b_bulk": 0.08381406472405727,
+     "b_edge": 0.14569803443110432,
+     "weight_edge": 8.316660387986493e-07,
+     "b_single": 0.08381409231905625,
+     "chi2_single": 23.9679021180472,
+     "chi2_two": 23.967902108673467,
+     "aicc_single": 26.121748271893352,
+     "aicc_two": 30.967902108673467,
+     "d_aicc": 4.846153836780115,
+     "interior": true
+    },
+    "40": {
+     "b_bulk": 0.08381421237662087,
+     "b_edge": 0.10351274058732841,
+     "weight_edge": 8.315758706075812e-07,
+     "b_single": 0.08381409231905625,
+     "chi2_single": 23.9679021180472,
+     "chi2_two": 23.967902012789228,
+     "aicc_single": 26.121748271893352,
+     "aicc_two": 30.967902012789228,
+     "d_aicc": 4.8461537408958755,
+     "interior": true
+    },
+    "80": {
+     "b_bulk": 0.0838141099224465,
+     "b_edge": 0.06718834663768057,
+     "weight_edge": 8.322729170961547e-07,
+     "b_single": 0.08381409231905625,
+     "chi2_single": 23.9679021180472,
+     "chi2_two": 23.967902115801465,
+     "aicc_single": 26.121748271893352,
+     "aicc_two": 30.967902115801465,
+     "d_aicc": 4.846153843908112,
+     "interior": true
+    }
+   },
+   "boots": {
+    "40": {
+     "b_bulk": {
+      "point": 0.08381421237662087,
+      "lo": 0.020000000000001836,
+      "hi": 0.16701897929389384,
+      "cap_hit_frac": 0.0
+     },
+     "b_edge": {
+      "point": 0.10351274058732841,
+      "lo": 0.0500000000000028,
+      "hi": 39.99999998044677,
+      "cap_hit_frac": 0.06
+     },
+     "nboot_ok": 300,
+     "nboot_fail": 0
+    },
+    "10": {
+     "b_bulk": {
+      "point": 0.08381408835645376,
+      "lo": 0.02000000000000106,
+      "hi": 0.21169184174300446,
+      "cap_hit_frac": 0.01
+     },
+     "b_edge": {
+      "point": 0.08891337947804379,
+      "lo": 0.05000000000234834,
+      "hi": 9.999999999999996,
+      "cap_hit_frac": 0.22
+     },
+     "nboot_ok": 100,
+     "nboot_fail": 0
+    },
+    "20": {
+     "b_bulk": {
+      "point": 0.08381406472405727,
+      "lo": 0.02000000000000169,
+      "hi": 0.16838363088083244,
+      "cap_hit_frac": 0.0
+     },
+     "b_edge": {
+      "point": 0.14569803443110432,
+      "lo": 0.05000000000026597,
+      "hi": 19.999999999999932,
+      "cap_hit_frac": 0.12
+     },
+     "nboot_ok": 100,
+     "nboot_fail": 0
+    },
+    "80": {
+     "b_bulk": {
+      "point": 0.0838141099224465,
+      "lo": 0.020000000000068355,
+      "hi": 0.19557068716586593,
+      "cap_hit_frac": 0.0
+     },
+     "b_edge": {
+      "point": 0.06718834663768057,
+      "lo": 0.05000000000001955,
+      "hi": 79.99999999998474,
+      "cap_hit_frac": 0.11
+     },
+     "nboot_ok": 100,
+     "nboot_fail": 0
+    }
+   },
+   "best_cap": 40,
+   "support": [
+    8.448810121709765e-05,
+    0.9998823338673593
+   ],
+   "nbins": 28,
+   "n": 9594
+  }
+ },
+ "comparison": {},
+ "stats": {
+  "treatment_best_cap": 80,
+  "treatment_b_edge": {
+   "point": 40.46352043780491,
+   "lo": 15.24775447377288,
+   "hi": 79.99999999999999,
+   "cap_hit_frac": 0.26666666666666666
+  },
+  "control_b_edge_at_best_cap": {
+   "point": 0.10351274058732841,
+   "lo": 0.0500000000000028,
+   "hi": 39.99999998044677,
+   "cap_hit_frac": 0.06
+  }
+ },
+ "verdicts": {
+  "treatment": "H0_UNIDENTIFIABLE",
+  "treatment_detail": {
+   "traj_ok": false,
+   "excl_single": true,
+   "excl_degeneracy": false,
+   "caps_ridden": [
+    40
+   ],
+   "ci_caps_hit": [
+    40,
+    80
+   ]
+  },
+  "control": "NO_KERNEL_AS_EXPECTED"
+ },
+ "honest_notes": [
+  "Positions pooled across trials after per-trial normalization x=(p-jlo)/(jhi-jlo) in [0,1]; control subsampled to treatment n (declared before first fit on these data).",
+  "Effective-k AICc (k=1/k=3): amplitudes normalized out of the likelihood.",
+  "Non-best-cap CIs use nboot=100 (supplementary, declared above).",
+  "Binning (geometric, 28 bins) is an estimator choice; steep-spike identification is known to be binning-sensitive.",
+  "Role-swapped local optimum at caps [10, 20]: b_bulk rides its own bound (~30) and acts as the near-boundary spike while b_edge absorbs the smooth component (~0.83); chi2 within ~2 AICc of the edge-spike solution -- a second unidentified-direction mode beyond cap-riding.",
+  "Paper-238's posthoc cap-40 point (22.5) vs this pipeline's ~40.5 at cap>=40: absolute values are estimator-dependent (binning/pooling); the qualitative diagnosis -- steep, censored, cap-sensitive -- replicates."
+ ],
+ "wall_s": 5.95
+}

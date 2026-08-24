@@ -11915,3 +11915,46 @@ travels; paper 242 entry stays single-seed-unconfirmed (#391). Open unchanged: n
 structure at u=2.5, factor-local beyond scan-order, MA-1 effectivity. Named next honest question:
 does early-fire geometry persist at bitlens where B1/p must shrink (u≥6–14 scale-smoothness
 directive), not whether it exists here.
+
+## Part 287 - EDGE-KERNEL-CAP [FINAL] + AMENDMENT to paper 238's canonical wording (round-88 #2, exp 594, v352)
+
+**H0 — SPIKE STEEPNESS UNIDENTIFIABLE AT THIS DATA SIZE (kernel itself MASSIVELY CONFIRMED).**
+Pre-registration fixed in exp594_edge_cap.py header BEFORE any fit; pure reanalysis of the same
+exp581_regen_positions.npz behind papers 229–240; hits pooled after per-trial normalization
+x=(p−jlo)/(jhi−jlo), n=9594/128 trials; controls subsampled to same n (declared); two-component
+T(x)=A(1+x)^(−b_bulk)+K(1+x)^(−b_edge) vs single law, b_edge capped δ∈{10,20,40,80}, geometric
+28-bin Pearson chi², multi-start NLS, effective-k AICc; wall **5.95 s**.
+
+Kernel existence never wavers: ΔAICc vs single = **−99.6/−99.6/−101.3/−101.3** across caps
+(chi² 158.2→52–54, bar −6); single-law **b=1.160 replicates papers 229/238** (~1.104 registered
+ref). BUT steepness unidentifiable: b_edge ladder .833* → .833* → **40.000 (=cap, interior
+False)** → 40.46; bootstrap CI at best cap 80 = **[15.2, 80.0]** hitting the cap (hit fraction
+26.7%; cap-40 CI [14.8, 40.0], hit 60%) ⇒ `excl_degeneracy` False, `caps_ridden`=[40],
+`ci_caps_hit`=[40,80]. Only exclusion that holds anywhere: b_edge ≠ single-law value. Usable
+claim = LOWER-BOUND LADDER: **b_edge >~15 at n≈9.6k, upper limit unbounded by data**.
+CONTROL CLEAN: no kernel at any cap (ΔAICc **+4.85**, edge weight ≈8.3e-7 vs .47–.55 treatment,
+b_single .084 ≈ uniform) — kernel is a property of hit positions, not pipeline.
+
+LEDGER CATCH disclosed: ROLE-SWAPPED OPTIMUM at caps 10/20 — b_bulk rides its own bound (~30)
+acting AS the near-boundary spike while b_edge absorbs the smooth part (~.83), chi² within ~2
+AICc of the edge-spike solution ⇒ a SECOND unidentified direction beyond cap-riding; low-cap
+"interior" readings are not identification. AMENDMENT to paper 238: registered δ=10 was a HARD
+CENSOR — canonical description must state "flat bulk (.57 paper-238 pipeline / .88 here) +
+left-edge spike with b_edge >~15 LOWER BOUND ONLY, exact steepness unidentified at n=9594";
+paper 238's posthoc 22.5 and this ~40.5 are estimator-dependent absolutes under one invariant
+diagnosis (steep/censored/cap-sensitive); future pinning needs more pooled hits or a parametric
+family choice, not another cap raise. Papers 239/240 STAND — this speaks to pooled-SHAPE
+identifiability, they resolved the CARRIER (tiny-v composition); map entry unchanged.
+
+Honest notes: non-best-cap CIs nboot=100 supplementary (declared); binning an estimator choice,
+steep-spike ID binning-sensitive (mass fractions differ across pipelines: w_edge 8.6% paper 238
+vs ρ≈.48 here — absolutes don't transfer, censoring does); amplitudes normalized out; data
+provenance inherits exp581 regen lineage (balanced-96-bit exchangeability conditional).
+
+Count 582 → 583; assessment v351 → v352. Paper 245, issue #393. Barrier framing: identifiability
+audit INSIDE the positional shape layer; residue cap 4/3, position 5.19×, external-hint laws,
+quantum frontier, four-class closure, papers 228–230 layering, 239–240 carrier resolution all
+untouched; paper 238's .2346 flag still travels; #391 single-seed-unconfirmed stands. Open
+unchanged: non-QR per-N structure at u=2.5, factor-local beyond scan-order, MA-1 effectivity.
+Named next honest question: does a parametric-family choice (or ≥3–4× more pooled hits) turn the
+lower-bound ladder into a pin — or is the profile genuinely scale-free-steep at the edge?

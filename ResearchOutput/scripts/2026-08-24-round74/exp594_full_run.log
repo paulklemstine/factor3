@@ -1,0 +1,16 @@
+treatment: pooled normalized hits x=(p-jlo)/(jhi-jlo), n=9594, trials=128
+control:   pooled normalized controls, same trial normalization, subsampled to n=9594
+[treatment]
+  cap= 10: b_bulk= 30.000 b_edge=   0.833 w=0.5452 | b_single=1.160 d_aicc=   -99.57 interior=True
+  cap= 20: b_bulk= 30.000 b_edge=   0.833 w=0.5452 | b_single=1.160 d_aicc=   -99.57 interior=True
+  cap= 40: b_bulk=  0.881 b_edge=  40.000 w=0.4748 | b_single=1.160 d_aicc=  -101.28 interior=False
+  cap= 80: b_bulk=  0.882 b_edge=  40.464 w=0.4757 | b_single=1.160 d_aicc=  -101.33 interior=True
+  best cap = 80
+[control]
+  cap= 10: b_bulk=  0.084 b_edge=   0.089 w=8.315e-07 | b_single=0.084 d_aicc=     4.85 interior=True
+  cap= 20: b_bulk=  0.084 b_edge=   0.146 w=8.317e-07 | b_single=0.084 d_aicc=     4.85 interior=True
+  cap= 40: b_bulk=  0.084 b_edge=   0.104 w=8.316e-07 | b_single=0.084 d_aicc=     4.85 interior=True
+  cap= 80: b_bulk=  0.084 b_edge=   0.067 w=8.323e-07 | b_single=0.084 d_aicc=     4.85 interior=True
+  best cap = 40
+VERDICTS: {"treatment": "H0_UNIDENTIFIABLE", "treatment_detail": {"traj_ok": false, "excl_single": true, "excl_degeneracy": false, "caps_ridden": [40], "ci_caps_hit": [40, 80]}, "control": "NO_KERNEL_AS_EXPECTED"}
+wall_s: 5.95 -> wrote /home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp594_result.json
