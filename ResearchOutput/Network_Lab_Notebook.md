@@ -2051,3 +2051,13 @@ declared unresolved; point estimates without per-arm SEs documented).
 Open: q4_1/iq4_nl block-scaled 4-bit KV; single-sided 4-bit arms; cliff
 position vs context length; draft-KV interaction. Paper 173, issue #351.
 Now 93 network experiments. Assessment v93.
+
+## Part 93 — KEYS-OWN-THE-CLIFF: the NET-92 discriminator lands a four-order-of-magnitude asymmetry — quantizing ONLY cache keys to 4 bits annihilates the model (K4/V16 PPL 2,537.8, +35,597%) while quantizing ONLY values to 4 bits is FREE (K16/V4 PPL 7.1211, +0.166%, indistinguishable from lossless); no block-scaling format escapes on the key side (q4_1 +44,322% — marginally WORSE than raw q4_0, refuting the partial-rescue prediction; iq4_nl +22,790% — best of three collapsed formats, meaninglessly); mechanism = keys feed every softmax selection boundary and amplify through layers (NET-83 path) while value errors are linear/local; prescription: split the budget by role — keys ≥8 bits, values accept 4 (implied K8/V4 ~6-bit average cache, direct confirmation is the follow-up cell); P2 CONFIRMED at ~214,000× damage ratio vs the predicted ≥5×; P1/P3 REFUTED/meaningless as stated (NET-93; cpu-large-model axis iteration 68)
+
+**Method:** identical harness to NET-92 (llama-perplexity, ctx=2048, threads=8,
+250KB held-out slice), arms {K4_1 both, Kiq4_nl both, K4_0-only, V4_0-only}.
+Script ResearchOutput/exp_net93_kvrescue.py; results ~/f3cache/net93_results.json;
+log /tmp/net93.log.
+**Verdict:** KEYS-OWN-THE-CLIFF. Barriers: (a)-(h) clean/partial as listed.
+Open: direct K8/V4 combined cell; K6/K5 key-cliff boundary search; cross-model
+replication. Paper 174, issue #358. Now 94 network experiments. Assessment v94.
