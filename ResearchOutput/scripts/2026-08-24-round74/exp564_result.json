@@ -1,0 +1,1465 @@
+{
+ "exp": 564,
+ "codename": "ORBIT-DIAL-CAP-TEST",
+ "round": 74,
+ "smoke": false,
+ "status": "06_final",
+ "preregistered": {
+  "H1": "orbit revealed-set MI fully accounted for by ordinary residue-dial content; measured speedup <= 4/3 within CI; = matched-random dial (barrier-4 converse scope)",
+  "H2": "speedup significantly > 4/3 surviving fresh-seed replication + sham co-inflation + N-computability check"
+ },
+ "config": {
+  "seed": 20260824,
+  "bitlen_target": 40,
+  "pop": {
+   "balanced": 500,
+   "ratio4": 300
+  },
+  "V_root_component": 20000,
+  "comp_seeds": 10,
+  "comp_nodes_each": 1500,
+  "moduli": [
+   3,
+   4,
+   5,
+   7,
+   8,
+   16
+  ],
+  "units_per_node": 12,
+  "n_shuffles": 300,
+  "n_boot": 800,
+  "accounting": "paper-132 law convention primary (miss->flat T0 fallback); honest adds wasted kept-scan on miss; net adds build@12/node + membership tests (identical for all arms incl SHAM)"
+ },
+ "population_stats": {
+  "n": 800,
+  "n_train_half": 383,
+  "n_test_half": 417,
+  "bitlens": [
+   39,
+   40,
+   41
+  ],
+  "ratio_mean_bal": 1.265,
+  "ratio_mean_rat": 4.0
+ },
+ "revealed_set_characterization": {
+  "root_component_N_invariance": {
+   "3": {
+    "distinct_values_across_pop": 1,
+    "modal_value_share": 1.0
+   },
+   "4": {
+    "distinct_values_across_pop": 1,
+    "modal_value_share": 1.0
+   },
+   "5": {
+    "distinct_values_across_pop": 1,
+    "modal_value_share": 1.0
+   },
+   "7": {
+    "distinct_values_across_pop": 1,
+    "modal_value_share": 1.0
+   },
+   "8": {
+    "distinct_values_across_pop": 1,
+    "modal_value_share": 1.0
+   },
+   "16": {
+    "distinct_values_across_pop": 1,
+    "modal_value_share": 1.0
+   }
+  },
+  "generic_component_per_modulus": {
+   "3": {
+    "sa_classes_mean": 3.0,
+    "sa_classes_min": 3,
+    "sa_classes_max": 3,
+    "sabc_classes_mean": 3.0
+   },
+   "4": {
+    "sa_classes_mean": 4.0,
+    "sa_classes_min": 4,
+    "sa_classes_max": 4,
+    "sabc_classes_mean": 4.0
+   },
+   "5": {
+    "sa_classes_mean": 5.0,
+    "sa_classes_min": 5,
+    "sa_classes_max": 5,
+    "sabc_classes_mean": 5.0
+   },
+   "7": {
+    "sa_classes_mean": 7.0,
+    "sa_classes_min": 7,
+    "sa_classes_max": 7,
+    "sabc_classes_mean": 7.0
+   },
+   "8": {
+    "sa_classes_mean": 8.0,
+    "sa_classes_min": 8,
+    "sa_classes_max": 8,
+    "sabc_classes_mean": 8.0
+   },
+   "16": {
+    "sa_classes_mean": 16.0,
+    "sa_classes_min": 16,
+    "sa_classes_max": 16,
+    "sabc_classes_mean": 16.0
+   },
+   "_comp_components": {
+    "n_seeds": 10,
+    "nodes_each": 1500,
+    "mean_component_size": 1501.0,
+    "complen_min": 15010,
+    "complen_max": 15010
+   }
+  },
+  "budget_saturation_root_sa_mean": {
+   "5": {
+    "q25": null,
+    "q50": 5.0,
+    "full_root_arm": 5.0
+   },
+   "16": {
+    "q25": null,
+    "q50": 8.0,
+    "full_root_arm": 8.0
+   }
+  }
+ },
+ "n_computability_audit": {
+  "recompute_identical": true,
+  "n_checked": 3,
+  "note": "both arms built from N alone (start consts + linear maps + reduction mod N; comp rng keyed by (SEED,N)); no factor in code path"
+ },
+ "mi_table_full": [
+  {
+   "feature": "sa@3",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 0.9976
+  },
+  {
+   "feature": "sabc@3",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 0.9976
+  },
+  {
+   "feature": "topshare@3",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 0.9976
+  },
+  {
+   "feature": "sa@4",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 0.9998
+  },
+  {
+   "feature": "sabc@4",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 0.9998
+  },
+  {
+   "feature": "topshare@4",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 0.9998
+  },
+  {
+   "feature": "sa@5",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 1.9974
+  },
+  {
+   "feature": "sabc@5",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 1.9974
+  },
+  {
+   "feature": "topshare@5",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 1.9974
+  },
+  {
+   "feature": "sa@7",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 2.5828
+  },
+  {
+   "feature": "sabc@7",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 2.5828
+  },
+  {
+   "feature": "topshare@7",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 2.5828
+  },
+  {
+   "feature": "sa@8",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 1.9993
+  },
+  {
+   "feature": "sabc@8",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 1.9993
+  },
+  {
+   "feature": "topshare@8",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 1.9993
+  },
+  {
+   "feature": "sa@16",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 2.999
+  },
+  {
+   "feature": "sabc@16",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 2.999
+  },
+  {
+   "feature": "topshare@16",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 2.999
+  },
+  {
+   "feature": "sa@3",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 0.9976
+  },
+  {
+   "feature": "sabc@3",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 0.9976
+  },
+  {
+   "feature": "topshare@3",
+   "src": "comp",
+   "n_classes_feat": 3,
+   "mi_bits_vs_pmodm": 0.0007,
+   "z_vs_pmodm_magnull": -0.626,
+   "mi_bits_vs_joint": 0.0017,
+   "z_vs_joint_magnull": -0.724,
+   "cond_mi_given_Nmodm_joint": 0.0015,
+   "z_cond_vs_joint": -0.13,
+   "baseline_I_Nmodm_joint": 0.9976
+  },
+  {
+   "feature": "saE@3",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 0.9976
+  },
+  {
+   "feature": "sa@4",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 0.9998
+  },
+  {
+   "feature": "sabc@4",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 0.9998
+  },
+  {
+   "feature": "topshare@4",
+   "src": "comp",
+   "n_classes_feat": 3,
+   "mi_bits_vs_pmodm": 0.0011,
+   "z_vs_pmodm_magnull": -0.363,
+   "mi_bits_vs_joint": 0.0029,
+   "z_vs_joint_magnull": -0.319,
+   "cond_mi_given_Nmodm_joint": 0.0024,
+   "z_cond_vs_joint": 0.285,
+   "baseline_I_Nmodm_joint": 0.9998
+  },
+  {
+   "feature": "saE@4",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 0.9998
+  },
+  {
+   "feature": "sa@5",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 1.9974
+  },
+  {
+   "feature": "sabc@5",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 1.9974
+  },
+  {
+   "feature": "topshare@5",
+   "src": "comp",
+   "n_classes_feat": 3,
+   "mi_bits_vs_pmodm": 0.0016,
+   "z_vs_pmodm_magnull": -1.15,
+   "mi_bits_vs_joint": 0.0179,
+   "z_vs_joint_magnull": 0.278,
+   "cond_mi_given_Nmodm_joint": 0.0111,
+   "z_cond_vs_joint": 0.029,
+   "baseline_I_Nmodm_joint": 1.9974
+  },
+  {
+   "feature": "saE@5",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 1.9974
+  },
+  {
+   "feature": "sa@7",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 2.5828
+  },
+  {
+   "feature": "sabc@7",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 2.5828
+  },
+  {
+   "feature": "topshare@7",
+   "src": "comp",
+   "n_classes_feat": 3,
+   "mi_bits_vs_pmodm": 0.0087,
+   "z_vs_pmodm_magnull": -0.118,
+   "mi_bits_vs_joint": 0.0418,
+   "z_vs_joint_magnull": 0.71,
+   "cond_mi_given_Nmodm_joint": 0.0294,
+   "z_cond_vs_joint": 0.213,
+   "baseline_I_Nmodm_joint": 2.5828
+  },
+  {
+   "feature": "saE@7",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 2.5828
+  },
+  {
+   "feature": "sa@8",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 1.9993
+  },
+  {
+   "feature": "sabc@8",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 1.9993
+  },
+  {
+   "feature": "topshare@8",
+   "src": "comp",
+   "n_classes_feat": 3,
+   "mi_bits_vs_pmodm": 0.0034,
+   "z_vs_pmodm_magnull": -0.727,
+   "mi_bits_vs_joint": 0.0196,
+   "z_vs_joint_magnull": 0.496,
+   "cond_mi_given_Nmodm_joint": 0.0074,
+   "z_cond_vs_joint": -0.749,
+   "baseline_I_Nmodm_joint": 1.9993
+  },
+  {
+   "feature": "saE@8",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 1.9993
+  },
+  {
+   "feature": "sa@16",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 2.999
+  },
+  {
+   "feature": "sabc@16",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 2.999
+  },
+  {
+   "feature": "topshare@16",
+   "src": "comp",
+   "n_classes_feat": 3,
+   "mi_bits_vs_pmodm": 0.0199,
+   "z_vs_pmodm_magnull": 1.635,
+   "mi_bits_vs_joint": 0.0924,
+   "z_vs_joint_magnull": 2.286,
+   "cond_mi_given_Nmodm_joint": 0.0721,
+   "z_cond_vs_joint": 1.78,
+   "baseline_I_Nmodm_joint": 2.999
+  },
+  {
+   "feature": "saE@16",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 2.999
+  },
+  {
+   "feature": "complen3@vs3",
+   "src": "comp",
+   "n_classes_feat": 3,
+   "mi_bits_vs_pmodm": null,
+   "z_vs_pmodm_magnull": null,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": null
+  },
+  {
+   "feature": "complen3@vs4",
+   "src": "comp",
+   "n_classes_feat": 3,
+   "mi_bits_vs_pmodm": null,
+   "z_vs_pmodm_magnull": null,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": null
+  },
+  {
+   "feature": "complen3@vs5",
+   "src": "comp",
+   "n_classes_feat": 3,
+   "mi_bits_vs_pmodm": null,
+   "z_vs_pmodm_magnull": null,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": null
+  },
+  {
+   "feature": "complen3@vs7",
+   "src": "comp",
+   "n_classes_feat": 3,
+   "mi_bits_vs_pmodm": null,
+   "z_vs_pmodm_magnull": null,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": null
+  },
+  {
+   "feature": "complen3@vs8",
+   "src": "comp",
+   "n_classes_feat": 3,
+   "mi_bits_vs_pmodm": null,
+   "z_vs_pmodm_magnull": null,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": null
+  },
+  {
+   "feature": "complen3@vs16",
+   "src": "comp",
+   "n_classes_feat": 3,
+   "mi_bits_vs_pmodm": null,
+   "z_vs_pmodm_magnull": null,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": null
+  }
+ ],
+ "mi_table_train_selection": [
+  {
+   "feature": "sa@3",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 0.9992
+  },
+  {
+   "feature": "sabc@3",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 0.9992
+  },
+  {
+   "feature": "topshare@3",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 0.9992
+  },
+  {
+   "feature": "sa@4",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 0.9986
+  },
+  {
+   "feature": "sabc@4",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 0.9986
+  },
+  {
+   "feature": "topshare@4",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 0.9986
+  },
+  {
+   "feature": "sa@5",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 1.9957
+  },
+  {
+   "feature": "sabc@5",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 1.9957
+  },
+  {
+   "feature": "topshare@5",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 1.9957
+  },
+  {
+   "feature": "sa@7",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 2.58
+  },
+  {
+   "feature": "sabc@7",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 2.58
+  },
+  {
+   "feature": "topshare@7",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 2.58
+  },
+  {
+   "feature": "sa@8",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 1.997
+  },
+  {
+   "feature": "sabc@8",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 1.997
+  },
+  {
+   "feature": "topshare@8",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 1.997
+  },
+  {
+   "feature": "sa@16",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 2.9922
+  },
+  {
+   "feature": "sabc@16",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 2.9922
+  },
+  {
+   "feature": "topshare@16",
+   "src": "root",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 2.9922
+  },
+  {
+   "feature": "sa@3",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 0.9992
+  },
+  {
+   "feature": "sabc@3",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 0.9992
+  },
+  {
+   "feature": "topshare@3",
+   "src": "comp",
+   "n_classes_feat": 3,
+   "mi_bits_vs_pmodm": 0.0004,
+   "z_vs_pmodm_magnull": -0.914,
+   "mi_bits_vs_joint": 0.0053,
+   "z_vs_joint_magnull": -0.418,
+   "cond_mi_given_Nmodm_joint": 0.0038,
+   "z_cond_vs_joint": -0.065,
+   "baseline_I_Nmodm_joint": 0.9992
+  },
+  {
+   "feature": "saE@3",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 0.9992
+  },
+  {
+   "feature": "sa@4",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 0.9986
+  },
+  {
+   "feature": "sabc@4",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 0.9986
+  },
+  {
+   "feature": "topshare@4",
+   "src": "comp",
+   "n_classes_feat": 3,
+   "mi_bits_vs_pmodm": 0.0081,
+   "z_vs_pmodm_magnull": 1.165,
+   "mi_bits_vs_joint": 0.0105,
+   "z_vs_joint_magnull": 0.414,
+   "cond_mi_given_Nmodm_joint": 0.0053,
+   "z_cond_vs_joint": 0.505,
+   "baseline_I_Nmodm_joint": 0.9986
+  },
+  {
+   "feature": "saE@4",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 0.9986
+  },
+  {
+   "feature": "sa@5",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 1.9957
+  },
+  {
+   "feature": "sabc@5",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 1.9957
+  },
+  {
+   "feature": "topshare@5",
+   "src": "comp",
+   "n_classes_feat": 3,
+   "mi_bits_vs_pmodm": 0.006,
+   "z_vs_pmodm_magnull": -0.774,
+   "mi_bits_vs_joint": 0.0291,
+   "z_vs_joint_magnull": -0.461,
+   "cond_mi_given_Nmodm_joint": 0.0156,
+   "z_cond_vs_joint": -0.783,
+   "baseline_I_Nmodm_joint": 1.9957
+  },
+  {
+   "feature": "saE@5",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 1.9957
+  },
+  {
+   "feature": "sa@7",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 2.58
+  },
+  {
+   "feature": "sabc@7",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 2.58
+  },
+  {
+   "feature": "topshare@7",
+   "src": "comp",
+   "n_classes_feat": 3,
+   "mi_bits_vs_pmodm": 0.0067,
+   "z_vs_pmodm_magnull": -1.519,
+   "mi_bits_vs_joint": 0.0849,
+   "z_vs_joint_magnull": 0.377,
+   "cond_mi_given_Nmodm_joint": 0.0675,
+   "z_cond_vs_joint": 0.493,
+   "baseline_I_Nmodm_joint": 2.58
+  },
+  {
+   "feature": "saE@7",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 2.58
+  },
+  {
+   "feature": "sa@8",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 1.997
+  },
+  {
+   "feature": "sabc@8",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 1.997
+  },
+  {
+   "feature": "topshare@8",
+   "src": "comp",
+   "n_classes_feat": 3,
+   "mi_bits_vs_pmodm": 0.0138,
+   "z_vs_pmodm_magnull": 0.367,
+   "mi_bits_vs_joint": 0.0487,
+   "z_vs_joint_magnull": 1.142,
+   "cond_mi_given_Nmodm_joint": 0.0253,
+   "z_cond_vs_joint": 0.305,
+   "baseline_I_Nmodm_joint": 1.997
+  },
+  {
+   "feature": "saE@8",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 1.997
+  },
+  {
+   "feature": "sa@16",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 2.9922
+  },
+  {
+   "feature": "sabc@16",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 2.9922
+  },
+  {
+   "feature": "topshare@16",
+   "src": "comp",
+   "n_classes_feat": 3,
+   "mi_bits_vs_pmodm": 0.0312,
+   "z_vs_pmodm_magnull": 0.496,
+   "mi_bits_vs_joint": 0.1619,
+   "z_vs_joint_magnull": 0.435,
+   "cond_mi_given_Nmodm_joint": 0.1176,
+   "z_cond_vs_joint": -0.033,
+   "baseline_I_Nmodm_joint": 2.9922
+  },
+  {
+   "feature": "saE@16",
+   "src": "comp",
+   "n_classes_feat": 1,
+   "mi_bits_vs_pmodm": 0.0,
+   "z_vs_pmodm_magnull": 0.0,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": 2.9922
+  },
+  {
+   "feature": "complen3@vs3",
+   "src": "comp",
+   "n_classes_feat": 3,
+   "mi_bits_vs_pmodm": null,
+   "z_vs_pmodm_magnull": null,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": null
+  },
+  {
+   "feature": "complen3@vs4",
+   "src": "comp",
+   "n_classes_feat": 3,
+   "mi_bits_vs_pmodm": null,
+   "z_vs_pmodm_magnull": null,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": null
+  },
+  {
+   "feature": "complen3@vs5",
+   "src": "comp",
+   "n_classes_feat": 3,
+   "mi_bits_vs_pmodm": null,
+   "z_vs_pmodm_magnull": null,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": null
+  },
+  {
+   "feature": "complen3@vs7",
+   "src": "comp",
+   "n_classes_feat": 3,
+   "mi_bits_vs_pmodm": null,
+   "z_vs_pmodm_magnull": null,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": null
+  },
+  {
+   "feature": "complen3@vs8",
+   "src": "comp",
+   "n_classes_feat": 3,
+   "mi_bits_vs_pmodm": null,
+   "z_vs_pmodm_magnull": null,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": null
+  },
+  {
+   "feature": "complen3@vs16",
+   "src": "comp",
+   "n_classes_feat": 3,
+   "mi_bits_vs_pmodm": null,
+   "z_vs_pmodm_magnull": null,
+   "mi_bits_vs_joint": 0.0,
+   "z_vs_joint_magnull": 0.0,
+   "cond_mi_given_Nmodm_joint": 0.0,
+   "z_cond_vs_joint": 0.0,
+   "baseline_I_Nmodm_joint": null
+  }
+ ],
+ "feature_selection": {
+  "fam": "sa",
+  "m": 4,
+  "src": "root",
+  "selected_feature": "sa@4-fallback",
+  "train_abs_z": null,
+  "univ_bits": 10,
+  "univ_train_share": 1.0
+ },
+ "selected_cell_full_pop": null,
+ "rows": {
+  "ORBIT": {
+   "pooled_speedup_gross_law": 2.0,
+   "ci95_gross": [
+    2.0,
+    2.0
+   ],
+   "pooled_speedup_honest": 2.0,
+   "ci95_honest": [
+    2.0,
+    2.0
+   ],
+   "pooled_speedup_net_loaded": 0.7534,
+   "ci95_net": [
+    0.7417,
+    0.7654
+   ],
+   "mean_per_N_speedup": 2.0,
+   "median_per_N_speedup": 2.0,
+   "failure_rate_p_not_kept": 0.0,
+   "mean_theta": 0.5,
+   "law_prediction_at_mean_theta": 1.3333,
+   "mean_law_prediction_per_N": 1.3333
+  },
+  "UNIV": {
+   "pooled_speedup_gross_law": 2.0,
+   "ci95_gross": [
+    2.0,
+    2.0
+   ],
+   "pooled_speedup_honest": 2.0,
+   "ci95_honest": [
+    2.0,
+    2.0
+   ],
+   "pooled_speedup_net_loaded": 0.7534,
+   "ci95_net": [
+    0.7422,
+    0.7643
+   ],
+   "mean_per_N_speedup": 2.0,
+   "median_per_N_speedup": 2.0,
+   "failure_rate_p_not_kept": 0.0,
+   "mean_theta": 0.5,
+   "law_prediction_at_mean_theta": 1.3333,
+   "mean_law_prediction_per_N": 1.3333
+  },
+  "ORBIT-COMP": {
+   "pooled_speedup_gross_law": 1.0,
+   "ci95_gross": [
+    1.0,
+    1.0
+   ],
+   "pooled_speedup_honest": 0.3591,
+   "ci95_honest": [
+    0.3477,
+    0.3707
+   ],
+   "pooled_speedup_net_loaded": 0.2042,
+   "ci95_net": [
+    0.1955,
+    0.2129
+   ],
+   "mean_per_N_speedup": 1.0,
+   "median_per_N_speedup": 1.0,
+   "failure_rate_p_not_kept": 1.0,
+   "mean_theta": 0.5,
+   "law_prediction_at_mean_theta": 1.3333,
+   "mean_law_prediction_per_N": 1.3333
+  },
+  "RAND-MATCH": {
+   "pooled_speedup_gross_law": 1.3387,
+   "ci95_gross": [
+    1.3008,
+    1.382
+   ],
+   "pooled_speedup_honest": 0.6015,
+   "ci95_honest": [
+    0.5666,
+    0.6429
+   ],
+   "pooled_speedup_net_loaded": 0.3166,
+   "ci95_net": [
+    0.2998,
+    0.3355
+   ],
+   "mean_per_N_speedup": 1.4837,
+   "median_per_N_speedup": 1.0,
+   "failure_rate_p_not_kept": 0.5162,
+   "mean_theta": 0.5,
+   "law_prediction_at_mean_theta": 1.3333,
+   "mean_law_prediction_per_N": 1.3333
+  },
+  "SHAM": {
+   "pooled_speedup_gross_law": 1.3142,
+   "ci95_gross": [
+    1.2717,
+    1.3579
+   ],
+   "pooled_speedup_honest": 0.9786,
+   "ci95_honest": [
+    0.9372,
+    1.0295
+   ],
+   "pooled_speedup_net_loaded": 0.5408,
+   "ci95_net": [
+    0.5247,
+    0.5564
+   ],
+   "mean_per_N_speedup": 1.4599,
+   "median_per_N_speedup": 1.0,
+   "failure_rate_p_not_kept": 0.54,
+   "mean_theta": 0.5,
+   "law_prediction_at_mean_theta": 1.3333,
+   "mean_law_prediction_per_N": 1.3333
+  },
+  "CRT-AND": {
+   "pooled_speedup_gross_law": 2.0,
+   "ci95_gross": [
+    2.0,
+    2.0
+   ],
+   "pooled_speedup_honest": 2.0,
+   "ci95_honest": [
+    2.0,
+    2.0
+   ],
+   "pooled_speedup_net_loaded": 0.7534,
+   "ci95_net": [
+    0.7406,
+    0.7654
+   ],
+   "mean_per_N_speedup": 2.0,
+   "median_per_N_speedup": 2.0,
+   "failure_rate_p_not_kept": 0.0,
+   "mean_theta": 0.5,
+   "law_prediction_at_mean_theta": 1.3333,
+   "mean_law_prediction_per_N": 1.3333
+  }
+ },
+ "verdicts": {
+  "selected_cell_is_N_invariant": true,
+  "univ_train_share": 1.0,
+  "per_N_info_beyond_fixed_dial": false,
+  "paired_z_ORBIT_vs_UNIV": 0.0,
+  "paired_z_ORBIT_vs_RANDMATCH": 29.201,
+  "H2_flag_full_prestated_gate": false,
+  "orbit_minus_sham_gross": 0.6858,
+  "H2_barrier_event": false,
+  "H1_confirmed": true,
+  "verdict_text": "CAP-EXCEEDED-BY-UNIVERSAL-EXCLUSION-DIAL: gross > 4/3 but the dial is N-invariant (zero per-N information; parity-type constant shave computable blind); not a barrier event",
+  "sham_coinflation_control": "identical accounting incl. identical build-unit charge; compare ORBIT vs SHAM gross for co-inflation"
+ },
+ "replication_fresh_seed": null,
+ "honest_notes": [
+  "DESIGN AMENDMENT at smoke stage (before full run): the exp555 root-BFS orbit never wraps mod N at bitlen-40 budgets (BFS depth ~9, coords ~1e4 << N ~1e12), so its revealed set is N-INVARIANT and untestable; kept as characterization arm. The live H1/H2 test uses GENERIC components: random Pythagorean seed points mod N expanded with identical child maps -- these wrap immediately and give genuinely N-dependent revealed sets.",
+  "law-accounting fallback (miss -> flat T0) matches papers 131/132; honest + net variants reported alongside",
+  "every filter expected NET-negative after build cost (paper-131 lesson); verdict hinges on GROSS vs cap like prior rounds",
+  "(feature, modulus) selection on TRAIN half only",
+  "permutation nulls stratified by log-N decile (method law)",
+  "SHAM binomial keeps are iid Bernoulli(theta) per candidate; failure rate ~ theta matches its keep-rate by construction"
+ ],
+ "runtime_s": 76.4
+}

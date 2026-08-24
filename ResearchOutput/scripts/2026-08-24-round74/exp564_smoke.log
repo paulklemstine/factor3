@@ -1,0 +1,24 @@
+exp564 ORBIT-DIAL-CAP-TEST SMOKE (seed 20260824, pop 10+6, V=1500)
+child-map validation OK (5,12,13)/(21,20,29)/(15,8,17)
+sampling OK: 16 semiprimes (10 bal / 6 rat); N bits [39,41]
+MI table (full pop) top |z_vs_joint|:
+    {'feature': 'topshare@5', 'src': 'comp', 'n_classes_feat': 3, 'mi_bits_vs_pmodm': 0.2734, 'z_vs_pmodm_magnull': -0.357, 'mi_bits_vs_joint': 0.4379, 'z_vs_joint_magnull': -1.789, 'cond_mi_given_Nmodm_joint': 0.3278, 'z_cond_vs_joint': -1.437, 'baseline_I_Nmodm_joint': 1.9056}
+    {'feature': 'topshare@16', 'src': 'comp', 'n_classes_feat': 3, 'mi_bits_vs_pmodm': 0.7962, 'z_vs_pmodm_magnull': 1.574, 'mi_bits_vs_joint': 1.4212, 'z_vs_joint_magnull': 1.69, 'cond_mi_given_Nmodm_joint': 0.6478, 'z_cond_vs_joint': 0.828, 'baseline_I_Nmodm_joint': 2.6022}
+    {'feature': 'topshare@4', 'src': 'comp', 'n_classes_feat': 3, 'mi_bits_vs_pmodm': 0.0157, 'z_vs_pmodm_magnull': -0.85, 'mi_bits_vs_joint': 0.0157, 'z_vs_joint_magnull': -1.09, 'cond_mi_given_Nmodm_joint': 0.0112, 'z_cond_vs_joint': -0.927, 'baseline_I_Nmodm_joint': 0.896}
+    {'feature': 'topshare@3', 'src': 'comp', 'n_classes_feat': 3, 'mi_bits_vs_pmodm': 0.0972, 'z_vs_pmodm_magnull': 0.897, 'mi_bits_vs_joint': 0.2057, 'z_vs_joint_magnull': 1.06, 'cond_mi_given_Nmodm_joint': 0.1312, 'z_cond_vs_joint': -0.265, 'baseline_I_Nmodm_joint': 0.896}
+    {'feature': 'topshare@8', 'src': 'comp', 'n_classes_feat': 3, 'mi_bits_vs_pmodm': 0.2734, 'z_vs_pmodm_magnull': -0.171, 'mi_bits_vs_joint': 0.7018, 'z_vs_joint_magnull': 0.419, 'cond_mi_given_Nmodm_joint': 0.3367, 'z_cond_vs_joint': -0.65, 'baseline_I_Nmodm_joint': 1.7718}
+selected feature: None
+wrote /home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp564_smoke_result.json in 0.3s
+{
+ "selected_cell_is_N_invariant": true,
+ "univ_train_share": 1.0,
+ "per_N_info_beyond_fixed_dial": false,
+ "paired_z_ORBIT_vs_UNIV": 0.0,
+ "paired_z_ORBIT_vs_RANDMATCH": 5.0,
+ "H2_flag_full_prestated_gate": false,
+ "orbit_minus_sham_gross": 0.624,
+ "H2_barrier_event": false,
+ "H1_confirmed": true,
+ "verdict_text": "H1-CONFIRMED: orbit-revealed set is just another residue dial (speedup within 4/3 cap CI, no info beyond matched-random/fixed-dial)",
+ "sham_coinflation_control": "identical accounting incl. identical build-unit charge; compare ORBIT vs SHAM gross for co-inflation"
+}

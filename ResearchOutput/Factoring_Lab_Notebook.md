@@ -10349,3 +10349,30 @@ barrier 2 does NOT seal b1 a priori (p<->q-symmetric; residue null empirical, ex
 81 to joint NB); barriers 5/4 consistent. Closes the last open face of the Berggren
 triplet-tree x energy-spectrum campaign - a STRENGTHENING of closure, not a breakthrough.
 Paper 210, issue #354. Now 553 experiments. Assessment v317.
+
+## Part 253 - ORBIT-DIAL-CAP-TEST (round-74 #2, exp 564, v318)
+
+Third face of the Berggren triplet-tree campaign: does the mod-N orbit's revealed
+residue set (exp555's under-sampling) carry per-N factor information, and can an orbit
+dial beat the 4/3 residue cap (barrier 4)? n=800 bitlen-40, moduli {3,4,5,7,8,16},
+logN-decile perm nulls. TWO DESIGN AMENDMENTS disclosed pre-run: (1) exp555 root-BFS
+never wraps at bitlen-40 budgets (depth ~9, coords ~1e4 << N ~1e12) -> root revealed set
+N-INVARIANT across all 800 N at all six moduli - task premise fails for the root
+component, kept as characterization only; (2) live test on GENERIC components (10 random
+Pythagorean seeds x1500 nodes): supports saturate instantly (exactly m classes at every
+m, complen uniform 15010), variation only in frequencies/orbit-length. H1 CONFIRMED:
+max |z| joint +2.29 / conditional +1.78 over 48 cells, feature MI <= 0.09 bits vs
+residue-dial baselines 1.00-3.00 - nothing beyond ordinary residue content.
+Filter law check at theta=1/2 (paper-132 accounting): RAND-MATCH 1.3387 [1.3008,1.382]
+vs law 4/3 = cap confirmed to ~0.4%, SHAM clean [1.2717,1.3579]; ORBIT reads 2.0000
+failure 0.000 BUT paired z vs UNIV fixed dial = 0.0 EXACTLY - it IS the parity skip
+(root-orbit legs always odd), an N-invariant universal exclusion table computable blind;
+beats 4/3 with zero information => constant-shave NOT barrier event. SCOPE NOTE: N-
+invariant structural dials can exceed the cap without information (law presumes
+P(p kept)=theta exchangeability; deterministic exclusions escape via P=1). NET-loaded
+all arms <1 (0.20-0.75) - paper-131 lesson replicated. Barriers: 2 consistent, 4 upheld
++ scope note, 5 extended to mod-N projections, 6 = primitive-triple congruences restated,
+8 unchanged; N-computability audit recompute-identical 3/3 both arms. Ledger catches all
+pre-full-run: empty-walk BFS (timing probe), odd-multiplier split bug, g-unbound x2.
+CAMPAIGN CLOSED: with papers 199/205/210 ALL faces of the triplet-tree proposal measured.
+Paper 211, issue #355. Now 554 experiments. Assessment v318.

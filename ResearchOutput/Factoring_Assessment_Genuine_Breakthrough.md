@@ -2137,3 +2137,31 @@ resolution); barriers 4/5 consistent. One disclosed amendment cycle (A1), pre-re
 rules evaluated verbatim → GAP-PARTIAL. Closes the "unrealized 0.48-bit oracle bound" face
 of the Berggren triplet-tree × energy-spectrum campaign (papers 192–197) — a strengthening
 of closure, not a breakthrough.
+
+**Assessment addendum v318 — 2026-08-24 (round-74 #2).** Experiment 564 recorded; count now
+554 recorded experiments (max id 565; rounds 54–74 tracked per-paper in
+ResearchOutput/NewMathematics/ papers 185–211 and in the notebook Parts). Exp 564
+ORBIT-DIAL-CAP-TEST (paper 211, issue #355) closes the third face of the Berggren
+triplet-tree campaign ("mod-N orbit residue under-sampling", opened by exp555/paper 205):
+the orbit's revealed-residue set carries ZERO per-N factor information — max |z| +2.29
+joint / +1.78 conditional over 48 cells (logN-decile perm nulls), feature MI ≤ 0.09 bits
+vs ordinary residue-dial baselines 1.00–3.00. Two design amendments disclosed pre-run:
+the exp555 root-BFS never wraps at bitlen-40 budgets (depth ≈ 9, coords ~10⁴ ≪ N ~10¹²)
+so its revealed set is N-invariant across all 800 N — task premise fails for the root
+component (characterization arm only); the live test ran generic components (10 random
+Pythagorean seeds × 1500 nodes), whose supports saturate instantly with variation only in
+frequencies/orbit-length. Filter law check at θ = ½ (paper-132 accounting): RAND-MATCH
+1.3387 CI[1.3008, 1.382] vs prediction 4/3 — cap confirmed to ~0.4%; SHAM co-inflation
+clean; ORBIT reads 2.0000 failure 0.000 BUT paired z vs UNIV fixed dial = 0.0 EXACTLY —
+it is the parity skip (root-orbit legs always odd), an N-invariant universal exclusion
+table computable blind; exceeds 4/3 with zero information ⇒ a constant-shave, not a
+barrier event. NEW SCOPE NOTE on barrier 4: N-invariant structural dials can exceed the
+cap without information (the law presumes P(p kept) = θ exchangeability; deterministic
+exclusions escape via P = 1). NET-loaded every arm < 1 (0.20–0.75) — paper-131 lesson
+replicated; replication gate not triggered. Barriers 2 consistent, 4 upheld + scope note,
+5 extended to mod-N projections, 6 restated as primitive-triple congruences, 8 unchanged;
+N-computability audit recompute-identical 3/3 both arms; ledger catches (empty-walk BFS,
+odd-multiplier split bug, g-unbound ×2) all fixed pre-full-run. With papers 199 (two-tree
+closure synthesis of the four-strength seal), 205 (modular dynamics), and 210 (oracle
+bound unrealized), ALL faces of the user's triplet-tree proposal are now measured — the
+campaign closes honestly with no breakthrough.

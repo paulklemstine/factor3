@@ -1,0 +1,33 @@
+exp564 ORBIT-DIAL-CAP-TEST FULL (seed 20260824, pop 500+300, V=20000)
+child-map validation OK (5,12,13)/(21,20,29)/(15,8,17)
+sampling OK: 800 semiprimes (500 bal / 300 rat); N bits [39,41]
+  [main] orbits 100/800 elapsed=6s rate=0.06s/N
+  [main] orbits 200/800 elapsed=13s rate=0.06s/N
+  [main] orbits 300/800 elapsed=19s rate=0.06s/N
+  [main] orbits 400/800 elapsed=26s rate=0.06s/N
+  [main] orbits 500/800 elapsed=32s rate=0.06s/N
+  [main] orbits 600/800 elapsed=40s rate=0.07s/N
+  [main] orbits 700/800 elapsed=47s rate=0.07s/N
+  [main] orbits 800/800 elapsed=54s rate=0.07s/N
+MI table (full pop) top |z_vs_joint|:
+    {'feature': 'topshare@16', 'src': 'comp', 'n_classes_feat': 3, 'mi_bits_vs_pmodm': 0.0199, 'z_vs_pmodm_magnull': 1.635, 'mi_bits_vs_joint': 0.0924, 'z_vs_joint_magnull': 2.286, 'cond_mi_given_Nmodm_joint': 0.0721, 'z_cond_vs_joint': 1.78, 'baseline_I_Nmodm_joint': 2.999}
+    {'feature': 'topshare@3', 'src': 'comp', 'n_classes_feat': 3, 'mi_bits_vs_pmodm': 0.0007, 'z_vs_pmodm_magnull': -0.626, 'mi_bits_vs_joint': 0.0017, 'z_vs_joint_magnull': -0.724, 'cond_mi_given_Nmodm_joint': 0.0015, 'z_cond_vs_joint': -0.13, 'baseline_I_Nmodm_joint': 0.9976}
+    {'feature': 'topshare@7', 'src': 'comp', 'n_classes_feat': 3, 'mi_bits_vs_pmodm': 0.0087, 'z_vs_pmodm_magnull': -0.118, 'mi_bits_vs_joint': 0.0418, 'z_vs_joint_magnull': 0.71, 'cond_mi_given_Nmodm_joint': 0.0294, 'z_cond_vs_joint': 0.213, 'baseline_I_Nmodm_joint': 2.5828}
+    {'feature': 'topshare@8', 'src': 'comp', 'n_classes_feat': 3, 'mi_bits_vs_pmodm': 0.0034, 'z_vs_pmodm_magnull': -0.727, 'mi_bits_vs_joint': 0.0196, 'z_vs_joint_magnull': 0.496, 'cond_mi_given_Nmodm_joint': 0.0074, 'z_cond_vs_joint': -0.749, 'baseline_I_Nmodm_joint': 1.9993}
+    {'feature': 'topshare@4', 'src': 'comp', 'n_classes_feat': 3, 'mi_bits_vs_pmodm': 0.0011, 'z_vs_pmodm_magnull': -0.363, 'mi_bits_vs_joint': 0.0029, 'z_vs_joint_magnull': -0.319, 'cond_mi_given_Nmodm_joint': 0.0024, 'z_cond_vs_joint': 0.285, 'baseline_I_Nmodm_joint': 0.9998}
+selected feature: None
+wrote /home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp564_result.json in 76.4s
+{
+ "selected_cell_is_N_invariant": true,
+ "univ_train_share": 1.0,
+ "per_N_info_beyond_fixed_dial": false,
+ "paired_z_ORBIT_vs_UNIV": 0.0,
+ "paired_z_ORBIT_vs_RANDMATCH": 29.201,
+ "H2_flag_full_prestated_gate": false,
+ "orbit_minus_sham_gross": 0.6858,
+ "H2_barrier_event": false,
+ "H1_confirmed": true,
+ "verdict_text": "CAP-EXCEEDED-BY-UNIVERSAL-EXCLUSION-DIAL: gross > 4/3 but the dial is N-invariant (zero per-N information; parity-type constant shave computable blind); not a barrier event",
+ "sham_coinflation_control": "identical accounting incl. identical build-unit charge; compare ORBIT vs SHAM gross for co-inflation"
+}
+EXIT=0
