@@ -31,13 +31,13 @@ CTX, THREADS, SLICE_BYTES = 2048, "8", 250_000
 RESULTS = os.path.expanduser("~/f3cache/net94_results.json")
 
 ARMS = [
-    ("fp16", os.path.join(GG, "qwen2.5-7b-instruct-fp16-00001-of-00004.gguf")),
     ("q8_0", os.path.join(GG, "qwen2.5-7b-instruct-q8_0-00001-of-00003.gguf")),
-    ("q6_k", os.path.join(GG, "qwen2.5-7b-instruct-q6_k.gguf")),
-    ("q5_k_m", os.path.join(GG, "qwen2.5-7b-instruct-q5_k_m.gguf")),
+    ("q6_k", os.path.join(GG, "qwen2.5-7b-instruct-q6_k-00001-of-00002.gguf")),
+    ("q5_k_m", os.path.join(GG, "qwen2.5-7b-instruct-q5_k_m-00001-of-00002.gguf")),
     ("q4_k_m", os.path.join(GG, "qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf")),
     ("q3_k_m", os.path.join(GG, "qwen2.5-7b-instruct-q3_k_m.gguf")),
     ("q2_k", os.path.join(GG, "qwen2.5-7b-instruct-q2_k.gguf")),
+    ("fp16", os.path.join(GG, "qwen2.5-7b-instruct-fp16-00001-of-00004.gguf")),
 ]
 
 text = open(SRC, encoding="utf-8", errors="ignore").read()
