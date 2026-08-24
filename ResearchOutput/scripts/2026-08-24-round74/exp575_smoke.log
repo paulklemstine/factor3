@@ -1,0 +1,30 @@
+==============================================================================
+EXP575 GENERATOR-TILT (smoke)  b=15  n=40/pool  seed=20260824  sieve<=150000
+
+--- HARD_BAL (p~U primes[2^14,2^15); q~U primes(p,2p)  [positive control]) ---
+  CANONICAL  z_mean=0.4594 CI95=[0.3638, 0.555] deciles=[0.093, 0.186, 0.417, 0.691, 0.908] in_win=1.0
+  asc_full_vs_desc           desc_cost=  5210.3 arm_cost= 25496.9 S= 0.2044(+-0.0182) hits=40
+  win_asc_vs_desc            desc_cost=  5210.3 arm_cost= 3785.78 S= 1.3763(+-0.2752) hits=40 pred_from_z=1.1768
+
+--- RSA_INDEP (p,q indep U primes[2^14,2^15), p!=q, sorted  [RSA-style]) ---
+  CANONICAL  z_mean=0.6325 CI95=[0.5529, 0.7121] deciles=[0.247, 0.403, 0.632, 0.847, 0.925] in_win=1.0
+  asc_full_vs_desc           desc_cost= 2572.75 arm_cost= 21658.3 S= 0.1188(+-0.0158) hits=40
+  win_asc_vs_desc            desc_cost= 2572.75 arm_cost=  4526.5 S= 0.5684(+-0.1276) hits=40 pred_from_z=0.581
+
+--- RATIO4 (p~U primes[2^14,2^15); q~U primes[3.5p,4.5p)) ---
+  CANONICAL  z: none in window
+  ADAPTED(r_max=4.5) z_mean=0.0553 CI95=[0.0455, 0.0651] deciles=[0.015, 0.031, 0.052, 0.071, 0.099]
+  asc_full_vs_desc           desc_cost=25622.33 arm_cost=25581.35 S= 1.0016(+-0.0107) hits=40
+  win_asc_adapted_vs_desc    desc_cost=25622.33 arm_cost= 1446.08 S=17.7185(+-2.1767) hits=40 pred_from_z=17.0832
+
+--- UNIFORM_WIDE (p,q indep U primes[2^13,2^16), sorted  [uniform proxy]) ---
+  CANONICAL  z_mean=0.6767 CI95=[0.5632, 0.7902] deciles=[0.253, 0.635, 0.738, 0.852, 0.876] in_win=0.55
+  ADAPTED(r_max=8.0) z_mean=0.6055 CI95=[0.512, 0.6991] deciles=[0.136, 0.344, 0.621, 0.864, 0.943]
+  asc_full_vs_desc           desc_cost= 7962.23 arm_cost=26576.05 S= 0.2996(+-0.0393) hits=40
+  win_asc_vs_desc            desc_cost= 3583.18 arm_cost= 7614.36 S= 0.4706(+-0.0903) hits=22 pred_from_z=0.4778
+  win_asc_adapted_vs_desc    desc_cost= 7962.23 arm_cost=14367.25 S= 0.5542(+-0.0913) hits=40 pred_from_z=0.6515
+
+VERDICT: MIXED/PARTIAL
+CONSEQUENCE: Tilt present but off the pre-set bands: RSA z_mean=0.6325 CI95=[0.5529,0.7121] neither cleanly below 0.45 nor covering 0.50; Lambda-scope question narrows to the measured tilt magnitude, caveat partially stands.
+STATS: {"positive_control_HARD_BAL": {"z_mean": 0.4594, "expected_band": "[0.38,0.44] (verifier BAL_prime 0.4095-0.4148 at b=11; analytic 0.414)", "pass": false}, "secondary_gate_RSA": {"S": 0.5684, "S_se": 0.1276, "significantly_above_1": false, "consistent_with_verdict": true}}
+runtime_s: 0.0

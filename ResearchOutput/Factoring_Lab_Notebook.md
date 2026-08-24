@@ -10882,3 +10882,45 @@ floors; no breach, no method, no constant shaved. The complete honesty arc close
 bank (214) → powered-null downgrade (216) → letter-of-rule null + independence audit
 (220) → clean sign-flip rejection (222). Id convention per 219/220: count advances
 562 → 563, max id stays 572. Assessment v328 → v329. Paper 222, issue #368.
+
+## Part 265 - GENERATOR-TILT (round-77 #1, exp 575, v330)
+
+H1 REFUTED DECISIVELY — paper-221's named follow-up **L7-a CLOSED**: the Λ-channel
+scope question is settled ADVERSARIALLY. Q: does the within-window divisor-mass
+bottom-heavy tilt behind the 1.58x window-ascending win (hard q<2p balance) exist
+in realistic generators? Setup: 4 pools × n=600, b=15 (primes to 32768), fixed
+seed 20260824, exact-uniform prime sampling via sieve index (replaces randprime's
+rejection loop, identical in law), touch-count cost model verbatim from
+verifyL7_sim.py, 8-batch bootstrap SEs. RESULTS: HARD_BAL positive control
+z=**0.4114** [0.3887,0.4341], win_asc/desc S=**1.5896±0.0538** — replicates BOTH
+the analytic 0.414 AND the independent verifier's 1.5785±0.029 at shifted bitlen
+b=11→15 (THREE-WAY agreement; machinery sound). RSA_INDEP (independent same-bitlen
+primes, p≠q sorted — deployed-style): z=**0.6356** [0.6150,0.6562] excluding 0.5
+from ABOVE — the tilt is not merely absent but **INVERTED/top-heavy**, and
+window-ascending LOSES ~44% to sqrt-descending (S=0.5578±0.0217); window-ascending
+is always WELL-DEFINED there (in_win=1.000, unlike paper-137's 21.6% undefined),
+it just loses. RATIO4 adapted (r_max=4.5 pre-declared): z=0.0558, S=17.345 — the
+known narrow-stratum PINNING ARTIFACT (requires N-invisible r_max knowledge), not
+a deployable order. UNIFORM_WIDE adapted (r_max=8.0): z=0.5979, S=0.5505 — also
+adversarial; canonical-window coverage only 0.5817 confirms the band-width law.
+MECHANISM: two independent same-bitlen uniforms have ratio concentrated near 1
+(effective median ≈1.25), pushing min(p,q) HIGH into (√(N/2),√N]; hard balance
+r~U[1,2) spreads it low — tilt SIGN = f(generator's r-law), completing paper 221's
+band-width sweep with the deployed-like cell. CONSEQUENCE (plain):
+**Λ-dominance is CONFINED TO ARTIFICIAL HARD-BALANCE POOLS**; real generator
+classes tilt adversarially (ratio concentration near 1 pushes min(p,q) high
+in-window). No deployable reorder-class gain without ENFORCED q<2p balance at
+key-generation time — no deployed generator enforces it. Paper 221's caveat
+upgraded from "tilt unmeasured" to "tilt adversarial off-balance" — final word;
+no speed prescription, scoped reorder-class fact only. LEDGER CATCHES: findings.md
+filename pre-existed (other work in dir) → agent correctly wrote exp575_findings.md;
+descriptive sign readout (refined_reading_descriptive) added POST-smoke with the
+H1/H0/MIXED decision rules exactly as pre-registered and unmodified (disclosed in
+JSON honest_notes). Honest limits: b=15 lab scale, tilt-law transfer to production
+bitlens assumed scale-free (Mertens/Dickman reasoning) but NOT verified here; real
+deployed filters (|p−q| large, safe-prime screens) would only NARROW the ratio
+band toward 1, i.e., worsen the adversarial tilt further. Barrier framing:
+factor-local/scan-order frontier row — completes L7-a; the reorder-class map now
+has measured scope boundaries end-to-end; residue cap 4/3 untouched, no
+breakthrough claimed. Count 563 → 564. Assessment v329 → v330. Paper 223,
+issue #370.

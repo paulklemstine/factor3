@@ -1,0 +1,32 @@
+==============================================================================
+EXP575 GENERATOR-TILT (full)  b=15  n=600/pool  seed=20260824  sieve<=150000
+
+--- HARD_BAL (p~U primes[2^14,2^15); q~U primes(p,2p)  [positive control]) ---
+  CANONICAL  z_mean=0.4114 CI95=[0.3887, 0.4341] deciles=[0.064, 0.198, 0.386, 0.569, 0.822] in_win=1.0
+  asc_full_vs_desc           desc_cost= 5327.19 arm_cost=24295.61 S= 0.2193(+-0.0034) hits=600
+  win_asc_vs_desc            desc_cost= 5327.19 arm_cost= 3351.27 S= 1.5896(+-0.0538) hits=600 pred_from_z=1.4307
+
+--- RSA_INDEP (p,q indep U primes[2^14,2^15), p!=q, sorted  [RSA-style]) ---
+  CANONICAL  z_mean=0.6356 CI95=[0.615, 0.6562] deciles=[0.247, 0.496, 0.68, 0.835, 0.944] in_win=1.0
+  asc_full_vs_desc           desc_cost= 2541.82 arm_cost=21687.53 S= 0.1172(+-0.0032) hits=600
+  win_asc_vs_desc            desc_cost= 2541.82 arm_cost= 4556.93 S= 0.5578(+-0.0217) hits=600 pred_from_z=0.5733
+
+--- RATIO4 (p~U primes[2^14,2^15); q~U primes[3.5p,4.5p)) ---
+  CANONICAL  z: none in window
+  ADAPTED(r_max=4.5) z_mean=0.0558 CI95=[0.053, 0.0586] deciles=[0.01, 0.03, 0.054, 0.078, 0.107]
+  asc_full_vs_desc           desc_cost=24634.61 arm_cost=24651.88 S= 0.9993(+-0.0029) hits=600
+  win_asc_adapted_vs_desc    desc_cost=24634.61 arm_cost= 1420.27 S= 17.345(+-0.4654) hits=600 pred_from_z=16.9211
+
+--- UNIFORM_WIDE (p,q indep U primes[2^13,2^16), sorted  [uniform proxy]) ---
+  CANONICAL  z_mean=0.5431 CI95=[0.5128, 0.5735] deciles=[0.129, 0.324, 0.571, 0.751, 0.927] in_win=0.5817
+  ADAPTED(r_max=8.0) z_mean=0.5979 CI95=[0.5765, 0.6194] deciles=[0.212, 0.432, 0.627, 0.798, 0.937]
+  asc_full_vs_desc           desc_cost= 7776.67 arm_cost=26102.96 S= 0.2979(+-0.0104) hits=600
+  win_asc_vs_desc            desc_cost= 4805.38 arm_cost= 6336.64 S= 0.7583(+-0.0301) hits=349 pred_from_z=0.8413
+  win_asc_adapted_vs_desc    desc_cost= 7776.67 arm_cost=14127.03 S= 0.5505(+-0.023) hits=600 pred_from_z=0.6725
+
+VERDICT: MIXED/PARTIAL
+CONSEQUENCE: H1 REFUTED DECISIVELY, H0's CONSEQUENCE HOLDS with stronger form: on RSA-style independent same-bitlen generators the within-window divisor mass is TOP-heavy (RSA z_mean=0.6356, CI95=[0.615,0.6562], excludes 0.5 from above) -- the tilt is not merely absent but INVERTED, so window-ascending LOSES to sqrt-descending there and Lambda-dominance is CONFINED to artificial hard-balance pools; paper-221's caveat stands as the final word, upgraded from 'tilt unmeasured' to 'tilt adversarial off-balance'.
+STATS: {"positive_control_HARD_BAL": {"z_mean": 0.4114, "expected_band": "[0.38,0.44] (verifier BAL_prime 0.4095-0.4148 at b=11; analytic 0.414)", "pass": true}, "secondary_gate_RSA": {"S": 0.5578, "S_se": 0.0217, "significantly_above_1": false, "consistent_with_verdict": true}}
+
+wrote /home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp575_result.json
+runtime_s: 0.0

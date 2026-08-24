@@ -2516,3 +2516,36 @@ the reused script; JSON's within-run verdict_name kept as honest snapshot, recor
 verdict RANDOMNESS-EXTENDED governs. Barrier framing: scale-smoothness frontier u≥6–14
 — a null that STRENGTHENS the map with quantified resolution floors; no barrier
 breached, no constant shaved, no breakthrough claimed. Paper 222, issue #368.
+
+**Assessment addendum v330 — 2026-08-24 (round-77 #1).** Experiment 575 recorded
+(count 563 → 564); papers 222 → 223; version v329 → v330. Content: GENERATOR-TILT
+— paper 221's named follow-up **L7-a CLOSED**, H1 REFUTED DECISIVELY. The
+within-window divisor-mass bottom-heavy tilt behind the 1.58x window-ascending win
+(hard q<2p balance, paper 221/L7′) was tested for existence in realistic generator
+classes: 4 pools × n=600 at b=15, seed 20260824, exact-uniform sieve-index prime
+sampling, touch-count costs verbatim from verifyL7_sim.py. Positive control
+HARD_BAL replicates THREE-WAY: z=0.4114 [0.3887,0.4341] vs analytic 0.414 and the
+independent verifier's BAL_prime 0.4095–0.4148 / S=1.5785±0.029 (measured here
+1.5896±0.0538) at shifted bitlen b=11→15. The decisive cell RSA_INDEP (independent
+same-bitlen primes, deployed-style) INVERTS: z=0.6356 [0.6150,0.6562] excludes 0.5
+from ABOVE (top-heavy), window-ascending LOSES ~44% to sqrt-descending
+(S=0.5578±0.0217) while remaining always well-defined (in_win=1.000 vs paper-137's
+21.6% undefined). UNIFORM_WIDE adapted r_max=8.0 confirms adversarial tilt
+(z=0.5979, S=0.5505); RATIO4's adapted S=17.345 is the known narrow-stratum
+pinning artifact requiring N-invisible r_max knowledge — not deployable.
+Mechanism: ratio concentration near 1 under independent same-bitlen draws pushes
+min(p,q) HIGH in-window; tilt SIGN = f(generator's r-law), completing paper 221's
+band-width sweep with the deployed-like cell. Consequence recorded plainly:
+**Λ-dominance is CONFINED TO ARTIFICIAL HARD-BALANCE POOLS; real generator classes
+tilt ADVERSARially — no deployable reorder-class gain without ENFORCED q<2p
+balance at key-generation time, and no deployed generator enforces it.**
+Paper-221's caveat upgraded from "tilt unmeasured" to "tilt adversarial
+off-balance" — final word on the Λ-channel scope question; scoped reorder-class
+fact, no speed prescription. Ledger catches disclosed: findings.md filename
+pre-existed → exp575_findings.md written instead; descriptive sign readout added
+post-smoke with pre-registered decision rules unmodified (in JSON honest_notes).
+Honest limits: b=15 lab scale with scale-free transfer assumed (Mertens/Dickman)
+not verified; real deployed filters only narrow the ratio band further (worsen the
+tilt). Barrier framing: factor-local/scan-order frontier row — completes L7-a,
+reorder-class map now has measured scope boundaries end-to-end; residue cap 4/3
+untouched, no breakthrough claimed. Paper 223, issue #370.

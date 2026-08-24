@@ -1,0 +1,256 @@
+{
+ "experiment": "exp575_GENERATOR_TILT",
+ "preregistration": {
+  "H1": "RSA-style pool mean within-window divisor-mass z < 0.45 with CI95 excluding 0.45 => Lambda-dominance scope covers deployed-like generation",
+  "H0": "RSA-style z ~= 0.5 with CI covering 0.5 => confined to artificial hard-balance pools; paper-221 caveat final",
+  "rules": "H1 <=> mean<0.45 and CI95_hi<0.45; H0 <=> CI95 contains 0.50; else MIXED/PARTIAL"
+ },
+ "config": {
+  "b_bits": 15,
+  "prime_range": [
+   16384,
+   32768
+  ],
+  "wide_range": [
+   8192,
+   65536
+  ],
+  "n_per_pool": 600,
+  "base_seed": 20260824,
+  "nbatches": 8,
+  "sampling": "exact uniform over primes via sieve-index (sympy-free)",
+  "tilt_statistic": "z=(p-isqrt(max(2,N//2)))/(isqrt(N)-isqrt(max(2,N//2))) [verbatim verifyL7_sim.py]",
+  "window_adaptations": {
+   "HARD_BAL": "none (q<2p guarantees factor in canonical window)",
+   "RSA_INDEP": "none (same-bitlen => max/min<2 guarantees it)",
+   "RATIO4": "adapted lo=isqrt(N/4.5), r_max from declared support [3.5,4.5)",
+   "UNIFORM_WIDE": "adapted lo=isqrt(N/8.0), r_max from declared support (0.5,8)"
+  },
+  "cost_model": "touch-count, S=mean(desc)/mean(arm) on valid subset, 8-batch bootstrap SE [verbatim verifyL7_sim.py]"
+ },
+ "rows": {
+  "HARD_BAL": {
+   "pool": "HARD_BAL",
+   "description": "p~U primes[2^14,2^15); q~U primes(p,2p)  [positive control]",
+   "n_draws": 600,
+   "canonical_window": {
+    "z": {
+     "n": 600,
+     "mean": 0.4114,
+     "ci95": [
+      0.3887,
+      0.4341
+     ],
+     "deciles": [
+      0.064,
+      0.198,
+      0.386,
+      0.569,
+      0.822
+     ]
+    },
+    "in_window_frac": 1.0
+   },
+   "costs": {
+    "asc_full_vs_desc": {
+     "cost_desc": 5327.19,
+     "cost_arm": 24295.61,
+     "S": 0.2193,
+     "S_se": 0.0034,
+     "hits": 600
+    },
+    "win_asc_vs_desc": {
+     "cost_desc": 5327.19,
+     "cost_arm": 3351.27,
+     "S": 1.5896,
+     "S_se": 0.0538,
+     "hits": 600,
+     "pred_S_from_z": 1.4307
+    }
+   }
+  },
+  "RSA_INDEP": {
+   "pool": "RSA_INDEP",
+   "description": "p,q indep U primes[2^14,2^15), p!=q, sorted  [RSA-style]",
+   "n_draws": 600,
+   "canonical_window": {
+    "z": {
+     "n": 600,
+     "mean": 0.6356,
+     "ci95": [
+      0.615,
+      0.6562
+     ],
+     "deciles": [
+      0.247,
+      0.496,
+      0.68,
+      0.835,
+      0.944
+     ]
+    },
+    "in_window_frac": 1.0
+   },
+   "costs": {
+    "asc_full_vs_desc": {
+     "cost_desc": 2541.82,
+     "cost_arm": 21687.53,
+     "S": 0.1172,
+     "S_se": 0.0032,
+     "hits": 600
+    },
+    "win_asc_vs_desc": {
+     "cost_desc": 2541.82,
+     "cost_arm": 4556.93,
+     "S": 0.5578,
+     "S_se": 0.0217,
+     "hits": 600,
+     "pred_S_from_z": 0.5733
+    }
+   }
+  },
+  "RATIO4": {
+   "pool": "RATIO4",
+   "description": "p~U primes[2^14,2^15); q~U primes[3.5p,4.5p)",
+   "n_draws": 600,
+   "canonical_window": {
+    "z": null,
+    "in_window_frac": 0.0
+   },
+   "adapted_window": {
+    "r_max": 4.5,
+    "z": {
+     "n": 600,
+     "mean": 0.0558,
+     "ci95": [
+      0.053,
+      0.0586
+     ],
+     "deciles": [
+      0.01,
+      0.03,
+      0.054,
+      0.078,
+      0.107
+     ]
+    }
+   },
+   "costs": {
+    "asc_full_vs_desc": {
+     "cost_desc": 24634.61,
+     "cost_arm": 24651.88,
+     "S": 0.9993,
+     "S_se": 0.0029,
+     "hits": 600
+    },
+    "win_asc_adapted_vs_desc": {
+     "cost_desc": 24634.61,
+     "cost_arm": 1420.27,
+     "S": 17.345,
+     "S_se": 0.4654,
+     "hits": 600,
+     "pred_S_from_z": 16.9211
+    }
+   }
+  },
+  "UNIFORM_WIDE": {
+   "pool": "UNIFORM_WIDE",
+   "description": "p,q indep U primes[2^13,2^16), sorted  [uniform proxy]",
+   "n_draws": 600,
+   "canonical_window": {
+    "z": {
+     "n": 349,
+     "mean": 0.5431,
+     "ci95": [
+      0.5128,
+      0.5735
+     ],
+     "deciles": [
+      0.129,
+      0.324,
+      0.571,
+      0.751,
+      0.927
+     ]
+    },
+    "in_window_frac": 0.5817
+   },
+   "adapted_window": {
+    "r_max": 8.0,
+    "z": {
+     "n": 600,
+     "mean": 0.5979,
+     "ci95": [
+      0.5765,
+      0.6194
+     ],
+     "deciles": [
+      0.212,
+      0.432,
+      0.627,
+      0.798,
+      0.937
+     ]
+    }
+   },
+   "costs": {
+    "asc_full_vs_desc": {
+     "cost_desc": 7776.67,
+     "cost_arm": 26102.96,
+     "S": 0.2979,
+     "S_se": 0.0104,
+     "hits": 600
+    },
+    "win_asc_vs_desc": {
+     "cost_desc": 4805.38,
+     "cost_arm": 6336.64,
+     "S": 0.7583,
+     "S_se": 0.0301,
+     "hits": 349,
+     "pred_S_from_z": 0.8413
+    },
+    "win_asc_adapted_vs_desc": {
+     "cost_desc": 7776.67,
+     "cost_arm": 14127.03,
+     "S": 0.5505,
+     "S_se": 0.023,
+     "hits": 600,
+     "pred_S_from_z": 0.6725
+    }
+   }
+  }
+ },
+ "stats": {
+  "positive_control_HARD_BAL": {
+   "z_mean": 0.4114,
+   "expected_band": "[0.38,0.44] (verifier BAL_prime 0.4095-0.4148 at b=11; analytic 0.414)",
+   "pass": true
+  },
+  "secondary_gate_RSA": {
+   "S": 0.5578,
+   "S_se": 0.0217,
+   "significantly_above_1": false,
+   "consistent_with_verdict": true
+  }
+ },
+ "verdicts": {
+  "overall": "MIXED/PARTIAL",
+  "consequence": "H1 REFUTED DECISIVELY, H0's CONSEQUENCE HOLDS with stronger form: on RSA-style independent same-bitlen generators the within-window divisor mass is TOP-heavy (RSA z_mean=0.6356, CI95=[0.615,0.6562], excludes 0.5 from above) -- the tilt is not merely absent but INVERTED, so window-ascending LOSES to sqrt-descending there and Lambda-dominance is CONFINED to artificial hard-balance pools; paper-221's caveat stands as the final word, upgraded from 'tilt unmeasured' to 'tilt adversarial off-balance'.",
+  "refined_reading_descriptive": {
+   "side": "above_0.5_top_heavy",
+   "note": "descriptive only, rules preregistered and unmodified"
+  }
+ },
+ "honest_notes": [
+  "Canonical-window z is conditioned on in-window draws; miss fractions reported; below-window treated as 'policy undefined' per gapL7_extremality.md.",
+  "Adapted windows are N-computable CONSTANTS from declared pool supports (4.5, 8.0), chosen before the run, not fitted post hoc.",
+  "b=15 lab scale; transfer of the tilt law to production bitlens (>=512) is assumed scale-free (Mertens/Dickman reasoning) but NOT verified here.",
+  "Touch-count cost model: 1 unit per divisibility test, no per-test overhead; 'S' is a reorder-class quantity, never a wall-clock claim.",
+  "Positive control HARD_BAL replicates verifier BAL_prime conventions at shifted bitlen; agreement within band is the replication gate.",
+  "Sampling is exact-uniform over primes (sieve index), replacing randprime's rejection loop; distributions identical in law.",
+  "RSA-style modeled WITHOUT extra real-world filters (|p-q| large, safe-prime screens); such filters only narrow the ratio band toward 1.",
+  "pred_S_from_z=(1-z_mean)/z_mean is a tilt-only approximation; the measured S is the ratio of mean costs and is the load-bearing number.",
+  "The descriptive sign readout (refined_reading_descriptive) was added after the smoke run showed an off-band direction; the H1/H0/MIXED decision rules are exactly as pre-registered and were not modified."
+ ],
+ "wall_s": 0.0
+}
