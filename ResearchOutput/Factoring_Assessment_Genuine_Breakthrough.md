@@ -2549,3 +2549,23 @@ not verified; real deployed filters only narrow the ratio band further (worsen t
 tilt). Barrier framing: factor-local/scan-order frontier row — completes L7-a,
 reorder-class map now has measured scope boundaries end-to-end; residue cap 4/3
 untouched, no breakthrough claimed. Paper 223, issue #370.
+
+**Assessment addendum v331 — 2026-08-24 (round-77 #2).** THEORY deliverable recorded,
+papers-only bump: experiment count UNCHANGED at 564 (explicitly no new physics run);
+papers 223 → 224; version v330 → v331. Content: K-TAXONOMY — GAP-L8 of paper 219's
+roadmap CLOSED (draft items L8 + O5). The three k-quantities previously sharing the
+bare symbol "k*" are formally defined and never conflated: k_pin=⌈log₂W⌉
+(gain-saturation, marginal gain exactly zero; paper 212's "k*" retro-reads as this,
+never an optimum); k_opt^cost=argmin_k[k+(W/2^k+1)/2] (T2 census stop; dyadic tie set
+{log₂W−2, log₂W−1}, V*=log₂W+½ exact); k_opt^econ(T₀,c_q)=log₂((T₀−1)ln2/c_q)
+(net-economics optimum against the MEASURED baseline). Exact identity
+E(k;T₀,1)=V(k;2(T₀−1))+½ ⇒ econ ≡ census under the anchor map W ↔ 2(T₀−1);
+unconverted same-number inputs differ by EXACTLY +1.000 query (resolves paper 219's
+"+~1" note precisely). gapL8_check.py ALL PASS (census offsets/dyadic V* exact W≤4096;
+identity error <1e-9; exp563 stored rows reproduce predictions 9.536549/17.597922 and
+argmins 10/18 = recorded values; pin-vs-optimum gap ∈ {1,2} everywhere). Naming rule
+adopted: bare "k*" banned in future papers. Verification scope disclosed honestly:
+definitional result verified by own check script + reproduction of existing-record
+values only; no separate adversarial verifier run. Barrier framing: bookkeeping
+hygiene for the barrier-8 audit trail; residue cap 4/3 untouched, no breakthrough
+claimed. Paper 224, issue #371.

@@ -10924,3 +10924,42 @@ factor-local/scan-order frontier row — completes L7-a; the reorder-class map n
 has measured scope boundaries end-to-end; residue cap 4/3 untouched, no
 breakthrough claimed. Count 563 → 564. Assessment v329 → v330. Paper 223,
 issue #370.
+
+## Part 266 - K-TAXONOMY (round-77 #2, GAP-L8 closed, theory, v331, papers-only)
+
+GAP-L8 of paper 219's roadmap CLOSED — draft items L8 + O5 ("pin exp563's k*
+definition ... paper must name which") resolved by FORMAL TAXONOMY, no new physics.
+The lab has used "k*" for three different quantities (papers 212/219/563); all three
+are now named, non-interchangeable functionals: **k_pin**=ceil(log2 W) — gain-
+saturation point, marginal gain EXACTLY zero, support pinned (exp563 witness: 100%
+pinned at k=20; paper 212's "k*" retro-reads as k_pin, NEVER an optimum);
+**k_opt^cost**=argmin_k[k+(W/2^k+1)/2] — T2 census total-cost stop, dyadic tie set
+{log2W-2, log2W-1}, V*=log2W+1/2 EXACT (W=2..4096), continuous location
+log2W-1.5288; **k_opt^econ(T0,c_q)**=log2((T0-1)ln2/c_q) — net-economics optimum,
+queries PAID c_q against the MEASURED stratum baseline T0. EXACT IDENTITY:
+E(k;T0,1)=1+k+(T0-1)/2^k == V(k; W=2(T0-1))+1/2 pointwise => econ ≡ census
+(identical argmin sets AND locations) under the anchor map W <-> 2(T0-1) — factor-2
+bookkeeping: T2 prices the residual scan at HALF remaining support, exp563 charges
+FULL expected scan anchored at measured Tbar_0; same physics, one halving step apart.
+Unconverted same-number inputs differ by EXACTLY +1.000 query (econ stops later) —
+resolves paper 219's "+~1" note precisely. Numerical verification gapL8_check.py
+(<2 s) ALL PASS V1-V5: census offsets {-2,-1}/dyadic V* exact; identity max err <1e-9;
+naive same-anchor shift exactly +1 on sets too; exp563 stored rows reproduce — balanced
+Tbar_0=1072.425 -> pred 9.536549 (=recorded), discrete argmin 10 (=recorded);
+unbalanced Tbar_0=286205.89 -> pred 17.597922 (=recorded), argmin 18 (=recorded);
+matched-anchor census at W=2(Tbar_0-1) gives the same unique {10}/{18} — exp563's
+economic optimum IS the T2 census stop on the draw-law-anchored width. VERDICTS on
+coincidence: (cost,econ) the ONLY pair that ever coincides (after conversion);
+k_pin NEVER coincides with either (gap in {1,2} for every W<=4096) — conflating pin
+with an optimum overstates the work-optimal budget (exp563 balanced: 20 vs 10).
+NAMING RULE ADOPTED: bare "k*" BANNED in future papers — must expand to k_pin /
+k_opt^cost / k_opt^econ(T0,c_q), each quoted with its support or anchor+price;
+paper 212 retro-reads as k_pin; draft T2 already complies. Verification scope
+DISCLOSED honestly: definitional/taxonomy result; verification = own check script
+ALL PASS + exact reproduction of previously-recorded exp563/T2-census values from
+stored rows (numbers cross-validate against the existing record); NO separate
+adversarial verifier run — scope judgment, disclosed. Barrier framing: bookkeeping
+hygiene serving barrier-8 audit trail — future k-stop claims must name functional/
+anchor/price so saturation is never conflated with optimality across papers; residue
+cap 4/3 untouched; no breakthrough claimed. PAPERS-ONLY BUMP: count UNCHANGED at
+564 (no new experiment recorded). Assessment v330 -> v331. Paper 224, issue #371.
