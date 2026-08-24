@@ -2741,3 +2741,29 @@ run-1 gate failure = comparator bug (hits were always byte-exact); run-2 KeyErro
 sub-band edge fixed via arbitrary-edge ln cache + resume from persisted regeneration. Barrier
 framing: structural (not power-limited) elimination prevents a wrong turn on 228's frontier;
 residue cap untouched; no breakthrough claimed. Paper 231, issue #379.
+
+**Assessment addendum v339 — 2026-08-24 (round-82 #1).** Experiment recorded (count 570 → 571);
+papers 231 → 232; version v338 → v339. Content: exp582 BINWIDTH-USHIFT-PROBE — completes paper
+231's named probe (bin-width permutation × u-grid shift on the ±20% mid-window hump in R=T/M).
+VERDICT **MIXED-INCONCLUSIVE — STABLE GEOMETRIC WINDOW FEATURE at u*≈0.65**. Anchor cell
+(nb=50, sh=0) reproduces paper 231 exactly: raw_max 1.22636 vs 1.2227 (diff 0.004), bins 2..49
+match stored R ≤ .005. Raw-max hump persists in **30/30 cells** of the 6-width × 5-circular-shift
+grid (range 1.0706–1.2960, never below the multinomial noise ceiling — vanish precondition unmet,
+0/30 below 1.03); the **absolute vertex is SHIFT-INVARIANT**: label vx drifts with shift by
+construction, but vx+sh pins 0.6482–0.6492 across all five shifts at nb=100 — label drift is pure
+grid relabeling, transport is rigid (erratic precondition unmet, far fraction 3.45%, sole outlier
+one degenerate nb=33 quadratic fit). Controls sit at the measured extreme-value ceiling: three
+cells breach the nb-agnostic 1.02 bar at amp 1.0215–1.0305 = z +3.05/−3.45 two-sided (nb=50/66/100
+only), max control amp 1.03047 well inside the nb-aware 1.05 ceiling. The mechanical precedence
+chain therefore outputs **ARTIFACT-CONTAMINATED — retained verbatim in the JSON as an audit
+record, never the headline**: its leak semantics are falsified by persistence + rigid transport.
+H1 failed AS OPERATIONALIZED (fitted-peak amp ≥ 1.10 in only 7/30 local-quadratic fits;
+estimator-stricter-than-phenomenon, same gap class as exp581's ~1.03-vs-1.05). CONSEQUENCE: the
+polynomial/window-geometry channel of paper 231 stays OPEN; what died is one operationalization
+of "hump significance," not the feature. Named follow-up: a binning-independent shape test
+(nonparametric density-regression or curvature test with analytic SEs). Ledger: two PRE-GRID
+smoke-caught amendments disclosed (treatment M := exp579's mixture-Dickman after a fake bin0 edge
+peak; control denominator := uniform sampling null after a manufactured control shape); reporting
+addendum timing disclosed, no registered bar changed; deterministic 6.1 s re-run; single bootstrap
+seed noted. Barrier framing: prevents a wrong closure of the geometry channel; residue cap
+untouched; no breakthrough claimed. Paper 232, issue #380.

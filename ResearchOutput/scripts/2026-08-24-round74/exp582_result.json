@@ -1,0 +1,1424 @@
+{
+ "exp": "582",
+ "codename": "BINWIDTH-USHIFT-PROBE",
+ "mode": "full",
+ "source_npz": "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp581_regen_positions.npz",
+ "config": {
+  "widths": [
+   10,
+   20,
+   33,
+   50,
+   66,
+   100
+  ],
+  "shifts": [
+   -0.25,
+   -0.125,
+   0.0,
+   0.125,
+   0.25
+  ],
+  "shift_semantics": "circular origin: bin k covers [sh+k/nb, sh+(k+1)/nb] mod 1; M integrated over the actual interval",
+  "note_grid_size": "named sets multiply to 6x5=30 cells; task text said 15; full product run, bars applied over actual n_cells",
+  "M_definition": "exp579 residual.definition verbatim: R(b)=T(b)/M(b), M=mixture-Dickman rate-weighted; stored M_pred curve, linear-interp, held FIXED across cells",
+  "amendment": "(1) draft's per-config power-law-refit M was replaced by the paper's own mixture-Dickman M after the smoke ANCHOR failed (fake bin0 edge peak R=1.49); (2) CONTROL denominator set to the uniform sampling null after the smoke showed hit-model M manufactures a fake control shape (amp 1.3611 vs exp581's own-baseline 1.005). Both BEFORE grid analysis; hypotheses/bars/grid unchanged",
+  "amp_bar": 1.1,
+  "vx_tol": 0.05,
+  "ref_vertex": 0.5901,
+  "sig_bar": 3.0,
+  "ctl_amp_bar": 1.02,
+  "quad_window_rule": "K=min(5,max(2,nb//4))",
+  "bootstrap_unit": "cluster over 128 Ns",
+  "treatment_scale_c": 2e-06
+ },
+ "stability_matrix": {
+  "nb=10,sh=-0.250": {
+   "treatment": "FAIL:vx+sig",
+   "control": "FAIL:amp+vx",
+   "raw_max": 1.07397,
+   "argbin": 9
+  },
+  "nb=10,sh=-0.125": {
+   "treatment": "FAIL:amp+vx",
+   "control": "FAIL:amp+vx",
+   "raw_max": 1.09467,
+   "argbin": 7
+  },
+  "nb=10,sh=+0.000": {
+   "treatment": "FAIL:amp+vx",
+   "control": "FAIL:amp+vx",
+   "raw_max": 1.07062,
+   "argbin": 6
+  },
+  "nb=10,sh=+0.125": {
+   "treatment": "FAIL:amp",
+   "control": "FAIL:amp+vx",
+   "raw_max": 1.07438,
+   "argbin": 5
+  },
+  "nb=10,sh=+0.250": {
+   "treatment": "FAIL:amp+vx",
+   "control": "FAIL:amp+vx",
+   "raw_max": 1.07397,
+   "argbin": 4
+  },
+  "nb=20,sh=-0.250": {
+   "treatment": "FAIL:amp+vx+sig",
+   "control": "FAIL:amp+vx",
+   "raw_max": 1.09843,
+   "argbin": 18
+  },
+  "nb=20,sh=-0.125": {
+   "treatment": "FAIL:amp+vx",
+   "control": "FAIL:amp+vx",
+   "raw_max": 1.12174,
+   "argbin": 15
+  },
+  "nb=20,sh=+0.000": {
+   "treatment": "FAIL:amp+vx+sig",
+   "control": "FAIL:amp+vx",
+   "raw_max": 1.09843,
+   "argbin": 13
+  },
+  "nb=20,sh=+0.125": {
+   "treatment": "FAIL:amp+vx",
+   "control": "FAIL:amp",
+   "raw_max": 1.12174,
+   "argbin": 10
+  },
+  "nb=20,sh=+0.250": {
+   "treatment": "FAIL:amp+vx",
+   "control": "FAIL:amp+vx",
+   "raw_max": 1.09843,
+   "argbin": 8
+  },
+  "nb=33,sh=-0.250": {
+   "treatment": "FAIL:amp+vx+sig",
+   "control": "FAIL:amp+vx",
+   "raw_max": 1.1665,
+   "argbin": 30
+  },
+  "nb=33,sh=-0.125": {
+   "treatment": "FAIL:amp+vx",
+   "control": "FAIL:amp+vx",
+   "raw_max": 1.11869,
+   "argbin": 26
+  },
+  "nb=33,sh=+0.000": {
+   "treatment": "FAIL:amp",
+   "control": "FAIL:amp+vx",
+   "raw_max": 1.15547,
+   "argbin": 21
+  },
+  "nb=33,sh=+0.125": {
+   "treatment": "FAIL:amp+vx",
+   "control": "FAIL:amp+vx",
+   "raw_max": 1.16153,
+   "argbin": 17
+  },
+  "nb=33,sh=+0.250": {
+   "treatment": "FAIL:amp+sig",
+   "control": "FAIL:amp+vx+sig",
+   "raw_max": 1.17572,
+   "argbin": 13
+  },
+  "nb=50,sh=-0.250": {
+   "treatment": "FAIL:amp+vx+sig",
+   "control": "FAIL:amp+vx",
+   "raw_max": 1.21504,
+   "argbin": 45
+  },
+  "nb=50,sh=-0.125": {
+   "treatment": "FAIL:amp+vx",
+   "control": "FAIL:amp+vx",
+   "raw_max": 1.23631,
+   "argbin": 39
+  },
+  "nb=50,sh=+0.000": {
+   "treatment": "FAIL:amp+sig",
+   "control": "FAIL:amp+vx",
+   "raw_max": 1.22636,
+   "argbin": 33
+  },
+  "nb=50,sh=+0.125": {
+   "treatment": "FAIL:vx",
+   "control": "FAIL:amp+vx",
+   "raw_max": 1.17518,
+   "argbin": 26
+  },
+  "nb=50,sh=+0.250": {
+   "treatment": "FAIL:amp+vx",
+   "control": "FAIL:amp+vx",
+   "raw_max": 1.21504,
+   "argbin": 20
+  },
+  "nb=66,sh=-0.250": {
+   "treatment": "FAIL:amp+vx",
+   "control": "FAIL:amp+vx",
+   "raw_max": 1.27833,
+   "argbin": 60
+  },
+  "nb=66,sh=-0.125": {
+   "treatment": "FAIL:amp+vx+sig",
+   "control": "FAIL:amp+vx",
+   "raw_max": 1.28055,
+   "argbin": 52
+  },
+  "nb=66,sh=+0.000": {
+   "treatment": "FAIL:amp",
+   "control": "FAIL:amp+vx",
+   "raw_max": 1.24963,
+   "argbin": 43
+  },
+  "nb=66,sh=+0.125": {
+   "treatment": "FAIL:amp+vx",
+   "control": "FAIL:amp+vx+sig",
+   "raw_max": 1.28455,
+   "argbin": 35
+  },
+  "nb=66,sh=+0.250": {
+   "treatment": "FAIL:amp+vx+sig",
+   "control": "FAIL:amp+vx",
+   "raw_max": 1.27833,
+   "argbin": 27
+  },
+  "nb=100,sh=-0.250": {
+   "treatment": "FAIL:vx",
+   "control": "FAIL:amp+vx",
+   "raw_max": 1.27378,
+   "argbin": 91
+  },
+  "nb=100,sh=-0.125": {
+   "treatment": "FAIL:vx",
+   "control": "FAIL:amp+vx",
+   "raw_max": 1.29604,
+   "argbin": 78
+  },
+  "nb=100,sh=+0.000": {
+   "treatment": "FAIL:vx",
+   "control": "FAIL:amp+vx",
+   "raw_max": 1.27378,
+   "argbin": 66
+  },
+  "nb=100,sh=+0.125": {
+   "treatment": "FAIL:vx",
+   "control": "FAIL:amp+vx",
+   "raw_max": 1.29604,
+   "argbin": 53
+  },
+  "nb=100,sh=+0.250": {
+   "treatment": "FAIL:vx",
+   "control": "FAIL:amp+vx",
+   "raw_max": 1.27378,
+   "argbin": 41
+  }
+ },
+ "per_config": {
+  "nb=10,sh=-0.250": {
+   "treatment": {
+    "argbin": 9,
+    "raw_max": 1.07397,
+    "vx": 1.60247,
+    "amp": 1.15481,
+    "concave": true,
+    "npts": 3,
+    "boot_se": 5.80905,
+    "boot_ci95": [
+     1.01931,
+     1.31208
+    ],
+    "sig": 0.199,
+    "K": 2,
+    "cell_class": "FAIL:vx+sig",
+    "arm": "treatment"
+   },
+   "control": {
+    "argbin": 5,
+    "raw_max": 1.00631,
+    "vx": 0.66431,
+    "amp": 1.0035,
+    "concave": true,
+    "npts": 5,
+    "boot_se": 0.00739,
+    "boot_ci95": [
+     1.00137,
+     1.01158
+    ],
+    "sig": 135.747,
+    "K": 2,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "control"
+   }
+  },
+  "nb=10,sh=-0.125": {
+   "treatment": {
+    "argbin": 7,
+    "raw_max": 1.09467,
+    "vx": 0.7895,
+    "amp": 1.06893,
+    "concave": true,
+    "npts": 5,
+    "boot_se": 0.04887,
+    "boot_ci95": [
+     1.00598,
+     1.15556
+    ],
+    "sig": 21.874,
+    "K": 2,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "treatment"
+   },
+   "control": {
+    "argbin": 0,
+    "raw_max": 1.00439,
+    "vx": 0.05,
+    "amp": 1.00439,
+    "concave": false,
+    "npts": 3,
+    "boot_se": 0.00618,
+    "boot_ci95": [
+     1.00163,
+     1.01397
+    ],
+    "sig": 162.524,
+    "K": 2,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "control"
+   }
+  },
+  "nb=10,sh=+0.000": {
+   "treatment": {
+    "argbin": 6,
+    "raw_max": 1.07062,
+    "vx": 0.69455,
+    "amp": 1.06289,
+    "concave": true,
+    "npts": 5,
+    "boot_se": 0.03329,
+    "boot_ci95": [
+     1.01455,
+     1.13722
+    ],
+    "sig": 31.926,
+    "K": 2,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "treatment"
+   },
+   "control": {
+    "argbin": 3,
+    "raw_max": 1.00742,
+    "vx": 0.40463,
+    "amp": 1.00407,
+    "concave": true,
+    "npts": 5,
+    "boot_se": 0.00875,
+    "boot_ci95": [
+     1.00223,
+     1.01343
+    ],
+    "sig": 114.698,
+    "K": 2,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "control"
+   }
+  },
+  "nb=10,sh=+0.125": {
+   "treatment": {
+    "argbin": 5,
+    "raw_max": 1.07438,
+    "vx": 0.55184,
+    "amp": 1.0587,
+    "concave": true,
+    "npts": 5,
+    "boot_se": 0.13638,
+    "boot_ci95": [
+     1.00795,
+     1.14415
+    ],
+    "sig": 7.763,
+    "K": 2,
+    "cell_class": "FAIL:amp",
+    "arm": "treatment"
+   },
+   "control": {
+    "argbin": 2,
+    "raw_max": 1.00924,
+    "vx": 0.24037,
+    "amp": 1.0056,
+    "concave": true,
+    "npts": 5,
+    "boot_se": 0.00772,
+    "boot_ci95": [
+     1.00125,
+     1.01193
+    ],
+    "sig": 130.338,
+    "K": 2,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "control"
+   }
+  },
+  "nb=10,sh=+0.250": {
+   "treatment": {
+    "argbin": 4,
+    "raw_max": 1.07397,
+    "vx": 0.4477,
+    "amp": 1.06157,
+    "concave": true,
+    "npts": 5,
+    "boot_se": 0.07045,
+    "boot_ci95": [
+     1.00852,
+     1.14306
+    ],
+    "sig": 15.068,
+    "K": 2,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "treatment"
+   },
+   "control": {
+    "argbin": 0,
+    "raw_max": 1.00631,
+    "vx": 0.05,
+    "amp": 1.00631,
+    "concave": false,
+    "npts": 3,
+    "boot_se": 0.01104,
+    "boot_ci95": [
+     1.00065,
+     1.01504
+    ],
+    "sig": 91.184,
+    "K": 2,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "control"
+   }
+  },
+  "nb=20,sh=-0.250": {
+   "treatment": {
+    "argbin": 18,
+    "raw_max": 1.09843,
+    "vx": 0.91997,
+    "amp": 1.06701,
+    "concave": true,
+    "npts": 7,
+    "boot_se": 0.89712,
+    "boot_ci95": [
+     0.99957,
+     1.27405
+    ],
+    "sig": 1.189,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx+sig",
+    "arm": "treatment"
+   },
+   "control": {
+    "argbin": 11,
+    "raw_max": 1.0116,
+    "vx": 0.65568,
+    "amp": 1.00468,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 0.00713,
+    "boot_ci95": [
+     1.00038,
+     1.02035
+    ],
+    "sig": 140.989,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "control"
+   }
+  },
+  "nb=20,sh=-0.125": {
+   "treatment": {
+    "argbin": 15,
+    "raw_max": 1.12174,
+    "vx": 0.79885,
+    "amp": 1.05546,
+    "concave": true,
+    "npts": 10,
+    "boot_se": 0.099,
+    "boot_ci95": [
+     1.00703,
+     1.21109
+    ],
+    "sig": 10.661,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "treatment"
+   },
+   "control": {
+    "argbin": 16,
+    "raw_max": 1.01238,
+    "vx": 0.73382,
+    "amp": 1.00184,
+    "concave": true,
+    "npts": 9,
+    "boot_se": 0.01048,
+    "boot_ci95": [
+     1.00091,
+     1.02297
+    ],
+    "sig": 95.584,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "control"
+   }
+  },
+  "nb=20,sh=+0.000": {
+   "treatment": {
+    "argbin": 13,
+    "raw_max": 1.09843,
+    "vx": 0.69841,
+    "amp": 1.0641,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 0.5759,
+    "boot_ci95": [
+     1.002,
+     1.14842
+    ],
+    "sig": 1.848,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx+sig",
+    "arm": "treatment"
+   },
+   "control": {
+    "argbin": 6,
+    "raw_max": 1.0116,
+    "vx": 0.40568,
+    "amp": 1.00468,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 0.08124,
+    "boot_ci95": [
+     1.00145,
+     1.02082
+    ],
+    "sig": 12.366,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "control"
+   }
+  },
+  "nb=20,sh=+0.125": {
+   "treatment": {
+    "argbin": 10,
+    "raw_max": 1.12174,
+    "vx": 0.52664,
+    "amp": 1.05807,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 0.07916,
+    "boot_ci95": [
+     1.00252,
+     1.18685
+    ],
+    "sig": 13.367,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "treatment"
+   },
+   "control": {
+    "argbin": 11,
+    "raw_max": 1.01238,
+    "vx": 0.575,
+    "amp": 1.01238,
+    "concave": false,
+    "npts": 11,
+    "boot_se": 0.01,
+    "boot_ci95": [
+     0.99991,
+     1.02254
+    ],
+    "sig": 101.232,
+    "K": 5,
+    "cell_class": "FAIL:amp",
+    "arm": "control"
+   }
+  },
+  "nb=20,sh=+0.250": {
+   "treatment": {
+    "argbin": 8,
+    "raw_max": 1.09843,
+    "vx": 0.44841,
+    "amp": 1.0641,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 0.05003,
+    "boot_ci95": [
+     1.00904,
+     1.18143
+    ],
+    "sig": 21.269,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "treatment"
+   },
+   "control": {
+    "argbin": 1,
+    "raw_max": 1.0116,
+    "vx": 0.075,
+    "amp": 1.0116,
+    "concave": false,
+    "npts": 7,
+    "boot_se": 0.01151,
+    "boot_ci95": [
+     1.00003,
+     1.02387
+    ],
+    "sig": 87.872,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "control"
+   }
+  },
+  "nb=33,sh=-0.250": {
+   "treatment": {
+    "argbin": 30,
+    "raw_max": 1.1665,
+    "vx": 0.88866,
+    "amp": 1.08304,
+    "concave": true,
+    "npts": 8,
+    "boot_se": 1.49906,
+    "boot_ci95": [
+     1.00254,
+     1.25412
+    ],
+    "sig": 0.722,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx+sig",
+    "arm": "treatment"
+   },
+   "control": {
+    "argbin": 4,
+    "raw_max": 1.02004,
+    "vx": 0.18337,
+    "amp": 1.00203,
+    "concave": true,
+    "npts": 10,
+    "boot_se": 0.03409,
+    "boot_ci95": [
+     1.00009,
+     1.03009
+    ],
+    "sig": 29.397,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "control"
+   }
+  },
+  "nb=33,sh=-0.125": {
+   "treatment": {
+    "argbin": 26,
+    "raw_max": 1.11869,
+    "vx": 0.79409,
+    "amp": 1.05879,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 0.16647,
+    "boot_ci95": [
+     1.01134,
+     1.26371
+    ],
+    "sig": 6.36,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "treatment"
+   },
+   "control": {
+    "argbin": 0,
+    "raw_max": 1.01881,
+    "vx": 0.01515,
+    "amp": 1.01881,
+    "concave": false,
+    "npts": 6,
+    "boot_se": 0.01791,
+    "boot_ci95": [
+     1.00236,
+     1.03821
+    ],
+    "sig": 56.891,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "control"
+   }
+  },
+  "nb=33,sh=+0.000": {
+   "treatment": {
+    "argbin": 21,
+    "raw_max": 1.15547,
+    "vx": 0.63166,
+    "amp": 1.06056,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 0.34551,
+    "boot_ci95": [
+     1.01282,
+     1.25791
+    ],
+    "sig": 3.07,
+    "K": 5,
+    "cell_class": "FAIL:amp",
+    "arm": "treatment"
+   },
+   "control": {
+    "argbin": 16,
+    "raw_max": 1.01688,
+    "vx": 0.5,
+    "amp": 1.01688,
+    "concave": false,
+    "npts": 11,
+    "boot_se": 0.01773,
+    "boot_ci95": [
+     1.0011,
+     1.03273
+    ],
+    "sig": 57.361,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "control"
+   }
+  },
+  "nb=33,sh=+0.125": {
+   "treatment": {
+    "argbin": 17,
+    "raw_max": 1.16153,
+    "vx": 0.4961,
+    "amp": 1.05808,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 0.26037,
+    "boot_ci95": [
+     1.00436,
+     1.28822
+    ],
+    "sig": 4.064,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "treatment"
+   },
+   "control": {
+    "argbin": 4,
+    "raw_max": 1.01346,
+    "vx": 0.13636,
+    "amp": 1.01346,
+    "concave": false,
+    "npts": 10,
+    "boot_se": 0.03637,
+    "boot_ci95": [
+     1.00068,
+     1.03138
+    ],
+    "sig": 27.865,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "control"
+   }
+  },
+  "nb=33,sh=+0.250": {
+   "treatment": {
+    "argbin": 13,
+    "raw_max": 1.17572,
+    "vx": 0.59097,
+    "amp": 1.05469,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 3.40003,
+    "boot_ci95": [
+     1.00233,
+     1.28671
+    ],
+    "sig": 0.31,
+    "K": 5,
+    "cell_class": "FAIL:amp+sig",
+    "arm": "treatment"
+   },
+   "control": {
+    "argbin": 14,
+    "raw_max": 1.01346,
+    "vx": 0.4332,
+    "amp": 1.00139,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 71109423.99478,
+    "boot_ci95": [
+     1.00045,
+     1.03151
+    ],
+    "sig": 0.0,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx+sig",
+    "arm": "control"
+   }
+  },
+  "nb=50,sh=-0.250": {
+   "treatment": {
+    "argbin": 45,
+    "raw_max": 1.21504,
+    "vx": 0.9016,
+    "amp": 1.09232,
+    "concave": true,
+    "npts": 10,
+    "boot_se": 0.42309,
+    "boot_ci95": [
+     1.00693,
+     1.33162
+    ],
+    "sig": 2.582,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx+sig",
+    "arm": "treatment"
+   },
+   "control": {
+    "argbin": 37,
+    "raw_max": 1.02148,
+    "vx": 0.75,
+    "amp": 1.02148,
+    "concave": false,
+    "npts": 11,
+    "boot_se": 0.01513,
+    "boot_ci95": [
+     1.00178,
+     1.04141
+    ],
+    "sig": 67.535,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "control"
+   }
+  },
+  "nb=50,sh=-0.125": {
+   "treatment": {
+    "argbin": 39,
+    "raw_max": 1.23631,
+    "vx": 0.76155,
+    "amp": 1.075,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 0.10919,
+    "boot_ci95": [
+     1.00756,
+     1.34246
+    ],
+    "sig": 9.845,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "treatment"
+   },
+   "control": {
+    "argbin": 31,
+    "raw_max": 1.02158,
+    "vx": 0.02727,
+    "amp": 1.00313,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 0.01647,
+    "boot_ci95": [
+     1.00102,
+     1.04355
+    ],
+    "sig": 60.906,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "control"
+   }
+  },
+  "nb=50,sh=+0.000": {
+   "treatment": {
+    "argbin": 33,
+    "raw_max": 1.22636,
+    "vx": 0.58003,
+    "amp": 1.09178,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 0.41987,
+    "boot_ci95": [
+     1.00988,
+     1.37032
+    ],
+    "sig": 2.6,
+    "K": 5,
+    "cell_class": "FAIL:amp+sig",
+    "arm": "treatment"
+   },
+   "control": {
+    "argbin": 44,
+    "raw_max": 1.01973,
+    "vx": 0.93844,
+    "amp": 1.00463,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 0.02573,
+    "boot_ci95": [
+     1.00118,
+     1.03949
+    ],
+    "sig": 39.039,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "control"
+   }
+  },
+  "nb=50,sh=+0.125": {
+   "treatment": {
+    "argbin": 26,
+    "raw_max": 1.17518,
+    "vx": 0.53078,
+    "amp": 1.1013,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 0.11537,
+    "boot_ci95": [
+     1.00662,
+     1.32151
+    ],
+    "sig": 9.546,
+    "K": 5,
+    "cell_class": "FAIL:vx",
+    "arm": "treatment"
+   },
+   "control": {
+    "argbin": 38,
+    "raw_max": 1.02461,
+    "vx": 0.78747,
+    "amp": 1.00434,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 0.01487,
+    "boot_ci95": [
+     1.00184,
+     1.0418
+    ],
+    "sig": 67.531,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "control"
+   }
+  },
+  "nb=50,sh=+0.250": {
+   "treatment": {
+    "argbin": 20,
+    "raw_max": 1.21504,
+    "vx": 0.40018,
+    "amp": 1.09428,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 0.09697,
+    "boot_ci95": [
+     0.9992,
+     1.31706
+    ],
+    "sig": 11.285,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "treatment"
+   },
+   "control": {
+    "argbin": 12,
+    "raw_max": 1.02148,
+    "vx": 0.25,
+    "amp": 1.02148,
+    "concave": false,
+    "npts": 11,
+    "boot_se": 0.03609,
+    "boot_ci95": [
+     1.00155,
+     1.04141
+    ],
+    "sig": 28.304,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "control"
+   }
+  },
+  "nb=66,sh=-0.250": {
+   "treatment": {
+    "argbin": 60,
+    "raw_max": 1.27833,
+    "vx": 0.86704,
+    "amp": 1.08449,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 0.12691,
+    "boot_ci95": [
+     0.99566,
+     1.41498
+    ],
+    "sig": 8.545,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "treatment"
+   },
+   "control": {
+    "argbin": 9,
+    "raw_max": 1.02377,
+    "vx": 0.14878,
+    "amp": 1.00627,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 0.01034,
+    "boot_ci95": [
+     1.00155,
+     1.0413
+    ],
+    "sig": 97.345,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "control"
+   }
+  },
+  "nb=66,sh=-0.125": {
+   "treatment": {
+    "argbin": 52,
+    "raw_max": 1.28055,
+    "vx": 0.75916,
+    "amp": 1.08302,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 0.57748,
+    "boot_ci95": [
+     1.00811,
+     1.43752
+    ],
+    "sig": 1.875,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx+sig",
+    "arm": "treatment"
+   },
+   "control": {
+    "argbin": 53,
+    "raw_max": 1.03202,
+    "vx": 0.8162,
+    "amp": 1.00635,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 0.02292,
+    "boot_ci95": [
+     1.00136,
+     1.0493
+    ],
+    "sig": 43.908,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "control"
+   }
+  },
+  "nb=66,sh=+0.000": {
+   "treatment": {
+    "argbin": 43,
+    "raw_max": 1.24963,
+    "vx": 0.63771,
+    "amp": 1.09834,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 0.10553,
+    "boot_ci95": [
+     1.02927,
+     1.40463
+    ],
+    "sig": 10.408,
+    "K": 5,
+    "cell_class": "FAIL:amp",
+    "arm": "treatment"
+   },
+   "control": {
+    "argbin": 45,
+    "raw_max": 1.02429,
+    "vx": 0.69406,
+    "amp": 1.00597,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 0.03598,
+    "boot_ci95": [
+     1.00118,
+     1.04298
+    ],
+    "sig": 27.955,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "control"
+   }
+  },
+  "nb=66,sh=+0.125": {
+   "treatment": {
+    "argbin": 35,
+    "raw_max": 1.28455,
+    "vx": 0.51387,
+    "amp": 1.09105,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 0.14295,
+    "boot_ci95": [
+     1.00895,
+     1.40806
+    ],
+    "sig": 7.633,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "treatment"
+   },
+   "control": {
+    "argbin": 22,
+    "raw_max": 1.02493,
+    "vx": 0.34091,
+    "amp": 1.02493,
+    "concave": false,
+    "npts": 11,
+    "boot_se": 60775179.87318,
+    "boot_ci95": [
+     1.00198,
+     1.04569
+    ],
+    "sig": 0.0,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx+sig",
+    "arm": "control"
+   }
+  },
+  "nb=66,sh=+0.250": {
+   "treatment": {
+    "argbin": 27,
+    "raw_max": 1.27833,
+    "vx": 0.36704,
+    "amp": 1.08449,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 0.954,
+    "boot_ci95": [
+     0.99904,
+     1.45153
+    ],
+    "sig": 1.137,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx+sig",
+    "arm": "treatment"
+   },
+   "control": {
+    "argbin": 42,
+    "raw_max": 1.02377,
+    "vx": 0.64878,
+    "amp": 1.00627,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 0.01367,
+    "boot_ci95": [
+     1.0017,
+     1.04479
+    ],
+    "sig": 73.606,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "control"
+   }
+  },
+  "nb=100,sh=-0.250": {
+   "treatment": {
+    "argbin": 91,
+    "raw_max": 1.27378,
+    "vx": 0.8992,
+    "amp": 1.10904,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 0.13638,
+    "boot_ci95": [
+     1.0204,
+     1.47049
+    ],
+    "sig": 8.132,
+    "K": 5,
+    "cell_class": "FAIL:vx",
+    "arm": "treatment"
+   },
+   "control": {
+    "argbin": 75,
+    "raw_max": 1.04258,
+    "vx": 0.74921,
+    "amp": 1.00848,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 0.0159,
+    "boot_ci95": [
+     1.00352,
+     1.05684
+    ],
+    "sig": 63.419,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "control"
+   }
+  },
+  "nb=100,sh=-0.125": {
+   "treatment": {
+    "argbin": 78,
+    "raw_max": 1.29604,
+    "vx": 0.77318,
+    "amp": 1.1275,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 0.24074,
+    "boot_ci95": [
+     1.02234,
+     1.46074
+    ],
+    "sig": 4.683,
+    "K": 5,
+    "cell_class": "FAIL:vx",
+    "arm": "treatment"
+   },
+   "control": {
+    "argbin": 1,
+    "raw_max": 1.03047,
+    "vx": 0.015,
+    "amp": 1.03047,
+    "concave": false,
+    "npts": 7,
+    "boot_se": 0.0324,
+    "boot_ci95": [
+     1.00221,
+     1.05801
+    ],
+    "sig": 31.805,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "control"
+   }
+  },
+  "nb=100,sh=+0.000": {
+   "treatment": {
+    "argbin": 66,
+    "raw_max": 1.27378,
+    "vx": 0.6492,
+    "amp": 1.10904,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 0.12731,
+    "boot_ci95": [
+     1.01499,
+     1.47887
+    ],
+    "sig": 8.711,
+    "K": 5,
+    "cell_class": "FAIL:vx",
+    "arm": "treatment"
+   },
+   "control": {
+    "argbin": 50,
+    "raw_max": 1.04258,
+    "vx": 0.49921,
+    "amp": 1.00848,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 0.0269,
+    "boot_ci95": [
+     1.0026,
+     1.05859
+    ],
+    "sig": 37.483,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "control"
+   }
+  },
+  "nb=100,sh=+0.125": {
+   "treatment": {
+    "argbin": 53,
+    "raw_max": 1.29604,
+    "vx": 0.52318,
+    "amp": 1.1275,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 0.18552,
+    "boot_ci95": [
+     1.02862,
+     1.44285
+    ],
+    "sig": 6.077,
+    "K": 5,
+    "cell_class": "FAIL:vx",
+    "arm": "treatment"
+   },
+   "control": {
+    "argbin": 76,
+    "raw_max": 1.03047,
+    "vx": 0.765,
+    "amp": 1.03047,
+    "concave": false,
+    "npts": 11,
+    "boot_se": 0.14696,
+    "boot_ci95": [
+     1.00253,
+     1.05723
+    ],
+    "sig": 7.012,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "control"
+   }
+  },
+  "nb=100,sh=+0.250": {
+   "treatment": {
+    "argbin": 41,
+    "raw_max": 1.27378,
+    "vx": 0.3992,
+    "amp": 1.10904,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 0.15815,
+    "boot_ci95": [
+     1.01153,
+     1.46456
+    ],
+    "sig": 7.012,
+    "K": 5,
+    "cell_class": "FAIL:vx",
+    "arm": "treatment"
+   },
+   "control": {
+    "argbin": 25,
+    "raw_max": 1.04258,
+    "vx": 0.24921,
+    "amp": 1.00848,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 0.02074,
+    "boot_ci95": [
+     1.00287,
+     1.0582
+    ],
+    "sig": 48.624,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "control"
+   }
+  }
+ },
+ "stats": {
+  "total_hits_pooled": 9594,
+  "total_control_pooled": 512000,
+  "reference_vertex": 0.5901,
+  "vertex_range_surviving": null,
+  "vertex_range_all_concave": [
+   0.367,
+   1.6025
+  ],
+  "amp_range_all_cells": [
+   1.0547,
+   1.1548
+  ],
+  "raw_max_range_all_cells": [
+   1.0706,
+   1.296
+  ],
+  "min_sig_among_survivors": null,
+  "max_control_amp": 1.03047,
+  "max_control_raw": 1.04258,
+  "boot_reps": 2000,
+  "boot_seed": 20260901,
+  "anchor": {
+   "cell": "nb=50,sh=+0.000",
+   "c": 2e-06,
+   "argmax_bin": 33,
+   "raw_max": 1.22636,
+   "target_raw_max": 1.2227,
+   "raw_max_abs_diff": 0.00366,
+   "max_abs_diff_vs_stored_R_bins2_49": 0.00485,
+   "median_abs_diff_vs_stored_R": 0.00053,
+   "edge_bins0_1_diff": [
+    0.0399,
+    0.0538
+   ],
+   "edge_cause": "exp579 stored M at bin CENTER; this probe integrates the curve over the bin -- steep small-u gradient makes center-convention bin0 mass ~5% high (measured M_0 ratio .953, bin1 1.063; bins 2..49 <=8e-4)",
+   "pass": true
+  }
+ },
+ "verdicts": {
+  "verdict": "MIXED-INCONCLUSIVE",
+  "final_verdict_one_line": "MIXED-INCONCLUSIVE: STABLE GEOMETRIC WINDOW FEATURE at u*=0.65 (absolute vertex shift-invariant .649+/-.001 across all shifts, raw-max hump present 30/30 cells, controls at multinomial noise ceiling); full H1 withheld ONLY because the registered amplitude bar (fitted peak>=1.10) was met by just 7/30 local-quadratic fits",
+  "mechanical_registered_tree_outcome": "ARTIFACT-CONTAMINATED",
+  "mechanical_is_not_the_verdict": "ARTIFACT-CONTAMINATED above is the verbatim output of the registered precedence chain (three cells breach the nb-AGNOSTIC 1.02 control bar at amp 1.0215-1.0305); its leak semantics are falsified by the data (breaches sit at the measured multinomial extreme-value ceiling zmax +3.05/zmin -3.45, two-sided, widths 50/66/100 only) -- it is retained for audit, never the headline",
+  "H1_geometric_carrier_confirmed": false,
+  "H0_first_draft_binning_artifact": false,
+  "rule": "H1 iff >=80% of named-grid cells SURVIVE (fitted-peak amp>=1.10 AND |vx-0.5901|<=0.05 AND amp/bootSE>=3) AND control arm flat (amp<=1.02) in EVERY cell; any control breach => ARTIFACT-CONTAMINATED; otherwise H0 -- PLUS reporting addendum (header): H0 headline additionally requires the task-H0 precondition (hump vanishes or moves erratically), else MIXED-INCONCLUSIVE; mechanical outcome recorded alongside",
+  "anchor_pass": true,
+  "n_cells": 30,
+  "n_surviving": 0,
+  "surviving_fraction": 0.0,
+  "survival_threshold": 0.8,
+  "control_flat_everywhere_bar_1p02": false,
+  "control_max_amp_vs_nbaware_ceiling": {
+   "max_control_amp": 1.03047,
+   "ceiling": 1.05,
+   "within_ceiling": true,
+   "breaching_widths": [
+    "nb=100",
+    "nb=50",
+    "nb=66"
+   ]
+  },
+  "task_H0_precondition": {
+   "vanish_bar": 1.03,
+   "cells_below_vanish_bar": 0,
+   "vanished": false,
+   "erratic_rule": ">50% of in-range concave cells with |vx+sh - median(vx+sh)| > 0.15 (task wording: 'across most grid cells')",
+   "erratic_bar": 0.15,
+   "n_inrange_concave_cells": 29,
+   "abs_vertex_median": 0.6492,
+   "n_cells_far_from_median": 1,
+   "far_fraction": 0.0345,
+   "abs_vertex_row_ranges": {
+    "10": [
+     0.6645,
+     0.6977
+    ],
+    "20": [
+     0.6516,
+     0.6984
+    ],
+    "33": [
+     0.6211,
+     0.841
+    ],
+    "50": [
+     0.58,
+     0.6558
+    ],
+    "66": [
+     0.617,
+     0.6389
+    ],
+    "100": [
+     0.6482,
+     0.6492
+    ]
+   },
+   "erratic": false,
+   "precondition_met": false
+  },
+  "marginal_counts": {
+   "amp_bar_alone": 7,
+   "vx_bar_alone": 5,
+   "sig_bar_alone": 21,
+   "non_concave_fits": 0,
+   "raw_max_ge_1p10": 22
+  },
+  "consequence_if_H1": "mid-window hump is discretization-stable -> polynomial/window geometry confirmed as its carrier; residual non-QR structure lands",
+  "consequence_if_H0": "hump is a first-draft binning artifact -> polynomial-geometry channel closes; residual returns to unknown-carrier status",
+  "consequence_if_mixed": "registered amplitude bar fails while the artifact/contamination semantics are contradicted by persistence and rigid transport: geometry-stability reading rests on co-records (raw-max persistence, absolute-vertex stationarity), amplitude claim stays unproven at the registered bar"
+ },
+ "honest_notes": [
+  "pure reanalysis of exp581_regen_positions.npz (+exp579 M curve); no sampling/factoring",
+  "AMENDMENTS disclosed (both pre-grid, smoke-caught): (1) treatment M corrected to the paper's mixture-Dickman definition; (2) control denominator corrected to the uniform sampling null -- no bar, grid, or hypothesis changed in either",
+  "M held FIXED across cells (paper's own baseline): cells differ only in T's discretization -- exactly the choices under test; sub-bin M carries ~1e-4 interpolation error (50-center source)",
+  "circular-shift reading of window-start shift registered up front",
+  "treatment scale c anchored once at (50,0) vs exp579's stored R column and reused everywhere; control arm mean-1 normalized (shape-only gate)",
+  "exp581's fitter gave fitted peak ~1.03 vs raw 1.2257; the 1.10 bar sits between the readings -- cells failing ONLY the amp bar while raw_max persists are visible in stability_matrix; registered rule applied verbatim regardless",
+  "control flatness is amplitude-based (amp<=1.02), not sig-based: ~512k control samples give ~7x tighter SEs so sig would fire on noise",
+  "control arm pools ALL capped 4000/N non-hits (not hit-matched pairs)",
+  "single bootstrap seed 20260901; smoke = plumbing + anchor only"
+ ],
+ "wall_s": 6.1
+}

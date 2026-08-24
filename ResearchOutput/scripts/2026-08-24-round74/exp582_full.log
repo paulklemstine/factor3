@@ -1,0 +1,34 @@
+[full] exp582 BINWIDTH-USHIFT-PROBE reps=2000
+loaded: 128 Ns, hits=9594, ctl=512000
+anchor nb=50,sh=+0.000: c=2e-06 argmax=b33 raw_max=1.22636 (target 1.2227@b33) maxdiff_bins2_49=0.00485 meddiff=0.00053 edge01=[0.0399, 0.0538] => PASS
+nb=10,sh=-0.250: TRT FAIL:vx+sig amp=1.15481 vx=1.60247 sig=0.199 raw=1.07397@b9 | CTL amp=1.0035 raw=1.00631
+nb=10,sh=-0.125: TRT FAIL:amp+vx amp=1.06893 vx=0.7895 sig=21.874 raw=1.09467@b7 | CTL amp=1.00439 raw=1.00439
+nb=10,sh=+0.000: TRT FAIL:amp+vx amp=1.06289 vx=0.69455 sig=31.926 raw=1.07062@b6 | CTL amp=1.00407 raw=1.00742
+nb=10,sh=+0.125: TRT FAIL:amp amp=1.0587 vx=0.55184 sig=7.763 raw=1.07438@b5 | CTL amp=1.0056 raw=1.00924
+nb=10,sh=+0.250: TRT FAIL:amp+vx amp=1.06157 vx=0.4477 sig=15.068 raw=1.07397@b4 | CTL amp=1.00631 raw=1.00631
+nb=20,sh=-0.250: TRT FAIL:amp+vx+sig amp=1.06701 vx=0.91997 sig=1.189 raw=1.09843@b18 | CTL amp=1.00468 raw=1.0116
+nb=20,sh=-0.125: TRT FAIL:amp+vx amp=1.05546 vx=0.79885 sig=10.661 raw=1.12174@b15 | CTL amp=1.00184 raw=1.01238
+nb=20,sh=+0.000: TRT FAIL:amp+vx+sig amp=1.0641 vx=0.69841 sig=1.848 raw=1.09843@b13 | CTL amp=1.00468 raw=1.0116
+nb=20,sh=+0.125: TRT FAIL:amp+vx amp=1.05807 vx=0.52664 sig=13.367 raw=1.12174@b10 | CTL amp=1.01238 raw=1.01238
+nb=20,sh=+0.250: TRT FAIL:amp+vx amp=1.0641 vx=0.44841 sig=21.269 raw=1.09843@b8 | CTL amp=1.0116 raw=1.0116
+nb=33,sh=-0.250: TRT FAIL:amp+vx+sig amp=1.08304 vx=0.88866 sig=0.722 raw=1.1665@b30 | CTL amp=1.00203 raw=1.02004
+nb=33,sh=-0.125: TRT FAIL:amp+vx amp=1.05879 vx=0.79409 sig=6.36 raw=1.11869@b26 | CTL amp=1.01881 raw=1.01881
+nb=33,sh=+0.000: TRT FAIL:amp amp=1.06056 vx=0.63166 sig=3.07 raw=1.15547@b21 | CTL amp=1.01688 raw=1.01688
+nb=33,sh=+0.125: TRT FAIL:amp+vx amp=1.05808 vx=0.4961 sig=4.064 raw=1.16153@b17 | CTL amp=1.01346 raw=1.01346
+nb=33,sh=+0.250: TRT FAIL:amp+sig amp=1.05469 vx=0.59097 sig=0.31 raw=1.17572@b13 | CTL amp=1.00139 raw=1.01346
+nb=50,sh=-0.250: TRT FAIL:amp+vx+sig amp=1.09232 vx=0.9016 sig=2.582 raw=1.21504@b45 | CTL amp=1.02148 raw=1.02148
+nb=50,sh=-0.125: TRT FAIL:amp+vx amp=1.075 vx=0.76155 sig=9.845 raw=1.23631@b39 | CTL amp=1.00313 raw=1.02158
+nb=50,sh=+0.000: TRT FAIL:amp+sig amp=1.09178 vx=0.58003 sig=2.6 raw=1.22636@b33 | CTL amp=1.00463 raw=1.01973
+nb=50,sh=+0.125: TRT FAIL:vx amp=1.1013 vx=0.53078 sig=9.546 raw=1.17518@b26 | CTL amp=1.00434 raw=1.02461
+nb=50,sh=+0.250: TRT FAIL:amp+vx amp=1.09428 vx=0.40018 sig=11.285 raw=1.21504@b20 | CTL amp=1.02148 raw=1.02148
+nb=66,sh=-0.250: TRT FAIL:amp+vx amp=1.08449 vx=0.86704 sig=8.545 raw=1.27833@b60 | CTL amp=1.00627 raw=1.02377
+nb=66,sh=-0.125: TRT FAIL:amp+vx+sig amp=1.08302 vx=0.75916 sig=1.875 raw=1.28055@b52 | CTL amp=1.00635 raw=1.03202
+nb=66,sh=+0.000: TRT FAIL:amp amp=1.09834 vx=0.63771 sig=10.408 raw=1.24963@b43 | CTL amp=1.00597 raw=1.02429
+nb=66,sh=+0.125: TRT FAIL:amp+vx amp=1.09105 vx=0.51387 sig=7.633 raw=1.28455@b35 | CTL amp=1.02493 raw=1.02493
+nb=66,sh=+0.250: TRT FAIL:amp+vx+sig amp=1.08449 vx=0.36704 sig=1.137 raw=1.27833@b27 | CTL amp=1.00627 raw=1.02377
+nb=100,sh=-0.250: TRT FAIL:vx amp=1.10904 vx=0.8992 sig=8.132 raw=1.27378@b91 | CTL amp=1.00848 raw=1.04258
+nb=100,sh=-0.125: TRT FAIL:vx amp=1.1275 vx=0.77318 sig=4.683 raw=1.29604@b78 | CTL amp=1.03047 raw=1.03047
+nb=100,sh=+0.000: TRT FAIL:vx amp=1.10904 vx=0.6492 sig=8.711 raw=1.27378@b66 | CTL amp=1.00848 raw=1.04258
+nb=100,sh=+0.125: TRT FAIL:vx amp=1.1275 vx=0.52318 sig=6.077 raw=1.29604@b53 | CTL amp=1.03047 raw=1.03047
+nb=100,sh=+0.250: TRT FAIL:vx amp=1.10904 vx=0.3992 sig=7.012 raw=1.27378@b41 | CTL amp=1.00848 raw=1.04258
+[full] verdict=MIXED-INCONCLUSIVE surviving=0/30 ctl_clean=False wall=6.1s -> /home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp582_result.json

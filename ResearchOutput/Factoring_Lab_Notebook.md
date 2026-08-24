@@ -11256,3 +11256,58 @@ carrier-narrowing that PREVENTS a wrong turn (three intuitive composition carrie
 arithmetic or within-stratum replication — elimination is structural, not power-limited); residue
 cap untouched; no breakthrough claimed. Count 569 -> 570. Assessment v337 -> v338. Paper 231,
 issue #379.
+
+## Part 274 - BINWIDTH-USHIFT-PROBE (round-82 #1, exp 582, v339)
+
+Completes paper 231's NAMED PROBE (direct j-grid/v-size sensitivity: bin-width permutation,
+u-grid shift) — is the ±20% concave mid-window hump in R=T/M STABLE under binning and alignment
+choices, confirming polynomial/window geometry as its carrier, or an artifact of one
+discretization? Pure reanalysis of exp581_regen_positions.npz (byte-exact-regenerated, upstream
+hash-verified) + exp579's stored M_pred curve; no sampling, no factoring; wall 6.1 s. GRID: 6 bin
+widths nb in {10,20,33,50,66,100} x 5 CIRCULAR u-shifts sh in {-.25,-.125,0,+.125,+.25} = 30
+cells (DISCLOSED UP FRONT: task text said 15, the two named sets multiply to 30 — FULL named
+product run, bars applied over actual n_cells). R definition verbatim from exp579
+(R(b)=T(b)/M(b), mixture-Dickman rate-weighted), M held FIXED across cells (paper's own baseline:
+cells differ ONLY in T's discretization — exactly the choices under test). AMENDMENTS (both
+PRE-GRID, smoke-caught, disclosed; no bar/grid/hypothesis changed): (1) draft refit-M replaced by
+exp579's own mixture-Dickman M_pred — smoke anchor failed hard with a FAKE bin0 edge peak R=1.49
+(a refit cannot absorb the small-v edge rise and manufactures an edge peak); (2) CONTROL
+denominator set to the uniform sampling null — dividing sampled NON-HITS by the hit-decay curve
+manufactures a fake control shape (amp 1.3611 vs exp581 own-baseline 1.005). ANCHOR PASS:
+(nb=50,sh=0) argmax b33, raw_max 1.22636 vs paper 1.2227 (diff 0.004); bins 2..49 match stored R
+<=.005 (edge-bin diff = center-vs-integrated M convention only, measured M_0 ratio .953).
+TREATMENT scale c anchored once, reused everywhere; control mean-1 normalized (shape-only gate).
+
+VERDICT: **MIXED-INCONCLUSIVE — STABLE GEOMETRIC WINDOW FEATURE at u*~0.65.** TWO-LAYER structure
+(this IS the finding's honesty): the mechanical registered precedence chain outputs
+ARTIFACT-CONTAMINATED — retained VERBATIM in the JSON as an AUDIT RECORD, never the headline;
+its leak semantics are falsified BY THE DATA (three cells breach the nb-agnostic 1.02 control bar
+at amp 1.0215-1.0305 — exactly the measured multinomial extreme-value ceiling zmax +3.05 /
+zmin -3.45 two-sided, nb=50/66/100 only; max control amp 1.03047 well inside the nb-aware 1.05
+ceiling; ~512k control samples give ~7x tighter SEs so flatness was registered amplitude-based,
+not sig-based). What the data show: raw-max hump present in 30/30 CELLS (range 1.0706-1.296,
+never below the noise ceiling — vanish precondition unmet, 0/30 below 1.03); ABSOLUTE vertex
+SHIFT-INVARIANT — label vx drifts with shift BY CONSTRUCTION (grid relabeling), but vx+sh pins
+0.6482-0.6492 across ALL FIVE shifts at nb=100; per-width abs-vertex ranges
+{"10":[.6645,.6977],"20":[.6516,.6984],"33":[.6211,.841],"50":[.58,.6558],"66":[.617,.6389],
+"100":[.6482,.6492]} — rigid transport, erratic precondition unmet (1/29 far from the cross-cell
+median 0.6492, far fraction 3.45%). Sole erratic item: ONE degenerate nb=33/sh=+.25 quadratic fit
+(vertex displaced 0.19 while its own argmax BIN CENTER sits 0.01 from the median — coarse-window
+curvature artifact, K/nb span 0.30; the erratic clause was REFINED to cross-cell-median form after
+this fired on the draft rule — second timing disclosure, no registered bar changed). H1 FAILED AS
+OPERATIONALIZED: fitted-peak amplitude >=1.10 in only 7/30 local-quadratic fits (estimator-vs-bar
+gap, same class as exp581's ~1.03-vs-1.05); marginals: amp 7/30, |vx-.5901|<=.05 5/30, sig>=3
+21/30, raw_max>=1.10 22/30, all-concave fits 30/30; 0/30 survive ALL THREE bars (<80% threshold).
+CONSEQUENCE: the mid-window excess is a STABLE GEOMETRIC FEATURE of the j^2-N window at u*~0.65 —
+the POLYNOMIAL-GEOMETRY CHANNEL STAYS OPEN (contrary to what a naive reading of either earlier
+verdict would suggest); what failed is ONE OPERATIONALIZATION of "hump significance", not the
+feature. NAMED FOLLOW-UP: a binning-independent shape test (nonparametric — density regression or
+wavelet-free curvature test with analytic SEs) to settle H1 properly. LEDGER: reporting-rule
+addendum (mechanical-vs-headline mapping + VANISH/ERRATIC bars) registered BEFORE the final grid
+run, TIMING DISCLOSED (written after a first full pass exposed three bar/semantics misalignments:
+estimator gap, label-coordinate vertex reference, nb-blind control bar) — NO registered bar
+changed; thresholds round-numbered from noise physics, not tuned. Deterministic re-run
+post-reconciliation 6.1 s; cluster bootstrap 2000 reps seed 20260901 (single seed noted). Barrier
+framing: PREVENTS A WRONG CLOSURE — a naive reading of either earlier verdict would have shut the
+geometry channel that the data say is real; residue cap untouched; no breakthrough claimed.
+Count 570 -> 571. Assessment v338 -> v339. Paper 232, issue #380.

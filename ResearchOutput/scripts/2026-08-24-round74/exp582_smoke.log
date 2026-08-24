@@ -1,0 +1,5 @@
+[smoke] exp582 BINWIDTH-USHIFT-PROBE reps=200
+loaded: 128 Ns, hits=9594, ctl=512000
+anchor nb=50,sh=+0.000: c=2e-06 argmax=b33 raw_max=1.22636 (target 1.2227@b33) maxdiff_bins2_49=0.00485 meddiff=0.00053 edge01=[0.0399, 0.0538] => PASS
+nb=50,sh=+0.000: TRT FAIL:amp amp=1.09178 vx=0.58003 sig=10.001 raw=1.22636@b33 | CTL amp=1.00463 raw=1.01973
+[smoke] verdict=H0-FIRST-DRAFT-BINNING-ARTIFACT surviving=0/1 ctl_clean=True wall=0.1s -> /home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp582_smoke_result.json

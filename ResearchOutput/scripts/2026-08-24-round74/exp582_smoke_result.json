@@ -1,0 +1,152 @@
+{
+ "exp": "582",
+ "codename": "BINWIDTH-USHIFT-PROBE",
+ "mode": "smoke",
+ "source_npz": "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp581_regen_positions.npz",
+ "config": {
+  "widths": [
+   10,
+   20,
+   33,
+   50,
+   66,
+   100
+  ],
+  "shifts": [
+   -0.25,
+   -0.125,
+   0.0,
+   0.125,
+   0.25
+  ],
+  "shift_semantics": "circular origin: bin k covers [sh+k/nb, sh+(k+1)/nb] mod 1; M integrated over the actual interval",
+  "note_grid_size": "named sets multiply to 6x5=30 cells; task text said 15; full product run, bars applied over actual n_cells",
+  "M_definition": "exp579 residual.definition verbatim: R(b)=T(b)/M(b), M=mixture-Dickman rate-weighted; stored M_pred curve, linear-interp, held FIXED across cells",
+  "amendment": "(1) draft's per-config power-law-refit M was replaced by the paper's own mixture-Dickman M after the smoke ANCHOR failed (fake bin0 edge peak R=1.49); (2) CONTROL denominator set to the uniform sampling null after the smoke showed hit-model M manufactures a fake control shape (amp 1.3611 vs exp581's own-baseline 1.005). Both BEFORE grid analysis; hypotheses/bars/grid unchanged",
+  "amp_bar": 1.1,
+  "vx_tol": 0.05,
+  "ref_vertex": 0.5901,
+  "sig_bar": 3.0,
+  "ctl_amp_bar": 1.02,
+  "quad_window_rule": "K=min(5,max(2,nb//4))",
+  "bootstrap_unit": "cluster over 128 Ns",
+  "treatment_scale_c": 2e-06
+ },
+ "stability_matrix": {
+  "nb=50,sh=+0.000": {
+   "treatment": "FAIL:amp",
+   "control": "FAIL:amp+vx",
+   "raw_max": 1.22636,
+   "argbin": 33
+  }
+ },
+ "per_config": {
+  "nb=50,sh=+0.000": {
+   "treatment": {
+    "argbin": 33,
+    "raw_max": 1.22636,
+    "vx": 0.58003,
+    "amp": 1.09178,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 0.10917,
+    "boot_ci95": [
+     1.00477,
+     1.34582
+    ],
+    "sig": 10.001,
+    "K": 5,
+    "cell_class": "FAIL:amp",
+    "arm": "treatment"
+   },
+   "control": {
+    "argbin": 44,
+    "raw_max": 1.01973,
+    "vx": 0.93844,
+    "amp": 1.00463,
+    "concave": true,
+    "npts": 11,
+    "boot_se": 0.011,
+    "boot_ci95": [
+     1.00178,
+     1.03849
+    ],
+    "sig": 91.349,
+    "K": 5,
+    "cell_class": "FAIL:amp+vx",
+    "arm": "control"
+   }
+  }
+ },
+ "stats": {
+  "total_hits_pooled": 9594,
+  "total_control_pooled": 512000,
+  "reference_vertex": 0.5901,
+  "vertex_range_surviving": null,
+  "vertex_range_all_concave": [
+   0.58,
+   0.58
+  ],
+  "amp_range_all_cells": [
+   1.0918,
+   1.0918
+  ],
+  "raw_max_range_all_cells": [
+   1.2264,
+   1.2264
+  ],
+  "min_sig_among_survivors": null,
+  "max_control_amp": 1.00463,
+  "max_control_raw": 1.01973,
+  "boot_reps": 200,
+  "boot_seed": 20260901,
+  "anchor": {
+   "cell": "nb=50,sh=+0.000",
+   "c": 2e-06,
+   "argmax_bin": 33,
+   "raw_max": 1.22636,
+   "target_raw_max": 1.2227,
+   "raw_max_abs_diff": 0.00366,
+   "max_abs_diff_vs_stored_R_bins2_49": 0.00485,
+   "median_abs_diff_vs_stored_R": 0.00053,
+   "edge_bins0_1_diff": [
+    0.0399,
+    0.0538
+   ],
+   "edge_cause": "exp579 stored M at bin CENTER; this probe integrates the curve over the bin -- steep small-u gradient makes center-convention bin0 mass ~5% high (measured M_0 ratio .953, bin1 1.063; bins 2..49 <=8e-4)",
+   "pass": true
+  }
+ },
+ "verdicts": {
+  "verdict": "H0-FIRST-DRAFT-BINNING-ARTIFACT",
+  "H1_geometric_carrier_confirmed": false,
+  "H0_first_draft_binning_artifact": true,
+  "rule": "H1 iff >=80% of named-grid cells SURVIVE (fitted-peak amp>=1.10 AND |vx-0.5901|<=0.05 AND amp/bootSE>=3) AND control arm flat (amp<=1.02) in EVERY cell; any control breach => ARTIFACT-CONTAMINATED; otherwise H0",
+  "anchor_pass": true,
+  "n_cells": 1,
+  "n_surviving": 0,
+  "surviving_fraction": 0.0,
+  "survival_threshold": 0.8,
+  "control_flat_everywhere": true,
+  "marginal_counts": {
+   "amp_bar_alone": 0,
+   "vx_bar_alone": 1,
+   "sig_bar_alone": 1,
+   "non_concave_fits": 0
+  },
+  "consequence_if_H1": "mid-window hump is discretization-stable -> polynomial/window geometry confirmed as its carrier; residual non-QR structure lands",
+  "consequence_if_H0": "hump is a first-draft binning artifact -> polynomial-geometry channel closes; residual returns to unknown-carrier status"
+ },
+ "honest_notes": [
+  "pure reanalysis of exp581_regen_positions.npz (+exp579 M curve); no sampling/factoring",
+  "AMENDMENTS disclosed (both pre-grid, smoke-caught): (1) treatment M corrected to the paper's mixture-Dickman definition; (2) control denominator corrected to the uniform sampling null -- no bar, grid, or hypothesis changed in either",
+  "M held FIXED across cells (paper's own baseline): cells differ only in T's discretization -- exactly the choices under test; sub-bin M carries ~1e-4 interpolation error (50-center source)",
+  "circular-shift reading of window-start shift registered up front",
+  "treatment scale c anchored once at (50,0) vs exp579's stored R column and reused everywhere; control arm mean-1 normalized (shape-only gate)",
+  "exp581's fitter gave fitted peak ~1.03 vs raw 1.2257; the 1.10 bar sits between the readings -- cells failing ONLY the amp bar while raw_max persists are visible in stability_matrix; registered rule applied verbatim regardless",
+  "control flatness is amplitude-based (amp<=1.02), not sig-based: ~512k control samples give ~7x tighter SEs so sig would fire on noise",
+  "control arm pools ALL capped 4000/N non-hits (not hit-matched pairs)",
+  "single bootstrap seed 20260901; smoke = plumbing + anchor only"
+ ],
+ "wall_s": 0.1
+}
