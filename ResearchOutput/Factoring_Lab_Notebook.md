@@ -10843,3 +10843,42 @@ a population-shaped channel whose sign is measurable, residue cap 4/3 untouched,
 breakthrough claimed. Count unchanged by experiment (papers-only bump, same convention
 as paper 219): still 562 experiments (max id 572), papers now 221. Assessment
 v328. Paper 221, issue #367.
+
+## Part 264 - U9-DRIFT-GATE (round-76 #2, exp 569c, v329)
+
+GATE REJECTED BY SIGN FLIP — the twice-gated sub-1 candidate is DEAD; randomness
+stands through u≈11 now carrying a MEASURED ±5–15% single-run fluctuation envelope.
+The decisive arbiter queued by paper 220: fresh-stream seed 20260825, the ONLY run
+uncontaminated by the 20260824 family (pilot/G1/B all shared it). Band-9 bitlen-96,
+128 Ns × 600k = 76.8M pairs, wall 5296.9 s. RESULTS (from persisted raw counts):
+cut_1e5 PRIMARY cand 2598 vs ctrl 2252 => r=**1.1536**, cluster-boot CI95
+[1.0540,1.2611] (independent 4000-rep rebootstrap; stored in-run [1.0541,1.2686]) —
+excludes 1 UPWARD; cut_1e6 40617/38594 => r=1.0524 [1.0051,1.1016] upward.
+SIGN FLIP vs the correlated family's 0.95–0.99 deficit: pilot 0.9468 / G1 0.988 /
+B 0.9623 at 1e6 all seed 20260824; clean seed reads surplus +5% (1e6) to +15% (1e5).
+Directional instability across seeds ⇒ no stable deviation — gate G1 fails by sign,
+stronger than by magnitude; the corrected pilot×B joint exclusion collapses into
+"one seed-family's fluctuation." SURPLUS NOT BANKED (symmetric skepticism): single
+seed, inside the envelope, would mean candidates SMOOTHER than randoms at u≈10 in
+this seed — recorded as fluctuation, not effect. AUDIT TRAIL (both pre-disposition
+alarms resolved): (1) coordinator false alarm — :.5f terminal formatting collapsed
+3.38e-05 to "0.00003", making the point look outside its own CI; raw counts recompute
+cleanly, display artifact only (precision patch proven working); (2) independent
+4000-rep bootstrap from raw counts reproduces stored CI to 3 decimals
+([1.0540,1.2611] vs [1.0541,1.2686], percentile-ordering noise); (3) cluster structure
+honest — top candidate-N clusters carry 600/561/540 hits vs control-max 359, genuine
+per-N overdispersion behind the ±5–15% widths: ANY single run at this power cannot
+resolve a few-percent deviation. FINAL SYNTHESIS (214→216→220→this): no deviation
+survives; papers 130/209/214/216 null line extends through u≈11 with quantified noise
+floor; future claims must beat the envelope via multi-seed pooling under the new
+seed-distinctness rule (≥3 truly distinct seeds inverse-variance, σ_joint~0.02
+achievable, burden includes explaining the sign flip). Ledger: pkill self-match killed
+first c-launch (relaunch clean, no contamination); seed parameterization born-clean
+(added post paper-220 catch, committed with exp569b artifacts); JSON verdict_name
+"CANDIDATE-DEVIATION-PENDING-GATES" kept as honest within-run snapshot — recorded
+verdict RANDOMNESS-EXTENDED governs per the pre-registered cross-seed gate. Barrier:
+scale-smoothness frontier u≥6–14 — null STRENGTHENS the map with measured resolution
+floors; no breach, no method, no constant shaved. The complete honesty arc closed:
+bank (214) → powered-null downgrade (216) → letter-of-rule null + independence audit
+(220) → clean sign-flip rejection (222). Id convention per 219/220: count advances
+562 → 563, max id stays 572. Assessment v328 → v329. Paper 222, issue #368.
