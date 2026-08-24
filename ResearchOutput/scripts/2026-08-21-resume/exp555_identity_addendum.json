@@ -1,0 +1,29 @@
+{
+ "identity_check": {
+  "checks": 240000,
+  "violations": 0,
+  "hits": 54,
+  "hits_exactly_one_of_c_minus_b_or_c_plus_b": 54,
+  "hits_both": 0
+ },
+ "alpha_dive": {
+  "beta": 1.0074323048343214,
+  "se": 0.08754120588158627,
+  "r2": 0.40079203601827645,
+  "n": 200
+ },
+ "alpha_uniform_crust_censored": {
+  "beta": 1.3552883173544497,
+  "se": 0.03205090804227208,
+  "r2": 0.9057780627568744,
+  "n": 188
+ },
+ "honest_crossover_first_U_bfs_ge_td_nonzero": [
+  748183,
+  1.0,
+  1.0
+ ],
+ "median_vstar_dive": 7013,
+ "median_pmin": 7681,
+ "op_cost_ratio_bfs_vs_TD_at_median": 10.956385887254264
+}

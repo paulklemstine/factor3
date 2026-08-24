@@ -1,0 +1,88 @@
+MATRIX VALIDATION: {'children_of_root_ok': True, 'integer_form_depth6_ok': True, 'no_dup_depth5': True, 'n_triples_checked': 364}
+sampled 200 semiprimes (seed 20260826); V=200000
+  [1/200] N_bits=30 elapsed=1s rate=0.77s/N dive_first=2640
+  [25/200] N_bits=31 elapsed=22s rate=0.87s/N dive_first=14739
+  [50/200] N_bits=29 elapsed=41s rate=0.82s/N dive_first=24688
+  [75/200] N_bits=28 elapsed=63s rate=0.84s/N dive_first=5036
+  [100/200] N_bits=30 elapsed=83s rate=0.83s/N dive_first=8675
+  [125/200] N_bits=28 elapsed=106s rate=0.85s/N dive_first=823
+  [150/200] N_bits=23 elapsed=128s rate=0.86s/N dive_first=566
+  [175/200] N_bits=32 elapsed=149s rate=0.85s/N dive_first=17578
+  [200/200] N_bits=31 elapsed=171s rate=0.85s/N dive_first=3386
+PART A: {
+ "n_cases": 200,
+ "exhausted_components": 0,
+ "out_degree_note": "always 3 by construction (no multiplication needed: T-coefficients in {+-1,+-2,+-3})",
+ "nz_score_hist": {
+  "0": 9,
+  "1": 30,
+  "2": 340,
+  "3": 1983,
+  "4": 9894,
+  "5": 32620,
+  "6": 19956805,
+  "7": 19928085,
+  "8": 53800,
+  "9": 16634
+ },
+ "nz_confinement_note": "nz = #coords nonzero mod 3/5/7; classical primitive-triple congruences survive the projection and confine the orbit",
+ "nz_top2_fraction": 0.0004158479207603962,
+ "coll_frac_median": -4.9999750000306875e-06,
+ "coll_frac_q10": -4.9999750000306875e-06,
+ "coll_frac_q90": -4.9999750000306875e-06,
+ "first_collision_median": null,
+ "first_collision_q10": null,
+ "maxdepth_median": 11,
+ "any_hit_rate": 0.94,
+ "id_mismatch_hits": 12684,
+ "id_checks_hits": 17483,
+ "form_violations": 0,
+ "form_checks": 39000
+}
+PART B fit: {'alpha_logV_vs_logpmin_UNIFORM_BFS': 1.3552883173544497, 'censored_uniform': 12, 'n_used_uniform': 188, 'alpha_logV_vs_logpmin_RANDOM_DIVE': 1.0074323048343214, 'censored_dive': 0, 'n_used_dive': 200, 'ambient_null_rate': 0.0004805, 'interpretation': 'alpha~=1 trial-division-like; alpha~=0.5 rho-like; <0.5 NEW', 'uniform_intercept': -0.39399563483100675, 'uniform_r2': 0.9057780627568744, 'dive_intercept': -0.05251587250978096, 'dive_r2': 0.40079203601827645}
+PART B by bitlen: {"23": {"n": 1, "hit_rate": 1.0, "vstar_median": 5858, "vstar_q90": 5858, "pmin_median": 1301, "distinct_median": 200002}, "25": {"n": 3, "hit_rate": 1.0, "vstar_median": 12666, "vstar_q90": 17579, "pmin_median": 1699, "distinct_median": 200002}, "26": {"n": 5, "hit_rate": 1.0, "vstar_median": 14904, "vstar_q90": 61395, "pmin_median": 1759, "distinct_median": 200002}, "27": {"n": 9, "hit_rate": 1.0, "vstar_median": 17499, "vstar_q90": 96308, "pmin_median": 2539, "distinct_median": 200002}, "28": {"n": 32, "hit_rate": 1.0, "vstar_median": 32046, "vstar_q90": 111458, "pmin_median": 2731, "distinct_median": 200002}, "29": {"n": 34, "hit_rate": 0.9411764705882353, "vstar_median": 40092, "vstar_q90": 118047, "pmin_median": 6397, "distinct_median": 200002}, "30": {"n": 41, "hit_rate": 0.9512195121951219, "vstar_median": 98389, "vstar_q90": 130482, "pmin_median": 8209, "distinct_median": 200002}, "31": {"n": 57, "hit_rate": 0.8947368421052632, "vstar_median": 98655, "vstar_q90": 175175, "pmin_median": 9461, "distinct_median": 200002}, "32": {"n": 18, "hit_rate": 0.8888888888888888, "vstar_median": 156005, "vstar_q90": 176507, "pmin_median": 13789, "distinct_median": 200002}}
+PART B curves (U, Pbfs, Ptd, Prho):
+   {'U': 100, 'P_bfs_uniform': 0.0, 'P_bfs_dive': 0.0, 'P_td': 0.0, 'P_rho_expected': 0.5326, 'P_rho_simulated': 0.2}
+   {'U': 150, 'P_bfs_uniform': 0.0, 'P_bfs_dive': 0.0, 'P_td': 0.0, 'P_rho_expected': 0.7639, 'P_rho_simulated': 0.5}
+   {'U': 225, 'P_bfs_uniform': 0.0, 'P_bfs_dive': 0.0, 'P_td': 0.0, 'P_rho_expected': 0.9343, 'P_rho_simulated': 0.5}
+   {'U': 338, 'P_bfs_uniform': 0.0, 'P_bfs_dive': 0.0, 'P_td': 0.0, 'P_rho_expected': 0.9944, 'P_rho_simulated': 0.825}
+   {'U': 506, 'P_bfs_uniform': 0.0, 'P_bfs_dive': 0.0, 'P_td': 0.0, 'P_rho_expected': 1.0, 'P_rho_simulated': 0.875}
+   {'U': 759, 'P_bfs_uniform': 0.0, 'P_bfs_dive': 0.0, 'P_td': 0.0, 'P_rho_expected': 1.0, 'P_rho_simulated': 0.975}
+   {'U': 1139, 'P_bfs_uniform': 0.0, 'P_bfs_dive': 0.0, 'P_td': 0.01, 'P_rho_expected': 1.0, 'P_rho_simulated': 1.0}
+   {'U': 1709, 'P_bfs_uniform': 0.0, 'P_bfs_dive': 0.005, 'P_td': 0.075, 'P_rho_expected': 1.0, 'P_rho_simulated': 1.0}
+   {'U': 2563, 'P_bfs_uniform': 0.0, 'P_bfs_dive': 0.005, 'P_td': 0.15, 'P_rho_expected': 1.0, 'P_rho_simulated': 1.0}
+   {'U': 3844, 'P_bfs_uniform': 0.0, 'P_bfs_dive': 0.015, 'P_td': 0.25, 'P_rho_expected': 1.0, 'P_rho_simulated': 1.0}
+   {'U': 5767, 'P_bfs_uniform': 0.0, 'P_bfs_dive': 0.02, 'P_td': 0.345, 'P_rho_expected': 1.0, 'P_rho_simulated': 1.0}
+   {'U': 8650, 'P_bfs_uniform': 0.0, 'P_bfs_dive': 0.05, 'P_td': 0.585, 'P_rho_expected': 1.0, 'P_rho_simulated': 1.0}
+   {'U': 12975, 'P_bfs_uniform': 0.0, 'P_bfs_dive': 0.085, 'P_td': 0.845, 'P_rho_expected': 1.0, 'P_rho_simulated': 1.0}
+   {'U': 19462, 'P_bfs_uniform': 0.0, 'P_bfs_dive': 0.145, 'P_td': 1.0, 'P_rho_expected': 1.0, 'P_rho_simulated': 1.0}
+   {'U': 29193, 'P_bfs_uniform': 0.0, 'P_bfs_dive': 0.21, 'P_td': 1.0, 'P_rho_expected': 1.0, 'P_rho_simulated': 1.0}
+   {'U': 43789, 'P_bfs_uniform': 0.0, 'P_bfs_dive': 0.305, 'P_td': 1.0, 'P_rho_expected': 1.0, 'P_rho_simulated': 1.0}
+   {'U': 65684, 'P_bfs_uniform': 0.035, 'P_bfs_dive': 0.44, 'P_td': 1.0, 'P_rho_expected': 1.0, 'P_rho_simulated': 1.0}
+   {'U': 98526, 'P_bfs_uniform': 0.065, 'P_bfs_dive': 0.555, 'P_td': 1.0, 'P_rho_expected': 1.0, 'P_rho_simulated': 1.0}
+   {'U': 147789, 'P_bfs_uniform': 0.08, 'P_bfs_dive': 0.715, 'P_td': 1.0, 'P_rho_expected': 1.0, 'P_rho_simulated': 1.0}
+   {'U': 221684, 'P_bfs_uniform': 0.17, 'P_bfs_dive': 0.85, 'P_td': 1.0, 'P_rho_expected': 1.0, 'P_rho_simulated': 1.0}
+   {'U': 332526, 'P_bfs_uniform': 0.22, 'P_bfs_dive': 0.93, 'P_td': 1.0, 'P_rho_expected': 1.0, 'P_rho_simulated': 1.0}
+   {'U': 498789, 'P_bfs_uniform': 0.355, 'P_bfs_dive': 0.98, 'P_td': 1.0, 'P_rho_expected': 1.0, 'P_rho_simulated': 1.0}
+   {'U': 748183, 'P_bfs_uniform': 0.505, 'P_bfs_dive': 1.0, 'P_td': 1.0, 'P_rho_expected': 1.0, 'P_rho_simulated': 1.0}
+   {'U': 1122274, 'P_bfs_uniform': 0.51, 'P_bfs_dive': 1.0, 'P_td': 1.0, 'P_rho_expected': 1.0, 'P_rho_simulated': 1.0}
+   {'U': 1683411, 'P_bfs_uniform': 0.825, 'P_bfs_dive': 1.0, 'P_td': 1.0, 'P_rho_expected': 1.0, 'P_rho_simulated': 1.0}
+   {'U': 2525117, 'P_bfs_uniform': 0.94, 'P_bfs_dive': 1.0, 'P_td': 1.0, 'P_rho_expected': 1.0, 'P_rho_simulated': 1.0}
+   {'U': 3787675, 'P_bfs_uniform': 0.94, 'P_bfs_dive': 1.0, 'P_td': 1.0, 'P_rho_expected': 1.0, 'P_rho_simulated': 1.0}
+   {'U': 5681513, 'P_bfs_uniform': 0.94, 'P_bfs_dive': 1.0, 'P_td': 1.0, 'P_rho_expected': 1.0, 'P_rho_simulated': 1.0}
+   {'U': 8522269, 'P_bfs_uniform': 0.94, 'P_bfs_dive': 1.0, 'P_td': 1.0, 'P_rho_expected': 1.0, 'P_rho_simulated': 1.0}
+   {'U': 12783404, 'P_bfs_uniform': 0.94, 'P_bfs_dive': 1.0, 'P_td': 1.0, 'P_rho_expected': 1.0, 'P_rho_simulated': 1.0}
+   {'U': 19175106, 'P_bfs_uniform': 0.94, 'P_bfs_dive': 1.0, 'P_td': 1.0, 'P_rho_expected': 1.0, 'P_rho_simulated': 1.0}
+   {'U': 28762659, 'P_bfs_uniform': 0.94, 'P_bfs_dive': 1.0, 'P_td': 1.0, 'P_rho_expected': 1.0, 'P_rho_simulated': 1.0}
+   {'U': 43143988, 'P_bfs_uniform': 0.94, 'P_bfs_dive': 1.0, 'P_td': 1.0, 'P_rho_expected': 1.0, 'P_rho_simulated': 1.0}
+   {'U': 64715982, 'P_bfs_uniform': 0.94, 'P_bfs_dive': 1.0, 'P_td': 1.0, 'P_rho_expected': 1.0, 'P_rho_simulated': 1.0}
+PART C (primary: vs_random isolates residue info beyond shape):
+  nz@25000: {'vs_random': {'hit_rate': 0.96, 'random_rate': 0.925, 'wins': 13, 'losses': 6, 'ties': 181, 'paired_z': 1.612}, 'vs_uniform': {'hit_rate': 0.96, 'uniform_rate': 0.22, 'wins': 148, 'losses': 0, 'ties': 52, 'paired_z': 23.799}}
+  nz@50000: {'vs_random': {'hit_rate': 1.0, 'random_rate': 0.99, 'wins': 2, 'losses': 0, 'ties': 198, 'paired_z': 1.418}, 'vs_uniform': {'hit_rate': 1.0, 'uniform_rate': 0.375, 'wins': 125, 'losses': 0, 'ties': 75, 'paired_z': 18.212}}
+  nz@100000: {'vs_random': {'hit_rate': 1.0, 'random_rate': 1.0, 'wins': 0, 'losses': 0, 'ties': 200, 'paired_z': 0.0}, 'vs_uniform': {'hit_rate': 1.0, 'uniform_rate': 0.58, 'wins': 84, 'losses': 0, 'ties': 116, 'paired_z': 12.004}}
+  mag@25000: {'vs_random': {'hit_rate': 0.965, 'random_rate': 0.925, 'wins': 14, 'losses': 6, 'ties': 180, 'paired_z': 1.799}, 'vs_uniform': {'hit_rate': 0.965, 'uniform_rate': 0.22, 'wins': 149, 'losses': 0, 'ties': 51, 'paired_z': 24.112}}
+  mag@50000: {'vs_random': {'hit_rate': 1.0, 'random_rate': 0.99, 'wins': 2, 'losses': 0, 'ties': 198, 'paired_z': 1.418}, 'vs_uniform': {'hit_rate': 1.0, 'uniform_rate': 0.375, 'wins': 125, 'losses': 0, 'ties': 75, 'paired_z': 18.212}}
+  mag@100000: {'vs_random': {'hit_rate': 1.0, 'random_rate': 1.0, 'wins': 0, 'losses': 0, 'ties': 200, 'paired_z': 0.0}, 'vs_uniform': {'hit_rate': 1.0, 'uniform_rate': 0.58, 'wins': 84, 'losses': 0, 'ties': 116, 'paired_z': 12.004}}
+  SHAPE EFFECT random-vs-uniform: {25000: {'hit_rate': 0.925, 'uniform_rate': 0.22, 'wins': 141, 'losses': 0, 'ties': 59, 'paired_z': 21.808}, 50000: {'hit_rate': 0.99, 'uniform_rate': 0.375, 'wins': 123, 'losses': 0, 'ties': 77, 'paired_z': 17.829}, 100000: {'hit_rate': 1.0, 'uniform_rate': 0.58, 'wins': 84, 'losses': 0, 'ties': 116, 'paired_z': 12.004}}
+  median maxdepth by arm: {'dfs': 33333, 'nz': 139, 'mag': 5457, 'random': 32, 'uniform': 11}
+wrote exp555_result.json in 349.1s
