@@ -2025,3 +2025,17 @@ size stated); (d) clean; (e) deterministic; (f) clean; (g) fair (identical
 harness across ratios); (h) DIRECT. Open: other pairs (math+prose, German+code);
 block-size sensitivity; 1.5B mixed; bump × 4096-acceleration interaction; 7B cell.
 Paper 171, issue #334. Now 91 network experiments. Assessment v91.
+
+## Part 91 — THE-CHEAP-DRAFT-WINS-AND-CODE-DRAFTS-DEEP: speculative decoding of Qwen2.5-7B-Instruct Q4_K_M ENTIRELY ON CPU pays up to 1.661× (0.5B draft, depth 8, code) with six of twelve configs >1.05×; P2/P4 CONFIRMED, P1 razor-thin REFUTED (47.72% vs ≥50% horn @d4/prose), P3 REFUTED as stated — NO crossover: the 11.8%-cost 0.5B draft beats the 23.4%-cost 1.5B in ALL SIX head-to-heads even where the 1.5B accepts MORE (code d=8: accept 60.3 vs 56.0 but speedup 1.354× vs 1.661× — DRAFT-COST DOMINANCE on CPU, unlike GPU folklore); OPTIMAL DEPTH IS DOMAIN-PARAMETERIZED: prose acceptance halves per doubling past d=2 (63.9→47.7→30.9%) turning d=8 into a net LOSS (0.979×) while code decays gracefully (71.6→63.0→56.0%) and keeps paying through d=8; domain gap GROWS with depth (+14→+19→+20 pts); prescription for local serving: small q8_0 draft, d=8 on code workloads, d=4 on prose, never d=8-prose; round doubles as HARDWARE CANARY — ~55 min sustained full-CPU llama.cpp load post-fix (XMP off + BIOS v1.F0) with zero incidents after three pre-fix hard crashes under identical load (NET-91; cpu-large-model axis iteration 66)
+
+**Method:** llama.cpp (built today, GGML_NATIVE), threads=8 winner of {8,16}
+sweep at 5.79 tok/s greedy baseline (JEDEC ~27% below XMP-era partial;
+within-round comparisons only); drafts {Qwen2.5-0.5B-q8_0 @49.2 tok/s,
+1.5B-q4_k_m @24.75} × depths {2,4,8} × domains {wikitext prose, Python code},
+4 prompts × 2 repeats, greedy temp=0, overhead-calibrated wall-clock +
+llama-speculative acceptance stats. Script ResearchOutput/exp_net91_specdec.py;
+results ~/f3cache/net91_results.json; log /tmp/net91.log.
+**Verdict:** THE-CHEAP-DRAFT-WINS-AND-CODE-DRAFTS-DEEP. Barriers: (a)-(h)
+clean/DIRECT as listed in paper. Open: per-position acceptance curves;
+depth-adaptive drafting; KV-quant ladder; weight-quant floors @7B; knee
+transfer @7B. Paper 172, issue #345. Now 92 network experiments. Assessment v92.
