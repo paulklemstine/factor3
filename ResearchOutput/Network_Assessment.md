@@ -1757,3 +1757,7 @@ Assessment v94. 94 experiments (NET-1 through NET-94 pending).
 - **NET-94 — THE-ROLE-SPLIT-CONFIRMED (cpu-large-model axis round 69; compact): direct K8/V4 measurement = +0.142% (deployment-grade, ~6 avg bits/element); q5_1 probe reveals TWO-STAGE key cliff (free @8b → +868% @5b → +38,000% @4b) while values free at every width tested; key floor bracketed (5,8]; KV trilogy complete into one serving default: -ctk q8_0 -ctv q4_0. Gate exact reuse of NET-92 harness. Open: finer key boundary; cross-model replication; spec-decode interaction. Issue #361.
 
 Assessment v95. 95 experiments (NET-1 through NET-95 pending).
+
+- **NET-95 — THE-WEIGHT-FLOOR-COLLAPSED (cpu-large-model axis round 70): full weight ladder vs fp16 on 7B — smooth convex curve, no cliff: q8_0 −0.06%, q6_k +0.26%, q5_k_m +0.86%, q4_k_m +1.82%, q3_k_m +4.20%, q2_k +16.16%; P1 confirmed, P2 refuted by a hair (band missed low), P3 refuted decisively (2.6bpw usable) — the toy sub-6-bit floor was quantizer-quality × scale dependent, not a bit-width law; weights quantize smoothly where cache keys cliff; deterministic cross-round reproduction (q4_k_m = 7.1093 exactly). Open: RTN-vs-kquant confound split; knee transfer @7B. Paper 175, issue #369.
+
+Assessment v96. 96 experiments (NET-1 through NET-96 pending).

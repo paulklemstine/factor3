@@ -2071,3 +2071,14 @@ results ~/f3cache/net94_results.json; log /tmp/net94.log.
 Open: K5/K6 boundary via other runtimes; spec-decode interaction; cross-model.
 No new paper (completes NET-93's lineage). Issue #361. Now 95 network experiments.
 Assessment v95.
+
+## Part 95 — THE-WEIGHT-FLOOR-COLLAPSED: the 7B weight ladder vs fp16 anchor (6.9825) is a smooth convex curve with NO cliff anywhere — q8_0 −0.06%, q6_k +0.26%, q5_k_m +0.86%, q4_k_m +1.82%, q3_k_m +4.20%, q2_k +16.16%; P1 CONFIRMED (q6_k inside ±0.5%), P2 REFUTED BY A HAIR (+4.20% vs [+5%,+30%] band — scale+calibration rescue more than predicted, but "erased" (<2%) also refuted), P3 REFUTED DECISIVELY (q2_k usable at +16% vs >50% predicted) — the toy RTN floor (<6 bits undeployable) was a property of QUANTIZER QUALITY × SCALE, not of bit-width; contrast with cache axis is total (weights smooth, keys cliff between 8 and 5 bits): selection interfaces carry precision requirements, content containers do not; cross-round determinism demonstrated (q4_k_m reproduced NET-92's control 7.1093 EXACTLY); full CPU serving stack table assembled: q4_k_m weights + K8/V4 cache + speculation ≈ 1/8 memory for ~18% quality-equivalent cost (NET-95; cpu-large-model axis iteration 70)
+
+**Method:** llama-perplexity ladder {fp16, q8_0, q6_k, q5_k_m, q4_k_m,
+q3_k_m, q2_k} official Qwen GGUF calibrations, ctx=2048, threads=8, 250KB
+held-out slice. Script ResearchOutput/exp_net94_weightquant.py (split-file
+paths fixed); log /tmp/net95.log.
+**Verdict:** THE-WEIGHT-FLOOR-COLLAPSED. Barriers clean/partial as listed
+(scale-vs-calibrator confound documented). Open: RTN-vs-kquant confound
+split; knee-law transfer to 7B (last standing limited-memory cell).
+Paper 175, issue #369 (counter advanced concurrently). Now 96 network experiments. Assessment v96.
