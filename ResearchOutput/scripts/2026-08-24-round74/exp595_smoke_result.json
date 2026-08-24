@@ -1,0 +1,178 @@
+{
+ "exp": "595",
+ "codename": "LARGER-P-ECM-TRACE",
+ "mode": "smoke",
+ "seed": 20260903,
+ "n_N": 8,
+ "bitlens_h": [
+  13
+ ],
+ "population_stats": {
+  "13": {
+   "p_bits_min": 13,
+   "p_bits_max": 13,
+   "N_bits_min": 26,
+   "N_bits_max": 28
+  }
+ },
+ "config": {
+  "B1fracs": [
+   0.125,
+   0.5,
+   0.9
+  ],
+  "arm": "B2=B1 (stage-1 only)",
+  "curves_cap": 3,
+  "baseline_const": 1.44,
+  "baseline_formula": "1-exp(-1.44*B1/p) per curve",
+  "trace": "step idx at every guarded inversion + chunk gcd check, normalized by closed-form data-independent total steps",
+  "adapted_from": "exp570_collision_trace.py (verbatim machinery)"
+ },
+ "rows": [
+  {
+   "h": 13,
+   "target_bitlen": 26,
+   "B1frac": 0.125,
+   "round": "ceil",
+   "total": 8,
+   "found_p": 6,
+   "found_q": 2,
+   "found_other": 0,
+   "nothing": 0,
+   "cell_rate_found_p": 0.75,
+   "first_curve_rate_found_p": 0.375,
+   "baseline_const_percurve": 0.1647,
+   "baseline_exact_percurve_mean": 0.2773,
+   "baseline_cell3_mean": 0.6225,
+   "collision_subdominance_ratio": 2.28,
+   "mean_B1_over_p": 0.1251,
+   "ci95_cell": [
+    0.4093,
+    0.9285
+   ],
+   "ci95_first_curve": [
+    0.1368,
+    0.6943
+   ]
+  },
+  {
+   "h": 13,
+   "target_bitlen": 26,
+   "B1frac": 0.5,
+   "round": "ceil",
+   "total": 8,
+   "found_p": 4,
+   "found_q": 4,
+   "found_other": 0,
+   "nothing": 0,
+   "cell_rate_found_p": 0.5,
+   "first_curve_rate_found_p": 0.5,
+   "baseline_const_percurve": 0.5132,
+   "baseline_exact_percurve_mean": 0.7168,
+   "baseline_cell3_mean": 0.9773,
+   "collision_subdominance_ratio": 0.97,
+   "mean_B1_over_p": 0.5001,
+   "ci95_cell": [
+    0.2152,
+    0.7848
+   ],
+   "ci95_first_curve": [
+    0.2152,
+    0.7848
+   ]
+  },
+  {
+   "h": 13,
+   "target_bitlen": 26,
+   "B1frac": 0.9,
+   "round": "floor",
+   "total": 8,
+   "found_p": 7,
+   "found_q": 1,
+   "found_other": 0,
+   "nothing": 0,
+   "cell_rate_found_p": 0.875,
+   "first_curve_rate_found_p": 0.875,
+   "baseline_const_percurve": 0.7264,
+   "baseline_exact_percurve_mean": 0.8949,
+   "baseline_cell3_mean": 0.9988,
+   "collision_subdominance_ratio": 1.2,
+   "mean_B1_over_p": 0.8999,
+   "ci95_cell": [
+    0.5291,
+    0.9776
+   ],
+   "ci95_first_curve": [
+    0.5291,
+    0.9776
+   ]
+  }
+ ],
+ "ks_stats": {
+  "h13_frac0.125": {
+   "n_found_p": 6,
+   "D": 0.534,
+   "ks_p": 0.0653,
+   "tail_frac_ge08": 0.1667,
+   "tail_binom_p_vs_02": 1.0,
+   "median_norm": 0.19,
+   "norms": [
+    0.19,
+    0.2993,
+    0.0089,
+    0.0432,
+    0.8388,
+    0.016
+   ]
+  },
+  "h13_frac0.5": {
+   "n_found_p": 4,
+   "D": 0.7197,
+   "ks_p": 0.0317,
+   "tail_frac_ge08": 0.0,
+   "tail_binom_p_vs_02": 0.8192,
+   "median_norm": 0.133,
+   "norms": [
+    0.1327,
+    0.2803,
+    0.1148,
+    0.0976
+   ]
+  },
+  "h13_frac0.9": {
+   "n_found_p": 7,
+   "D": 0.551,
+   "ks_p": 0.0285,
+   "tail_frac_ge08": 0.0,
+   "tail_binom_p_vs_02": 0.4194,
+   "median_norm": 0.106,
+   "norms": [
+    0.4543,
+    0.0104,
+    0.1746,
+    0.3061,
+    0.0742,
+    0.1056,
+    0.0451
+   ]
+  }
+ },
+ "verdicts": {
+  "n_geom_cells_tested": 0,
+  "h1b_early_fire_geometry": "insufficient_hits",
+  "H1": "REFUTED",
+  "H0": "supported_both_legs"
+ },
+ "honest_notes": [
+  "Pre-registration written into the module docstring BEFORE any exp595 data existed; machinery copied verbatim from exp570.",
+  "exp570's own pre-reg anticipated collision domination at scale and its result went the other way (floor subdominant, early fire); exp595's H1 encodes THAT outcome as the replication hypothesis, tested at bitlen 32 with fresh seed/populations and the 0.25->0.5 grid swap pre-registered by the coordinator brief.",
+  "KS p-values use the asymptotic Kolmogorov series (n>=2); cells with <10 found_p hits are excluded from the geometry gate (n reported).",
+  "Early-fire operationalization (median<0.5, tail>=0.8 fraction<0.3) was fixed before data from the qualitative exp570 conclusion alone; the raw norms are shipped in ks_stats for post-hoc re-reads.",
+  "Collision baseline treats inversion denominators as independent uniform mod p; chunk-batched gcd checks count as trace steps.",
+  "found_q events are pure q-side collision luck (B1<p<<q makes order-completion impossible); they independently cross-check the collision floor size.",
+  "Trace denominator is schedule-only (data-independent); ec_add's rare recursive internal double (den==0 mod N & y1==y2) executes without an idx increment -- tiny data-dependent bias on found_at indices only.",
+  "'deaths' (gcd==N) collapse silently inside trial(); not separately bucketed (inherited exp568/exp570 behavior).",
+  "Cell rates are 3-curve quantities (any-curve success); first_curve fields give the per-curve view matched to the per-curve baseline."
+ ],
+ "wall_s": 0.1
+}

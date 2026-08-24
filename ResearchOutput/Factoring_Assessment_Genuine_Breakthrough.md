@@ -3105,3 +3105,27 @@ standing laws untouched; surviving rate-dial law scale-carrying; phantom killed 
 spend. Open unchanged: non-QR per-N structure at u = 2.5, factor-local beyond scan-order, MA-1
 effectivity; non-divisibility-carrier follow-up CLOSED unless the reopens protocol fires; .2346 flag
 traveling. Paper 243, issue #391.
+
+**Assessment addendum v351 — 2026-08-24 (round-88 #1).** Experiment recorded (count 581 → 582;
+papers 243 → 244; version v350 → v351. Content: **LARGER-P-ECM-TRACE [FINAL] (issue #392)** —
+exp 595 replicates exp570's collision-vs-order picture at bitlen 32 on FRESH SEED 20260903 with
+exp570 machinery VERBATIM, n=40/bitlen × 3 B1fracs {0.125 ceil, 0.5 ceil, 0.9 floor} × 3 curves,
+stage-1 only. Verdict **H1 TRUE / H0 REFUTED**, both pre-registered legs firing: (a) RATE — cell
+found_p rates bitlen 26: 0.65/0.75/0.60, bitlen 32: 0.75/0.775/0.75; cross-bitlen z-tests
+p = .33/.79/.15 with overlapping Wilson CIs at EVERY fraction, rates flat in B1frac (no collision
+dose-response); (b) GEOMETRY — KS rejects uniformity in all six cells (p ≤ .002), medians
+.073–.293 ≪ 0.5, late-tail ≤ 13% ≪ 0.3 — early-fire preserved and deepening with dose exactly as
+at bitlen 26. Collision floor SUBDOMINANT quantified: first-curve rate (32,.125) = .425 = 2.58×
+per-curve baseline 1−exp(−1.44·B1/p) ((26,.125) 1.97×); pure-collision found_q 9–16 vs found_p
+24–31 per cell. Ledger catches: (32,.125) cell CI technically contains the exact per-N 3-curve
+baseline mean 0.6124 — attributed to order-hits via first-curve view + found_q; verdict-flag
+KEY names constant-formula 0.4191 while CODE tests 0.6124 (label/code mismatch, runs AGAINST the
+headline since 0.4191 is CI-excluded). CHAIN CLOSED papers **215 → 218 → 244**: low-B1
+guarded-affine ECM success is SCALE-STABLE ORDER-COMPLETION FIRING EARLY — a mechanism claim,
+not a small-p artifact; no scale-dependent collapse toward the collision baseline through bitlen
+32; practical reading — useful firing inside first ~10–30% of schedule. Catalog-numbering slip in
+findings header ("215→236→238") corrected by title/exp_id to 215→218→244. Wall 1.5 s full.
+Named next question: early-fire persistence where B1/p must shrink (u ≥ 6–14 directive).
+Open unchanged: non-QR per-N structure at u = 2.5, factor-local beyond scan-order, MA-1
+effectivity; .2346 flag traveling; paper 242 entry single-seed-unconfirmed (#391). Paper 244,
+issue #392.

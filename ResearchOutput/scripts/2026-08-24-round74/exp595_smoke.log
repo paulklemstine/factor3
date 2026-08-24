@@ -1,0 +1,108 @@
+[smoke] 24 cells / 4 workers; pstats={13: {'p_bits_min': 13, 'p_bits_max': 13, 'N_bits_min': 26, 'N_bits_max': 28}}
+[
+ {
+  "h": 13,
+  "target_bitlen": 26,
+  "B1frac": 0.125,
+  "round": "ceil",
+  "total": 8,
+  "found_p": 6,
+  "found_q": 2,
+  "found_other": 0,
+  "nothing": 0,
+  "cell_rate_found_p": 0.75,
+  "first_curve_rate_found_p": 0.375,
+  "baseline_const_percurve": 0.1647,
+  "baseline_exact_percurve_mean": 0.2773,
+  "baseline_cell3_mean": 0.6225,
+  "collision_subdominance_ratio": 2.28,
+  "mean_B1_over_p": 0.1251,
+  "ci95_cell": [
+   0.4093,
+   0.9285
+  ],
+  "ci95_first_curve": [
+   0.1368,
+   0.6943
+  ]
+ },
+ {
+  "h": 13,
+  "target_bitlen": 26,
+  "B1frac": 0.5,
+  "round": "ceil",
+  "total": 8,
+  "found_p": 4,
+  "found_q": 4,
+  "found_other": 0,
+  "nothing": 0,
+  "cell_rate_found_p": 0.5,
+  "first_curve_rate_found_p": 0.5,
+  "baseline_const_percurve": 0.5132,
+  "baseline_exact_percurve_mean": 0.7168,
+  "baseline_cell3_mean": 0.9773,
+  "collision_subdominance_ratio": 0.97,
+  "mean_B1_over_p": 0.5001,
+  "ci95_cell": [
+   0.2152,
+   0.7848
+  ],
+  "ci95_first_curve": [
+   0.2152,
+   0.7848
+  ]
+ },
+ {
+  "h": 13,
+  "target_bitlen": 26,
+  "B1frac": 0.9,
+  "round": "floor",
+  "total": 8,
+  "found_p": 7,
+  "found_q": 1,
+  "found_other": 0,
+  "nothing": 0,
+  "cell_rate_found_p": 0.875,
+  "first_curve_rate_found_p": 0.875,
+  "baseline_const_percurve": 0.7264,
+  "baseline_exact_percurve_mean": 0.8949,
+  "baseline_cell3_mean": 0.9988,
+  "collision_subdominance_ratio": 1.2,
+  "mean_B1_over_p": 0.8999,
+  "ci95_cell": [
+   0.5291,
+   0.9776
+  ],
+  "ci95_first_curve": [
+   0.5291,
+   0.9776
+  ]
+ }
+]
+{
+ "h13_frac0.125": {
+  "n_found_p": 6,
+  "D": 0.534,
+  "ks_p": 0.0653,
+  "tail_frac_ge08": 0.1667,
+  "tail_binom_p_vs_02": 1.0,
+  "median_norm": 0.19
+ },
+ "h13_frac0.5": {
+  "n_found_p": 4,
+  "D": 0.7197,
+  "ks_p": 0.0317,
+  "tail_frac_ge08": 0.0,
+  "tail_binom_p_vs_02": 0.8192,
+  "median_norm": 0.133
+ },
+ "h13_frac0.9": {
+  "n_found_p": 7,
+  "D": 0.551,
+  "ks_p": 0.0285,
+  "tail_frac_ge08": 0.0,
+  "tail_binom_p_vs_02": 0.4194,
+  "median_norm": 0.106
+ }
+}
+[smoke] wall=0.1s -> exp595_smoke_result.json

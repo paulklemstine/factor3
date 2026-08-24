@@ -11873,3 +11873,45 @@ transfers across bit lengths unchanged); killing the phantom early prevents down
 Open unchanged: non-QR per-N structure at u=2.5, factor-local beyond scan-order, MA-1 effectivity;
 named non-divisibility-carrier follow-up CLOSED as unconfirmed unless the §reopens protocol fires;
 .2346 provenance flag still traveling.
+
+## Part 286 - LARGER-P-ECM-TRACE [FINAL] (round-88 #1, exp 595, v351)
+
+**H1 TRUE / H0 REFUTED — exp570's picture REPLICATES at bitlen 32.** Fresh seed 20260903
+(disjoint from all prior ECM lineages), exp570 machinery VERBATIM, n=40/bitlen × 3 B1fracs × 3
+curves, arm stage-1 only; wall **1.5 s** full (240 cells). Cell found_p rates — bitlen 26:
+0.65 [.495,.779] / 0.75 [.598,.858] / 0.60 [.446,.736]; bitlen 32: 0.75 [.598,.858] /
+0.775 [.625,.877] / 0.75 [.598,.858]. Cross-bitlen z-tests p=.33/.79/.15 at fracs .125/.5/.9,
+CIs overlap at ALL THREE — H1(a) fires at every fraction, and rates are FLAT in B1frac
+(0.60–0.775): no collision dose-response anywhere. KS rejects Uniform[0,1] in all SIX cells
+(p≤.002); medians .073–.293 (all ≪ .5), late-tail ≤13% (≪ .3) — early-fire geometry preserved
+at scale, deepening with dose exactly as at bitlen 26 (H1(b)).
+
+Collision floor SUBDOMINANT, quantified two ways: first-curve rate at (32,.125) = .425 = 2.58×
+the per-curve baseline 1−exp(−1.44·.125)=.165 ((26,.125): 1.97×); pure-collision found_q counts
+9–16 vs found_p 24–31 — order-hits carry the excess. LEDGER CATCH disclosed: the (32,.125) cell
+CI technically CONTAINS the exact per-N 3-curve baseline mean 0.6124 — attributed to order-hits
+not luck via first-curve view + found_q; and the verdict flag's KEY names the constant-formula
+baseline 0.4191 while the CODE tests 0.6124 (label/code mismatch, exp595_largep_trace.py:346;
+0.4191 IS excluded by the CI, so the mismatch runs AGAINST the headline). Registered H0 leg
+(rate DROPS toward baseline with disjoint CIs) did not fire on any fraction.
+
+CHAIN CLOSED: papers 215→218→244 (ECM-STAGE2-WALL → COLLISION-VS-ORDER-TRACE → this). Low-B1
+guarded-affine ECM success is SCALE-STABLE ORDER-COMPLETION FIRING EARLY — a mechanism claim,
+not a small-p artifact; no collapse toward the collision baseline through bitlen 32. Practical
+reading: useful firing inside the first ~10–30% of the schedule (medians ≤ .29).
+
+Honest notes: early-fire operationalization fixed pre-data from exp570's qualitative result only;
+raw norms shipped for re-reads; <10-hit cells excluded from geometry gate (none in full run);
+KS asymptotic p; deaths unbucketed (inherited); ec_add rare recursive double not idx-counted.
+CATALOG-NUMBERING SLIP: findings header cites chain "215→236→238" — shifted numbers (236 =
+BSTAR-TRANSFER, 238 = EDGE-KERNEL); true lineage by title/exp_id is 215→218→244, corrected in
+paper 244 per match-by-title rule. Smoke read H1 REFUTED "insufficient_hits" (n=8, zero ≥10-hit
+cells) — plumbing-only, disclosed.
+
+Count 581 → 582; assessment v350 → v351. Paper 244, issue #392. Barrier framing: mechanism-
+attribution chain closed on the METHOD side; residue cap 4/3, position 5.19×, external-hint laws,
+quantum frontier, four-class closure, spike-origin arc untouched; paper 238's .2346 flag still
+travels; paper 242 entry stays single-seed-unconfirmed (#391). Open unchanged: non-QR per-N
+structure at u=2.5, factor-local beyond scan-order, MA-1 effectivity. Named next honest question:
+does early-fire geometry persist at bitlens where B1/p must shrink (u≥6–14 scale-smoothness
+directive), not whether it exists here.
