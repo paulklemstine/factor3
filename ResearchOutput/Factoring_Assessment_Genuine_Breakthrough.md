@@ -2413,3 +2413,41 @@ among N-computable orders, L8 k-naming. Status DRAFT-WITH-CAVEATS per verifier
 recommendation — NOT a sealed theorem; the GAPs are the formal program's next work.
 No breakthrough claimed: this is the barrier map's own converse being made precise.
 Paper 219, issue #365.
+
+**Assessment addendum v327 — 2026-08-24 (round-75 #3).** Experiment 569b recorded
+(id convention stated explicitly: sub-experiment LETTER under the exp569 script
+lineage = rerun reusing the parent pipeline unchanged; the experiment COUNT
+advances 561 → 562, the max-id tracker stays 572); papers 219 → 220; version
+v326 → v327. Round-75 #3 recorded after #4 due to compute wall-clock. Content:
+76.8M-pair third band-9 leg (2.15× pilot, 4× exp569) returns the pre-registered
+LETTER-OF-RULE NULL — cut_1e5 PRIMARY r=0.9710 CI [0.8976,1.0521], cut_1e6
+r=0.9623 CI [0.9224,1.004], both cover 1, verdict RANDOMNESS-EXTENDED — while
+the pooling layer beneath papers 214→216 was audited and failed independence
+TWICE before anything banked: (1) coordinator self-catch pre-publication — G1
+(exp569) and B share SEED=20260824 end-to-end and B is a strict superset of G1's
+draws, so the three-seed joint (r~0.971 [0.942,1.000]) was RETRACTED; (2)
+recorder verification — paper 214's exp567 uses the SAME master-seed literal with
+an unconsumed-until-pools main rng and a byte-identical prime-start primitive;
+stream reconstruction puts ALL 24 pilot band-9 semiprimes inside B's 128-N pool,
+so even the corrected pilot×B joint (r=0.9596 σ~0.0189 CI [0.9226,0.9966],
+nominally EXCLUDING 1 downward at ~2.1σ) carries correlated clusters through the
+19%-shared population and its excludes-1 edge is not confirmation-grade. Net
+honest state: every dataset from seed 20260824 is ONE seed's evidence, jointly
+pointing 3–5% below 1; the sub-1 tension moves from "open at reduced weight"
+(paper 216) to a TWICE-GATED CANDIDATE DEVIATION whose confirmation is blocked
+until the fresh-stream run at seed 20260825 lands (named decisive step, decision
+rule pre-stated: below-1 + pooled exclusion ⇒ first scale-smoothness deviation
+candidate passes G1 modulo G2; back to 1 ⇒ randomness stands tightened).
+Mechanism note held at full skepticism: candidate-side DEFICIT is opposite in
+sign to paper 136's sieve-advantage direction (QR compensation) — if real, a new
+weak u≈10-scale effect. Methodological gain adopted lab-wide: replication legs
+must VARY the master seed and scripts must assert seed distinctness in-output.
+Ledger catches none adverse: shared-stream flaw + population overlap (both
+disclosed above), findings-file rounding slip on the 1e5 point ratio (printed
+0.981 via rounded numerator; exact stored rates give 0.9710 — verdict
+unaffected), precision patch verified in production (full-precision rates + raw
+counts persisted), wall overshoot vs naive estimate documented as candidate-strip
+cost drift. Barrier framing: scale-smoothness frontier u≥9–14 strengthens the
+papers 130/209/214/216 randomness line at rule level (H0 edge improves to 0.102
+@1e5 / 0.078 @1e6 this run alone); no barrier breached, no constant shaved. No
+breakthrough claimed. Paper 220, issue #366.

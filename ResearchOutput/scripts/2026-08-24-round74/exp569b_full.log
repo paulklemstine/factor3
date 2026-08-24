@@ -1,0 +1,27 @@
+[full] building primorials...
+primorials built: bits P5=143816 P6=1440509
+[full] running 8 workers x 16 N x 600000 samples...
+{
+ "cut_1e5_PRIMARY_DECISION": {
+  "pairs": 76800000,
+  "r_cand": 2.96875e-05,
+  "r_cand_rounded_display_bug_fixed": true,
+  "rate_ctrl": 3.057291666666666e-05,
+  "ci95_cluster_boot": [
+   0.8976,
+   1.0521
+  ],
+  "excludes_1": false
+ },
+ "cut_1e6_secondary": {
+  "r_cand": 0.00048509114583333336,
+  "rate_ctrl": 0.000504140625,
+  "ci95_cluster_boot": [
+   0.9224,
+   1.004
+  ],
+  "excludes_1": false
+ }
+}
+[full] wall=5233.6s -> exp569_b_result.json
+EXP569B-DONE

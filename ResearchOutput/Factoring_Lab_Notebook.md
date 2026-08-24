@@ -10710,3 +10710,62 @@ the k before writing identities into future records. Status: DRAFT-WITH-CAVEATS 
 a sealed theorem; the GAPs are the named next work. Count unchanged by experiment
 (papers-only bump): still 561 experiments (max id 572), papers now 219. Assessment
 v326. Paper 219, issue #365.
+
+## Part 262 - U9-DRIFT-POWER-B (round-75 #3, exp 569b, v327) — recorded after #4 due to compute wall-clock
+
+LETTER-OF-RULE NULL + TWICE-GATED CROSS-RUN SIGNAL; the pooling layer audited and
+found wanting twice before anything was banked. Third leg of the 214→216 arc:
+band-9 (bitlen-96 balanced semiprimes), 128 N, 600k samples/N = 76.8M pairs (2.15x
+pilot, 4x exp569), precision-patched script (full-precision rates + raw per-cluster
+counts persisted in canonical exp569_b_result.json — exp569's display-defect class
+closed), wall 5233.6s (87 min) at 68.1us/val. STANDALONE: cut_1e5 PRIMARY r=0.9710
+(2280/2348 events) cluster-boot CI95 [0.8976, 1.0521]; cut_1e6 secondary r=0.9623
+(37255/38718) CI [0.9224, 1.004] — both cover 1, no gate armed, verdict
+RANDOMNESS-EXTENDED per pre-registration letter. POOLING AUDIT (the substance):
+(1) coordinator self-catch BEFORE publication — the working three-seed joint
+(pilot+G1+B inverse-variance => r~0.971 [0.942,1.000]) was RETRACTED: G1(exp569)
+and B share SEED=20260824 end-to-end and B is a STRICT SUPERSET of G1's draws
+(same chunk seeds SEED+1000+c; deterministic prefix consumption — first 150k
+samples/N identical candidates AND paired controls); they are one dataset counted
+twice. (2) recorder verification (coordinator-directed) found the corrected
+pilot×B joint ALSO not clean: paper 214's exp567 carries the SAME DEFAULT_SEED
+20260824, its main rng is unconsumed before pool building (validation ran on
+val_rng=Random(seed+1)), and its prime-start primitive is byte-identical to
+exp569's make_semiprime — stream reconstruction reproduces identical opening
+draws and ALL 24 pilot band-9 semiprimes INSIDE B's 128-N pool (24/24, zero
+feasibility rejects). Corrected joint over the only nominally-independent pair:
+pilot 0.9468±.0449 x B 0.9623±.0208 => r=0.9596, sigma~0.0189, CI [0.9226,
+0.9966] — EXCLUDES 1 downward (~4% deficit, z~2.14) BUT its sigma understates
+uncertainty by an unquantified intra-N correlation through the 19%-shared
+clusters (mitigation stated: disjoint measurement machinery on shared Ns —
+phase-split windows/batch-strip vs uniform-j/gcd-chain paired controls — so the
+weighted-average POINT stays meaningful; the excludes-1 EDGE does not).
+DISPOSITION two-sided: (a) letter-of-rule verdict for exp569b stands
+RANDOMNESS-EXTENDED; (b) the cross-run sub-1 signal is a CANDIDATE DEVIATION
+whose CONFIRMED status is BLOCKED twice over — every dataset from seed 20260824
+is ONE seed's evidence pointing 3-5% below 1 jointly, not three seeds'. DECISIVE
+NAMED STEP: fresh-stream run at seed 20260825 (`exp569_u9_drift_power.py full
+600000 c_ ... 20260825`, ~87 min background): below-1 with pooled independent set
+excluding 1 => CONFIRMED-DEVIATION candidate passes G1 modulo G2 audit; back to 1
+=> pooled exclusion was shared-seed fluctuation and randomness stands with the
+tightened null. No 20260825 numbers cited. Mechanism note: candidate-side DEFICIT
+is OPPOSITE in sign to paper 136's sieve-advantage direction (QR compensation) —
+if real it is a NEW weak u~10-scale effect, not the known mechanism re-emerging;
+full skepticism until the fresh seed lands. Ledger: shared-stream design flaw
+(root cause: "fresh seed" claimed by population re-draw within a fixed stream —
+lab-wide rule adopted: replication legs must VARY the master seed and scripts
+must assert seed distinctness in-output); pilot population overlap (same); 
+findings-file rounding slip (1e5 point ratio printed 0.981 via rounded numerator
+3.00e-5; exact rates give 0.9710 — verdict unaffected); precision patch verified
+in production; wall overshoot vs naive estimate documented as candidate-strip
+cost drift (consistent with exp569 catch 2, partially offset by 600k-sample
+amortization). Barrier framing: scale-smoothness frontier u>=9-14; strengthens
+papers 130/209/214/216 randomness line at the rule level (H0 deliverable edge
+improves to 0.102 @1e5 / 0.078 @1e6 this run alone) while quantifying the
+residual tension honestly as twice-gated candidate, not banked feature and not
+dismissed; no barrier breached, no constant shaved. ID CONVENTION: recorded as
+experiment id 569b under the exp569 script lineage (sub-experiment letters =
+reruns reusing the parent pipeline unchanged); COUNT advances 561->562, max-id
+tracker stays 572. Round-75 #3 recorded after #4 due to compute wall-clock
+(out-of-numeric-order recording is normal). Assessment v327. Paper 220,
+issue #366.

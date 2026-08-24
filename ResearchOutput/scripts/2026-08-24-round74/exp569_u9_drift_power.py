@@ -26,7 +26,7 @@ Honest limits disclosed in result JSON: achieved pair count vs 30x target, wall 
 import sys, time, json, random
 from multiprocessing import Pool
 
-SEED = 20260824
+SEED = int(sys.argv[4]) if len(sys.argv) > 4 else 20260824  # seed parametrized post-correlation-catch
 N_PER_POOL = 128          # semiprimes
 J_SAMPLE_PER_N = None     # set from wall-clock in smoke
 CUTS = {"p1e5": None, "p1e6": None}
