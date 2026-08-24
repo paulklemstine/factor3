@@ -1,0 +1,59 @@
+2026-08-24 02:00:41,514 INFO exp567 SCALE-U9-LIFT start mode=full seed=20260824 bins=(9, 10, 11) workers=8 G=1024 unit=4 wall_cap=21.0min
+2026-08-24 02:00:44,316 INFO validation: 368 cases (38 adversarial, 270 real quadratic), mismatches=0
+2026-08-24 02:00:44,325 INFO pool band 9: 128 semiprimes (bitlen 96)
+2026-08-24 02:00:44,335 INFO pool band 10: 128 semiprimes (bitlen 104)
+2026-08-24 02:00:44,345 INFO pool band 11: 128 semiprimes (bitlen 112)
+2026-08-24 02:01:49,377 ERROR calibration hung; terminated
+2026-08-24 02:03:22,933 INFO exp567 SCALE-U9-LIFT start mode=full seed=20260824 bins=(9, 10, 11) workers=8 G=1024 unit=4 wall_cap=4.0min
+2026-08-24 02:03:25,708 INFO validation: 368 cases (38 adversarial, 270 real quadratic), mismatches=0
+2026-08-24 02:03:25,708 INFO pool band 9: 6 semiprimes (bitlen 96)
+2026-08-24 02:03:25,709 INFO pool band 10: 6 semiprimes (bitlen 104)
+2026-08-24 02:03:25,709 INFO pool band 11: 6 semiprimes (bitlen 112)
+2026-08-24 02:04:08,592 INFO calibration: 21356544 values in 42.9s -> theta=4.98e+05/s; rho_hat(ctrl@1e6, blended)={9: '1.53e-03', 10: '1.94e-04', 11: '4.77e-05'}
+2026-08-24 02:04:08,592 INFO quotas(values)={9: 1875968, 10: 1818624, 11: 1818624} fracs={9: 0.34, 10: 0.33, 11: 0.33}
+2026-08-24 02:04:20,208 INFO measurement done: {9: (937984, [0, 0, 0, 18, 343], [0, 0, 0, 17, 361]), 10: (909312, [0, 0, 0, 0, 82], [0, 0, 0, 6, 116]), 11: (909312, [0, 0, 0, 1, 32], [0, 0, 0, 0, 27])}
+2026-08-24 02:04:20,239 INFO WROTE /home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp567_result.json status=06_final_time_capped verdict=DEVIATION-UNCONFIRMED wall=57.3s
+2026-08-24 02:05:19,526 INFO exp567 SCALE-U9-LIFT start mode=full seed=20260824 bins=(9, 10, 11) workers=8 G=1024 unit=4 wall_cap=4.0min
+2026-08-24 02:05:22,651 INFO validation: 368 cases (38 adversarial, 270 real quadratic), mismatches=0
+2026-08-24 02:05:22,651 INFO pool band 9: 6 semiprimes (bitlen 96)
+2026-08-24 02:05:22,652 INFO pool band 10: 6 semiprimes (bitlen 104)
+2026-08-24 02:05:22,653 INFO pool band 11: 6 semiprimes (bitlen 112)
+2026-08-24 02:05:28,287 INFO calibration: 2457600 values in 5.6s -> theta=4.38e+05/s; rho_hat(ctrl@1e6, blended)={9: '1.55e-03', 10: '1.90e-04', 11: '4.64e-05'}
+2026-08-24 02:05:28,287 INFO quotas(values)={9: 1646592, 10: 1597440, 11: 1597440} fracs={9: 0.34, 10: 0.33, 11: 0.33}
+2026-08-24 02:05:40,292 INFO deadline reached; draining in-flight units
+2026-08-24 02:05:40,292 INFO measurement done: {9: (45056, [0, 0, 0, 2, 20], [0, 0, 0, 1, 13]), 10: (45056, [0, 0, 0, 1, 4], [0, 0, 0, 0, 2]), 11: (45056, [0, 0, 0, 0, 2], [0, 0, 0, 0, 0])}
+2026-08-24 02:05:40,311 INFO WROTE /home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp567_result.json status=06_final_time_capped verdict=RANDOM-EXTENDS wall=20.8s
+2026-08-24 02:05:52,294 INFO exp567 SCALE-U9-LIFT start mode=full seed=20260824 bins=(9, 10, 11) workers=8 G=1024 unit=4 wall_cap=21.0min
+2026-08-24 02:05:55,354 INFO validation: 368 cases (38 adversarial, 270 real quadratic), mismatches=0
+2026-08-24 02:05:55,364 INFO pool band 9: 128 semiprimes (bitlen 96)
+2026-08-24 02:05:55,374 INFO pool band 10: 128 semiprimes (bitlen 104)
+2026-08-24 02:05:55,384 INFO pool band 11: 128 semiprimes (bitlen 112)
+2026-08-24 02:06:16,082 INFO calibration: 7987200 values in 20.7s -> theta=3.86e+05/s; rho_hat(ctrl@1e6, blended)={9: '1.52e-03', 10: '1.91e-04', 11: '4.96e-05'}
+2026-08-24 02:06:16,083 INFO quotas(values)={9: 94289920, 10: 91512832, 11: 91512832} fracs={9: 0.34, 10: 0.33, 11: 0.33}
+2026-08-24 02:10:28,574 INFO exp567 SCALE-U9-LIFT start mode=full seed=20260824 bins=(9, 10, 11) workers=8 G=1024 unit=4 wall_cap=5.0min
+2026-08-24 02:10:31,355 INFO validation: 368 cases (38 adversarial, 270 real quadratic), mismatches=0
+2026-08-24 02:10:31,364 INFO pool band 9: 128 semiprimes (bitlen 96)
+2026-08-24 02:10:31,373 INFO pool band 10: 128 semiprimes (bitlen 104)
+2026-08-24 02:10:31,383 INFO pool band 11: 128 semiprimes (bitlen 112)
+2026-08-24 02:10:39,934 INFO calibration: 4521984 values in 8.5s -> theta=5.3e+05/s; rho_hat(ctrl@1e6, blended)={9: '1.52e-03', 10: '1.86e-04', 11: '5.12e-05'}
+2026-08-24 02:10:39,934 INFO quotas(values)={9: 3981312, 10: 3866624, 11: 3866624} fracs={9: 0.34, 10: 0.33, 11: 0.33}
+2026-08-24 02:11:03,938 INFO deadline reached; draining in-flight units
+2026-08-24 02:11:03,939 INFO measurement done: {9: (45056, [0, 0, 0, 3, 18], [0, 0, 0, 1, 11]), 10: (45056, [0, 0, 0, 1, 8], [0, 0, 0, 1, 5]), 11: (45056, [0, 0, 0, 0, 2], [0, 0, 0, 0, 0])}
+2026-08-24 02:11:03,972 INFO WROTE /home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp567_result.json status=06_final_time_capped verdict=RANDOM-EXTENDS wall=35.4s
+2026-08-24 02:15:01,399 INFO exp567 SCALE-U9-LIFT start mode=full seed=20260824 bins=(9, 10, 11) workers=8 G=1024 unit=4 wall_cap=4.0min
+2026-08-24 02:15:04,215 INFO validation: 368 cases (38 adversarial, 270 real quadratic), mismatches=0
+2026-08-24 02:15:04,216 INFO pool band 9: 6 semiprimes (bitlen 96)
+2026-08-24 02:15:04,217 INFO pool band 10: 6 semiprimes (bitlen 104)
+2026-08-24 02:15:04,217 INFO pool band 11: 6 semiprimes (bitlen 112)
+2026-08-24 02:15:09,746 INFO calibration: 2973696 values in 5.5s -> theta=5.4e+05/s; rho_hat(ctrl@1e6, blended)={9: '1.54e-03', 10: '1.91e-04', 11: '4.57e-05'}
+2026-08-24 02:15:09,747 INFO quotas(values)={9: 2031616, 10: 1966080, 11: 1966080} fracs={9: 0.34, 10: 0.33, 11: 0.33}
+2026-08-24 02:15:21,747 INFO deadline reached; draining in-flight units
+2026-08-24 02:15:21,747 INFO measurement done: {9: (45056, [0, 0, 0, 1, 19], [0, 0, 0, 0, 15]), 10: (45056, [0, 0, 0, 0, 5], [0, 0, 0, 0, 3]), 11: (45056, [0, 0, 0, 0, 2], [0, 0, 0, 0, 1])}
+2026-08-24 02:15:21,763 INFO WROTE /home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp567_result.json status=06_final_time_capped verdict=RANDOM-EXTENDS wall=20.4s
+2026-08-24 02:15:31,478 INFO exp567 SCALE-U9-LIFT start mode=full seed=20260824 bins=(9, 10, 11) workers=8 G=1024 unit=4 wall_cap=21.0min
+2026-08-24 02:15:34,245 INFO validation: 368 cases (38 adversarial, 270 real quadratic), mismatches=0
+2026-08-24 02:15:34,254 INFO pool band 9: 128 semiprimes (bitlen 96)
+2026-08-24 02:15:34,263 INFO pool band 10: 128 semiprimes (bitlen 104)
+2026-08-24 02:15:34,273 INFO pool band 11: 128 semiprimes (bitlen 112)
+2026-08-24 02:15:54,797 INFO calibration: 10960896 values in 20.5s -> theta=5.35e+05/s; rho_hat(ctrl@1e6, blended)={9: '1.53e-03', 10: '1.94e-04', 11: '4.98e-05'}
+2026-08-24 02:15:54,797 INFO quotas(values)={9: 130416640, 10: 126582784, 11: 126582784} fracs={9: 0.34, 10: 0.33, 11: 0.33}

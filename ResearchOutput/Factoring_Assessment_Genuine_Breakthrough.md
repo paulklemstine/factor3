@@ -2228,3 +2228,43 @@ disclosure (orphaned duplicate-agent draft left in place, no results attached).
 Barrier framing: NO weakening of the barrier program — MA-1 stays axiomatic at
 practical scale and "MA-1 effectivity" stays an OPEN gap item with one computable
 route honestly bounded at toy scale. No breakthrough.
+
+**Assessment addendum v321 — 2026-08-24 (round-74 #5).** Experiment 567 recorded; count
+now 557 recorded experiments (max id 567; rounds 54–74 tracked per-paper in
+ResearchOutput/NewMathematics/ papers 185–214 and in the notebook Parts). Exp 567
+SCALE-U9-LIFT (paper 214, issue #359) attacks the frontier item "scale-smoothness
+deviations u ≥ 6–14" head-on: balanced semiprimes lifted to bitlen {96,104,112}
+(u-bands {9,10,11}) with the starving B-smoothness indicator (ρ(9)=1.0e-9 …
+ρ(11)=6.5e-13 → zero events) swapped for an LPF-CDF cut ladder {500…1e6} via
+segment-primorial gcd chains batch-amortized by product-tree remainder descent
+(12×: 87→7 µs/value); exact (bitlen, mantissa-octant) controls; per-N cluster
+bootstrap; pre-registered H1 r=1 everywhere / maximal-skepticism H2 confirmation
+protocol / L1-vs-L2 overdispersion fork. STATUS HONEST PARTIAL: an intermittent
+multiprocessing throughput collapse (faulthandler-root-caused) ate the full-geometry
+headline runs; statistical weight rests on the completed pilot (band 9, 24-N pool,
+35.7M pairs), three-band leg shipped at 45k pairs/band — all disclosed. VERDICT
+RANDOM-EXTENDS / NULL-WITH-TENSION: at the primary LPF-CDF-1e6 cut band 9
+r = 0.9468 CI [0.8630, 1.0389] (splits 0.939/0.955); at 1e5 r = 0.864
+[0.7190, 1.0302]; three-band CIs all cover 1; B=500/1000 exactly zero events as
+pre-declared continuity carriers; H2 never armed — papers 130/209 randomness EXTENDS
+into the approach zone of the Dickman leading-term regime (~u ≈ 14.75). Tension
+banked, not claimed: points run 5–14% below 1 at both powered cuts, direction-stable
+across splits and cuts, every cluster-aware CI covering — flagged as motivation for a
+future higher-power run (~30× more pairs at 1e5), explicitly NOT a finding.
+AMENDMENT to paper 209's secondary conclusion: at u = 9.85 under the healthy-rate
+1e6 lens, exposure-corrected D_cand = 28.87 [14.27, 44.08] vs D_ctrl = 1.84 with
+exposures flat ±0.14%, and Spearman(per-N rate, qr_frac) = 0.53 (p 0.006) / 0.44
+(p 0.033) at the two powered cuts where 209 read ~0.04 "gone" — per-N clustering and
+the residue-dial correlation are ALIVE at u ≈ 10; exp562's D-death by u ≈ 7 was the
+B-smoothness INDICATOR starving (rate/threshold artifact, L1 direction), not
+clustering dying — consistent with paper 136's QR-bite = per-N variance law. Caveat
+recorded: the formal L1 gate demanded ≥ 2 powered bins and only one survived the
+shrinkage, so the amendment stands on the pilot's internal contrast as
+directionally confirmed / formally unmet. Ledger catches all disclosed: mixed-segment
+checker bug (39/40 false mismatches; tester proven exact vs exhaustive strip after
+fix, 368/218 cases, shared code path), backpressure watchdog false-trip,
+faulthandler SIGUSR1 re-raise killing an instrumented rerun, and the shrinkage
+itself (interim sub-powered write had flashed DEVIATION-UNCONFIRMED before
+supersession). Barrier framing: NO barrier breached; null STRENGTHENS the randomness
+picture into new territory; variance-side accounting upgraded (variance N-covariant,
+means matched); no constant shaved. No breakthrough.

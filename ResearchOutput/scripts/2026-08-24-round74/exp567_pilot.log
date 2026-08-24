@@ -1,0 +1,11 @@
+2026-08-24 01:49:22,112 INFO exp567 SCALE-U9-LIFT start mode=pilot seed=20260824 bins=(9,) workers=8 G=512 unit=4 wall_cap=4.5min
+2026-08-24 01:49:23,760 INFO validation: 218 cases (38 adversarial, 120 real quadratic), mismatches=0
+2026-08-24 01:49:23,763 INFO pool band 9: 24 semiprimes (bitlen 96)
+2026-08-24 01:49:35,810 INFO calibration: 6225920 values in 12.0s -> theta=5.18e+05/s; rho_hat(ctrl@1e6, blended)={9: '1.55e-03'}
+2026-08-24 01:49:35,810 INFO quotas(values)={9: 71442432} fracs={9: 1.0}
+2026-08-24 01:50:05,838 INFO progress(n,kc@1e6,kt@1e6): {9: (7544832, 2595, 2868)}
+2026-08-24 01:50:35,842 INFO progress(n,kc@1e6,kt@1e6): {9: (15048704, 5250, 5676)}
+2026-08-24 01:51:05,850 INFO progress(n,kc@1e6,kt@1e6): {9: (22532096, 7838, 8462)}
+2026-08-24 01:51:35,851 INFO progress(n,kc@1e6,kt@1e6): {9: (29954048, 10486, 11160)}
+2026-08-24 01:51:59,085 INFO measurement done: {9: (35721216, [0, 0, 8, 667, 12493], [0, 0, 5, 772, 13195])}
+2026-08-24 01:51:59,524 INFO WROTE /home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp567_result.json status=06_final_time_capped verdict=RANDOM-EXTENDS wall=157.4s

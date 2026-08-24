@@ -1,0 +1,27 @@
+2026-08-24 01:46:57,239 INFO exp567 SCALE-U9-LIFT start mode=smoke seed=20260824 bins=(9, 10, 11) workers=8 G=64 unit=2 wall_cap=3.0min
+2026-08-24 01:46:57,829 INFO validation: 82 cases (38 adversarial, 24 real quadratic), mismatches=0
+2026-08-24 01:46:57,829 INFO pool band 9: 3 semiprimes (bitlen 96)
+2026-08-24 01:46:57,830 INFO pool band 10: 3 semiprimes (bitlen 104)
+2026-08-24 01:46:57,830 INFO pool band 11: 3 semiprimes (bitlen 112)
+2026-08-24 01:46:59,943 INFO calibration: 519936 values in 2.1s -> theta=2.49e+05/s; rho_hat(ctrl@1e6, blended)={9: '1.54e-03', 10: '2.01e-04', 11: '6.25e-05'}
+2026-08-24 01:46:59,944 INFO quotas(values)={9: 1024, 10: 1024, 11: 1024} fracs={9: 0.34, 10: 0.33, 11: 0.33}
+2026-08-24 01:46:59,995 INFO measurement done: {9: (448, [0, 0, 0, 0, 0], [0, 0, 0, 0, 1]), 10: (448, [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]), 11: (448, [0, 0, 0, 0, 0], [0, 0, 0, 0, 0])}
+2026-08-24 01:47:00,003 INFO WROTE /home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp567_result.json status=smoke verdict=DEVIATION-UNCONFIRMED wall=2.8s
+2026-08-24 02:00:10,750 INFO exp567 SCALE-U9-LIFT start mode=smoke seed=20260824 bins=(9, 10, 11) workers=8 G=64 unit=2 wall_cap=3.0min
+2026-08-24 02:00:11,580 INFO validation: 112 cases (38 adversarial, 54 real quadratic), mismatches=0
+2026-08-24 02:00:11,580 INFO pool band 9: 3 semiprimes (bitlen 96)
+2026-08-24 02:00:11,580 INFO pool band 10: 3 semiprimes (bitlen 104)
+2026-08-24 02:00:11,581 INFO pool band 11: 3 semiprimes (bitlen 112)
+2026-08-24 02:00:13,663 INFO calibration: 504576 values in 2.1s -> theta=2.44e+05/s; rho_hat(ctrl@1e6, blended)={9: '1.53e-03', 10: '2.04e-04', 11: '6.36e-05'}
+2026-08-24 02:00:13,663 INFO quotas(values)={9: 1024, 10: 1024, 11: 1024} fracs={9: 0.34, 10: 0.33, 11: 0.33}
+2026-08-24 02:00:13,714 INFO measurement done: {9: (448, [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]), 10: (448, [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]), 11: (448, [0, 0, 0, 0, 0], [0, 0, 0, 0, 0])}
+2026-08-24 02:00:13,722 INFO WROTE /home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp567_result.json status=smoke verdict=RANDOM-EXTENDS wall=3.0s
+2026-08-24 02:03:11,064 INFO exp567 SCALE-U9-LIFT start mode=smoke seed=20260824 bins=(9, 10, 11) workers=8 G=64 unit=2 wall_cap=3.0min
+2026-08-24 02:03:11,977 INFO validation: 112 cases (38 adversarial, 54 real quadratic), mismatches=0
+2026-08-24 02:03:11,978 INFO pool band 9: 3 semiprimes (bitlen 96)
+2026-08-24 02:03:11,978 INFO pool band 10: 3 semiprimes (bitlen 104)
+2026-08-24 02:03:11,978 INFO pool band 11: 3 semiprimes (bitlen 112)
+2026-08-24 02:03:14,099 INFO calibration: 446976 values in 2.1s -> theta=2.14e+05/s; rho_hat(ctrl@1e6, blended)={9: '1.52e-03', 10: '2.11e-04', 11: '6.19e-05'}
+2026-08-24 02:03:14,099 INFO quotas(values)={9: 1024, 10: 1024, 11: 1024} fracs={9: 0.34, 10: 0.33, 11: 0.33}
+2026-08-24 02:03:14,150 INFO measurement done: {9: (448, [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]), 10: (448, [0, 0, 0, 0, 0], [0, 0, 0, 0, 1]), 11: (448, [0, 0, 0, 0, 0], [0, 0, 0, 0, 0])}
+2026-08-24 02:03:14,161 INFO WROTE /home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp567_result.json status=smoke verdict=MIXED-INCONCLUSIVE wall=3.1s

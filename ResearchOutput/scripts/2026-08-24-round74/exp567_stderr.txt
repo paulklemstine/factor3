@@ -1,0 +1,34 @@
+2026-08-24 02:15:31,478 INFO exp567 SCALE-U9-LIFT start mode=full seed=20260824 bins=(9, 10, 11) workers=8 G=1024 unit=4 wall_cap=21.0min
+2026-08-24 02:15:34,245 INFO validation: 368 cases (38 adversarial, 270 real quadratic), mismatches=0
+2026-08-24 02:15:34,254 INFO pool band 9: 128 semiprimes (bitlen 96)
+2026-08-24 02:15:34,263 INFO pool band 10: 128 semiprimes (bitlen 104)
+2026-08-24 02:15:34,273 INFO pool band 11: 128 semiprimes (bitlen 112)
+2026-08-24 02:15:54,797 INFO calibration: 10960896 values in 20.5s -> theta=5.35e+05/s; rho_hat(ctrl@1e6, blended)={9: '1.53e-03', 10: '1.94e-04', 11: '4.98e-05'}
+2026-08-24 02:15:54,797 INFO quotas(values)={9: 130416640, 10: 126582784, 11: 126582784} fracs={9: 0.34, 10: 0.33, 11: 0.33}
+Thread 0x000076c234fff6c0 (most recent call first):
+  File "/usr/lib/python3.12/multiprocessing/connection.py", line 395 in _recv
+  File "/usr/lib/python3.12/multiprocessing/connection.py", line 430 in _recv_bytes
+  File "/usr/lib/python3.12/multiprocessing/connection.py", line 250 in recv
+  File "/usr/lib/python3.12/multiprocessing/pool.py", line 579 in _handle_results
+  File "/usr/lib/python3.12/threading.py", line 1010 in run
+  File "/usr/lib/python3.12/threading.py", line 1073 in _bootstrap_inner
+  File "/usr/lib/python3.12/threading.py", line 1030 in _bootstrap
+
+Thread 0x000076c2325ff6c0 (most recent call first):
+  File "/usr/lib/python3.12/multiprocessing/pool.py", line 531 in _handle_tasks
+  File "/usr/lib/python3.12/threading.py", line 1010 in run
+  File "/usr/lib/python3.12/threading.py", line 1073 in _bootstrap_inner
+  File "/usr/lib/python3.12/threading.py", line 1030 in _bootstrap
+
+Thread 0x000076c22fbff6c0 (most recent call first):
+  File "/usr/lib/python3.12/selectors.py", line 415 in select
+  File "/usr/lib/python3.12/multiprocessing/connection.py", line 1136 in wait
+  File "/usr/lib/python3.12/multiprocessing/pool.py", line 502 in _wait_for_updates
+  File "/usr/lib/python3.12/multiprocessing/pool.py", line 522 in _handle_workers
+  File "/usr/lib/python3.12/threading.py", line 1010 in run
+  File "/usr/lib/python3.12/threading.py", line 1073 in _bootstrap_inner
+  File "/usr/lib/python3.12/threading.py", line 1030 in _bootstrap
+
+Current thread 0x000076c246a8a140 (most recent call first):
+  File "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp567_scale_u9_lift.py", line 1060 in main
+  File "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp567_scale_u9_lift.py", line 1587 in <module>

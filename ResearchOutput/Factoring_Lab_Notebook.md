@@ -10443,3 +10443,61 @@ set solely from completing agent. Barrier framing: speaks to barrier-map residua
 one computable-criterion route honestly bounded at toy scale. No breakthrough.
 Wall A 9.3s + B 247.7s. Paper 213, issue #357. Now 556 experiments (max id 567).
 Assessment v320.
+
+## Part 256 - SCALE-U9-LIFT (round-74 #5, exp 567, v321)
+
+Does x^2-N stay size-matched-random in smoothness at u in [9,11.x], the approach
+zone of the Dickman leading-term regime (~u=14.75) where raw B-smoothness testing
+STARVES (rho(9)=1.0e-9 .. rho(11)=6.5e-13)? Frontier item "scale-smoothness
+deviations u>=6-14". Design exp562-matched: balanced semiprimes bitlen {96,104,112}
+-> u-bands {9,10,11}, v=(s+j)^2-N j<=3s; indicator swapped to an LPF-CDF CUT LADDER
+{500,1e3,1e4,1e5,1e6} via cumulative segment-primorial gcd chains BATCHED by
+product-tree remainder descent (exp561 transfer, 12x: 87us->7us/value); exact
+(bitlen,mantissa-octant) matched controls through the same code path; per-N cluster
+bootstrap + built-in A/B split-halves. Pre-registered verbatim: H1 r_cut(u)=1 at
+every bin/cut (randomness extends through u~11, consistent with papers 130+209);
+H2 protocol - any CI-excluding-1 is DEVIATION-UNCONFIRMED unless direction-consistent
+at 1e6 cut AND both split-halves AND fresh-seed pool replicate ("maximal skepticism -
+this would be the lab's first positive scale-smoothness deviation"); overdispersion
+fork pre-registered: L1 rate/threshold artifact (D_expo_cand(1e6)>1 significantly in
+>=2 bins at u>=9 -> exp562 D-death was rate-driven) vs L2 genuine u-death (D~1 in ALL
+bins). B=500/1000 cuts kept as PRE-DECLARED continuity carriers (predicted ~zero
+yield). STATUS HONEST PARTIAL (disclosed): intermittent multiprocessing throughput
+collapse at full geometry (root-caused via preserved faulthandler dump:
+ready()-starved feed loop + slow completions) ate the headline runs; statistical
+weight rests on the completed PILOT (band 9, bitlen 96, 24-N pool, 35.7M cand+ctrl
+pairs); three-band leg shipped at 45k pairs/band under the time-cap convention.
+Achieved u: band 9 [9.83,10.13] mean 9.89; band 10 [10.64,10.94]; band 11
+[11.44,11.74]; NO coverage in (10.94,11.44) - integer u=11 sits in a half-notch gap
+of grid geometry (j<=3s cap + bitlen strata), disclosed pre-run. VERDICT
+RANDOM-EXTENDS / NULL-WITH-TENSION, deviation status NONE: @primary LPF-CDF-1e6 cut
+band 9 r=0.9468 cluster-boot CI [0.8630,1.0389] (12,493 vs 13,195 events; splits
+0.939/0.955 both below 1); @1e5 r=0.864 CI [0.7190,1.0302] (splits 0.848/0.881);
+three-band all CIs cover 1 (band 10 @1e6 r=2.0 [0.25,7.0] on 4-vs-2; band 11 kc=2 vs
+kctrl=0 undefined); tightest |r-1| bound 0.137 (pilot primary); B=500/1000 exactly
+zero events everywhere as designed; H2 never armed, no flag any cell. TENSION banked
+honestly: points run 5-14% BELOW 1 at both powered cuts, direction-stable across
+split-halves and cuts - recorded as null-with-tension motivating a future higher-
+power run (~30x more pairs at 1e5), explicitly NOT a finding. OVERDISPERSION
+AMENDMENT to paper 209 secondary claim ("D=1.61 persists at bin 5 then DIES by
+u~7, residue-dial correlation gone"): at u=9.85 under the healthy-rate 1e6 lens,
+D_cand=28.87 CI [14.27,44.08] EXPOSURE-CORRECTED (N=24, exposures flat +/-0.14%) vs
+D_ctrl=1.84 [0.90,2.84] - per-N clustering ALIVE at u~10; Spearman(per-N rate,
+qr_frac)=0.533 perm-p 0.006 @1e4 and 0.437 p 0.033 @1e6 where 209 read ~0.04 "gone"
+- consistent with paper 136 QR-bite = per-N VARIANCE law; what died by u~7 was the
+B-smoothness INDICATOR starving as rho(u)->0, not the clustering. Fork resolves in
+L1 direction with caveat: formal >=2-bin criterion NOT met (only ONE powered bin
+after shrinkage) - amendment stands on the pilot's internal contrast, recorded as
+directionally confirmed/formally unmet. Ledger catches (4, none adverse post-fix):
+mixed-segment checker bug gave 39/40 FALSE mismatches - shipped tester proven EXACT
+vs exhaustive zero-early-exit strip of all primes<=1e6 (368 cases full/218 pilot incl
+deep-window quadratics, 0 mismatches, shared code path); backpressure watchdog false-
+trip terminated first full-geometry attempt as "calibration hung"; faulthandler
+SIGUSR1 re-raise killed one instrumented rerun; throughput collapse shrank the
+headline run from ~130M-value/band quotas to 45k pairs/band (interim sub-powered
+write had flashed DEVIATION-UNCONFIRMED before supersession - canonical artifacts on
+disk are final). Barrier framing: null STRENGTHENS papers 130/209 randomness into
+new territory (no barrier breached, constant-shaving risk none); variance-side
+accounting upgraded (variance N-covariant, means matched). Wall pilot 157s +
+shipped three-band leg 20.8s (time-capped). Paper 214, issue #359. Now 557
+experiments (max id 567). Assessment v321.

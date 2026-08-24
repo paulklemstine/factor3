@@ -1,0 +1,948 @@
+{
+ "exp": "567",
+ "codename": "SCALE-U9-LIFT",
+ "date": "2026-08-24",
+ "seed": 20260824,
+ "mode": "pilot",
+ "status": "06_final_time_capped",
+ "question": "does x^2-N stay size-matched-random in B-smoothness / LPF-CDF at u=log(v)/log(B) in [9,11] (Dickman leading-term approach regime)?",
+ "preregistered": {
+  "H1": "r_cut(u)=1 at every bin and every ladder cut - randomness extends through u~11 toward the leading-term regime; consistent with papers 130+209",
+  "H2_protocol": "any CI-excluding-1 flag is DEVIATION-UNCONFIRMED unless (a) direction-consistent across cuts with the 1e6 cut excluding, (b) both split-halves replicate, (c) fresh-seed pool replicates (requires >=270s remaining wall); maximal skepticism - this would be the lab's first positive scale-smoothness deviation",
+  "overdispersion_localization": {
+   "L1_rate_threshold_artifact": "D_cand(1e6 cut) > 1 significantly in >=2 bins at u>=9 -> exp562's D-death was rate/threshold-driven",
+   "L2_genuine_u_death": "D_cand(1e6) ~ 1 in ALL bins -> death is u-driven, closure extends to high scale"
+  },
+  "primary_family": "LPF-CDF cut Y=1e6 (highest event yield)",
+  "continuity_carriers": "B=500 and B=1000 cuts kept for 130/209 continuity; predicted yield rho(9..11)*n ~ 0 -> wide-or-empty CIs, declared"
+ },
+ "config": {
+  "B": 1000,
+  "bands_w": [
+   9
+  ],
+  "band_def": "band w = v in [B^w, B^(w+1)), u = ln(v)/ln(B)",
+  "n_bitlen_strata": {
+   "9": 96
+  },
+  "semiprime_gen": "balanced p,q via gmpy2.next_prime on seeded random odd starts, exact bitlen rejection",
+  "j_cap": "j <= 3*isqrt(N)  (x <= 4 sqrt(N))",
+  "truncation_note": "3s cap tops band 11 near u~11.6, bands 9/10 near u~9.9/10.8; achieved ranges empirical",
+  "cuts": [
+   500,
+   1000,
+   10000,
+   100000,
+   1000000
+  ],
+  "indicator_def": "t_Y = [largest prime factor <= Y] via cumulative segment-primorial gcd chains; segments batch-amortized (product-tree remainder descent, exp561 transfer)",
+  "control_match": "exact (bitlen, mantissa-octant) histogram match, 1:1 pairing, same tester code path",
+  "G": 512,
+  "unit_size": 4,
+  "pool_per_bin": 24,
+  "max_runs_per_n": 4000,
+  "mantissa_octants": 8,
+  "minutes_measure": 2.5,
+  "calib_seconds": 8.0,
+  "workers": 8,
+  "nboot": 500,
+  "alloc_fractions": "0.34,0.33,0.33",
+  "wall_min_cap": 4.5,
+  "split_half": "measurement windows alternate A/B by window-index parity (built-in replication)"
+ },
+ "assert_pipeline": {
+  "n_cases": 218,
+  "n_adversarial": 38,
+  "n_random": 60,
+  "n_real_quadratic": 120,
+  "mismatches": 0,
+  "mismatch_examples": [],
+  "ok": true,
+  "cuts": [
+   500,
+   1000,
+   10000,
+   100000,
+   1000000
+  ],
+  "tester": "sequential segment-primorial gcd-chains; segments 1..4 batch-amortized by product-tree remainder descent",
+  "reference": "exhaustive ascending strip of ALL primes<=1e6, zero early exits, cofactor sampled at each cut",
+  "shared_code_path_both_populations": true
+ },
+ "pool_sizes": {
+  "9": 24
+ },
+ "calibration": {
+  "values_tested": 6225920,
+  "wall_s": 12.02653431892395,
+  "throughput_values_per_s": 517681.9717882825,
+  "rho_empirical_ctrl_1e6cut": {
+   "9": 0.0005912379214638158
+  },
+  "note": "calibration uses phase-half-0 windows (disjoint from measurement); blended priors used ONLY for quotas"
+ },
+ "quotas": {
+  "capacity_values_est": 71440112.10678299,
+  "fractions": {
+   "9": 1.0
+  },
+  "quota_values": {
+   "9": 71442432
+  },
+  "units": {
+   "9": 17442
+  }
+ },
+ "measurement": {
+  "wall_measurement_s": 155.30249738693237,
+  "submitted_units": 17442,
+  "stopped_feeding_at_deadline": true,
+  "control_integrity_violations": {
+   "9": 0
+  }
+ },
+ "per_band": {
+  "9": {
+   "n_bitlen": 96,
+   "n_cand": 35721216,
+   "runs": 69768,
+   "achieved_u_range_from_bitlen_hist": [
+    9.833646525023386,
+    10.134676520687368
+   ],
+   "u_empirical_mean": 9.890550071925214,
+   "max_x_over_sqrtN": 3.999963905035482,
+   "bitlen_hist": {
+    "98": 5279744,
+    "99": 23078400,
+    "100": 7363072
+   },
+   "half_bins_by_2u": {
+    "19": {
+     "u_approx": 9.5,
+     "per_cut": [
+      {
+       "n": null,
+       "kc": 0,
+       "kctrl": 0
+      },
+      {
+       "n": null,
+       "kc": 0,
+       "kctrl": 0
+      },
+      {
+       "n": null,
+       "kc": 8,
+       "kctrl": 5
+      },
+      {
+       "n": null,
+       "kc": 667,
+       "kctrl": 772
+      },
+      {
+       "n": null,
+       "kc": 12493,
+       "kctrl": 13195
+      }
+     ]
+    }
+   },
+   "cuts": {
+    "500": {
+     "n_cand": 35721216,
+     "kc_cand": 0,
+     "p_cand": 0.0,
+     "kc_ctrl": 0,
+     "p_ctrl": 0.0,
+     "r_point": NaN,
+     "r_ci95": [
+      NaN,
+      NaN
+     ],
+     "ci_excludes_1": false,
+     "boot_bad_reps": 500,
+     "split_halves": {
+      "A": {
+       "r": NaN,
+       "ci95": [
+        NaN,
+        NaN
+       ]
+      },
+      "B": {
+       "r": NaN,
+       "ci95": [
+        NaN,
+        NaN
+       ]
+      }
+     }
+    },
+    "1000": {
+     "n_cand": 35721216,
+     "kc_cand": 0,
+     "p_cand": 0.0,
+     "kc_ctrl": 0,
+     "p_ctrl": 0.0,
+     "r_point": NaN,
+     "r_ci95": [
+      NaN,
+      NaN
+     ],
+     "ci_excludes_1": false,
+     "boot_bad_reps": 500,
+     "split_halves": {
+      "A": {
+       "r": NaN,
+       "ci95": [
+        NaN,
+        NaN
+       ]
+      },
+      "B": {
+       "r": NaN,
+       "ci95": [
+        NaN,
+        NaN
+       ]
+      }
+     }
+    },
+    "10000": {
+     "n_cand": 35721216,
+     "kc_cand": 8,
+     "p_cand": 2.2395654168099988e-07,
+     "kc_ctrl": 5,
+     "p_ctrl": 1.3997283855062494e-07,
+     "r_point": 1.5999999999999999,
+     "r_ci95": [
+      0.4357142857142858,
+      6.775000000000006
+     ],
+     "ci_excludes_1": false,
+     "boot_bad_reps": 1,
+     "split_halves": {
+      "A": {
+       "r": 1.6666666666666667,
+       "ci95": [
+        0.25,
+        8.0
+       ]
+      },
+      "B": {
+       "r": 1.5,
+       "ci95": [
+        0.20750000000000002,
+        5.0
+       ]
+      }
+     }
+    },
+    "100000": {
+     "n_cand": 35721216,
+     "kc_cand": 667,
+     "p_cand": 1.8672376662653365e-05,
+     "kc_ctrl": 772,
+     "p_ctrl": 2.161180627221649e-05,
+     "r_point": 0.8639896373056994,
+     "r_ci95": [
+      0.7190111226972541,
+      1.0302047333568434
+     ],
+     "ci_excludes_1": false,
+     "boot_bad_reps": 0,
+     "split_halves": {
+      "A": {
+       "r": 0.8475452196382429,
+       "ci95": [
+        0.6853969455145845,
+        1.0431779633106082
+       ]
+      },
+      "B": {
+       "r": 0.8805194805194805,
+       "ci95": [
+        0.727831742466779,
+        1.0589887640449438
+       ]
+      }
+     }
+    },
+    "1000000": {
+     "n_cand": 35721216,
+     "kc_cand": 12493,
+     "p_cand": 0.00034973613440259145,
+     "kc_ctrl": 13195,
+     "p_ctrl": 0.0003693883209350992,
+     "r_point": 0.9467980295566503,
+     "r_ci95": [
+      0.8630275408064088,
+      1.0389267629320174
+     ],
+     "ci_excludes_1": false,
+     "boot_bad_reps": 0,
+     "split_halves": {
+      "A": {
+       "r": 0.9389552238805969,
+       "ci95": [
+        0.8622721386711479,
+        1.0326973170551896
+       ]
+      },
+      "B": {
+       "r": 0.9548883756735951,
+       "ci95": [
+        0.8622252444482437,
+        1.0613728358389556
+       ]
+      }
+     }
+    }
+   },
+   "dispersion": {
+    "500": {
+     "D_cand": NaN,
+     "D_cand_ci95": [
+      NaN,
+      NaN
+     ],
+     "D_ctrl": NaN,
+     "D_ctrl_ci95": [
+      NaN,
+      NaN
+     ],
+     "poisson_random_model_reference": 1.0,
+     "n_clusters_N": 24
+    },
+    "1000": {
+     "D_cand": NaN,
+     "D_cand_ci95": [
+      NaN,
+      NaN
+     ],
+     "D_ctrl": NaN,
+     "D_ctrl_ci95": [
+      NaN,
+      NaN
+     ],
+     "poisson_random_model_reference": 1.0,
+     "n_clusters_N": 24
+    },
+    "10000": {
+     "D_cand": 1.2173913043478264,
+     "D_cand_ci95": [
+      0.782608695652174,
+      1.6608695652173915
+     ],
+     "D_ctrl": 0.826086956521739,
+     "D_ctrl_ci95": [
+      0.6521739130434783,
+      1.0000000000000004
+     ],
+     "poisson_random_model_reference": 1.0,
+     "n_clusters_N": 24
+    },
+    "100000": {
+     "D_cand": 4.802750798513786,
+     "D_cand_ci95": [
+      2.4696951492120265,
+      7.015509703718034
+     ],
+     "D_ctrl": 2.0860554178869113,
+     "D_ctrl_ci95": [
+      1.065699353782208,
+      3.1583443825426722
+     ],
+     "poisson_random_model_reference": 1.0,
+     "n_clusters_N": 24
+    },
+    "1000000": {
+     "D_cand": 28.866415627534035,
+     "D_cand_ci95": [
+      14.273487691722872,
+      44.08082358047972
+     ],
+     "D_ctrl": 1.8446480056674959,
+     "D_ctrl_ci95": [
+      0.9036069113415419,
+      2.8445770134795425
+     ],
+     "poisson_random_model_reference": 1.0,
+     "n_clusters_N": 24
+    }
+   },
+   "qr_structure": {
+    "10000": {
+     "n_N_used": 24,
+     "spearman_rate_vs_qrfrac": 0.5326118511172091,
+     "perm_p_two_sided": 0.005996002664890073
+    },
+    "1000000": {
+     "n_N_used": 24,
+     "spearman_rate_vs_qrfrac": 0.4370791832579669,
+     "perm_p_two_sided": 0.033311125916055964
+    }
+   },
+   "n_clusters_N": 24
+  }
+ },
+ "trend": {
+  "model": "insufficient bands with events",
+  "bins_used": [
+   9.890550071925214
+  ]
+ },
+ "verdicts": {
+  "verdict_name": "RANDOM-EXTENDS",
+  "verdict_detail": "every band/cut CI covers 1; tightest 95% bound on |r-1| at the primary (1e6) cut is 0.1370 at band u=9",
+  "deviation_flags_any_cut": [],
+  "deviation_status": "NONE",
+  "h2_confirmation_leg": null,
+  "confirmed_deviations": [],
+  "unconfirmed_deviations": [],
+  "dispersion_verdict_per_band": {
+   "9": "PERSISTS"
+  },
+  "dispersion_mechanism": "UNCLEAR",
+  "rules_fired": {
+   "primary_cut_exclusions": 0,
+   "persist_bins": [
+    9
+   ],
+   "die_bins": []
+  }
+ },
+ "dickman_reference_integer_u": {
+  "5": 0.0003547,
+  "6": 1.965e-05,
+  "7": 8.7455e-07,
+  "8": 3.2329e-08,
+  "9": 1.0107e-09,
+  "10": 2.7701e-11,
+  "11": 6.454e-13
+ },
+ "context": "papers 130 (x^2-N pool ensemble-equals unrestricted random through 2^44) and 209/exp562 (no deviation through u<=8.5; D=1.61 overdispersion at u~5.96 dead by u~7, mechanism unknown); this experiment lifts N to 2^96-2^112 reaching u in [9,11.x] and swaps raw B-smoothness (yield ~ rho(9..11) ~ 0) for an LPF-CDF cut ladder {500,1000,1e4,1e5,1e6} that carries full statistical power at every scale",
+ "per_n_table": {
+  "9": [
+   {
+    "nid": 900000,
+    "bitlen_n": 96,
+    "qr_frac": 0.515,
+    "qr_weighted": 1.4912,
+    "n": 1488896,
+    "kc": [
+     0,
+     0,
+     2,
+     53,
+     788
+    ],
+    "kctrl": [
+     0,
+     0,
+     1,
+     38,
+     534
+    ]
+   },
+   {
+    "nid": 900001,
+    "bitlen_n": 96,
+    "qr_frac": 0.4431,
+    "qr_weighted": 0.7743,
+    "n": 1488896,
+    "kc": [
+     0,
+     0,
+     0,
+     23,
+     387
+    ],
+    "kctrl": [
+     0,
+     0,
+     1,
+     26,
+     514
+    ]
+   },
+   {
+    "nid": 900002,
+    "bitlen_n": 96,
+    "qr_frac": 0.4731,
+    "qr_weighted": 1.1447,
+    "n": 1488896,
+    "kc": [
+     0,
+     0,
+     0,
+     21,
+     504
+    ],
+    "kctrl": [
+     0,
+     0,
+     0,
+     40,
+     543
+    ]
+   },
+   {
+    "nid": 900003,
+    "bitlen_n": 96,
+    "qr_frac": 0.479,
+    "qr_weighted": 0.8512,
+    "n": 1488896,
+    "kc": [
+     0,
+     0,
+     0,
+     20,
+     465
+    ],
+    "kctrl": [
+     0,
+     0,
+     0,
+     28,
+     559
+    ]
+   },
+   {
+    "nid": 900004,
+    "bitlen_n": 96,
+    "qr_frac": 0.5569,
+    "qr_weighted": 0.9873,
+    "n": 1488896,
+    "kc": [
+     0,
+     0,
+     0,
+     32,
+     504
+    ],
+    "kctrl": [
+     0,
+     0,
+     0,
+     18,
+     517
+    ]
+   },
+   {
+    "nid": 900005,
+    "bitlen_n": 96,
+    "qr_frac": 0.4671,
+    "qr_weighted": 0.8661,
+    "n": 1488896,
+    "kc": [
+     0,
+     0,
+     0,
+     19,
+     467
+    ],
+    "kctrl": [
+     0,
+     0,
+     0,
+     27,
+     542
+    ]
+   },
+   {
+    "nid": 900006,
+    "bitlen_n": 96,
+    "qr_frac": 0.4491,
+    "qr_weighted": 0.5466,
+    "n": 1488896,
+    "kc": [
+     0,
+     0,
+     0,
+     12,
+     325
+    ],
+    "kctrl": [
+     0,
+     0,
+     0,
+     30,
+     578
+    ]
+   },
+   {
+    "nid": 900007,
+    "bitlen_n": 96,
+    "qr_frac": 0.4671,
+    "qr_weighted": 0.9485,
+    "n": 1488896,
+    "kc": [
+     0,
+     0,
+     0,
+     27,
+     455
+    ],
+    "kctrl": [
+     0,
+     0,
+     0,
+     31,
+     553
+    ]
+   },
+   {
+    "nid": 900008,
+    "bitlen_n": 96,
+    "qr_frac": 0.5749,
+    "qr_weighted": 1.4613,
+    "n": 1488896,
+    "kc": [
+     0,
+     0,
+     1,
+     44,
+     780
+    ],
+    "kctrl": [
+     0,
+     0,
+     0,
+     37,
+     563
+    ]
+   },
+   {
+    "nid": 900009,
+    "bitlen_n": 96,
+    "qr_frac": 0.479,
+    "qr_weighted": 0.9028,
+    "n": 1488896,
+    "kc": [
+     0,
+     0,
+     0,
+     9,
+     317
+    ],
+    "kctrl": [
+     0,
+     0,
+     1,
+     28,
+     482
+    ]
+   },
+   {
+    "nid": 900010,
+    "bitlen_n": 96,
+    "qr_frac": 0.503,
+    "qr_weighted": 0.9848,
+    "n": 1488896,
+    "kc": [
+     0,
+     0,
+     1,
+     32,
+     524
+    ],
+    "kctrl": [
+     0,
+     0,
+     0,
+     31,
+     591
+    ]
+   },
+   {
+    "nid": 900011,
+    "bitlen_n": 96,
+    "qr_frac": 0.4551,
+    "qr_weighted": 1.0306,
+    "n": 1488896,
+    "kc": [
+     0,
+     0,
+     0,
+     12,
+     433
+    ],
+    "kctrl": [
+     0,
+     0,
+     0,
+     37,
+     570
+    ]
+   },
+   {
+    "nid": 900012,
+    "bitlen_n": 96,
+    "qr_frac": 0.509,
+    "qr_weighted": 0.5761,
+    "n": 1488896,
+    "kc": [
+     0,
+     0,
+     0,
+     19,
+     463
+    ],
+    "kctrl": [
+     0,
+     0,
+     0,
+     17,
+     540
+    ]
+   },
+   {
+    "nid": 900013,
+    "bitlen_n": 96,
+    "qr_frac": 0.515,
+    "qr_weighted": 1.256,
+    "n": 1488896,
+    "kc": [
+     0,
+     0,
+     0,
+     30,
+     611
+    ],
+    "kctrl": [
+     0,
+     0,
+     0,
+     46,
+     537
+    ]
+   },
+   {
+    "nid": 900014,
+    "bitlen_n": 96,
+    "qr_frac": 0.503,
+    "qr_weighted": 0.9322,
+    "n": 1488896,
+    "kc": [
+     0,
+     0,
+     2,
+     27,
+     445
+    ],
+    "kctrl": [
+     0,
+     0,
+     0,
+     28,
+     539
+    ]
+   },
+   {
+    "nid": 900015,
+    "bitlen_n": 96,
+    "qr_frac": 0.4371,
+    "qr_weighted": 1.4509,
+    "n": 1488896,
+    "kc": [
+     0,
+     0,
+     0,
+     42,
+     662
+    ],
+    "kctrl": [
+     0,
+     0,
+     0,
+     23,
+     554
+    ]
+   },
+   {
+    "nid": 900016,
+    "bitlen_n": 96,
+    "qr_frac": 0.4551,
+    "qr_weighted": 1.0788,
+    "n": 1488896,
+    "kc": [
+     0,
+     0,
+     0,
+     25,
+     423
+    ],
+    "kctrl": [
+     0,
+     0,
+     0,
+     23,
+     546
+    ]
+   },
+   {
+    "nid": 900017,
+    "bitlen_n": 96,
+    "qr_frac": 0.4371,
+    "qr_weighted": 1.0874,
+    "n": 1488896,
+    "kc": [
+     0,
+     0,
+     0,
+     42,
+     567
+    ],
+    "kctrl": [
+     0,
+     0,
+     0,
+     35,
+     580
+    ]
+   },
+   {
+    "nid": 900018,
+    "bitlen_n": 96,
+    "qr_frac": 0.5389,
+    "qr_weighted": 1.3251,
+    "n": 1486848,
+    "kc": [
+     0,
+     0,
+     1,
+     32,
+     618
+    ],
+    "kctrl": [
+     0,
+     0,
+     0,
+     34,
+     493
+    ]
+   },
+   {
+    "nid": 900019,
+    "bitlen_n": 96,
+    "qr_frac": 0.4491,
+    "qr_weighted": 0.8801,
+    "n": 1486848,
+    "kc": [
+     0,
+     0,
+     0,
+     32,
+     520
+    ],
+    "kctrl": [
+     0,
+     0,
+     1,
+     41,
+     581
+    ]
+   },
+   {
+    "nid": 900020,
+    "bitlen_n": 96,
+    "qr_frac": 0.515,
+    "qr_weighted": 1.04,
+    "n": 1486848,
+    "kc": [
+     0,
+     0,
+     1,
+     45,
+     664
+    ],
+    "kctrl": [
+     0,
+     0,
+     0,
+     29,
+     582
+    ]
+   },
+   {
+    "nid": 900021,
+    "bitlen_n": 96,
+    "qr_frac": 0.4611,
+    "qr_weighted": 1.162,
+    "n": 1486848,
+    "kc": [
+     0,
+     0,
+     0,
+     18,
+     486
+    ],
+    "kctrl": [
+     0,
+     0,
+     1,
+     50,
+     562
+    ]
+   },
+   {
+    "nid": 900022,
+    "bitlen_n": 96,
+    "qr_frac": 0.5389,
+    "qr_weighted": 1.3651,
+    "n": 1486848,
+    "kc": [
+     0,
+     0,
+     0,
+     34,
+     612
+    ],
+    "kctrl": [
+     0,
+     0,
+     0,
+     40,
+     515
+    ]
+   },
+   {
+    "nid": 900023,
+    "bitlen_n": 96,
+    "qr_frac": 0.4491,
+    "qr_weighted": 0.9262,
+    "n": 1486848,
+    "kc": [
+     0,
+     0,
+     0,
+     17,
+     473
+    ],
+    "kctrl": [
+     0,
+     0,
+     0,
+     35,
+     620
+    ]
+   }
+  ]
+ },
+ "honest_notes": [
+  "B=500/1000 cuts are continuity carriers; at u>=9 their expected event yield is ~0 (rho(9)=1.0e-9 .. rho(11)=6.5e-13) so their CIs are wide-or-empty BY DESIGN and carry no inference weight",
+  "j<=3s cap truncates the top of band 11 (achieved u_max reported empirically from the bitlen histogram)",
+  "controls are uniform WITHIN the candidate's mantissa octant while candidates concentrate quadratically in j - the same accepted approximation as exp562 (within-octant log-width ln(2^(1/8))~0.086, small vs Dickman curvature here)",
+  "batch product-tree remainder descent is exact (validated against exhaustive strip; see assert_pipeline) but its leaf-remainder identity gcd(x,PM)=gcd(x',R) holds only for x' dividing the leaf value - the sequential segment reuse stays within that domain",
+  "status reflects the 4-min wall cap; populations were sized adaptively (exp562 time-cap honesty convention)"
+ ],
+ "wall_s": 157.41068649291992,
+ "artifacts": {
+  "script": "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp567_scale_u9_lift.py",
+  "json": "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp567_result.json",
+  "log": "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp567_pilot.log"
+ }
+}
