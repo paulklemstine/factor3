@@ -2165,3 +2165,34 @@ odd-multiplier split bug, g-unbound ×2) all fixed pre-full-run. With papers 199
 closure synthesis of the four-strength seal), 205 (modular dynamics), and 210 (oracle
 bound unrealized), ALL faces of the user's triplet-tree proposal are now measured — the
 campaign closes honestly with no breakthrough.
+
+**Assessment addendum v319 — 2026-08-24 (round-74 #3).** Experiment 563 recorded; count
+now 555 recorded experiments (max id 567; rounds 54–74 tracked per-paper in
+ResearchOutput/NewMathematics/ papers 185–212 and in the notebook Parts). Exp 563
+SEQHINT-COMPOUND-LAW (paper 212, issue #356) resolves the hint-pricing tension between
+paper 138's linear no-synergy law and the rounds-70/71 "sequential hints compound"
+observation by isolating ADAPTIVITY: n = 800 bitlen-40 semiprimes in two strata
+(600 balanced ρ ∈ [1, 1.01] / 200 unbalanced ρ ∈ [7.5, 8.5]), four arms (adaptive
+bisection vs uniform fixed battery vs the draw-law-calibrated pair of each) under an
+idealized truthful `p ≤ t?` oracle priced in Fermat-order divisibility tests.
+COMPOUND-CONFIRMED-HALVING-FAIL (unbalanced stratum alone GEOMETRIC-COMPOUND-ISOLATION-CAPPED):
+(1) compounding real + superlinear — s_adapt(12)/s_adapt(3) = 165.2× unbalanced / 20.8×
+balanced, CIs exclude linear 4×; premium over the matched fixed battery at k = 12 =
+239.5 [220.1, 261.0] / 20.8 [19.5, 22.3], with r(1) = 1.00 exactly in all four pairs —
+compounding is pure posterior conditioning; (2) hard isolation cap — 100% of N pinned at
+k = 20 = ⌈log₂ W⌉, s(≥20) = T₀ exactly (1072.43 / 2.862e5), max s ≤ T₀ × 1.01 → NO
+barrier event; pin sits at the integer-bits cap above the prime-isolation bound ≈ 17 —
+barriers 4/8 UPHELD and now PRICED (external position info pays isolation-cost per
+query); (3) halving slope −ln2: aligned test passes unbalanced (−0.6589), misses
+balanced by 16% (−0.5836, band-entry phase correlation; width law itself exact);
+(4) HEADLINE SURPRISE: balanced semiprimes pin min(p,q) at √N so a uniform fixed battery
+carries LITERALLY ZERO BITS (s ≡ 1.00 all k ≤ 24) — non-adaptive batteries are
+waste-proof there and the adaptivity premium grows from exactly 1. Net economics
+confirmed: k_opt = 10/18 measured vs log₂((T₀−1)ln2) = 9.54/17.60 predicted; SHAM gate
+passed both strata. ONE PRICING STRUCTURE, TWO FACES: paper-138 linearity is the
+NON-adaptive face (zero bits ⇒ zero speedup, exactly as the balanced collapse shows);
+adaptive sequential hints price geometrically up to the isolation ceiling — new
+hint-taxonomy entry. Ledger catches (A5 uniform-prior zero-bit collapse smoke-caught
+pre-full-run; even-median bisection stall; V2 MC-noise → dense grid; V5 constant fix;
+sham clause split) all clean post-fix. No breakthrough: the ceiling is the same
+isolation cost barriers 4/8 already priced.

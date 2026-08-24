@@ -10376,3 +10376,35 @@ all arms <1 (0.20-0.75) - paper-131 lesson replicated. Barriers: 2 consistent, 4
 pre-full-run: empty-walk BFS (timing probe), odd-multiplier split bug, g-unbound x2.
 CAMPAIGN CLOSED: with papers 199/205/210 ALL faces of the triplet-tree proposal measured.
 Paper 211, issue #355. Now 554 experiments. Assessment v318.
+
+## Part 254 - SEQHINT-COMPOUND-LAW (round-74 #3, exp 563, v319)
+
+Does sequential hint value COMPOUND (rounds-70/71 taxonomy note) or price LINEARLY
+(paper 138)? Isolated the variable: adaptivity. n=800 bitlen-40 (600 balanced
+rho in [1,1.01] / 200 unbalanced rho in [7.5,8.5]), ks {0,1,2,3,6,9,12,14,16,20,24},
+oracle channel truthful p<=t?, downstream Fermat-order scan priced in divisibility
+tests, c_q=1 net view; arms ADAPT (bisection) / NONADAPT (uniform battery) /
+ADAPTQ/NONADAPTQ (draw-law-calibrated) / SHAM. Verdict COMPOUND-CONFIRMED-HALVING-FAIL
+(UNBALANCED stratum alone GEOMETRIC-COMPOUND-ISOLATION-CAPPED - all predictions pass
+there incl. strict slope). H1a CONFIRMED: s_adapt(12)/s_adapt(3) = 165.2x unbalanced /
+20.8x balanced, CIs exclude linear 4x; premium over matched fixed battery at k=12 =
+239.5 [220.1,261.0] unbalanced, 20.8 [19.5,22.3] balanced, r(1)=1.00 EXACTLY all four
+pairs - compounding is PURE adaptivity. H1b CONFIRMED hard cap: 100% pinned at k=20=
+ceil(log2 W); s(>=20)=T0 exactly (1072.43 / 2.862e5); max s <= T0 x1.01 -> NO barrier
+event; pin at integer-bits cap 20 above prime-isolation bound ~17 - barriers 4/8
+UPHELD and PRICED (external position info pays isolation-cost/query). Halving slope:
+aligned A10 -0.6589 PASS unbalanced; -0.5836 FAIL balanced 16% off -ln2 (band-entry
+phase correlation; width law itself exact V2a 720 steps, V2b 1.9%).
+HEADLINE SURPRISE (catch A5): balanced semiprimes pin min(p,q)=sqrt(N) -> uniform
+fixed battery carries LITERALLY ZERO BITS (s==1.00 all k<=24) - non-adaptive batteries
+waste-proof in balanced stratum, adaptivity premium grows from exactly 1.
+Net economics H3 CONFIRMED: k_opt=10/18 measured vs log2((T0-1)ln2)=9.54/17.60;
+SHAM gate passed both strata. RECONCILIATION: paper-138 linearity = NON-adaptive face;
+adaptive sequential hints compound superlinearly but saturate EXACTLY at isolation
+ceiling - one pricing structure, two faces; resolves rounds-70/71 tension; new
+hint-taxonomy entry. H2 calibrated pair passes unbalanced, fails balanced only on
+NONADAPTQ monotonicity sub-clause. Ledger catches (all pre/adverse-none): A5 uniform-
+prior zero-bit collapse (retained as reference diagnostics per AMENDMENT-1), even-median
+bisection stall (lower median fix), V2 MC-noise->dense-grid enumeration, V5
+expectation-vs-bound constant, sham luck/inflation clause split. Wall 2.0s.
+Paper 212, issue #356. Now 555 experiments. Assessment v319.

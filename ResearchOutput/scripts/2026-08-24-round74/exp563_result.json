@@ -1,0 +1,2318 @@
+{
+ "exp": "563",
+ "codename": "SEQHINT-COMPOUND-LAW",
+ "round": 74,
+ "smoke": false,
+ "status": "06_final",
+ "hypotheses": {
+  "H1": "compounding arises ONLY from adaptivity (posterior conditioning); value grows faster than linear-in-k but hard-capped by the isolation ceiling; measured growth sits between linear and saturation",
+  "H1a": "superlinear: s_adapt(12)/s_adapt(3) > 4 with bootstrap CI excluding 4",
+  "H1b": "capped: max_k s_adapt <= T0*1.01 and no gain past pin (s(24)<=s(20)*1.001)",
+  "H1c_amended_A4": "premium over BOTH batteries r>1 at k=12 (CI), r(1)==1 for each (nothing to adapt to with one query)",
+  "H1_geom_halving_amended_A2": "prior-free shape law: on the pre-pin post-waste segment, d ln E[T_adapt]/dk = -ln2 within 15%",
+  "H2_amended_A4": "CALIBRATED battery: s_nq(1)==s_adapt(1), monotone growth, adaptive premium r_q>1 at k>=6 -- paper-138 linear-in-bits cannot match conditioned descent; uniform battery additionally reported as the internally-realizable arm (zero-bit collapse under prior mismatch is itself paper-138-consistent: 0 informative bits => 0 speedup)",
+  "H3": "net-of-cost optimum k_opt ~= log2((T0-1)*ln2/c_q)",
+  "H_SHAM_amended_A3": "coin-flip arm never helps (mean T >= T0 - 3 paired SE) and never inflates (ci95_hi(s) <= 1.02); failure => cost-accounting bug => halt-and-fix"
+ },
+ "verdict_rule_prestated": {
+  "GEOMETRIC-COMPOUND-ISOLATION-CAPPED": "sham pass & H1a&H1b&H1c & halving-slope test pass (all per AMENDMENT-1 rules)",
+  "COMPOUND-CONFIRMED-HALVING-FAIL": "sham pass & H1a&H1b&H1c but halving slope off target",
+  "NO-COMPOUND": "adaptive ~= non-adaptive beyond k=1",
+  "BARRIER-EVENT": "any s > T0*1.01 anywhere; requires independent fresh-seed+sham re-verification before flagging",
+  "COST-BUG-HALTED": "sham gate fails"
+ },
+ "config": {
+  "seed": 20260824,
+  "bitlen": 40,
+  "pop_balanced": 600,
+  "pop_unbalanced": 200,
+  "ks": [
+   0,
+   1,
+   2,
+   3,
+   6,
+   9,
+   12,
+   14,
+   16,
+   20,
+   24
+  ],
+  "nboot": 2000,
+  "r_sham_reps": 8,
+  "oracle_channel": "truthful comparison 'p<=t?'; ADAPT=midpoint bisection; NONADAPT=uniform-prior equal-width quantile battery (internally realizable); NONADAPTQ=stratum draw-law-calibrated battery (upper-bound comparator, AMENDMENT-1 A1); SHAM=coin-flip bisection with honest fallback pricing",
+  "downstream": "sqrt-descending (Fermat-order) committed odd-step scan from posterior top edge; cost = divisibility tests",
+  "query_cost_cq_net_view": 1
+ },
+ "population": {
+  "total": 800,
+  "strata": {
+   "BALANCED": 600,
+   "UNBALANCED": 200
+  },
+  "rho_bands": {
+   "BALANCED": "[1,1.01]",
+   "UNBALANCED": "[7.5,8.5]"
+  }
+ },
+ "validations": {
+  "V0_population_integrity": true,
+  "V1_brute_scan_equals_formula": {
+   "BALANCED": 25,
+   "UNBALANCED": 25
+  },
+  "V2a_exact_width_halving_steps_checked": 720,
+  "V2b_closedform_vs_densegrid_max_rel_err": 0.01916,
+  "V3_adaptive_interval_invariant": "asserted inline every path",
+  "V4_k1_equality_premium_r1_cis_cover_1": {
+   "BALANCED": {
+    "r_internal_k1": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "r_calibrated_k1": [
+     0.999618,
+     0.991177,
+     1.007116
+    ]
+   },
+   "UNBALANCED": {
+    "r_internal_k1": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "r_calibrated_k1": [
+     1.0,
+     1.0,
+     1.0
+    ]
+   }
+  },
+  "V5_pointwise_bound_frac_ok": {
+   "BALANCED": 1.0,
+   "UNBALANCED": 1.0
+  }
+ },
+ "rows": [
+  {
+   "stratum": "BALANCED",
+   "arm": "ADAPT",
+   "k": 0,
+   "mean_T": 1072.425,
+   "sd_T": 627.671178,
+   "mean_s": 1.0,
+   "ci95": [
+    1.0,
+    1.0
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "ADAPT",
+   "k": 1,
+   "mean_T": 1072.425,
+   "sd_T": 627.671178,
+   "mean_s": 1.0,
+   "ci95": [
+    1.0,
+    1.0
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "ADAPT",
+   "k": 2,
+   "mean_T": 1072.425,
+   "sd_T": 627.671178,
+   "mean_s": 1.0,
+   "ci95": [
+    1.0,
+    1.0
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "ADAPT",
+   "k": 3,
+   "mean_T": 1072.425,
+   "sd_T": 627.671178,
+   "mean_s": 1.0,
+   "ci95": [
+    1.0,
+    1.0
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "ADAPT",
+   "k": 6,
+   "mean_T": 1072.425,
+   "sd_T": 627.671178,
+   "mean_s": 1.0,
+   "ci95": [
+    1.0,
+    1.0
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "ADAPT",
+   "k": 9,
+   "mean_T": 398.175,
+   "sd_T": 243.806052,
+   "mean_s": 2.693351,
+   "ci95": [
+    2.53112,
+    2.860239
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "ADAPT",
+   "k": 12,
+   "mean_T": 51.58,
+   "sd_T": 31.739149,
+   "mean_s": 20.791489,
+   "ci95": [
+    19.473614,
+    22.25606
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "ADAPT",
+   "k": 14,
+   "mean_T": 14.055,
+   "sd_T": 8.033387,
+   "mean_s": 76.302028,
+   "ci95": [
+    71.372345,
+    81.545746
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "ADAPT",
+   "k": 16,
+   "mean_T": 3.938333,
+   "sd_T": 1.982725,
+   "mean_s": 272.304274,
+   "ci95": [
+    256.820263,
+    288.661266
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "ADAPT",
+   "k": 20,
+   "mean_T": 1.0,
+   "sd_T": 0.0,
+   "mean_s": 1072.425,
+   "ci95": [
+    1022.074792,
+    1120.720042
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "ADAPT",
+   "k": 24,
+   "mean_T": 1.0,
+   "sd_T": 0.0,
+   "mean_s": 1072.425,
+   "ci95": [
+    1021.260667,
+    1122.451792
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "ADAPTQ",
+   "k": 0,
+   "mean_T": 1072.425,
+   "sd_T": 627.671178,
+   "mean_s": 1.0,
+   "ci95": [
+    1.0,
+    1.0
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "ADAPTQ",
+   "k": 1,
+   "mean_T": 1067.871667,
+   "sd_T": 629.29243,
+   "mean_s": 1.004264,
+   "ci95": [
+    1.0,
+    1.009906
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "ADAPTQ",
+   "k": 2,
+   "mean_T": 1048.47,
+   "sd_T": 636.365115,
+   "mean_s": 1.022848,
+   "ci95": [
+    1.011078,
+    1.037055
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "ADAPTQ",
+   "k": 3,
+   "mean_T": 1009.731667,
+   "sd_T": 652.978103,
+   "mean_s": 1.062089,
+   "ci95": [
+    1.040425,
+    1.086778
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "ADAPTQ",
+   "k": 6,
+   "mean_T": 431.408333,
+   "sd_T": 535.183054,
+   "mean_s": 2.48587,
+   "ci95": [
+    2.268008,
+    2.741779
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "ADAPTQ",
+   "k": 9,
+   "mean_T": 7.958333,
+   "sd_T": 66.871568,
+   "mean_s": 134.754974,
+   "ci95": [
+    75.577306,
+    302.221354
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "ADAPTQ",
+   "k": 12,
+   "mean_T": 3.725,
+   "sd_T": 40.265321,
+   "mean_s": 287.899329,
+   "ci95": [
+    142.869482,
+    783.528114
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "ADAPTQ",
+   "k": 14,
+   "mean_T": 3.725,
+   "sd_T": 40.265321,
+   "mean_s": 287.899329,
+   "ci95": [
+    149.448362,
+    787.818418
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "ADAPTQ",
+   "k": 16,
+   "mean_T": 3.725,
+   "sd_T": 40.265321,
+   "mean_s": 287.899329,
+   "ci95": [
+    147.804463,
+    781.570102
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "ADAPTQ",
+   "k": 20,
+   "mean_T": 3.725,
+   "sd_T": 40.265321,
+   "mean_s": 287.899329,
+   "ci95": [
+    144.26939,
+    793.103756
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "ADAPTQ",
+   "k": 24,
+   "mean_T": 3.725,
+   "sd_T": 40.265321,
+   "mean_s": 287.899329,
+   "ci95": [
+    145.807794,
+    786.828727
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "NONADAPT",
+   "k": 0,
+   "mean_T": 1072.425,
+   "sd_T": 627.671178,
+   "mean_s": 1.0,
+   "ci95": [
+    1.0,
+    1.0
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "NONADAPT",
+   "k": 1,
+   "mean_T": 1072.425,
+   "sd_T": 627.671178,
+   "mean_s": 1.0,
+   "ci95": [
+    1.0,
+    1.0
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "NONADAPT",
+   "k": 2,
+   "mean_T": 1072.425,
+   "sd_T": 627.671178,
+   "mean_s": 1.0,
+   "ci95": [
+    1.0,
+    1.0
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "NONADAPT",
+   "k": 3,
+   "mean_T": 1072.425,
+   "sd_T": 627.671178,
+   "mean_s": 1.0,
+   "ci95": [
+    1.0,
+    1.0
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "NONADAPT",
+   "k": 6,
+   "mean_T": 1072.425,
+   "sd_T": 627.671178,
+   "mean_s": 1.0,
+   "ci95": [
+    1.0,
+    1.0
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "NONADAPT",
+   "k": 9,
+   "mean_T": 1072.425,
+   "sd_T": 627.671178,
+   "mean_s": 1.0,
+   "ci95": [
+    1.0,
+    1.0
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "NONADAPT",
+   "k": 12,
+   "mean_T": 1072.425,
+   "sd_T": 627.671178,
+   "mean_s": 1.0,
+   "ci95": [
+    1.0,
+    1.0
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "NONADAPT",
+   "k": 14,
+   "mean_T": 1072.425,
+   "sd_T": 627.671178,
+   "mean_s": 1.0,
+   "ci95": [
+    1.0,
+    1.0
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "NONADAPT",
+   "k": 16,
+   "mean_T": 1072.425,
+   "sd_T": 627.671178,
+   "mean_s": 1.0,
+   "ci95": [
+    1.0,
+    1.0
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "NONADAPT",
+   "k": 20,
+   "mean_T": 1072.425,
+   "sd_T": 627.671178,
+   "mean_s": 1.0,
+   "ci95": [
+    1.0,
+    1.0
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "NONADAPT",
+   "k": 24,
+   "mean_T": 1072.425,
+   "sd_T": 627.671178,
+   "mean_s": 1.0,
+   "ci95": [
+    1.0,
+    1.0
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "NONADAPTQ",
+   "k": 0,
+   "mean_T": 1072.425,
+   "sd_T": 627.671178,
+   "mean_s": 1.0,
+   "ci95": [
+    1.0,
+    1.0
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "NONADAPTQ",
+   "k": 1,
+   "mean_T": 1067.411667,
+   "sd_T": 627.760152,
+   "mean_s": 1.004697,
+   "ci95": [
+    1.000286,
+    1.011988
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "NONADAPTQ",
+   "k": 2,
+   "mean_T": 1057.286667,
+   "sd_T": 624.752667,
+   "mean_s": 1.014318,
+   "ci95": [
+    1.00542,
+    1.02521
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "NONADAPTQ",
+   "k": 3,
+   "mean_T": 1055.95,
+   "sd_T": 628.671014,
+   "mean_s": 1.015602,
+   "ci95": [
+    1.005478,
+    1.029229
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "NONADAPTQ",
+   "k": 6,
+   "mean_T": 1033.996667,
+   "sd_T": 630.627447,
+   "mean_s": 1.037165,
+   "ci95": [
+    1.02307,
+    1.055441
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "NONADAPTQ",
+   "k": 9,
+   "mean_T": 1000.141667,
+   "sd_T": 633.972982,
+   "mean_s": 1.072273,
+   "ci95": [
+    1.049447,
+    1.098536
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "NONADAPTQ",
+   "k": 12,
+   "mean_T": 966.401667,
+   "sd_T": 624.536527,
+   "mean_s": 1.109709,
+   "ci95": [
+    1.081422,
+    1.141359
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "NONADAPTQ",
+   "k": 14,
+   "mean_T": 967.83,
+   "sd_T": 627.701103,
+   "mean_s": 1.108072,
+   "ci95": [
+    1.080715,
+    1.139772
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "NONADAPTQ",
+   "k": 16,
+   "mean_T": 928.073333,
+   "sd_T": 624.755857,
+   "mean_s": 1.155539,
+   "ci95": [
+    1.118454,
+    1.195972
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "NONADAPTQ",
+   "k": 20,
+   "mean_T": 915.12,
+   "sd_T": 622.142022,
+   "mean_s": 1.171895,
+   "ci95": [
+    1.134252,
+    1.212894
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "NONADAPTQ",
+   "k": 24,
+   "mean_T": 903.705,
+   "sd_T": 635.858067,
+   "mean_s": 1.186698,
+   "ci95": [
+    1.149453,
+    1.230311
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "SHAM",
+   "k": 1,
+   "mean_T": 112349.112917,
+   "sd_T": 40567.542558,
+   "mean_s": 0.009545,
+   "ci95": [
+    0.009048,
+    0.010033
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "SHAM",
+   "k": 2,
+   "mean_T": 83300.970625,
+   "sd_T": 19092.797337,
+   "mean_s": 0.012874,
+   "ci95": [
+    0.012295,
+    0.01355
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "SHAM",
+   "k": 3,
+   "mean_T": 49738.258958,
+   "sd_T": 7923.310553,
+   "mean_s": 0.021561,
+   "ci95": [
+    0.02053,
+    0.022566
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "SHAM",
+   "k": 6,
+   "mean_T": 7935.738333,
+   "sd_T": 1004.26615,
+   "mean_s": 0.135139,
+   "ci95": [
+    0.129686,
+    0.140558
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "SHAM",
+   "k": 9,
+   "mean_T": 1939.93375,
+   "sd_T": 643.278092,
+   "mean_s": 0.552815,
+   "ci95": [
+    0.540445,
+    0.564351
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "SHAM",
+   "k": 12,
+   "mean_T": 1181.753958,
+   "sd_T": 629.470362,
+   "mean_s": 0.907486,
+   "ci95": [
+    0.903642,
+    0.911076
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "SHAM",
+   "k": 14,
+   "mean_T": 1100.144583,
+   "sd_T": 628.088737,
+   "mean_s": 0.974804,
+   "ci95": [
+    0.973666,
+    0.975892
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "SHAM",
+   "k": 16,
+   "mean_T": 1079.730625,
+   "sd_T": 627.779637,
+   "mean_s": 0.993234,
+   "ci95": [
+    0.992909,
+    0.993533
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "SHAM",
+   "k": 20,
+   "mean_T": 1073.341667,
+   "sd_T": 627.681019,
+   "mean_s": 0.999146,
+   "ci95": [
+    0.999104,
+    0.999182
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "BALANCED",
+   "arm": "SHAM",
+   "k": 24,
+   "mean_T": 1072.942292,
+   "sd_T": 627.677142,
+   "mean_s": 0.999518,
+   "ci95": [
+    0.999493,
+    0.999542
+   ],
+   "n": 600
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "ADAPT",
+   "k": 0,
+   "mean_T": 286205.89,
+   "sd_T": 27840.004991,
+   "mean_s": 1.0,
+   "ci95": [
+    1.0,
+    1.0
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "ADAPT",
+   "k": 1,
+   "mean_T": 64818.795,
+   "sd_T": 6942.340129,
+   "mean_s": 4.415477,
+   "ci95": [
+    4.394464,
+    4.436939
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "ADAPT",
+   "k": 2,
+   "mean_T": 64818.795,
+   "sd_T": 6942.340129,
+   "mean_s": 4.415477,
+   "ci95": [
+    4.395666,
+    4.435653
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "ADAPT",
+   "k": 3,
+   "mean_T": 9471.865,
+   "sd_T": 3005.812936,
+   "mean_s": 30.216424,
+   "ci95": [
+    29.04493,
+    31.494665
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "ADAPT",
+   "k": 6,
+   "mean_T": 3926.725,
+   "sd_T": 2101.063205,
+   "mean_s": 72.886665,
+   "ci95": [
+    67.901841,
+    78.552156
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "ADAPT",
+   "k": 9,
+   "mean_T": 439.405,
+   "sd_T": 247.190516,
+   "mean_s": 651.348733,
+   "ci95": [
+    604.431386,
+    705.509721
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "ADAPT",
+   "k": 12,
+   "mean_T": 57.325,
+   "sd_T": 32.576516,
+   "mean_s": 4992.688879,
+   "ci95": [
+    4657.02351,
+    5375.741122
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "ADAPT",
+   "k": 14,
+   "mean_T": 14.9,
+   "sd_T": 7.580237,
+   "mean_s": 19208.448993,
+   "ci95": [
+    17996.06856,
+    20675.527276
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "ADAPT",
+   "k": 16,
+   "mean_T": 3.875,
+   "sd_T": 1.989818,
+   "mean_s": 73859.584516,
+   "ci95": [
+    69104.771652,
+    79400.092246
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "ADAPT",
+   "k": 20,
+   "mean_T": 1.0,
+   "sd_T": 0.0,
+   "mean_s": 286205.89,
+   "ci95": [
+    282295.491375,
+    290154.492875
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "ADAPT",
+   "k": 24,
+   "mean_T": 1.0,
+   "sd_T": 0.0,
+   "mean_s": 286205.89,
+   "ci95": [
+    282327.466375,
+    289994.0595
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "ADAPTQ",
+   "k": 0,
+   "mean_T": 286205.89,
+   "sd_T": 27840.004991,
+   "mean_s": 1.0,
+   "ci95": [
+    1.0,
+    1.0
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "ADAPTQ",
+   "k": 1,
+   "mean_T": 160791.715,
+   "sd_T": 149521.052887,
+   "mean_s": 1.779979,
+   "ci95": [
+    1.595023,
+    2.012095
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "ADAPTQ",
+   "k": 2,
+   "mean_T": 84303.645,
+   "sd_T": 136353.656877,
+   "mean_s": 3.394941,
+   "ci95": [
+    2.779724,
+    4.303353
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "ADAPTQ",
+   "k": 3,
+   "mean_T": 43710.09,
+   "sd_T": 107616.130054,
+   "mean_s": 6.547822,
+   "ci95": [
+    4.919452,
+    9.819265
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "ADAPTQ",
+   "k": 6,
+   "mean_T": 5236.695,
+   "sd_T": 40113.912791,
+   "mean_s": 54.653916,
+   "ci95": [
+    24.273251,
+    967.777517
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "ADAPTQ",
+   "k": 9,
+   "mean_T": 2.95,
+   "sd_T": 20.837646,
+   "mean_s": 97018.945763,
+   "ci95": [
+    44642.366199,
+    288117.84625
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "ADAPTQ",
+   "k": 12,
+   "mean_T": 2.95,
+   "sd_T": 20.837646,
+   "mean_s": 97018.945763,
+   "ci95": [
+    45766.117406,
+    287906.248875
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "ADAPTQ",
+   "k": 14,
+   "mean_T": 2.95,
+   "sd_T": 20.837646,
+   "mean_s": 97018.945763,
+   "ci95": [
+    45795.026159,
+    287505.828125
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "ADAPTQ",
+   "k": 16,
+   "mean_T": 2.95,
+   "sd_T": 20.837646,
+   "mean_s": 97018.945763,
+   "ci95": [
+    45368.922236,
+    287551.595875
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "ADAPTQ",
+   "k": 20,
+   "mean_T": 2.95,
+   "sd_T": 20.837646,
+   "mean_s": 97018.945763,
+   "ci95": [
+    44593.472099,
+    287783.966875
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "ADAPTQ",
+   "k": 24,
+   "mean_T": 2.95,
+   "sd_T": 20.837646,
+   "mean_s": 97018.945763,
+   "ci95": [
+    45599.540867,
+    287311.41
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "NONADAPT",
+   "k": 0,
+   "mean_T": 286205.89,
+   "sd_T": 27840.004991,
+   "mean_s": 1.0,
+   "ci95": [
+    1.0,
+    1.0
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "NONADAPT",
+   "k": 1,
+   "mean_T": 64818.795,
+   "sd_T": 6942.340129,
+   "mean_s": 4.415477,
+   "ci95": [
+    4.39516,
+    4.437059
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "NONADAPT",
+   "k": 2,
+   "mean_T": 138614.475,
+   "sd_T": 13751.825664,
+   "mean_s": 2.064762,
+   "ci95": [
+    2.061902,
+    2.067824
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "NONADAPT",
+   "k": 3,
+   "mean_T": 64818.795,
+   "sd_T": 6942.340129,
+   "mean_s": 4.415477,
+   "ci95": [
+    4.39513,
+    4.43717
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "NONADAPT",
+   "k": 6,
+   "mean_T": 33191.97,
+   "sd_T": 4340.019001,
+   "mean_s": 8.622745,
+   "ci95": [
+    8.536876,
+    8.716412
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "NONADAPT",
+   "k": 9,
+   "mean_T": 20541.3,
+   "sd_T": 3507.899552,
+   "mean_s": 13.933193,
+   "ci95": [
+    13.702067,
+    14.197891
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "NONADAPT",
+   "k": 12,
+   "mean_T": 13729.36,
+   "sd_T": 3165.871525,
+   "mean_s": 20.846266,
+   "ci95": [
+    20.278077,
+    21.433336
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "NONADAPT",
+   "k": 14,
+   "mean_T": 20541.3,
+   "sd_T": 3507.899552,
+   "mean_s": 13.933193,
+   "ci95": [
+    13.694442,
+    14.190206
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "NONADAPT",
+   "k": 16,
+   "mean_T": 12635.06,
+   "sd_T": 10856.435701,
+   "mean_s": 22.651724,
+   "ci95": [
+    20.244748,
+    25.782823
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "NONADAPT",
+   "k": 20,
+   "mean_T": 12107.49,
+   "sd_T": 3099.406529,
+   "mean_s": 23.638747,
+   "ci95": [
+    22.922876,
+    24.434683
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "NONADAPT",
+   "k": 24,
+   "mean_T": 6425.095,
+   "sd_T": 5450.199807,
+   "mean_s": 44.545005,
+   "ci95": [
+    39.526332,
+    50.708976
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "NONADAPTQ",
+   "k": 0,
+   "mean_T": 286205.89,
+   "sd_T": 27840.004991,
+   "mean_s": 1.0,
+   "ci95": [
+    1.0,
+    1.0
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "NONADAPTQ",
+   "k": 1,
+   "mean_T": 160791.715,
+   "sd_T": 149521.052887,
+   "mean_s": 1.779979,
+   "ci95": [
+    1.592785,
+    2.031084
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "NONADAPTQ",
+   "k": 2,
+   "mean_T": 111977.14,
+   "sd_T": 146082.631119,
+   "mean_s": 2.555931,
+   "ci95": [
+    2.177935,
+    3.075349
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "NONADAPTQ",
+   "k": 3,
+   "mean_T": 84303.645,
+   "sd_T": 136353.656877,
+   "mean_s": 3.394941,
+   "ci95": [
+    2.798918,
+    4.325395
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "NONADAPTQ",
+   "k": 6,
+   "mean_T": 50500.645,
+   "sd_T": 113705.967983,
+   "mean_s": 5.667371,
+   "ci95": [
+    4.346828,
+    7.974747
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "NONADAPTQ",
+   "k": 9,
+   "mean_T": 35165.495,
+   "sd_T": 98234.630258,
+   "mean_s": 8.138827,
+   "ci95": [
+    5.874128,
+    12.76288
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "NONADAPTQ",
+   "k": 12,
+   "mean_T": 26481.815,
+   "sd_T": 86116.46931,
+   "mean_s": 10.807639,
+   "ci95": [
+    7.295243,
+    18.919989
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "NONADAPTQ",
+   "k": 14,
+   "mean_T": 22965.93,
+   "sd_T": 80428.160925,
+   "mean_s": 12.462195,
+   "ci95": [
+    8.30159,
+    21.672176
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "NONADAPTQ",
+   "k": 16,
+   "mean_T": 21012.01,
+   "sd_T": 77759.15996,
+   "mean_s": 13.621062,
+   "ci95": [
+    8.825788,
+    25.627973
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "NONADAPTQ",
+   "k": 20,
+   "mean_T": 17542.155,
+   "sd_T": 71295.139462,
+   "mean_s": 16.315321,
+   "ci95": [
+    10.421141,
+    36.373063
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "NONADAPTQ",
+   "k": 24,
+   "mean_T": 14033.63,
+   "sd_T": 64206.815726,
+   "mean_s": 20.394288,
+   "ci95": [
+    12.067925,
+    48.708354
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "SHAM",
+   "k": 1,
+   "mean_T": 300490.195,
+   "sd_T": 84655.627406,
+   "mean_s": 0.952463,
+   "ci95": [
+    0.917922,
+    0.989877
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "SHAM",
+   "k": 2,
+   "mean_T": 313959.576875,
+   "sd_T": 60710.500941,
+   "mean_s": 0.911601,
+   "ci95": [
+    0.893242,
+    0.932757
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "SHAM",
+   "k": 3,
+   "mean_T": 297295.566875,
+   "sd_T": 48622.210948,
+   "mean_s": 0.962698,
+   "ci95": [
+    0.946795,
+    0.980918
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "SHAM",
+   "k": 6,
+   "mean_T": 289178.299375,
+   "sd_T": 30674.645408,
+   "mean_s": 0.989721,
+   "ci95": [
+    0.984146,
+    0.995906
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "SHAM",
+   "k": 9,
+   "mean_T": 286729.38125,
+   "sd_T": 28274.368932,
+   "mean_s": 0.998174,
+   "ci95": [
+    0.996984,
+    1.000009
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "SHAM",
+   "k": 12,
+   "mean_T": 286314.495625,
+   "sd_T": 27850.373131,
+   "mean_s": 0.999621,
+   "ci95": [
+    0.99962,
+    0.999621
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "SHAM",
+   "k": 14,
+   "mean_T": 286233.411875,
+   "sd_T": 27842.588252,
+   "mean_s": 0.999904,
+   "ci95": [
+    0.999904,
+    0.999904
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "SHAM",
+   "k": 16,
+   "mean_T": 286213.160625,
+   "sd_T": 27840.636324,
+   "mean_s": 0.999975,
+   "ci95": [
+    0.999975,
+    0.999975
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "SHAM",
+   "k": 20,
+   "mean_T": 286206.810625,
+   "sd_T": 27840.047595,
+   "mean_s": 0.999997,
+   "ci95": [
+    0.999997,
+    0.999997
+   ],
+   "n": 200
+  },
+  {
+   "stratum": "UNBALANCED",
+   "arm": "SHAM",
+   "k": 24,
+   "mean_T": 286206.4025,
+   "sd_T": 27839.999148,
+   "mean_s": 0.999998,
+   "ci95": [
+    0.999998,
+    0.999998
+   ],
+   "n": 200
+  }
+ ],
+ "fits": {
+  "BALANCED|ADAPT": {
+   "M_LIN": {
+    "params": 1,
+    "beta": 30.998552,
+    "sse": 739143.875044
+   },
+   "M_EXPSAT": {
+    "params": 2,
+    "lam": 0.001,
+    "C": 31238.173452,
+    "sse": 744113.342267
+   },
+   "M_THEORY_0param": {
+    "params": 0,
+    "sse": 204.496794,
+    "max_abs_err": 14.023095,
+    "frac_pts_in_boot95ci": 0.4,
+    "points_inside": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     true,
+     true,
+     true,
+     true
+    ]
+   },
+   "lin_not_beaten_by_expsat_beyond_2x": true,
+   "winner_by_sse": "M_THEORY_0param",
+   "label": "uniform_prior_reference (A2): draw law is non-uniform; deviations at small k are prior mismatch, not mechanics"
+  },
+  "BALANCED|NONADAPT": {
+   "M_LIN": {
+    "params": 1,
+    "beta": 0.0,
+    "sse": 0.0
+   },
+   "M_EXPSAT": {
+    "params": 2,
+    "lam": 0.001,
+    "C": 1.0,
+    "sse": 0.0
+   },
+   "M_THEORY_0param": {
+    "params": 0,
+    "sse": 8.919131,
+    "max_abs_err": 0.99038,
+    "frac_pts_in_boot95ci": 0.0,
+    "points_inside": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false
+    ]
+   },
+   "lin_not_beaten_by_expsat_beyond_2x": true,
+   "winner_by_sse": "M_LIN"
+  },
+  "BALANCED|SHAM_pred": {
+   "1": 0.006393,
+   "2": 0.010904,
+   "3": 0.02016,
+   "6": 0.134577,
+   "9": 0.552672,
+   "12": 0.908049,
+   "14": 0.975307,
+   "16": 0.993709,
+   "20": 0.999604,
+   "24": 0.999975
+  },
+  "BALANCED|_caps": {
+   "frac_adapt_T_eq_1_at_k20": 1.0,
+   "frac_adapt_T_eq_1_at_k24": 1.0,
+   "median_kpin_integer_bits": 20.0,
+   "median_kpin_prime_isolation": 17.0,
+   "mean_T0_ceiling": 1072.425
+  },
+  "UNBALANCED|ADAPT": {
+   "M_LIN": {
+    "params": 1,
+    "beta": 8285.34317,
+    "sse": 52770150480.88427
+   },
+   "M_EXPSAT": {
+    "params": 2,
+    "lam": 0.001,
+    "C": 8349130.109763,
+    "sse": 53124973085.76687
+   },
+   "M_THEORY_0param": {
+    "params": 0,
+    "sse": 21297317.345688,
+    "max_abs_err": 4528.396923,
+    "frac_pts_in_boot95ci": 0.6,
+    "points_inside": [
+     false,
+     false,
+     false,
+     false,
+     true,
+     true,
+     true,
+     true,
+     true,
+     true
+    ]
+   },
+   "lin_not_beaten_by_expsat_beyond_2x": true,
+   "winner_by_sse": "M_THEORY_0param",
+   "label": "uniform_prior_reference (A2): draw law is non-uniform; deviations at small k are prior mismatch, not mechanics"
+  },
+  "UNBALANCED|NONADAPT": {
+   "M_LIN": {
+    "params": 1,
+    "beta": 1.433605,
+    "sse": 188.412775
+   },
+   "M_EXPSAT": {
+    "params": 2,
+    "lam": 0.001,
+    "C": 1447.404144,
+    "sse": 190.516683
+   },
+   "M_THEORY_0param": {
+    "params": 0,
+    "sse": 216.803317,
+    "max_abs_err": 12.228104,
+    "frac_pts_in_boot95ci": 0.1,
+    "points_inside": [
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     true,
+     false,
+     false
+    ]
+   },
+   "lin_not_beaten_by_expsat_beyond_2x": true,
+   "winner_by_sse": "M_LIN"
+  },
+  "UNBALANCED|SHAM_pred": {
+   "1": 0.925801,
+   "2": 0.918764,
+   "3": 0.946704,
+   "6": 0.991709,
+   "9": 0.998934,
+   "12": 0.999865,
+   "14": 0.999965,
+   "16": 0.999991,
+   "20": 0.999999,
+   "24": 1.0
+  },
+  "UNBALANCED|_caps": {
+   "frac_adapt_T_eq_1_at_k20": 1.0,
+   "frac_adapt_T_eq_1_at_k24": 1.0,
+   "median_kpin_integer_bits": 20.0,
+   "median_kpin_prime_isolation": 17.0,
+   "mean_T0_ceiling": 286205.89
+  }
+ },
+ "sham_checks": {
+  "BALANCED": {
+   "pass": true,
+   "failing_ks": []
+  },
+  "UNBALANCED": {
+   "pass": true,
+   "failing_ks": []
+  }
+ },
+ "premiums": {
+  "BALANCED": {
+   "r_internal_ADAPT_over_NONADAPT": {
+    "1": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "2": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "3": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "6": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "9": [
+     2.697214,
+     2.532882,
+     2.867742
+    ],
+    "12": [
+     20.819872,
+     19.525177,
+     22.295563
+    ],
+    "14": [
+     76.388176,
+     71.473745,
+     81.430171
+    ],
+    "16": [
+     272.591597,
+     256.529166,
+     288.806446
+    ],
+    "20": [
+     1073.186579,
+     1024.648667,
+     1122.632292
+    ],
+    "24": [
+     1073.186579,
+     1024.648667,
+     1122.632292
+    ]
+   },
+   "r_calibrated_ADAPTQ_over_NONADAPTQ": {
+    "1": [
+     0.999618,
+     0.991177,
+     1.007116
+    ],
+    "2": [
+     1.008443,
+     0.992327,
+     1.025894
+    ],
+    "3": [
+     1.046455,
+     1.02027,
+     1.072517
+    ],
+    "6": [
+     2.400385,
+     2.184397,
+     2.651533
+    ],
+    "9": [
+     143.708203,
+     71.445576,
+     288.296429
+    ],
+    "12": [
+     318.948748,
+     128.445244,
+     687.49455
+    ],
+    "14": [
+     319.201905,
+     130.194957,
+     682.83838
+    ],
+    "16": [
+     306.341078,
+     123.011211,
+     667.867793
+    ],
+    "20": [
+     302.289243,
+     121.857151,
+     651.840858
+    ],
+    "24": [
+     298.348965,
+     120.752908,
+     639.827007
+    ]
+   },
+   "r_battery_knowledge_NONADAPTQ_over_NONADAPT": {
+    "1": [
+     1.004746,
+     1.000284,
+     1.012414
+    ],
+    "2": [
+     1.014401,
+     1.006042,
+     1.02501
+    ],
+    "3": [
+     1.015752,
+     1.005209,
+     1.029459
+    ],
+    "6": [
+     1.037112,
+     1.021332,
+     1.054821
+    ],
+    "9": [
+     1.072639,
+     1.0505,
+     1.098188
+    ],
+    "12": [
+     1.110134,
+     1.081077,
+     1.142178
+    ],
+    "14": [
+     1.108679,
+     1.080306,
+     1.140284
+    ],
+    "16": [
+     1.156173,
+     1.11863,
+     1.196696
+    ],
+    "20": [
+     1.171847,
+     1.132786,
+     1.213273
+    ],
+    "24": [
+     1.187861,
+     1.148202,
+     1.228809
+    ]
+   }
+  },
+  "UNBALANCED": {
+   "r_internal_ADAPT_over_NONADAPT": {
+    "1": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "2": [
+     2.138578,
+     2.131493,
+     2.145513
+    ],
+    "3": [
+     6.848616,
+     6.605969,
+     7.099151
+    ],
+    "6": [
+     8.465188,
+     7.887096,
+     9.110721
+    ],
+    "9": [
+     46.839232,
+     43.483206,
+     50.879336
+    ],
+    "12": [
+     239.543573,
+     220.079011,
+     260.995135
+    ],
+    "14": [
+     1379.405522,
+     1281.382304,
+     1488.97758
+    ],
+    "16": [
+     3267.506897,
+     2822.77759,
+     3742.800516
+    ],
+    "20": [
+     12101.62213,
+     11675.287125,
+     12536.573125
+    ],
+    "24": [
+     6419.074768,
+     5685.95375,
+     7233.217375
+    ]
+   },
+   "r_calibrated_ADAPTQ_over_NONADAPTQ": {
+    "1": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "2": [
+     1.33289,
+     1.183828,
+     1.533576
+    ],
+    "3": [
+     1.953991,
+     1.537645,
+     2.556178
+    ],
+    "6": [
+     18.408328,
+     4.528756,
+     158.427097
+    ],
+    "9": [
+     15394.180479,
+     5088.864558,
+     38679.8235
+    ],
+    "12": [
+     11552.331479,
+     3807.237231,
+     29818.701625
+    ],
+    "14": [
+     10022.304967,
+     3096.264561,
+     26298.167875
+    ],
+    "16": [
+     9166.562145,
+     2723.032867,
+     24311.3705
+    ],
+    "20": [
+     7623.786342,
+     2175.964696,
+     20710.5635
+    ],
+    "24": [
+     6206.268743,
+     1508.734263,
+     18791.51975
+    ]
+   },
+   "r_battery_knowledge_NONADAPTQ_over_NONADAPT": {
+    "1": [
+     0.404683,
+     0.360061,
+     0.456476
+    ],
+    "2": [
+     1.246209,
+     1.052133,
+     1.491479
+    ],
+    "3": [
+     0.778731,
+     0.627482,
+     0.971769
+    ],
+    "6": [
+     0.675105,
+     0.500441,
+     0.917996
+    ],
+    "9": [
+     0.608646,
+     0.415976,
+     0.934028
+    ],
+    "12": [
+     0.546976,
+     0.352736,
+     0.914115
+    ],
+    "14": [
+     0.951756,
+     0.596816,
+     1.568232
+    ],
+    "16": [
+     0.64455,
+     0.395769,
+     1.091609
+    ],
+    "20": [
+     0.756608,
+     0.434453,
+     1.348228
+    ],
+    "24": [
+     0.512841,
+     0.274517,
+     1.030885
+    ]
+   }
+  }
+ },
+ "verdicts": {
+  "primary": "COMPOUND-CONFIRMED-HALVING-FAIL",
+  "sham_gate": {
+   "BALANCED": {
+    "pass": true,
+    "failing_ks": []
+   },
+   "UNBALANCED": {
+    "pass": true,
+    "failing_ks": []
+   }
+  },
+  "per_stratum": {
+   "BALANCED": {
+    "verdict": "COMPOUND-CONFIRMED-HALVING-FAIL",
+    "H1a_superlinear": true,
+    "h1a_ratio_s12_over_s3": 20.791489,
+    "H1b_capped": true,
+    "H1c_premium_within_pairs": true,
+    "halving_slope_test_ADAPT_unaligned_diagnostic": {
+     "segment_ks": [
+      9,
+      12,
+      14,
+      16
+     ],
+     "pass": true,
+     "slope": -0.659795,
+     "ci": [
+      -0.669251,
+      -0.650769
+     ],
+     "target_-ln2": -0.6931471805599453
+    },
+    "halving_aligned_test_primary_A10": {
+     "points_j_meanT": [
+      [
+       1,
+       157.74
+      ],
+      [
+       2,
+       93.986667
+      ],
+      [
+       3,
+       46.96
+      ],
+      [
+       4,
+       23.703333
+      ],
+      [
+       5,
+       12.166667
+      ],
+      [
+       6,
+       6.61
+      ],
+      [
+       7,
+       3.601667
+      ],
+      [
+       8,
+       2.098333
+      ],
+      [
+       9,
+       1.385
+      ],
+      [
+       10,
+       1.066667
+      ]
+     ],
+     "pass": false,
+     "slope": -0.583596,
+     "ci": [
+      -0.683481,
+      -0.292889
+     ],
+     "target_-ln2": -0.6931471805599453
+    },
+    "halving_slope_test_ADAPTQ_descriptive": {
+     "segment_ks": [
+      3,
+      6
+     ],
+     "pass": null,
+     "slope": null,
+     "ci": null
+    },
+    "V5_pointwise_bound_frac_ok": 1.0,
+    "H2_calibrated_pair": {
+     "pass": false,
+     "single_query_equality_matched_prior": true,
+     "monotone_nonadaptq": false,
+     "adaptq_premium_k_ge_6": true
+    },
+    "premium_internal_k12": [
+     20.819872,
+     19.525177,
+     22.295563
+    ],
+    "premium_internal_k1": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "premium_calibrated_k12": [
+     318.948748,
+     128.445244,
+     687.49455
+    ],
+    "premium_calibrated_k1": [
+     0.999618,
+     0.991177,
+     1.007116
+    ],
+    "uniform_battery_zero_bit_collapse_ks": [
+     1,
+     2,
+     3,
+     6,
+     9,
+     12,
+     14,
+     16,
+     20,
+     24
+    ],
+    "H3_net_econ": {
+     "k_opt_measured_cq1": 10,
+     "k_opt_predicted_log2_A_ln2": 9.536549,
+     "s_net_max": 89.025161
+    }
+   },
+   "UNBALANCED": {
+    "verdict": "GEOMETRIC-COMPOUND-ISOLATION-CAPPED",
+    "H1a_superlinear": true,
+    "h1a_ratio_s12_over_s3": 165.230964,
+    "H1b_capped": true,
+    "H1c_premium_within_pairs": true,
+    "halving_slope_test_ADAPT_unaligned_diagnostic": {
+     "segment_ks": [
+      1,
+      2,
+      3,
+      6,
+      9,
+      12,
+      14,
+      16
+     ],
+     "pass": true,
+     "slope": -0.651069,
+     "ci": [
+      -0.655172,
+      -0.647078
+     ],
+     "target_-ln2": -0.6931471805599453
+    },
+    "halving_aligned_test_primary_A10": {
+     "points_j_meanT": [
+      [
+       1,
+       64818.795
+      ],
+      [
+       2,
+       9471.865
+      ],
+      [
+       3,
+       9471.865
+      ],
+      [
+       4,
+       8988.49
+      ],
+      [
+       5,
+       3926.725
+      ],
+      [
+       6,
+       1772.025
+      ],
+      [
+       7,
+       932.495
+      ],
+      [
+       8,
+       439.405
+      ],
+      [
+       9,
+       222.055
+      ],
+      [
+       10,
+       107.32
+      ],
+      [
+       11,
+       57.325
+      ],
+      [
+       12,
+       29.615
+      ],
+      [
+       13,
+       14.9
+      ],
+      [
+       14,
+       7.27
+      ],
+      [
+       15,
+       3.875
+      ],
+      [
+       16,
+       2.195
+      ],
+      [
+       17,
+       1.345
+      ]
+     ],
+     "pass": true,
+     "slope": -0.658876,
+     "ci": [
+      -0.716339,
+      -0.606765
+     ],
+     "target_-ln2": -0.6931471805599453
+    },
+    "halving_slope_test_ADAPTQ_descriptive": {
+     "segment_ks": [
+      1,
+      2,
+      3,
+      6
+     ],
+     "pass": true,
+     "slope": -0.687684,
+     "ci": [
+      -1.294407,
+      -0.532132
+     ],
+     "target_-ln2": -0.6931471805599453
+    },
+    "V5_pointwise_bound_frac_ok": 1.0,
+    "H2_calibrated_pair": {
+     "pass": true,
+     "single_query_equality_matched_prior": true,
+     "monotone_nonadaptq": true,
+     "adaptq_premium_k_ge_6": true
+    },
+    "premium_internal_k12": [
+     239.543573,
+     220.079011,
+     260.995135
+    ],
+    "premium_internal_k1": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "premium_calibrated_k12": [
+     11552.331479,
+     3807.237231,
+     29818.701625
+    ],
+    "premium_calibrated_k1": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "uniform_battery_zero_bit_collapse_ks": [],
+    "H3_net_econ": {
+     "k_opt_measured_cq1": 18,
+     "k_opt_predicted_log2_A_ln2": 17.597922,
+     "s_net_max": 14244.920988
+    }
+   }
+  }
+ },
+ "barrier_assessment": {
+  "expected": "saturation consistent with barriers 4/8: external adaptive position info pays ISOLATION-COST per query; ceiling = per-stratum E[T0]",
+  "barrier_event_detected": false,
+  "reverification": null,
+  "note": "internal capacity converts to zero (frontier-iii closure): no N-only mechanism can mint these bits; the oracle here is idealized external info by design"
+ },
+ "notes": {
+  "pricing_units": "1 unit = one divisibility test (flat, disclosed); query costs excluded from gross s, included in net view",
+  "oracle_strength": "idealized exact-comparison channel about p=min(p,q) -- stronger than any realized N-only feature per barriers 2/4; this prices EXTERNAL adaptive info",
+  "relation_to_prior": "round-70/71 'sequential hints compound' was measured in the Berggren-ascent frame (alpha^dB); this is the scan-frame pricing law with the adaptive/non-adaptive contrast isolated",
+  "isolation_bounds": "integer-pin cap ceil(log2 W)~20 vs prime-isolation cap ceil(log2 pi(sqrt(N)))~17 reported per stratum under fits[*|_caps]"
+ },
+ "ledger_catches": [
+  "A5 (smoke-caught, pre-full-run): designer error -- BALANCED semiprimes pin min(p,q) against sqrt(N), so min(p,q) is NOT uniform on (1,U]; the first-draft uniform-prior non-adaptive battery placed every threshold below the support band and carried literally zero bits (s==1.00 exactly to k=24), while adaptive bisection only wastes ~ceil(log2(W/gap)) queries before compounding. Fixed-threshold hint pricing must be checked against the draw law; uniform-prior curves retained as reference diagnostics only (AMENDMENT-1).",
+  "V2 first draft failed on 300-sample MC noise (~2.4 SE), not theory error: replaced with deterministic dense-grid enumeration before the full run."
+ ],
+ "wall_s": 2.0
+}

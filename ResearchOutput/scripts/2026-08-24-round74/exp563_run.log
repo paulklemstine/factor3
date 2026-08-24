@@ -1,0 +1,28 @@
+[     0.0s] exp563 SEQHINT-COMPOUND-LAW smoke=False
+[     0.2s] V0 population integrity OK: n=800
+[     0.6s] V1 brute-scan==formula OK: {'BALANCED': 25, 'UNBALANCED': 25}
+[     0.6s] V2a exact width-halving law OK on 720 steps
+[     0.6s] V2b closed-form vs dense-grid enumeration OK (reference-only, A2): max rel err 0.0192 over 60 cells
+[     0.6s] stratum BALANCED: n=600
+[     0.6s]   BALANCED: 200/600 done
+[     0.7s]   BALANCED: 400/600 done
+[     0.7s]   BALANCED: 600/600 done
+[     0.7s] stratum UNBALANCED: n=200
+[     0.8s]   UNBALANCED: 200/200 done
+[     2.0s] wrote exp563_result.json
+[     2.0s] --- BALANCED: T0=1072.4
+[     2.0s]   ADAPT     s(k): k1:1[1,1] k2:1[1,1] k3:1[1,1] k6:1[1,1] k9:2.69[2.53,2.86] k12:20.8[19.5,22.3] k14:76.3[71.4,81.5] k16:272[257,289] k20:1.07e+03[1.02e+03,1.12e+03] k24:1.07e+03[1.02e+03,1.12e+03]
+[     2.0s]   ADAPTQ    s(k): k1:1[1,1.01] k2:1.02[1.01,1.04] k3:1.06[1.04,1.09] k6:2.49[2.27,2.74] k9:135[75.6,302] k12:288[143,784] k14:288[149,788] k16:288[148,782] k20:288[144,793] k24:288[146,787]
+[     2.0s]   NONADAPT  s(k): k1:1[1,1] k2:1[1,1] k3:1[1,1] k6:1[1,1] k9:1[1,1] k12:1[1,1] k14:1[1,1] k16:1[1,1] k20:1[1,1] k24:1[1,1]
+[     2.0s]   NONADAPTQ s(k): k1:1[1,1.01] k2:1.01[1.01,1.03] k3:1.02[1.01,1.03] k6:1.04[1.02,1.06] k9:1.07[1.05,1.1] k12:1.11[1.08,1.14] k14:1.11[1.08,1.14] k16:1.16[1.12,1.2] k20:1.17[1.13,1.21] k24:1.19[1.15,1.23]
+[     2.0s]   SHAM      s(k): k1:0.00955 k2:0.0129 k3:0.0216 k6:0.135 k9:0.553 k12:0.907 k14:0.975 k16:0.993 k20:0.999 k24:1
+[     2.0s]   verdict=COMPOUND-CONFIRMED-HALVING-FAIL H1a=True H1b=True H1c=True H2=False aligned_halving=slope-0.583596ci[-0.683481, -0.292889]pass=False unaligned_slope=-0.659795 V5bound=1.0 collapse_ks=[1, 2, 3, 6, 9, 12, 14, 16, 20, 24] H3 k_opt=10 vs pred 9.536549
+[     2.0s] --- UNBALANCED: T0=286205.9
+[     2.0s]   ADAPT     s(k): k1:4.42[4.39,4.44] k2:4.42[4.4,4.44] k3:30.2[29,31.5] k6:72.9[67.9,78.6] k9:651[604,706] k12:4.99e+03[4.66e+03,5.38e+03] k14:1.92e+04[1.8e+04,2.07e+04] k16:7.39e+04[6.91e+04,7.94e+04] k20:2.86e+05[2.82e+05,2.9e+05] k24:2.86e+05[2.82e+05,2.9e+05]
+[     2.0s]   ADAPTQ    s(k): k1:1.78[1.6,2.01] k2:3.39[2.78,4.3] k3:6.55[4.92,9.82] k6:54.7[24.3,968] k9:9.7e+04[4.46e+04,2.88e+05] k12:9.7e+04[4.58e+04,2.88e+05] k14:9.7e+04[4.58e+04,2.88e+05] k16:9.7e+04[4.54e+04,2.88e+05] k20:9.7e+04[4.46e+04,2.88e+05] k24:9.7e+04[4.56e+04,2.87e+05]
+[     2.0s]   NONADAPT  s(k): k1:4.42[4.4,4.44] k2:2.06[2.06,2.07] k3:4.42[4.4,4.44] k6:8.62[8.54,8.72] k9:13.9[13.7,14.2] k12:20.8[20.3,21.4] k14:13.9[13.7,14.2] k16:22.7[20.2,25.8] k20:23.6[22.9,24.4] k24:44.5[39.5,50.7]
+[     2.0s]   NONADAPTQ s(k): k1:1.78[1.59,2.03] k2:2.56[2.18,3.08] k3:3.39[2.8,4.33] k6:5.67[4.35,7.97] k9:8.14[5.87,12.8] k12:10.8[7.3,18.9] k14:12.5[8.3,21.7] k16:13.6[8.83,25.6] k20:16.3[10.4,36.4] k24:20.4[12.1,48.7]
+[     2.0s]   SHAM      s(k): k1:0.952 k2:0.912 k3:0.963 k6:0.99 k9:0.998 k12:1 k14:1 k16:1 k20:1 k24:1
+[     2.0s]   verdict=GEOMETRIC-COMPOUND-ISOLATION-CAPPED H1a=True H1b=True H1c=True H2=True aligned_halving=slope-0.658876ci[-0.716339, -0.606765]pass=True unaligned_slope=-0.651069 V5bound=1.0 collapse_ks=[] H3 k_opt=18 vs pred 17.597922
+[     2.0s] PRIMARY VERDICT: COMPOUND-CONFIRMED-HALVING-FAIL
+[     2.0s] total wall 2.0s

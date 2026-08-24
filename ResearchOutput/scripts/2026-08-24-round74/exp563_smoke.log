@@ -1,0 +1,24 @@
+[     0.0s] exp563 SEQHINT-COMPOUND-LAW smoke=True
+[     0.2s] V0 population integrity OK: n=40
+[     0.3s] V1 brute-scan==formula OK: {'BALANCED': 10, 'UNBALANCED': 10}
+[     0.4s] V2a exact width-halving law OK on 288 steps
+[     0.4s] V2b closed-form vs dense-grid enumeration OK (reference-only, A2): max rel err 0.0083 over 24 cells
+[     0.4s] stratum BALANCED: n=30
+[     0.4s] stratum UNBALANCED: n=10
+[     0.4s] wrote exp563_smoke_result.json
+[     0.4s] --- BALANCED: T0=1064.6
+[     0.4s]   ADAPT     s(k): k1:1[1,1] k3:1[1,1] k9:3.27[2.42,4.65] k12:20.6[16.7,26] k24:1.06e+03[882,1.23e+03]
+[     0.4s]   ADAPTQ    s(k): k1:1.03[1,1.1] k3:1.26[1.08,1.58] k9:1.06e+03[878,1.23e+03] k12:1.06e+03[909,1.23e+03] k24:1.06e+03[886,1.25e+03]
+[     0.4s]   NONADAPT  s(k): k1:1[1,1] k3:1[1,1] k9:1[1,1] k12:1[1,1] k24:1[1,1]
+[     0.4s]   NONADAPTQ s(k): k1:1.06[1,1.21] k3:1.15[1.03,1.36] k9:1.41[1.13,1.92] k12:1.74[1.3,2.53] k24:5.67[3.1,19.2]
+[     0.4s]   SHAM      s(k): k1:0.00954 k3:0.0222 k9:0.556 k12:0.909 k24:1
+[     0.4s]   verdict=COMPOUND-CONFIRMED-HALVING-FAIL H1a=True H1b=True H1c=True H2=True aligned_halving=slope-0.572468ci[-0.68318, -0.324877]pass=False unaligned_slope=None V5bound=1.0 collapse_ks=[1, 3, 9, 12, 24] H3 k_opt=10 vs pred 9.525974
+[     0.4s] --- UNBALANCED: T0=308029.6
+[     0.4s]   ADAPT     s(k): k1:4.45[4.33,4.58] k3:32.2[25.8,43.9] k9:910[676,1.55e+03] k12:5.39e+03[4.16e+03,8.11e+03] k24:3.08e+05[2.95e+05,3.22e+05]
+[     0.4s]   ADAPTQ    s(k): k1:1.82[1.21,3.97] k3:9.16[3.2,3.03e+05] k9:3.08e+05[2.93e+05,3.23e+05] k12:3.08e+05[2.95e+05,3.23e+05] k24:3.08e+05[2.92e+05,3.24e+05]
+[     0.4s]   NONADAPT  s(k): k1:4.45[4.33,4.57] k3:4.45[4.33,4.59] k9:14.3[13,15.9] k12:21.8[18.8,26.1] k24:25.5[19.5,37.3]
+[     0.4s]   NONADAPTQ s(k): k1:1.82[1.19,4.06] k3:4.54[2.09,101] k9:9.44[3.15,3.17e+05] k12:9.44[3.15,3.17e+05] k24:3.08e+05[2.93e+05,3.22e+05]
+[     0.4s]   SHAM      s(k): k1:1.02 k3:0.958 k9:0.997 k12:1 k24:1
+[     0.4s]   verdict=PARTIAL H1a=True H1b=True H1c=False H2=False aligned_halving=slopeNoneciNonepass=None unaligned_slope=-0.6226 V5bound=1.0 collapse_ks=[] H3 k_opt=18 vs pred 17.703938
+[     0.4s] PRIMARY VERDICT: COMPOUND-CONFIRMED-HALVING-FAIL
+[     0.4s] total wall 0.4s
