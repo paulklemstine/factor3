@@ -86,3 +86,15 @@ L6 mechanism probe added post-signal. Barriers: 5 amended in scope ("orthogonal"
 residue-adic dials blind, magnitude-position channel open and priced); 2/4/8 unchanged.
 
 Now 546 experiments. Assessment v300.
+
+---
+
+**ERRATUM (2026-08-23, superseded by papers 196–197):** §2's "channel exists" claim is
+RETRACTED as an extractable channel and §5's mechanism wording was WRONG. E(a)=a²−N
+crosses zero between j=0 and j=1 of any isqrt-anchored window (zero at √N), NOT at
+j=d — the event at a=m is the Fermat square-HIT; sign-count sensors are structurally
+constant (proven identities). exp551 shows the realized spectral feature is EXACTLY a
+magnitude mirror of N: MI(feature ; b₁ | log-N decile) = 0.0000, identical to plain
+log N head-to-head. The §5 hit-rate/oracle table stands as a factor-derived bound.
+See papers 197 (correction) and 550-recording ledger for the method lesson: row-shuffle
+nulls are the wrong null for deterministic functions of N.

@@ -1,0 +1,47 @@
+{
+ "pooled_12q": {
+  "spectral_hratio": [
+   0.1836,
+   124.4
+  ],
+  "logN": [
+   0.1836,
+   116.8
+  ],
+  "sqrtN_floor": [
+   0.1836,
+   107.5
+  ],
+  "frac_sqrtN": [
+   0.0048,
+   -0.3
+  ]
+ },
+ "within_fine_nm_cells": {
+  "cells": 26,
+  "rows_covered": 2603,
+  "results": {
+   "spectral_hratio": [
+    0.0629,
+    0.0083,
+    25.2
+   ],
+   "logN": [
+    0.0629,
+    0.0085,
+    27.2
+   ],
+   "frac_sqrtN": [
+    0.0426,
+    0.0449,
+    -0.5
+   ]
+  }
+ },
+ "feature_given_logN_deciles": {
+  "MI": 0.0,
+  "null_mean": 0.0,
+  "null_sd": 0.0,
+  "z": 0.0
+ }
+}

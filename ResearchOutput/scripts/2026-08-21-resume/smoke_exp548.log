@@ -1,0 +1,11 @@
+[exp548] start  smoke=True POP=150 PERMS=40 CMAX=1500
+[derivation] pair maps A/B/C derived; hint refutation recorded
+[gate] brute=239 tree=239 dups=0 missing=0 extra=0 pass=True
+[cross-check] pair maps == literature matrices on 50/50 sampled nodes
+[population] embedded=150/150 emb_fail=0 term_fail=0 min_dP=17
+[dp] mean=24.4467 sd=2.8011 range=[17, 32] slope=1.08896 CI95=[0.74898, 1.42895] R2=0.21029 fixed1.4 RMSE=3.9576
+[P-B] agreement=0.3968 chance~0.3804 z=2.29
+[dial] primary worst |z|=1.55 (N mod 3^3 vs L0); controls max|z|=112.216
+[gauss] cells=7625 mismatches=0 shift_failures=0
+[e2e] dial 100/100 repr 100/100 I(F;p%3)=0.0000 I(R;p%3)=0.9954 | I(F;agree4)=0.0000 < I(R;agree4)=0.9815 H=0.9815 | equality_case_exact=True
+[done] wall=0.1s -> /home/raver1975/factor3/ResearchOutput/scripts/2026-08-21-resume/exp548_result.json

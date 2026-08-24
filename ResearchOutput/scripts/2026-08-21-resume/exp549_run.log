@@ -1,0 +1,509 @@
+=== exp549 WINDOW-FRONTIER ===
+config: NS/stratum=1000 (x3 strata), perms=200, budgets=[64, 256, 1024, 4096], designs=['D1', 'D1b', 'D2', 'D3', 'D4'], bins<=12, seed=20260824
+[gen] 3000 semiprimes in 0.1s
+[pipeline] reversed-string ascent matches: 3000/3000
+[pop] d_fermat: mean=395856.1 median=215782 q05=1479 q25=36420 q75=654498 q90=1096850 q99=1570658 max=1775684
+[pop] dB(tree depth): mean=76.3 median=38 range=[15,22005]
+[pop] b1 dist: [2380, 233, 387]
+[oracle] B=64: I(1{d<=B};b1)=0.0270 zp=+47.3 zw=+23.5 rates=[0.0, 0.0, 0.07] cov=0.009
+[oracle] B=256: I(1{d<=B};b1)=0.0569 zp=+111.4 zw=+35.5 rates=[0.0, 0.0, 0.145] cov=0.019
+[oracle] B=1024: I(1{d<=B};b1)=0.1282 zp=+229.5 zw=+55.9 rates=[0.0, 0.0, 0.313] cov=0.040
+[oracle] B=4096: I(1{d<=B};b1)=0.3052 zp=+677.4 zw=+89.8 rates=[0.0, 0.017, 0.677] cov=0.089
+[oracle] max I=0.4798 at B=22758; 0.9-saturation B*=10420
+[probes] D1@64: bracket rate=1.000 hits med=1 (exactness OK)
+[probes] D1@256: bracket rate=1.000 hits med=1 (exactness OK)
+[probes] D1@1024: bracket rate=1.000 hits med=1 (exactness OK)
+[probes] D1@4096: bracket rate=1.000 hits med=1 (exactness OK)
+[probes] D1b@64: bracket rate=1.000 hits med=33 (exactness OK)
+[probes] D1b@256: bracket rate=1.000 hits med=129 (exactness OK)
+[probes] D1b@1024: bracket rate=1.000 hits med=513 (exactness OK)
+[probes] D1b@4096: bracket rate=1.000 hits med=2049 (exactness OK)
+[probes] D2@64: bracket rate=1.000 hits med=1 (exactness OK)
+[probes] D2@256: bracket rate=1.000 hits med=1 (exactness OK)
+[probes] D2@1024: bracket rate=1.000 hits med=1 (exactness OK)
+[probes] D2@4096: bracket rate=1.000 hits med=1 (exactness OK)
+[probes] D3@64: bracket rate=1.000 hits med=1 (exactness OK)
+[probes] D3@256: bracket rate=1.000 hits med=1 (exactness OK)
+[probes] D3@1024: bracket rate=1.000 hits med=1 (exactness OK)
+[probes] D3@4096: bracket rate=1.000 hits med=1 (exactness OK)
+[probes] D4@64: bracket rate=1.000 hits med=1 (exactness OK)
+[probes] D4@256: bracket rate=1.000 hits med=1 (exactness OK)
+[probes] D4@1024: bracket rate=1.000 hits med=1 (exactness OK)
+[probes] D4@4096: bracket rate=1.000 hits med=1 (exactness OK)
+[features] 20 (design,budget) blocks in 12.2s
+[stats] 1/5 designs x 4 budgets x 21 features done (4s)
+[stats] 2/5 designs x 4 budgets x 21 features done (8s)
+[stats] 3/5 designs x 4 budgets x 21 features done (14s)
+[stats] 4/5 designs x 4 budgets x 21 features done (17s)
+[stats] 5/5 designs x 4 budgets x 21 features done (21s)
+[best@64] design=D2 feat=spec_a_hratio I=0.187088 zp=+126.2 zw=+10.6 | joint12 best I=0.268962 | dbq best I=0.062237
+[best@256] design=D3 feat=spec_a_hratio I=0.189237 zp=+113.8 zw=+10.8 | joint12 best I=0.270904 | dbq best I=0.062585
+[best@1024] design=D3 feat=spec_a_ent I=0.189237 zp=+131.3 zw=+10.6 | joint12 best I=0.272018 | dbq best I=0.062946
+[best@4096] design=D3 feat=spec_a_third_hi I=0.189237 zp=+115.7 zw=+11.1 | joint12 best I=0.270904 | dbq best I=0.062804
+
+================ DIGEST ================
+VERDICT: WINDOW-FRONTIER-MONOTONE-IN-B-SPECTRAL-COMPETITIVE
+R1 shape: FRONTIER-MONOTONE-IN-B
+R2 hit role: SPECTRAL-COMPETITIVE (bracket>=90% of max at 0/4 budgets)
+R3 hit-detection saturation B*=10420 (oracle max I=0.4798 @B=22758)
+R4 maxcellMI(4096)=0.1892 vs oracle I(1{d<=4096})=0.3052 -> ratio 0.6201
+BITS-PER-PROBE: B=64: 2.92e-03 (D2/spec_a_hratio); B=256: 7.39e-04 (D3/spec_a_hratio); B=1024: 1.85e-04 (D3/spec_a_ent); B=4096: 4.62e-05 (D3/spec_a_third_hi)
+FERMAT FRACTION: full scan E[steps]=395857.1; B=64: 0.016% (cov 0.9%); B=256: 0.065% (cov 1.9%); B=1024: 0.26% (cov 4.0%); B=4096: 1% (cov 8.9%)
+d_fermat quantiles [5,25,50,75,90,99]%: [1478.9, 36419.8, 215782.0, 654498.0, 1096850.1, 1570658.3]; mean=395856.1
+PIPELINE: ascent 3000/3000; fermat_id=True; probe-exactness all OK=True (20 blocks)
+RUNTIME: total=41s (gen 0 | descend 0 | oracle 0 | features 12 | stats 29s)
+LEDGER:
+  - L1: D3 task text '(k=B coverage 64B)' read as stride 64 -> coverage 64B.
+  - L2: D2 grid strictly-increasing rounded geometric; JMAX=2^21 pre-stated from the q-range (d <=~ n/2 <= 2^20.5), not tuned on outcomes.
+  - L3: D4 spectra computed on the CONCATENATED length-B sequence; sub-window boundary discontinuities enter the FFT (inherent to the design).
+  - L4: budget = parabola evaluations only; FFT/summary compute uncounted (exp546 accounting).
+  - L5: bracket := (min E < 0 < max E); for anchored monotone windows equals 0 < d < coverage.
+  - L6: fresh seed 20260824 vs exp546's 20260823 -- qualitative replication.
+  - L7: dbq/joint12 targets are factor-derived (tree descent), never N-only.
+  - L8: flippos sentinels 1.0 (crossing at/after window) / 0.0 (before).
+
+wrote /home/raver1975/factor3/ResearchOutput/scripts/2026-08-21-resume/exp549_result.json and exp549_data.npz
+
+--- FRONTIER TABLE (design x B, best feature by z_pooled; target b1) ---
+design     B feature             I    z_pool  z_within
+D1       64 spec_s_hratio   0.1871    +121.8     +10.8   [bracket: I=0.0000 zp=+0.0 zw=+0.0]
+D1      256 spec_s_third_hi   0.1871    +122.6     +10.0   [bracket: I=0.0000 zp=+0.0 zw=+0.0]
+D1     1024 spec_s_third_mid   0.1871    +127.8      +9.1   [bracket: I=0.0000 zp=+0.0 zw=+0.0]
+D1     4096 spec_s_third_lo   0.1871    +120.0     +11.0   [bracket: I=0.0000 zp=+0.0 zw=+0.0]
+D1b      64 spec_s_slope   0.1871    +119.2      +9.8   [bracket: I=0.0000 zp=+0.0 zw=+0.0]
+D1b     256 spec_s_ent     0.1871    +123.0      +9.7   [bracket: I=0.0000 zp=+0.0 zw=+0.0]
+D1b    1024 spec_s_slope   0.1871    +119.2     +10.8   [bracket: I=0.0000 zp=+0.0 zw=+0.0]
+D1b    4096 spec_s_hratio   0.1871    +126.0     +11.0   [bracket: I=0.0000 zp=+0.0 zw=+0.0]
+D2       64 spec_a_hratio   0.1871    +126.2     +10.6   [bracket: I=0.0000 zp=+0.0 zw=+0.0]
+D2      256 spec_s_cent    0.1871    +118.6     +11.0   [bracket: I=0.0000 zp=+0.0 zw=+0.0]
+D2     1024 spec_a_third_hi   0.1871    +120.8     +11.0   [bracket: I=0.0000 zp=+0.0 zw=+0.0]
+D2     4096 spec_a_hratio   0.1871    +131.2      +9.2   [bracket: I=0.0000 zp=+0.0 zw=+0.0]
+D3       64 spec_s_slope   0.1871    +119.6      +9.8   [bracket: I=0.0000 zp=+0.0 zw=+0.0]
+D3      256 spec_a_hratio   0.1892    +113.8     +10.8   [bracket: I=0.0000 zp=+0.0 zw=+0.0]
+D3     1024 spec_a_ent     0.1892    +131.3     +10.6   [bracket: I=0.0000 zp=+0.0 zw=+0.0]
+D3     4096 spec_a_third_hi   0.1892    +115.7     +11.1   [bracket: I=0.0000 zp=+0.0 zw=+0.0]
+D4       64 spec_s_third_mid   0.1871    +122.7      +9.7   [bracket: I=0.0000 zp=+0.0 zw=+0.0]
+D4      256 spec_a_hratio   0.1886    +127.3     +11.0   [bracket: I=0.0000 zp=+0.0 zw=+0.0]
+D4     1024 spec_a_ent     0.1886    +101.0     +11.2   [bracket: I=0.0000 zp=+0.0 zw=+0.0]
+D4     4096 spec_a_third_lo   0.1887    +113.0     +10.6   [bracket: I=0.0000 zp=+0.0 zw=+0.0]
+--- ALL b1 CELLS (design/B/feature I, zp, zw) ---
+D1       64 bracket      I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1       64 flippos      I=0.004172 zp=   -0.70 zw=   -0.76 bins=12
+D1       64 hits         I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1       64 spec_a_cent  I=0.004172 zp=   -0.74 zw=   -0.66 bins=12
+D1       64 spec_a_ent   I=0.004172 zp=   -0.72 zw=   -0.59 bins=12
+D1       64 spec_a_hratio I=0.004172 zp=   -0.64 zw=   -0.58 bins=12
+D1       64 spec_a_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1       64 spec_a_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1       64 spec_a_slope I=0.004172 zp=   -0.74 zw=   -0.67 bins=12
+D1       64 spec_a_third_hi I=0.004172 zp=   -0.70 zw=   -0.73 bins=12
+D1       64 spec_a_third_lo I=0.004172 zp=   -0.74 zw=   -0.69 bins=12
+D1       64 spec_a_third_mid I=0.004172 zp=   -0.69 zw=   -0.62 bins=12
+D1       64 spec_s_cent  I=0.187088 zp= +117.72 zw=  +10.29 bins=12
+D1       64 spec_s_ent   I=0.187088 zp= +108.74 zw=  +11.49 bins=12
+D1       64 spec_s_hratio I=0.187088 zp= +121.79 zw=  +10.82 bins=12
+D1       64 spec_s_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1       64 spec_s_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1       64 spec_s_slope I=0.187088 zp= +109.07 zw=   +9.54 bins=12
+D1       64 spec_s_third_hi I=0.187088 zp= +105.12 zw=  +10.14 bins=12
+D1       64 spec_s_third_lo I=0.187088 zp= +117.03 zw=  +10.50 bins=12
+D1       64 spec_s_third_mid I=0.187088 zp= +108.27 zw=  +10.92 bins=12
+D1      256 bracket      I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1      256 flippos      I=0.004172 zp=   -0.63 zw=   -0.70 bins=12
+D1      256 hits         I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1      256 spec_a_cent  I=0.004172 zp=   -0.73 zw=   -0.75 bins=12
+D1      256 spec_a_ent   I=0.004172 zp=   -0.61 zw=   -0.71 bins=12
+D1      256 spec_a_hratio I=0.004224 zp=   -0.73 zw=   -0.77 bins=12
+D1      256 spec_a_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1      256 spec_a_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1      256 spec_a_slope I=0.004172 zp=   -0.74 zw=   -0.65 bins=12
+D1      256 spec_a_third_hi I=0.004172 zp=   -0.72 zw=   -0.74 bins=12
+D1      256 spec_a_third_lo I=0.004172 zp=   -0.69 zw=   -0.75 bins=12
+D1      256 spec_a_third_mid I=0.004172 zp=   -0.74 zw=   -0.71 bins=12
+D1      256 spec_s_cent  I=0.187088 zp= +111.33 zw=  +10.26 bins=12
+D1      256 spec_s_ent   I=0.187088 zp= +113.76 zw=  +10.01 bins=12
+D1      256 spec_s_hratio I=0.187088 zp= +107.32 zw=  +10.95 bins=12
+D1      256 spec_s_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1      256 spec_s_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1      256 spec_s_slope I=0.187088 zp= +111.72 zw=   +9.90 bins=12
+D1      256 spec_s_third_hi I=0.187088 zp= +122.61 zw=  +10.03 bins=12
+D1      256 spec_s_third_lo I=0.187088 zp= +108.06 zw=  +10.06 bins=12
+D1      256 spec_s_third_mid I=0.187088 zp= +114.81 zw=  +10.70 bins=12
+D1     1024 bracket      I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1     1024 flippos      I=0.004172 zp=   -0.72 zw=   -0.63 bins=12
+D1     1024 hits         I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1     1024 spec_a_cent  I=0.003950 zp=   -0.85 zw=   -0.74 bins=12
+D1     1024 spec_a_ent   I=0.004289 zp=   -0.76 zw=   -0.50 bins=12
+D1     1024 spec_a_hratio I=0.153129 zp=  +87.28 zw=   +5.14 bins=12
+D1     1024 spec_a_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1     1024 spec_a_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1     1024 spec_a_slope I=0.003950 zp=   -0.85 zw=   -0.78 bins=12
+D1     1024 spec_a_third_hi I=0.003950 zp=   -0.88 zw=   -0.95 bins=12
+D1     1024 spec_a_third_lo I=0.003950 zp=   -0.77 zw=   -0.92 bins=12
+D1     1024 spec_a_third_mid I=0.003950 zp=   -0.90 zw=   -0.83 bins=12
+D1     1024 spec_s_cent  I=0.187088 zp= +124.31 zw=  +10.57 bins=12
+D1     1024 spec_s_ent   I=0.187088 zp= +113.20 zw=  +10.06 bins=12
+D1     1024 spec_s_hratio I=0.187088 zp= +115.19 zw=   +9.95 bins=12
+D1     1024 spec_s_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1     1024 spec_s_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1     1024 spec_s_slope I=0.187088 zp= +103.77 zw=  +10.74 bins=12
+D1     1024 spec_s_third_hi I=0.187088 zp= +115.01 zw=  +10.77 bins=12
+D1     1024 spec_s_third_lo I=0.187088 zp= +112.96 zw=  +10.06 bins=12
+D1     1024 spec_s_third_mid I=0.187088 zp= +127.77 zw=   +9.07 bins=12
+D1     4096 bracket      I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1     4096 flippos      I=0.004172 zp=   -0.72 zw=   -0.59 bins=12
+D1     4096 hits         I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1     4096 spec_a_cent  I=0.007326 zp=   +1.16 zw=   -0.01 bins=12
+D1     4096 spec_a_ent   I=0.074831 zp=  +37.97 zw=   +1.30 bins=12
+D1     4096 spec_a_hratio I=0.187088 zp= +110.96 zw=   +9.84 bins=12
+D1     4096 spec_a_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1     4096 spec_a_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1     4096 spec_a_slope I=0.004677 zp=   -0.46 zw=   -0.37 bins=12
+D1     4096 spec_a_third_hi I=0.003667 zp=   -1.05 zw=   -1.05 bins=12
+D1     4096 spec_a_third_lo I=0.003862 zp=   -0.97 zw=   -0.96 bins=12
+D1     4096 spec_a_third_mid I=0.004202 zp=   -0.86 zw=   -0.79 bins=12
+D1     4096 spec_s_cent  I=0.187088 zp= +110.32 zw=  +10.76 bins=12
+D1     4096 spec_s_ent   I=0.187088 zp= +114.81 zw=  +10.24 bins=12
+D1     4096 spec_s_hratio I=0.187088 zp= +114.25 zw=   +9.51 bins=12
+D1     4096 spec_s_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1     4096 spec_s_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1     4096 spec_s_slope I=0.187088 zp= +114.97 zw=   +9.78 bins=12
+D1     4096 spec_s_third_hi I=0.187088 zp= +110.87 zw=   +9.64 bins=12
+D1     4096 spec_s_third_lo I=0.187088 zp= +119.98 zw=  +11.01 bins=12
+D1     4096 spec_s_third_mid I=0.187088 zp= +111.89 zw=   +9.27 bins=12
+D1b      64 bracket      I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1b      64 flippos      I=0.004172 zp=   -0.68 zw=   -0.75 bins=12
+D1b      64 hits         I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1b      64 spec_a_cent  I=0.004356 zp=   -0.73 zw=   -0.60 bins=12
+D1b      64 spec_a_ent   I=0.004272 zp=   -0.67 zw=   -0.72 bins=12
+D1b      64 spec_a_hratio I=0.004356 zp=   -0.61 zw=   -0.65 bins=12
+D1b      64 spec_a_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1b      64 spec_a_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1b      64 spec_a_slope I=0.005439 zp=   +0.20 zw=   +0.01 bins=12
+D1b      64 spec_a_third_hi I=0.004236 zp=   -0.64 zw=   -0.55 bins=12
+D1b      64 spec_a_third_lo I=0.004356 zp=   -0.51 zw=   -0.69 bins=12
+D1b      64 spec_a_third_mid I=0.004388 zp=   -0.62 zw=   -0.68 bins=12
+D1b      64 spec_s_cent  I=0.187088 zp= +113.39 zw=  +10.04 bins=12
+D1b      64 spec_s_ent   I=0.187088 zp= +117.73 zw=  +11.27 bins=12
+D1b      64 spec_s_hratio I=0.187088 zp= +115.39 zw=   +9.30 bins=12
+D1b      64 spec_s_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1b      64 spec_s_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1b      64 spec_s_slope I=0.187088 zp= +119.21 zw=   +9.81 bins=12
+D1b      64 spec_s_third_hi I=0.187088 zp= +116.03 zw=  +10.11 bins=12
+D1b      64 spec_s_third_lo I=0.187088 zp= +113.20 zw=  +10.01 bins=12
+D1b      64 spec_s_third_mid I=0.187088 zp= +116.25 zw=   +9.32 bins=12
+D1b     256 bracket      I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1b     256 flippos      I=0.004172 zp=   -0.73 zw=   -0.81 bins=12
+D1b     256 hits         I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1b     256 spec_a_cent  I=0.016616 zp=   +6.58 zw=   +0.28 bins=12
+D1b     256 spec_a_ent   I=0.014552 zp=   +5.18 zw=   -0.20 bins=12
+D1b     256 spec_a_hratio I=0.017698 zp=   +7.94 zw=   +0.33 bins=12
+D1b     256 spec_a_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1b     256 spec_a_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1b     256 spec_a_slope I=0.073871 zp=  +41.82 zw=   +1.23 bins=12
+D1b     256 spec_a_third_hi I=0.016532 zp=   +6.94 zw=   +0.27 bins=12
+D1b     256 spec_a_third_lo I=0.016998 zp=   +7.19 zw=   +0.32 bins=12
+D1b     256 spec_a_third_mid I=0.017116 zp=   +7.32 zw=   +0.33 bins=12
+D1b     256 spec_s_cent  I=0.187088 zp= +104.08 zw=  +11.12 bins=12
+D1b     256 spec_s_ent   I=0.187088 zp= +123.04 zw=   +9.69 bins=12
+D1b     256 spec_s_hratio I=0.187088 zp= +116.27 zw=   +9.86 bins=12
+D1b     256 spec_s_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1b     256 spec_s_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1b     256 spec_s_slope I=0.187088 zp= +110.07 zw=  +10.36 bins=12
+D1b     256 spec_s_third_hi I=0.187088 zp= +109.62 zw=   +9.12 bins=12
+D1b     256 spec_s_third_lo I=0.187088 zp= +121.35 zw=  +10.19 bins=12
+D1b     256 spec_s_third_mid I=0.187088 zp= +106.28 zw=  +10.20 bins=12
+D1b    1024 bracket      I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1b    1024 flippos      I=0.004172 zp=   -0.64 zw=   -0.72 bins=12
+D1b    1024 hits         I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1b    1024 spec_a_cent  I=0.034214 zp=  +18.03 zw=   +0.31 bins=12
+D1b    1024 spec_a_ent   I=0.063362 zp=  +40.91 zw=   +2.17 bins=12
+D1b    1024 spec_a_hratio I=0.098572 zp=  +56.94 zw=   +1.47 bins=12
+D1b    1024 spec_a_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1b    1024 spec_a_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1b    1024 spec_a_slope I=0.100977 zp=  +58.30 zw=   +3.84 bins=12
+D1b    1024 spec_a_third_hi I=0.036656 zp=  +18.78 zw=   +0.37 bins=12
+D1b    1024 spec_a_third_lo I=0.037992 zp=  +20.12 zw=   +0.61 bins=12
+D1b    1024 spec_a_third_mid I=0.040183 zp=  +20.59 zw=   +0.92 bins=12
+D1b    1024 spec_s_cent  I=0.187088 zp= +112.19 zw=  +10.84 bins=12
+D1b    1024 spec_s_ent   I=0.187088 zp= +118.34 zw=  +10.05 bins=12
+D1b    1024 spec_s_hratio I=0.187088 zp= +110.50 zw=  +10.97 bins=12
+D1b    1024 spec_s_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1b    1024 spec_s_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1b    1024 spec_s_slope I=0.187088 zp= +119.22 zw=  +10.76 bins=12
+D1b    1024 spec_s_third_hi I=0.187088 zp= +114.35 zw=  +11.36 bins=12
+D1b    1024 spec_s_third_lo I=0.187088 zp= +104.41 zw=  +10.46 bins=12
+D1b    1024 spec_s_third_mid I=0.187088 zp= +114.31 zw=  +10.01 bins=12
+D1b    4096 bracket      I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1b    4096 flippos      I=0.004172 zp=   -0.76 zw=   -0.64 bins=12
+D1b    4096 hits         I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1b    4096 spec_a_cent  I=0.184001 zp= +119.53 zw=   +7.59 bins=12
+D1b    4096 spec_a_ent   I=0.186341 zp= +112.43 zw=   +9.11 bins=12
+D1b    4096 spec_a_hratio I=0.164526 zp= +100.97 zw=   +3.94 bins=12
+D1b    4096 spec_a_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1b    4096 spec_a_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1b    4096 spec_a_slope I=0.180911 zp= +112.89 zw=   +6.70 bins=12
+D1b    4096 spec_a_third_hi I=0.182941 zp= +112.87 zw=   +7.32 bins=12
+D1b    4096 spec_a_third_lo I=0.182941 zp= +104.59 zw=   +6.65 bins=12
+D1b    4096 spec_a_third_mid I=0.182941 zp= +111.44 zw=   +7.76 bins=12
+D1b    4096 spec_s_cent  I=0.187088 zp= +111.54 zw=   +9.86 bins=12
+D1b    4096 spec_s_ent   I=0.187088 zp= +113.52 zw=   +9.06 bins=12
+D1b    4096 spec_s_hratio I=0.187088 zp= +126.00 zw=  +10.99 bins=12
+D1b    4096 spec_s_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1b    4096 spec_s_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D1b    4096 spec_s_slope I=0.187088 zp= +118.10 zw=   +9.91 bins=12
+D1b    4096 spec_s_third_hi I=0.187088 zp= +122.39 zw=   +9.62 bins=12
+D1b    4096 spec_s_third_lo I=0.187088 zp= +119.37 zw=  +11.33 bins=12
+D1b    4096 spec_s_third_mid I=0.187088 zp= +108.91 zw=  +10.60 bins=12
+D2       64 bracket      I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D2       64 flippos      I=0.004172 zp=   -0.83 zw=   -0.77 bins=12
+D2       64 hits         I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D2       64 spec_a_cent  I=0.187088 zp= +110.95 zw=  +10.51 bins=12
+D2       64 spec_a_ent   I=0.187088 zp= +119.09 zw=  +10.14 bins=12
+D2       64 spec_a_hratio I=0.187088 zp= +126.18 zw=  +10.60 bins=12
+D2       64 spec_a_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D2       64 spec_a_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D2       64 spec_a_slope I=0.187088 zp= +124.99 zw=  +11.23 bins=12
+D2       64 spec_a_third_hi I=0.187088 zp= +110.38 zw=   +9.88 bins=12
+D2       64 spec_a_third_lo I=0.187088 zp= +102.05 zw=   +9.82 bins=12
+D2       64 spec_a_third_mid I=0.187088 zp= +114.85 zw=  +10.16 bins=12
+D2       64 spec_s_cent  I=0.187088 zp= +107.47 zw=   +9.36 bins=12
+D2       64 spec_s_ent   I=0.187088 zp= +113.46 zw=  +10.74 bins=12
+D2       64 spec_s_hratio I=0.187088 zp= +124.16 zw=  +10.20 bins=12
+D2       64 spec_s_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D2       64 spec_s_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D2       64 spec_s_slope I=0.187088 zp= +111.89 zw=  +10.52 bins=12
+D2       64 spec_s_third_hi I=0.187088 zp= +116.76 zw=   +9.85 bins=12
+D2       64 spec_s_third_lo I=0.187088 zp= +110.28 zw=  +10.35 bins=12
+D2       64 spec_s_third_mid I=0.187088 zp= +117.42 zw=   +9.95 bins=12
+D2      256 bracket      I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D2      256 flippos      I=0.004172 zp=   -0.79 zw=   -0.62 bins=12
+D2      256 hits         I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D2      256 spec_a_cent  I=0.187088 zp= +107.48 zw=  +10.10 bins=12
+D2      256 spec_a_ent   I=0.187088 zp= +111.20 zw=  +10.18 bins=12
+D2      256 spec_a_hratio I=0.187088 zp= +105.12 zw=  +10.42 bins=12
+D2      256 spec_a_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D2      256 spec_a_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D2      256 spec_a_slope I=0.187088 zp= +112.95 zw=   +9.99 bins=12
+D2      256 spec_a_third_hi I=0.187088 zp= +107.19 zw=  +11.22 bins=12
+D2      256 spec_a_third_lo I=0.187088 zp= +111.68 zw=  +10.05 bins=12
+D2      256 spec_a_third_mid I=0.187088 zp= +114.04 zw=   +9.94 bins=12
+D2      256 spec_s_cent  I=0.187088 zp= +118.62 zw=  +11.03 bins=12
+D2      256 spec_s_ent   I=0.187088 zp= +114.48 zw=  +11.30 bins=12
+D2      256 spec_s_hratio I=0.187088 zp= +112.69 zw=   +9.59 bins=12
+D2      256 spec_s_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D2      256 spec_s_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D2      256 spec_s_slope I=0.187088 zp= +111.48 zw=   +9.20 bins=12
+D2      256 spec_s_third_hi I=0.187088 zp= +100.99 zw=   +9.91 bins=12
+D2      256 spec_s_third_lo I=0.187088 zp= +106.17 zw=  +10.64 bins=12
+D2      256 spec_s_third_mid I=0.187088 zp= +110.10 zw=  +10.80 bins=12
+D2     1024 bracket      I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D2     1024 flippos      I=0.004172 zp=   -0.60 zw=   -0.67 bins=12
+D2     1024 hits         I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D2     1024 spec_a_cent  I=0.187088 zp= +113.05 zw=  +10.34 bins=12
+D2     1024 spec_a_ent   I=0.187088 zp= +114.17 zw=   +9.80 bins=12
+D2     1024 spec_a_hratio I=0.187088 zp= +119.46 zw=  +10.63 bins=12
+D2     1024 spec_a_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D2     1024 spec_a_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D2     1024 spec_a_slope I=0.187088 zp= +115.57 zw=  +10.28 bins=12
+D2     1024 spec_a_third_hi I=0.187088 zp= +120.81 zw=  +11.04 bins=12
+D2     1024 spec_a_third_lo I=0.187088 zp= +104.38 zw=  +10.52 bins=12
+D2     1024 spec_a_third_mid I=0.187088 zp= +105.30 zw=  +10.33 bins=12
+D2     1024 spec_s_cent  I=0.187088 zp= +107.85 zw=   +9.54 bins=12
+D2     1024 spec_s_ent   I=0.187088 zp= +114.81 zw=  +10.52 bins=12
+D2     1024 spec_s_hratio I=0.187088 zp= +108.58 zw=   +9.65 bins=12
+D2     1024 spec_s_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D2     1024 spec_s_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D2     1024 spec_s_slope I=0.187088 zp= +119.72 zw=  +10.52 bins=12
+D2     1024 spec_s_third_hi I=0.187088 zp= +115.16 zw=   +9.96 bins=12
+D2     1024 spec_s_third_lo I=0.187088 zp= +108.08 zw=  +10.33 bins=12
+D2     1024 spec_s_third_mid I=0.187088 zp= +113.43 zw=  +10.32 bins=12
+D2     4096 bracket      I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D2     4096 flippos      I=0.004172 zp=   -0.75 zw=   -0.60 bins=12
+D2     4096 hits         I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D2     4096 spec_a_cent  I=0.187088 zp= +100.19 zw=   +9.79 bins=12
+D2     4096 spec_a_ent   I=0.187088 zp= +111.28 zw=  +10.69 bins=12
+D2     4096 spec_a_hratio I=0.187088 zp= +131.20 zw=   +9.19 bins=12
+D2     4096 spec_a_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D2     4096 spec_a_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D2     4096 spec_a_slope I=0.187088 zp= +112.82 zw=   +9.04 bins=12
+D2     4096 spec_a_third_hi I=0.187088 zp= +118.37 zw=  +10.29 bins=12
+D2     4096 spec_a_third_lo I=0.187088 zp= +111.16 zw=  +10.18 bins=12
+D2     4096 spec_a_third_mid I=0.187088 zp= +106.72 zw=   +9.91 bins=12
+D2     4096 spec_s_cent  I=0.187088 zp= +105.46 zw=  +10.49 bins=12
+D2     4096 spec_s_ent   I=0.187088 zp= +106.57 zw=   +9.74 bins=12
+D2     4096 spec_s_hratio I=0.187088 zp= +104.90 zw=  +10.19 bins=12
+D2     4096 spec_s_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D2     4096 spec_s_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D2     4096 spec_s_slope I=0.187088 zp= +113.31 zw=  +10.04 bins=12
+D2     4096 spec_s_third_hi I=0.187088 zp= +100.85 zw=  +11.28 bins=12
+D2     4096 spec_s_third_lo I=0.187088 zp= +117.89 zw=  +11.80 bins=12
+D2     4096 spec_s_third_mid I=0.187088 zp= +118.43 zw=  +10.09 bins=12
+D3       64 bracket      I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D3       64 flippos      I=0.004172 zp=   -0.66 zw=   -0.66 bins=12
+D3       64 hits         I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D3       64 spec_a_cent  I=0.005525 zp=   -0.04 zw=   -0.09 bins=12
+D3       64 spec_a_ent   I=0.007094 zp=   +1.28 zw=   +0.18 bins=12
+D3       64 spec_a_hratio I=0.081980 zp=  +46.31 zw=   +0.71 bins=12
+D3       64 spec_a_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D3       64 spec_a_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D3       64 spec_a_slope I=0.004062 zp=   -0.83 zw=   -0.67 bins=12
+D3       64 spec_a_third_hi I=0.003476 zp=   -1.08 zw=   -1.05 bins=12
+D3       64 spec_a_third_lo I=0.003769 zp=   -0.94 zw=   -0.94 bins=12
+D3       64 spec_a_third_mid I=0.005834 zp=   +0.35 zw=   -0.01 bins=12
+D3       64 spec_s_cent  I=0.187088 zp= +115.76 zw=  +10.23 bins=12
+D3       64 spec_s_ent   I=0.187088 zp= +113.14 zw=  +10.11 bins=12
+D3       64 spec_s_hratio I=0.187088 zp= +106.94 zw=  +10.07 bins=12
+D3       64 spec_s_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D3       64 spec_s_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D3       64 spec_s_slope I=0.187088 zp= +119.58 zw=   +9.77 bins=12
+D3       64 spec_s_third_hi I=0.187088 zp= +117.95 zw=  +10.22 bins=12
+D3       64 spec_s_third_lo I=0.187088 zp= +112.12 zw=  +11.50 bins=12
+D3       64 spec_s_third_mid I=0.187088 zp= +108.37 zw=  +11.49 bins=12
+D3      256 bracket      I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D3      256 flippos      I=0.004172 zp=   -0.70 zw=   -0.62 bins=12
+D3      256 hits         I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D3      256 spec_a_cent  I=0.096863 zp=  +54.76 zw=   +1.12 bins=12
+D3      256 spec_a_ent   I=0.159827 zp=  +96.74 zw=   +4.06 bins=12
+D3      256 spec_a_hratio I=0.189237 zp= +113.81 zw=  +10.76 bins=12
+D3      256 spec_a_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D3      256 spec_a_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D3      256 spec_a_slope I=0.005855 zp=   +0.17 zw=   -0.10 bins=12
+D3      256 spec_a_third_hi I=0.055970 zp=  +29.56 zw=   +1.52 bins=12
+D3      256 spec_a_third_lo I=0.069270 zp=  +43.51 zw=   +1.59 bins=12
+D3      256 spec_a_third_mid I=0.080235 zp=  +50.21 zw=   +1.39 bins=12
+D3      256 spec_s_cent  I=0.187088 zp= +112.08 zw=  +10.51 bins=12
+D3      256 spec_s_ent   I=0.187088 zp= +102.45 zw=  +10.12 bins=12
+D3      256 spec_s_hratio I=0.187088 zp= +111.31 zw=  +10.10 bins=12
+D3      256 spec_s_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D3      256 spec_s_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D3      256 spec_s_slope I=0.187088 zp= +113.69 zw=  +10.93 bins=12
+D3      256 spec_s_third_hi I=0.187088 zp= +114.02 zw=  +10.77 bins=12
+D3      256 spec_s_third_lo I=0.187088 zp= +106.19 zw=  +10.48 bins=12
+D3      256 spec_s_third_mid I=0.187088 zp= +105.97 zw=   +9.89 bins=12
+D3     1024 bracket      I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D3     1024 flippos      I=0.004172 zp=   -0.67 zw=   -0.64 bins=12
+D3     1024 hits         I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D3     1024 spec_a_cent  I=0.188693 zp= +106.43 zw=   +9.69 bins=12
+D3     1024 spec_a_ent   I=0.189237 zp= +131.31 zw=  +10.62 bins=12
+D3     1024 spec_a_hratio I=0.187088 zp= +130.61 zw=   +8.55 bins=12
+D3     1024 spec_a_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D3     1024 spec_a_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D3     1024 spec_a_slope I=0.050660 zp=  +32.91 zw=   +0.69 bins=12
+D3     1024 spec_a_third_hi I=0.182986 zp= +104.86 zw=   +7.43 bins=12
+D3     1024 spec_a_third_lo I=0.185957 zp= +121.71 zw=   +8.79 bins=12
+D3     1024 spec_a_third_mid I=0.187456 zp= +122.12 zw=   +8.93 bins=12
+D3     1024 spec_s_cent  I=0.187088 zp= +115.23 zw=  +10.43 bins=12
+D3     1024 spec_s_ent   I=0.187088 zp= +112.99 zw=   +9.39 bins=12
+D3     1024 spec_s_hratio I=0.187088 zp= +122.80 zw=  +10.60 bins=12
+D3     1024 spec_s_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D3     1024 spec_s_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D3     1024 spec_s_slope I=0.187088 zp= +110.78 zw=   +9.78 bins=12
+D3     1024 spec_s_third_hi I=0.187088 zp= +111.51 zw=  +10.32 bins=12
+D3     1024 spec_s_third_lo I=0.187088 zp= +115.33 zw=   +9.81 bins=12
+D3     1024 spec_s_third_mid I=0.187088 zp= +110.14 zw=  +10.46 bins=12
+D3     4096 bracket      I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D3     4096 flippos      I=0.004172 zp=   -0.73 zw=   -0.72 bins=12
+D3     4096 hits         I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D3     4096 spec_a_cent  I=0.187088 zp= +107.73 zw=  +10.36 bins=12
+D3     4096 spec_a_ent   I=0.187088 zp= +118.11 zw=  +10.52 bins=12
+D3     4096 spec_a_hratio I=0.187088 zp= +125.54 zw=  +10.70 bins=12
+D3     4096 spec_a_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D3     4096 spec_a_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D3     4096 spec_a_slope I=0.157590 zp=  +98.75 zw=   +3.78 bins=12
+D3     4096 spec_a_third_hi I=0.189237 zp= +115.65 zw=  +11.09 bins=12
+D3     4096 spec_a_third_lo I=0.187088 zp= +107.33 zw=   +9.32 bins=12
+D3     4096 spec_a_third_mid I=0.187088 zp= +107.16 zw=  +10.13 bins=12
+D3     4096 spec_s_cent  I=0.187088 zp= +109.38 zw=   +9.97 bins=12
+D3     4096 spec_s_ent   I=0.187088 zp= +112.07 zw=   +9.50 bins=12
+D3     4096 spec_s_hratio I=0.187088 zp= +125.64 zw=  +10.08 bins=12
+D3     4096 spec_s_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D3     4096 spec_s_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D3     4096 spec_s_slope I=0.187088 zp= +109.78 zw=  +10.70 bins=12
+D3     4096 spec_s_third_hi I=0.187088 zp= +125.09 zw=  +10.16 bins=12
+D3     4096 spec_s_third_lo I=0.187088 zp= +109.38 zw=  +11.08 bins=12
+D3     4096 spec_s_third_mid I=0.187088 zp= +114.46 zw=  +10.70 bins=12
+D4       64 bracket      I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D4       64 flippos      I=0.004172 zp=   -0.80 zw=   -0.75 bins=12
+D4       64 hits         I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D4       64 spec_a_cent  I=0.013230 zp=   +5.54 zw=   +0.27 bins=12
+D4       64 spec_a_ent   I=0.025373 zp=  +12.05 zw=   +0.24 bins=12
+D4       64 spec_a_hratio I=0.169048 zp=  +95.84 zw=   +4.89 bins=12
+D4       64 spec_a_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D4       64 spec_a_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D4       64 spec_a_slope I=0.004403 zp=   -0.58 zw=   -0.58 bins=12
+D4       64 spec_a_third_hi I=0.006674 zp=   +0.97 zw=   -0.28 bins=12
+D4       64 spec_a_third_lo I=0.004537 zp=   -0.49 zw=   -0.92 bins=12
+D4       64 spec_a_third_mid I=0.005212 zp=   -0.02 zw=   -0.30 bins=12
+D4       64 spec_s_cent  I=0.187088 zp= +114.74 zw=  +10.35 bins=12
+D4       64 spec_s_ent   I=0.187088 zp= +113.98 zw=  +10.84 bins=12
+D4       64 spec_s_hratio I=0.187088 zp= +110.17 zw=   +9.77 bins=12
+D4       64 spec_s_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D4       64 spec_s_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D4       64 spec_s_slope I=0.187088 zp= +118.23 zw=  +10.42 bins=12
+D4       64 spec_s_third_hi I=0.187088 zp= +116.31 zw=  +10.82 bins=12
+D4       64 spec_s_third_lo I=0.187088 zp= +111.92 zw=   +9.78 bins=12
+D4       64 spec_s_third_mid I=0.187088 zp= +122.67 zw=   +9.74 bins=12
+D4      256 bracket      I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D4      256 flippos      I=0.004172 zp=   -0.71 zw=   -0.70 bins=12
+D4      256 hits         I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D4      256 spec_a_cent  I=0.130458 zp=  +86.14 zw=   +2.15 bins=12
+D4      256 spec_a_ent   I=0.176282 zp= +105.29 zw=   +5.17 bins=12
+D4      256 spec_a_hratio I=0.188559 zp= +127.33 zw=  +10.98 bins=12
+D4      256 spec_a_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D4      256 spec_a_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D4      256 spec_a_slope I=0.004848 zp=   -0.30 zw=   -0.51 bins=12
+D4      256 spec_a_third_hi I=0.063531 zp=  +36.45 zw=   +1.37 bins=12
+D4      256 spec_a_third_lo I=0.072480 zp=  +44.51 zw=   +1.11 bins=12
+D4      256 spec_a_third_mid I=0.080610 zp=  +42.99 zw=   +0.84 bins=12
+D4      256 spec_s_cent  I=0.187088 zp= +118.14 zw=  +10.62 bins=12
+D4      256 spec_s_ent   I=0.187088 zp= +108.26 zw=  +10.11 bins=12
+D4      256 spec_s_hratio I=0.187088 zp= +112.15 zw=   +9.81 bins=12
+D4      256 spec_s_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D4      256 spec_s_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D4      256 spec_s_slope I=0.187088 zp= +111.11 zw=  +10.51 bins=12
+D4      256 spec_s_third_hi I=0.187088 zp= +108.71 zw=  +11.34 bins=12
+D4      256 spec_s_third_lo I=0.187088 zp= +117.56 zw=  +10.30 bins=12
+D4      256 spec_s_third_mid I=0.187088 zp= +121.82 zw=  +10.15 bins=12
+D4     1024 bracket      I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D4     1024 flippos      I=0.004172 zp=   -0.84 zw=   -0.67 bins=12
+D4     1024 hits         I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D4     1024 spec_a_cent  I=0.187229 zp= +119.89 zw=   +9.48 bins=12
+D4     1024 spec_a_ent   I=0.188559 zp= +101.00 zw=  +11.15 bins=12
+D4     1024 spec_a_hratio I=0.187088 zp= +113.44 zw=   +9.89 bins=12
+D4     1024 spec_a_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D4     1024 spec_a_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D4     1024 spec_a_slope I=0.014273 zp=   +6.39 zw=   +0.47 bins=12
+D4     1024 spec_a_third_hi I=0.176686 zp= +104.03 zw=   +5.35 bins=12
+D4     1024 spec_a_third_lo I=0.181081 zp= +107.64 zw=   +6.46 bins=12
+D4     1024 spec_a_third_mid I=0.184612 zp= +118.46 zw=   +8.14 bins=12
+D4     1024 spec_s_cent  I=0.187088 zp= +114.30 zw=  +10.33 bins=12
+D4     1024 spec_s_ent   I=0.187088 zp= +110.73 zw=  +10.16 bins=12
+D4     1024 spec_s_hratio I=0.187088 zp= +113.14 zw=   +9.56 bins=12
+D4     1024 spec_s_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D4     1024 spec_s_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D4     1024 spec_s_slope I=0.187088 zp= +120.88 zw=   +9.67 bins=12
+D4     1024 spec_s_third_hi I=0.187088 zp= +108.32 zw=  +10.48 bins=12
+D4     1024 spec_s_third_lo I=0.187088 zp= +117.59 zw=  +10.11 bins=12
+D4     1024 spec_s_third_mid I=0.187088 zp= +116.18 zw=   +9.58 bins=12
+D4     4096 bracket      I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D4     4096 flippos      I=0.004172 zp=   -0.74 zw=   -0.69 bins=12
+D4     4096 hits         I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D4     4096 spec_a_cent  I=0.186994 zp= +114.84 zw=   +9.43 bins=12
+D4     4096 spec_a_ent   I=0.187088 zp= +117.62 zw=   +9.48 bins=12
+D4     4096 spec_a_hratio I=0.187088 zp= +107.82 zw=   +9.55 bins=12
+D4     4096 spec_a_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D4     4096 spec_a_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D4     4096 spec_a_slope I=0.042118 zp=  +20.82 zw=   +0.23 bins=12
+D4     4096 spec_a_third_hi I=0.188374 zp= +116.97 zw=  +10.42 bins=12
+D4     4096 spec_a_third_lo I=0.188737 zp= +113.02 zw=  +10.55 bins=12
+D4     4096 spec_a_third_mid I=0.188737 zp= +112.82 zw=  +11.06 bins=12
+D4     4096 spec_s_cent  I=0.187088 zp= +128.05 zw=  +10.45 bins=12
+D4     4096 spec_s_ent   I=0.187088 zp= +117.21 zw=  +10.05 bins=12
+D4     4096 spec_s_hratio I=0.187088 zp= +123.84 zw=  +10.33 bins=12
+D4     4096 spec_s_p1    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D4     4096 spec_s_p2    I=0.000000 zp=   +0.00 zw=   +0.00 bins=2
+D4     4096 spec_s_slope I=0.187088 zp= +112.98 zw=   +9.84 bins=12
+D4     4096 spec_s_third_hi I=0.187088 zp= +117.86 zw=   +9.88 bins=12
+D4     4096 spec_s_third_lo I=0.187088 zp= +112.37 zw=  +10.32 bins=12
+D4     4096 spec_s_third_mid I=0.187088 zp= +106.91 zw=  +10.35 bins=12

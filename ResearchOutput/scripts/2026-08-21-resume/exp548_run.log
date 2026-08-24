@@ -1,0 +1,11 @@
+[exp548] start  smoke=False POP=2000 PERMS=300 CMAX=5000
+[derivation] pair maps A/B/C derived; hint refutation recorded
+[gate] brute=792 tree=792 dups=0 missing=0 extra=0 pass=True
+[cross-check] pair maps == literature matrices on 50/50 sampled nodes
+[population] embedded=2000/2000 emb_fail=0 term_fail=0 min_dP=16
+[dp] mean=24.515 sd=2.6534 range=[16, 34] slope=1.21065 CI95=[1.11988, 1.30142] R2=0.25487 fixed1.4 RMSE=3.8749 | secondary {'log2_cnode': {'slope': 0.55033, 'r2': 0.24915}, 'log2_m_plus_n': {'slope': 1.05814, 'r2': 0.24844}, 'log2_N': {'slope': 0.78201, 'r2': 0.23375}}
+[P-B] agreement=0.3995 chance~0.3766 z=12.60
+[dial] primary worst |z|=4.57 (N mod 3^1 vs L1); controls max|z|=1697.949; replication=[0.111, -0.139, 2.349]
+[gauss] cells=7625 mismatches=0 shift_failures=0
+[e2e] std: cells=1 dial 500/500 | odd-int: cells=28 dial 500/500 I(F;3|N)=0.847146 = I(R;3|N) = H = 0.847146 exact=True
+[done] wall=4.4s -> /home/raver1975/factor3/ResearchOutput/scripts/2026-08-21-resume/exp548_result.json

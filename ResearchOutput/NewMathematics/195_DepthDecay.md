@@ -59,3 +59,12 @@ Ledger: population reused from exp546 (disclosed); unconditional-vs-conditional 
 itself is a finding (marginal co-variation inflates naive depth persistence claims).
 
 Now 550 experiments. Assessment v302.
+
+---
+
+**ERRATUM (2026-08-23, superseded by paper 197):** the feature analyzed here
+(x_f1_w4096_hratio) was shown by exp551 to be EXACTLY a monotone mirror of N's own
+magnitude (MI(feature ; b₁ | log-N decile) = 0.0000). Every depth-decay number in this
+paper is therefore artifact-driven scale stratification, not channel structure. The
+honest residual statement: no tested realized probe carries letter information at ANY
+depth. See paper 197 for the corrected closure and the method lesson.
