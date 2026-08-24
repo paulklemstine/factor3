@@ -2039,3 +2039,15 @@ results ~/f3cache/net91_results.json; log /tmp/net91.log.
 clean/DIRECT as listed in paper. Open: per-position acceptance curves;
 depth-adaptive drafting; KV-quant ladder; weight-quant floors @7B; knee
 transfer @7B. Paper 172, issue #345. Now 92 network experiments. Assessment v92.
+
+## Part 92 — THE-KV-CLIFF: the KV-cache precision axis has NO usable middle at ctx 2048 — all three q8_0 arms are quality-free (K8/V16 −0.24%, K16/V8 +0.09%, K8/V8 +0.10% vs f16 control PPL 7.1093 on 62K held-out tokens) while joint q4_0 KV is ANNIHILATION: PPL 2,714.6, ΔPPL +38,084%, a 380× collapse — P1/P2 CONFIRMED with P2 four orders past its >5% prediction; P3 honestly UNRESOLVED BY DESIGN (no measurable asymmetry at the 8-bit floor and no single-sided 4-bit arms in grid); KV quantization is memory-vs-speed (+16–26% pass-time dequant tax), never memory-vs-quality, once you stay at 8 bits; collapse direction matches NET-52 interface fragility + NET-83 selection-amplification but the magnitude is new; prescription: -ctk/-ctv q8_0 everywhere on CPU serving (NET-92; cpu-large-model axis iteration 67)
+
+**Method:** llama-perplexity, Qwen2.5-7B-Instruct Q4_K_M fully on CPU,
+threads=8, ctx=2048, arms {f16 control, K8/V16, K16/V8, K8/V8, K4/V4},
+held-out wikitext slice 250KB. Script ResearchOutput/exp_net92_kvquant.sh;
+results ~/f3cache/net92_results.json; log /tmp/net92.log.
+**Verdict:** THE-KV-CLIFF. Barriers: (a)-(h) clean/partial as listed (P3
+declared unresolved; point estimates without per-arm SEs documented).
+Open: q4_1/iq4_nl block-scaled 4-bit KV; single-sided 4-bit arms; cliff
+position vs context length; draft-KV interaction. Paper 173, issue #351.
+Now 93 network experiments. Assessment v93.
