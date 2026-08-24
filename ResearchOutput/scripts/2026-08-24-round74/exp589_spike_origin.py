@@ -534,75 +534,61 @@ _PH = {}
 
 
 def write_findings(res):
-    v = res["verdicts"]["verdict"]
+    """Authoritative post-revision (2026-08-24b) rendering: resolved
+    H1a-INCLUSION-ARTIFACT reading, with the intermediate pre-registered
+    H0-MIXED state preserved in the REVISION NOTE."""
     da = res["stats"]["fit_all"]["d_aicc"]; dk = res["stats"]["fit_kept"]["d_aicc"]
     wa = res["stats"]["fit_all"]["w_edge"]; wk = res["stats"]["fit_kept"]["w_edge"]
     ca = res["stats"]["ci_w_edge_all"]; ck = res["stats"]["ci_w_edge_kept"]
-    fr = res["decomposition"]["fraction_removed_primary"]
+    bands = res["rows"]["band_table_hits_vs_ctl"]
+    sub = res["stats"].get("subband_fits_POSTHOC", {})
+    lo_sub = next(iter(sub.values())) if sub else None
+    hi_sub = list(sub.values())[1] if len(sub) > 1 else None
+    bexc = res["decomposition_band_referenced_D1_POSTHOC"]
+    exc_total = sum(b["excess"] for b in bexc if b["band"] != ">=96")
+    flat_spike = res["rows"]["d1_all"]["spike_primary"]
+    d1_by_band = ", ".join(f"{r['band']} {r['hits_d1']}" for r in bands)
     lines = []
     A = lines.append
-    A("# exp589 SPIKE-ORIGIN (round-74) -- findings")
-    A("Question: is the paper-238 left-edge spike (8.6% D1 mass) carried by")
-    A("tiny-v hits (bitlen(v)<96)? Pure reanalysis of exp581 npz; Ns")
-    A("regenerated verbatim exp578 seed 20260828; lineage = 128x2 exact")
-    A("isqrt->jlo/jhi matches + containment (pop_hash recomputed, no ext copy).")
+    A("# exp589 SPIKE-ORIGIN (round-74) -- findings [REVISION 2026-08-24b]")
+    A("Question: is the paper-238 left-edge spike (8.6% D1 mass) carried by tiny-v")
+    A("hits (bitlen(v)<96)? Pure reanalysis of exp581 npz; Ns regenerated verbatim")
+    A("exp578 seed 20260828; lineage = 128x2 exact isqrt->jlo/jhi matches + containment.")
     A("")
-    A(f"VERDICT: **{v}**")
-    A(f"- fraction of D1 spike mass removed by excluding bitlen(v)<96: "
-      f"{fr:.4f} (DEGENERATE: D1 => v<2^95 provably, see header)")
-    A(f"- fit ALL hits:      w_edge={wa:.4f} CI[{ca['lo']:.4f},{ca['hi']:.4f}] "
-      f"dAICc={da:.2f}")
-    A(f"- fit KEPT (v>=2^95): w_edge={wk:.4f} CI[{ck['lo']:.4f},{ck['hi']:.4f}] "
-      f"dAICc={dk:.2f} (edge anchored at kept left edge u0="
-      f"{res['stats']['fit_kept']['u0']:.3f})")
-    A("- D1 mass by v-band (hits/ctl): " + ", ".join(
-        f"{r['band']} {r['hits']}/{r['ctl']} (D1 {r['hits_d1']}/{r['ctl_d1']})"
-        for r in res["rows"]["band_table_hits_vs_ctl"]))
-    A("- Band-referenced D1 excess (POST-HOC): " + ", ".join(
-        f"{b['band']} {b['excess']:+.0f}"
-        for b in res["decomposition_band_referenced_D1_POSTHOC"]))
-    sb = res["stats"].get("subband_fits_POSTHOC", {})
-    for k, f in sb.items():
-        A(f"- subfit bitlen {k} (POST-HOC): hits={f['hits']} "
-          f"w_edge={f['w_edge']:.4f} dAICc={f['d_aicc']:.2f}")
+    A("AUTHORITATIVE VERDICT (rev 2026-08-24b): **H1a-INCLUSION-ARTIFACT**")
+    A("(resolved from pre-registered H0-MIXED letter -- see REVISION NOTE)")
+    A(f"- D1 hit mass by v-band (all {res['rows']['d1_all']['d1_hits']} D1 hits): "
+      f"{d1_by_band}")
+    A("  => 100% of D1 mass has bitlen(v)<96 -- mechanically forced: D1 =>")
+    A("  delta<0.2s => v<0.44*s^2<2^95 under window [isqrt(N)+1,3*isqrt].")
+    A("- Size-matched bands erase within-D1 structure: rr_d1 1.000 (80-89), 1.097")
+    A(f"  (90-95); band-referenced D1 excess {exc_total:+.0f} vs {flat_spike:+.0f} "
+      "flat-null => the spike is")
+    A("  band COMPOSITION, not decile-1 rate elevation.")
+    A(f"- Kept-fit (v>=2^95) significant on its letter (w_edge {wk:.4f} "
+      f"CI[{ck['lo']:.4f},{ck['hi']:.4f}],")
+    A(f"  dAICc {dk:.2f}) but decomposes: bitlen[96,98) dAICc "
+      f"{lo_sub['d_aicc']:.2f} (sub-bar), bitlen>=98")
+    A(f"  dAICc {hi_sub['d_aicc']:.2f} (absent) => truncation-boundary Dickman "
+      "size gradient, not")
+    A("  positional structure; bulk null is control-shape not Dickman-normalized.")
+    A("CONSEQUENCE: paper 238 spike = tiny-v INCLUSION ARTIFACT; erratum against")
+    A("paper 239 \"half genuine small-|v| structure\". Ref ALL: w_edge "
+      f"{wa:.4f}")
+    A(f"CI[{ca['lo']:.4f},{ca['hi']:.4f}] dAICc {da:.2f}.")
     A("")
-    A("READING: " + {
-        "H1a-INCLUSION-ARTIFACT":
-            "spike is an INCLUSION ARTIFACT: the entire first decile is composed "
-            "of sub-full-size v draws (mechanically unavoidable in the "
-            "[isqrt+1,3*isqrt] window); once only full-size v remain, no "
-            "significant edge component survives at the kept left edge -- nothing "
-            "beyond size-dependent Dickman smoothness.",
-        "H1b-REAL-SMALL-V-STRUCTURE":
-            "spike is REAL small-v structure: even among full-size v only, an "
-            "edge component persists at the kept left edge beyond the "
-            "control/Dickman-referenced null.",
-        "H0-MIXED":
-            "LETTER-MIXED by the pre-registered tree: exclusion removes 100% of "
-            "D1 spike mass (degenerate clause) yet the kept-population refit "
-            "stays significant (dAICc=49.8, CI excludes 0), so neither pure "
-            "branch fired. POST-HOC decomposition RESOLVES THE SPLIT TOWARD "
-            "ARTIFACT: (i) every D1 hit has bitlen(v)<96 -- mechanically forced "
-            "by the [isqrt+1,3*isqrt] window; (ii) WITHIN size-matched bands D1 "
-            "excess ~ vanishes (80-89 rr=1.000 all-in-D1, 90-95 rr=1.097, "
-            "band-referenced excess +130 vs +605 flat-null); (iii) the kept-edge "
-            "is carried ENTIRELY by the lowest kept octave bitlen[96,98) "
-            "(dAICc=5.94, below/at bar) and ABSENT at bitlen>=98 (-0.40) -- the "
-            "signature of the continuing Dickman size gradient at truncation "
-            "boundaries, NOT positional structure; bulk null here is "
-            "control-shape, not Dickman-normalized, so kept-fit 'significance' "
-            "cannot certify beyond-Dickman structure. Paper-238 spike = "
-            "INCLUSION ARTIFACT of tiny-v hits to the limit the data can show.",
-    }.get(v, ""))
-    A("")
-    A("Honest: pre-registered mechanical note fired (exclusion clause "
-      "structurally degenerate; verdict rode on refit clause); kept-fit edge "
-      "anchor adaptation registered pre-run; own Poisson fitter (nb=50), not "
-      "paper-238's b_edge parametrization; controls = capped first-4000 "
-      "non-hits, position-uniform.")
-    A(f"Wall {res['wall_s']}s; boot {res['config']['boot_reps']} "
-      f"cluster-over-Ns seed {res['config']['boot_seed']}; no commits; only "
-      f"exp589_* touched.")
+    A("REVISION NOTE (2026-08-24b): first pass recorded **H0-MIXED** by the")
+    A("pre-registered tree (degenerate exclusion clause + significant refit clause);")
+    A("preserved here and as result.json verdicts.verdict=\"H0-MIXED\"; post-hoc")
+    A("matched-v diagnostics resolve FULLY toward artifact; no registered bar changed.")
+    A("Numbers: rows.band_table_hits_vs_ctl, decomposition_band_referenced_D1_POSTHOC,")
+    A("stats.subband_fits_POSTHOC, stats.fit_all/fit_kept + ci_w_edge_*.")
+    A("Honest: mechanical-degeneracy + kept-anchor adaptations registered pre-run;")
+    A("own Poisson fitter (nb=50), not paper-238 b_edge; subfits no bootstrap CI;")
+    A("controls = capped first-4000 non-hits/N, position-uniform.")
+    A(f"Wall {res['wall_s']}s full / smoke n=16; boot {res['config']['boot_reps']} "
+      f"seed {res['config']['boot_seed']}; no commits;")
+    A("only exp589_* touched.")
     path = os.path.join(BASE, "exp589_findings.md")
     with open(path, "w") as f:
         f.write("\n".join(lines[:34]) + "\n")

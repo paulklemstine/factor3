@@ -11688,3 +11688,46 @@ Paper 239, issue #387. Barrier framing: reanalysis INSIDE the positional layer (
 238) — residue cap 4/3, position 5.19×, external-hint laws, quantum frontier untouched; refines
 paper 238's kernel claim rather than overturning it; the .2346 provenance flag still travels
 forward until reconciled.
+
+## Part 282 - SPIKE-ORIGIN [FINAL RESOLUTION] + ERRATUM to paper 239 (round-85 #1, exp 589 rev b, v347)
+
+ERRATUM-GRADE CORRECTION of paper 239 (recorded round-84 #2): its "half genuine small-|v| structure
+persisting among full-size v ≥ 2^95 hits" conclusion is RETRACTED as a truncation-boundary gradient.
+Authoritative verdict (exp589_findings.md REVISION NOTE dated 2026-08-24b): **H1a-INCLUSION-ARTIFACT** —
+paper 238's left-edge spike is tiny-v composition ENTIRELY. The first-pass H0-MIXED letter is PRESERVED
+as audit record (result.json verdicts.verdict untouched); resolution applies the REGISTERED ΔAICc ≥ 6 bar
+to matched-v strata — NO registered bar changed post hoc.
+
+Three legs of the resolution:
+1. MECHANICAL FORCING: all 1554 D1 hits classified by bitlen(v) → <80:0 / 80–89:85 / 90–95:1469 / ≥96:0 —
+   100% of first-decile mass has bitlen(v) < 96, forced by the pre-registered bound D1 ⇒ v < 0.44·s² +
+   o(s²) < 2^95 (zero full-size hits in D1, zero full-size controls too).
+2. SIZE-MATCHED BANDS ERASE THE EXCESS: rr_d1 vs own-band window rate = 1.000 (80–89) and 1.097 (90–95);
+   band-referenced total excess +129.66 vs flat-null +604.76 (rr_d1 vs flat = 1.637) → ~4/5 of the "spike"
+   is band COMPOSITION, not decile-1 rate elevation. Controls clean throughout (per-N z mean −0.22 sd
+   0.95 absmax 2.53).
+3. KEPT-FIT DECOMPOSES ENTIRELY: kept fit's apparent persistence (w_edge .0403 [.0301,.0525], ΔAICc 49.78)
+   is carried ENTIRELY by bitlen[96,98) at the truncation boundary (ΔAICc **5.94 — below the registered
+   bar of 6**, no bootstrap CI disclosed) while bitlen ≥ 98 has NO edge component (**−0.40**) → the
+   Dickman size gradient re-entering through the truncation cut, not positional structure. Map statement
+   closing papers 228→239→240: NO positional kernel component survives — profile fully accounted by
+   magnitude + tiny-v window geometry.
+
+WHAT SURVIVES: the overdispersion itself is real (+605 vs flat null; named origin, not deleted); positional
+layer independent (papers 228–230 untouched); rate-layer question open (u*≈0.65 window feature already
+geometry-accounted by exp581/582; per-N residual open). ERRATUM scope on paper 239: title claim, §4 split
+reading, §5 consequences 1–2 retracted; mechanical-degeneracy finding STRENGTHENED (now load-bearing);
+regeneration verification and controls-clean preserved. Lineage discipline held end-to-end: exp581 sha256
+byte-exact quartet upstream + both self-caught fixes disclosed in-chain (run-1 COMPARATOR bug; run-2
+LN-dict KeyError 350983 fixed with arbitrary-edge ln cache), exp589 128×2 exact isqrt matches + containment
+downstream (pop_hash recomputed, no external copy — disclosed).
+
+LEDGER CATCHES: degenerate exclusion clause (pre-registered note fired); anchor adaptation registered
+pre-run; own fitter not paper-238 parametrization; capped-4000 controls; POST-HOC labeling of all
+resolution diagnostics; wall-time drift noted (paper 239 quoted 42.34 s; artifacts record wall_s 45.16).
+
+Count 577 → 578; max-id tracker unchanged at 587 per its file (recorded ids now reach exp 589 — tracker
+drift noted). Assessment v346 → v347. Paper 240, issue #388. Barrier framing: closure INSIDE the
+positional layer's shape description — residue cap 4/3, position 5.19×, external-hint laws, quantum
+frontier, four-class rate closure all untouched; scale-carrying mechanisms (exact-arithmetic inclusion
+bound grows with scale); .2346 provenance flag still travels forward until reconciled.

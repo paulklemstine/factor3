@@ -361,5 +361,5 @@
   "Controls = first-4000 non-hit j per N (stream-order independent of position => valid uniform density reference).",
   "pop_hash recomputed (06931068f8f3ca9b) but no external copy readable to compare; lineage rests on exact jlo/jhi reproduction."
  ],
- "wall_s": 45.72
+ "wall_s": 45.16
 }
