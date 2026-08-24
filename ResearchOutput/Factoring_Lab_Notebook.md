@@ -10613,3 +10613,47 @@ magnitude nor sign of AP deviations is captured by computable quadratic-characte
 data at toy scale; deviation structure lives in the zero-driven universal skew;
 consistent with barriers 4/5. Paper 217, issue #363. Now 560 experiments (max id
 572). Assessment v324.
+
+## Part 260 - COLLISION-VS-ORDER-TRACE (round-75 #2, exp 570, v325)
+
+Paper-215 follow-up finalizing its amendment candidate: guarded-affine ECM
+accounting carries a random-collision success baseline ~1-exp(-c*B1/p) per curve,
+so low-B1 successes conflate ORDER-HITS (ord | lcm(1..B1)) with COLLISION-LUCK.
+Discriminate by TRACE (where in the op sequence the firing guard lands) and SCALE
+(does the low-B1 rate collapse toward the collision baseline as p grows at fixed
+B1/p?). exp568 guarded affine ops reused VERBATIM; arm B2=B1 (stage-1 only),
+curves cap 3; step counter idx incremented at every guarded inversion AND each
+end-of-chunk gcd check; total steps per curve DATA-INDEPENDENT (schedule-only
+control flow), normalized by closed form. Populations h=13 (bitlen-26) / h=15
+(bitlen-32), n_N=40 each, seed 20260824; grid B1/p {0.125 ceil, 0.25 ceil, 0.9
+floor}; wall 1.3 s (240 trials). PRE-REGISTRATION verbatim: H1 = hit STEP-INDEX
+distribution ~UNIFORM at B1/p=0.125 (collision-dominated) but CONCENTRATED in the
+FINAL 20% at B1/p>=0.5 (order-completion) - KS rejects at high B1, not low;
+H2 = bitlen-32 low-B1 found_p rate DROPS toward collision baseline 1-exp(-1.44*
+B1/p)=16.47% per curve. VERDICT: H1 AND H2 BOTH REFUTED - WITH INVERTED GEOMETRY.
+H2 dead: found_p rates at B1/p=0.125 sit far ABOVE the floor - bitlen-26 65.0%
+[CI .495-.779], bitlen-32 62.5% [.470-.758] - both CIs exclude 16.47% by a wide
+margin, first-curve rates 42.5%/40.0%, cross-bitlen two-prop z p=0.8161 (NO drop
+toward floor as p grows => collisions NOT dominant at low B1). H1 inverted: KS
+REJECTS uniformity even at low B1 (p=0.0166/0.0446); at B1/p=0.9 hits concentrate
+near step ZERO - median normalized index 0.09/0.102, combined final-20% tail 0/55
+(binom p~0.004 vs registered 20%) - order-completion marks EARLY, not at schedule
+end. NEW TRACE LAW added to the factor-local map: hit position ~
+max-prime-power(ord)/B1 (Golomb/Dickman-low flavor). AMENDMENT CHAIN TERMINATES:
+paper 159 wall sentence rejected as stated (by paper 215); "it was collisions all
+along" rejected here (floor real but SUBDOMINANT); paper 215's NO-WALL account
+stands unamended; early-fire law banked as measured regularity. Honest caveats:
+true ops = 2.59*B1 not the 1.44 constant (ALL baselines recomputed both ways and
+reported - exact-op per-curve means 27.1-27.8%, 3-curve cell means 61.2-62.3%);
+measured cell rates COINCIDENTALLY near the 3-curve exact-op collision arithmetic
+(62.5-65.0% vs 61.2-62.3%) but per-curve excess + KS + empty tail rule out
+dominance; found_q censoring disclosed (pure q-side collision luck, B1<p<<q makes
+q-side order-completion impossible); deaths collapse silently (inherited exp568);
+rare den==0 recursive double executes without idx increment (negligible index
+bias). LEDGER CATCH pre-data: closed-form step counter initially WRONG (first
+chunk does len-1 doubles/popcount-1 adds since R=None seeds P directly; later
+chunks do len doubles/popcount adds) - caught by traced-vs-closed assert BEFORE
+any full data existed, fixed, verified 29/29 on completed smoke curves; smoke
+regenerated after fix. Barrier framing: barrier-8 bookkeeping audit completing
+paper 215's evidence chain; no barrier breached, no constant shaved. Paper 218,
+issue #364. Now 561 experiments (max id 572). Assessment v325.

@@ -1,0 +1,155 @@
+{
+ "exp": "570",
+ "codename": "COLLISION-VS-ORDER-TRACE",
+ "mode": "smoke",
+ "seed": 20260824,
+ "n_N": 8,
+ "bitlens_h": [
+  13
+ ],
+ "population_stats": {
+  "13": {
+   "p_bits_min": 13,
+   "p_bits_max": 13,
+   "N_bits_min": 26,
+   "N_bits_max": 28
+  }
+ },
+ "config": {
+  "B1fracs": [
+   0.125,
+   0.25,
+   0.9
+  ],
+  "arm": "B2=B1 (stage-1 only)",
+  "curves_cap": 3,
+  "baseline_const": 1.44,
+  "baseline_formula": "1-exp(-1.44*B1/p) per curve",
+  "trace": "step idx at every guarded inversion + chunk gcd check, normalized by closed-form data-independent total steps"
+ },
+ "rows": [
+  {
+   "h": 13,
+   "target_bitlen": 26,
+   "B1frac": 0.125,
+   "round": "ceil",
+   "total": 8,
+   "found_p": 6,
+   "found_q": 2,
+   "found_other": 0,
+   "nothing": 0,
+   "cell_rate_found_p": 0.75,
+   "first_curve_rate_found_p": 0.625,
+   "baseline_const_percurve": 0.1647,
+   "baseline_exact_percurve_mean": 0.2772,
+   "baseline_cell3_mean": 0.6224,
+   "ci95_cell": [
+    0.4093,
+    0.9285
+   ]
+  },
+  {
+   "h": 13,
+   "target_bitlen": 26,
+   "B1frac": 0.25,
+   "round": "ceil",
+   "total": 8,
+   "found_p": 5,
+   "found_q": 3,
+   "found_other": 0,
+   "nothing": 0,
+   "cell_rate_found_p": 0.625,
+   "first_curve_rate_found_p": 0.625,
+   "baseline_const_percurve": 0.3023,
+   "baseline_exact_percurve_mean": 0.4725,
+   "baseline_cell3_mean": 0.8532,
+   "ci95_cell": [
+    0.3057,
+    0.8632
+   ]
+  },
+  {
+   "h": 13,
+   "target_bitlen": 26,
+   "B1frac": 0.9,
+   "round": "floor",
+   "total": 8,
+   "found_p": 5,
+   "found_q": 3,
+   "found_other": 0,
+   "nothing": 0,
+   "cell_rate_found_p": 0.625,
+   "first_curve_rate_found_p": 0.625,
+   "baseline_const_percurve": 0.7264,
+   "baseline_exact_percurve_mean": 0.895,
+   "baseline_cell3_mean": 0.9988,
+   "ci95_cell": [
+    0.3057,
+    0.8632
+   ]
+  }
+ ],
+ "ks_stats": {
+  "h13_frac0.125": {
+   "n_found_p": 6,
+   "D": 0.2797,
+   "ks_p": 0.7357,
+   "tail_frac_ge08": 0.0,
+   "tail_binom_p_vs_02": 0.5243,
+   "median_norm": 0.485,
+   "norms": [
+    0.7225,
+    0.5536,
+    0.0085,
+    0.485,
+    0.4245,
+    0.3643
+   ]
+  },
+  "h13_frac0.25": {
+   "n_found_p": 5,
+   "D": 0.4264,
+   "ks_p": 0.3233,
+   "tail_frac_ge08": 0.0,
+   "tail_binom_p_vs_02": 0.6554,
+   "median_norm": 0.174,
+   "norms": [
+    0.1736,
+    0.0704,
+    0.4006,
+    0.0621,
+    0.7244
+   ]
+  },
+  "h13_frac0.9": {
+   "n_found_p": 5,
+   "D": 0.713,
+   "ks_p": 0.0124,
+   "tail_frac_ge08": 0.0,
+   "tail_binom_p_vs_02": 0.6554,
+   "median_norm": 0.032,
+   "norms": [
+    0.0081,
+    0.0316,
+    0.0033,
+    0.087,
+    0.6223
+   ]
+  }
+ },
+ "verdicts": {
+  "h1_low_uniform_h13": "supported_not_rejected",
+  "h1_high_final20_h13": "refuted",
+  "H1": "MIXED"
+ },
+ "honest_notes": [
+  "KS p-values use the asymptotic Kolmogorov series (n>=2); fine at these n.",
+  "Pre-registered 17% baseline is PER-CURVE while exp568's 68% was a 3-curve CELL rate; both comparisons reported (H2_primary literal, H2_percurve calibrated), verdict read jointly.",
+  "Collision baseline treats inversion denominators as independent uniform mod p; chunk-batched gcd checks are counted as steps in the trace.",
+  "found_q events are pure q-side collision luck (B1<p<<q, order-completion impossible); they cross-check the collision rate independently.",
+  "Trace denominator is schedule-only (data-independent); ec_add's rare recursive internal double (den==0 mod N & y1==y2) executes without an idx increment -- a tiny data-dependent bias on found_at indices only.",
+  "Step-counter law verified: first chunk does len-1 doubles / popcount-1 adds, later chunks len doubles / popcount adds (caught + fixed vs closed form before full run; smoke norms were misnormalized).",
+  "'deaths' (gcd==N) collapse curves silently inside trial(); their count is not separately bucketed (inherited exp568 behavior)."
+ ],
+ "wall_s": 0.1
+}

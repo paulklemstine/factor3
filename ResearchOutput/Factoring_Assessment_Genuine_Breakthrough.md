@@ -2353,3 +2353,34 @@ m=6 orthogonality assert exposed the p|m, p∤cond(χ) ±1 primitive-twist corre
 via quadratic-character structure on either route at toy scale; the averaging
 identity's effective scope remains non-computable from N; consistent with barriers
 4/5. No breakthrough.
+
+**Assessment addendum v325 — 2026-08-24 (round-75 #2).** Experiment 570 recorded;
+count now 561 recorded experiments (max id 572). Exp 570 COLLISION-VS-ORDER-TRACE
+(paper 218, issue #364) finalizes paper 215's amendment candidate: guarded-affine
+ECM accounting carries a random-collision success baseline ~1−exp(−1.44·B1/p) per
+curve, so low-B1 successes could have been collision-luck rather than order-hits —
+which would have amended paper 159's wall story a second time. Discriminated by
+TRACE (normalized firing-step index; schedule-only data-independent denominator)
+and SCALE (cross-bitlen collapse test), exp568 ops reused verbatim, stage-1 only,
+curves cap 3, h=13/h=15 × n_N=40, B1/p ∈ {0.125, 0.25, 0.9}, wall 1.3 s.
+VERDICT: H1 AND H2 BOTH REFUTED — WITH INVERTED GEOMETRY. H2 dead: low-B1 found_p
+rates sit far ABOVE the collision floor — bitlen-26 65.0% [CI .495–.779], bitlen-32
+62.5% [.470–.758] vs per-curve baseline 16.47% (first-curve rates 42.5%/40.0%);
+cross-bitlen two-prop z p = 0.8161, no collapse toward the floor as p grows ⇒
+collisions real but SUBDOMINANT at low B1. H1 inverted: KS REJECTS uniformity even
+at low B1 (p = 0.0166/0.0446); at B1/p = 0.9 hits concentrate near step ZERO —
+median normalized index 0.09/0.102, combined final-20% tail 0/55 (binom p ≈ 0.004
+vs registered 20%) — order-completion marks EARLY, not at schedule end. NEW TRACE
+LAW banked in the factor-local map: hit position ~ max-prime-power(ord)/B1
+(Golomb/Dickman-low flavor). Amendment chain TERMINATES cleanly: paper 159 wall
+sentence rejected as stated (paper 215); "it was collisions all along" rejected
+here; paper 215's NO-WALL account stands unamended. Honest caveats carried in-full:
+true ops = 2.59·B1 not the 1.44 constant — ALL baselines recomputed both ways and
+reported (exact-op per-curve means 27.1–27.8%; 3-curve cell means 61.2–62.3%);
+measured cell rates coincidentally near the exact-op 3-curve collision arithmetic
+but per-curve excess + KS + empty tail rule out dominance; found_q censoring
+disclosed. Ledger catch BEFORE data: closed-form step counter wrong on later
+chunks (len doubles/popcount adds, not len−1/popcount−1) — caught by traced-vs-
+closed assert pre-data, fixed, verified 29/29, smoke regenerated. Barrier framing:
+barrier-8 bookkeeping audit completing paper 215's evidence chain; no barrier
+breached, no constant shaved. No breakthrough.

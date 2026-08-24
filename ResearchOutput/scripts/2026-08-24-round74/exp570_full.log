@@ -1,0 +1,174 @@
+[full] 240 cells / 8 workers; pstats={13: {'p_bits_min': 13, 'p_bits_max': 13, 'N_bits_min': 26, 'N_bits_max': 28}, 15: {'p_bits_min': 15, 'p_bits_max': 15, 'N_bits_min': 30, 'N_bits_max': 32}}
+[
+ {
+  "h": 13,
+  "target_bitlen": 26,
+  "B1frac": 0.125,
+  "round": "ceil",
+  "total": 40,
+  "found_p": 26,
+  "found_q": 12,
+  "found_other": 0,
+  "nothing": 2,
+  "cell_rate_found_p": 0.65,
+  "first_curve_rate_found_p": 0.425,
+  "baseline_const_percurve": 0.1647,
+  "baseline_exact_percurve_mean": 0.2777,
+  "baseline_cell3_mean": 0.6231,
+  "ci95_cell": [
+   0.4951,
+   0.7787
+  ]
+ },
+ {
+  "h": 13,
+  "target_bitlen": 26,
+  "B1frac": 0.25,
+  "round": "ceil",
+  "total": 40,
+  "found_p": 26,
+  "found_q": 14,
+  "found_other": 0,
+  "nothing": 0,
+  "cell_rate_found_p": 0.65,
+  "first_curve_rate_found_p": 0.575,
+  "baseline_const_percurve": 0.3023,
+  "baseline_exact_percurve_mean": 0.4727,
+  "baseline_cell3_mean": 0.8533,
+  "ci95_cell": [
+   0.4951,
+   0.7787
+  ]
+ },
+ {
+  "h": 13,
+  "target_bitlen": 26,
+  "B1frac": 0.9,
+  "round": "floor",
+  "total": 40,
+  "found_p": 27,
+  "found_q": 13,
+  "found_other": 0,
+  "nothing": 0,
+  "cell_rate_found_p": 0.675,
+  "first_curve_rate_found_p": 0.675,
+  "baseline_const_percurve": 0.7264,
+  "baseline_exact_percurve_mean": 0.8949,
+  "baseline_cell3_mean": 0.9988,
+  "ci95_cell": [
+   0.5202,
+   0.7992
+  ]
+ },
+ {
+  "h": 15,
+  "target_bitlen": 32,
+  "B1frac": 0.125,
+  "round": "ceil",
+  "total": 40,
+  "found_p": 25,
+  "found_q": 14,
+  "found_other": 0,
+  "nothing": 1,
+  "cell_rate_found_p": 0.625,
+  "first_curve_rate_found_p": 0.4,
+  "baseline_const_percurve": 0.1647,
+  "baseline_exact_percurve_mean": 0.2708,
+  "baseline_cell3_mean": 0.6123,
+  "ci95_cell": [
+   0.4703,
+   0.7578
+  ]
+ },
+ {
+  "h": 15,
+  "target_bitlen": 32,
+  "B1frac": 0.25,
+  "round": "ceil",
+  "total": 40,
+  "found_p": 29,
+  "found_q": 11,
+  "found_other": 0,
+  "nothing": 0,
+  "cell_rate_found_p": 0.725,
+  "first_curve_rate_found_p": 0.55,
+  "baseline_const_percurve": 0.3023,
+  "baseline_exact_percurve_mean": 0.4643,
+  "baseline_cell3_mean": 0.8463,
+  "ci95_cell": [
+   0.5717,
+   0.8389
+  ]
+ },
+ {
+  "h": 15,
+  "target_bitlen": 32,
+  "B1frac": 0.9,
+  "round": "floor",
+  "total": 40,
+  "found_p": 28,
+  "found_q": 12,
+  "found_other": 0,
+  "nothing": 0,
+  "cell_rate_found_p": 0.7,
+  "first_curve_rate_found_p": 0.7,
+  "baseline_const_percurve": 0.7264,
+  "baseline_exact_percurve_mean": 0.8897,
+  "baseline_cell3_mean": 0.9987,
+  "ci95_cell": [
+   0.5457,
+   0.8193
+  ]
+ }
+]
+{
+ "h13_frac0.125": {
+  "n_found_p": 26,
+  "D": 0.3036,
+  "ks_p": 0.0166,
+  "tail_frac_ge08": 0.1538,
+  "tail_binom_p_vs_02": 0.7667,
+  "median_norm": 0.287
+ },
+ "h13_frac0.25": {
+  "n_found_p": 26,
+  "D": 0.4357,
+  "ks_p": 0.0001,
+  "tail_frac_ge08": 0.0769,
+  "tail_binom_p_vs_02": 0.1681,
+  "median_norm": 0.13
+ },
+ "h13_frac0.9": {
+  "n_found_p": 27,
+  "D": 0.6424,
+  "ks_p": 0.0,
+  "tail_frac_ge08": 0.0,
+  "tail_binom_p_vs_02": 0.0048,
+  "median_norm": 0.09
+ },
+ "h15_frac0.125": {
+  "n_found_p": 25,
+  "D": 0.2758,
+  "ks_p": 0.0446,
+  "tail_frac_ge08": 0.04,
+  "tail_binom_p_vs_02": 0.0548,
+  "median_norm": 0.317
+ },
+ "h15_frac0.25": {
+  "n_found_p": 29,
+  "D": 0.2295,
+  "ks_p": 0.0944,
+  "tail_frac_ge08": 0.1379,
+  "tail_binom_p_vs_02": 0.5679,
+  "median_norm": 0.295
+ },
+ "h15_frac0.9": {
+  "n_found_p": 28,
+  "D": 0.5314,
+  "ks_p": 0.0,
+  "tail_frac_ge08": 0.0,
+  "tail_binom_p_vs_02": 0.0039,
+  "median_norm": 0.102
+ }
+}
+[full] wall=1.3s -> exp570_result.json

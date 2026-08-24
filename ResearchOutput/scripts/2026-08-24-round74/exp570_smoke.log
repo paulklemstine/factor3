@@ -1,0 +1,90 @@
+[smoke] 24 cells / 4 workers; pstats={13: {'p_bits_min': 13, 'p_bits_max': 13, 'N_bits_min': 26, 'N_bits_max': 28}}
+[
+ {
+  "h": 13,
+  "target_bitlen": 26,
+  "B1frac": 0.125,
+  "round": "ceil",
+  "total": 8,
+  "found_p": 6,
+  "found_q": 2,
+  "found_other": 0,
+  "nothing": 0,
+  "cell_rate_found_p": 0.75,
+  "first_curve_rate_found_p": 0.625,
+  "baseline_const_percurve": 0.1647,
+  "baseline_exact_percurve_mean": 0.2772,
+  "baseline_cell3_mean": 0.6224,
+  "ci95_cell": [
+   0.4093,
+   0.9285
+  ]
+ },
+ {
+  "h": 13,
+  "target_bitlen": 26,
+  "B1frac": 0.25,
+  "round": "ceil",
+  "total": 8,
+  "found_p": 5,
+  "found_q": 3,
+  "found_other": 0,
+  "nothing": 0,
+  "cell_rate_found_p": 0.625,
+  "first_curve_rate_found_p": 0.625,
+  "baseline_const_percurve": 0.3023,
+  "baseline_exact_percurve_mean": 0.4725,
+  "baseline_cell3_mean": 0.8532,
+  "ci95_cell": [
+   0.3057,
+   0.8632
+  ]
+ },
+ {
+  "h": 13,
+  "target_bitlen": 26,
+  "B1frac": 0.9,
+  "round": "floor",
+  "total": 8,
+  "found_p": 5,
+  "found_q": 3,
+  "found_other": 0,
+  "nothing": 0,
+  "cell_rate_found_p": 0.625,
+  "first_curve_rate_found_p": 0.625,
+  "baseline_const_percurve": 0.7264,
+  "baseline_exact_percurve_mean": 0.895,
+  "baseline_cell3_mean": 0.9988,
+  "ci95_cell": [
+   0.3057,
+   0.8632
+  ]
+ }
+]
+{
+ "h13_frac0.125": {
+  "n_found_p": 6,
+  "D": 0.2797,
+  "ks_p": 0.7357,
+  "tail_frac_ge08": 0.0,
+  "tail_binom_p_vs_02": 0.5243,
+  "median_norm": 0.485
+ },
+ "h13_frac0.25": {
+  "n_found_p": 5,
+  "D": 0.4264,
+  "ks_p": 0.3233,
+  "tail_frac_ge08": 0.0,
+  "tail_binom_p_vs_02": 0.6554,
+  "median_norm": 0.174
+ },
+ "h13_frac0.9": {
+  "n_found_p": 5,
+  "D": 0.713,
+  "ks_p": 0.0124,
+  "tail_frac_ge08": 0.0,
+  "tail_binom_p_vs_02": 0.6554,
+  "median_norm": 0.032
+ }
+}
+[smoke] wall=0.1s -> exp570_smoke_result.json
