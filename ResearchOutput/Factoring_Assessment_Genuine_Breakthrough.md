@@ -2119,3 +2119,21 @@ flat (p = 0.83), tightest bound |r−1| ≤ 0.2168 at u ≈ 6.95-bin; N-level ov
 and the QR dial's correlation both die between u ≈ 6 and 7; CONSISTENT with paper 130's
 random-pool claim, extending it from u < 4.75 to u ≤ 8.5 — a bound-carrying NULL on the standing
 asymptotic-goal directive's scale-smoothness frontier cell; production-scale u ≥ 9 stays open.
+
+**Assessment addendum v317 — 2026-08-24 (round-74 #1).** Experiment 565 recorded; count now
+553 recorded experiments (max id 565; rounds 54–74 tracked per-paper in
+ResearchOutput/NewMathematics/ papers 185–210 and in the notebook Parts). Exp 565
+ORACLE-REALIZATION-GAP (paper 210, issue #354): paper 197's oracle navigation-sensor peak
+I(1{d≤B}; b₁) = 0.4798 bits @ B = 22758 reproduced BIT-EXACTLY from exp549's code path, then
+shown UNREALIZABLE by every N-computable policy — strict within-logN-strata crediting gives
+0% of peak on BOTH seeds; the lenient pooled 33.8–35.9% (seed A only) is entirely the
+between-strata population magnitude-base-rate channel of the design (PARONLY-battery ≈ full
+battery, MODONLY ≈ 0), while the oracle's within-strata geometric core is 0.3634–0.3687 bits
+= 73.5–76.8% of peak vs ≤ 0.0018 bits (0.25–0.50%) for the best N-only policy; FULL-ORACLE
+H(b₁) = 0.96 bits ≈ 200%. Realizing the sensor requires d = M − isqrt(N): barrier 6
+CIRCULARITY CONFIRMED AND QUANTIFIED (d median 215782 vs menu exhaustion at 295 queries).
+Barrier 2 does not seal b₁ a priori (p↔q-symmetric; residue null empirical at joint NB
+resolution); barriers 4/5 consistent. One disclosed amendment cycle (A1), pre-registered
+rules evaluated verbatim → GAP-PARTIAL. Closes the "unrealized 0.48-bit oracle bound" face
+of the Berggren triplet-tree × energy-spectrum campaign (papers 192–197) — a strengthening
+of closure, not a breakthrough.

@@ -10327,3 +10327,25 @@ its random-pool claim (u<4.75) to u<=8.5; no novelty claimed against it. Time-ca
 status disclosed (bins 7/8 tiny event counts); production-scale u>=9 stays open.
 Barriers 4-frontier unchanged, null sharpens it.
 Paper 209, issue #353. Now 552 experiments. Assessment v316.
+
+## Part 252 - ORACLE-REALIZATION-GAP (round-74 #1, exp 565, v317)
+
+Is paper 197's 0.4798-bit oracle navigation-sensor peak I(1{d<=B}; b1) @ B=22758 realizable
+by any N-computable query policy? Frame reused verbatim from exp549; two seeds; 295-item
+query menu; discriminative arms train-split-fit, test-time N-only. REPRODUCTION BIT-EXACT:
+seed-A population matches all 11 published fine-grid points to the last digit (peak
+0.479797 @ B=22758, delta=0.000000); fresh seed B peak 0.4948 at the same B.
+GAP-PARTIAL pre-registered verdict: lenient pooled crediting gives adaptive/battery
+33.8-35.9% of peak on seed A only; STRICT within-control crediting = 0% for EVERY N-only
+policy on BOTH seeds; sham clean. Amendment A1 disclosed: the lenient signal is ENTIRELY
+the between-magnitude-strata population base-rate channel (support-edge/truncation coupling
+of the design) read out by parabola-mirror ensembles - PARONLY ~= full battery, MODONLY ~= 0;
+decisive split: oracle carries within-strata geometric excess 0.3634-0.3687 bits = 73.5-76.8%
+of peak (z 82-90) vs best N-only policy <= 0.0018 bits = 0.25-0.50%; FULL-ORACLE H(b1)=0.96
+bits ~ 200% of peak. Answer: peak UNREALIZED - geometric core needs factor-conditioned
+posteriors (d median 215782 vs menu exhaustion at 295 queries; Fermat scan at peak budget
+misses 79.5%). Barrier 6 circularity CONFIRMED AND QUANTIFIED (gap = 73-77% of peak);
+barrier 2 does NOT seal b1 a priori (p<->q-symmetric; residue null empirical, extends paper
+81 to joint NB); barriers 5/4 consistent. Closes the last open face of the Berggren
+triplet-tree x energy-spectrum campaign - a STRENGTHENING of closure, not a breakthrough.
+Paper 210, issue #354. Now 553 experiments. Assessment v317.

@@ -1,0 +1,11 @@
+
+===== seed 20260824 (repro) =====
+[oracle] peak I=0.571769 @ B=49708 (0.9-sat B*=22758); d median=208480 b1 dist=[273, 41, 46]
+[adaptive] queries executed=295 (class exhaustion at M=295) in 1.4s
+
+===== seed 20260825 (replica) =====
+[oracle] peak I=0.467711 @ B=49708 (0.9-sat B*=22758); d median=206820 b1 dist=[288, 32, 40]
+[adaptive] queries executed=295 (class exhaustion at M=295) in 1.4s
+
+[done] wrote /home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp565_smoke.json; wall=5.8s
+[verdicts] {"per_seed": {}, "mode": "SMOKE (mechanics only; reproduction gate deferred to full run)"}

@@ -1,0 +1,57 @@
+{
+ "experiment": 565,
+ "codename": "ORACLE-REALIZATION-GAP",
+ "round": 74,
+ "date_preregistered": "2026-08-24",
+ "smoke": false,
+ "purpose": "Is the 0.4798-bit oracle peak I(1{d<=B};b1) @ B~=22758 realizable by any N-computable query policy, or only by factor-conditioned posteriors (barrier 6)?",
+ "hypotheses_stated_before_data": {
+  "H1": "Every N-computable policy realizes <25% of the oracle peak (artifact-controlled); the realizing posteriors are factor-conditioned.",
+  "H2_barrier_event": "Some N-only policy exceeds 50% of the peak AND survives fresh-seed replication + sham control."
+ },
+ "verdict_rules": {
+  "crediting": "credited_MI = pooled eval MI if (z_pooled>=3 and z_within>=3) else 0",
+  "fraction_of_peak": "credited_MI / reproduced_oracle_peak(full population)",
+  "H1_REALIZATION-GAP-CONFIRMED": "max fraction over {ADAPTIVE-NB,BATTERY,BESTSINGLE,BASE-RATE} < 0.25 on BOTH seeds AND sham credited==0 both",
+  "H2_ORACLE-REALIZED-BY-NONLY": "some N-only policy fraction >= 0.50 on BOTH seeds (same family) AND sham clean",
+  "reproduction_gate_full": "|peak-0.479797|<=0.005 and all published fine points within 0.01, else ABORT"
+ },
+ "config": {
+  "n_stratum": 1000,
+  "perms": 200,
+  "boots": 1000,
+  "ladder": [
+   16,
+   64,
+   256,
+   1024,
+   4096,
+   16384,
+   22758
+  ],
+  "menu_size": 295,
+  "residues": [
+   3,
+   4,
+   5,
+   7,
+   8,
+   9,
+   11,
+   13,
+   16,
+   17,
+   19,
+   23,
+   25,
+   27,
+   29,
+   31
+  ],
+  "seeds": [
+   20260824,
+   20260825
+  ],
+  "frame": "exp549 verbatim (population/descent/oracle definition)"
+ }
+}
