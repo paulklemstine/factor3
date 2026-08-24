@@ -3044,3 +3044,32 @@ cap 4/3, position 5.19×, external-hint laws, quantum frontier, four-class rate 
 238–240 spike-origin arc untouched; the identified carrier class (v-divisibility distribution) is
 SCALE-CARRYING. Open unchanged: non-QR per-N structure at u=2.5, factor-local beyond scan-order,
 MA-1 effectivity; .2346 flag traveling. Paper 241, issue #389.
+
+**Assessment addendum v349 — 2026-08-24 (round-87 #1).** Experiment recorded (count 579 → 580;
+papers 241 → 242; version v348 → v349. Content: **MIXTURE-BASELINE [FINAL] (issue #390)** — exp 588c
+closes paper 241's routed branch with a negative that converts to a positive map entry: the routed
+divisibility-mixture baseline model (16 cells = divisibility pattern of v = j²−N, flank-only κ with
+λ=5 shrinkage, composition-weighted Dickman prediction) FAILS TO ABSORB the u* ≈ 0.65 excess —
+residual peak amp 0.177 ± 0.043 (z = 4.11 ≥ registered bar 2), peak at t = 0.65 exactly, removal vs
+single-α baseline 0%. Mechanism named: class composition measured FLAT in t (max cell drift 0.269%)
+→ the mixture had no positional freedom; per-cell rates ARE real (κ/g spread 0.645–1.406, ~2.2×
+modulation) but t-INDEPENDENT (flank-estimated). **DIVISIBILITY IS A RATE DIAL, NOT A POSITION
+DIAL**; bit 0 ≡ j-parity merged in and equally failed, closing paper 241's parity residual reading.
+NEW MAP ENTRY: NON-DIVISIBILITY POSITIONAL MECHANISM — third orthogonal layer beside positional
+(228–230) and left-edge composition (238–240): real, stable, non-divisibility. Controls: CTRL-A
+machinery null PASS (0.0271); CTRL-B parametric Poisson estimator-null 0.0860 measures max-over-bins
+bias inside the raw amplitude → null-calibrated z_cal = 1.53 < 2 DISCLOSED alongside verdict-bearing
+raw z = 4.11 (registered rule stays verdict-bearing; follow-ups power against the calibrated scale).
+Regen EXACT_MATCH + smoothness spot-check PASS; statistics gated on it; wall 12.6 s. Ledger catch:
+A1 amendment — original control arm had a non-flat null BY CONSTRUCTION (counts carry no ρ(t)
+gradient), caught at smoke, CTRL-A/B split PRE-FULL-RUN, no treatment number entered a verdict.
+Three-pass chain closed: 232 (feature found/stable) → 241 (real, no single carrier → routed to
+mixture) → 242 (mixture fails → map entry). Named follow-up: identify the non-divisibility carrier —
+candidates pre-named: j-arithmetic beyond small-prime divisibility (higher-order residues,
+truncation-boundary bit structure, quadratic-character patterns mod p > 7); polynomial-sequence
+correlations of j²−N. Barrier framing: map-entry addition INSIDE the rate layer's baseline-shape
+question — residue cap 4/3, position 5.19×, external-hint laws, quantum frontier, four-class rate
+closure, spike-origin arc untouched; refuted family removed at every scale; entry defined at fixed
+data geometry so its test transfers across bit lengths. Open unchanged: non-QR per-N structure at
+u = 2.5, factor-local beyond scan-order, MA-1 effectivity; PLUS the named follow-up; .2346 flag
+traveling. Paper 242, issue #390.

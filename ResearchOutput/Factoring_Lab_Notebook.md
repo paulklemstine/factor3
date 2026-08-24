@@ -11771,3 +11771,52 @@ four-class rate closure, spike-origin resolution (papers 238–240) untouched; c
 (v-divisibility distribution) is SCALE-CARRYING, mixture weights evolve smoothly in u; per-hit binary
 family removed from search space. Open: non-QR per-N structure at u=2.5, factor-local beyond scan-order,
 MA-1 effectivity; .2346 provenance flag still traveling.
+
+## Part 284 - MIXTURE-BASELINE [FINAL] (round-87 #1, exp 588c, v349)
+
+Closes paper 241's routed branch with a NEGATIVE that converts to a POSITIVE map entry. Paper 241 routed
+the u*≈0.65 excess to a divisibility-mixture baseline model; exp 588c BUILT that model and ran it:
+16 cells = divisibility pattern (2|v,3|v,5|v,7|v) of v=j^2-N, PRED(b) = sum_c kappa_c * S_c(b) with
+S_c = Dickman-weighted reference sums per cell, kappa_c flank-only fit (score window excluded) with
+lam=5 shrinkage toward global flank rate g. Verdict **H0: EXCESS SURVIVES THE MIXTURE** — residual peak
+amp_mix = 0.177 ± 0.043 (z = 4.11 >= 2 registered bar), PEAK AT t=0.65 EXACTLY, removal vs single-alpha
+baseline 0% (pre-named corroboration). WHY the mixture couldn't absorb it: class composition measured
+FLAT in t (max cell drift 0.269%) so the mixture had no positional freedom, while per-cell rates ARE
+real (kappa/g spread 0.645-1.406 across 16 cells, top cells 3|v&5|v combos, ~2.2x rate modulation) but
+t-INDEPENDENT by construction (flank-estimated, applied uniformly). FORMULATION (deliverable):
+**DIVISIBILITY IS A RATE DIAL, NOT A POSITION DIAL** — rescales how often hits occur in a class,
+uniformly in scan position; cannot move hits along the axis. Bit 0 (2|v) identically j-parity since N
+odd — parity merged into the grid and equally failed, closing paper 241's residual parity reading too.
+NEW MAP ENTRY: NON-DIVISIBILITY POSITIONAL MECHANISM — third orthogonal layer next to positional
+(228–230) and left-edge composition (238–240): REAL (241), STABLE (shift-invariant since 232, exact
+lineage here), NON-DIVISIBILITY (here).
+
+CONTROLS + CAVEAT: CTRL-A machinery null PASS (amp 0.0271±0.0102, max-dev all bins 0.0342); CTRL-B
+parametric Poisson estimator-null amp_sim 0.0860±0.0411 measures the max-over-bins positive bias inside
+the raw amplitude -> null-calibrated z_cal = 1.53 < 2 DISCLOSED alongside the verdict-bearing raw z =
+4.11; registered rule stays verdict-bearing, disagreement flagged not resolved; follow-ups power against
+the calibrated scale. Regen EXACT_MATCH (population/windows int64-equal, stream order-walk 128/128,
+smoothness spot-check hits-smooth/controls-nonsmooth ALL pass), statistics gated on it. Wall 12.6 s.
+
+LEDGER CATCHES: A1 amendment — originally registered control arm (count halves vs rho-WEIGHTED
+prediction) had a NON-FLAT NULL BY CONSTRUCTION (counts carry no rho(t) gradient), caught AT SMOKE (amp
+0.47 from ~290 counts/bin), control split CTRL-A/CTRL-B PRE-FULL-RUN, registered rule unchanged, NO
+treatment number entered a verdict through the amendment — clean catch, gate worked as designed.
+Reference stream disclosed as subsample (capped non-hits <=4000/N); ln v from exact integer then float
+(avoid catastrophic cancellation near t=0); buffer bins predicted-not-scored per brief.
+
+THREE-PASS CHAIN CLOSED: 232 (feature found, stable, amplitude bar failed as operationalized) -> 241
+(real over exact Dickman baseline z=3.23 but no single binary carrier -> routed to mixture model) ->
+242 (mixture fails, removal 0%, z=4.11 -> routing answered negatively -> map entry). Named follow-up:
+IDENTIFY THE NON-DIVISIBILITY CARRIER — candidates pre-named: j-arithmetic beyond small-prime
+divisibility (higher-order residues of v, bit structure near truncation boundary, quadratic-character /
+Legendre patterns mod p>7); polynomial-sequence correlations (values-of-j^2-N smoothness biases beyond
+divisibility). Power against CTRL-B-calibrated null scale.
+
+Count 579 → 580; assessment v348 → v349. Paper 242, issue #390. Barrier framing: map-entry addition
+INSIDE the rate layer's baseline-shape question — residue cap 4/3, position 5.19×, external-hint laws,
+quantum frontier, four-class rate closure, spike-origin arc untouched; refuted family
+(divisibility-rate mixtures as positional explanation) removed from search space at every scale; entry
+defined at fixed data geometry so its test transfers across bit lengths unchanged. Open unchanged:
+non-QR per-N structure at u=2.5, factor-local beyond scan-order, MA-1 effectivity; PLUS the named
+non-divisibility-carrier follow-up; .2346 provenance flag still traveling.
