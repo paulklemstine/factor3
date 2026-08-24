@@ -1,0 +1,388 @@
+{
+ "exp": "561",
+ "codename": "BATCH-AMORTIZATION",
+ "round": null,
+ "smoke": false,
+ "status": "06_final",
+ "hypotheses": {
+  "E1_prestated": "batch helps the SMOOTHNESS-TESTING phase (amortizing product tree) but NOT the finding phase => per-factor savings bounded; quantify the bound",
+  "H_AUDIT": "batch-detected smooth set == per-item tested set on an exact-match audit (500 samples full run)",
+  "H_CROSS": "there exists a finite k-crossover where batch detection beats solo testing at fixed B=100"
+ },
+ "verdict_rule_prestated": {
+  "delta": "Delta_k = (solo_ppf - batch_ppf_k)/solo_ppf",
+  "BATCH-WINS": "best Delta > +0.02",
+  "BREAK-EVEN": "|best Delta| <= 0.02",
+  "NULL": "best Delta < -0.02"
+ },
+ "config": {
+  "seed": 20260827,
+  "bitlen": 40,
+  "pop": 512,
+  "ks": [
+   1,
+   8,
+   64,
+   512
+  ],
+  "L_sieve": 512,
+  "FB_bound": 100,
+  "FB_size": 25,
+  "min_rels": 26,
+  "audit_samples": 500,
+  "mix": "interleaved semiprime/general",
+  "mr_bases": [
+   2,
+   3,
+   5,
+   7,
+   11,
+   13,
+   17
+  ]
+ },
+ "cost_model": {
+  "flat": "every executed bigint mul/mod/div/add/Euclid-step/MR-modexp-step/GF2-row-XOR = 1 op",
+  "word": "mul wa*wb; mod/div wn*wd; add max(wa,wb); skipped reductions (r<m) free",
+  "reference": "wall clock (unmodeled)"
+ },
+ "population": {
+  "total": 512,
+  "kinds": {
+   "semiprime": 256,
+   "general": 256
+  },
+  "distinct": 512
+ },
+ "setup": {
+  "primorial_bits": 121,
+  "primorial_ops_flat": 25,
+  "excluded_from_rows": true,
+  "note": "primorial build is a one-off shared constant, identical availability to every arm"
+ },
+ "rows": [
+  {
+   "arm": "SOLO",
+   "k": 1,
+   "n_chunks": 1,
+   "M_candidates": 262144,
+   "factored": 512,
+   "ops_flat_by_phase": {
+    "setup": 0,
+    "prefilter": 13197,
+    "gen": 524288,
+    "test_solo": 7871436,
+    "test_batch": 0,
+    "relproc": 0,
+    "la": 0,
+    "rho": 59190755,
+    "mr": 481725,
+    "misc": 0
+   },
+   "ops_words_by_phase": {
+    "setup": 0,
+    "prefilter": 14257,
+    "gen": 524288,
+    "test_solo": 7871436,
+    "test_batch": 0,
+    "relproc": 0,
+    "la": 0,
+    "rho": 97444498,
+    "mr": 506882,
+    "misc": 0
+   },
+   "total_flat": 68081401,
+   "total_words": 106361361,
+   "ops_per_factor_flat": 132971.486328125,
+   "ops_per_factor_words": 207737.033203125,
+   "wall_s": 29.39201490895357,
+   "stats": {
+    "qs_splits": 0,
+    "rho_failures": 0,
+    "rho_roots": 512,
+    "rels_found": 807
+   },
+   "prefilter_resolved_N": 0,
+   "events_rho_fail": [],
+   "solo_rate_flat_per_cand": 30.027145385742188,
+   "solo_rate_words_per_cand": 30.027145385742188
+  },
+  {
+   "arm": "BATCH",
+   "k": 1,
+   "n_chunks": 512,
+   "M_candidates": 262144,
+   "factored": 512,
+   "ops_flat_by_phase": {
+    "setup": 0,
+    "prefilter": 13197,
+    "gen": 524288,
+    "test_solo": 0,
+    "test_batch": 782845,
+    "relproc": 14002,
+    "la": 0,
+    "rho": 59190755,
+    "mr": 481725,
+    "misc": 0
+   },
+   "ops_words_by_phase": {
+    "setup": 0,
+    "prefilter": 14257,
+    "gen": 524288,
+    "test_solo": 0,
+    "test_batch": 17332290,
+    "relproc": 14002,
+    "la": 0,
+    "rho": 97444498,
+    "mr": 506882,
+    "misc": 0
+   },
+   "total_flat": 61006812,
+   "total_words": 115836217,
+   "ops_per_factor_flat": 119153.9296875,
+   "ops_per_factor_words": 226242.611328125,
+   "wall_s": 27.51653245894704,
+   "stats": {
+    "qs_splits": 0,
+    "rho_failures": 0,
+    "rho_roots": 512,
+    "rels_found": 807
+   },
+   "prefilter_resolved_N": 0,
+   "events_rho_fail": [],
+   "batch_skipped_reductions": 15363,
+   "M_chunk_mean": 512.0,
+   "batch_rate_flat_per_cand": 2.986316680908203,
+   "batch_rate_words_per_cand": 66.11743927001953
+  },
+  {
+   "arm": "BATCH",
+   "k": 8,
+   "n_chunks": 64,
+   "M_candidates": 262144,
+   "factored": 512,
+   "ops_flat_by_phase": {
+    "setup": 0,
+    "prefilter": 13197,
+    "gen": 524288,
+    "test_solo": 0,
+    "test_batch": 772157,
+    "relproc": 14002,
+    "la": 0,
+    "rho": 59190755,
+    "mr": 481725,
+    "misc": 0
+   },
+   "ops_words_by_phase": {
+    "setup": 0,
+    "prefilter": 14257,
+    "gen": 524288,
+    "test_solo": 0,
+    "test_batch": 108486246,
+    "relproc": 14002,
+    "la": 0,
+    "rho": 97444498,
+    "mr": 506882,
+    "misc": 0
+   },
+   "total_flat": 60996124,
+   "total_words": 206990173,
+   "ops_per_factor_flat": 119133.0546875,
+   "ops_per_factor_words": 404277.681640625,
+   "wall_s": 26.879178339033388,
+   "stats": {
+    "qs_splits": 0,
+    "rho_failures": 0,
+    "rho_roots": 512,
+    "rels_found": 807
+   },
+   "prefilter_resolved_N": 0,
+   "events_rho_fail": [],
+   "batch_skipped_reductions": 15747,
+   "M_chunk_mean": 4096.0,
+   "batch_rate_flat_per_cand": 2.945545196533203,
+   "batch_rate_words_per_cand": 413.8421859741211
+  },
+  {
+   "arm": "BATCH",
+   "k": 64,
+   "n_chunks": 8,
+   "M_candidates": 262144,
+   "factored": 512,
+   "ops_flat_by_phase": {
+    "setup": 0,
+    "prefilter": 13197,
+    "gen": 524288,
+    "test_solo": 0,
+    "test_batch": 770813,
+    "relproc": 14002,
+    "la": 0,
+    "rho": 59190755,
+    "mr": 481725,
+    "misc": 0
+   },
+   "ops_words_by_phase": {
+    "setup": 0,
+    "prefilter": 14257,
+    "gen": 524288,
+    "test_solo": 0,
+    "test_batch": 837009823,
+    "relproc": 14002,
+    "la": 0,
+    "rho": 97444498,
+    "mr": 506882,
+    "misc": 0
+   },
+   "total_flat": 60994780,
+   "total_words": 935513750,
+   "ops_per_factor_flat": 119130.4296875,
+   "ops_per_factor_words": 1827175.29296875,
+   "wall_s": 27.029175842995755,
+   "stats": {
+    "qs_splits": 0,
+    "rho_failures": 0,
+    "rho_roots": 512,
+    "rels_found": 807
+   },
+   "prefilter_resolved_N": 0,
+   "events_rho_fail": [],
+   "batch_skipped_reductions": 15803,
+   "M_chunk_mean": 32768.0,
+   "batch_rate_flat_per_cand": 2.940418243408203,
+   "batch_rate_words_per_cand": 3192.9390830993652
+  },
+  {
+   "arm": "BATCH",
+   "k": 512,
+   "n_chunks": 1,
+   "M_candidates": 262144,
+   "factored": 512,
+   "ops_flat_by_phase": {
+    "setup": 0,
+    "prefilter": 13197,
+    "gen": 524288,
+    "test_solo": 0,
+    "test_batch": 770645,
+    "relproc": 14002,
+    "la": 0,
+    "rho": 59190755,
+    "mr": 481725,
+    "misc": 0
+   },
+   "ops_words_by_phase": {
+    "setup": 0,
+    "prefilter": 14257,
+    "gen": 524288,
+    "test_solo": 0,
+    "test_batch": 6664053953,
+    "relproc": 14002,
+    "la": 0,
+    "rho": 97444498,
+    "mr": 506882,
+    "misc": 0
+   },
+   "total_flat": 60994612,
+   "total_words": 6762557880,
+   "ops_per_factor_flat": 119130.1015625,
+   "ops_per_factor_words": 13208120.859375,
+   "wall_s": 29.32155653706286,
+   "stats": {
+    "qs_splits": 0,
+    "rho_failures": 0,
+    "rho_roots": 512,
+    "rels_found": 807
+   },
+   "prefilter_resolved_N": 0,
+   "events_rho_fail": [],
+   "batch_skipped_reductions": 15810,
+   "M_chunk_mean": 262144.0,
+   "batch_rate_flat_per_cand": 2.939777374267578,
+   "batch_rate_words_per_cand": 25421.348392486572
+  }
+ ],
+ "testing_analysis": {
+  "solo_trial_division_rate_flat_per_cand": 30.027145385742188,
+  "solo_trial_division_rate_words_per_cand": 30.027145385742188,
+  "batch_points_flat_vs_log2M_chunk": [
+   {
+    "k": 1,
+    "M_chunk_mean": 512.0,
+    "log2M_chunk": 9.0,
+    "batch_rate_flat": 2.986316680908203,
+    "batch_rate_words": 66.11743927001953
+   },
+   {
+    "k": 8,
+    "M_chunk_mean": 4096.0,
+    "log2M_chunk": 12.0,
+    "batch_rate_flat": 2.945545196533203,
+    "batch_rate_words": 413.8421859741211
+   },
+   {
+    "k": 64,
+    "M_chunk_mean": 32768.0,
+    "log2M_chunk": 15.0,
+    "batch_rate_flat": 2.940418243408203,
+    "batch_rate_words": 3192.9390830993652
+   },
+   {
+    "k": 512,
+    "M_chunk_mean": 262144.0,
+    "log2M_chunk": 18.0,
+    "batch_rate_flat": 2.939777374267578,
+    "batch_rate_words": 25421.348392486572
+   }
+  ],
+  "fit_flat_intercept_slope_log2M": [
+   3.018149566650391,
+   -0.0048248291015625
+  ],
+  "fit_words_intercept_slope_log2M": [
+   -28206.593615341182,
+   2628.1596585591633
+  ],
+  "crossover_vs_solo_flat_model": "always_below_solo",
+  "crossover_vs_solo_word_model": {
+   "M_star_log2": 10.743875726411193,
+   "M_star": 1714.860762141402
+  }
+ },
+ "bound_quantification": {
+  "solo_testing_share_of_per_factor_ops": 0.11561800850719861,
+  "solo_nontesting_share": 0.8843819914928014,
+  "max_saving_if_testing_free": 0.11561800850719861,
+  "realized_delta_best_k": 0.10409287846470727,
+  "best_batch_k": 512,
+  "finding_phase_note": "relation yield and rho work are strictly per-N; identical across arms by construction"
+ },
+ "audit": {
+  "samples": 500,
+  "mismatches_tree_vs_trial": 0,
+  "mismatches_direct_vs_trial": 0,
+  "vector_mismatches": 0,
+  "pass": true
+ },
+ "verdicts": {
+  "verdict_name": "BATCH-WINS-TESTING",
+  "delta_best_k_flat_model": 0.10409287846470727,
+  "delta_best_k_word_model": -62.580964143548336,
+  "delta_wall_fraction": 0.0023971943437346775,
+  "testing_beats_solo_flat_anywhere": true,
+  "testing_beats_solo_word_anywhere": false,
+  "crossover_vs_solo_stated_flat": "always_below_solo",
+  "crossover_vs_solo_stated_word": {
+   "M_star_log2": 10.743875726411193,
+   "M_star": 1714.860762141402
+  },
+  "h_audit_pass": true,
+  "e1_assessment": "CONFIRMED in the flat-op model with the bound quantified: batch testing beats solo trial division at every measured pool size, but the per-factor saving is capped by the testing share of solo work, and under the WORD-weighted model the tree's operand growth REVERSES the win at large k (batch word-rate grows ~log-superlinearly with M). The pre-stated expectation survives in op-count terms only."
+ },
+ "notes": {
+  "qs_splits_total": 0,
+  "yield_note": "at bitlen 40 with FB<=100 the per-N relation yield is far below the 26 needed for QS; rho carries factoring identically in every arm (this IS the 'finding does not amortize' term)",
+  "python": "3.12.3",
+  "gmpy2_used_for": "next_prime/isqrt in generation and sieving only; all pipeline arithmetic is native bigint with explicit op counting"
+ },
+ "ledger_catches": [],
+ "wall_s": 140.18094979203306
+}

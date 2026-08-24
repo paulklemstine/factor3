@@ -1,0 +1,41 @@
+[pop] 64 ints, kinds={'semiprime': 32, 'general': 32}
+[pop] 64 ints, kinds={'semiprime': 32, 'general': 32}
+[row] SOLO k=1 chunks=1 M=4,096 flat=255,283,073 ppf=3988798.0 words_ppf=4593690 wall=104.0s factored=64/64 rels=26 pf_resolved=0
+[pop] 16 ints, kinds={'semiprime': 8, 'general': 8}
+[row] BATCH k=1 chunks=64 M=4,096 flat=255,267,766 ppf=3988558.8 words_ppf=4594573 wall=108.8s factored=64/64 rels=26 pf_resolved=0
+[row] SOLO k=1 chunks=1 M=512 flat=64,887,689 ppf=4055480.6 words_ppf=4677311 wall=96.1s factored=16/16 rels=2 pf_resolved=0
+[pop] 16 ints, kinds={'semiprime': 8, 'general': 8}
+[row] SOLO k=1 chunks=1 M=512 flat=64,887,689 ppf=4055480.6 words_ppf=4677311 wall=27.3s factored=16/16 rels=2 pf_resolved=0
+[row] BATCH k=1 chunks=16 M=512 flat=64,886,175 ppf=4055385.9 words_ppf=4677728 wall=27.1s factored=16/16 rels=2 pf_resolved=0
+[row] BATCH k=4 chunks=4 M=512 flat=64,885,887 ppf=4055367.9 words_ppf=4677861 wall=28.0s factored=16/16 rels=2 pf_resolved=0
+[pop] 16 ints, kinds={'semiprime': 8, 'general': 8}
+[row] SOLO k=1 chunks=1 M_row=512 M_chunk_mean=0 flat=1,097,965 ppf=68622.8 words_ppf=112523 wall=0.5s factored=16/16 rels=2 pf_resolved=0
+[row] BATCH k=1 chunks=16 M_row=512 M_chunk_mean=32 flat=1,096,451 ppf=68528.2 words_ppf=112940 wall=0.5s factored=16/16 rels=2 pf_resolved=0
+[row] BATCH k=4 chunks=4 M_row=512 M_chunk_mean=128 flat=1,096,163 ppf=68510.2 words_ppf=113073 wall=0.5s factored=16/16 rels=2 pf_resolved=0
+[done] status=06_final verdict=BREAK-EVEN wall=1.4s catches=['AUDIT_EXCEPTION', 'AUDIT_EXACT_MATCH_FAILED']
+[pop] 64 ints, kinds={'semiprime': 32, 'general': 32}
+[row] SOLO k=1 chunks=1 M_row=8,192 M_chunk_mean=0 flat=7,113,557 ppf=111149.3 words_ppf=180006 wall=3.1s factored=64/64 rels=47 pf_resolved=0
+[row] BATCH k=1 chunks=64 M_row=8,192 M_chunk_mean=128 flat=7,081,270 ppf=110644.8 words_ppf=182411 wall=3.0s factored=64/64 rels=47 pf_resolved=0
+[row] BATCH k=8 chunks=8 M_row=8,192 M_chunk_mean=1,024 flat=7,079,932 ppf=110623.9 words_ppf=191948 wall=3.0s factored=64/64 rels=47 pf_resolved=0
+[row] BATCH k=64 chunks=1 M_row=8,192 M_chunk_mean=8,192 flat=7,079,764 ppf=110621.3 words_ppf=268582 wall=3.1s factored=64/64 rels=47 pf_resolved=0
+[done] status=06_final verdict=BREAK-EVEN wall=12.2s catches=[]
+[pop] 512 ints, kinds={'semiprime': 256, 'general': 256}
+[row] SOLO k=1 chunks=1 M_row=262,144 M_chunk_mean=0 flat=61,593,595 ppf=120300.0 words_ppf=194545 wall=26.9s factored=512/512 rels=807 pf_resolved=0
+[row] BATCH k=1 chunks=512 M_row=262,144 M_chunk_mean=512 flat=60,600,690 ppf=118360.7 words_ppf=224929 wall=26.3s factored=512/512 rels=807 pf_resolved=0
+[row] BATCH k=8 chunks=64 M_row=262,144 M_chunk_mean=4,096 flat=60,590,002 ppf=118339.8 words_ppf=402964 wall=26.8s factored=512/512 rels=807 pf_resolved=0
+[row] BATCH k=64 chunks=8 M_row=262,144 M_chunk_mean=32,768 flat=60,588,658 ppf=118337.2 words_ppf=1825861 wall=29.2s factored=512/512 rels=807 pf_resolved=0
+[row] BATCH k=512 chunks=1 M_row=262,144 M_chunk_mean=262,144 flat=60,588,490 ppf=118336.9 words_ppf=13206807 wall=30.7s factored=512/512 rels=807 pf_resolved=0
+[done] status=06_final verdict=BREAK-EVEN wall=139.8s catches=['RHO_FAILURE_NONZERO']
+[pop] 64 ints, kinds={'semiprime': 32, 'general': 32}
+[row] SOLO k=1 chunks=1 M_row=8,192 M_chunk_mean=0 flat=7,302,654 ppf=114104.0 words_ppf=182961 wall=3.2s factored=64/64 rels=47 pf_resolved=0
+[row] BATCH k=1 chunks=64 M_row=8,192 M_chunk_mean=128 flat=7,081,270 ppf=110644.8 words_ppf=182411 wall=3.1s factored=64/64 rels=47 pf_resolved=0
+[row] BATCH k=8 chunks=8 M_row=8,192 M_chunk_mean=1,024 flat=7,079,932 ppf=110623.9 words_ppf=191948 wall=3.1s factored=64/64 rels=47 pf_resolved=0
+[row] BATCH k=64 chunks=1 M_row=8,192 M_chunk_mean=8,192 flat=7,079,764 ppf=110621.3 words_ppf=268582 wall=3.2s factored=64/64 rels=47 pf_resolved=0
+[done] status=06_final verdict=BATCH-WINS-TESTING wall=12.5s catches=[]
+[pop] 512 ints, kinds={'semiprime': 256, 'general': 256}
+[row] SOLO k=1 chunks=1 M_row=262,144 M_chunk_mean=0 flat=68,081,401 ppf=132971.5 words_ppf=207737 wall=29.4s factored=512/512 rels=807 pf_resolved=0
+[row] BATCH k=1 chunks=512 M_row=262,144 M_chunk_mean=512 flat=61,006,812 ppf=119153.9 words_ppf=226243 wall=27.5s factored=512/512 rels=807 pf_resolved=0
+[row] BATCH k=8 chunks=64 M_row=262,144 M_chunk_mean=4,096 flat=60,996,124 ppf=119133.1 words_ppf=404278 wall=26.9s factored=512/512 rels=807 pf_resolved=0
+[row] BATCH k=64 chunks=8 M_row=262,144 M_chunk_mean=32,768 flat=60,994,780 ppf=119130.4 words_ppf=1827175 wall=27.0s factored=512/512 rels=807 pf_resolved=0
+[row] BATCH k=512 chunks=1 M_row=262,144 M_chunk_mean=262,144 flat=60,994,612 ppf=119130.1 words_ppf=13208121 wall=29.3s factored=512/512 rels=807 pf_resolved=0
+[done] status=06_final verdict=BATCH-WINS-TESTING wall=140.2s catches=[]

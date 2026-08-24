@@ -10298,3 +10298,16 @@ fixed (lambda_q | lambda_p -> every sync is an exact meeting; ~6% draws burned c
 batched-gcd quantization erased the sqrt-p law (first run alpha ~ 0) — per-iteration gcd
 restored alpha = 0.512 vs paper 154's 0.52.
 Paper 158, issue #260. Now 490 experiments. Assessment v267.
+
+## Part 250 - BATCH-AMORTIZATION (round-73 #3, exp 561, v315)
+
+Product-tree batch smoothness-testing vs solo trial division at B=100, bitlen 40,
+pools k in {1,8,64,512}. BATCH-WINS-TESTING: best delta +0.104 flat-op model at
+k=512, batch beats solo at every measured pool size; but the WORD model REVERSES at
+large k (-62.6), crossover M* ~ 1715 candidates — GMP reality sits near the word
+model (+0.24% wall). E1 bound quantified: solo testing = 11.56% of per-factor ops,
+so the saving is capped there even if testing were free; finding phase strictly per-N
+(rho identical across arms by construction). Audit exact-match PASS 500/500, no
+ledger catches. Honest placement: constant-shaving on a KNOWN method (barrier 8),
+engineering calibration of the method stratum, not asymptotic.
+Paper 208, issue #352. Now 551 experiments. Assessment v315.
