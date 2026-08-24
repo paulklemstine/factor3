@@ -144,7 +144,8 @@ def main():
     t0 = time.time()
     lg_hf = model(w0).logits.float()
     log(f"hf eager fwd {time.time()-t0:.0f}s")
-    dlog = float((lg_custom[0].float() - lg_hf[0]).abs().max())
+    lg_custom = model.lm_head(lg_custom).float()   # hidden -> logits
+    dlog = float((lg_custom[0] - lg_hf[0]).abs().max())
     agr = float((lg_custom[0].argmax(-1) == lg_hf[0].argmax(-1)).float().mean())
     log(f"GATE max|dlogit|={dlog:.6f} top1_agree={agr:.6f}")
     res = {"gate": {"max_dlogit": dlog, "top1_agreement": agr}, "arms": []}
