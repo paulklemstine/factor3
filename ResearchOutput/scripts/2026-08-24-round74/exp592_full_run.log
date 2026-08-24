@@ -1,0 +1,24 @@
+[primorials] P5 bits=143816 P6 bits=1440509 wall=0.5
+[xcheck] validating generator vs exp581_regen_positions.npz (master 20260828)...
+[xcheck] status=EXACT_MATCH win=True stream=True wall=1.8
+[fresh] regenerating prior lineages for disjointness assertion...
+[fresh] status=ALL_DISJOINT disjoint={'20260824': True, '20260825': True, '20260826': True, '20260827': True, '20260828': True, '20260831': True} wall=1.8
+[gen] 8 workers x 16 N x 150000 j-samples (master 20260902)...
+[gen] done (347.7s) wall=349.5
+[gen] status=OK wall=349.7
+[tensors] built wall=349.9
+[mix] amp_mix=0.0742 se=0.0377 z_raw=1.97 ci95=[0.0451,0.1959] amp_orig=0.0148 removal=0.0% wall=350.3 (boot 0.5s)
+[ctrlA] amp=0.0221 se=0.0092 maxdev=0.0336 pass=True | [ctrlB] amp_sim=0.1398 se_sim=0.0478 z_cal=-1.08 wall=350.8
+{
+ "gate_h1_fires": false,
+ "gate_h0_fires": true,
+ "rule": "GATE-H1 iff amp_mix>=1.0*se_mix AND z_cal>=2 (=> confirmed two-seed, entry hardens); else GATE-H0 iff amp CI includes 0 OR z_cal<1 (=> single-seed-unconfirmed, original z=4.11 flagged possibly-max-statistic-inflated); else PARTIAL; CTRL-A must be null",
+ "gate_evaluation_order": "H1 -> H0 -> PARTIAL",
+ "verdict": "GATE-H0: FEATURE DOES NOT REPLICATE -> ENTRY STAYS SINGLE-SEED-UNCONFIRMED; ORIGINAL z=4.11 FLAGGED POSSIBLY-INFLATED BY MAX-STATISTIC SWEEP SELECTION",
+ "consequence": "entry stays single-seed-unconfirmed; original flagged",
+ "amp_mix_round": 0.0742,
+ "se_mix_round": 0.0377,
+ "z_mix_registered_raw_round": 1.97,
+ "z_null_calibrated_round": -1.08
+}
+WALL 350.8

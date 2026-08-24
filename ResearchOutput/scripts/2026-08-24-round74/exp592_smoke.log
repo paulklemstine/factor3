@@ -1,0 +1,24 @@
+[primorials] P5 bits=143816 P6 bits=1440509 wall=0.5
+[xcheck] validating generator vs exp581_regen_positions.npz (master 20260828)...
+[xcheck] status=EXACT_MATCH win=True stream=True wall=1.0
+[fresh] regenerating prior lineages for disjointness assertion...
+[fresh] status=ALL_DISJOINT disjoint={'20260824': True, '20260825': True, '20260826': True, '20260827': True, '20260828': True, '20260831': True} wall=1.0
+[gen] 4 workers x 6 N x 20000 j-samples (master 20260902)...
+[gen] done (14.8s) wall=15.7
+[gen] status=OK wall=15.7
+[tensors] built wall=15.8
+[mix] amp_mix=0.6336 se=0.2909 z_raw=2.18 ci95=[0.1885,1.2225] amp_orig=0.5539 removal=0.0% wall=15.8 (boot 0.0s)
+[ctrlA] amp=0.0362 se=0.0544 maxdev=0.1238 pass=False | [ctrlB] amp_sim=0.2719 se_sim=0.2891 z_cal=0.88 wall=15.8
+{
+ "gate_h1_fires": false,
+ "gate_h0_fires": false,
+ "rule": "GATE-H1 iff amp_mix>=1.0*se_mix AND z_cal>=2 (=> confirmed two-seed, entry hardens); else GATE-H0 iff amp CI includes 0 OR z_cal<1 (=> single-seed-unconfirmed, original z=4.11 flagged possibly-max-statistic-inflated); else PARTIAL; CTRL-A must be null",
+ "gate_evaluation_order": "H1 -> H0 -> PARTIAL",
+ "verdict": "ARTIFACT-CONTAMINATED: CTRL-A machinery null violated; no gate verdict",
+ "consequence": "pipeline contaminated; fresh-seed gate inconclusive",
+ "amp_mix_round": 0.6336,
+ "se_mix_round": 0.2909,
+ "z_mix_registered_raw_round": 2.18,
+ "z_null_calibrated_round": 0.88
+}
+WALL 15.8

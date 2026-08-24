@@ -3073,3 +3073,35 @@ closure, spike-origin arc untouched; refuted family removed at every scale; entr
 data geometry so its test transfers across bit lengths. Open unchanged: non-QR per-N structure at
 u = 2.5, factor-local beyond scan-order, MA-1 effectivity; PLUS the named follow-up; .2346 flag
 traveling. Paper 242, issue #390.
+
+**Assessment addendum v350 — 2026-08-24 (round-87 #2).** Experiment recorded (count 580 → 581;
+papers 242 → 243; version v349 → v350. Content: **U065-FRESH-SEED-GATE [FINAL] + AMENDMENT to
+paper 242 (issue #391)** — exp 592 applies tonight's fresh-seed-gating rule to tonight's own newest
+output: paper 242's NEW MAP ENTRY (non-divisibility positional mechanism) rested on ONE seed lineage,
+so the identical pipeline (statistics verbatim 588c, generation verbatim 578 code path) was rerun on
+FRESH MASTER SEED 20260902, disjoint vs ALL SIX prior lineages (pairwise N-set disjointness asserted,
+each regenerated in full, sha256[:16] hashes recorded). Pipeline FULLY EXONERATED before statistics:
+generator regression vs the STORED exp581/exp588c lineage EXACT_MATCH (population windows int64-exact
+128/128 + chunk-0 stream membership/order walk), CTRL-A clean (amp 0.0221±0.0092, maxdev 0.0336),
+volumes matched (9840 hits/512k refs). Verdict **GATE-H0 FIRES — THE FEATURE DOES NOT REPLICATE**:
+amp_mix 0.074 ± 0.038 (registered raw z_mix = 1.97, CI [0.045, 0.196]), CTRL-B null amp_sim 0.140 →
+calibrated excess −0.066 ± 0.061, **z_cal = −1.08** vs original +1.53/raw 4.11; decisive internal
+reading — fresh RAW amplitude SMALLER THAN THE FRESH MEASURED NULL BIAS (0.074 < 0.140), and even the
+UNMIXED peak vanishes (amp_orig 0.0148 vs 0.1163). AMENDMENT: paper 242's map entry →
+SINGLE-SEED-UNCONFIRMED; its raw z = 4.11 FLAGGED POSSIBLY MAX-STATISTIC-SWEEP-INFLATED (paper 232's
+~30-cell discovery sweep was itself a selection surface; two seeds bracket zero on the calibrated scale
++1.53 → −1.08 as selection-plus-max-bias predicts; flag not proof — original stands as lineage history).
+WHAT SURVIVES TWO-SEED: the κ composition layer — top cell IDENTICAL (2|v∧3|v∧5|v∧7∤v, 1.4315 vs
+1.406), bottom cell IDENTICAL (all-cleared 0.6491 vs 0.645), spread matched ~2%, composition FLAT in t
+both seeds → **"divisibility is a RATE DIAL not a position dial" STANDS**; only its positional
+corollary downgraded. NAMED REOPENS-CONDITION: pre-registered single-hypothesis test at FIXED vertex
+u* = 0.65 (no sweep, no post-hoc selection) on ≥3 pooled independent seeds, powered against the
+CTRL-B-calibrated scale. Ledger catches: smoke-grid CTRL-A maxdev trips on small-sample noise alone
+(0.1238 > bar at smoke size; full-run 0.0336 passes; bar unchanged); smoothness spot-check dropped as
+VACUOUS in-process (hits defined by the validating tester); hash-convention change disclosed;
+findings.md absent though brief listed it (result.json authoritative). Wall 350.8 s. Barrier framing:
+NEGATIVE replication gate REMOVES an entry — honest-map discipline applied to same-day output; all
+standing laws untouched; surviving rate-dial law scale-carrying; phantom killed before downstream power
+spend. Open unchanged: non-QR per-N structure at u = 2.5, factor-local beyond scan-order, MA-1
+effectivity; non-divisibility-carrier follow-up CLOSED unless the reopens protocol fires; .2346 flag
+traveling. Paper 243, issue #391.

@@ -11820,3 +11820,56 @@ quantum frontier, four-class rate closure, spike-origin arc untouched; refuted f
 defined at fixed data geometry so its test transfers across bit lengths unchanged. Open unchanged:
 non-QR per-N structure at u=2.5, factor-local beyond scan-order, MA-1 effectivity; PLUS the named
 non-divisibility-carrier follow-up; .2346 provenance flag still traveling.
+
+## Part 285 - U065-FRESH-SEED-GATE [FINAL] + AMENDMENT to paper 242 (round-87 #2, exp 592, v350)
+
+Tonight's fresh-seed-gating rule applied to tonight's own newest output: paper 242's NEW MAP ENTRY
+(non-divisibility positional mechanism, one seed lineage) was gated BEFORE hardening. exp 592 reran
+the IDENTICAL pipeline (statistics verbatim 588c, generation verbatim 578 code path) on FRESH MASTER
+SEED 20260902 — disjoint vs ALL SIX prior lineages (20260824..28, 20260831, each regenerated in full,
+pairwise N-set disjointness asserted, sha256[:16] hashes recorded; fresh hash 0d69e6f4e59ebc9e).
+Pipeline FULLY EXONERATED before statistics: generator regression vs STORED exp581/exp588c lineage
+EXACT_MATCH (population windows int64-exact 128/128 + chunk-0 stream membership/order walk);
+CTRL-A machinery null clean at full size (amp 0.0221±0.0092, maxdev all bins 0.0336); volumes matched
+(9840 hits/512k refs, mean 76.88 hits/N, g=34.44). Pre-registered gates (H1 -> H0 -> PARTIAL, units
+fixed pre-data): **GATE-H0 FIRES — THE FEATURE DOES NOT REPLICATE**. amp_mix = 0.0742 ± 0.0377
+(registered raw z_mix = 1.97, CI95 [0.0451, 0.1959]); CTRL-B amp_sim = 0.1398 ± 0.0478 → calibrated
+excess −0.066 ± 0.061, **z_cal = −1.08** vs original z_cal +1.53 / raw 4.11 (paper 242). H1 fails
+(z_cal < 2); H0 fires on its registered second clause (z_cal < 1); CI-includes-0 clause NOT met —
+disagreement flagged never resolved. Decisive internal reading: fresh RAW amplitude (0.074) SMALLER
+THAN THE FRESH MEASURED NULL BIAS (0.140) — a pure null draw produces amplitudes of the observed size;
+even the UNMIXED peak vanishes (amp_orig 0.0148 vs 0.1163).
+
+AMENDMENT (paper 242): map entry **AMENDED TO SINGLE-SEED-UNCONFIRMED**; original raw z = 4.11
+**FLAGGED POSSIBLY MAX-STATISTIC-SWEEP INFLATED** — paper 232's ~30-cell discovery sweep was itself a
+selection surface, CTRL-B measures null amplitudes of observed magnitude on BOTH lineages, and the two
+seeds bracket zero on the calibrated scale (+1.53 → −1.08) exactly as selection-plus-max-bias predicts.
+Flag, not proof — original stands as recorded lineage history. WHAT SURVIVES: the κ composition layer
+is **CONFIRMED TWO-SEED** — top cell IDENTICAL (2|v∧3|v∧5|v∧7∤v, 1.4315 vs 1.406), bottom cell
+IDENTICAL (all-cleared, 0.6491 vs 0.645), spread 0.649–1.432 vs 0.645–1.406 (~2% match, ~2.2×
+modulation), composition FLAT in t both seeds (drift 0.204% vs 0.269%) — **"divisibility is a RATE
+DIAL not a position dial" STANDS two-seed**; only its non-divisibility POSITIONAL corollary is
+downgraded. Chain history 232→241→242 intact as lineage records.
+
+NAMED REOPENS-CONDITION (only door back in): pre-registered SINGLE-HYPOTHESIS test at FIXED vertex
+u* = 0.65 — no sweep, no post-hoc vertex selection — on ≥3 POOLED independent fresh seeds, powered
+against the CTRL-B-calibrated scale. Only a pass under that protocol hardens the entry.
+
+LEDGER CATCHES: smoke-grid CTRL-A maxdev trips on small-sample noise ALONE (smoke 0.1238 > 0.10 bar
+at 24 Ns × 20k/N → smoke correctly read ARTIFACT-CONTAMINATED/inconclusive per registered order;
+full-run 0.0336 passes; bar unchanged, disclosed). Smoothness spot-validation dropped as VACUOUS
+in-process (hits DEFINED by the same tester that would validate them). Hash-convention change
+disclosed (sha256[:16]-of-sorted-N-repr because exp578 triple-based pop_hash needs discarded lo/hi;
+disjointness rests on set disjointness not hashes). Regression direction scoped: validates the CODE
+PATH not the fresh data — correct for a freshness gate. findings.md ABSENT from artifacts though the
+brief listed it — result.json authoritative (inline-findings policy, disclosed). Wall 350.8 s; boot
+2000 reps seed 20260901.
+
+Count 580 → 581; assessment v349 → v350. Paper 243, issue #391. Barrier framing: NEGATIVE replication
+gate REMOVES an entry rather than adding one — honest-map rule applied to tonight's own output within
+hours of recording it; residue cap 4/3, position 5.19×, external-hint laws, quantum frontier, four-class
+rate closure, spike-origin arc untouched; surviving rate-dial law is scale-carrying (composition
+transfers across bit lengths unchanged); killing the phantom early prevents downstream power spend.
+Open unchanged: non-QR per-N structure at u=2.5, factor-local beyond scan-order, MA-1 effectivity;
+named non-divisibility-carrier follow-up CLOSED as unconfirmed unless the §reopens protocol fires;
+.2346 provenance flag still traveling.
