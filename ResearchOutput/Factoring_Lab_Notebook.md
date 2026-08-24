@@ -11149,3 +11149,33 @@ overlap disclosed up front with registered any-fires multiplicity. Barrier frami
 scale-smoothness mechanism frontier — opens rather than closes; H0-route also cleanly closed
 (control nulls prove pipe); residue cap untouched; no complexity claim. Count 566 -> 567.
 Assessment v334 -> v335. Paper 228, issue #376.
+
+## Part 271 - PROFILE-FORM (round-80 #1, exp 579, v336)
+
+PROFILE-FORM-POWER-LAW, RESIDUAL-PEAKED-MID-WINDOW — paper-228 named follow-up (a) CLOSED: the
+small-j positional layer now has a LAW. Pure re-analysis of exp578_positions.npz verbatim (128
+bitlen-96 semiprimes seed 20260828, 9594 hits), no new physics; cluster bootstrap over Ns (2000
+reps seed 20260831), WLS on 50 rate-weighted u-bins; Dickman rho(u) baseline table-verified to 6
+decimals at rho(2..5); N not stored -> s=isqrt(N)=jhi//3 exact, offset r=N-s^2 mixed over UNIFORM-r
+17-pt prior with {0,mid,2s} brackets. V1 FAMILY: POWER LAW wins T(x)~=a(1+x)^-b, a=0.0295 boot95
+[0.0284,0.0307], b=1.104 [0.991,1.218] — HARMONIC ~1/(1+x) decline; Akaike weight 0.987 (dAICc:
+exp +9.18 | logistic +11.45 DEGENERATE->exponential unidentifiable | linear +16.92). V2 RESIDUAL
+(pre-registered rule FIRES): mixture-Dickman absorbs nearly ALL the raw decline — M falls 3.64x
+first->last vs T's 3.25x; R=T/M runs 0.80 @x=.01 [0.733,0.873] -> hump max 1.226 @bin33 x=.67
+[1.068,1.389] -> 0.90 @x=.99; Spearman +0.118 p=0.42 not monotone; linear slope on R POSITIVE
++0.098 [0.035,0.162]; quadratic beats linear dAICc=50.5, c-CI [-0.624,-0.141] wholly<0, vertex
+x=0.59 interior => PEAKED: beyond-magnitude part is a ±20% CONCAVE MID-WINDOW EXCESS with deficits
+at both ends (esp. small-j: the rho=1 wall region OVER-predicts ~20%), structure NOT a second
+monotone gradient. Baseline fragility gate PASSES (shape invariant across all three r-brackets;
+r=2s deepens small-j deficit to R=0.51, call unchanged); CONTROL GATE passes (slope +0.000294 CI
+covers 0). Reconciles exp578: coarse bitlen-x-octant strata could not absorb what continuous
+rho(u) does. LEDGER CATCHES: smoke hit a bootstrap-broadcast bug, fixed pre-full, FULL clean 10.2 s
+(all four fits 2000/2000 reps); ship-order/partial-completion check performed NEGATIVE — no such
+field in exp579_result.json, completion evidenced internally by boot_fits_ok=2000 x4 and full bin
+coverage (check itself recorded); uniform-r prior approximates true next_prime r-distribution,
+disclosed pre-run; Dickman treats v as random integers — shape conclusions offset-invariant.
+Barrier framing: characterization on 228's opened frontier that PREVENTS a wrong turn (no second
+multiplicative gradient to hunt; bounded mid-window excess redirects attention to x~0.5-0.8);
+residue cap untouched; no complexity claim. Count 567 -> 568. Assessment v335 -> v336. Paper 229,
+issue #377. JOINT CONSEQUENCE with Part 272: positional entry law-complete, layers SEPARATE.
+

@@ -2683,3 +2683,21 @@ coordinator before running it, amendment labeled post-hoc everywhere; legs a/c o
 Barrier framing: scale-smoothness mechanism frontier — opens rather than closes; H0-route also
 cleanly closed via control nulls; residue cap untouched; no breakthrough claimed. Paper 228,
 issue #376.
+
+**Assessment addendum v336 — 2026-08-24 (round-80 #1).** Experiment recorded (count 567 → 568);
+papers 228 → 229; version v335 → v336. Content: exp579 PROFILE-FORM — paper-228 named follow-up
+(a) CLOSED, the small-j positional layer gets a LAW. Pure re-analysis of exp578_positions.npz
+(9594 hits), cluster bootstrap over Ns (2000 reps, seed 20260831). V1: POWER LAW wins T(x) ≈
+0.0295·(1+x)^(−1.104) — a = 0.0295 [0.0284, 0.0307], b = 1.104 [0.991, 1.218] ⇒ HARMONIC ~1/(1+x)
+decline; Akaike weight 0.987 (ΔAICc: exponential +9.2, logistic +11.5 degenerate-to-exponential,
+linear +16.9). V2 residual (pre-registered rule FIRES): mixture-Dickman absorbs nearly all raw
+decline (M falls 3.64× vs T's 3.25×); R = T/M runs 0.80 → hump max 1.23 @ x ≈ 0.67 → 0.90,
+Spearman p = 0.42 not monotone, quadratic dAICc 50.5 with c-CI [−0.62, −0.14] and interior vertex
+0.59 ⇒ PEAKED — the beyond-magnitude part is a ±20% CONCAVE MID-WINDOW EXCESS, not a second
+monotone gradient; invariant across all three offset-r brackets (fragility gate passes); control
+flat (gate passes). Ledger catches: smoke bootstrap-broadcast bug fixed pre-full; ship-order/
+partial-completion check performed NEGATIVE (no such field in the JSON; completion evidenced by
+boot_fits_ok = 2000 × 4); uniform-r prior + random-integer-v caveats disclosed pre-run.
+Barrier framing: characterization that prevents a wrong turn on 228's opened frontier; residue cap
+untouched; no breakthrough claimed. Paper 229, issue #377.
+
