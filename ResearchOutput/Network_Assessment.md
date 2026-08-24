@@ -1753,3 +1753,7 @@ Assessment v93. 93 experiments (NET-1 through NET-93 pending).
 - **NET-93 — KEYS-OWN-THE-CLIFF (cpu-large-model axis round 68): the KV cliff is ENTIRELY a key-side phenomenon — K-only q4_0 collapses (+35,597%) while V-only q4_0 is free (+0.166%), a ~214,000x damage asymmetry vs the predicted >=5x; no block-scaling format rescues keys (q4_1 worse than raw q4_0; iq4_nl best-of-collapsed but still annihilation); mechanism: softmax selection-boundary errors amplify (NET-83) vs linear content noise; prescription: role-split cache budget (keys >=8b, values 4b), implied K8/V4 combined cell pending direct confirmation. Gate: NET-92 harness reused exactly. Open: K8/V4 direct; K6/K5 boundary search; cross-model replication. Paper 174, issue #358.
 
 Assessment v94. 94 experiments (NET-1 through NET-94 pending).
+
+- **NET-94 — THE-ROLE-SPLIT-CONFIRMED (cpu-large-model axis round 69; compact): direct K8/V4 measurement = +0.142% (deployment-grade, ~6 avg bits/element); q5_1 probe reveals TWO-STAGE key cliff (free @8b → +868% @5b → +38,000% @4b) while values free at every width tested; key floor bracketed (5,8]; KV trilogy complete into one serving default: -ctk q8_0 -ctv q4_0. Gate exact reuse of NET-92 harness. Open: finer key boundary; cross-model replication; spec-decode interaction. Issue #361.
+
+Assessment v95. 95 experiments (NET-1 through NET-95 pending).

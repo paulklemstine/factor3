@@ -2061,3 +2061,13 @@ log /tmp/net93.log.
 **Verdict:** KEYS-OWN-THE-CLIFF. Barriers: (a)-(h) clean/partial as listed.
 Open: direct K8/V4 combined cell; K6/K5 key-cliff boundary search; cross-model
 replication. Paper 174, issue #358. Now 94 network experiments. Assessment v94.
+
+## Part 94 — THE-ROLE-SPLIT-CONFIRMED (compact): direct measurement lands the deployment configuration — K8/V4 PPL 7.1194 = +0.142% vs f16 control (quality-free at ~6 average bits/element, half of fp16 KV memory); q5_1 probe shows the KEY cliff is a TWO-STAGE FALL: free at 8 bits → +867.7% at 5 bits (severe, ~10x blowup) → +38,000% at 4 bits (total annihilation), while values stay free all the way down to raw 4; practical key floor bracketed (5, 8] (llama.cpp offers no q6 cache type); completes the KV trilogy NET-92/93/94 into one engineering table: -ctk q8_0 -ctv q4_0 is the serving default (NET-94; cpu-large-model axis iteration 69)
+
+**Method:** NET-92 harness reused exactly; arms {K8/V4, K5_1/V5_1}, 250KB
+held-out slice, threads=8, ctx=2048. Script ResearchOutput/exp_net94_rolesplit.py;
+results ~/f3cache/net94_results.json; log /tmp/net94.log.
+**Verdict:** THE-ROLE-SPLIT-CONFIRMED. Barriers clean/partial as prior KV cells.
+Open: K5/K6 boundary via other runtimes; spec-decode interaction; cross-model.
+No new paper (completes NET-93's lineage). Issue #361. Now 95 network experiments.
+Assessment v95.
