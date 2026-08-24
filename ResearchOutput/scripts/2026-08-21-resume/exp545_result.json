@@ -1,0 +1,100 @@
+{
+ "exp": "545",
+ "codename": "TDIAL-U112",
+ "round": 70,
+ "smoke": false,
+ "status": "04_final",
+ "wall_s": 660.3,
+ "hypotheses": {
+  "H1": "Spearman(T, rate) stays within [0.55, 0.85] on uniform draws at bitlen 112, u=2.5",
+  "H2": "T beats count <=100 by > +0.05"
+ },
+ "config": {
+  "seeds": [
+   20261210,
+   20261211,
+   20261212
+  ],
+  "n_per_seed": 400,
+  "p_range": [
+   1125899906842624,
+   72057594037927936
+  ],
+  "q_range": [
+   72057594037927936,
+   4611686018427387904
+  ],
+  "bits_n": 112,
+  "n_rel": 240,
+  "h_off": 256,
+  "u_exp": 2.5,
+  "dial_max": 400,
+  "cnt_max": 100,
+  "n_boot": 300
+ },
+ "population": {
+  "total": 1200
+ },
+ "per_seed": [
+  {
+   "seed": 20261210,
+   "n": 400,
+   "rho_T": 0.40906829216538837,
+   "rho_cnt": 0.39148998706235455,
+   "advantage": 0.01757830510303382
+  },
+  {
+   "seed": 20261211,
+   "n": 400,
+   "rho_T": 0.5090301007577271,
+   "rho_cnt": 0.4362169946217169,
+   "advantage": 0.07281310613601022
+  },
+  {
+   "seed": 20261212,
+   "n": 400,
+   "rho_T": 0.4602503019714867,
+   "rho_cnt": 0.41792175701381096,
+   "advantage": 0.04232854495767574
+  }
+ ],
+ "pooled": {
+  "n": 1200,
+  "rho_T": 0.462125678851606,
+  "rho_T_ci95": [
+   0.41471196136838256,
+   0.5081483832982573
+  ],
+  "rho_cnt": 0.41500524318858856,
+  "rho_cnt_ci95": [
+   0.36445338786863546,
+   0.4577899187163009
+  ],
+  "advantage": 0.047120435663017435,
+  "advantage_ci95": [
+   0.0031384328752496415,
+   0.0902116352925232
+  ]
+ },
+ "rate_summary": {
+  "mean": 0.13639583333333336,
+  "std": 0.026795405929658636,
+  "smooth_values": 39282,
+  "total_values": 1200
+ },
+ "comparisons": {
+  "prior_rho_96_fixed": 0.5739,
+  "prior_rho_100": 0.5436,
+  "prior_rho_104": 0.5005,
+  "prior_rho_108": 0.48802300433331264,
+  "delta_vs_108": -0.025897325481706646,
+  "ci95_vs_band_lower_edge": "below",
+  "further_decline_vs_108": true
+ },
+ "verdicts": {
+  "H1_pass": false,
+  "H1_pass_per_seed": false,
+  "H2_pass": false,
+  "verdict_name": "TDIAL-U112-CONTINUES-FADE"
+ }
+}
