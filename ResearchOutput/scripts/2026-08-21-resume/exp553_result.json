@@ -1,0 +1,165 @@
+{
+ "exp": "553",
+ "codename": "TDIAL-U116",
+ "round": null,
+ "smoke": false,
+ "status": "04_final",
+ "wall_s": 1041.5,
+ "hypotheses": {
+  "H1": "Spearman(T, rate) stays within [0.55, 0.85] on uniform draws at bitlen 116, u=2.5",
+  "H2": "T beats count <=100 by > +0.05"
+ },
+ "config": {
+  "seeds": [
+   20261210,
+   20261211,
+   20261212
+  ],
+  "n_per_seed": 400,
+  "p_range": [
+   4503599627370496,
+   288230376151711744
+  ],
+  "q_range": [
+   288230376151711744,
+   18446744073709551616
+  ],
+  "bits_n": 116,
+  "n_rel": 240,
+  "h_off": 256,
+  "u_exp": 2.5,
+  "dial_max": 400,
+  "cnt_max": 100,
+  "n_boot": 300
+ },
+ "population": {
+  "total": 1200
+ },
+ "per_seed": [
+  {
+   "seed": 20261210,
+   "n": 400,
+   "rho_T": 0.49030278003112665,
+   "rho_cnt": 0.4015349503358316,
+   "advantage": 0.08876782969529506
+  },
+  {
+   "seed": 20261211,
+   "n": 400,
+   "rho_T": 0.47363328165408886,
+   "rho_cnt": 0.3751795300200121,
+   "advantage": 0.09845375163407677
+  },
+  {
+   "seed": 20261212,
+   "n": 400,
+   "rho_T": 0.4935085369427759,
+   "rho_cnt": 0.36822232740808697,
+   "advantage": 0.12528620953468894
+  }
+ ],
+ "pooled": {
+  "n": 1200,
+  "rho_T": 0.4846978458799528,
+  "rho_T_ci95": [
+   0.44125315433630413,
+   0.5283441820369633
+  ],
+  "rho_cnt": 0.3844667712179642,
+  "rho_cnt_ci95": [
+   0.3370285117976449,
+   0.4327246412713267
+  ],
+  "advantage": 0.1002310746619886,
+  "advantage_ci95": [
+   0.04809806783522388,
+   0.1461247379923862
+  ]
+ },
+ "rate_summary": {
+  "mean": 0.1369826388888889,
+  "std": 0.02639962295394272,
+  "smooth_values": 39451,
+  "total_values": 1200
+ },
+ "comparisons": {
+  "ladder": [
+   {
+    "rung": "U96",
+    "exp": 539,
+    "rho_T": 0.5739,
+    "ci95": null,
+    "verdict": null,
+    "note": "fixed classifier"
+   },
+   {
+    "rung": "U100",
+    "exp": 540,
+    "rho_T": 0.5436,
+    "ci95": [
+     0.4982,
+     0.5881
+    ],
+    "verdict": null
+   },
+   {
+    "rung": "U104",
+    "exp": 541,
+    "rho_T": 0.5005,
+    "ci95": [
+     0.4557,
+     0.5454
+    ],
+    "verdict": "TDIAL-U104-CONTINUES-FADE"
+   },
+   {
+    "rung": "U108",
+    "exp": 544,
+    "rho_T": 0.48802300433331264,
+    "ci95": [
+     0.4453,
+     0.5337
+    ],
+    "verdict": "TDIAL-U108-CONTINUES-FADE"
+   },
+   {
+    "rung": "U112",
+    "exp": 545,
+    "rho_T": 0.462125678851606,
+    "ci95": [
+     0.41471196136838256,
+     0.5081483832982573
+    ],
+    "verdict": "TDIAL-U112-CONTINUES-FADE"
+   },
+   {
+    "rung": "U116",
+    "exp": 553,
+    "rho_T": 0.4846978458799528,
+    "ci95": [
+     0.44125315433630413,
+     0.5283441820369633
+    ],
+    "verdict": "U116-MIXED"
+   }
+  ],
+  "prior_rho_96_fixed": 0.5739,
+  "prior_rho_100": 0.5436,
+  "prior_rho_104": 0.5005,
+  "prior_rho_108": 0.48802300433331264,
+  "prior_rho_112": 0.462125678851606,
+  "step_delta_vs_112": 0.0225721670283468,
+  "prior_step_108_to_112": -0.025897325481706646,
+  "half_prior_step_threshold": 0.012948662740853323,
+  "plateau_zone_abs_delta_le_half": false,
+  "further_decline_vs_112": false,
+  "delta_vs_108": -0.0033251584533598444,
+  "ci95_vs_band_lower_edge": "below"
+ },
+ "verdicts": {
+  "H1_pass": false,
+  "H1_pass_per_seed": false,
+  "H2_pass": true,
+  "verdict_name": "U116-MIXED"
+ }
+}
