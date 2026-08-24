@@ -2320,3 +2320,36 @@ smoke-leg verdict field a NaN artifact of the starved-regime bootstrap,
 non-canonical. Barrier framing: H0 strengthens papers 130/209/214 randomness into
 the Dickman approach zone through u≈11.7; no barrier breached, no constant shaved.
 No breakthrough.
+
+**Assessment addendum v324 — 2026-08-24 (round-75 #1).** Experiment 572 recorded;
+count now 560 recorded experiments (max id 572). Exp 572 MA1-SIGNED (paper 217,
+issue #363) closes the SIGNED route of MA-1 effectivity — the last door left open
+by paper 213/exp566 (magnitude route, R²=0.019) — and with it the barrier-map
+residual "MA-1 effectivity" as a named question: **the program is CLOSED on BOTH
+routes**, an honest negative. Working identity asserted exact (<1e-9) on every
+smoke cell: c_χ = Σ_a d_a·χ(a) = Σ_{p≤x} χ(p); the uniform-li theory term vanishes
+IDENTICALLY by character orthogonality, so the only computable x-independent theory
+weight carried by χ alone is signed L(1,χ). Degeneracy disclosure made post-smoke,
+pre-full-data: L(1,χ)>0 for EVERY real non-principal χ (class-number formula)
+⇒ sign(w)=+1 identically (n_cells_w_negative=0 confirmed), so registered criterion
+C1 reduces to Pr[c_χ>0] and could only fire if prime twists were majority-positive.
+VERDICT H0 on BOTH criteria at x=2^26 (π(x)=3,957,809; 287 moduli; 491 real-char
+cells; 86,882 unit classes; wall 6.96 s): cell agreement 15.07%, CP95
+[0.1202,0.1855], circular-sum z=−52.72 vs within-modulus d-shuffle null (2000 draws,
+meaningful here unlike exp566 — sign(c) is not permutation-invariant in a);
+class level 48.74% over 86,882 classes, CP95 [0.4841,0.4907], permutation z=−7.74
+— significantly BELOW chance (mild anti-alignment of |deviation| profile with
+L-magnitude weights). Breakdowns all CIs wholly below 50%: prime-modulus quadratics
+26.9% (167), product chars ω≥2 8.95% (324), exact-L path 12.8% (226), truncated-L
+17.0% (265), drop-|w|<1e-3 robustness unchanged. Named BYPRODUCT (labeled
+exploratory): prime twists NEGATIVE in 84.7% of cells (CP95 [0.8123,0.8779]; smoke
+x=2^22 read 91.7%) — the universal Chebyshev/Rubinstein–Sarnak low-bias,
+independently confirmed inside the lab's own AP-deviation machinery; deviation
+signs are one-directional across moduli and zero-driven, NOT carried by any
+computable L-value — precisely why no L-based predictor can track them. Ledger:
+m=6 orthogonality assert exposed the p|m, p∤cond(χ) ±1 primitive-twist correction
+(max corr 3, 0 sign flips induced — disclosed, not corrected); class-z scale mix-up
+(−310 → single-scale −7.74). Consequence stated plainly: no computable criterion
+via quadratic-character structure on either route at toy scale; the averaging
+identity's effective scope remains non-computable from N; consistent with barriers
+4/5. No breakthrough.

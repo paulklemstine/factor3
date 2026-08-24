@@ -1,0 +1,654 @@
+{
+ "exp": "572",
+ "codename": "MA1-SIGNED",
+ "round": 74,
+ "smoke": true,
+ "status": "03_smoke",
+ "hypotheses": {
+  "H1_prestated": "sign pattern s(m,a)=sign(pi-li/phi) correlates above chance with L(1,chi)-predicted signs: (C1) pooled cell agreement CP95 CI wholly >0.5, OR (C2) circular-sum z>3 vs within-modulus shuffle null (2000); class-level analogue reported",
+  "H0_prestated": "agreement <= chance on both criteria => signed route dead too; MA-1 computable-effectivity program closed both routes"
+ },
+ "config": {
+  "exp": "exp572",
+  "name": "MA1-SIGNED",
+  "mode": "smoke",
+  "x": 4194304,
+  "pi_x": 295947,
+  "li_x": 296113.83819346956,
+  "moduli_source": "squarefree[3,120]",
+  "n_moduli": 73,
+  "sieve_s": 0.01,
+  "loop_s": 0.58,
+  "n_shuffle": 2000,
+  "seed": 572,
+  "theory_weight": "w = signed L(1,chi) (exp566 exact/trunc paths)"
+ },
+ "stats": {
+  "cell_level_primary": {
+   "n_cells": 133,
+   "n_agree": 11,
+   "rate": 0.08270676691729323,
+   "cp95": [
+    0.042010814423931495,
+    0.14316626566952273
+   ],
+   "CS_obs_agree_minus_disagree": -111,
+   "CS_null_mean": 66.3375,
+   "CS_null_sd": 5.792719029091606,
+   "CS_z": -30.613861834035724,
+   "CI_excludes_50_above": false,
+   "criterion_C1": false,
+   "criterion_C2": false,
+   "two_sided_ci_excludes_50": true
+  },
+  "cell_breakdowns": {
+   "omega1_prime_moduli": {
+    "n_cells": 29,
+    "n_agree": 4,
+    "rate": 0.13793103448275862,
+    "cp95": [
+     0.03889483129543887,
+     0.3166406094391376
+    ],
+    "ci_above_50": false,
+    "ci_below_50": true
+   },
+   "omega_ge2_product_chars": {
+    "n_cells": 104,
+    "n_agree": 7,
+    "rate": 0.0673076923076923,
+    "cp95": [
+     0.02748751902404617,
+     0.13377135312532906
+    ],
+    "ci_above_50": false,
+    "ci_below_50": true
+   },
+   "L_exact_path": {
+    "n_cells": 78,
+    "n_agree": 5,
+    "rate": 0.0641025641025641,
+    "cp95": [
+     0.021139720411461376,
+     0.1432875961068856
+    ],
+    "ci_above_50": false,
+    "ci_below_50": true
+   },
+   "L_truncated_path": {
+    "n_cells": 55,
+    "n_agree": 6,
+    "rate": 0.10909090909090909,
+    "cp95": [
+     0.041101504822494146,
+     0.22247090834022912
+    ],
+    "ci_above_50": false,
+    "ci_below_50": true
+   },
+   "drop_small_w_lt_1e-3": {
+    "n_cells": 133,
+    "n_agree": 11,
+    "rate": 0.08270676691729323,
+    "cp95": [
+     0.042010814423931495,
+     0.14316626566952273
+    ],
+    "ci_above_50": false,
+    "ci_below_50": true
+   }
+  },
+  "class_level": {
+   "n_classes": 3156,
+   "n_agree": 1473,
+   "rate": 0.4667300380228137,
+   "cp95": [
+    0.4492037953851815,
+    0.4843180084890887
+   ],
+   "CI_excludes_50_above": false,
+   "criterion_C1_class": false,
+   "CS_class_obs": -210,
+   "CS_class_null_mean": 1591.058,
+   "CS_class_null_sd": 27.808787028563472,
+   "CS_class_z": -64.76578781196261,
+   "criterion_C2_class": false,
+   "two_sided_note": "class predictor sign(pred)=sign(sum w_chi chi(a)) is shuffle-invariant; null varies only sign(d)"
+  }
+ },
+ "verdicts": {
+  "primary": "H0",
+  "criteria_met": [],
+  "thresholds": {
+   "C1_cp95_wholly_gt_0.5": true,
+   "C2_z_gt": 3
+  },
+  "headline": "cell agreement 0.0827 over 133 cells, CP95 [0.0420,0.1432], CS_z=-30.61; class agreement 0.4667/3156, CS_z=-64.77 => H0",
+  "consequence": "MA-1 computable-effectivity program CLOSED on BOTH routes (magnitude: exp566 R2=0.019; signed: chance-level alignment here) => honest negative strengthening paper 213"
+ },
+ "honest_notes": [
+  "final x=2^22, pi(x)=295947",
+  "orthogonality identity c_chi = sum_a d_a chi(a) = sum_{p<=x, gcd(p,m)=1} chi_D(p) verified EXACTLY (<1e-9) on every smoke (m,chi) cell; uniform-li theory term vanishes identically so the ONLY computable x-independent theory weight is signed L(1,chi)",
+  "small-prime finite-x artifact: c_chi omits +-1 contributions of primes p|m, p|/cond(chi); max |corr|=2, cells whose sign would flip under the full primitive twist: 0 (disclosed, not corrected - the measured AP projection is the registered observation)",
+  "arg(L) degenerate for real chars (in {0,pi}) => single registered weight w=L(1,chi)",
+  "non-unit residue classes excluded everywhere (contain <=1 prime: single-prime artifact)",
+  "within-modulus d-shuffle MEANINGFUL here unlike exp566 (sign(c) not permutation-invariant in a); 2000 draws, common RNG seed 572",
+  "no theorem ties sign(sum chi(p)) to sign(L(1,chi)); Mertens/Euler-product link is the motivation; registered one-sided per program statement, two-sided also reported",
+  "truncation-sign guard: exp566-calibrated median rel err 1.8e-5; robustness row drops |w|<1e-3 cells",
+  "class-level predictor is shuffle-invariant, so its null varies sign(d) only (weaker exchangeability than cell-level null)"
+ ],
+ "wall_s": 0.6,
+ "rows": [
+  {
+   "m": 3,
+   "phi": 2,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 5,
+   "phi": 4,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 6,
+   "phi": 2,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 7,
+   "phi": 6,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 10,
+   "phi": 4,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 11,
+   "phi": 10,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 13,
+   "phi": 12,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 14,
+   "phi": 6,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 15,
+   "phi": 8,
+   "K": 3,
+   "n_agree": 0,
+   "n_cells": 3
+  },
+  {
+   "m": 17,
+   "phi": 16,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 19,
+   "phi": 18,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 21,
+   "phi": 12,
+   "K": 3,
+   "n_agree": 1,
+   "n_cells": 3
+  },
+  {
+   "m": 22,
+   "phi": 10,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 23,
+   "phi": 22,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 26,
+   "phi": 12,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 29,
+   "phi": 28,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 30,
+   "phi": 8,
+   "K": 3,
+   "n_agree": 0,
+   "n_cells": 3
+  },
+  {
+   "m": 31,
+   "phi": 30,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 33,
+   "phi": 20,
+   "K": 3,
+   "n_agree": 0,
+   "n_cells": 3
+  },
+  {
+   "m": 34,
+   "phi": 16,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 35,
+   "phi": 24,
+   "K": 3,
+   "n_agree": 0,
+   "n_cells": 3
+  },
+  {
+   "m": 37,
+   "phi": 36,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 38,
+   "phi": 18,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 39,
+   "phi": 24,
+   "K": 3,
+   "n_agree": 0,
+   "n_cells": 3
+  },
+  {
+   "m": 41,
+   "phi": 40,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 42,
+   "phi": 12,
+   "K": 3,
+   "n_agree": 1,
+   "n_cells": 3
+  },
+  {
+   "m": 43,
+   "phi": 42,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 46,
+   "phi": 22,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 47,
+   "phi": 46,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 51,
+   "phi": 32,
+   "K": 3,
+   "n_agree": 0,
+   "n_cells": 3
+  },
+  {
+   "m": 53,
+   "phi": 52,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 55,
+   "phi": 40,
+   "K": 3,
+   "n_agree": 0,
+   "n_cells": 3
+  },
+  {
+   "m": 57,
+   "phi": 36,
+   "K": 3,
+   "n_agree": 0,
+   "n_cells": 3
+  },
+  {
+   "m": 58,
+   "phi": 28,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 59,
+   "phi": 58,
+   "K": 1,
+   "n_agree": 1,
+   "n_cells": 1
+  },
+  {
+   "m": 61,
+   "phi": 60,
+   "K": 1,
+   "n_agree": 1,
+   "n_cells": 1
+  },
+  {
+   "m": 62,
+   "phi": 30,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 65,
+   "phi": 48,
+   "K": 3,
+   "n_agree": 0,
+   "n_cells": 3
+  },
+  {
+   "m": 66,
+   "phi": 20,
+   "K": 3,
+   "n_agree": 0,
+   "n_cells": 3
+  },
+  {
+   "m": 67,
+   "phi": 66,
+   "K": 1,
+   "n_agree": 1,
+   "n_cells": 1
+  },
+  {
+   "m": 69,
+   "phi": 44,
+   "K": 3,
+   "n_agree": 0,
+   "n_cells": 3
+  },
+  {
+   "m": 70,
+   "phi": 24,
+   "K": 3,
+   "n_agree": 0,
+   "n_cells": 3
+  },
+  {
+   "m": 71,
+   "phi": 70,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 73,
+   "phi": 72,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 74,
+   "phi": 36,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 77,
+   "phi": 60,
+   "K": 3,
+   "n_agree": 1,
+   "n_cells": 3
+  },
+  {
+   "m": 78,
+   "phi": 24,
+   "K": 3,
+   "n_agree": 0,
+   "n_cells": 3
+  },
+  {
+   "m": 79,
+   "phi": 78,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 82,
+   "phi": 40,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 83,
+   "phi": 82,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 85,
+   "phi": 64,
+   "K": 3,
+   "n_agree": 0,
+   "n_cells": 3
+  },
+  {
+   "m": 86,
+   "phi": 42,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 87,
+   "phi": 56,
+   "K": 3,
+   "n_agree": 1,
+   "n_cells": 3
+  },
+  {
+   "m": 89,
+   "phi": 88,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 91,
+   "phi": 72,
+   "K": 3,
+   "n_agree": 0,
+   "n_cells": 3
+  },
+  {
+   "m": 93,
+   "phi": 60,
+   "K": 3,
+   "n_agree": 0,
+   "n_cells": 3
+  },
+  {
+   "m": 94,
+   "phi": 46,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 95,
+   "phi": 72,
+   "K": 3,
+   "n_agree": 0,
+   "n_cells": 3
+  },
+  {
+   "m": 97,
+   "phi": 96,
+   "K": 1,
+   "n_agree": 1,
+   "n_cells": 1
+  },
+  {
+   "m": 101,
+   "phi": 100,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 102,
+   "phi": 32,
+   "K": 3,
+   "n_agree": 0,
+   "n_cells": 3
+  },
+  {
+   "m": 103,
+   "phi": 102,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 105,
+   "phi": 48,
+   "K": 7,
+   "n_agree": 1,
+   "n_cells": 7
+  },
+  {
+   "m": 106,
+   "phi": 52,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 107,
+   "phi": 106,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 109,
+   "phi": 108,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 110,
+   "phi": 40,
+   "K": 3,
+   "n_agree": 0,
+   "n_cells": 3
+  },
+  {
+   "m": 111,
+   "phi": 72,
+   "K": 3,
+   "n_agree": 0,
+   "n_cells": 3
+  },
+  {
+   "m": 113,
+   "phi": 112,
+   "K": 1,
+   "n_agree": 0,
+   "n_cells": 1
+  },
+  {
+   "m": 114,
+   "phi": 36,
+   "K": 3,
+   "n_agree": 0,
+   "n_cells": 3
+  },
+  {
+   "m": 115,
+   "phi": 88,
+   "K": 3,
+   "n_agree": 0,
+   "n_cells": 3
+  },
+  {
+   "m": 118,
+   "phi": 58,
+   "K": 1,
+   "n_agree": 1,
+   "n_cells": 1
+  },
+  {
+   "m": 119,
+   "phi": 96,
+   "K": 3,
+   "n_agree": 1,
+   "n_cells": 3
+  }
+ ]
+}

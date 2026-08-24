@@ -1,0 +1,31 @@
+[smoke] x=2^22 pi=295947 li=296113.8 sieve=0.0s
+[smoke] L checks ok: L(1,chi_-3)=0.604600 exact; L(1,chi_5)=0.430409 trunc vs 0.430409
+[smoke] 133 char cells, 3156 class cells, 73 moduli in 0.6s
+{
+ "primary": "H0",
+ "criteria_met": [],
+ "thresholds": {
+  "C1_cp95_wholly_gt_0.5": true,
+  "C2_z_gt": 3
+ },
+ "headline": "cell agreement 0.0827 over 133 cells, CP95 [0.0420,0.1432], CS_z=-30.61; class agreement 0.4667/3156, CS_z=-64.77 => H0",
+ "consequence": "MA-1 computable-effectivity program CLOSED on BOTH routes (magnitude: exp566 R2=0.019; signed: chance-level alignment here) => honest negative strengthening paper 213"
+}
+{
+ "n_cells": 133,
+ "n_agree": 11,
+ "rate": 0.08270676691729323,
+ "cp95": [
+  0.042010814423931495,
+  0.14316626566952273
+ ],
+ "CS_obs_agree_minus_disagree": -111,
+ "CS_null_mean": 66.3375,
+ "CS_null_sd": 5.792719029091606,
+ "CS_z": -30.613861834035724,
+ "CI_excludes_50_above": false,
+ "criterion_C1": false,
+ "criterion_C2": false,
+ "two_sided_ci_excludes_50": true
+}
+wrote exp572_smoke_result.json wall=0.6s

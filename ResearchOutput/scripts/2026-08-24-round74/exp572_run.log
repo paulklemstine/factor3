@@ -1,0 +1,36 @@
+[full] x=2^26 pi=3957809 li=3958349.5 sieve=0.1s
+[full] 491 char cells, 86882 class cells, 287 moduli in 6.8s
+{
+ "primary": "H0",
+ "criteria_met": [],
+ "thresholds": {
+  "C1_cp95_wholly_gt_0.5": true,
+  "C2_z_gt": 3
+ },
+ "headline": "cell agreement 0.1507 over 491 cells, CP95 [0.1202,0.1855], CS_z=-52.72; class agreement 0.4874/86882, CS_z=-7.74 => H0",
+ "consequence": "MA-1 computable-effectivity program CLOSED on BOTH routes (magnitude: exp566 R2=0.019; signed: chance-level alignment here) => honest negative strengthening paper 213"
+}
+{
+ "n_cells": 491,
+ "n_agree": 74,
+ "rate": 0.15071283095723015,
+ "cp95": [
+  0.1202322116141361,
+  0.18547108299993426
+ ],
+ "CS_obs_agree_minus_disagree": -343,
+ "CS_null_mean": 245.158,
+ "CS_null_sd": 11.155986554312442,
+ "CS_z": -52.721289787915936,
+ "CI_excludes_50_above": false,
+ "criterion_C1": false,
+ "criterion_C2": false,
+ "two_sided_ci_excludes_50": true,
+ "n_cells_w_negative": 0,
+ "frac_c_negative_chebyshev_skew": 0.8472505091649695,
+ "chebyshev_skew_cp95": [
+  0.8123314125850343,
+  0.8779178320346663
+ ]
+}
+wrote exp572_result.json wall=6.96s

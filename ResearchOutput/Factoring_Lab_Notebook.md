@@ -10575,3 +10575,41 @@ bootstrap (<100 non-degenerate resamples -> NaN bounds -> excludes_1 trivially T
 the Dickman approach zone through u~11.7; no barrier breached, no constant shaved.
 Wall 1467.4s. Paper 216, issue #362. Now 559 experiments (max id 569). Assessment
 v323.
+
+## Part 259 - MA1-SIGNED (round-75 #1, exp 572, v324)
+
+Signed route of MA-1 effectivity, the last open door left by paper 213/exp566
+(magnitude route closed at R^2=0.019): does sign(pi(x;m,a)-li(x)/phi(m)) align
+with signs predicted by computable character data? Working identity asserted EXACT
+(<1e-9) on every smoke cell: c_chi = sum_a d_a*chi(a) = sum_{p<=x} chi(p) - the
+uniform-li theory term vanishes IDENTICALLY by character orthogonality, so the only
+computable x-independent theory weight carried by chi alone is its SIGNED L(1,chi)
+(exp566 paths reused verbatim). DEGENERACY DISCLOSURE made post-smoke, pre-full-data:
+L(1,chi)>0 for EVERY real non-principal chi (class-number formula) => sign(w)=+1
+identically (n_cells_w_negative=0 confirmed) => criterion C1 as registered reduces to
+Pr[c_chi>0] and could only fire if prime twists were majority-positive. Coverage:
+x=2^26 full (pi(x)=3,957,809), 287 moduli (squarefree [3,300] + primes [307,997]),
+491 real-char cells, 86,882 unit classes, wall 6.96s. VERDICT H0 on BOTH registered
+criteria: cell agreement 15.07% over 491 cells, CP95 [0.1202,0.1855], circular-sum
+z=-52.72 vs within-modulus d-shuffle null (2000 draws; MEANINGFUL here unlike
+exp566 since sign(c) is not permutation-invariant in a); class level 48.74% over
+86,882 classes, CP95 [0.4841,0.4907], permutation z=-7.74 - significantly BELOW
+chance (mild anti-alignment of |deviation| profile with L-magnitude weights).
+Breakdowns, all CIs wholly below 50%: prime-modulus quadratics 26.9% (167);
+product chars w>=2 8.95% (324); exact-L path 12.8% (226); truncated-L 17.0% (265);
+drop-|w|<1e-3 robustness unchanged 15.07%. STRUCTURE FOUND (labeled exploratory,
+NOT pre-registered): prime twists NEGATIVE in 84.7% of cells (CP95 [0.8123,0.8779];
+smoke x=2^22 read 91.7%) - the universal Chebyshev/Rubinstein-Sarnak low-bias,
+independently confirmed inside the lab's own AP-deviation machinery at x=2^26;
+deviation signs are one-directional across moduli, zero-driven, NOT carried by any
+computable L-value - which is exactly why no L-based predictor can track them.
+Ledger: (1) orthogonality assert failed at m=6, exposing that raw primitive twists
+add +-1 per prime p|m, p∤cond(chi) (max corr 3 at full scale; 0 sign flips induced -
+disclosed, not corrected); (2) class-level z first mixed +-1-scale observations
+against an agree-count null (-310), recomputed single-scale z=-7.74; (3) exp566's
+"within-modulus shuffle vacuous" caveat does NOT transfer here. Consequence: barrier-
+map residual "MA-1 effectivity" CLOSED as a named question on BOTH routes - neither
+magnitude nor sign of AP deviations is captured by computable quadratic-character
+data at toy scale; deviation structure lives in the zero-driven universal skew;
+consistent with barriers 4/5. Paper 217, issue #363. Now 560 experiments (max id
+572). Assessment v324.
