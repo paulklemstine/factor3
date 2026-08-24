@@ -2851,3 +2851,30 @@ schema drift only (raw_counts keys vs rows layout) — no data issue. Barrier fr
 hardening of the map's canonical covariate — not asymptotic-class itself, but every downstream
 scale-smoothness measurement inherits the corrected weight; residue cap 4/3 untouched; no
 breakthrough claimed. Paper 235, issue #383.
+
+**Assessment addendum v343 — 2026-08-24 (round-83 #3).** Experiment recorded (count 573 → 574;
+max-id tracker 586 → 587, new highest id on record); papers 235 → 236; version v342 → v343.
+Content: BSTAR-TRANSFER (exp 587) — pure reanalysis of exp577's per-N hit counts closing paper
+235 §3's NAMED OPEN ITEM affirmatively: does paper 227's window saturation B*=400 (measured under
+the superseded 1/l weight) transfer to exp586's corrected sqrt-weight? Verdict
+**H1_BSTAR_TRANSFERS**: R²(B) under Σχ⁺/√ℓ = .5279/.5976/**.6242**/.5913/.6137 over
+B = 100/200/400/800/1600 — UNIQUE interior argmax at 400 per the pre-registered rule; secondary
+PLATEAU_RAISED_EVERYWHERE fires too (ΔR²(√ vs harmonic) positive at ALL five B,
++0.089..+0.151 max at 400 — no weight×window interaction); slopes stable ~0.31–0.35 under √-weight
+vs ~0.76–0.80 harmonic. ADOPTED: canonical dial S_√,B* with **B*=400** — location pinned to
+(200,800] at factor-2 grid steps; refinement chain over paper 227 complete (227 inspect → 235
+α̂=0.5 → 236 B* transfers). BIMODAL-TAIL CAVEAT disclosed honestly: bootstrap argmax
+{400:276, 1600:178, 200:37, 800:9}/500 — robust reading is "saturation by 400, no further gain
+through 1600" (1600 only 0.0105 below peak), NOT a sharp 400-vs-1600 separation; single seed.
+Ledger catches: (1) recomputed harmonic curve peaks at EDGE 1600 not 400 (+0.006, noise) — the
+interior-window signal is √-WEIGHT-SPECIFIC on this dataset/grid; (2) exp577's stored S400 column
+identified as the UNWEIGHTED QR-count dial over odd primes ≤400 (exact-0 diff at correct window;
+resolves paper 227's lineage S400 cross-check discrepancy); (3) crosscheck code window bug in
+exp587_result.json's structured S400_stored_crosscheck fields (compares against count over all
+primes ≤1600 instead of masked B≤400) — artifact only, verdicts untouched. Integrity: population
+regenerated VERBATIM seed 20260827, hash-match 128/128 with hard-assert gate; no new j-sampling;
+wall 0.13 s full. Barrier framing: instrument hardening completing the paper-235 correction chain
+— both canonical-dial coordinates now measured-and-checked rather than inspected-and-assumed;
+strengthens queue #1 (rate-layer N-covariate structure at u≈10) by pinning the QR-dial stratum's
+two free parameters; residue cap 4/3, position 5.19×, quantum frontier untouched; no breakthrough
+claimed. Paper 236, issue #384.

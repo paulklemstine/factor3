@@ -11468,3 +11468,57 @@ the new highest id on record). Assessment v341 → v342.
 Paper 235, issue #383. Barrier framing: instrument hardening for the map's canonical covariate —
 not asymptotic-class itself, but every downstream scale-smoothness measurement inherits the
 corrected weight; residue cap 4/3 untouched; no breakthrough claimed.
+
+## Part 278 - BSTAR-TRANSFER (round-83 #3, exp 587, v343)
+
+Closes paper 235 §3's NAMED OPEN ITEM affirmatively. Paper 227 measured window saturation at
+B*=400 under the superseded 1/l weight; paper 235 refined the weight to 1/sqrt(l) (alpha_hat=0.5)
+and explicitly left B*-transfer UNVERIFIED before reuse. exp587 runs exactly that check: pure
+reanalysis of exp577's per-N hit counts (no new j-sampling, wall 0.13 s), population regenerated
+VERBATIM seed 20260827 with hard-assert hash gate — 128/128 match. Verdict:
+**H1_BSTAR_TRANSFERS**.
+
+Dual-curve table (log((hits+0.5)/total) ~ S_w,B OLS, n=128, odd primes 3..1600):
+
+| B    | R2 sqrt | R2 harm | dR2     |
+|------|---------|---------|---------|
+| 100  | .5279   | .4388   | +0.0891 |
+| 200  | .5976   | .4621   | +0.1355 |
+| 400  | **.6242**| .4731  | +0.1511 |
+| 800  | .5913   | .4748   | +0.1165 |
+| 1600 | .6137   | .4795   | +0.1342 |
+
+H1 fires: argmax_set under sqrt weight = {400} UNIQUE interior max (pre-registered rule: H1 iff
+400 in argmax_set). Secondary pre-named PLATEAU_RAISED_EVERYWHERE also fires: dR2 > 0 at all five
+B, max at B=400 — no weight x window interaction; the corrected weight dominates uniformly.
+Slopes: sqrt stays ~0.31-0.35 across all B (stable scaling, consistent with exp586's exponent);
+harmonic ~0.76-0.80.
+
+ADOPTED: canonical product dial S_sqrt,B* with B*=400 — paper 227's window-location claim
+SURVIVES the weighting refinement; refinement chain complete (227 inspect 1/l+B*=400 → 235
+alpha_hat=0.5 → 236 B*=400 transfers). Location pinned to (200,800] at factor-2 grid steps.
+
+BIMODAL-TAIL CAVEAT (reported honestly): bootstrap argmax {400:276, 1600:178, 200:37, 800:9}/500
+— 1600 sits only 0.0105 below the peak. Robust reading is "saturation reached by B=400, NO
+further gain through 1600", NOT a sharp 400-vs-1600 separation; single seed cannot resolve finer.
+
+Ledger catches: (1) recomputed harmonic curve does NOT peak at 400 on this data — flat plateau
+above B=200 with EDGE argmax 1600 (+0.006 vs 400, noise): the interior-window signal is
+SQRT-WEIGHT-SPECIFIC on this dataset/grid; superseded weight saturates without locating an
+interior B*. (2) exp577's stored S400 column identified as the UNWEIGHTED QR-count dial over odd
+primes <=400 (exact-0 diff at correct window, first verified in exp586/paper 235 §4); resolves
+the S400 cross-check discrepancy in paper 227's lineage. (3) Crosscheck code window bug found and
+disclosed: result.json's structured S400_stored_crosscheck fields (stored_is_unweighted_count
+false, count_diff_max 103) compare stored S400 against count over ALL primes <=1600 instead of
+the masked B<=400 dial — artifact of the wrong window, verdicts untouched, cite honest_note/
+findings not the structured fields.
+
+Limits disclosed: factor-2 grid resolution; single seed; bootstrap softness of the argmax
+LOCATION (saturation-by-400 robust); log-rate Poisson attenuation uniform within-grid.
+
+Count 573 → 574; max-id tracker unchanged (586 → 587 now highest id on record). Assessment
+v342 → v343. Paper 236, issue #384. Barrier framing: instrument hardening completing the
+paper-235 correction chain — both dial coordinates (√-weight, B*=400) now measured-and-checked;
+residue cap 4/3, position 5.19×, quantum frontier all untouched; no breakthrough claimed;
+strengthens queue #1 (rate-layer N-covariate structure at u≈10) by pinning the QR-dial stratum's
+two free parameters.

@@ -1,0 +1,52 @@
+{
+ "mode": "smoke",
+ "fired": "H1_BSTAR_TRANSFERS",
+ "Bstar_sqrt": 400,
+ "A_sqrt": [
+  400
+ ],
+ "Bstar_harm": 400,
+ "A_harm": [
+  400
+ ],
+ "R2_sqrt_curve": {
+  "100": 0.6668,
+  "400": 0.8011,
+  "1600": 0.6949
+ },
+ "R2_harm_curve": {
+  "100": 0.4692,
+  "400": 0.4974,
+  "1600": 0.4962
+ },
+ "plateau": "PLATEAU_RAISED_EVERYWHERE",
+ "bootP400": 0.84,
+ "wall_s": 0.01,
+ "out": "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp587_result.json"
+}
+{
+ "mode": "smoke",
+ "fired": "H1_BSTAR_TRANSFERS",
+ "Bstar_sqrt": 400,
+ "A_sqrt": [
+  400
+ ],
+ "Bstar_harm": 400,
+ "A_harm": [
+  400
+ ],
+ "R2_sqrt_curve": {
+  "100": 0.6668,
+  "400": 0.8011,
+  "1600": 0.6949
+ },
+ "R2_harm_curve": {
+  "100": 0.4692,
+  "400": 0.4974,
+  "1600": 0.4962
+ },
+ "plateau": "PLATEAU_RAISED_EVERYWHERE",
+ "bootP400": 0.84,
+ "wall_s": 0.01,
+ "out": "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp587_result.json"
+}

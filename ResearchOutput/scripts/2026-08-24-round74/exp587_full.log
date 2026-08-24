@@ -1,0 +1,30 @@
+{
+ "mode": "full",
+ "fired": "H1_BSTAR_TRANSFERS",
+ "Bstar_sqrt": 400,
+ "A_sqrt": [
+  400
+ ],
+ "Bstar_harm": 1600,
+ "A_harm": [
+  1600
+ ],
+ "R2_sqrt_curve": {
+  "100": 0.5279,
+  "200": 0.5976,
+  "400": 0.6242,
+  "800": 0.5913,
+  "1600": 0.6137
+ },
+ "R2_harm_curve": {
+  "100": 0.4388,
+  "200": 0.4621,
+  "400": 0.4731,
+  "800": 0.4748,
+  "1600": 0.4795
+ },
+ "plateau": "PLATEAU_RAISED_EVERYWHERE",
+ "bootP400": 0.552,
+ "wall_s": 0.13,
+ "out": "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp587_result.json"
+}
