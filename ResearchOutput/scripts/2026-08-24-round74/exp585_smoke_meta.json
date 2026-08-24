@@ -1,0 +1,135 @@
+{
+ "experiment": "exp585_NEIGHBOR-SMOOTHNESS-COVARIATE",
+ "date": "2026-08-24",
+ "prereg": {
+  "H1": "dR2_neighbors >= 0.05 AND permutation p < 0.01",
+  "H0": "dR2_neighbors < 0.02",
+  "band": "else INCONCLUSIVE",
+  "primary_endpoint": "hits_part (400-smooth part x one prime cofactor <= 2^40; PRIMARY after smoke-stage amendment)",
+  "secondary_endpoint": "hits_full (fully 400-smooth v_j; recorded, expected degenerate ~0 at bitlen 96)",
+  "amendment": "primary/secondary swapped at SMOKE stage on synthetic rng-585 data, before any lineage-population analysis: hits_full = 0 in 160k+ draws even at t<=16"
+ },
+ "config": {
+  "tag": "smoke",
+  "npop": 12,
+  "bitlen": 96,
+  "offsets": [
+   -2,
+   -1,
+   1,
+   2
+  ],
+  "nsamp": 3000,
+  "twindow": 64,
+  "B": 400,
+  "large_bound": 1099511627776,
+  "perm": 20,
+  "seed": 20260827,
+  "rho_cap": 300000,
+  "small_limit": 10000,
+  "pm1_B1": 100000
+ },
+ "population": {
+  "source": "synthetic smoke population (rng 585, NOT the lineage population)",
+  "n": 12,
+  "bitlen_min": 96,
+  "bitlen_median": 96,
+  "bitlen_max": 96,
+  "hash_comparison": "n/a (synthetic)",
+  "npz_keys": []
+ },
+ "covariates": {
+  "offsets": [
+   -2,
+   -1,
+   1,
+   2
+  ],
+  "qr_dial_def": "sum_{p<=400 odd, (N/p)=1} 2/p",
+  "qr_mean": 1.7204035170626304,
+  "qr_sd": 0.47832910317979976,
+  "neighbor_cols": [
+   "omega_bar_minus",
+   "omega_bar_plus",
+   "lpflog_bar_minus",
+   "lpflog_bar_plus"
+  ],
+  "neighbor_means": [
+   4.541666666666667,
+   4.791666666666667,
+   43.0263388830678,
+   42.280812593343
+  ],
+  "neighbor_sds": [
+   0.9455671431591847,
+   0.6909634979907083,
+   8.531001899816928,
+   7.048920151339586
+  ],
+  "censored_factorizations": 2,
+  "rows_with_imputation": 0
+ },
+ "hits": {
+  "mu_part": 265.75,
+  "med_part": 255.0,
+  "max_part": 526.0,
+  "cv_per_N": 0.061342767213174436,
+  "mu_full": 0.0,
+  "full_degenerate": true
+ },
+ "regressions": {
+  "primary_hits_part": {
+   "R2_qr": 0.09565518365827796,
+   "R2_nb": 0.30368565050397933,
+   "R2_joint": 0.33621086715306014,
+   "dR2_neighbors": 0.24055568349478218,
+   "dR2_qr_given_nb": 0.03252521664908081,
+   "corr_qr": 0.30928172215357,
+   "corr_nb": [
+    0.38277657545761085,
+    0.31387922484792163,
+    -0.1179812108871211,
+    -0.031475773690349304
+   ]
+  },
+  "secondary_hits_full": {
+   "R2_qr": 0.0,
+   "R2_nb": 0.0,
+   "R2_joint": 0.0,
+   "dR2_neighbors": 0.0,
+   "dR2_qr_given_nb": 0.0,
+   "corr_qr": 0.0,
+   "corr_nb": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  }
+ },
+ "permutation": {
+  "B": 20,
+  "observed_dR2": 0.24055568349478218,
+  "p_value": 0.7142857142857143,
+  "null_q95": 0.6399135461236899
+ },
+ "verdicts": {
+  "verdict": "INCONCLUSIVE",
+  "consequence": "incremental dR2 lands in the pre-registered gray band (or uncalibrated effect); no claim either way."
+ },
+ "honest_notes": [
+  "PROVENANCE: exp581_regen_positions.npz carries only per-N hit/control POSITION arrays + jlo/jhi (=isqrt(N) fingerprint), NOT N itself. Population REGENERATED with the documented in-file recipe under seed 20260827. See population.hash_comparison.fingerprint for the isqrt verification outcome against the true lineage population.",
+  "Consequence of unverified provenance (if fingerprint failed): results are conditional on exchangeability of balanced bitlen-96 semiprime populations; lab precedent holds these laws population-robust (pool-ensemble = unrestricted-random; dial laws size-stable), but this specific replication is NOT the identical-N lineage.",
+  "exp569-classify code path not readable; hit classification reimplemented here (modular-root sieve, exact): t = j-isqrt(N) distributed U[1,64], v=t^2+2*s*t-(N-s^2), hit = v fully B=400-smooth. Window choice is ours, not canonical.",
+  "Power: with mu_part hits/N, per-N rate CV ~= 1/sqrt(mu_part); measurement noise attenuates attainable dR2 while the permutation test stays exactly calibrated.",
+  "QR dial is a monotone reconstruction of the S@400 family (sum of 2/p over QR primes), not the verbatim paper-227 formula.",
+  "Neighbor factorization censoring: 2 of 48 (N+delta) factorizations failed within the rho cap and were median-imputed (rows_with_imputation listed)."
+ ],
+ "phases_s": {
+  "population_s": 0.0,
+  "covariates_s": 0.55,
+  "hits_s": 0.04,
+  "stats_s": 0.0
+ },
+ "wall_s": 0.6
+}

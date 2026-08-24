@@ -1,0 +1,7 @@
+[exp585:smoke] cfg={"tag": "smoke", "npop": 12, "bitlen": 96, "offsets": [-2, -1, 1, 2], "nsamp": 3000, "twindow": 64, "B": 400, "large_bound": 1099511627776, "perm": 20, "seed": 20260827, "rho_cap": 300000, "small_limit": 10000, "pm1_B1": 100000}
+[pop] n=12 bitlen min/med/max=96/96/96 source=synthetic smoke population (rng 585, NOT the lineage population)
+[cov] offsets=[-2, -1, 1, 2] censored_factorizations=2 rows_with_imputation=0 qr mean/sd=1.7204/0.4783
+[hits] full mu/med/max = 0.0/0/0  part mu/med/max = 265.8/255/526
+[reg] primary dR2_nb=0.2406 perm p=0.7143 (null q95=0.6399)
+[reg] secondary dR2_nb=0.0000
+[done] verdict=INCONCLUSIVE wall_s=0.6
