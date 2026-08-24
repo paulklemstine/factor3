@@ -1,0 +1,144 @@
+{
+ "config": {
+  "seed": 588,
+  "npz": "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp581_regen_positions.npz",
+  "nbins": 24,
+  "nstarts": 4,
+  "nboot": 25
+ },
+ "data": {
+  "key": "pooled hit_* via (x-jlo)/(jhi-jlo)",
+  "n": 9594,
+  "scaled_to_unit": true,
+  "obs_left_decile": 0.16197623514696685,
+  "obs_left_decile_ci95": [
+   0.15473934601171746,
+   0.16948371680690621
+  ]
+ },
+ "fits": {
+  "n": 9594,
+  "nbins": 24,
+  "bins_used": 24,
+  "single": {
+   "b": 1.084246649193598,
+   "ssr": 77.15204817904615,
+   "ok": true,
+   "b_mle": 1.122978451225896,
+   "b_ols_logbin": 1.0512593530659018,
+   "ll": -48.06721635034974,
+   "aicc": 98.31625088251766,
+   "left_decile_pred": 0.14099057336978035
+  },
+  "two": {
+   "b_bulk": 0.5723460298622065,
+   "b_edge": 10.572346029862205,
+   "delta": 9.999999999999998,
+   "w_edge": 0.08387752474635472,
+   "ssr": 21.881929511320887,
+   "ok": true,
+   "ll": -32.94581274962414,
+   "aicc": 73.09162549924828,
+   "left_decile_pred": 0.16071623776008426
+  },
+  "comparison": {
+   "dAICc_two_minus_single": -25.224625383269384,
+   "LRT_stat": 30.242807201451193,
+   "LRT_p_df2": 2.709304744774148e-07
+  },
+  "bootstrap": {
+   "nboot_done": 25,
+   "single_b_ci": [
+    0.9989377748507098,
+    1.0906009460160855,
+    1.1827835763783148
+   ],
+   "b_bulk_ci": [
+    0.3944729115289993,
+    0.5746843423567956,
+    0.7328642824746978
+   ],
+   "b_edge_ci": [
+    10.394472911528968,
+    10.574684342356786,
+    10.73286428247469
+   ],
+   "w_edge_ci": [
+    0.06795921848444018,
+    0.08536124843336444,
+    0.09746619371853689
+   ],
+   "delta_ci": [
+    9.999999999974529,
+    9.999999999999998,
+    9.999999999999998
+   ],
+   "left_decile_two_ci": [
+    0.15698065270386954,
+    0.16088217506967373,
+    0.16578326302460447
+   ],
+   "left_decile_single_ci": [
+    0.1374606665578368,
+    0.1412555455426933,
+    0.1451301693421981
+   ],
+   "boot_dAICc_median": 55.76184217382804,
+   "separation_ok": true,
+   "w_in_range": true,
+   "decile_covers_obs": null
+  }
+ },
+ "control": {
+  "n": 20000,
+  "nbins": 24,
+  "bins_used": 24,
+  "single": {
+   "b": 0.05000000000056524,
+   "ssr": 23.05352118171418,
+   "ok": true,
+   "b_mle": 0.05000503857688628,
+   "b_ols_logbin": 0.037288333816517576,
+   "ll": -33.57170107921424,
+   "aicc": 69.32522034024667,
+   "left_decile_pred": 0.1016988856112399
+  },
+  "two": {
+   "b_bulk": 0.05000000000000316,
+   "b_edge": 0.35000000000000353,
+   "delta": 0.3000000000000004,
+   "w_edge": 0.00012339457598623305,
+   "ssr": 23.05426009796618,
+   "ok": true,
+   "ll": -33.5720856995442,
+   "aicc": 74.34417139908841,
+   "left_decile_pred": 0.10170019227430051
+  },
+  "comparison": {
+   "dAICc_two_minus_single": 5.018951058841736,
+   "LRT_stat": -0.000769240659918107,
+   "LRT_p_df2": 1.0
+  },
+  "bootstrap": null,
+  "key": "pooled ctl_* same intervals",
+  "obs_left_decile": 0.10075
+ },
+ "verdicts": {
+  "SMOKE_ONLY": true,
+  "significant_improvement": false,
+  "second_component_degenerate": false,
+  "bootstrap_stable": true,
+  "left_decile_covered": true,
+  "H1_kernel_real": false,
+  "H0_single_law_suffices": true,
+  "control_dAICc": 5.018951058841736,
+  "control_w_edge": 0.00012339457598623305
+ },
+ "honest_notes": [
+  "Positions max-normalized to [0,1] if raw units exceeded 1 (recorded in data.scaled_to_unit).",
+  "Two-component fit constrained to b_edge-b_bulk>=0.3 per H1; boundary-pinning counted as degenerate.",
+  "LRT uses chi2_df2 though the null (w->0 or delta->0) is on the boundary; chi-bar-sq would be conservative in our favor, so significance requires BOTH LRT and dAICc>6.",
+  "Gaussian binned likelihood used for AICc/LRT (per NLS spec); single-law b also estimated by raw MLE and log-binned OLS to reproduce exp579."
+ ],
+ "wall_s": 0.34
+}

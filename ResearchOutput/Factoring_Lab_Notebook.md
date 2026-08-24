@@ -11579,3 +11579,66 @@ Count 574 → 575; max-id tracker unchanged (587 stays highest on record). Asses
 Paper 237, issue #385. Barrier framing: map-closure negative at exactly the u≥6-14 frontier the
 standing directive prioritizes — no breakthrough claimed; residue cap 4/3, position 5.19×,
 external-hint laws untouched; redirects residual-carrier search toward process-level structure.
+
+## Part 280 - EDGE-KERNEL-REFINEMENT (round-84 #1, exp 588, v345)
+
+RESOLVES paper 234 §4a's carried-forward tension as GENUINE STRUCTURE, not noise: the positional
+hit profile of v_j = j²−N is **NOT a pure power law** — it is FLAT-BULK + NARROW LEFT-EDGE SPIKE.
+Verdict: **H1_KERNEL_REAL**. Data: 9594 pooled hits over 128 Ns from exp581_regen_positions.npz,
+x=(p−jlo)/(jhi−jlo); controls 512k ctl_* same intervals; seed 588; wall 12.9 s.
+
+Pre-registration in script header BEFORE the full fit (smoke = pipeline validation only),
+including a registered observed-value reconciliation (see provenance flag below).
+
+Reference reproduction: single law reproduces exp579 (b_NLS=1.097 vs published 1.104; MLE 1.123)
+but its left-decile prediction .1415 sits BELOW the measured pooled F(x<0.1)=.1620 [.1547,.1695]
+→ tension real as stated.
+
+| Quantity | Single law | Two-component |
+|---|---|---|
+| params | b=1.097 | b_bulk=.573 [.412,.767]; w_edge=.086 [.064,.108]; b_edge see below |
+| ΔAICc (two−single) | — | **−37.33** (bar >6) |
+| LRT df2 | — | stat 41.59, **p=9.3e-10** (bar <0.01) |
+| left-decile pred | .1415 [.1376,.1466] | **.1617** [.1557,.1695] COVERS .1620 |
+
+All registered bars PASS; bootstrap-stable (median ΔAICc +60 across resamples); controls show NO
+kernel (ΔAICc +4.3, two-comp WORSE, w≈1.2e-4) — detector fires only where structure lives.
+
+BOUNDARY DISCLOSURE: registered fit's delta=b_edge−b_bulk pinned at the implementation CEILING
+10.000 (registered degeneracy rule covered only the LOWER bound; boundary solutions not forbidden)
+→ read b_edge ≥ ~10.6. Settled POST-HOC by cap-40 refit: INTERIOR unpinned optimum b_edge=22.54,
+b_bulk=.793, improvement GROWS (ΔAICc −42.5, p=6.9e-11), left-decile CI still covers → ceiling was
+conservative CENSORING, verdict cap-robust. Honest statement: b_edge ≥ ~10.4–11.1 (CI lower bounds
+across caps); exact value unidentified near-spike (cap40 boot CI [11.1,20.5,41.0]).
+
+POST-HOC ATTRIBUTION: 56% of the SSR improvement lives in the FIRST DECILE alone, ~0% (−0.5%) at
+the known u*≈0.65 hump zone, −3.2% right → genuinely EDGE-driven, orthogonal to paper 232's
+geometric-window feature. Left-half refit independently confirms (single steepens to b=1.798;
+ΔAICc 16.8, p=2.6e-5; 47.5% again first-decile). Edge/end ratio 2.62 vs single-law-implied
+2^1.10≈2.14 (~10% last-bin noise, corroborative only).
+
+CONSEQUENCE: paper 234 §4a CLOSED (refinement RUN and CONFIRMED). The single −1.104 law is RETIRED
+as final FORM — valid as bulk summary, but canonical profile description becomes flat-bulk
+(b_bulk≈.57–.79) + narrow left-edge spike (≥~10.6, ~4–9% of mass within x<~0.1); mixture
+RE-PARTITIONS the profile. Any downstream consumer of the positional shape must use the
+kernel-refined form; pure power law now KNOWN-WRONG at the edge (a falsifiable constraint).
+
+ERRATUM-GRADE PROVENANCE FLAG: paper 234's tension premise quoted edge fraction ".2346" (z=10.08
+stratified) — NOT reproducible from the canonical npz under left-decile-only definition (.1620
+measured); variants (per-N equal-mean .1609, log-normalization, (p−jlo)/jlo, inverse-n weighting)
+also miss, and .2346 lies outside even the two-comp prediction CI. Leading hypothesis:
+definitional mismatch with paper 230's combined-edge decomposition (.2346 = 228's .162+.072).
+FLAGGED for reconciliation against the paper-228 ledger; kernel confirmation unaffected (all bars
+judged against data-observed .1620).
+
+LEDGER CATCHES: (1) dAICc sign-convention bug in an earlier full-run pass — caught and fixed
+BEFORE final verdict recording. (2) Boundary censoring discovered + resolved via cap-40 posthoc
+(above), disclosed. (3) LRT null on boundary (chi-bar-sq conservative in our favor) — significance
+required BOTH LRT and ΔAICc>6. (4) Edge/end last-bin noise. Smoke before full fit; no commits
+during run; only exp588_* touched. nboot 500 main (+300/200 posthoc).
+
+Count 575 → 576; max-id tracker unchanged (587 stays highest on record). Assessment v344 → v345.
+Paper 238, issue #386. Barrier framing: descriptive-form refinement INSIDE the positional layer
+(papers 228-230: independent layer) — residue cap 4/3, position 5.19×, external-hint laws, quantum
+frontier, and paper 237's four-class rate-residual closure all untouched; u≈10 data per the
+standing directive; the .2346 provenance flag travels forward until reconciled.

@@ -1,0 +1,207 @@
+{
+ "config": {
+  "seed": 588,
+  "npz": "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp581_regen_positions.npz",
+  "nbins": 80,
+  "nstarts": 27,
+  "nboot": 500
+ },
+ "data": {
+  "key": "pooled hit_* via (x-jlo)/(jhi-jlo)",
+  "n": 9594,
+  "scaled_to_unit": true,
+  "stated_observed_left_decile_task": 0.2346,
+  "obs_left_decile": 0.16197623514696685,
+  "obs_left_decile_ci95": [
+   0.15473934601171746,
+   0.16948371680690621
+  ],
+  "edge_over_end_w05": 2.618181818181818
+ },
+ "fits": {
+  "n": 9594,
+  "nbins": 80,
+  "bins_used": 80,
+  "single": {
+   "b": 1.096591851790037,
+   "ssr": 145.60506721035506,
+   "ok": true,
+   "b_mle": 1.122978451225896,
+   "b_ols_logbin": 1.0512593530659018,
+   "ll": -137.46993476645545,
+   "aicc": 276.99115158419295,
+   "left_decile_pred": 0.1415056149747386
+  },
+  "two": {
+   "b_bulk": 0.5733581446295651,
+   "b_edge": 10.573358144629564,
+   "delta": 9.999999999999998,
+   "w_edge": 0.08588450282736015,
+   "ssr": 86.57592094290608,
+   "ok": true,
+   "delta_at_cap": true,
+   "ll": -116.67488637931562,
+   "aicc": 239.66556223231547,
+   "left_decile_pred": 0.1617153501457931
+  },
+  "comparison": {
+   "dAICc_two_minus_single": -37.32558935187748,
+   "LRT_stat": 41.590096774279665,
+   "LRT_p_df2": 9.307332615759175e-10
+  },
+  "ssr_improvement_share_by_zone_POSTHOC": {
+   "decile_0_0.1": 0.5629777291903294,
+   "mid_0.1_0.55": 0.47374319457669894,
+   "hump_0.55_0.75": -0.004742557548487997,
+   "right_0.75_hi": -0.031978366218540374
+  },
+  "bootstrap": {
+   "nboot_done": 500,
+   "single_b_ci": [
+    1.0013998550935759,
+    1.1084853400921209,
+    1.217259220492444
+   ],
+   "b_bulk_ci": [
+    0.4122948740866614,
+    0.577765807790664,
+    0.7669130720897631
+   ],
+   "b_edge_ci": [
+    10.373078912816492,
+    10.575615728913412,
+    10.76691307208976
+   ],
+   "w_edge_ci": [
+    0.06359931582783021,
+    0.08648387401610433,
+    0.10757781395789348
+   ],
+   "delta_ci": [
+    9.999999998614243,
+    9.999999999999986,
+    9.999999999999998
+   ],
+   "left_decile_two_ci": [
+    0.1556805355022622,
+    0.16226979421685161,
+    0.16948722795438032
+   ],
+   "left_decile_single_ci": [
+    0.1375610694632704,
+    0.1420027866100276,
+    0.14659380954901297
+   ],
+   "boot_dAICc_median": 60.04558872873969,
+   "separation_ok": true,
+   "w_in_range": true,
+   "decile_covers_obs": null
+  }
+ },
+ "control": {
+  "n": 512000,
+  "nbins": 80,
+  "bins_used": 80,
+  "single": {
+   "b": 0.050000000000071265,
+   "ssr": 164.1391840887913,
+   "ok": true,
+   "b_mle": 0.05000503857688628,
+   "b_ols_logbin": -0.008665475282818677,
+   "ll": -142.26260732398865,
+   "aicc": 286.57649669925934,
+   "left_decile_pred": 0.101698885611223
+  },
+  "two": {
+   "b_bulk": 0.05000000000000001,
+   "b_edge": 0.35000000000000003,
+   "delta": 0.30000000000000004,
+   "w_edge": 0.00012339457598623194,
+   "ssr": 164.2284085282235,
+   "ok": true,
+   "delta_at_cap": false,
+   "ll": -142.284345021285,
+   "aicc": 290.8844795162542,
+   "left_decile_pred": 0.10170019227430055
+  },
+  "comparison": {
+   "dAICc_two_minus_single": 4.3079828169948655,
+   "LRT_stat": -0.04347539459274661,
+   "LRT_p_df2": 1.0
+  },
+  "ssr_improvement_share_by_zone_POSTHOC": {
+   "decile_0_0.1": null,
+   "mid_0.1_0.55": null,
+   "hump_0.55_0.75": null,
+   "right_0.75_hi": null
+  },
+  "bootstrap": null,
+  "key": "pooled ctl_* same intervals",
+  "obs_left_decile": 0.09894140625
+ },
+ "left_half_POSTHOC": {
+  "n": 5577,
+  "obs_left_decile_in_half": 0.27864443249058635,
+  "b_bulk": 0.4243414395071662,
+  "b_edge": 10.424341439507158,
+  "w_edge": 0.16859408033144552,
+  "single_b": 1.7981711401537341,
+  "dAICc_improvement": 16.836149354197175,
+  "LRT_p": 2.618488064729161e-05,
+  "ssr_improvement_share_decile0": 0.47538840214316225,
+  "boot_b_edge_ci": [
+   7.996730214907363,
+   10.392712703419257,
+   11.068487916464397
+  ]
+ },
+ "cap_sensitivity_POSTHOC": {
+  "registered_delta_cap": 10.0,
+  "test_delta_cap": 40.0,
+  "b_bulk": 0.792767183752151,
+  "b_edge": 22.538578749557082,
+  "delta_pinned_at_40": false,
+  "w_edge": 0.04440872043239961,
+  "dAICc_improvement": 42.52416092444031,
+  "LRT_p": 6.917828013727905e-11,
+  "left_decile_pred": 0.16210857049474603,
+  "boot_left_decile_ci": [
+   0.15422609308572754,
+   0.16256105131330242,
+   0.16988811975192197
+  ],
+  "boot_b_edge_ci": [
+   11.132738690200208,
+   20.51721966650252,
+   40.963092842769754
+  ],
+  "covers_observed_left_decile": true
+ },
+ "verdicts": {
+  "edge_delta_pinned_at_registered_cap10": true,
+  "significant_improvement": true,
+  "dAICc_improvement_two_over_single": 37.32558935187748,
+  "second_component_degenerate": false,
+  "bootstrap_stable": true,
+  "left_decile_covered_data_observed": true,
+  "left_decile_covered_stated_2346": false,
+  "H1_kernel_real": true,
+  "H0_single_law_suffices": false,
+  "POSTHOC_left_half_kernel_confirmed": true,
+  "POSTHOC_cap40_verdict_unchanged": true,
+  "edge_b_edge_censored_statement": "b_edge pinned at b_bulk+10 in registered fit: read as b_edge >= ~10.6, exact value unidentified; see cap_sensitivity_POSTHOC",
+  "control_dAICc": 4.3079828169948655,
+  "control_w_edge": 0.00012339457598623194
+ },
+ "honest_notes": [
+  "Task-stated observed left-decile .2346 not reproducible from this npz under canonical (p-jlo)/(jhi-jlo) normalization (data gives 0.1620); coverage judged against data-observed value, stated .2346 reported secondarily.",
+  "Edge/end diagnostic computed at width 0.05; last-bin densities are noisy (single bins 0.55-0.82), so that ratio carries ~10% bin noise.",
+  "Smoke run (--smoke, reduced starts/nboot) preceded full fit as pipeline validation only; pre-registration text finalized before the full fit.",
+  "POST-HOC diagnostics (not registered bars): SSR-improvement zoning (edge vs mid vs known u*~0.65 hump), left-half refit, and delta-cap-40 sensitivity. A dAICc sign-convention bug (improvement tested with wrong sign) was caught and fixed BEFORE verdict recording of the full run.",
+  "Registered degeneracy rule covered only the LOWER delta bound; the registered fit's delta=10.000 pins at the IMPLEMENTATION CEILING (b_edge censored, read b_edge >= ~10.6). Registered rules do not forbid boundary solutions, so H1 stands with censoring disclosed; cap-40 refit settles whether the ceiling drives the verdict.",
+  "Two-component fit constrained to b_edge-b_bulk>=0.3 per H1; boundary-pinning counted as degenerate.",
+  "LRT uses chi2_df2 though the null (w->0 or delta->0) is on the boundary; chi-bar-sq would be conservative in our favor, so significance requires BOTH LRT and dAICc>6.",
+  "Gaussian binned likelihood used for AICc/LRT (per NLS spec); single-law b also estimated by raw MLE and log-binned OLS to reproduce exp579."
+ ],
+ "wall_s": 12.89
+}

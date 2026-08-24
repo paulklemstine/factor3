@@ -2911,3 +2911,43 @@ reimplemented in-session (t≤64 window ours, not canonical exp578 range); 20/20
 factorizations ρ-censored median-imputed, rows_with_imputation=0. Barrier framing: map-closure
 negative at exactly the u ≥ 6–14 frontier the standing directive prioritizes — no breakthrough
 claimed; residue cap 4/3, position 5.19×, external-hint laws untouched. Paper 237, issue #385.
+
+**Assessment addendum v345 — 2026-08-24 (round-84 #1).** Experiment recorded (count 575 → 576;
+max-id tracker unchanged, 587 stays highest on record); papers 237 → 238; version v344 → v345.
+Content: EDGE-KERNEL-REFINEMENT (exp 588) — fresh measurement (9594 pooled hits over 128 Ns,
+x=(p−jlo)/(jhi−jlo), controls 512k, seed 588, wall 12.9 s) running paper 234 §4a's named open
+refinement "harmonic bulk × steeper-edge kernel" and RESOLVING that carried-forward tension as
+GENUINE STRUCTURE, not noise: verdict **H1_KERNEL_REAL**. The single power law reproduces exp579's
+reference (b_NLS = 1.097 vs published 1.104; MLE 1.123) yet underpredicts the left decile
+(.1415 predicted vs .1620 measured [.1547,.1695]) — tension real as stated. The registered
+two-component kernel T(x)=A(1+x)^{−b_bulk}+K(1+x)^{−b_edge} wins decisively: **ΔAICc −37.33**
+(bar > 6), **LRT p = 9.3×10⁻¹⁰** (bar < 0.01), parameters bootstrap-stable — flat bulk
+b_bulk = .573 [.412,.767], edge mass w = .086 [.064,.108] — and the fitted left-decile .1617
+[boot .1557,.1695] COVERS the observed .1620 while the single law does not; controls show NO
+kernel (ΔAICc +4.3, two-comp worse, w ≈ 1.2×10⁻⁴). Boundary censoring discovered and settled:
+the registered fit pinned delta = b_edge−b_bulk at the implementation ceiling 10.000 (registered
+degeneracy rule covered only the lower bound; boundary solutions not forbidden → read b_edge ≥
+~10.6); POST-HOC cap-40 refit gives an INTERIOR unpinned optimum b_edge = 22.54 with improvement
+GROWING (ΔAICc −42.5, p = 6.9×10⁻¹¹) and coverage holding — conservative censoring, verdict
+cap-robust; honest statement b_edge ≥ ~10.4–11.1, exact value unidentified near-spike (cap-40
+boot CI [11.1,20.5,41.0]). POST-HOC attribution: 56% of the SSR improvement lives in the FIRST
+DECILE alone, ~0% (−0.5%) at the known u*≈0.65 hump zone → genuinely edge-driven, orthogonal to
+paper 232's geometric-window feature; left-half refit independently confirms (ΔAICc 16.8,
+p = 2.6×10⁻⁵). **CONSEQUENCE — canonical profile form CHANGES**: the positional hit profile of
+v_j = j²−N is FLAT-BULK + NARROW LEFT-EDGE SPIKE (~4–9% of mass within x < ~0.1); the single
+−1.104 law is RETIRED as final FORM (retained as bulk summary only); any downstream consumer of
+positional shape must use the kernel-refined form — a pure power law is now KNOWN-WRONG at the
+edge, a falsifiable constraint rather than a free parameter. **ERRATUM-GRADE PROVENANCE FLAG**
+(travels forward): paper 234's tension premise quoted edge fraction ".2346" (z=10.08 stratified),
+NOT reproducible from the canonical npz under left-decile-only definition (.1620 measured);
+variants (per-N equal-mean, log-normalization, (p−jlo)/jlo, inverse-n weighting) also miss and
+.2346 lies outside even the two-comp prediction CI; leading hypothesis a definitional mismatch
+with paper 230's combined-edge decomposition (.2346 = 228's .162+.072) — flagged for
+reconciliation against the paper-228 ledger; kernel confirmation unaffected (all bars judged
+against data-observed .1620). Ledger catches (all disclosed): dAICc sign-convention bug in an
+earlier full-run pass caught and fixed BEFORE final verdict recording; LRT null on the parameter
+boundary (chi-bar-sq conservative in our favor) so significance required BOTH LRT and ΔAICc > 6;
+edge/end ratio carries last-bin noise (corroborative only). Barrier framing: descriptive-form
+refinement INSIDE the positional layer (papers 228–230 established it independent of rate);
+residue cap 4/3, position 5.19×, external-hint laws, quantum frontier, and paper 237's four-class
+rate-residual closure all untouched; u ≈ 10 data per the standing directive. Paper 238, issue #386.

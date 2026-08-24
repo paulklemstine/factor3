@@ -1,0 +1,99 @@
+{
+ "fits": {
+  "n": 9594,
+  "nbins": 80,
+  "bins_used": 80,
+  "single": {
+   "b": 1.096591851790037,
+   "ssr": 145.60506721035506,
+   "ok": true,
+   "b_mle": 1.122978451225896,
+   "b_ols_logbin": 1.0512593530659018,
+   "ll": -137.46993476645545,
+   "aicc": 276.99115158419295,
+   "left_decile_pred": 0.1415056149747386
+  },
+  "two": {
+   "b_bulk": 0.5733581446295651,
+   "b_edge": 10.573358144629564,
+   "delta": 9.999999999999998,
+   "w_edge": 0.08588450282736015,
+   "ssr": 86.57592094290608,
+   "ok": true,
+   "delta_at_cap": true,
+   "ll": -116.67488637931562,
+   "aicc": 239.66556223231547,
+   "left_decile_pred": 0.1617153501457931
+  },
+  "comparison": {
+   "dAICc_two_minus_single": -37.32558935187748,
+   "LRT_stat": 41.590096774279665,
+   "LRT_p_df2": 9.307332615759175e-10
+  },
+  "ssr_improvement_share_by_zone_POSTHOC": {
+   "decile_0_0.1": 0.5629777291903294,
+   "mid_0.1_0.55": 0.47374319457669894,
+   "hump_0.55_0.75": -0.004742557548487997,
+   "right_0.75_hi": -0.031978366218540374
+  },
+  "bootstrap": {
+   "nboot_done": 500,
+   "single_b_ci": [
+    1.0013998550935759,
+    1.1084853400921209,
+    1.217259220492444
+   ],
+   "b_bulk_ci": [
+    0.4122948740866614,
+    0.577765807790664,
+    0.7669130720897631
+   ],
+   "b_edge_ci": [
+    10.373078912816492,
+    10.575615728913412,
+    10.76691307208976
+   ],
+   "w_edge_ci": [
+    0.06359931582783021,
+    0.08648387401610433,
+    0.10757781395789348
+   ],
+   "delta_ci": [
+    9.999999998614243,
+    9.999999999999986,
+    9.999999999999998
+   ],
+   "left_decile_two_ci": [
+    0.1556805355022622,
+    0.16226979421685161,
+    0.16948722795438032
+   ],
+   "left_decile_single_ci": [
+    0.1375610694632704,
+    0.1420027866100276,
+    0.14659380954901297
+   ],
+   "boot_dAICc_median": 60.04558872873969,
+   "separation_ok": true,
+   "w_in_range": true,
+   "decile_covers_obs": null
+  }
+ },
+ "verdicts": {
+  "edge_delta_pinned_at_registered_cap10": true,
+  "significant_improvement": true,
+  "dAICc_improvement_two_over_single": 37.32558935187748,
+  "second_component_degenerate": false,
+  "bootstrap_stable": true,
+  "left_decile_covered_data_observed": true,
+  "left_decile_covered_stated_2346": false,
+  "H1_kernel_real": true,
+  "H0_single_law_suffices": false,
+  "POSTHOC_left_half_kernel_confirmed": true,
+  "POSTHOC_cap40_verdict_unchanged": true,
+  "edge_b_edge_censored_statement": "b_edge pinned at b_bulk+10 in registered fit: read as b_edge >= ~10.6, exact value unidentified; see cap_sensitivity_POSTHOC",
+  "control_dAICc": 4.3079828169948655,
+  "control_w_edge": 0.00012339457598623194
+ },
+ "wall_s": 12.89
+}
