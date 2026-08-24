@@ -2719,3 +2719,25 @@ hit-rate terciles — the carrier affects how many smooth values j²−N produce
 j they land. Barrier framing: merge-fork closed cleanly both ways; informative negative redirects
 the residual hunt to N-level covariates; residue cap untouched; no breakthrough claimed.
 Paper 230, issue #378.
+
+**Assessment addendum v338 — 2026-08-24 (round-81 #1).** Experiment recorded (count 569 → 570);
+papers 230 → 231; version v337 → v338. Content: exp581 HUMP-MECHANISM — MIXED-INCONCLUSIVE by
+pre-registration letter, structurally decisive in content. REGENERATION PASS as a first-class
+result: canonical-int64 sha256 55729f1c99c0b5d2 regenerated == stored exp578_positions.npz, hits
+byte-exact 9594/9594 across all 128 Ns plus FULL capped control arrays and grids, lineage quartet
+reproduced pairwise-disjoint with master hash matched — all analysis on verified-identical data.
+Registered decompositions of paper-229's ±20% mid-window hump: zero families met the HUMP bars
+(pooled fitted peak boot95-lo 1.0094 vs bar 1.05 — amplitude bar stricter than the phenomenon;
+raw max still bin 33), but structure is ONE-SIDED: observed LPF masses [0, 0, .0007, .9993] —
+99.93% of hits share ONE band (>10⁴), so H1a single-band-carrier dies arithmetically; inside that
+band concavity replicates in ALL THREE descriptive LPF terciles (c = −0.18/−0.25/−0.44) with
+pooled vertex x = 0.5901 matching exp579's independent 0.5896; k100 conditioning does NOT remove
+the excess (t1 concave, t2/t3 flat ±2% vs pooled +4.8%); controls clean everywhere. CONSEQUENCE:
+the hump lives inside every resolvable stratum — not completing-prime size, not small-prime
+combination structure, not mass reallocation — leaving the registered H0 channel (window/
+polynomial geometry of j²−N itself) as sole survivor; named next probe pre-stated: direct j-grid/
+v-size sensitivity analysis (bin-width permutation, u-grid shift). Ledger catches disclosed:
+run-1 gate failure = comparator bug (hits were always byte-exact); run-2 KeyError on observed
+sub-band edge fixed via arbitrary-edge ln cache + resume from persisted regeneration. Barrier
+framing: structural (not power-limited) elimination prevents a wrong turn on 228's frontier;
+residue cap untouched; no breakthrough claimed. Paper 231, issue #379.

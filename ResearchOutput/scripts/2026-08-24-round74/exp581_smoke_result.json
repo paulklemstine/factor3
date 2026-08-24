@@ -1,0 +1,753 @@
+{
+ "exp": "581",
+ "codename": "HUMP-MECHANISM",
+ "mode": "smoke",
+ "config": {
+  "master_seed": 20260828,
+  "bits": 96,
+  "n_pool": 16,
+  "jsamples_per_N": 20000,
+  "source_npz": "exp578_positions.npz",
+  "tester": "exp569 gcd-chain verbatim; sampling stream exp578 verbatim",
+  "bands": [
+   "lpf<=100",
+   "lpf_100_1e3",
+   "lpf_1e3_1e4",
+   "lpf_gt_1e4"
+  ],
+  "B0_small_primes": 100,
+  "tercile_cutpoints_k100": [
+   2,
+   3
+  ],
+  "bins": 50,
+  "trapezoid_pts_per_bin": 400,
+  "r_mixture_pts": 17,
+  "boot_reps": 2000,
+  "boot_seed": 20260831,
+  "bootstrap_unit": "cluster over Ns",
+  "LOW_MASS_MIN": 200,
+  "anchors_exp579": {
+   "R_first": 0.8007,
+   "tol_ends": 0.08,
+   "R_peak": 1.2257,
+   "peak_bin": 33,
+   "tol_peak": 0.1,
+   "R_last": 0.8957,
+   "vertex": 0.5896,
+   "tol_vertex": 0.12
+  },
+  "seed_lineage": {},
+  "verification": {
+   "N0_stream_spotcheck_identical": true
+  }
+ },
+ "rows": [
+  {
+   "i": 0,
+   "N": "48577520289099966130201689367",
+   "jlo": 220403085933705,
+   "jhi": 661209257801112,
+   "hits": 12,
+   "ctl_used": 12,
+   "k100_min": 1,
+   "k100_max": 5,
+   "band_counts": [
+    0,
+    0,
+    0,
+    12
+   ]
+  },
+  {
+   "i": 1,
+   "N": "49363585102745713481144280721",
+   "jlo": 222179173422591,
+   "jhi": 666537520267770,
+   "hits": 9,
+   "ctl_used": 9,
+   "k100_min": 2,
+   "k100_max": 4,
+   "band_counts": [
+    0,
+    0,
+    0,
+    9
+   ]
+  },
+  {
+   "i": 2,
+   "N": "39871089139636508535222656143",
+   "jlo": 199677462773435,
+   "jhi": 599032388320302,
+   "hits": 14,
+   "ctl_used": 14,
+   "k100_min": 1,
+   "k100_max": 4,
+   "band_counts": [
+    0,
+    0,
+    0,
+    14
+   ]
+  },
+  {
+   "i": 3,
+   "N": "63591332530613326708208633123",
+   "jlo": 252173219297001,
+   "jhi": 756519657891000,
+   "hits": 9,
+   "ctl_used": 9,
+   "k100_min": 1,
+   "k100_max": 3,
+   "band_counts": [
+    0,
+    0,
+    0,
+    9
+   ]
+  },
+  {
+   "i": 4,
+   "N": "69769073012291885849725032259",
+   "jlo": 264138359600214,
+   "jhi": 792415078800639,
+   "hits": 11,
+   "ctl_used": 11,
+   "k100_min": 2,
+   "k100_max": 4,
+   "band_counts": [
+    0,
+    0,
+    0,
+    11
+   ]
+  },
+  {
+   "i": 5,
+   "N": "46715764028696558603270136721",
+   "jlo": 216138298384846,
+   "jhi": 648414895154535,
+   "hits": 13,
+   "ctl_used": 13,
+   "k100_min": 2,
+   "k100_max": 5,
+   "band_counts": [
+    0,
+    0,
+    0,
+    13
+   ]
+  },
+  {
+   "i": 6,
+   "N": "42259407552374900031616068643",
+   "jlo": 205570930708539,
+   "jhi": 616712792125614,
+   "hits": 10,
+   "ctl_used": 10,
+   "k100_min": 0,
+   "k100_max": 4,
+   "band_counts": [
+    0,
+    0,
+    0,
+    10
+   ]
+  },
+  {
+   "i": 7,
+   "N": "54944229321239748487911539303",
+   "jlo": 234401854346846,
+   "jhi": 703205563040535,
+   "hits": 11,
+   "ctl_used": 11,
+   "k100_min": 1,
+   "k100_max": 3,
+   "band_counts": [
+    0,
+    0,
+    0,
+    11
+   ]
+  },
+  {
+   "i": 8,
+   "N": "44049696168013723924667059567",
+   "jlo": 209880194796970,
+   "jhi": 629640584390907,
+   "hits": 6,
+   "ctl_used": 6,
+   "k100_min": 0,
+   "k100_max": 5,
+   "band_counts": [
+    0,
+    0,
+    0,
+    6
+   ]
+  },
+  {
+   "i": 9,
+   "N": "42736095571974447181457282989",
+   "jlo": 206727104105811,
+   "jhi": 620181312317430,
+   "hits": 16,
+   "ctl_used": 16,
+   "k100_min": 1,
+   "k100_max": 5,
+   "band_counts": [
+    0,
+    0,
+    0,
+    16
+   ]
+  },
+  {
+   "i": 10,
+   "N": "41594994565395987547254975217",
+   "jlo": 203948509593466,
+   "jhi": 611845528780395,
+   "hits": 9,
+   "ctl_used": 9,
+   "k100_min": 0,
+   "k100_max": 4,
+   "band_counts": [
+    0,
+    0,
+    0,
+    9
+   ]
+  },
+  {
+   "i": 11,
+   "N": "61772970731183009577920960647",
+   "jlo": 248541688115260,
+   "jhi": 745625064345777,
+   "hits": 10,
+   "ctl_used": 10,
+   "k100_min": 0,
+   "k100_max": 7,
+   "band_counts": [
+    0,
+    0,
+    0,
+    10
+   ]
+  },
+  {
+   "i": 12,
+   "N": "52039193501639674168557102463",
+   "jlo": 228121006270006,
+   "jhi": 684363018810015,
+   "hits": 9,
+   "ctl_used": 9,
+   "k100_min": 1,
+   "k100_max": 5,
+   "band_counts": [
+    0,
+    0,
+    0,
+    9
+   ]
+  },
+  {
+   "i": 13,
+   "N": "44912226468058607670582350059",
+   "jlo": 211925049175549,
+   "jhi": 635775147526644,
+   "hits": 11,
+   "ctl_used": 11,
+   "k100_min": 1,
+   "k100_max": 5,
+   "band_counts": [
+    0,
+    0,
+    0,
+    11
+   ]
+  },
+  {
+   "i": 14,
+   "N": "39641199542316111265663738907",
+   "jlo": 199100978255548,
+   "jhi": 597302934766641,
+   "hits": 7,
+   "ctl_used": 7,
+   "k100_min": 1,
+   "k100_max": 4,
+   "band_counts": [
+    0,
+    0,
+    0,
+    7
+   ]
+  },
+  {
+   "i": 15,
+   "N": "41808356342490084414256699331",
+   "jlo": 204470918084921,
+   "jhi": 613412754254760,
+   "hits": 10,
+   "ctl_used": 10,
+   "k100_min": 0,
+   "k100_max": 3,
+   "band_counts": [
+    0,
+    0,
+    0,
+    10
+   ]
+  }
+ ],
+ "decomposition": {
+  "families": {
+   "treatment_pooled": {
+    "family": "treatment_pooled",
+    "n_boot_ok": 2000,
+    "quad_abc": [
+     1.30239,
+     -2.66969,
+     1.36752
+    ],
+    "c_ci95": [
+     1.13169,
+     1.62788
+    ],
+    "vertex": null,
+    "peak": null,
+    "peak_ci95_lo": NaN,
+    "amp_mid_mean_minus1": 0.14,
+    "R_min": 0.0,
+    "R_max": 2.466,
+    "argmax_bin": 31,
+    "fires_HUMP": false,
+    "fire_parts": {
+     "c": false,
+     "vertex": false,
+     "peak": false
+    }
+   },
+   "lpf<=100": {
+    "family": "lpf<=100",
+    "n_boot_ok": 2000,
+    "quad_abc": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "c_ci95": [
+     0.0,
+     0.0
+    ],
+    "vertex": null,
+    "peak": null,
+    "peak_ci95_lo": NaN,
+    "amp_mid_mean_minus1": -1.0,
+    "R_min": 0.0,
+    "R_max": 0.0,
+    "argmax_bin": 0,
+    "fires_HUMP": false,
+    "fire_parts": {
+     "c": false,
+     "vertex": false,
+     "peak": false
+    }
+   },
+   "lpf_100_1e3": {
+    "family": "lpf_100_1e3",
+    "n_boot_ok": 2000,
+    "quad_abc": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "c_ci95": [
+     0.0,
+     0.0
+    ],
+    "vertex": null,
+    "peak": null,
+    "peak_ci95_lo": NaN,
+    "amp_mid_mean_minus1": -1.0,
+    "R_min": 0.0,
+    "R_max": 0.0,
+    "argmax_bin": 0,
+    "fires_HUMP": false,
+    "fire_parts": {
+     "c": false,
+     "vertex": false,
+     "peak": false
+    }
+   },
+   "lpf_1e3_1e4": {
+    "family": "lpf_1e3_1e4",
+    "n_boot_ok": 2000,
+    "quad_abc": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "c_ci95": [
+     0.0,
+     0.0
+    ],
+    "vertex": null,
+    "peak": null,
+    "peak_ci95_lo": NaN,
+    "amp_mid_mean_minus1": -1.0,
+    "R_min": 0.0,
+    "R_max": 0.0,
+    "argmax_bin": 0,
+    "fires_HUMP": false,
+    "fire_parts": {
+     "c": false,
+     "vertex": false,
+     "peak": false
+    }
+   },
+   "lpf_gt_1e4": {
+    "family": "lpf_gt_1e4",
+    "n_boot_ok": 2000,
+    "quad_abc": [
+     1.30347,
+     -2.67195,
+     1.3687
+    ],
+    "c_ci95": [
+     1.13242,
+     1.62967
+    ],
+    "vertex": null,
+    "peak": null,
+    "peak_ci95_lo": NaN,
+    "amp_mid_mean_minus1": 0.1392,
+    "R_min": 0.0,
+    "R_max": 2.4642,
+    "argmax_bin": 31,
+    "fires_HUMP": false,
+    "fire_parts": {
+     "c": false,
+     "vertex": false,
+     "peak": false
+    }
+   },
+   "k100_tercile_1": {
+    "family": "k100_tercile_1",
+    "degenerate": true,
+    "n_boot_ok": 0,
+    "fires_HUMP": false,
+    "fire_parts": {
+     "c": false,
+     "vertex": false,
+     "peak": false
+    }
+   },
+   "k100_tercile_2": {
+    "family": "k100_tercile_2",
+    "degenerate": true,
+    "n_boot_ok": 0,
+    "fires_HUMP": false,
+    "fire_parts": {
+     "c": false,
+     "vertex": false,
+     "peak": false
+    }
+   },
+   "k100_tercile_3": {
+    "family": "k100_tercile_3",
+    "degenerate": true,
+    "n_boot_ok": 0,
+    "fires_HUMP": false,
+    "fire_parts": {
+     "c": false,
+     "vertex": false,
+     "peak": false
+    }
+   },
+   "control_pooled": {
+    "family": "control_pooled",
+    "n_boot_ok": 2000,
+    "quad_abc": [
+     1.79525,
+     -6.03257,
+     5.00479
+    ],
+    "c_ci95": [
+     3.58891,
+     6.41504
+    ],
+    "vertex": null,
+    "peak": null,
+    "peak_ci95_lo": NaN,
+    "amp_mid_mean_minus1": -0.1925,
+    "R_min": 0.0,
+    "R_max": 3.4161,
+    "argmax_bin": 12,
+    "fires_HUMP": false,
+    "fire_parts": {
+     "c": false,
+     "vertex": false,
+     "peak": false
+    }
+   }
+  },
+  "control_strata": {
+   "control_lpf<=100": {
+    "family": "control_lpf<=100",
+    "eligible": false,
+    "mass": 50
+   },
+   "control_lpf_100_1e3": {
+    "family": "control_lpf_100_1e3",
+    "eligible": false,
+    "mass": 28
+   },
+   "control_lpf_1e3_1e4": {
+    "family": "control_lpf_1e3_1e4",
+    "eligible": false,
+    "mass": 26
+   },
+   "control_lpf_gt_1e4": {
+    "family": "control_lpf_gt_1e4",
+    "eligible": false,
+    "mass": 57
+   }
+  },
+  "subband_descriptive": {},
+  "mass_shares": {
+   "observed_m_S": [
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "predicted_mu_S": [
+    0.0,
+    0.0,
+    0.0013,
+    0.9987
+   ],
+   "obs_mass_per_band": [
+    0,
+    0,
+    0,
+    167
+   ],
+   "k_tercile_masses": [
+    76,
+    46,
+    45
+   ]
+  },
+  "pooled_T_profile": [
+   0.06587,
+   0.02395,
+   0.02395,
+   0.0479,
+   0.03593,
+   0.03593,
+   0.02395,
+   0.01796,
+   0.02395,
+   0.02994,
+   0.00599,
+   0.01796,
+   0.01796,
+   0.00599,
+   0.01198,
+   0.01198,
+   0.02395,
+   0.01796,
+   0.02395,
+   0.01796,
+   0.01796,
+   0.01796,
+   0.01796,
+   0.02994,
+   0.02994,
+   0.01198,
+   0.01796,
+   0.00599,
+   0.01198,
+   0.01796,
+   0.02994,
+   0.04192,
+   0.00599,
+   0.01796,
+   0.02395,
+   0.01796,
+   0.02994,
+   0.02395,
+   0.01796,
+   0.01198,
+   0.00599,
+   0.01198,
+   0.01796,
+   0.02395,
+   0.02395,
+   0.01198,
+   0.01198,
+   0.0,
+   0.00599,
+   0.0
+  ],
+  "pooled_M_profile": [
+   0.05174,
+   0.03391,
+   0.03051,
+   0.02845,
+   0.02699,
+   0.02585,
+   0.02493,
+   0.02416,
+   0.02349,
+   0.02291,
+   0.02239,
+   0.02192,
+   0.0215,
+   0.02111,
+   0.02075,
+   0.02042,
+   0.02011,
+   0.01982,
+   0.01955,
+   0.01929,
+   0.01904,
+   0.01881,
+   0.01859,
+   0.01839,
+   0.01819,
+   0.01799,
+   0.01781,
+   0.01764,
+   0.01747,
+   0.01731,
+   0.01715,
+   0.017,
+   0.01685,
+   0.01671,
+   0.01657,
+   0.01644,
+   0.01631,
+   0.01619,
+   0.01607,
+   0.01595,
+   0.01584,
+   0.01573,
+   0.01562,
+   0.01551,
+   0.01541,
+   0.01531,
+   0.01521,
+   0.01512,
+   0.01503,
+   0.01493
+  ],
+  "pooled_R_profile": [
+   1.2731,
+   0.7064,
+   0.7851,
+   1.6837,
+   1.3314,
+   1.3897,
+   0.9606,
+   0.7435,
+   1.0195,
+   1.3068,
+   0.2674,
+   0.8194,
+   0.8356,
+   0.2837,
+   0.5771,
+   0.5865,
+   1.1912,
+   0.9065,
+   1.2255,
+   0.9314,
+   0.9433,
+   0.9548,
+   0.9661,
+   1.6285,
+   1.6463,
+   0.6655,
+   1.0085,
+   0.3395,
+   0.6856,
+   1.0381,
+   1.7459,
+   2.466,
+   0.3553,
+   1.075,
+   1.4451,
+   1.0925,
+   1.8352,
+   1.4794,
+   1.1179,
+   0.7507,
+   0.3781,
+   0.7615,
+   1.1501,
+   1.5439,
+   1.5542,
+   0.7822,
+   0.7872,
+   0.0,
+   0.3985,
+   0.0
+  ],
+  "note": "R_S(b)=within-stratum shape residual doubles as the share-ratio diagnostic: composition can move the pooled profile only through constant weights m_S!=mu_S applied to differing stratum shapes."
+ },
+ "stats": {
+  "total_hits": 167,
+  "mean_hits_per_N": 10.44,
+  "rho_table_max_abs_err": 3.069e-05,
+  "calibration": {
+   "anchors_computed": {
+    "R_first": 1.2731,
+    "R_peak": 2.466,
+    "peak_bin": 31,
+    "R_last": 0.0
+   },
+   "anchors_pass_soft": false
+  },
+  "ctl_none_band_excluded": 6,
+  "segments_s": {
+   "population": 0.0,
+   "sampling": 48.9,
+   "factor": 0.6,
+   "counts": 0.0,
+   "baseline": 0.7,
+   "boot": 0.3
+  }
+ },
+ "verdicts": {
+  "rule": "priority CONTAMINATED > H1a(exactly one LPF band fires) > H1b(>=3/4 bands fire AND 0/3 k100 terciles) > H0(>=3/4 bands AND >=2/3 terciles) > MASS-REALLOC(no strata fire, pooled fires) > MIXED; HUMP_S = quad c boot95<0 wholly + vertex in (0.15,0.85) + fitted-peak boot95 p2.5>1.05",
+  "verdict": "MIXED-INCONCLUSIVE",
+  "carrier": null,
+  "consequence": "partial concentration; report fire counts and revisit with more power",
+  "fires_LPF": [],
+  "fires_k100": [],
+  "eligible_LPF_bands": 0,
+  "eligible_k_terciles": 0,
+  "control_contaminated": false,
+  "pooled_treatment_fires": false,
+  "calibration_soft_pass": false
+ },
+ "honest_notes": [
+  "baseline recipe reconstructed from exp579's published description (its code outside this experiment's read scope); calibrated against its published SCALAR anchors (R_first/peak/bin/R_last) with generous tolerances instead of a full per-bin table transcription",
+  "uniform-r 17-pt mixture inherited from exp579 incl. its caveat; r brackets {0,mid,2s} not re-run here (scope)",
+  "control LPF strata use largest prime <=1e6 of NON-smooth v; controls with NO prime factor <=1e6 excluded from stratified control (counted)",
+  "k100 terciles cut at pooled hit-mass quantiles; ties go to lower class",
+  "families below LOW_MASS_MIN=200 observed hits are ineligible for firing",
+  "fixed bootSE weights across replicates; percentile CIs; replicate fits with c>=0 excluded from peak CI via nanpercentile",
+  "v<=1 baseline points contribute zero (measure-zero); v=1 hits would be assigned band lpv<=100/k100=0 (none occurred)",
+  "baseline v computed exactly in int64 for grid nodes with d=j-s<=256, in float elsewhere (relative error ~2^-53, log-safe)",
+  "single master seed 20260828 inherited from exp578 (single-seed caveat)",
+  "smoke verification is double in-process regeneration only; exp578_smoke positions npz was outside this experiment's read scope",
+  "LPF band edges nominal decimal cuts, not prime-aligned",
+  "k100-tercile baseline = POOLED hit positional profile (unit mass), not per-tercile Dickman: a proper size-conditioned joint model of (LPF, k100) would need Buchstab-type sieve machinery out of scope; the registered reading is adjusted accordingly -- a tercile fire means EXTRA aligned hump beyond the shared positional shape, flat means the hump carries no k100-conditional structure",
+  "R_S normalization is offset-invariant: a constant-factor Dickman misspecification cancels per stratum; it can still move the POOLED profile through m_S!=mu_S weighting -- that channel is named by the BASELINE-MASS-REALLOCATION branch"
+ ],
+ "wall_s": 56.8
+}

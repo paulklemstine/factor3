@@ -1,0 +1,62 @@
+[full] building primorials...
+primorials bits P5=143816 P6=1440509
+lineage: disjoint=True lineage_repro=True master_hash_match=True
+population built (0.0s)
+RESUME: loaded persisted regen (0.0s); total hits=9594
+VERIFY vs exp578_positions.npz: {"hits_equal_all_N": true, "ctl_full_equal_all_N": true, "grids_equal_all_N": true, "sha256_reg": "55729f1c99c0b5d2", "sha256_npz": "55729f1c99c0b5d2", "digests_equal": true} (0.1s)
+building primes<=1e6 ...
+78498 primes
+factoring done (9.8s); nonsmooth_hits=0 (must be 0)
+count matrices done (0.0s); k100 terciles q1=2 q2=3; ctl_none_band=307
+baselines done (2.9s); rho table max err=3.07e-05
+pooled anchors: {'R_first': 0.8371, 'R_peak': 1.2227, 'peak_bin': 33, 'R_last': 0.8935} cal_ok=True
+/home/raver1975/.local/lib/python3.12/site-packages/numpy/lib/nanfunctions.py:1384: RuntimeWarning: All-NaN slice encountered
+  return _nanquantile_unchecked(
+bootstrap+fits done (0.7s)
+sub-band cuts: {'cuts_lpf': [350983, 671941], 'masses': [3196, 3196, 3195], 'median_lpf_per_tercile': [197679, 510687, 831091]}
+{
+ "verdict": "MIXED-INCONCLUSIVE",
+ "carrier": null,
+ "fires_LPF": [],
+ "fires_k100": [],
+ "contaminated": false,
+ "calibration": {
+  "R_first": 0.8371,
+  "R_peak": 1.2227,
+  "peak_bin": 33,
+  "R_last": 0.8935
+ },
+ "cal_ok": true,
+ "pooled_fires": false,
+ "family_fires": {
+  "treatment_pooled": false,
+  "lpf<=100": false,
+  "lpf_100_1e3": false,
+  "lpf_1e3_1e4": false,
+  "lpf_gt_1e4": false,
+  "k100_tercile_1": false,
+  "k100_tercile_2": false,
+  "k100_tercile_3": false,
+  "control_pooled": false,
+  "subband_1_of_gt1e4": false,
+  "subband_2_of_gt1e4": false,
+  "subband_3_of_gt1e4": false
+ },
+ "masses": {
+  "obs": [
+   0,
+   0,
+   7,
+   9587
+  ],
+  "mu": [
+   0.0,
+   0.0,
+   0.0013,
+   0.9987
+  ]
+ },
+ "wall_s": 16.5
+}
+[full] verdict=MIXED-INCONCLUSIVE carrier=None wall=16.5s -> exp581_result.json
+EXIT=0

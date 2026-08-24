@@ -11208,3 +11208,51 @@ along j they land. Barrier framing: closes the merge-fork cleanly both ways; inf
 redirects residual hunt to N-level covariates with a cleaner boundary; family-B control lesson
 recorded; residue cap untouched; no breakthrough claimed. Count 568 -> 569. Assessment v336 ->
 v337. Paper 230, issue #378.
+
+## Part 273 - HUMP-MECHANISM (round-81 #1, exp 581, v338)
+
+MIXED-INCONCLUSIVE by pre-registration letter, STRUCTURALLY DECISIVE in content — paper-229's
+residual question answered by elimination: WHAT CARRIES the ±20% concave mid-window hump in R=T/M
+(raw max 1.2227 @bin33)? Pure re-analysis + REGENERATION of exp578_positions.npz verbatim; no new
+physics. REGENERATION PASS first-class: pipeline re-executed from recorded seeds, canonical-int64
+sha256 55729f1c99c0b5d2 reg == stored npz, hits byte-exact 9594/9594 across all 128 Ns + FULL
+capped control arrays + grids byte-exact, lineage quartet e8d89a29/9cb9cc80/81acc9b5/a15e2877
+reproduced pairwise-disjoint, master hash 06931068f8f3ca9b matched — every number below ran on
+verified-identical data. Registered decompositions: LPF bands {<=100,100-1e3,1e3-1e4,>1e4} of
+fresh per-hit factorization (LPF<=1e6 of smooth v) + k100 = #distinct primes<=100 dividing v,
+terciles at pooled mass quantiles {2,3}; per-stratum shape residual R_S = T_S,norm/M_S,norm
+(offset-invariant), mixture-Dickman baseline over exp579's uniform-r 17-pt prior, 400-pt
+trapezoid/bin; HUMP_S = WLS quadratic c boot95 wholly<0 + vertex in (.15,.85) + FITTED-peak
+boot95 p2.5>1.05, cluster bootstrap 2000 reps seed 20260831, LOW_MASS_MIN=200. VERDICT TREE:
+zero fires anywhere -> MIXED (pooled fire_parts c TRUE vertex TRUE peak FALSE: fitted peak 1.0275
+boot95-lo 1.0094 vs registered bar 1.05 — my amplitude bar stricter than the phenomenon despite
+raw max 1.2227; bars kept verbatim, no post-hoc rule change). STRUCTURE ONE-SIDED: observed LPF
+masses [~0, ~0, .0007, .9993] vs predicted [.0007-equivalents] — 99.93% of hits share ONE band
+(>1e4), so H1a single-band-carrier dies ARITHMETICALLY (only one eligible stratum exists); mass
+reallocation negligible (m_S vs mu_S differs 6e-4). Inside the band the hump replicates
+EVERYWHERE: dominant-band-only c=-0.299 vertex 0.590; DESCRIPTIVE LPF terciles inside >1e4 (cuts
+350983/671941, ~3196 hits each, medians 198k/511k/831k) c=-0.18/-0.25/-0.44 — CONCAVE IN ALL
+THREE, vertices .87/.39/.52 around stable pooled vertex x=0.5901 == exp579's independent 0.5896
+(raw max still bin33 exactly; anchors PASS: R_first .8371 vs .8007±.08, R_peak 1.2227@33 vs
+1.2257@33 EXACT BIN, R_last .8935 vs .8957). k100 conditioning does NOT remove the excess: t1
+concave (c=-.13 vx .41), t2/t3 mildly convex but amplitudes ±2% vs pooled +4.8% (H1b dead).
+Controls CLEAN everywhere (pooled c=-.105 CI straddles 0, peak fit 1.005; all four control LPF
+strata clean) — pipeline uncontaminated. CONSEQUENCE: hump lives INSIDE every resolvable stratum
+at a stable vertex — not completing-prime size, not small-prime combination structure, not Dickman
+band-mass allocation — leaving registered H0 channel (WINDOW/POLYNOMIAL GEOMETRY of j^2-N itself
+interacting with v-sizes) as SOLE SURVIVOR among registered channels; named next probe pre-stated:
+direct j-grid/v-size sensitivity analysis (bin-width permutation, u-grid shift) to close H0
+affirmatively or watch it fragment. Completes paper-229's characterization thread (228->229->231);
+with paper-230's independence result the positional layer is law-complete with carrier narrowed to
+polynomial geometry. LEDGER CATCHES (both disclosed in paper): run-1 G1 "failure" was a COMPARATOR
+bug (paired slices vs stored full arrays; hits byte-exact ALL ALONG per run-1 log evidence);
+run-2 KeyError 350983 = LN-dict lookup on observed sub-band edge -> arbitrary-edge ln cache +
+resume-from-persisted-regen (16.5 s completion; sampling never re-run after its single persisted
+953 s pass); smoke also caught factorer early-exit bug (final prime undivided) pre-full; Dickman
+table refined to h=1/8192 (rho(2) err 3.07e-05). Deviations disclosed: k100-tercile baseline =
+pooled positional profile (per-tercile Dickman needs Buchstab machinery, out of scope); sub-band
+split DESCRIPTIVE ONLY, never verdict-bearing; single seed/bitlen inherited. Barrier framing:
+carrier-narrowing that PREVENTS a wrong turn (three intuitive composition carriers die on
+arithmetic or within-stratum replication — elimination is structural, not power-limited); residue
+cap untouched; no breakthrough claimed. Count 569 -> 570. Assessment v337 -> v338. Paper 231,
+issue #379.
