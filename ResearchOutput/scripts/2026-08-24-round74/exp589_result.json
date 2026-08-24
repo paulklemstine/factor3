@@ -1,0 +1,365 @@
+{
+ "exp": "exp589_spike_origin",
+ "question": "is the paper-238 left-edge spike carried by tiny-v (bitlen(v)<96) hits?",
+ "config": {
+  "seed_population": 20260828,
+  "bits": 96,
+  "n_pool": 128,
+  "nbins": 50,
+  "d1": 0.1,
+  "bands": [
+   "<80",
+   "80-89",
+   "90-95",
+   ">=96"
+  ],
+  "full_min_bitlen": 96,
+  "boot_reps": 2000,
+  "boot_seed": 20260902,
+  "w_grid": [
+   0.01,
+   0.011435298360829205,
+   0.013076604860118303,
+   0.014953487812212205,
+   0.01709975946676697,
+   0.019554085140089394,
+   0.022360679774997897,
+   0.025570104477806006,
+   0.02924017738212865,
+   0.033437015248821096,
+   0.038236224566586485,
+   0.04372426361105838,
+   0.04999999999999999,
+   0.05717649180414599,
+   0.06538302430059151,
+   0.07476743906106101,
+   0.0854987973338348,
+   0.09777042570044694,
+   0.11180339887498945,
+   0.12785052238903002,
+   0.14620088691064323,
+   0.16718507624410547,
+   0.1911811228329324,
+   0.21862131805529186,
+   0.25
+  ],
+  "smoke": false,
+  "lineage": {
+   "jlo_jhi_exact_matches": true,
+   "note": "authoritative check = 128x2 exact isqrt->jlo/jhi matches vs npz; pop_hash in stats"
+  }
+ },
+ "rows": {
+  "band_table_hits_vs_ctl": [
+   {
+    "band": "<80",
+    "hits": 0,
+    "ctl": 2,
+    "hits_d1": 0,
+    "ctl_d1": 2,
+    "hits_share": 0.0,
+    "rr_d1_vs_window": 0.0,
+    "ctl_d1_share": 1.0
+   },
+   {
+    "band": "80-89",
+    "hits": 85,
+    "ctl": 1501,
+    "hits_d1": 85,
+    "ctl_d1": 1501,
+    "hits_share": 0.008859703981655202,
+    "rr_d1_vs_window": 1.0,
+    "ctl_d1_share": 1.0
+   },
+   {
+    "band": "90-95",
+    "hits": 2288,
+    "ctl": 83972,
+    "hits_d1": 1469,
+    "ctl_d1": 49155,
+    "hits_share": 0.23848238482384823,
+    "rr_d1_vs_window": 1.0968129571577847,
+    "ctl_d1_share": 0.5853736959939028
+   },
+   {
+    "band": ">=96",
+    "hits": 7221,
+    "ctl": 426525,
+    "hits_d1": 0,
+    "ctl_d1": 0,
+    "hits_share": 0.7526579111944965,
+    "rr_d1_vs_window": null,
+    "ctl_d1_share": 0.0
+   }
+  ],
+  "d1_all": {
+   "d1_hits": 1554,
+   "hits_total": 9594,
+   "d1_ctl": 50658,
+   "ctl_total": 512000,
+   "exp_d1_control_referenced": 949.2438515625,
+   "exp_d1_flat_010": 959.4000000000001,
+   "spike_primary": 604.7561484375,
+   "spike_flat_secondary": 594.5999999999999,
+   "rate_ratio_d1": 1.6370925104671923
+  },
+  "d1_kept_bitlen_ge96": {
+   "d1_hits": 0,
+   "hits_total": 7221,
+   "d1_ctl": 0,
+   "ctl_total": 426525,
+   "exp_d1_control_referenced": 0.0,
+   "exp_d1_flat_010": 722.1,
+   "spike_primary": 0.0,
+   "spike_flat_secondary": -722.1,
+   "rate_ratio_d1": null
+  },
+  "per_n_first16": [
+   {
+    "i": 0,
+    "hits": 79,
+    "hits_d1": 23,
+    "ctl": 4000,
+    "ctl_d1": 389
+   },
+   {
+    "i": 1,
+    "hits": 95,
+    "hits_d1": 15,
+    "ctl": 4000,
+    "ctl_d1": 389
+   },
+   {
+    "i": 2,
+    "hits": 90,
+    "hits_d1": 13,
+    "ctl": 4000,
+    "ctl_d1": 410
+   },
+   {
+    "i": 3,
+    "hits": 48,
+    "hits_d1": 6,
+    "ctl": 4000,
+    "ctl_d1": 429
+   },
+   {
+    "i": 4,
+    "hits": 60,
+    "hits_d1": 10,
+    "ctl": 4000,
+    "ctl_d1": 398
+   },
+   {
+    "i": 5,
+    "hits": 97,
+    "hits_d1": 12,
+    "ctl": 4000,
+    "ctl_d1": 408
+   },
+   {
+    "i": 6,
+    "hits": 78,
+    "hits_d1": 13,
+    "ctl": 4000,
+    "ctl_d1": 390
+   },
+   {
+    "i": 7,
+    "hits": 39,
+    "hits_d1": 6,
+    "ctl": 4000,
+    "ctl_d1": 385
+   },
+   {
+    "i": 8,
+    "hits": 81,
+    "hits_d1": 14,
+    "ctl": 4000,
+    "ctl_d1": 394
+   },
+   {
+    "i": 9,
+    "hits": 118,
+    "hits_d1": 21,
+    "ctl": 4000,
+    "ctl_d1": 378
+   },
+   {
+    "i": 10,
+    "hits": 68,
+    "hits_d1": 7,
+    "ctl": 4000,
+    "ctl_d1": 411
+   },
+   {
+    "i": 11,
+    "hits": 74,
+    "hits_d1": 9,
+    "ctl": 4000,
+    "ctl_d1": 412
+   },
+   {
+    "i": 12,
+    "hits": 90,
+    "hits_d1": 14,
+    "ctl": 4000,
+    "ctl_d1": 361
+   },
+   {
+    "i": 13,
+    "hits": 71,
+    "hits_d1": 15,
+    "ctl": 4000,
+    "ctl_d1": 391
+   },
+   {
+    "i": 14,
+    "hits": 50,
+    "hits_d1": 5,
+    "ctl": 4000,
+    "ctl_d1": 393
+   },
+   {
+    "i": 15,
+    "hits": 55,
+    "hits_d1": 7,
+    "ctl": 4000,
+    "ctl_d1": 380
+   }
+  ]
+ },
+ "decomposition": {
+  "fraction_removed_primary": 1.0,
+  "fraction_removed_flat_secondary": 2.2144298688193746,
+  "degenerate_d1_empty_under_exclusion": true,
+  "mechanical_note": "D1 => v < 0.44*s^2 < 2^95 provably; exclusion empties D1 by construction; verdict rides on refit clause",
+  "kept_support_left_edge_u": 0.11413598733073636
+ },
+ "stats": {
+  "fit_all": {
+   "A": 0.7414166085624774,
+   "w": 0.0854987973338348,
+   "u0": 0.01,
+   "w_edge": 0.07943370008356174,
+   "d_aicc": 374.774146652504,
+   "orphan_hits_dropped": 0
+  },
+  "fit_kept": {
+   "A": 0.3324232970966917,
+   "w": 0.12785052238903002,
+   "u0": 0.11,
+   "w_edge": 0.040290839886702075,
+   "d_aicc": 49.78049400252348,
+   "orphan_hits_dropped": 0
+  },
+  "subband_fits_POSTHOC": {
+   "[96,98)": {
+    "hits": 3386,
+    "ctl": 178711,
+    "A": 0.19946697390644286,
+    "w": 0.0854987973338348,
+    "u0": 0.11,
+    "w_edge": 0.030520719916384834,
+    "d_aicc": 5.939887125423411,
+    "orphan_hits_dropped": 0
+   },
+   "[98,1073741824)": {
+    "hits": 3835,
+    "ctl": 247814,
+    "A": 0.08402893433936176,
+    "w": 0.21862131805529186,
+    "u0": 0.37,
+    "w_edge": 0.023966095532673804,
+    "d_aicc": -0.39714743909280514,
+    "orphan_hits_dropped": 0
+   }
+  },
+  "ci_w_edge_all": {
+   "lo": 0.07015564856463012,
+   "hi": 0.09075100800266422,
+   "reps_ok": 2000
+  },
+  "ci_w_edge_kept": {
+   "lo": 0.030057646132830095,
+   "hi": 0.05254874834117821,
+   "reps_ok": 2000
+  },
+  "control_checks": {
+   "per_N_d1_share_z": {
+    "mean": -0.22317115778792468,
+    "sd": 0.9454635009104367,
+    "absmax": 2.5298221281347035,
+    "n": 128
+   },
+   "band_x_decile_chi2": {
+    "<80": {
+     "note": "low count, skipped",
+     "in_band": 2
+    },
+    "80-89": {
+     "chi2": 13709.787139129443,
+     "p": 0.0,
+     "ctl_in_band_d1_share": 1.0,
+     "ctl_out_band_d1_share": 0.09629205933802025
+    },
+    "90-95": {
+     "chi2": 266591.2914397001,
+     "p": 0.0,
+     "ctl_in_band_d1_share": 0.5853736959939028,
+     "ctl_out_band_d1_share": 0.0035114525217976394
+    },
+    ">=96": {
+     "chi2": 280543.614932343,
+     "p": 0.0,
+     "ctl_in_band_d1_share": 0.0,
+     "ctl_out_band_d1_share": 0.5926645217899971
+    }
+   }
+  }
+ },
+ "decomposition_band_referenced_D1_POSTHOC": [
+  {
+   "band": "<80",
+   "hits_d1_obs": 0,
+   "exp_band_referenced": 0.0,
+   "excess": 0.0
+  },
+  {
+   "band": "80-89",
+   "hits_d1_obs": 85,
+   "exp_band_referenced": 85.0,
+   "excess": 0.0
+  },
+  {
+   "band": "90-95",
+   "hits_d1_obs": 1469,
+   "exp_band_referenced": 1339.34,
+   "excess": 129.66
+  },
+  {
+   "band": ">=96",
+   "hits_d1_obs": 0,
+   "exp_band_referenced": 0.0,
+   "excess": 0.0
+  }
+ ],
+ "verdicts": {
+  "verdict": "H0-MIXED",
+  "fraction_removed_ge_070": true,
+  "insignificant_after_exclusion": false,
+  "significant_after_exclusion": true,
+  "h1a": false,
+  "h1b": false
+ },
+ "honest_notes": [
+  "Read restrictions honored: analyses built only from exp581 npz + exp582_findings.md; exp578 read solely for the sanctioned regeneration recipe.",
+  "Paper-238's own fitter unavailable under read restrictions; two-component Poisson bin fit reimplemented here (nb=50 anchor per exp582); amplitudes NOT comparable numerically to paper 238's b_edge scale.",
+  "Pre-registered mechanical note fired: D1 exclusion is structurally degenerate (every D1 hit has bitlen(v)<=95); fraction_removed is 1.0-by-geometry, not evidence by itself.",
+  "Kept-population edge anchored at leftmost exposed bin (u0=0.110) rather than 0 -- support truncation adaptation registered pre-run in header.",
+  "POST-HOC (not registered): within size-matched v-bands the D1 excess nearly vanishes (80-89 rr=1.000 all-in-D1; 90-95 rr=1.097), i.e. the flat-null D1 excess is mostly band COMPOSITION, not within-D1 rate elevation; subband refits ([96,98) vs [98,inf)) probe whether the kept-edge survives at matched v-size; bulk null is control-shape, NOT Dickman-normalized, so any 'beyond Dickman' reading carries that caveat.",
+  "Controls = first-4000 non-hit j per N (stream-order independent of position => valid uniform density reference).",
+  "pop_hash recomputed (06931068f8f3ca9b) but no external copy readable to compare; lineage rests on exact jlo/jhi reproduction."
+ ],
+ "wall_s": 45.72
+}

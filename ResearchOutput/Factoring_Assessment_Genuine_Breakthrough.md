@@ -2951,3 +2951,37 @@ edge/end ratio carries last-bin noise (corroborative only). Barrier framing: des
 refinement INSIDE the positional layer (papers 228–230 established it independent of rate);
 residue cap 4/3, position 5.19×, external-hint laws, quantum frontier, and paper 237's four-class
 rate-residual closure all untouched; u ≈ 10 data per the standing directive. Paper 238, issue #386.
+
+**Assessment addendum v346 — 2026-08-24 (round-84 #2).** Experiment recorded (count 576 → 577;
+max-id tracker unchanged, 587 stays highest on record); papers 238 → 239; version v345 → v346.
+Content: SPIKE-ORIGIN (exp 589) — pure reanalysis of exp581_regen_positions.npz (9594 pooled hits
+over 128 Ns; 512k controls; wall 42.34 s) resolving paper 238's spike-origin follow-up with a
+QUANTITATIVE TWO-PART DECOMPOSITION of the left-edge spike: verdict **H0-MIXED** (registered
+fraction and refit clauses disagree; both reported honestly). REGENERATION VERIFIED first: Ns
+regenerated verbatim exp578 recipe (seed 20260828), lineage = 128×2 EXACT isqrt→(jlo,jhi) matches
+plus containment of every stored j; pop_hash 06931068f8f3ca9b recomputed with no external copy
+readable to compare (disclosed). **PRE-REGISTERED MECHANICAL NOTE FIRED**: D1 ⇒ v < 0.44·s² +
+o(s²) < 2^95 provably — every first-decile hit has bitlen(v) ≤ 95, so the "exclude sub-96-bit v"
+clause removes 100% of the D1 mass BY GEOMETRY and cannot discriminate H1a vs H1b (degenerate;
+fraction_removed = 1.0-by-construction, zero kept D1 hits in band ≥96); per the pre-run
+adaptation, the verdict rode on the REFIT clause. Refit numbers (two-component Poisson bin fit,
+nb=50, cluster-over-Ns bootstrap 2000, seed 20260902): ALL hits w_edge = .0794 [.0702,.0908],
+ΔAICc = 374.77; KEPT (v ≥ 2^95, n = 7221) w_edge = .0403 [.0301,.0525], ΔAICc = 49.78 — kept CI
+EXCLUDES 0 → an edge component PERSISTS among full-size v hits at the kept left edge u₀ = .110
+(anchor adaptation registered pre-run). Split reading: ~half the spike weight is tiny-v INCLUSION
+ARTIFACT (sub-2^95 hits, v as small as ~2·√N ≈ 2^50, vastly smoother than full-size draws), ~half
+is GENUINE elevated small-|v| smoothness beyond Dickman prediction. Band table corroborates
+(hit mass by band: <80 = 0, 80-89 = .0089, 90-95 = .2385, ≥96 = .7527; within-band D1 fractions
+1.000/.642/0.000, RR vs window 1.097 in 90-95 — ZERO full-size hits in D1);
+controls clean (per-N D1-share z mean −0.22 sd 0.95 absmax 2.53). **CONSEQUENCE**: paper 238's
+kernel SURVIVES at reduced strength on legitimate full-size hits (.0794 → .0403, both decisive
+ΔAICc); any future positional-shape model needs BOTH the kernel AND a bitlen(v)-band
+stratification at the left edge — the spike is not one object. Ledger catches (all disclosed):
+degenerate exclusion clause (mechanical note pre-registered); kept-fit edge anchor adapted to
+kept-left-edge u₀ = .110 (registered pre-run); own two-component Poisson fitter nb=50, NOT paper
+238's b_edge parametrization (amplitudes not numerically comparable across papers); controls =
+capped first-4000 non-hit j per N (position-uniform reference); pop_hash recomputed without an
+external copy to compare. Barrier framing: reanalysis INSIDE the positional layer (papers
+228–230, 238) — residue cap 4/3, position 5.19×, external-hint laws, quantum frontier untouched;
+refines rather than overturns paper 238; the .2346 provenance flag still travels forward until
+reconciled against the paper-228 ledger. Paper 239, issue #387.

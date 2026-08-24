@@ -1,0 +1,10 @@
+[   0.00s] exp589 SPIKE-ORIGIN smoke=False n_limit=None boot=2000
+[   0.00s] pop_hash(first 128) = 06931068f8f3ca9b
+[   0.04s] lineage OK: lineage['jlo_exact_match']=True lineage['jhi_exact_match']=True lineage['containment_ok']=True pop_hash=06931068f8f3ca9b
+[   0.48s] subfit [96,98): hits=3386 w_edge=0.0305 dAICc=5.94 u0=0.110
+[   0.49s] subfit [98,1073741824): hits=3835 w_edge=0.0240 dAICc=-0.40 u0=0.370
+[   0.49s] fit ALL: A=0.741 w=0.0855 u0=0.010 w_edge=0.0794 dAICc=374.77
+[   0.49s] fit KEPT(>=96): A=0.332 w=0.1279 u0=0.110 w_edge=0.0403 dAICc=49.78 (kept hits=7221, kept ctl=426525)
+[  45.72s] wrote /home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp589_result.json
+[findings] wrote /home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp589_findings.md
+[  45.73s] done

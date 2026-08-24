@@ -11642,3 +11642,49 @@ Paper 238, issue #386. Barrier framing: descriptive-form refinement INSIDE the p
 (papers 228-230: independent layer) — residue cap 4/3, position 5.19×, external-hint laws, quantum
 frontier, and paper 237's four-class rate-residual closure all untouched; u≈10 data per the
 standing directive; the .2346 provenance flag travels forward until reconciled.
+
+## Part 281 - SPIKE-ORIGIN (round-84 #2, exp 589, v346)
+
+RESOLVES paper 238's spike-origin follow-up with a QUANTITATIVE TWO-PART DECOMPOSITION: the
+left-edge spike splits into ~half tiny-v inclusion artifact + ~half GENUINE elevated smoothness
+among full-size v ≥ 2^95 hits. Verdict: **H0-MIXED** (the registered fraction and refit clauses
+disagree; both reported). Data: pure reanalysis of exp581_regen_positions.npz (9594 pooled hits,
+128 Ns, 512k controls); Ns regenerated verbatim exp578 recipe, seed 20260828; lineage = 128×2
+EXACT isqrt→(jlo,jhi) matches + containment of every stored j (pop_hash 06931068f8f3ca9b
+recomputed, no external copy readable — disclosed); seed 20260902 boot; wall 42.34 s.
+
+PRE-REGISTERED MECHANICAL NOTE FIRED: D1 ⇒ v < 0.44·s² + o(s²) < 2^95 provably (window j ∈
+(s+1, 3s), s = isqrt(N), N 96-bit) — so EVERY first-decile hit has bitlen(v) ≤ 95 and the
+"exclude sub-96-bit v" clause removes 100% of the D1 mass BY GEOMETRY. That clause is therefore
+DEGENERATE (cannot discriminate H1a vs H1b); per the pre-run adaptation, the verdict rode on the
+REFIT clause.
+
+| Fit | w_edge [CI] | ΔAICc |
+|---|---|---|
+| ALL hits | **.0794** [.0702,.0908] | **374.77** |
+| KEPT (v ≥ 2^95, n=7221) | **.0403** [.0301,.0525] | **49.78** |
+
+The kept-fit CI EXCLUDES 0 → an edge component PERSISTS among full-size v hits at the kept left
+edge u₀ = .110 (anchor adaptation registered pre-run; kept support starts there because v crosses
+2^95 at u ≈ .114). Split reading: ~half the spike weight is tiny-v inclusion artifact (sub-2^95
+hits — v as small as ~2·√N ≈ 2^50, vastly smoother than full-size draws); ~half is genuine
+small-|v| structure beyond Dickman prediction. Band table corroborates: hit mass by band
+<80 = 0, 80-89 = .0089, 90-95 = .2385, ≥96 = .7527; WITHIN each populated band the D1 fraction is
+1.000 / .642 / 0.000 respectively (RR vs window 1.097 in 90-95) — ZERO full-size hits land in D1.
+Controls clean: per-N D1-share z mean −0.223 sd 0.945 absmax 2.53 over 128 Ns.
+
+CONSEQUENCE: paper 238's kernel SURVIVES at reduced strength on legitimate full-size hits
+(w_edge .0794 → .0403, both decisive ΔAICc); any future positional-shape model needs BOTH the
+kernel AND a bitlen(v)-band stratification at the left edge — the spike is not one object.
+
+LEDGER CATCHES (all disclosed): degenerate exclusion clause (mechanical note pre-registered);
+kept-fit edge anchor adapted to kept-left-edge u₀=.110 (registered pre-run); own two-component
+Poisson fitter nb=50 (exp582 anchor), NOT paper 238's b_edge parametrization — amplitudes not
+numerically comparable across papers; controls = capped first-4000 non-hit j per N
+(position-uniform reference); pop_hash recomputed but no external copy to compare against.
+
+Count 576 → 577; max-id tracker unchanged (587 stays highest on record). Assessment v345 → v346.
+Paper 239, issue #387. Barrier framing: reanalysis INSIDE the positional layer (papers 228–230,
+238) — residue cap 4/3, position 5.19×, external-hint laws, quantum frontier untouched; refines
+paper 238's kernel claim rather than overturning it; the .2346 provenance flag still travels
+forward until reconciled.
