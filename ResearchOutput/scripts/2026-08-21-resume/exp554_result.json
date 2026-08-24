@@ -1,0 +1,176 @@
+{
+ "exp": "554",
+ "codename": "TDIAL-U120",
+ "round": null,
+ "smoke": false,
+ "status": "04_final",
+ "wall_s": 2512.0,
+ "hypotheses": {
+  "H1_floor_test": "pooled Spearman(T, rate): < 0.46 -> U120-FLOOR-LOWER; in [0.46, 0.53] -> U120-FLOOR-CONFIRMED; in (0.53, 0.55] -> U120-APPROACHING-BAND; > 0.55 -> U120-BAND-REENTRY",
+  "H2": "T beats count <=100 by > +0.05"
+ },
+ "config": {
+  "seeds": [
+   20261210,
+   20261211,
+   20261212
+  ],
+  "n_per_seed": 400,
+  "p_range": [
+   18014398509481984,
+   1152921504606846976
+  ],
+  "q_range": [
+   1152921504606846976,
+   73786976294838206464
+  ],
+  "bits_n": 120,
+  "n_rel": 240,
+  "h_off": 256,
+  "u_exp": 2.5,
+  "dial_max": 400,
+  "cnt_max": 100,
+  "n_boot": 300
+ },
+ "population": {
+  "total": 1200
+ },
+ "per_seed": [
+  {
+   "seed": 20261210,
+   "n": 400,
+   "rho_T": 0.44703610013251915,
+   "rho_cnt": 0.3671089147569651,
+   "advantage": 0.07992718537555404
+  },
+  {
+   "seed": 20261211,
+   "n": 400,
+   "rho_T": 0.4713741680670943,
+   "rho_cnt": 0.4218990646866097,
+   "advantage": 0.04947510338048461
+  },
+  {
+   "seed": 20261212,
+   "n": 400,
+   "rho_T": 0.38985610096929313,
+   "rho_cnt": 0.3010356032765422,
+   "advantage": 0.08882049769275091
+  }
+ ],
+ "pooled": {
+  "n": 1200,
+  "rho_T": 0.4363546779006059,
+  "rho_T_ci95": [
+   0.3881481836352495,
+   0.4811260247875245
+  ],
+  "rho_cnt": 0.36114582579042487,
+  "rho_cnt_ci95": [
+   0.3109312531565707,
+   0.42019046659632786
+  ],
+  "advantage": 0.07520885211018102,
+  "advantage_ci95": [
+   0.027373765940555933,
+   0.12465448386584561
+  ]
+ },
+ "rate_summary": {
+  "mean": 0.13677083333333334,
+  "std": 0.02642557300352851,
+  "smooth_values": 39390,
+  "total_values": 1200
+ },
+ "comparisons": {
+  "ladder": [
+   {
+    "rung": "U96",
+    "exp": 539,
+    "rho_T": 0.5739,
+    "ci95": null,
+    "verdict": null,
+    "note": "fixed classifier"
+   },
+   {
+    "rung": "U100",
+    "exp": 540,
+    "rho_T": 0.5436,
+    "ci95": [
+     0.4982,
+     0.5881
+    ],
+    "verdict": null
+   },
+   {
+    "rung": "U104",
+    "exp": 541,
+    "rho_T": 0.5005,
+    "ci95": [
+     0.4557,
+     0.5454
+    ],
+    "verdict": "TDIAL-U104-CONTINUES-FADE"
+   },
+   {
+    "rung": "U108",
+    "exp": 544,
+    "rho_T": 0.48802300433331264,
+    "ci95": [
+     0.4453,
+     0.5337
+    ],
+    "verdict": "TDIAL-U108-CONTINUES-FADE"
+   },
+   {
+    "rung": "U112",
+    "exp": 545,
+    "rho_T": 0.462125678851606,
+    "ci95": [
+     0.41471196136838256,
+     0.5081483832982573
+    ],
+    "verdict": "TDIAL-U112-CONTINUES-FADE"
+   },
+   {
+    "rung": "U116",
+    "exp": 553,
+    "rho_T": 0.4846978458799528,
+    "ci95": [
+     0.44125315433630413,
+     0.5283441820369633
+    ],
+    "verdict": "U116-MIXED (recorded; REBOUND +0.0226)"
+   },
+   {
+    "rung": "U120",
+    "exp": 554,
+    "rho_T": 0.4363546779006059,
+    "ci95": [
+     0.3881481836352495,
+     0.4811260247875245
+    ],
+    "verdict": "U120-FLOOR-LOWER"
+   }
+  ],
+  "prior_rho_96_fixed": 0.5739,
+  "prior_rho_100": 0.5436,
+  "prior_rho_104": 0.5005,
+  "prior_rho_108": 0.48802300433331264,
+  "prior_rho_112": 0.462125678851606,
+  "prior_rho_116": 0.4846978458799528,
+  "step_delta_vs_116": -0.0483431679793469,
+  "step_delta_vs_112": -0.0257710009510001,
+  "delta_vs_108": -0.051668326432706746,
+  "floor_band": [
+   0.46,
+   0.53
+  ],
+  "ci95_vs_floor_band_lower_edge": "straddles"
+ },
+ "verdicts": {
+  "H2_pass": true,
+  "H2_pass_ci_lower_clears_threshold": false,
+  "verdict_name": "U120-FLOOR-LOWER"
+ }
+}
