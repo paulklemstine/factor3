@@ -20,7 +20,7 @@ policy on BOTH seeds**; no policy ≥50%; sham clean (max 0.0020 bits, credited 
    logN strata (zw8 +1.9..+3.1 unstable, zw32 ≤2.3) and is flat in B after ~64 queries
    (class exhausts at 295 distinct queries; B=16384/22758 rungs are flat extrapolation).
 2. Within-32-logN-bin decomposition: ORACLE carries within-strata excess **0.3634–0.3687 bits =
-   73.5–76.8% of peak** (z≈41); best N-only policy carries 0.0009–0.0018 bits =
+   73.5–76.8% of peak** (z=90.4 seed A / 82.3 seed B); best N-only policy carries 0.0009–0.0018 bits =
    **0.25–0.50% of the oracle's geometric content** — zero for practical purposes.
 3. Composition controls: PARONLY-battery (mirror features) 0.1611–0.1667 ≈ full battery;
    MODONLY (residues) 0.0008–0.0032 ≈ 0 → residues contribute nothing even at naive-Bayes joint
@@ -45,3 +45,10 @@ discriminative arms fit on labeled train split (test-time N-only). LEDGER CATCHE
 cycle (documented, post-hoc block separate from pre-registered verdicts), none adverse.
 ARTIFACTS: exp565_oracle_gap.py, exp565_prereg.json, exp565_smoke.{log,json}, exp565_full.log,
 exp565_result.json.
+
+POST-RECORD RECONCILIATION (2026-08-24, after paper 210 / issue #354): this file originally
+quoted z≈41 on line 23 — that was the SMOKE-run value (n=180) quoted by mistake; result.json is
+correct (full-run within-32-bin oracle excess z=90.4 seed A / 82.3 seed B). Paper used
+result.json values and stands unchanged. BASE-RATE decile arm reading exactly 0.0 pooled on both
+seeds is STRUCTURALLY FORCED, not a surprise: b₁ marginal ~80% class 1 ⇒ every decile's
+conditional argmax is class 1 ⇒ ŷ constant ⇒ plug-in MI identically 0.
