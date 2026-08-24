@@ -10769,3 +10769,77 @@ reruns reusing the parent pipeline unchanged); COUNT advances 561->562, max-id
 tracker stays 572. Round-75 #3 recorded after #4 due to compute wall-clock
 (out-of-numeric-order recording is normal). Assessment v327. Paper 220,
 issue #366.
+
+## Part 263 - GAP-L7 FALSIFICATION + REPLACEMENT L7-prime (round-76 #1, THEORY deliverable — no new experiment id, v328)
+
+L7 OF PAPER 219'S ROADMAP IS FALSE-IN-PRINCIPLE AS DRAFTED; replaced by verified
+L7′. Companion to paper 219 (T1/T2/Conjecture D), papers 132/137/143/138,
+exp570 early-fire trace law. Artifacts (ResearchOutput/scripts/2026-08-24-round74/,
+now committed): gapL7_extremality.md post-revision; author first pass
+gapL7_check.py -> gapL7_result.json (seed 20260824, n=150/pop, 0.99 s);
+INDEPENDENT verification set verifyL7_sim.py -> verifyL7_sim_out.json
+(re-derived from scratch, no code reuse, distinct seeds; n=2400 BAL_prime +
+BAL_intsnap, n=1600 BAL_narrow, n=500 P137) and verifyL7_unif.py (uniform proxy).
+
+ACTION SPACE FORMALIZED: REORDER-class policy Pi emits an enumeration a_k = f(k,N)
+of I(N) with (1) UNIFORMITY one fixed computable f for all N; (2) TEST-BLINDNESS
+order commits ex ante (comparison queries only at T2 pricing); (3) OVERHEAD CHARGING
+t_f(N) in the ledger, polylog|N| per emitted candidate budget class. N-independent
+orders (ascending/wheels/ladders) satisfy all three — exactly the corner L7-as-drafted
+missed. Clause 3 unrestricted is vacuous (f may factor N internally); under polylog it
+is morally safe but NOT unconditionally provable (= sublinear-time factoring
+separation, likely permanent — L7-e open). THE FALSIFICATION, two failures:
+FAILURE 1 the PRIOR-SHAPE CHANNEL Lambda — static-order optimality is mass-sorting;
+whether the mass-sort IS sqrt-descending is a POPULATION property (MLR of divisor-mass
+in -|x-sqrtN|). Arithmetic-uniform N: Mertens/Dickman tilt m(v) ~ 1/v ANTI-monotone,
+ascending wins outright S=2.13 on the uniform proxy (~H_M growth). Hard-balanced
+generators q<2p: within-window mass bottom-heavy, tilt z = 0.4095–0.4148 vs analytic
+0.414 for r=q/p ~ U[1,2] — WINDOW-ASCENDING BEATS SQRT-DESCENDING **1.58x±0.03**
+(BAL_prime 1.5785±0.029, BAL_intsnap 1.6114±0.033, n=2400 each; analytic two-stage
+0.138v/0.219v = 1.587 matches). The attempt's quoted 1.71–1.91 was its own n=150
+sampling inflation — its ANALYTIC prediction 1.59 was right all along. FAILURE 2 the
+interaction term kills S(Pi)=S(sigma)*S(delta): sigma∘delta factorization exists but
+is definitional/vacuous (singleton blocks), coupled residue orders show apparent gains
+only off-MLR as PRIOR-SHAPE LEAKAGE. SIGN-FLIP LAW with clean crossover at
+E[sqrt r] = 2/(1+1/sqrt2) = 1.1716: wide band (hard q<2p, E~1.14) ascending wins
+1.58x; narrow bands top-heavy z=0.6466 DESCENDING extremal (Lambda=1.0 argmin win_desc,
+window-ascending LOSES S=0.57); P137 pool between (z=0.5588). CORRECTED MASTER
+INEQUALITY L7′: S(Pi) <= (4/3)*min(1/mu_eff, 2^k_bits)/Lambda(pop), mu_eff STRUCTURAL
+keep-fraction — ZERO violations across policy arms x four pools (verifier recomputed,
+incl. hybrid filter×reorder stress arm). Wheel calibration hits T1 law exactly:
+mu = phi(30)/30 = 4/15 => T1 protocol-A P_hit=1 predicts 30/phi(30) = 3.750, measured
+3.7331–3.7496 (headline 3.741 vs 3.750, gap 0.25–0.31%). mu_eff BOOKING CAVEAT
+LOAD-BEARING: pure-permutation cells satisfy the cap tautologically at mu_booked=1;
+the window+wheel hybrid reaches S=4.06 on P137 against a 1.77 cap if its mu were
+booked 1 — structural mu extraction (L7-d) is what makes the cap non-vacuous.
+OBSTRUCTION WITNESSES CORRECTED BY VERIFIER: Jacobi witness DROPPED — (N|x)=0
+IDENTICALLY at x=p since N≡0 mod p (100% of draws, jacobi_p_is_zero=1.0; promoted
+share among coprime x = 0.5036/0.5015 fair coin) — algebraic degeneracy measuring
+"p divides N", not prior shape; ledger item recorded. Replaced by KEYED-VS-FIXED
+MOD-3 CONTROL proving residue couplings carry zero information: N-keyed promotion vs
+fixed-key statistically identical (S 0.6366/0.6537 BAL_prime, 0.684/0.660 P137),
+hit-enrichment ≈ 1/2 BOTH arms — apparent gains are Λ-leakage on non-MLR marginals
+only (factor-blind law replicated with a proper control; strengthens papers 130/136).
+exp570 transfer bounded honestly: early-fire is an ECM completion law, TD has none —
+what transfers is FRONT-LOADING => HEAD-DOMINATION (front-at-√N surrogate: desc 948 <
+ladder-aligned 1493 < naive 3149; front-at-low-end flips); dominance needs the
+centering axiom too; ladder-aligned ≈ descending S=0.990, ladder-naive collapses 0.27.
+PAPER 137 REFINED NOT CONTRADICTED: verifier replicated descending winning ON 137's
+OWN pool — trunc_asc S=0.9278 i.e. asc/desc = 1.078x vs recorded 1.08x; window policy
+UNDEFINED on 21.6% of that pool's draws (win_asc_miss_frac 0.216); Λ-dominance ONLY
+under hard q<2p balance — deployable gains require FIRST verifying the deployed
+generator enforces balance (policy undefined otherwise). STATUS: L7′ PROVEN-SKETCH
+(zero-violation finite audit + classical analytic core), contingent on ranked lemmas:
+**L7-a HIGHEST VALUE next step (hours): measure the DEPLOYED generator's r-law and
+restate L7′ with measured Lambda_lab** — without it Λ is unmeasured and the MLR
+premise unchecked; L7-b exchange theorem write-out; L7-c master-inequality proof from
+touch-floor accounting; L7-d structural mu_eff/k_bits extraction (load-bearing NOW);
+L7-e unconditional factor-blindness of polylog-computable f (open, likely permanent —
+adopt hardness-relative or oracle-relativize). Draft edits downstream: paper 219's L7
+entry rewrites to L7′; Conjecture D SET-component gains Λ loses equality; O1/O2
+sharpened (population measure SELECTS the extremal order). Barrier validation:
+barrier-4 positional converse now has extremality corrected — position works through
+a population-shaped channel whose sign is measurable, residue cap 4/3 untouched, no
+breakthrough claimed. Count unchanged by experiment (papers-only bump, same convention
+as paper 219): still 562 experiments (max id 572), papers now 221. Assessment
+v328. Paper 221, issue #367.

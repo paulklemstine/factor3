@@ -2451,3 +2451,34 @@ cost drift. Barrier framing: scale-smoothness frontier u≥9–14 strengthens th
 papers 130/209/214/216 randomness line at rule level (H0 edge improves to 0.102
 @1e5 / 0.078 @1e6 this run alone); no barrier breached, no constant shaved. No
 breakthrough claimed. Paper 220, issue #366.
+
+**Assessment addendum v328 — 2026-08-24 (round-76 #1).** THEORY deliverable, no new
+experiment id; papers-only bump convention stated explicitly: experiment COUNT
+unchanged at 562 (max id 572), papers 220 → 221, version v327 → v328 (same convention
+as paper 219). Content: GAP-L7 of paper 219's roadmap FALSIFIED in principle and
+replaced by verified L7′. The action space is now formalized (REORDER class: uniform
+computable f:(k,N)↦a_k enumerating I(N), test-blind order committing ex ante,
+polylog overhead charging) and the extremality conjecture dies on two failures:
+(1) the NEW Λ CHANNEL — the extremal order is the POPULATION MASS-SORT, not
+sqrt-descending; window-ascending beats descending **1.58×±0.03** under hard q<2p
+balance (n=2400 independent verification per pool; the attempt's quoted 1.71–1.91 was
+n=150 sampling inflation — its own analytic prediction 1.587 was right), with a
+sign-flip law at crossover E[√r]=2/(1+1/√2)=1.1716 (narrow bands ⇒ descending
+extremal, window-ascending loses S=0.57); ascending wins outright (~2.13×, ~H_M)
+on uniform marginals; (2) the σ∘δ factorization is definitional/vacuous, coupled
+residue orders' apparent gains are prior-shape leakage. Corrected master inequality
+S ≤ (4/3)·min(1/μ_eff, 2^k)/Λ verified at ZERO violations across policy arms × four
+pools; wheel hits the T1 protocol-A law exactly (measured 3.733–3.750 vs 30/φ(30)=3.75,
+gap 0.25–0.31%); μ_eff booking caveat load-bearing (hybrid window+wheel S=4.06 vs a
+misclassified-cap 1.77 confirms L7-d's necessity). Witness corrections recorded as
+ledger items: Jacobi witness DROPPED ((N|x)=0 identically at x=p since N≡0 mod p —
+algebraic degeneracy), replaced by keyed-vs-fixed mod-3 control proving residue
+couplings carry zero information (enrichment ≈½ both arms — factor-blind law
+strengthened). PAPER 137 REFINED NOT CONTRADICTED: descending replicated winning on
+137's own pool (asc/desc = 1.078× vs recorded 1.08×); Λ-dominance exists ONLY under
+hard balance, policy undefined on 21.6% of that pool — deployable gains require first
+verifying the deployed generator's balance. Status L7′ PROVEN-SKETCH pending ranked
+lemmas; named highest-value next step **L7-a: measure the real generator tilt of
+deployed populations** (Λ_lab unmeasured otherwise). Barrier validation: barrier map
+gains a measurable sign-flipping positional channel, residue cap 4/3 untouched, no
+breakthrough claimed. Paper 221, issue #367.

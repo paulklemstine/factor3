@@ -1,0 +1,738 @@
+{
+ "BAL_prime": {
+  "gen": "BAL_prime",
+  "n": 2400,
+  "desc": {
+   "cost": 676.3,
+   "S": 1.0,
+   "S_se": 0.0,
+   "hits": 2400
+  },
+  "asc": {
+   "cost": 3088.21,
+   "S": 0.219,
+   "S_se": 0.0019,
+   "hits": 2400
+  },
+  "win_asc": {
+   "cost": 428.44,
+   "S": 1.5785,
+   "S_se": 0.029,
+   "hits": 2400
+  },
+  "win_desc": {
+   "cost": 676.3,
+   "S": 1.0,
+   "S_se": 0.0,
+   "hits": 2400
+  },
+  "wheel": {
+   "cost": 180.79,
+   "S": 3.7408,
+   "S_se": 0.0001,
+   "hits": 2400
+  },
+  "coup_mod3_keyed": {
+   "cost": 1062.33,
+   "S": 0.6366,
+   "S_se": 0.0057,
+   "hits": 2400
+  },
+  "coup_mod3_fixed": {
+   "cost": 1034.63,
+   "S": 0.6537,
+   "S_se": 0.0082,
+   "hits": 2400
+  },
+  "hybrid_winwheel": {
+   "cost": 180.79,
+   "S": 3.7408,
+   "S_se": 0.0001,
+   "hits": 2400
+  },
+  "hybrid_winwheel210": {
+   "cost": 521.23,
+   "S": 1.2975,
+   "S_se": 0.0,
+   "hits": 2400
+  },
+  "trunc_asc": {
+   "cost": 2977.6,
+   "S": 0.2271,
+   "S_se": 0.002,
+   "hits": 2400
+  },
+  "lad_naive": {
+   "cost": 2518.74,
+   "S": 0.2685,
+   "S_se": NaN,
+   "hits": 1200
+  },
+  "lad_align": {
+   "cost": 682.83,
+   "S": 0.9904,
+   "S_se": NaN,
+   "hits": 1200
+  },
+  "tilt_mean_z": 0.4148,
+  "tilt_deciles": [
+   0.061,
+   0.205,
+   0.374,
+   0.576,
+   0.847
+  ],
+  "win_asc_miss_frac": 0.0,
+  "trunc_asc_miss_frac": 0.0,
+  "enrichment": {
+   "mod3_keyed": 0.4342,
+   "mod3_fixed": 0.4512,
+   "jacobi_p_is_plus1": 0.0,
+   "jacobi_p_is_zero": 1.0,
+   "jacobi_x_promoted_share_among_coprime": 0.5036
+  },
+  "Lambda_best_over_desc": 0.6335,
+  "Lambda_argmin": "win_asc",
+  "cap_audit": [
+   [
+    "desc",
+    1.0,
+    2.1047,
+    true,
+    1.0,
+    2.105,
+    false
+   ],
+   [
+    "asc",
+    0.219,
+    2.1047,
+    true,
+    1.0,
+    2.105,
+    false
+   ],
+   [
+    "win_asc",
+    1.5785,
+    2.1047,
+    true,
+    1.0,
+    2.105,
+    false
+   ],
+   [
+    "win_desc",
+    1.0,
+    2.1047,
+    true,
+    1.0,
+    2.105,
+    false
+   ],
+   [
+    "wheel",
+    3.7408,
+    7.8927,
+    true,
+    0.26667,
+    2.105,
+    true
+   ],
+   [
+    "coup_mod3_keyed",
+    0.6366,
+    2.1047,
+    true,
+    1.0,
+    2.105,
+    false
+   ],
+   [
+    "coup_mod3_fixed",
+    0.6537,
+    2.1047,
+    true,
+    1.0,
+    2.105,
+    false
+   ],
+   [
+    "hybrid_winwheel",
+    3.7408,
+    19.672,
+    true,
+    0.10699,
+    2.105,
+    true
+   ],
+   [
+    "hybrid_winwheel210",
+    1.2975,
+    6.7938,
+    true,
+    0.3098,
+    2.105,
+    false
+   ],
+   [
+    "trunc_asc",
+    0.2271,
+    2.1047,
+    true,
+    1.0,
+    2.105,
+    false
+   ],
+   [
+    "lad_naive",
+    0.2685,
+    2.1047,
+    true,
+    1.0,
+    2.105,
+    false
+   ],
+   [
+    "lad_align",
+    0.9904,
+    2.1047,
+    true,
+    1.0,
+    2.105,
+    false
+   ]
+  ],
+  "violations": [],
+  "hybrid_S_if_mu_charged_1_cap": 2.105,
+  "hybrid_S_actual": 3.741
+ },
+ "BAL_intsnap": {
+  "gen": "BAL_intsnap",
+  "n": 2400,
+  "desc": {
+   "cost": 680.2,
+   "S": 1.0,
+   "S_se": 0.0,
+   "hits": 2400
+  },
+  "asc": {
+   "cost": 3076.0,
+   "S": 0.2211,
+   "S_se": 0.0021,
+   "hits": 2400
+  },
+  "win_asc": {
+   "cost": 422.11,
+   "S": 1.6114,
+   "S_se": 0.0328,
+   "hits": 2400
+  },
+  "win_desc": {
+   "cost": 680.2,
+   "S": 1.0,
+   "S_se": 0.0,
+   "hits": 2400
+  },
+  "wheel": {
+   "cost": 181.82,
+   "S": 3.741,
+   "S_se": 0.0002,
+   "hits": 2400
+  },
+  "coup_mod3_keyed": {
+   "cost": 1053.67,
+   "S": 0.6456,
+   "S_se": 0.009,
+   "hits": 2400
+  },
+  "coup_mod3_fixed": {
+   "cost": 1036.94,
+   "S": 0.656,
+   "S_se": 0.0057,
+   "hits": 2400
+  },
+  "hybrid_winwheel": {
+   "cost": 181.82,
+   "S": 3.741,
+   "S_se": 0.0002,
+   "hits": 2400
+  },
+  "hybrid_winwheel210": {
+   "cost": 524.26,
+   "S": 1.2974,
+   "S_se": 0.0,
+   "hits": 2400
+  },
+  "trunc_asc": {
+   "cost": 2965.64,
+   "S": 0.2294,
+   "S_se": 0.0022,
+   "hits": 2400
+  },
+  "tilt_mean_z": 0.4095,
+  "tilt_deciles": [
+   0.056,
+   0.2,
+   0.372,
+   0.575,
+   0.827
+  ],
+  "win_asc_miss_frac": 0.0,
+  "trunc_asc_miss_frac": 0.0,
+  "enrichment": {
+   "mod3_keyed": 0.4383,
+   "mod3_fixed": 0.4537
+  },
+  "Lambda_best_over_desc": 0.62057,
+  "Lambda_argmin": "win_asc",
+  "cap_audit": [
+   [
+    "desc",
+    1.0,
+    2.1486,
+    true,
+    1.0,
+    2.149,
+    false
+   ],
+   [
+    "asc",
+    0.2211,
+    2.1486,
+    true,
+    1.0,
+    2.149,
+    false
+   ],
+   [
+    "win_asc",
+    1.6114,
+    2.1486,
+    true,
+    1.0,
+    2.149,
+    false
+   ],
+   [
+    "win_desc",
+    1.0,
+    2.1486,
+    true,
+    1.0,
+    2.149,
+    false
+   ],
+   [
+    "wheel",
+    3.741,
+    8.0571,
+    true,
+    0.26667,
+    2.149,
+    true
+   ],
+   [
+    "coup_mod3_keyed",
+    0.6456,
+    2.1486,
+    true,
+    1.0,
+    2.149,
+    false
+   ],
+   [
+    "coup_mod3_fixed",
+    0.656,
+    2.1486,
+    true,
+    1.0,
+    2.149,
+    false
+   ],
+   [
+    "hybrid_winwheel",
+    3.741,
+    20.7828,
+    true,
+    0.10338,
+    2.149,
+    true
+   ],
+   [
+    "hybrid_winwheel210",
+    1.2974,
+    7.1916,
+    true,
+    0.29876,
+    2.149,
+    false
+   ],
+   [
+    "trunc_asc",
+    0.2294,
+    2.1486,
+    true,
+    1.0,
+    2.149,
+    false
+   ]
+  ],
+  "violations": [],
+  "hybrid_S_if_mu_charged_1_cap": 2.149,
+  "hybrid_S_actual": 3.741
+ },
+ "BAL_narrow": {
+  "gen": "BAL_narrow",
+  "n": 1600,
+  "desc": {
+   "cost": 363.9,
+   "S": 1.0,
+   "S_se": 0.0,
+   "hits": 1600
+  },
+  "asc": {
+   "cost": 3057.78,
+   "S": 0.119,
+   "S_se": 0.0019,
+   "hits": 1600
+  },
+  "win_asc": {
+   "cost": 640.42,
+   "S": 0.5682,
+   "S_se": 0.0124,
+   "hits": 1600
+  },
+  "win_desc": {
+   "cost": 363.9,
+   "S": 1.0,
+   "S_se": 0.0,
+   "hits": 1600
+  },
+  "wheel": {
+   "cost": 97.48,
+   "S": 3.7331,
+   "S_se": 0.0003,
+   "hits": 1600
+  },
+  "coup_mod3_keyed": {
+   "cost": 803.04,
+   "S": 0.4532,
+   "S_se": 0.0126,
+   "hits": 1600
+  },
+  "coup_mod3_fixed": {
+   "cost": 814.22,
+   "S": 0.4469,
+   "S_se": 0.0061,
+   "hits": 1600
+  },
+  "hybrid_winwheel": {
+   "cost": 97.48,
+   "S": 3.7331,
+   "S_se": 0.0003,
+   "hits": 1600
+  },
+  "hybrid_winwheel210": {
+   "cost": 280.25,
+   "S": 1.2985,
+   "S_se": 0.0001,
+   "hits": 1600
+  },
+  "trunc_asc": {
+   "cost": 2967.57,
+   "S": 0.1226,
+   "S_se": 0.0019,
+   "hits": 1600
+  },
+  "tilt_mean_z": 0.6466,
+  "tilt_deciles": [
+   0.419,
+   0.516,
+   0.624,
+   0.753,
+   0.905
+  ],
+  "win_asc_miss_frac": 0.0,
+  "trunc_asc_miss_frac": 0.0,
+  "enrichment": {
+   "mod3_keyed": 0.4631,
+   "mod3_fixed": 0.4475
+  },
+  "Lambda_best_over_desc": 1.0,
+  "Lambda_argmin": "win_desc",
+  "cap_audit": [
+   [
+    "desc",
+    1.0,
+    1.3333,
+    true,
+    1.0,
+    1.333,
+    false
+   ],
+   [
+    "asc",
+    0.119,
+    1.3333,
+    true,
+    1.0,
+    1.333,
+    false
+   ],
+   [
+    "win_asc",
+    0.5682,
+    1.3333,
+    true,
+    1.0,
+    1.333,
+    false
+   ],
+   [
+    "win_desc",
+    1.0,
+    1.3333,
+    true,
+    1.0,
+    1.333,
+    false
+   ],
+   [
+    "wheel",
+    3.7331,
+    5.0,
+    true,
+    0.26667,
+    1.333,
+    true
+   ],
+   [
+    "coup_mod3_keyed",
+    0.4532,
+    1.3333,
+    true,
+    1.0,
+    1.333,
+    false
+   ],
+   [
+    "coup_mod3_fixed",
+    0.4469,
+    1.3333,
+    true,
+    1.0,
+    1.333,
+    false
+   ],
+   [
+    "hybrid_winwheel",
+    3.7331,
+    16.4163,
+    true,
+    0.08122,
+    1.333,
+    true
+   ],
+   [
+    "hybrid_winwheel210",
+    1.2985,
+    5.681,
+    true,
+    0.2347,
+    1.333,
+    false
+   ],
+   [
+    "trunc_asc",
+    0.1226,
+    1.3333,
+    true,
+    1.0,
+    1.333,
+    false
+   ]
+  ],
+  "violations": [],
+  "hybrid_S_if_mu_charged_1_cap": 1.333,
+  "hybrid_S_actual": 3.733
+ },
+ "P137": {
+  "gen": "P137",
+  "n": 500,
+  "desc": {
+   "cost": 13336.36,
+   "S": 1.0,
+   "S_se": 0.0,
+   "hits": 500
+  },
+  "asc": {
+   "cost": 66394.97,
+   "S": 0.2009,
+   "S_se": 0.0082,
+   "hits": 500
+  },
+  "win_asc": {
+   "cost": 10018.55,
+   "S": 1.3312,
+   "S_se": 0.1176,
+   "hits": 500
+  },
+  "win_desc": {
+   "cost": 13336.36,
+   "S": 1.0,
+   "S_se": 0.0,
+   "hits": 500
+  },
+  "wheel": {
+   "cost": 3556.73,
+   "S": 3.7496,
+   "S_se": 0.0,
+   "hits": 500
+  },
+  "coup_mod3_keyed": {
+   "cost": 19509.07,
+   "S": 0.6836,
+   "S_se": 0.0262,
+   "hits": 500
+  },
+  "coup_mod3_fixed": {
+   "cost": 20222.55,
+   "S": 0.6595,
+   "S_se": 0.0317,
+   "hits": 500
+  },
+  "hybrid_winwheel": {
+   "cost": 3283.18,
+   "S": 4.062,
+   "S_se": 0.0177,
+   "hits": 500
+  },
+  "hybrid_winwheel210": {
+   "cost": 9496.59,
+   "S": 1.4043,
+   "S_se": 0.0061,
+   "hits": 500
+  },
+  "trunc_asc": {
+   "cost": 14374.34,
+   "S": 0.9278,
+   "S_se": 0.0308,
+   "hits": 500
+  },
+  "tilt_mean_z": 0.5588,
+  "tilt_deciles": [
+   0.157,
+   0.4,
+   0.583,
+   0.763,
+   0.91
+  ],
+  "win_asc_miss_frac": 0.216,
+  "trunc_asc_miss_frac": 0.0,
+  "enrichment": {
+   "mod3_keyed": 0.516,
+   "mod3_fixed": 0.496,
+   "jacobi_p_is_plus1": 0.0,
+   "jacobi_p_is_zero": 1.0,
+   "jacobi_x_promoted_share_among_coprime": 0.5015
+  },
+  "Lambda_best_over_desc": 0.75122,
+  "Lambda_argmin": "win_asc",
+  "cap_audit": [
+   [
+    "desc",
+    1.0,
+    1.7749,
+    true,
+    1.0,
+    1.775,
+    false
+   ],
+   [
+    "asc",
+    0.2009,
+    1.7749,
+    true,
+    1.0,
+    1.775,
+    false
+   ],
+   [
+    "win_asc",
+    1.3312,
+    1.7749,
+    true,
+    1.0,
+    1.775,
+    false
+   ],
+   [
+    "win_desc",
+    1.0,
+    1.7749,
+    true,
+    1.0,
+    1.775,
+    false
+   ],
+   [
+    "wheel",
+    3.7496,
+    6.6558,
+    true,
+    0.26667,
+    1.775,
+    true
+   ],
+   [
+    "coup_mod3_keyed",
+    0.6836,
+    1.7749,
+    true,
+    1.0,
+    1.775,
+    false
+   ],
+   [
+    "coup_mod3_fixed",
+    0.6595,
+    1.7749,
+    true,
+    1.0,
+    1.775,
+    false
+   ],
+   [
+    "hybrid_winwheel",
+    4.062,
+    19.4406,
+    true,
+    0.0913,
+    1.775,
+    true
+   ],
+   [
+    "hybrid_winwheel210",
+    1.4043,
+    6.7204,
+    true,
+    0.26411,
+    1.775,
+    false
+   ],
+   [
+    "trunc_asc",
+    0.9278,
+    1.7749,
+    true,
+    1.0,
+    1.775,
+    false
+   ]
+  ],
+  "violations": [],
+  "hybrid_S_if_mu_charged_1_cap": 1.775,
+  "hybrid_S_actual": 4.062
+ }
+}
