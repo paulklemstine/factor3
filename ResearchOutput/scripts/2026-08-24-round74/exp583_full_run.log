@@ -1,0 +1,19 @@
+design: obs rows building...
+obs rows: 521594
+obs fits done 8.2s stat=100.57 p=1.17e-21
+hit arm LRT+perm done 159.0s
+boot done 33.7s reps=150
+control arm rows: 1024000
+control arm done 70.6s
+{
+ "verdict": "H0_CHANNEL_CLOSES",
+ "conditions": {
+  "T_LRT_free_vs_linear_asym<0.001": true,
+  "T_LRT_free_vs_linear_perm<0.001": false,
+  "interior_max_in_[0.4,0.8]": false,
+  "peak_to_end_CI_excl_1": true,
+  "control_null": true
+ },
+ "one_line": "H0_CHANNEL_CLOSES: free-vs-linear LRT stat=100.6 df=3 asym p=1.17e-21 perm p=0.0025; x*=0.020 CI[0.020,0.020]; peak/end=2.543 CI[2.243,2.798]; control asym p=0.0351 perm p=0.8557"
+}
+WALL 273.4 -> /home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp583_result.json

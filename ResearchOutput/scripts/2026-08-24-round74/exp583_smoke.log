@@ -1,0 +1,18 @@
+design: obs rows building...
+obs rows: 5515
+hit arm LRT+perm done 2.4s
+boot done 1.6s reps=60
+control arm rows: 6400
+control arm done 0.3s
+{
+ "verdict": "H0_CHANNEL_CLOSES",
+ "conditions": {
+  "T_LRT_free_vs_linear_asym<0.001": true,
+  "T_LRT_free_vs_linear_perm<0.001": false,
+  "interior_max_in_[0.4,0.8]": false,
+  "peak_to_end_CI_excl_1": true,
+  "control_null": true
+ },
+ "one_line": "H0_CHANNEL_CLOSES: free-vs-linear LRT stat=20.6 df=3 asym p=0.00013 perm p=0.0244; x*=0.020 CI[0.020,0.020]; peak/end=2.657 CI[2.403,4.847]; control asym p=0.622 perm p=0.8571"
+}
+WALL 5.4 -> /home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp583_smoke_result.json

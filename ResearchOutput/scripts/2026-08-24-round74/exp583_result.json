@@ -1,0 +1,91 @@
+{
+ "exp": 583,
+ "codename": "SHAPE-TEST-NONPARAM",
+ "mode": "full",
+ "source_npz": "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp581_regen_positions.npz",
+ "config": {
+  "S": 128,
+  "taus": [
+   0.25,
+   0.5,
+   0.75
+  ],
+  "perm_B": 400,
+  "boot_B": 150,
+  "ctl_cap_loop": 200,
+  "ctl_cap_obs": null,
+  "prereg": "header of exp583_shape_test_nonparam.py; minimal skeleton per coordinator",
+  "skipped_legs": [
+   "monotone I-spline/isotonic comparison",
+   "Dickman-offset baseline"
+  ]
+ },
+ "stats": {
+  "n_hits": 9594,
+  "n_ctl_full": 512000,
+  "hit_arm": {
+   "lrt": {
+    "stat": 100.57402266316058,
+    "df": 3,
+    "p_asym": 1.1696797337889485e-21,
+    "p_perm": 0.0024937655860349127,
+    "ll_free": -20128.35646330119,
+    "ll_linear": -20163.8271230142,
+    "beta_free": [
+     5.328193476624815,
+     -9.702444694954535,
+     15.315376552569443,
+     0.6820394931361873
+    ]
+   },
+   "x_star": 0.02,
+   "x_star_boot_ci": [
+    0.02,
+    0.02
+   ],
+   "peak_to_end_ratio": 2.5431290097804604,
+   "ratio_boot_ci": [
+    2.242924484336957,
+    2.7975269722949023
+   ],
+   "boot_reps_used": 150
+  },
+  "control_arm": {
+   "lrt": {
+    "stat": 8.601778971264139,
+    "df": 3,
+    "p_asym": 0.03508188695040897,
+    "p_perm": 0.8557213930348259,
+    "ll_free": -35488.78179465815,
+    "ll_linear": -35489.13560443361,
+    "beta_free": [
+     0.1213223672277188,
+     0.12667372792125345,
+     -0.7130047700204063,
+     0.9815218180772098
+    ]
+   },
+   "x_star": 0.28600000000000003,
+   "peak_to_end_ratio": 1.0045396180609663
+  }
+ },
+ "verdicts": {
+  "verdict": "H0_CHANNEL_CLOSES",
+  "conditions": {
+   "T_LRT_free_vs_linear_asym<0.001": true,
+   "T_LRT_free_vs_linear_perm<0.001": false,
+   "interior_max_in_[0.4,0.8]": false,
+   "peak_to_end_CI_excl_1": true,
+   "control_null": true
+  },
+  "one_line": "H0_CHANNEL_CLOSES: free-vs-linear LRT stat=100.6 df=3 asym p=1.17e-21 perm p=0.0025; x*=0.020 CI[0.020,0.020]; peak/end=2.543 CI[2.243,2.798]; control asym p=0.0351 perm p=0.8557"
+ },
+ "honest_notes": [
+  "MINIMAL SKELETON shipped under coordinator fuse (~15 min): monotone-I-spline and Dickman-offset legs SKIPPED, not failed -- H1's 'beats monotone' clause UNTESTED here; verdict names shape-vs-LINEAR only",
+  "no binning anywhere: raw case-control logistic, stratum-conditional intercepts (128)",
+  "x=(N-jlo)/(jhi-jlo) convention VERIFIED from ctl arrays linear-uniform (pre-script check)",
+  "perm/boot on control-capped design (200/stratum); observed stats on full-cap design",
+  "seeds P/B/S = 20260902/20260903/20260904"
+ ],
+ "wall_s": 273.4
+}

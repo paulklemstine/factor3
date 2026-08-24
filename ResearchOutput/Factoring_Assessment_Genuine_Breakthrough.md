@@ -2767,3 +2767,29 @@ peak; control denominator := uniform sampling null after a manufactured control 
 addendum timing disclosed, no registered bar changed; deterministic 6.1 s re-run; single bootstrap
 seed noted. Barrier framing: prevents a wrong closure of the geometry channel; residue cap
 untouched; no breakthrough claimed. Paper 232, issue #380.
+
+**Assessment addendum v340 — 2026-08-24 (round-82 #2).** Experiment recorded (count 571 → 572);
+papers 232 → 233; version v339 → v340. Content: exp583 SHAPE-TEST-NONPARAM — paper 232's named
+follow-up, the binning-independent shape test on the mid-window excess. VERDICT
+**H0_CHANNEL_CLOSES** (registered rule), with the decisive decomposition: free-spline (df5,
+knots .25/.5/.75) vs linear-x LRT on the RAW hit-indicator (zero binning; stratum-conditional
+case-control logistic, 128 profiled intercepts) stat=100.6 df=3 asym p=1.17e-21, permutation
+0/400 exceedances (p ≤ 0.0025 floor at B=400) — REAL non-linear structure exists — but it is a
+STEEP MONOTONE DECLINE: interior max x* = 0.020 CI[0.020, 0.020] pinned at the LEFT EDGE across
+all 150 bootstrap reps ([0.4,0.8] interior bar FAILS); peak/end = 2.54 CI[2.243, 2.798]. Control
+arm null (perm p=0.856). Deciles strictly declining with only a +1.6% ghost near u*≈0.6 — the
+exp582 vertex ghost, a baseline-relative ripple, not a mode.
+**ERRATUM-GRADE CORRECTION TO RECORDED PAPER 229**: its RESIDUAL-PEAKED-MID-WINDOW verdict was
+BASELINE-CURVATURE LEAKAGE — the excess lived in the Dickman denominator's own curvature, not in
+position shape. Paper 229's POWER-LAW headline T ∝ (1+x)^−1.10 STANDS and is STRENGTHENED (it
+captured the true monotone form); its peaked-residual characterization is RETRACTED; any revival
+must be stated as a baseline-mis-specification claim. CONSEQUENCE: the absolute-shape channel
+CLOSES; the map keeps ONE open item on this thread — the rate-layer N-covariate (what N-property
+carries hit-richness). Coordinator fuse disclosure: monotone-I-spline and Dickman-offset legs
+SKIPPED under the minimal-ship order (documented) — H1's "beats monotone" clause untested; the
+two run legs suffice for the registered comparison since the location clause fails independently.
+Ledger: design-matrix scale surprise (obs rows 521,594; control rows 1,024,000) handled within
+budget; perm/boot capped designs disclosed; wall 273.4 s; seeds P/B/S 20260902/03/04. Barrier
+framing: scale-smoothness mechanism frontier — clean closure blocking a wrong positional-mode
+hunt while re-confirming the power-law binning-free; residue cap untouched; no breakthrough
+claimed. Paper 233, issue #381.

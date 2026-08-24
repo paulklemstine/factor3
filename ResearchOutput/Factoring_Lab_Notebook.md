@@ -11311,3 +11311,54 @@ post-reconciliation 6.1 s; cluster bootstrap 2000 reps seed 20260901 (single see
 framing: PREVENTS A WRONG CLOSURE — a naive reading of either earlier verdict would have shut the
 geometry channel that the data say is real; residue cap untouched; no breakthrough claimed.
 Count 570 -> 571. Assessment v338 -> v339. Paper 232, issue #380.
+
+## Part 275 - SHAPE-TEST-NONPARAM (round-82 #2, exp 583, v340)
+
+Runs paper 232's NAMED FOLLOW-UP (the binning-independent shape test) and closes the thread with
+an erratum-grade correction: does the ±20% mid-window "hump" survive as ABSOLUTE SHAPE of the
+hit-indicator vs normalized position x with ZERO binning? Pure reanalysis of
+exp581_regen_positions.npz (128 strata; hits 9594 / controls 512000; windows [jlo,jhi],
+jhi/jlo=3). Convention verified PRE-SCRIPT: ctl arrays linear-uniform inside each window =>
+x=(N-jlo)/(jhi-jlo). Design: stratum-conditional case-control logistic (128 intercepts
+profiled); free natural cubic spline df=5 (knots .25/.5/.75) vs LINEAR-x; LRT on the FULL design
++ permutation calibration (within-stratum label shuffles, B=400, capped 200-ctl/stratum design);
+bootstrap 150 reps on ratio/x*.
+
+VERDICT: **H0_CHANNEL_CLOSES** (registered rule) — with the decisive decomposition. The
+non-linear structure is REAL: free-vs-linear LRT stat=**100.6** df=3, asym p=**1.17e-21**;
+permutation **0/400** exceedances => p_perm <= 0.0025 (resolution floor at B=400; the registered
+<0.001 perm bar is unmeetable at this B, direction STRONGLY confirms real non-linearity). But it
+is a STEEP MONOTONE DECLINE, not a hump: interior max **x\* = 0.020 CI[0.020, 0.020]** — pinned
+at the LEFT EDGE across all 150 bootstrap reps; the registered interior-max-in-[0.4,0.8] clause
+FAILS outright; peak/end rate-ratio **2.54 CI[2.243, 2.798]** (>1 = decline from a small-x peak,
+exactly Dickman-type). CONTROL ARM null where it must be: perm p=0.856 (asym p=0.035 on the
+big synth design — n≈10^6 detects microscopic wiggle; passes the registered null via the perm
+criterion). Descriptive cross-check: decile hit counts STRICTLY declining
+[1554,1177,1044,927,875,877,863,807,776,694] — the +1.6% blip near u*~0.55-0.65 is exp582's
+vertex GHOST, a baseline-relative ripple, not a mode.
+
+**ERRATUM-GRADE CORRECTION TO RECORDED PAPER 229**: its RESIDUAL-PEAKED-MID-WINDOW verdict was
+BASELINE-CURVATURE LEAKAGE — the mid-window excess lived in the mixture-Dickman DENOMINATOR M's
+own curvature (a baseline-relative quantity R=T/M), NOT in absolute position shape. Paper 229's
+POWER-LAW headline T(x) ≈ 0.0295·(1+x)^−1.104 STANDS and is STRENGTHENED (it captured the true
+monotone form binning-free); its peaked-residual characterization is RETRACTED. Consequence: any
+revival of the mid-window excess must be stated as a BASELINE-MIS-SPECIFICATION claim, never a
+positional mode; the absolute-shape channel CLOSES. The map keeps exactly ONE open item on this
+thread: the RATE-LAYER N-COVARIATE (what N-property carries hit-richness — papers 228/230's
+separate layer, untouched here).
+
+COORDINATOR FUSE DISCLOSURE: shipped as a MINIMAL SKELETON at the ~15-min fuse — the
+monotone-I-spline/isotonic leg and the Dickman-offset leg were SKIPPED (documented in
+result.json skipped_legs), so H1's "beats monotone" clause is UNTESTED here; the verdict names
+shape-vs-LINEAR only, which suffices for the registered comparison because the location clause
+(x* in [0.4,0.8]) fails independently of any monotone comparator.
+
+LEDGER: no binning anywhere (raw indicator); perm/boot on the control-capped design (200/
+stratum) with observed stats from the full-cap design — disclosed; control-arm asym p from a
+large synthetic design vs its perm from the capped one — disclosed; DESIGN-MATRIX SCALE SURPRISE
+caught in-run (obs rows 521,594, control rows 1,024,000) handled within budget; wall **273.4 s**;
+seeds P/B/S = 20260902/20260903/20260904; no commits during run, only exp583_* touched.
+Barrier framing: scale-smoothness mechanism frontier — CLEAN CLOSURE that prevents a wrong
+continuation (hunting a positional mode that does not exist) AND prevents a wrong closure of the
+power-law law itself (re-confirmed, now binning-free). Residue cap untouched; no breakthrough
+claimed. Count 571 -> 572. Assessment v339 -> v340. Paper 233, issue #381.
