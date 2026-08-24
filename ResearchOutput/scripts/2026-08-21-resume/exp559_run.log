@@ -1,0 +1,60 @@
+[23:24:05]  EXP 559 INSTANCE-ADAPTIVE-QS n=400 gmax200=6000000
+[23:24:05] population ready: bitlen mean 40.95, s_lab mean 11.96 [5..19], corr(s_lab,s_or200)=0.714
+[23:24:07] pilot FB200 done in 2.0s: rate median 9.125e-04, deciles [0.0002749931, 0.0005499863, 0.0009124772, 0.0014999625, 0.0025774356]
+[23:24:07] caps: median 515178, max 3433876, total 303.4M candidates
+[23:24:12] scan 50/400 elapsed 5s proj 41s
+[23:24:18] scan 100/400 elapsed 11s proj 44s
+[23:24:21] scan 150/400 elapsed 15s proj 40s
+[23:24:26] scan 200/400 elapsed 19s proj 39s
+[23:24:31] scan 250/400 elapsed 25s proj 39s
+[23:24:36] scan 300/400 elapsed 29s proj 39s
+[23:24:40] scan 350/400 elapsed 33s proj 38s
+[23:24:45] scan 400/400 elapsed 38s proj 38s
+[23:24:45] FB200 scans complete: 303.4M candidates, 38.1s; relations/N median 118, min 5; Ns reaching RREQ=47 at full cap: 360/400
+[23:24:45] calibration FB200: Spearman(s_lab)=0.739 p=3.3e-70 | Spearman(s_or200)=0.778 | Pearson=0.599 | OLS rate=-2.317e-03+2.409e-04*s R2=0.358
+[23:24:53] FB100 arm: depth 300000 (full), relations/N median 10 max 330, Spearman=0.835 Pearson=0.673
+[23:24:54] VERDICT ADAPT-NULL: EARLY-STOP partial-count @t50 (S*=190/400 ach=360, D=60209): EQL=-17.59% PRO=8.59% OR200=-18.69% CHEAT=-146.66% oracle_bound=74.84% || batch-mode eq-success EQL=-7.51% PRO=0.00% | full-plateau ES converges (EQL=2.81% PRO=11.19% vs oracle 51.8%)
+[23:24:54] FB100 equal-rel endpoint: R*=8712 at D=277819, EQL saving=-7.98% PRO saving=14.24%
+[23:24:54] skip curve @L=1217577: theta=q20(10): skip 28.3% work, retain 0.895 success, +28.9% good-subset throughput | H3 REFUTED
+[23:24:55] e2e: 20/20 factored, 1350 relations independently verified -> ASSERTION PASS
+[23:24:55] DONE wall=50.2s -> /home/raver1975/factor3/ResearchOutput/scripts/2026-08-21-resume/exp559_result.json
+[23:27:06]  EXP 559 INSTANCE-ADAPTIVE-QS n=400 gmax200=6000000
+[23:27:06] population ready: bitlen mean 40.95, s_lab mean 11.96 [5..19], corr(s_lab,s_or200)=0.714
+[23:27:08] pilot FB200 done in 2.0s: rate median 9.125e-04, deciles [0.0002749931, 0.0005499863, 0.0009124772, 0.0014999625, 0.0025774356]
+[23:27:08] caps: median 515178, max 3433876, total 303.4M candidates
+[23:27:13] scan 50/400 elapsed 5s proj 42s
+[23:27:20] scan 100/400 elapsed 11s proj 46s
+[23:27:24] scan 150/400 elapsed 16s proj 42s
+[23:27:28] scan 200/400 elapsed 20s proj 41s
+[23:27:34] scan 250/400 elapsed 26s proj 41s
+[23:27:38] scan 300/400 elapsed 30s proj 40s
+[23:27:42] scan 350/400 elapsed 34s proj 39s
+[23:27:47] scan 400/400 elapsed 39s proj 39s
+[23:27:47] FB200 scans complete: 303.4M candidates, 38.5s; relations/N median 118, min 5; Ns reaching RREQ=47 at full cap: 360/400
+[23:27:47] calibration FB200: Spearman(s_lab)=0.739 p=3.3e-70 | Spearman(s_or200)=0.778 | Pearson=0.599 | OLS rate=-2.317e-03+2.409e-04*s R2=0.358
+[23:27:56] FB100 arm: depth 300000 (full), relations/N median 10 max 330, Spearman=0.835 Pearson=0.673
+[23:27:56] VERDICT ADAPT-NULL: EARLY-STOP partial-count @t50 (S*=190/400 ach=360, D=60209): EQL=-17.59% PRO=8.59% OR200=-18.69% CHEAT=-146.66% oracle_bound=74.84% || batch-mode eq-success EQL=-7.51% PRO=0.00% | full-plateau ES converges (EQL=-6.46% PRO=3.64% vs oracle 57.2%)
+[23:27:56] FB100 equal-rel endpoint: R*=8712 at D=277819, EQL saving=-7.98% PRO saving=14.24%
+[23:27:56] skip curve @L=1217577: theta=q20(10): skip 28.3% work, retain 0.895 success, +28.9% good-subset throughput | H3 REFUTED
+[23:27:57] e2e: 20/20 factored, 1350 relations independently verified -> ASSERTION PASS
+[23:27:57] DONE wall=50.8s -> /home/raver1975/factor3/ResearchOutput/scripts/2026-08-21-resume/exp559_result.json
+[23:29:01]  EXP 559 INSTANCE-ADAPTIVE-QS n=400 gmax200=6000000
+[23:29:01] population ready: bitlen mean 40.95, s_lab mean 11.96 [5..19], corr(s_lab,s_or200)=0.714
+[23:29:02] pilot FB200 done in 1.9s: rate median 9.125e-04, deciles [0.0002749931, 0.0005499863, 0.0009124772, 0.0014999625, 0.0025774356]
+[23:29:02] caps: median 515178, max 3433876, total 303.4M candidates
+[23:29:07] scan 50/400 elapsed 5s proj 40s
+[23:29:13] scan 100/400 elapsed 11s proj 43s
+[23:29:17] scan 150/400 elapsed 15s proj 39s
+[23:29:21] scan 200/400 elapsed 19s proj 38s
+[23:29:27] scan 250/400 elapsed 24s proj 39s
+[23:29:31] scan 300/400 elapsed 29s proj 38s
+[23:29:35] scan 350/400 elapsed 32s proj 37s
+[23:29:39] scan 400/400 elapsed 37s proj 37s
+[23:29:39] FB200 scans complete: 303.4M candidates, 36.6s; relations/N median 118, min 5; Ns reaching RREQ=47 at full cap: 360/400
+[23:29:39] calibration FB200: Spearman(s_lab)=0.739 p=3.3e-70 | Spearman(s_or200)=0.778 | Pearson=0.599 | OLS rate=-2.317e-03+2.409e-04*s R2=0.358
+[23:29:47] FB100 arm: depth 300000 (full), relations/N median 10 max 330, Spearman=0.835 Pearson=0.673
+[23:29:48] VERDICT ADAPT-NULL: EARLY-STOP partial-count @t50 (S*=190/400 ach=360, D=60209): EQL=-17.59% PRO=8.59% OR200=-18.69% CHEAT=-146.66% oracle_bound=74.84% || batch-mode eq-success EQL=-7.51% PRO=0.00% | full-plateau ES converges (EQL=-6.46% PRO=3.64% vs oracle 57.2%)
+[23:29:48] FB100 equal-rel endpoint: R*=8712 at D=277819, EQL saving=-7.98% PRO saving=14.24%
+[23:29:48] skip curve @L=1217577: theta=q20(10): skip 28.3% work, retain 0.895 success, +28.9% good-subset throughput | H3 REFUTED
+[23:29:49] e2e: 20/20 factored, 1350 relations independently verified -> ASSERTION PASS
+[23:29:49] DONE wall=48.0s -> /home/raver1975/factor3/ResearchOutput/scripts/2026-08-21-resume/exp559_result.json
