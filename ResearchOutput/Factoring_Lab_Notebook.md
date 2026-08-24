@@ -10543,3 +10543,35 @@ retraction by side-by-side reconstruction; if the independent follow-up confirms
 paper 159's wall sentence gets an AMENDMENT not a silent rewrite - until then 159
 stands as recorded with this audit appended. Wall 1.1s. Paper 215, issue #360. Now
 558 experiments (max id 568). Assessment v322.
+
+## Part 258 - U9-DRIFT-POWER (round-74 #7, exp 569, v323)
+
+Powered rerun of paper 214's banked sub-1 drift (band 9, bitlen-96 balanced
+semiprimes), shipped as an INDEPENDENT-SEED REPLICATION = gate G1 of paper 214's own
+confirmation protocol (role reframed PRE-RUN as scoping after throughput reality:
+76.4us/val caps the night at ~1x pilot power, NOT the aspirational 10-30x; bands
+10/11 deferred). Design: 128 distinct N (seed 20260824), v=j^2-N for j in (s,3s],
+150k samples/N -> exactly 19.2M candidate/control pairs; tester = cumulative
+segment-primorial gcd chains (strip <=1e5 then <=1e6 via classify()); controls PAIRED
+per draw - same bitlen, same 3-bit mantissa head, random low bits - through the
+IDENTICAL code path (G2 by construction); cluster bootstrap NB=2000 percentile CIs.
+VERDICT RANDOMNESS-EXTENDED (pre-registered H0 branch), no gate armed: PRIMARY 1e5
+decision cut ratio CI95 [0.8571,1.1488] covers 1 (excludes_1 FALSE); secondary 1e6
+cut r = 0.0005/0.000506 ~= 0.99, CI [0.919,1.010] over 128 clusters on 19.2M pairs -
+TIGHTEST interval yet above u~9, max CI-edge |r-1| = 0.081 tightening paper 214's
+0.137 deliverable. POOLED with paper 214's pilot at matched conditions: 1e6 pilot
+0.947 [0.863,1.039] vs this 0.99 [0.919,1.010] mutually consistent, joint point
+~= 0.97 - the drift does NOT replicate downward; residual tension DOWNGRADED from
+"banked" to "open at reduced weight"; decisive resolution still needs the 10-30x
+power run (queued named follow-up). DISPLAY DEFECT disclosed prominently: pre-patch
+writer stored round(r,4) so the ~3e-5 candidate rate prints as stored "r_cand": 0.0
+and raw hit counts were NOT persisted (unrecoverable); true value CI-pinned to
+[2.66e-5,3.56e-5] (= CI x rate_ctrl 3.1e-5); paper cites CI-implied bounds, NEVER
+the stored 0.0; script precision-patched POST-run (stored result JSON is pre-patch).
+Other ledger: wall overshoot 1467s vs ~1104s estimate (candidate j^2-N strips slower
+than random strips); smoke-leg verdict field is a NaN artifact of the starved-regime
+bootstrap (<100 non-degenerate resamples -> NaN bounds -> excludes_1 trivially True)
+- non-canonical. Barrier framing: H0 STRENGTHENS papers 130/209/214 randomness into
+the Dickman approach zone through u~11.7; no barrier breached, no constant shaved.
+Wall 1467.4s. Paper 216, issue #362. Now 559 experiments (max id 569). Assessment
+v323.

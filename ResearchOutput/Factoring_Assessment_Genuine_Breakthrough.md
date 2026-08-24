@@ -2295,3 +2295,28 @@ findings.md understated one low-edge cell (canonical JSON has two sub-1.000 cell
 genre precedent paper 91 stands / paper 99 retraction-by-reconstruction; if the
 follow-up confirms, paper 159's wall sentence gets an AMENDMENT, not a silent rewrite.
 No breakthrough.
+
+**Assessment addendum v323 — 2026-08-24 (round-74 #7).** Experiment 569 recorded;
+count now 559 recorded experiments (max id 569). Exp 569 U9-DRIFT-POWER (paper 216,
+issue #362) is the powered rerun of paper 214's banked sub-1 drift, shipped as an
+independent-seed replication (= gate G1 of paper 214's confirmation protocol; role
+reframed PRE-RUN as scoping after throughput reality — 76.4 µs/value caps the night
+at ~1× pilot power, not the aspirational 10–30×). Band 9 only (bitlen-96), 128 N,
+19.2M candidate/control pairs, paired bitlen + 3-bit-mantissa-head controls through
+an identical primorial-gcd-chain code path (G2 by construction), cluster bootstrap
+NB=2000. VERDICT RANDOMNESS-EXTENDED (pre-registered H0 branch): primary 1e5 cut
+ratio CI95 [0.8571, 1.1488] covers 1; secondary 1e6 cut r ≈ 0.99, CI [0.919, 1.010]
+— tightest interval yet above u≈9 (max CI-edge |r−1| = 0.081 vs paper 214's 0.137).
+POOLED with the paper-214 pilot at matched conditions: 0.947 [0.863, 1.039] vs 0.99
+[0.919, 1.010] mutually consistent, joint point ≈ 0.97 — the drift does NOT
+replicate downward; residual tension DOWNGRADED from "banked" to "open at reduced
+weight"; decisive resolution still needs the queued 10–30× power run. DISPLAY DEFECT
+disclosed prominently: pre-patch writer stored round(r,4), so the ~3e-5 candidate
+rate prints as stored "r_cand": 0.0 with raw counts unpersisted (unrecoverable);
+true value CI-pinned [2.66e-5, 3.56e-5]; cite CI-implied bounds, never the stored
+0.0; script precision-patched POST-run (stored JSON is pre-patch). Other ledger:
+wall overshoot 1467 s vs ~1104 s (candidate strips slower than random strips);
+smoke-leg verdict field a NaN artifact of the starved-regime bootstrap,
+non-canonical. Barrier framing: H0 strengthens papers 130/209/214 randomness into
+the Dickman approach zone through u≈11.7; no barrier breached, no constant shaved.
+No breakthrough.

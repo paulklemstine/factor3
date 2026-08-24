@@ -1,0 +1,38 @@
+{
+ "exp": "569",
+ "codename": "U9-DRIFT-POWER",
+ "mode": "full",
+ "seed": 20260824,
+ "n_pool": 128,
+ "jsamples_per_N": 150000,
+ "wall_s": 1467.4,
+ "stats": {
+  "cut_1e5_PRIMARY_DECISION": {
+   "pairs": 19200000,
+   "r_cand": 0.0,
+   "rate_ctrl": 3.1e-05,
+   "ci95_cluster_boot": [
+    0.8571,
+    1.1488
+   ],
+   "excludes_1": false
+  },
+  "cut_1e6_secondary": {
+   "r_cand": 0.0005,
+   "rate_ctrl": 0.000506,
+   "ci95_cluster_boot": [
+    0.919,
+    1.0101
+   ],
+   "excludes_1": false
+  }
+ },
+ "verdict_name": "RANDOMNESS-EXTENDED",
+ "verdict_rule": "CONFIRMED-DEVIATION iff excludes_1@1e5 AND gates G1/G2 pass; RANDOMNESS-EXTENDED otherwise",
+ "honest_notes": [
+  "pair count 19200000 at 76.4us/val -- throughput-limited to ~1x paper214 pilot power, NOT the aspirational 10-30x",
+  "ROLE REFRAMED PRE-RUN (scoping, not verdict-fitting): independent-seed replication = gate G1 of the pre-registered rule; pooled with paper 214's pilot estimate gives the sqrt(2)-tightened joint CI as the drift resolution",
+  "band-9 (bitlen-96) only this pass; bands 10/11 deferred",
+  "decision cut stays 1e5 per header pre-registration; 1e6 secondary reported (higher event rate => better powered, weight disclosed)"
+ ]
+}
