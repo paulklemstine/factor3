@@ -10408,3 +10408,38 @@ prior zero-bit collapse (retained as reference diagnostics per AMENDMENT-1), eve
 bisection stall (lower median fix), V2 MC-noise->dense-grid enumeration, V5
 expectation-vs-bound constant, sham luck/inflation clause split. Wall 2.0s.
 Paper 212, issue #356. Now 555 experiments. Assessment v319.
+
+## Part 255 - MA1-EFFECTIVITY-SWEEP (round-74 #4, exp 566, v320)
+
+Does quadratic-character L-value magnitude carry a COMPUTABLE effectivity criterion
+for MA-1 (the averaging assumption under which which-factor blindness is an identity,
+papers 93/102/132)? Pre-registered: H1 R^2(D(m) vs P(m)=sum |L(1,chi)| over real
+chars mod m)>0.8 => criterion armed; H0 R^2<0.5 honest negative; Mertens gate
+(slope CI contains 1 AND R^2>0.99, else LEDGER CATCH). Verdict CLEAN-H0-HONEST-
+NEGATIVE at TWO scales. Stage A registered design x=2^26 full (pi=3,957,809),
+287 moduli squarefree[3,300]+primes[307,997], wall 9.3s: logD ~ -0.0767 logP,
+slope CI (-0.136,-0.015), R^2=0.0187 [boot 0.0007,0.065], slope NEGATIVE; partial
+R^2 ctrl log phi(m)=0.0008 -> residual association purely a phi(m) size effect;
+chi^2 readout agrees (R^2=0.025); control cross-modulus pairing perm (2000)
+collapses to null mean 0.0033/max 0.0435 (disclosed: literal within-modulus count
+perm is VACUOUS for max/chi^2 readouts - permutation-invariant). Final scaled
+artifact exp566_result.json x=2^28 (pi=14,630,843), 2489 moduli (dense 2..1500 +
+primes beyond), wall 247.7s: primary per-m carrier R^2=0.0785 NULL; cell secondary
+y~log(1/L) R^2=0.00052, B=-0.034 [-0.101,+0.033] not even positive; baseline size
+control OBS~log m alone R^2=0.790 - deviation field is modulus-size-dominated.
+SCOPING CAVEAT prominent: D(m)=max_a|.|/sqrt(E) is SIGN-BLIND -> bounds magnitude
+route ONLY; signed character-alignment follow-up required before killing the
+L-value route. Verification: exact class-number path L(1,chi_-3)=pi/(3sqrt3)
+exact; truncation calibrated on 226 overlap discriminants median rel err 1.8e-5.
+Ledger catches: off-by-one corrupted non-exact L-values (chi_5 0.127 vs true 0.430)
+caught by spot check, fixed, rerun; smoke control gate failed at n=29 (resolved at
+scale); Mertens gate FAIL disclosed (slope 0.9277 [0.9234,0.9320], R^2=0.9894 -
+near-proportional just outside strict band); scale-reconciliation disclosure
+(findings describe stage A, canonical json is stage-B rerun that overwrote it, both
+verdict-identical); coordination disclosure - orphaned duplicate-agent draft
+exp566_ma1_effectivity_alt_agentB.py left in place, no results attached, recorded
+set solely from completing agent. Barrier framing: speaks to barrier-map residual
+"MA-1 effectivity" - H0 does NOT weaken the barrier program; MA-1 stays axiomatic,
+one computable-criterion route honestly bounded at toy scale. No breakthrough.
+Wall A 9.3s + B 247.7s. Paper 213, issue #357. Now 556 experiments (max id 567).
+Assessment v320.

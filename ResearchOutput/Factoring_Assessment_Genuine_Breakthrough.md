@@ -2196,3 +2196,35 @@ hint-taxonomy entry. Ledger catches (A5 uniform-prior zero-bit collapse smoke-ca
 pre-full-run; even-median bisection stall; V2 MC-noise → dense grid; V5 constant fix;
 sham clause split) all clean post-fix. No breakthrough: the ceiling is the same
 isolation cost barriers 4/8 already priced.
+
+**Assessment addendum v320 — 2026-08-24 (round-74 #4).** Experiment 566 recorded; count
+now 556 recorded experiments (max id 567; rounds 54–74 tracked per-paper in
+ResearchOutput/NewMathematics/ papers 185–213 and in the notebook Parts). Exp 566
+MA1-EFFECTIVITY-SWEEP (paper 213, issue #357) attacks the barrier-map residual item
+"MA-1 effectivity": is there a COMPUTABLE per-modulus criterion telling when the MA-1
+averaging assumption (which-factor blindness as identity, papers 93/102/132) is
+realized? Pre-registered carrier: D(m) = max_a |π(x;m,a) − E|/√E regressed on
+P(m) = Σ|L(1,χ)| over nontrivial real quadratic characters mod m; H1 R² > 0.8 arms a
+criterion, H0 R² < 0.5 honest negative; pre-stated Mertens gate (slope CI ⊇ 1 AND
+R² > 0.99, else LEDGER CATCH). CLEAN H0 HONEST NEGATIVE at TWO scales: stage A
+registered design x = 2^26 (π = 3,957,809), 287 moduli, log D ~ −0.0767·log P
+(CI (−0.136, −0.015)), R² = 0.0187 [boot 0.0007–0.065], partial R² controlling
+log φ(m) = 0.0008 — the residual association is purely a φ(m) size effect; control
+cross-modulus pairing permutation collapses to null (mean 0.0033 / max 0.0435).
+Final scaled artifact x = 2^28 (π = 14,630,843), 2489 moduli: primary per-m carrier
+R² = 0.0785, cell-level secondary R² = 0.00052 (theory-signed slope not even
+positive), baseline OBS ~ log m alone explains R² = 0.790 — the deviation field is
+modulus-size-dominated and character-L mass adds nothing after size. SCOPING CAVEAT:
+the registered readout is SIGN-BLIND — this bounds the MAGNITUDE route only; signed
+character-alignment is the required follow-up before the L-value route can be killed.
+Verification clean: exact class-number path L(1, χ₋₃) = π/(3√3) exact; truncation
+calibrated on 226 overlap discriminants (median rel err 1.8e-5). Ledger catches all
+disclosed: off-by-one corrupted non-exact L-values caught by spot check (χ₅ 0.127 vs
+0.430), fixed pre-recorded-fit; smoke control-gate fail at n = 29 resolved at scale;
+Mertens gate FAIL per its own pre-stated rule (slope 0.9277 [0.9234, 0.9320],
+R² = 0.9894); scale-reconciliation disclosure (findings describe stage A while the
+canonical result.json holds the verdict-identical stage-B rerun); coordination
+disclosure (orphaned duplicate-agent draft left in place, no results attached).
+Barrier framing: NO weakening of the barrier program — MA-1 stays axiomatic at
+practical scale and "MA-1 effectivity" stays an OPEN gap item with one computable
+route honestly bounded at toy scale. No breakthrough.

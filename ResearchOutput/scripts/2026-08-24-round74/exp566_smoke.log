@@ -1,0 +1,18 @@
+[smoke] x=2^20 pi=82025 li=82137.5 sieve=0.0s
+[smoke] counted 29 moduli in 0.1s
+{
+ "primary": "H0",
+ "thresholds": {
+  "H1_r2_gt": 0.8,
+  "H0_r2_lt": 0.5
+ },
+ "control_gate_passed": false,
+ "headline": "R^2=0.0167, logD ~ 0.0779*logP (CI -0.149,0.308) => H0 [CONTROL DID NOT COLLAPSE - treat fit as unreliable]"
+}
+{
+ "slope": 0.0779265469809429,
+ "intercept": -0.6900390162115235,
+ "r2": 0.01667242289774984,
+ "pearson_r": 0.12912173673611163
+}
+wrote exp566_smoke_result.json wall=0.49s

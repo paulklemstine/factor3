@@ -1,0 +1,433 @@
+{
+ "exp": "566",
+ "codename": "MA1-EFFECTIVITY-SWEEP",
+ "round": 74,
+ "smoke": true,
+ "status": "03_smoke",
+ "hypotheses": {
+  "H1_prestated": "R^2>0.8 of D(m)=max_a|pi(x;m,a)-li(x)/phi(m)|/sqrt(E) on P(m)=sum over nontrivial real chars |L(1,chi)| => computable MA-1 effectivity criterion (headline positive)",
+  "H0_prestated": "R^2<0.5 => not captured at this scale (honest negative)",
+  "either_way": "report fitted slope (=power-law exponent) + bootstrap CI"
+ },
+ "config": {
+  "exp": "exp566",
+  "name": "MA1-EFFECTIVITY-SWEEP",
+  "mode": "smoke",
+  "x": 1048576,
+  "pi_x": 82025,
+  "li_x": 82137.52765645568,
+  "moduli_source": "squarefree[3,50]",
+  "n_moduli": 29,
+  "sieve_s": 0.0,
+  "L_method": "class-number exact (D<0,|D|<=400); truncated N=100000 otherwise"
+ },
+ "rows": [
+  {
+   "m": 3,
+   "phi": 2,
+   "omega": 1,
+   "n_real_chars": 1,
+   "E": 41068.76382822784,
+   "D_max_norm": 0.41333359192187435,
+   "chi2": 0.19241544311417694,
+   "P_sum_absL1": 0.6045997880780726,
+   "n_exact": 1,
+   "n_trunc": 0
+  },
+  {
+   "m": 5,
+   "phi": 4,
+   "omega": 1,
+   "n_real_chars": 1,
+   "E": 20534.38191411392,
+   "D_max_norm": 0.31669557262288117,
+   "chi2": 0.19597045637463573,
+   "P_sum_absL1": 0.4304089409240042,
+   "n_exact": 0,
+   "n_trunc": 1
+  },
+  {
+   "m": 6,
+   "phi": 2,
+   "omega": 2,
+   "n_real_chars": 1,
+   "E": 41068.76382822784,
+   "D_max_norm": 0.41333359192187435,
+   "chi2": 0.19388925558900197,
+   "P_sum_absL1": 0.6045997880780726,
+   "n_exact": 1,
+   "n_trunc": 0
+  },
+  {
+   "m": 7,
+   "phi": 6,
+   "omega": 1,
+   "n_real_chars": 1,
+   "E": 13689.587942742613,
+   "D_max_norm": 0.3212575689511082,
+   "chi2": 0.2461302325153455,
+   "P_sum_absL1": 1.1874104117237259,
+   "n_exact": 1,
+   "n_trunc": 0
+  },
+  {
+   "m": 10,
+   "phi": 4,
+   "omega": 2,
+   "n_real_chars": 1,
+   "E": 20534.38191411392,
+   "D_max_norm": 0.31669557262288117,
+   "chi2": 0.19741991944356718,
+   "P_sum_absL1": 0.4304089409240042,
+   "n_exact": 0,
+   "n_trunc": 1
+  },
+  {
+   "m": 11,
+   "phi": 10,
+   "omega": 1,
+   "n_real_chars": 1,
+   "E": 8213.752765645568,
+   "D_max_norm": 0.3834586672479732,
+   "chi2": 0.4985848728196962,
+   "P_sum_absL1": 0.9472258250994829,
+   "n_exact": 1,
+   "n_trunc": 0
+  },
+  {
+   "m": 13,
+   "phi": 12,
+   "omega": 1,
+   "n_real_chars": 1,
+   "E": 6844.793971371307,
+   "D_max_norm": 0.480991158121452,
+   "chi2": 0.7671101210138123,
+   "P_sum_absL1": 0.6627353908718298,
+   "n_exact": 0,
+   "n_trunc": 1
+  },
+  {
+   "m": 14,
+   "phi": 6,
+   "omega": 2,
+   "n_real_chars": 1,
+   "E": 13689.587942742613,
+   "D_max_norm": 0.3298043939569604,
+   "chi2": 0.25169474518028734,
+   "P_sum_absL1": 1.1874104117237259,
+   "n_exact": 1,
+   "n_trunc": 0
+  },
+  {
+   "m": 15,
+   "phi": 8,
+   "omega": 2,
+   "n_real_chars": 3,
+   "E": 10267.19095705696,
+   "D_max_norm": 0.2782172158696951,
+   "chi2": 0.2427585132173635,
+   "P_sum_absL1": 2.6573201993915214,
+   "n_exact": 2,
+   "n_trunc": 1
+  },
+  {
+   "m": 17,
+   "phi": 16,
+   "omega": 1,
+   "n_real_chars": 1,
+   "E": 5133.59547852848,
+   "D_max_norm": 0.6642856574537175,
+   "chi2": 1.0751788043790584,
+   "P_sum_absL1": 1.0160848334427937,
+   "n_exact": 0,
+   "n_trunc": 1
+  },
+  {
+   "m": 19,
+   "phi": 18,
+   "omega": 1,
+   "n_real_chars": 1,
+   "E": 4563.1959809142045,
+   "D_max_norm": 0.5210249407266125,
+   "chi2": 1.590947920016295,
+   "P_sum_absL1": 0.7207307841456678,
+   "n_exact": 1,
+   "n_trunc": 0
+  },
+  {
+   "m": 21,
+   "phi": 12,
+   "omega": 2,
+   "n_real_chars": 3,
+   "E": 6844.793971371307,
+   "D_max_norm": 0.4326430147674294,
+   "chi2": 0.500131733512212,
+   "P_sum_absL1": 2.47581744723261,
+   "n_exact": 2,
+   "n_trunc": 1
+  },
+  {
+   "m": 22,
+   "phi": 10,
+   "omega": 2,
+   "n_real_chars": 1,
+   "E": 8213.752765645568,
+   "D_max_norm": 0.3834586672479732,
+   "chi2": 0.5010813603420503,
+   "P_sum_absL1": 0.9472258250994829,
+   "n_exact": 1,
+   "n_trunc": 0
+  },
+  {
+   "m": 23,
+   "phi": 22,
+   "omega": 1,
+   "n_real_chars": 1,
+   "E": 3733.523984384349,
+   "D_max_norm": 0.9414331503818963,
+   "chi2": 1.8446200306153377,
+   "P_sum_absL1": 1.9652020541078592,
+   "n_exact": 1,
+   "n_trunc": 0
+  },
+  {
+   "m": 26,
+   "phi": 12,
+   "omega": 2,
+   "n_real_chars": 1,
+   "E": 6844.793971371307,
+   "D_max_norm": 0.480991158121452,
+   "chi2": 0.7680725959648727,
+   "P_sum_absL1": 0.6627353908718298,
+   "n_exact": 0,
+   "n_trunc": 1
+  },
+  {
+   "m": 29,
+   "phi": 28,
+   "omega": 1,
+   "n_real_chars": 1,
+   "E": 2933.483130587703,
+   "D_max_norm": 0.6182074851291245,
+   "chi2": 1.92234333422755,
+   "P_sum_absL1": 0.6117662889622119,
+   "n_exact": 0,
+   "n_trunc": 1
+  },
+  {
+   "m": 30,
+   "phi": 8,
+   "omega": 3,
+   "n_real_chars": 3,
+   "E": 10267.19095705696,
+   "D_max_norm": 0.2782172158696951,
+   "chi2": 0.24191913213230093,
+   "P_sum_absL1": 2.6573201993915214,
+   "n_exact": 2,
+   "n_trunc": 1
+  },
+  {
+   "m": 31,
+   "phi": 30,
+   "omega": 1,
+   "n_real_chars": 1,
+   "E": 2737.917588548523,
+   "D_max_norm": 0.5717634626815271,
+   "chi2": 1.570932708371809,
+   "P_sum_absL1": 1.6927400921792761,
+   "n_exact": 1,
+   "n_trunc": 0
+  },
+  {
+   "m": 33,
+   "phi": 20,
+   "omega": 2,
+   "n_real_chars": 3,
+   "E": 4106.876382822784,
+   "D_max_norm": 0.6066385915532004,
+   "chi2": 1.1376965774290015,
+   "P_sum_absL1": 2.88462280016366,
+   "n_exact": 2,
+   "n_trunc": 1
+  },
+  {
+   "m": 34,
+   "phi": 16,
+   "omega": 2,
+   "n_real_chars": 1,
+   "E": 5133.59547852848,
+   "D_max_norm": 0.6642856574537175,
+   "chi2": 1.0756055924004606,
+   "P_sum_absL1": 1.0160848334427937,
+   "n_exact": 0,
+   "n_trunc": 1
+  },
+  {
+   "m": 35,
+   "phi": 24,
+   "omega": 2,
+   "n_real_chars": 3,
+   "E": 3422.3969856856534,
+   "D_max_norm": 0.3828462346277105,
+   "chi2": 0.6831905670199456,
+   "P_sum_absL1": 2.6798715117698357,
+   "n_exact": 2,
+   "n_trunc": 1
+  },
+  {
+   "m": 37,
+   "phi": 36,
+   "omega": 1,
+   "n_real_chars": 1,
+   "E": 2281.5979904571022,
+   "D_max_norm": 0.8039599016159624,
+   "chi2": 4.252678875864181,
+   "P_sum_absL1": 0.8192921677249123,
+   "n_exact": 0,
+   "n_trunc": 1
+  },
+  {
+   "m": 38,
+   "phi": 18,
+   "omega": 2,
+   "n_real_chars": 1,
+   "E": 4563.1959809142045,
+   "D_max_norm": 0.5210249407266125,
+   "chi2": 1.583802042804802,
+   "P_sum_absL1": 0.7207307841456678,
+   "n_exact": 1,
+   "n_trunc": 0
+  },
+  {
+   "m": 39,
+   "phi": 24,
+   "omega": 2,
+   "n_real_chars": 3,
+   "E": 3422.3969856856534,
+   "D_max_norm": 0.6734382848266842,
+   "chi2": 1.6182077533323929,
+   "P_sum_absL1": 3.279564905457735,
+   "n_exact": 2,
+   "n_trunc": 1
+  },
+  {
+   "m": 41,
+   "phi": 40,
+   "omega": 1,
+   "n_real_chars": 1,
+   "E": 2053.438191411392,
+   "D_max_norm": 0.8509745600603722,
+   "chi2": 3.8841262682593487,
+   "P_sum_absL1": 1.2990930599750672,
+   "n_exact": 0,
+   "n_trunc": 1
+  },
+  {
+   "m": 42,
+   "phi": 12,
+   "omega": 3,
+   "n_real_chars": 3,
+   "E": 6844.793971371307,
+   "D_max_norm": 0.4326430147674294,
+   "chi2": 0.5022629799461628,
+   "P_sum_absL1": 2.47581744723261,
+   "n_exact": 2,
+   "n_trunc": 1
+  },
+  {
+   "m": 43,
+   "phi": 42,
+   "omega": 1,
+   "n_real_chars": 1,
+   "E": 1955.655420391802,
+   "D_max_norm": 0.738429623713481,
+   "chi2": 3.617597671348528,
+   "P_sum_absL1": 0.4790883882398572,
+   "n_exact": 1,
+   "n_trunc": 0
+  },
+  {
+   "m": 46,
+   "phi": 22,
+   "omega": 2,
+   "n_real_chars": 1,
+   "E": 3733.523984384349,
+   "D_max_norm": 0.9414331503818963,
+   "chi2": 1.8483826872441567,
+   "P_sum_absL1": 1.9652020541078592,
+   "n_exact": 1,
+   "n_trunc": 0
+  },
+  {
+   "m": 47,
+   "phi": 46,
+   "omega": 1,
+   "n_real_chars": 1,
+   "E": 1785.598427314254,
+   "D_max_norm": 1.1027558293999409,
+   "chi2": 5.0164710399331645,
+   "P_sum_absL1": 2.291241928528616,
+   "n_exact": 1,
+   "n_trunc": 0
+  }
+ ],
+ "fit": {
+  "primary_logD_logP": {
+   "slope": 0.0779265469809429,
+   "intercept": -0.6900390162115235,
+   "r2": 0.01667242289774984,
+   "pearson_r": 0.12912173673611163
+  },
+  "secondary_logchi2_logP": {
+   "slope": 0.20658479607400057,
+   "intercept": -0.2441128287869565,
+   "r2": 0.016684291577849564,
+   "pearson_r": 0.12916768782419794
+  },
+  "confound_partial": {
+   "partial_r2_ctrl_logphi": 0.04071950370778174
+  },
+  "bootstrap": {
+   "n_boot": 2000,
+   "slope_ci95": [
+    -0.1487072016198301,
+    0.3077331212122496
+   ],
+   "r2_ci95": [
+    4.906710363654088e-05,
+    0.24894396263906796
+   ]
+  },
+  "control_pairing_perm": {
+   "n_perm": 2000,
+   "r2_null_mean": 0.03579373266029357,
+   "r2_null_p95": 0.13763768365171802,
+   "r2_null_max": 0.33284267918439336,
+   "collapsed": false
+  },
+  "truncation_calibration": {
+   "n_pairs": 27,
+   "rel_err_median": 1.0558200409683584e-05,
+   "rel_err_max": 2.1828993216359087e-05
+  }
+ },
+ "verdicts": {
+  "primary": "H0",
+  "thresholds": {
+   "H1_r2_gt": 0.8,
+   "H0_r2_lt": 0.5
+  },
+  "control_gate_passed": false,
+  "headline": "R^2=0.0167, logD ~ 0.0779*logP (CI -0.149,0.308) => H0 [CONTROL DID NOT COLLAPSE - treat fit as unreliable]"
+ },
+ "honest_notes": [
+  "final x=2^20 (SMOKE scale), pi(x)=82025",
+  "sampled moduli are squarefree [3,300] + primes [307,997] => v2(m)<=1, so the 2-adic discriminants (-4,8,-8) branch is dead code here (kept for generality)",
+  "literal within-modulus residue permutation is vacuous for max-abs and chi2 (both permutation-invariant in a); control run as cross-modulus pairing shuffle",
+  "truncation calibration on exact-path overlap: median rel err 1.0558200409683584e-05, max 2.1828993216359087e-05 over 27 discriminants",
+  "positive-D (real-quadratic) L-values are ALWAYS truncated (no regulator path); negative-D |D|>400 truncated; error assumed similar to calibrated overlap",
+  "E=li(x)/phi(m) not pi(x)/phi(m): constant offset absorbed in intercept",
+  "regression is marginal; partial R^2 controlling log phi reported as confound check"
+ ],
+ "wall_s": 0.49
+}

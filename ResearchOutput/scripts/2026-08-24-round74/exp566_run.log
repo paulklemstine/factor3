@@ -1,0 +1,49 @@
+[full] x=2^26 pi=3957809 li=3958349.5 sieve=0.6s
+[full] counted 287 moduli in 8.3s
+{
+ "primary": "H0",
+ "thresholds": {
+  "H1_r2_gt": 0.8,
+  "H0_r2_lt": 0.5
+ },
+ "control_gate_passed": true,
+ "headline": "R^2=0.0187, logD ~ -0.0767*logP (CI -0.136,-0.015) => H0"
+}
+{
+ "slope": -0.07668315097327887,
+ "intercept": 0.1082266074119215,
+ "r2": 0.01865738725937216,
+ "pearson_r": -0.1365920468379181
+}
+wrote exp566_result.json wall=9.26s
+sample row: {"m": 3, "phi": 2, "omega": 1, "n_real_chars": 1, "E": 1979174.7741794684, "D_max_norm": 0.4746653707503762, "chi2": 0.23335751776901292, "P_sum_absL1": 0.6045997880780726, "n_exact": 1, "n[pass] 1300/2489 elapsed=149s eta=285s
+[pass] 1400/2489 elapsed=158s eta=281s
+[pass] 1500/2489 elapsed=166s eta=275s
+[pass] 1600/2489 elapsed=173s eta=270s
+[pass] 1700/2489 elapsed=181s eta=265s
+[pass] 1800/2489 elapsed=189s eta=261s
+[pass] 1900/2489 elapsed=197s eta=258s
+[pass] 2000/2489 elapsed=206s eta=257s
+[pass] 2100/2489 elapsed=215s eta=255s
+[pass] 2200/2489 elapsed=223s eta=253s
+[pass] 2300/2489 elapsed=231s eta=250s
+[pass] 2400/2489 elapsed=240s eta=249s
+[coverage] {'moduli_processed': 2489, 'moduli_planned': 2489, 'dense_all_2_to_M': 1500, 'primes_beyond': 990, 'weighted_tier_complete': True} t=247.6s
+{
+ "verdict_primary": "NULL_HONEST_NEGATIVE",
+ "r2_primary": 0.0784929683868405,
+ "verdict_cell": "NULL_HONEST_NEGATIVE",
+ "r2_cell": 0.0005215125717586977,
+ "B": -0.03415521672390634,
+ "B_ci": [
+  -0.10143110115014263,
+  0.03312066770232995
+ ],
+ "mertens_pass": false,
+ "cells": 1902,
+ "rows": 2489,
+ "catches": [
+  "mertens gate FAIL slope_ci=[0.9233606079127766, 0.9319914416584799] r2=0.9894"
+ ]
+}
+[done] wall=247.7s -> exp566_result.json
