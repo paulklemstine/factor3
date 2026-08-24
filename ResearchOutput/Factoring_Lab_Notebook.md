@@ -10311,3 +10311,19 @@ so the saving is capped there even if testing were free; finding phase strictly 
 ledger catches. Honest placement: constant-shaving on a KNOWN method (barrier 8),
 engineering calibration of the method stratum, not asymptotic.
 Paper 208, issue #352. Now 551 experiments. Assessment v315.
+
+## Part 251 - SCALE-SMOOTHNESS-DEVIATION (round-73 #4 [ROUND HEADLINE], exp 562, v316)
+
+The asymptotic-goal directive's frontier cell (u>=6) measured directly: x^2-N vs
+size-matched randomness in B=1000 smoothness at u in {5,6,7,8}. RANDOM-AT-SCALE:
+r(u) = 1.011 [0.947,1.075] / 0.949 [0.783,1.152] / 0.900 [0.455,1.700] / 1.200
+[0.500,3.000] at u~5.96/6.95/7.93/8.26 — ALL CIs cover 1; trend slope +0.036
+log-r/u CI [-0.255,+0.345] p=0.83 FLAT; tightest bound |r-1| <= 0.2168 at bin u=6.
+~1.49e9 candidates PER ARM, controls exactly (bitlen, mantissa-octant)-matched,
+shared tester code path, assert pipeline 844 cases 0 mismatches. Secondary structure:
+N-level overdispersion D=1.61 PERSISTS at bin 5 then DIES by bins 7-8; QR-dial
+Spearman decays 0.32 -> 0.04 with u. Cross-checked vs paper 130: CONSISTENT — extends
+its random-pool claim (u<4.75) to u<=8.5; no novelty claimed against it. Time-capped
+status disclosed (bins 7/8 tiny event counts); production-scale u>=9 stays open.
+Barriers 4-frontier unchanged, null sharpens it.
+Paper 209, issue #353. Now 552 experiments. Assessment v316.
