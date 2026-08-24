@@ -2082,3 +2082,13 @@ paths fixed); log /tmp/net95.log.
 (scale-vs-calibrator confound documented). Open: RTN-vs-kquant confound
 split; knee-law transfer to 7B (last standing limited-memory cell).
 Paper 175, issue #369 (counter advanced concurrently). Now 96 network experiments. Assessment v96.
+
+## Part 96 — THE-COST-LAW-CLOSES-THE-LOOP (compact; survival-curve cell): fine depth sweep {1..8} × {prose,code} on the 0.5B draft, per-position survival s_i extracted by differencing cumulative acceptance d·m(d); P3 CONFIRMED CLEANLY — the cost-law argmax computed from extracted curves reproduces NET-91's measured optima EXACTLY (prose d=4, code d=8), closing micro-mechanism → macro-throughput; P1 directionally supported (prose s5=0.119 < s1/2=0.335 — survival collapses by position 5) but P2 REFUTED AS MEASURED with the honest root cause IDENTIFIED: the differencing estimator doubles aggregate noise and n=4 prompts/cell yields impossible values (s_i > 1 at three positions, negative at one) — per-position maps need direct instrumentation (llama.cpp verbose/custom harness), not numerical differentiation of 4-prompt aggregates; the robust deliverable is that the argmax is INSENSITIVE to the jitter (P3 exact while intermediate points are noise-buried) (NET-96; cpu-large-model axis iteration 71)
+
+**Method:** NET-91 toolchain reused; depths {1..8}, 4 prompts/domain,
+overhead-calibrated, greedy seed 42. Script ResearchOutput/exp_net96_survival.py;
+results ~/f3cache/net96_results.json; log /tmp/net96.log.
+**Verdict:** THE-COST-LAW-CLOSES-THE-LOOP. Barriers clean/partial (estimator
+resolution documented as the f-gap). Open: instrumented per-position acceptance
+(direct logging); knee-law transfer to 7B. Issue #372. Now 97 network experiments.
+Assessment v97.

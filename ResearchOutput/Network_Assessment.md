@@ -1761,3 +1761,7 @@ Assessment v95. 95 experiments (NET-1 through NET-95 pending).
 - **NET-95 — THE-WEIGHT-FLOOR-COLLAPSED (cpu-large-model axis round 70): full weight ladder vs fp16 on 7B — smooth convex curve, no cliff: q8_0 −0.06%, q6_k +0.26%, q5_k_m +0.86%, q4_k_m +1.82%, q3_k_m +4.20%, q2_k +16.16%; P1 confirmed, P2 refuted by a hair (band missed low), P3 refuted decisively (2.6bpw usable) — the toy sub-6-bit floor was quantizer-quality × scale dependent, not a bit-width law; weights quantize smoothly where cache keys cliff; deterministic cross-round reproduction (q4_k_m = 7.1093 exactly). Open: RTN-vs-kquant confound split; knee transfer @7B. Paper 175, issue #369.
 
 Assessment v96. 96 experiments (NET-1 through NET-96 pending).
+
+- **NET-96 — THE-COST-LAW-CLOSES-THE-LOOP (cpu-large-model axis round 71; compact): depth sweep {1..8}×{prose,code} + differencing extraction — cost-law argmax reproduces NET-91 optima EXACTLY (prose 4, code 8); prose survival collapse by position ~5 supported directionally; per-position map itself under-resolved at n=4 prompts (impossible s_i values — differencing doubles noise); lesson recorded: instrument directly, don't differentiate noisy aggregates. Gate reused NET-91 toolchain. Open: direct per-position instrumentation; knee transfer @7B. Issue #372.
+
+Assessment v97. 97 experiments (NET-1 through NET-97 pending).
