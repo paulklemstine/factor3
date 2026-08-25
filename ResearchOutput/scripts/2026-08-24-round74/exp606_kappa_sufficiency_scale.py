@@ -478,7 +478,9 @@ def main():
         fired = "NULL_AT_THIS_SCALE"
     else:
         fired = "INVALID_MACHINERY"
-    sufficiency = ((d_cells_beyond < SUBBAR and machinery_ok)
+    # bool(...) cast: a False comparison leaves np.bool_ which json.dumps
+    # rejects (caught post-hoc at b128 -- ledger catch, no statistics change)
+    sufficiency = ((bool(d_cells_beyond < SUBBAR) and machinery_ok)
                    if (not smoke and not lowpower and machinery_ok) else None)
     sens_d = delta_adj(y, S_sens, kap)
 

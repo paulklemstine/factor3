@@ -3457,3 +3457,38 @@ ADOPTED PROCESS LAW: commit pre-registrations BEFORE data-producing runs.
 Catalog scan: no prior work on joint divisibility mixtures/permutation-calibrated
 increments. No barrier breached (proposal-geometry layer refined, not
 N-information). Wall 286.5 s. Paper 256, issue #404.
+
+**Assessment addendum v364 — 2026-08-25 (round-95 #4).** Experiment recorded
+(count 593 → 594; papers 256 → 257; version v363 → v364). Content:
+**KAPPA-SUFFICIENCY-SCALE (exp 606)** — paper 256's mechanism claim sharpened
+into three registered questions under a pre-registration PINNED IN-REPO BEFORE
+any full-mode number existed (process law exercised; chain of custody verified
+by git + filesystem forensics). Two pre-run audits caught four must-fixes while
+all bytes were non-evidentiary: stream bands colliding with 598c's own +17e6/
++19e6 FULL streams (~412/512 slots/leg); CROSS-leg interleaving from consecutive
+leg seeds sharing offsets (default_rng(20261007+31e6+1) ≡ default_rng(
+20261008+31e6+0)) — fixed with per-leg ×10⁸ stride + pairwise band asserts;
+incomplete verdict tree; vacuous-as-written C2 formula (κ ∈ span(Dr) ⇒ both-
+model increment identically zero; operative test = two-model adjusted-R²).
+Legs: fresh seeds {96:20261007, 72:20261008, 128:20261009}, n=512 each,
+sizing-pilot ladder → n_hit 50k/50k/150k. **RESULTS: C1 H1_KAPPA_CARRIES on
+fresh population (+0.0869, perm_p = 1/501, clean control); C3_SCALE_CONFIRMED
+3/3 — Δ_κ = +0.0830/+0.0869/+0.0585 at bits 72/96/128, perm_p = 1/501 at every
+leg, all controls clean; SLOPE LAW scale-stable NEGATIVE β_κ ≈ −0.35
+(mutually overlapping CIs: −0.349/−0.380/−0.325) — richer small-prime
+composition depth ⇔ LOWER window rate (sign ungated pre-data); KAPPA_SUFFICIENCY_MIXED —
+cell identity adds beyond κ ONLY at 128 bits (+0.0346 ≥ bar, shuffle-share
+0.006 = permutation-supported) ⇒ sufficiency has a REGIME BOUNDARY near
+u ≈ 4.5: below it HOW MANY small primes divide v summarizes all rate-relevant
+structure; above it WHICH primes matter too. GRADED LAW: log-rate ≈ dial −
+0.35·κ + identity terms switching on in the thin-smoothness regime; subsumes
+227/235/236 dials, 256 cells, 88/592 composition observations as limiting
+cases. Verification: independent from-scratch recompute of all legs from
+verify.npz alone — permutation nulls replay BIT-EXACTLY from documented call
+order, perm_p exact everywhere, verdict tree re-derives identically; hostile
+adjudicator confirmed custody, stride necessity+sufficiency (512 colliding
+slots demonstrated), crash cleanliness, Bonferroni ×3 survival, no overturn.
+Ledger catches: b128 attempt-1 json.dumps death on raw np.bool_ (bool() cast,
+type-only, disclosed); docstring label drift cosmetic. No barrier breached
+(proposal-geometry refinement, no factor leakage). Catalog: NONE on all five
+target topics. Walls 300/287/1202 s. Paper 257, issue #406.

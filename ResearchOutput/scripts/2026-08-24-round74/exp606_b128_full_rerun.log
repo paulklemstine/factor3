@@ -1,0 +1,11 @@
+[b128/full] population 512, disjoint from 12 prior seeds (6144 Ns @bits=128); bands clear (ours >= 251261009 > ceiling 39261419), wall=0.1s
+[b128/full] pilot r_hat=2.703e-03/sample -> n_hit=150000
+  [b128] 64/512 hit streams, wall=163.1s
+  [b128] 128/512 hit streams, wall=305.3s
+  [b128] 192/512 hit streams, wall=448.4s
+  [b128] 256/512 hit streams, wall=599.9s
+  [b128] 320/512 hit streams, wall=731.8s
+  [b128] 384/512 hit streams, wall=865.0s
+  [b128] 448/512 hit streams, wall=995.5s
+  [b128] 512/512 hit streams, wall=1099.0s
+{"bits": 128, "fired": "H1_KAPPA_CARRIES", "kappa_sufficient": false, "delta_kappa": 0.058524, "delta_cells_beyond_kappa": 0.034636, "perm_p": 0.001996007984031936, "ctrl_null_max": 0.018248, "clean_control": true, "beta_kappa": -0.32488, "beta_ci95": [-0.431875, -0.216743], "wall_s": 1202.45, "out": "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp606_b128_result.json"}

@@ -12648,3 +12648,68 @@ enumeration; never triggered there). Count 592 -> 593; assessment v362 ->
 v363. Paper 256, issue #404. Open unchanged: u>=6-14 scale-smoothness
 deviations, factor-local beyond scan-order, MA-1 effectivity, residue cap 4/3,
 external-hint laws; quantum closed; .2346 flag traveling.
+
+## Part 299 — round-95 #4 · KAPPA-SUFFICIENCY-SCALE (exp 606) — H1 AT ALL THREE SCALES: composition order κ replicates fresh and holds across bits {72,96,128} (ΔadjR² +0.087/+0.083/+0.059, perm_p = 1/501 everywhere, controls clean) with SCALE-STABLE NEGATIVE slope β_κ ≈ −0.35 — richer small-prime composition depth ⇔ LOWER window smoothness rate — while SUFFICIENCY BREAKS at 128 bits: cell identity adds beyond κ exactly where smoothness is rare (+0.0346 ≥ bar at shuffle-share 0.006) — a graded law with a regime boundary near u ≈ 4.5 (2026-08-25)
+
+PRE-REGISTRATION pinned in-repo BEFORE any full-mode number (commit 341af5a;
+chain of custody verified by git timestamps + filesystem birth times — the
+round-95 #3 process law exercised for real). Two adversarial pre-run audits
+caught FOUR must-fixes while everything was non-evidentiary: (1) stream bands
+colliding with 598c's own +17e6/+19e6 FULL streams (~412/512 slots/leg —
+identical PCG64 t-draws applied to different Ns would have silently correlated
+the replication); (2) cross-leg interleaving from consecutive LEG_SEEDs sharing
+offsets — default_rng(20261007+31e6+1) == default_rng(20261008+31e6+0) — fixed
+with per-leg ×1e8 stride + pairwise band-disjointness assertions; (3) incomplete
+verdict tree (no above-bar/dirty-control branch; machinery_ok gating nothing;
+lowpower suppressing nothing); (4) vacuous-as-written C2 formula (κ is a fixed
+linear combination of D columns ⇒ both-model nested increment IDENTICALLY zero;
+operative test = adjR2(dial+cells) − adjR2(dial+κ)). Registered aggregation
+(pre-data): C3 confirmed iff ≥2/3 legs fire; sufficiency confirmed iff all
+non-lowpower legs true / refuted iff ≥2 false.
+
+Method: fresh seeds {96:20261007, 72:20261008, 128:20261009} registry-verified
+unused; verbatim make_semiprime; n=512/leg; sizing-pilot ladder (r̂ 1.48e−2 /
+5.467e−2 / 2.703e−3 → n_hit 50k/50k/150k; pilot on its own +37e6+L·1e8 stream
+feeding only the deterministic rung choice, r̂ persisted in config); two
+independent streams per N on stride bands; gcd-chain primorial(1e6) tester;
+perm seed 606 (500 reps, idx/idy/idc documented); pairs bootstrap seed 607
+(B=800). Walls 300/287/1202 s.
+
+RESULT: **C1 H1_KAPPA_CARRIES** (+0.0869 @ b96 fresh, perm_p = 1/501, ctrl null
+max 0.0204 ≪ obs); **C3_SCALE_CONFIRMED 3/3** (+0.0830/+0.0869/+0.0585 at
+72/96/128, perm_p = 1/501 at EVERY leg, controls clean everywhere);
+**SLOPE LAW**: β_κ = −0.349/−0.380/−0.325 with mutually-overlapping CIs —
+scale-stable negative ~−0.35 log-rate units per unit expected-popcount:
+richer shallow divisibility mass ⇔ poorer deep smoothness (sign expectation
+pre-stated NONE, never gated). **KAPPA_SUFFICIENCY_MIXED**: κ alone beats the
+15-column cell basis at 72/96 (+0.0071/+0.0084 < 0.02) but NOT at 128
+(+0.0346 ≥ bar) — and the b128 failure is ITSELF permutation-supported
+(cells_shuffle_share_ge = 0.006 vs 0.226/0.218): WHICH small primes divide v
+starts carrying rate structure beyond HOW MANY exactly where full-1e6-
+smoothness becomes scarce (u ≈ 4.5).
+
+GRADED LAW: log-rate ≈ dial-term − 0.35·κ + cell-identity terms whose
+coefficient switches on near u ≈ 4.5. Subsumes papers 227/235/236 (dials),
+256 (cell level), 88/592 (composition observations) as limiting cases.
+
+VERIFICATION: independent from-scratch recompute of ALL headline stats for
+ALL three legs from verify.npz alone — permutation nulls replay BIT-EXACTLY
+from the documented idx/idy/idc call order; perm_p = 1/501 EXACT everywhere;
+verdict tree re-derives identically; hostile adjudicator confirmed chain of
+custody, stride necessity AND sufficiency (512 colliding slots demonstrated
+without it), crash recovery clean, Bonferroni ×3 survives, no overturn found.
+
+Ledger catches: b128 attempt 1 died in json.dumps on a raw np.bool_
+(sufficiency False short-circuit) — explicit bool() cast, type-only change,
+disclosed; attempt 1 left only a truncated result JSON (no npz/ns.txt born),
+determinism makes the rerun bit-reproducible — verified. Docstring version-
+label drift (v2 text under v3 pin name) cosmetic, contents verified complete.
+b128 mean hits/N = 324 (≥300 target; no lowpower flag). Barrier framing: no
+barrier breached — proposal-geometry layer refined (window arithmetic under
+N's jacobi profile), no factor leakage claimed or found. Catalog scan: NONE on
+all five target topics. Count 593 -> 594; assessment v363 -> v364. Paper 257,
+issue #406. Open unchanged: u>=6-14 scale-smoothness deviations, factor-local
+beyond scan-order, residue cap 4/3, external-hint laws; quantum closed;
+.2346 flag traveling. NEW PRE-STATED FOLLOW-UPS: locate the sufficiency
+boundary in (96,128); identify which cells carry the b128 increment (candidate:
+heavy-2-adic cells); Dickman-type closed-form check of β ≈ −0.35.

@@ -1,0 +1,57 @@
+=== FULL bits=96 ===
+[b96/full] population 512, disjoint from 12 prior seeds (6144 Ns @bits=96); bands clear (ours >= 151261007 > ceiling 39261419), wall=0.1s
+[b96/full] pilot r_hat=1.480e-02/sample -> n_hit=50000
+  [b96] 64/512 hit streams, wall=39.0s
+  [b96] 128/512 hit streams, wall=73.9s
+  [b96] 192/512 hit streams, wall=107.8s
+  [b96] 256/512 hit streams, wall=142.2s
+  [b96] 320/512 hit streams, wall=176.1s
+  [b96] 384/512 hit streams, wall=210.3s
+  [b96] 448/512 hit streams, wall=243.6s
+  [b96] 512/512 hit streams, wall=272.6s
+{"bits": 96, "fired": "H1_KAPPA_CARRIES", "kappa_sufficient": true, "delta_kappa": 0.086876, "delta_cells_beyond_kappa": 0.00841, "perm_p": 0.001996007984031936, "ctrl_null_max": 0.02038, "clean_control": true, "beta_kappa": -0.379748, "beta_ci95": [-0.482675, -0.2786], "wall_s": 299.75, "out": "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp606_b96_result.json"}
+EXIT_b96=0
+=== FULL bits=72 ===
+[b72/full] population 512, disjoint from 12 prior seeds (6144 Ns @bits=72); bands clear (ours >= 51261008 > ceiling 39261419), wall=0.1s
+[b72/full] pilot r_hat=5.467e-02/sample -> n_hit=50000
+  [b72] 64/512 hit streams, wall=39.8s
+  [b72] 128/512 hit streams, wall=69.5s
+  [b72] 192/512 hit streams, wall=101.2s
+  [b72] 256/512 hit streams, wall=133.7s
+  [b72] 320/512 hit streams, wall=168.0s
+  [b72] 384/512 hit streams, wall=200.1s
+  [b72] 448/512 hit streams, wall=231.9s
+  [b72] 512/512 hit streams, wall=260.1s
+{"bits": 72, "fired": "H1_KAPPA_CARRIES", "kappa_sufficient": true, "delta_kappa": 0.083036, "delta_cells_beyond_kappa": 0.007116, "perm_p": 0.001996007984031936, "ctrl_null_max": 0.017473, "clean_control": true, "beta_kappa": -0.348962, "beta_ci95": [-0.455935, -0.255983], "wall_s": 287.09, "out": "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp606_b72_result.json"}
+EXIT_b72=0
+=== FULL bits=128 ===
+[b128/full] population 512, disjoint from 12 prior seeds (6144 Ns @bits=128); bands clear (ours >= 251261009 > ceiling 39261419), wall=0.1s
+[b128/full] pilot r_hat=2.703e-03/sample -> n_hit=150000
+  [b128] 64/512 hit streams, wall=145.3s
+  [b128] 128/512 hit streams, wall=273.0s
+  [b128] 192/512 hit streams, wall=402.0s
+  [b128] 256/512 hit streams, wall=534.2s
+  [b128] 320/512 hit streams, wall=664.9s
+  [b128] 384/512 hit streams, wall=797.6s
+  [b128] 448/512 hit streams, wall=927.0s
+  [b128] 512/512 hit streams, wall=1032.6s
+Traceback (most recent call last):
+  File "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp606_kappa_sufficiency_scale.py", line 604, in <module>
+    main()
+  File "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp606_kappa_sufficiency_scale.py", line 576, in main
+    json.dump(result, f, indent=1)
+  File "/usr/lib/python3.12/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "/usr/lib/python3.12/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/usr/lib/python3.12/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.12/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/usr/lib/python3.12/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type bool_ is not JSON serializable
+EXIT_b128=1
