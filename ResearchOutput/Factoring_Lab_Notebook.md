@@ -12573,3 +12573,78 @@ small n_pool). Count 591 -> 592; assessment v361 -> v362. Paper 255,
 issue #403. Open unchanged: u>=6-14 scale-smoothness deviations, factor-local
 beyond scan-order, MA-1 effectivity, residue cap 4/3, external-hint laws;
 quantum closed; .2346 flag traveling.
+
+## Part 298 — round-95 #3 · MIXTURE-RATE-CELLS-POWERED (exp 598c) — H1 FIRES: the full 16-cell divisibility mixture carries per-N hit-rate variance BEYOND the QR dial at the pre-stated power remedy — ΔadjR² = +0.105 ≥ 0.05 with perm_p = 1/501 (zero of 500 shuffles reach obs) and CLEAN control (shuffle-null max collapsed 0.186 → 0.0549 while the effect GREW +0.083 → +0.105 across independent seeds) — rate map refines to CELL level; secondary arm names the mechanism: composition order κ = Σₖ P(lₖ|v) captures Δ +0.114 ALONE (2026-08-25)
+
+PRE-REGISTRATION v2, amended BEFORE any full-mode number existed: a two-agent
+adversarial audit of v1 caught two must-fixes. (1) The control criterion
+inherited from 598b — control_ok := p_ctrl>0.05 AND max(ctrl_null)<d_obs — is
+LOGICALLY UNSATISFIABLE: clause 1 forces >=25 of 500 y-shuffle deltas >= obs,
+which forces max >= obs. 598b's control flag was therefore guaranteed by
+construction whenever its first clause passed; ERRATUM on paper 255 carried
+(informative content c = 25/500 = obs at the y-shuffle 95th pctile; BORDERLINE
+itself stands since 598b never gated on control_ok). Corrected registered rule:
+clean_control := max(ctrl_null)<d_obs gates H1; machinery_ok :=
+|mean(ctrl_null)|<0.01 gates H0; p_ctrl descriptive only. (2) v1's master seed
+20260903 was NOT fresh — exp601's recorded lineage (own_lineage_hash16
+fa1746a5b065cbd9 reproduces as the prefix of build_population(20260903,512)) —
+withdrawn to registry-verified-unused 20260907; self-exclusion asserted; ALL 11
+prior population seeds regenerated prefix-complete and pairwise-disjoint;
+stream offsets moved beyond all prior bands (+17e6/+19e6; v1 overlapped 598b in
+exactly 52 values); degenerate kappa arm rebuilt from cell marginals; flag->
+gate promotion disclosed; mislabeled raw-R2 key fixed.
+
+Method: seed-20260907 verbatim make_semiprime (bits=96, n_pool=512); two
+INDEPENDENT fresh streams per N (cell grid 50k @ SEED+17e6+i, hit stream 50k @
+SEED+19e6+i; mean 762.6 hits/N [297,1558]); gcd-chain primorial(1e6) tester;
+perm seed 599, 500 reps both arms; wall 286.5 s full / 13.5 s smoke.
+
+RESULT: **H1_MIXTURE_ADDS** (closing branch none). Delta adjR^2 = +0.105498
+[dial-only 0.051576 -> +cells 0.157074]; perm_p = 1/501 ~= .001996 — ZERO of
+500 cell-label shuffles reach obs (null q95 .0189, max .0402); clean_control
+TRUE (.054872 < .105498); machinery TRUE (|mean| 6.9e-05). Observed increment
+outside the ENTIRE realized range of BOTH permutation nulls.
+
+POWER REMEDY VALIDATED: shuffle-null max {n=128: .186 -> n=512: .0549}
+(~p/(n-p) scaling at 4x rows) while effect GREW across independent populations
+(+0.083 seed-20260827 -> +0.105 seed-20260907): paper 255's BORDERLINE resolves
+UNDERPOWERED-not-null.
+
+MECHANISM (secondary arm, reportable post-fire per pre-registered ordering):
+kappa_i = sum_k P(l_k|v_i) from cell marginals — ONE free column — captures
+Delta = +0.114 ALONE [0.0516 -> 0.166], matching/beating the 15-cell basis:
+composition ORDER (how many distinct small primes divide v), not cell identity.
+Subsumes exp592's kappa-ordering ledger catch as the graded law's visible tip;
+alpha=1 sensitivity +0.108.
+
+CONSEQUENCE: papers 227/235/236 additive completeness upgrades DIAL -> CELL
+level — divisibility composition of v = j^2-N carries rate structure beyond
+the weighted Jacobi marginals. No barrier breached: proposal-geometry layer
+refined, not N-information (same prime support l<=400 as the dial; no new
+factor leakage demonstrated). Catalog scan: no prior work on joint mixtures or
+permutation-calibrated variance increments. Pre-stated falsifiable follow-ups:
+(a) kappa-only nested test at higher resolution — does cell identity survive
+conditioning on kappa? (b) bits {72,128} scale stability; (c) Dickman-type
+closed-form slope check.
+
+VERIFICATION: independent verifier recomputed every headline stat from
+exp598c_verify.npz ALONE with a from-scratch code path — d_obs EXACT to full
+float64 precision vs the stored unrounded value, perm_p bit-exact,
+permutation arrays regenerate bit-exactly from the header-documented call
+order, y reconstruction exact (+0.5 smoothing definitional); hostile
+adjudication audit failed to overturn (rule-textual, validity, leakage,
+multiplicity, worst-case seed-swap all fail; occupancies match closed-form
+independence products, e.g. cell15 .0045 vs 1/210). Chain-of-custody caveat
+DISCLOSED: v1 smoke artifacts overwritten post-audit; pre-data integrity rests
+on filesystem forensics (header ctime predates all data artifacts; wall_s
+equals log birth->mtime span). ADOPTED PROCESS LAW: commit pre-registrations
+BEFORE any data-producing run.
+
+Ledger catches: regen hash CONDITIONAL (no stored N strings anywhere in the
+lineage); tester class-matched not source-verbatim; secondary uses the same D
+matrix as primary (descriptive though null-bounded). Errata carried: paper-255
+control-framing correction; 598b latent cell_beta mislabel (unfiltered keep
+enumeration; never triggered there). Count 592 -> 593; assessment v362 ->
+v363. Paper 256, issue #404. Open unchanged: u>=6-14 scale-smoothness
+deviations, factor-local beyond scan-order, MA-1 effectivity, residue cap 4/3,
+external-hint laws; quantum closed; .2346 flag traveling.

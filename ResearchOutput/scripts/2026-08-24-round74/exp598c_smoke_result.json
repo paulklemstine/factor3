@@ -1,0 +1,148 @@
+{
+ "config": {
+  "exp": "598c",
+  "codename": "MIXTURE-RATE-CELLS-POWERED",
+  "mode": "smoke",
+  "master_seed": 20260907,
+  "prior_population_seeds_checked": [
+   20260824,
+   20260825,
+   20260826,
+   20260827,
+   20260828,
+   20260831,
+   20260902,
+   20260903,
+   20260904,
+   20260905,
+   20260906
+  ],
+  "bits": 96,
+  "n_pool": 32,
+  "cell_samples_per_N": 20000,
+  "hit_samples_per_N": 12000,
+  "stream_offsets": {
+   "cell": 17000000,
+   "hit": 19000000
+  },
+  "j_window_t": [
+   0,
+   65536
+  ],
+  "smooth_cut": 1000000,
+  "dial": "S_alpha,alpha=0.5,odd primes 3..400",
+  "n_odd_primes": 77,
+  "perm_reps": 50,
+  "perm_seed": 599,
+  "ctrl_reps": 50,
+  "thresholds": {
+   "H1_dR2": 0.05,
+   "H0_dR2": 0.02,
+   "H1_pmax": 0.01,
+   "machinery_tol": 0.01
+  },
+  "regen_hash_status": "CONDITIONAL: no N strings stored anywhere in the exp586/598b lineage; verbatim recipe identity relied on; stream-distinctness vs 11 prior population seeds ASSERTED (self-exclusion + pairwise-disjoint prefix-complete regenerations + numeric stream-band disjointness)",
+  "changes_vs_598b": [
+   "master seed 20260827 -> 20260907 (v2: v1's 20260903 WITHDRAWN -- exp601's recorded lineage, hash fa1746a5b065cbd9 prefix-collides)",
+   "n_pool 128 -> 512 (pre-stated ~4x power remedy)",
+   "perm seed 598 -> 599",
+   "CONTROL RULE CORRECTED: 598b's control_ok conjunction was logically unsatisfiable (p_ctrl>0.05 forces max>=obs); v2 gates H1 on clean_control = max(ctrl_null)<d_obs and gates H0 on machinery_ok = |mean(ctrl_null)|<0.01; p_ctrl descriptive only",
+   "VERDICT GATING DISCLOSED: control now GATES H1/H0 (598b only flagged via honest note) -- registered in header AMENDMENT v2",
+   "closing branches resolved in-artifact (none/a_small_but_real/b_undecidable_at_scale); 'scaling law' softened to two-point comparison",
+   "SECONDARY kappa arm repaired (v1-style D>0 popcount degenerate; now expected-popcount from cell marginals, one column)",
+   "stream offsets moved +7e6/+9e6 -> +17e6/+19e6 (v1 bands overlapped 598b's in 52 values)",
+   "prior-seed registry extended to {20260824..28, 20260831, 20260902..06}; self-exclusion asserted",
+   "hit streams parallelized (positional seeds => deterministic)",
+   "verification arrays saved for independent recomputation"
+  ]
+ },
+ "stats": {
+  "delta_adjR2": -0.311472,
+  "adjR2_dial": -0.000273,
+  "adjR2_cells": -0.311746,
+  "cells_alone_R2": 0.284468,
+  "rank_cells": 16,
+  "n_cell_cols_used": 15,
+  "ref_cell": 0,
+  "perm_p": 0.9803921568627451,
+  "perm_null_q": {
+   "q50": 0.071415,
+   "q95": 0.417208,
+   "max": 0.557693
+  },
+  "ctrl_p_vs_obs": 0.9411764705882353,
+  "ctrl_null_mean": 0.000573,
+  "ctrl_null_max": 0.471904,
+  "clean_control": false,
+  "machinery_ok": true,
+  "ctrl_share_ge_obs": 0.94,
+  "secondary_kappa": {
+   "delta_adjR2": -0.03253,
+   "adjR2_dial": -0.000273,
+   "adjR2_kappa": -0.032803,
+   "note": "non-evidentiary unless primary fires"
+  },
+  "sensitivity_alpha1": {
+   "delta_adjR2": -0.263612,
+   "adjR2_dial": -0.021011,
+   "adjR2_plus_cells": -0.284623
+  },
+  "mean_hits_per_N": 170.9,
+  "min_hits_per_N": 87,
+  "max_hits_per_N": 287,
+  "mean_cell_occupancy": {
+   "0": 0.2447,
+   "1": 0.2436,
+   "2": 0.1019,
+   "3": 0.102,
+   "4": 0.052,
+   "5": 0.0517,
+   "6": 0.0304,
+   "7": 0.0305,
+   "8": 0.0371,
+   "9": 0.0372,
+   "10": 0.0167,
+   "11": 0.0166,
+   "12": 0.0106,
+   "13": 0.0106,
+   "14": 0.007,
+   "15": 0.0072
+  },
+  "cell_beta_vs_ref": {
+   "1": -8.7826,
+   "2": -10.5774,
+   "3": 1.081,
+   "4": -31.1372,
+   "5": 22.5278,
+   "6": -44.2532,
+   "7": 32.7432,
+   "8": -43.4129,
+   "9": 31.8467,
+   "10": 185.5065,
+   "11": -203.5804,
+   "12": 37.7363,
+   "13": -46.2621,
+   "14": -239.7718,
+   "15": 251.1663
+  }
+ },
+ "verdicts": {
+  "rule": "H1 iff dAdjR2>=0.05 AND perm_p<0.01 AND clean_control; H0 iff dAdjR2<0.02 AND machinery_ok; else BORDERLINE; clean_control := max(ctrl_null)<d_obs; machinery_ok := |mean(ctrl_null)|<machinery_tol",
+  "fired": "H0_DIAL_SUFFICIENT",
+  "closing_branch_fired": "none",
+  "H1_mixture_adds": false,
+  "H0_dial_sufficient": true,
+  "clean_control": false,
+  "machinery_ok": true
+ },
+ "honest_notes": [
+  "Registered rule v2 (header AMENDMENT block) -- v1 audited pre-data: control criterion unsatisfiable by construction (must-fix), seed 20260903 withdrawn as exp601's lineage (must-fix), kappa arm degenerate (fixed), stream-band overlap with 598b (fixed).",
+  "POST-RUN ERRATUM ON 598B carried here: its control_ok=False was guaranteed by construction whenever p_ctrl>0.05 held; paper 255's 'control fails on its max clause' framing is corrected to the informative content c = 25/500 (obs at the 95th pctile of the y-shuffle range). BORDERLINE verdict itself unaffected.",
+  "Regen hash-check CONDITIONAL (disclosed, recorded-not-asserted); stream-distinctness asserted three ways (self-exclusion, pairwise-disjoint prefix-complete regenerations, numeric band disjointness).",
+  "Hit classifier gcd-chain primorial(1e6) full-smoothness, same class and cut as 598b; absolute rates internally consistent only.",
+  "Parallel hit streams use POSITIONAL seeds (SEED+HIT_OFF+i) => scheduling-independent; sequential spot-check covers the first 8 Ns exactly (spot-check, not a whole-array proof; ex.map ordered-yield semantics index the rest).",
+  "Cell rows permuted jointly (preserves within-row structure); ctrl arm shuffles y (same designs as 598b). Berggren method-law on row-shuffle nulls does not apply: breaking the y<->D coupling IS the null under test here.",
+  "Latent 598b bug fixed silently-inherited-free: 598b enumerated cell betas over the UNFILTERED keep list (mislabeled if a column were degenerate; not triggered in its run); 598c enumerates the filtered keep_eff -- recorded per errata discipline."
+ ],
+ "wall_s": 13.54
+}

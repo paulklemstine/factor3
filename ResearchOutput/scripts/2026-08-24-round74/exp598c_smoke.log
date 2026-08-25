@@ -1,0 +1,4 @@
+[smoke] population 32 Ns; self-exclusion ok; disjoint from 11 prior lineage seeds (352 prior Ns regenerated+checked); stream bands clear (ours >= 37260907 > 29260938), wall=0.0s
+  [smoke] 32/32 hit streams, wall=6.9s
+[smoke] determinism spot-check 8/32 exact
+{"fired": "H0_DIAL_SUFFICIENT", "closing_branch": "none", "delta_adjR2": -0.311472, "perm_p": 0.9803921568627451, "ctrl_p_vs_obs": 0.9411764705882353, "ctrl_null_max": 0.471904, "clean_control": false, "machinery_ok": true, "wall_s": 13.54, "out": "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp598c_smoke_result.json"}

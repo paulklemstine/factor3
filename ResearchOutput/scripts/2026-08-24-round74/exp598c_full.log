@@ -1,0 +1,25 @@
+[full] population 512 Ns; self-exclusion ok; disjoint from 11 prior lineage seeds (5632 prior Ns regenerated+checked); stream bands clear (ours >= 37260907 > 29261418), wall=0.1s
+  [full] 32/512 hit streams, wall=35.0s
+  [full] 64/512 hit streams, wall=35.0s
+  [full] 96/512 hit streams, wall=68.4s
+  [full] 128/512 hit streams, wall=68.4s
+  [full] 160/512 hit streams, wall=100.6s
+  [full] 192/512 hit streams, wall=101.1s
+  [full] 224/512 hit streams, wall=132.8s
+  [full] 256/512 hit streams, wall=133.6s
+  [full] 288/512 hit streams, wall=134.2s
+  [full] 320/512 hit streams, wall=166.6s
+  [full] 352/512 hit streams, wall=166.7s
+  [full] 384/512 hit streams, wall=199.3s
+  [full] 416/512 hit streams, wall=199.7s
+  [full] 448/512 hit streams, wall=232.4s
+  [full] 480/512 hit streams, wall=232.4s
+  [full] 512/512 hit streams, wall=259.5s
+[full] determinism spot-check 8/512 exact
+  [full] perm 100/500, wall=286.3s
+  [full] perm 200/500, wall=286.4s
+  [full] perm 300/500, wall=286.4s
+  [full] perm 400/500, wall=286.4s
+  [full] perm 500/500, wall=286.5s
+{"fired": "H1_MIXTURE_ADDS", "closing_branch": "none", "delta_adjR2": 0.105498, "perm_p": 0.001996007984031936, "ctrl_p_vs_obs": 0.001996007984031936, "ctrl_null_max": 0.054872, "clean_control": true, "machinery_ok": true, "wall_s": 286.46, "out": "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp598c_result.json"}
+EXIT=0

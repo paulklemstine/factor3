@@ -3418,3 +3418,42 @@ rates not comparable to exp577 rows; joint row-permutation conservative.
 No barrier breached; flagged control REDUCES downstream exposure by
 discrediting naive uncalibrated-ΔadjR² readings from rich fixed-effect
 designs at small n_pool. Wall 551.6 s full. Paper 255, issue #403.
+
+**Assessment addendum v363 — 2026-08-25 (round-95 #3).** Experiment recorded
+(count 592 → 593; papers 255 → 256; version v362 → v363). Content:
+**MIXTURE-RATE-CELLS-POWERED (exp 598c)** — exp598b's flagged question re-fired
+at its pre-stated power remedy under a PRE-REGISTRATION V2 amended before any
+full-mode data existed: a two-agent adversarial pre-run audit caught (1) the
+inherited control_ok conjunction (p_ctrl>0.05 AND max(ctrl_null)<d_obs) is
+LOGICALLY UNSATISFIABLE — p_ctrl>0.05 forces ≥25/500 y-shuffles to reach obs,
+forcing max≥obs — so 598b's control flag was guaranteed by construction
+(erratum on paper 255 carried here; its BORDERLINE stands, informative content
+was c=25/500 = obs at the y-shuffle 95th pctile); corrected rule gates H1 on
+clean_control := max(ctrl_null)<d_obs and H0 on machinery_ok := |mean|<0.01;
+and (2) v1's seed 20260903 was exp601's recorded lineage (hash fa1746a5b065cbd9
+prefix-collides) — withdrawn to registry-verified-unused 20260907 with
+self-exclusion + 11-seed pairwise-disjoint prefix-complete regeneration checks +
+numeric stream-band disjointness (offsets moved +7e6/9e6 → +17e6/19e6; v1 bands
+overlapped 598b in 52 values). **RESULT: H1_MIXTURE_ADDS** — on 512 fresh
+semiprimes bits=96 (seed 20260907, two independent 50k/N streams, mean 762.6
+hits/N): ΔadjR² = +0.105498 [0.051576 dial → 0.157074 +cells] clears the bar,
+perm_p = 1/501 ≈ .00200 with ZERO of 500 cell-label shuffles reaching obs
+(perm null q95 .0189, max .0402), clean control TRUE (ctrl null max .054872 ≪
+obs), machinery TRUE. THE POWER REMEDY VALIDATED: shuffle-null max collapsed
+{128: .186 → 512: .0549} (~p/(n−p) scaling) while the effect GREW across
+independent populations (+0.083 seed-20260827 n=128 → +0.105 seed-20260907
+n=512); paper 255's BORDERLINE resolves UNDERPOWERED-not-null. MECHANISM NAMED:
+repaired secondary covariate κ = Σₖ P(lₖ|v) (expected # distinct small primes
+dividing v, ONE column from cell marginals) captures Δ = +0.114 ALONE —
+composition ORDER, not 15 independent cell effects; subsumes exp592's
+kappa-ordering replication as the graded law's visible tip; α=1 sensitivity
++0.108. CONSEQUENCE: papers 227/235/236 additive completeness upgrades DIAL →
+CELL level. Verification: independent from-scratch recomputation of every
+headline stat from exp598c_verify.npz alone (Δ exact to full float64, perm_p
+bit-exact, permutation arrays bit-exact from documented call order); hostile
+adjudication audit failed all overturn attempts; chain-of-custody caveat
+disclosed (v1 smoke overwritten; filesystem forensics support integrity) →
+ADOPTED PROCESS LAW: commit pre-registrations BEFORE data-producing runs.
+Catalog scan: no prior work on joint divisibility mixtures/permutation-calibrated
+increments. No barrier breached (proposal-geometry layer refined, not
+N-information). Wall 286.5 s. Paper 256, issue #404.
