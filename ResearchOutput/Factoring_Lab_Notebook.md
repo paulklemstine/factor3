@@ -12766,3 +12766,43 @@ scale-smoothness deviations (now the ONLY remaining door for Bet#1-class
 runs), factor-local beyond scan-order, residue cap 4/3, external-hint laws;
 quantum closed; .2346 flag traveling. Fleet queue next: Bet #2 theory triad
 (conic order-rigidity sealing) or Bet #3 CF-cascade experiment.
+
+## Part 301 — round-96 #1 · CONIC ORDER-RIGIDITY (exp 608) — THE SEAL HOLDS: every Berggren-word order divides K_p = p(p²−1) (zero violations across 550 primes × 40 words) while the strong individual-torus variant is REFUTED (4,973 mix tori); the tree generates exactly PGL₂(F_p); a tree-word arm scores 0/600 vs 225–292 for matched-budget p±1 methods — the "tree-matrix ECM analogue" genre closes BY MECHANISM (2026-08-25)
+
+v1 WITHDRAWN pre-data: wrong generator family (3×3 triple-space matrices,
+det 5, no integral invariant Q, mod-p BFS blew 8.6 GB RSS). Correct object:
+GL₂(Z) moves M₁=(2m−n,m), M₂=(2m+n,m), M₃=(m+2n,n), projective on t=m/n ∈
+P¹ — tree-generation verified EXACT at m≤40 (331=331 parity-corrected pairs).
+
+CL1_WEAK ✅ zero violations of K_p = p(p²−1) [PGL₂(F_p)] over ALL primes
+<4000 × 40 random words (factorization-reduced ladders, cached factorizations
+— v1's per-word trial division was the runtime bottleneck). ONE modulus caps
+ALL words ⇒ single smoothness draw per prime, no ECM variance.
+CL1_STRONG ❌ REFUTED: 4,973/22,000 divide neither p(p−1) nor p(p+1)
+(order 8 exists at p=3) — tori MIX under word products.
+CL2 ✅ image ≅ PGL₂(F_p) exactly (p=7→336, 13→1092, 19→6840).
+Micro-audit: 600 bits-40 balanced semiprimes (seed 20261107, streams
++263e6/+265e6 above true prior ceiling incl. exp606 stride bands, per-N
+matched mpz-mul budgets): pm1 225/600, pp1 292/600, TREE 0/600; strata flat
+(113/112 pm1, 145/147 pp1). Raw-trace zero = predicted (~2/p ⇒ ~0.003).
+Caveat disclosed: registered design omitted stage-1 targeting tr(W^E);
+seal predicts even that behaves as ONE Williams draw at worse constants.
+
+SIX-DEFECT LEDGER — all caught pre-evidence by positive-control gates:
+(1) wrong generator family; (2) band arithmetic under-crediting exp606's
+×1e8 strides; (3)+(3') control constants invalid on the exponent lattice
+(twice — fixed constants must be SEARCHED with exact divisibility);
+(4) pm1 scalar ladder double-counted MSB (x=a start before leading-bit
+square); (5) Lucas matrix ladder missing R-squaring — computed
+tr(A^bitlen(E)); k=5 passed BY ACCIDENT, k=13 exposed it; (6) Williams
+live-seed requirement (needs legendre(a²−4,p)=−1; all-residue seed sets
+legitimately yield zero). PROCESS LAW UPGRADED: positive controls mandatory
+on factoring-machinery experiments.
+
+Barrier framing: negative strength; no barrier breached; genre closed by
+mechanism per the conic trap. Prior art disclosed (GL₂ orders,
+Matthews–Vaserstein–Weisfeiler, Williams 1982, papers 64/67). Count 595 ->
+596; assessment v365 -> v366. Paper 259, issue #408. Open unchanged: u>=6-14
+scale-smoothness deviations, factor-local beyond scan-order, residue cap 4/3,
+external-hint laws; quantum closed; .2346 flag traveling. Fleet queue: Bet#3
+CF-cascade evasion shot next; asymptotic-class hunt workflow in flight.

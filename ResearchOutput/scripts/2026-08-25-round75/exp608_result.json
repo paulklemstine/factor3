@@ -1,0 +1,272 @@
+{
+ "config": {
+  "exp": "608",
+  "version": "v2_correct_generators",
+  "generators": [
+   "[[2,-1],[1,0]]",
+   "[[2,1],[1,0]]",
+   "[[1,2],[0,1]]"
+  ],
+  "word_seed": 60801,
+  "words_per_prime": 40,
+  "max_word_len": 8,
+  "prime_hi_census": 4000,
+  "prime_hi_image": 60,
+  "audit_seed": 20261107,
+  "ns_audit": 600,
+  "bits_audit": 40,
+  "stream_offsets": {
+   "cell": 263000000,
+   "hit": 265000000
+  },
+  "cost_model": "mpz muls: 2x2 matmul=8",
+  "ledger_catch_v1": "3x3 triple-space generators wrong: det 5, no integral invariant Q, mod-p groups huge (BFS blew 8.6GB); replaced by GL2(Z) moves on (m,n)"
+ },
+ "anatomy": {
+  "dets": [
+   1,
+   -1,
+   1
+  ],
+  "tree_generation_exact_m_le_40": true,
+  "n_reachable": 331,
+  "n_truth": 331,
+  "charpolys": [
+   [
+    1,
+    -2,
+    1
+   ],
+   [
+    1,
+    -2,
+    -1
+   ],
+   [
+    1,
+    -2,
+    1
+   ]
+  ]
+ },
+ "order_census": {
+  "primes_tested": 550,
+  "words_checked": 22000,
+  "violations_weak_cap_PGL2": [],
+  "violations_strong_individual_caps": [
+   [
+    3,
+    0,
+    8
+   ],
+   [
+    3,
+    2,
+    8
+   ],
+   [
+    3,
+    7,
+    8
+   ],
+   [
+    3,
+    13,
+    8
+   ],
+   [
+    3,
+    20,
+    8
+   ],
+   [
+    3,
+    22,
+    8
+   ],
+   [
+    3,
+    23,
+    8
+   ],
+   [
+    3,
+    24,
+    8
+   ],
+   [
+    3,
+    36,
+    8
+   ],
+   [
+    3,
+    38,
+    8
+   ]
+  ],
+  "n_strong_violations": 4973
+ },
+ "image": {
+  "n_primes": 17,
+  "mismatches": [],
+  "table": [
+   {
+    "p": 2,
+    "gl2_size": 2,
+    "scalars": 1,
+    "pgl_size": 2,
+    "fits_family": true
+   },
+   {
+    "p": 3,
+    "gl2_size": 48,
+    "scalars": 2,
+    "pgl_size": 24,
+    "fits_family": true
+   },
+   {
+    "p": 5,
+    "gl2_size": 240,
+    "scalars": 4,
+    "pgl_size": 60,
+    "fits_family": true
+   },
+   {
+    "p": 7,
+    "gl2_size": 672,
+    "scalars": 2,
+    "pgl_size": 336,
+    "fits_family": true
+   },
+   {
+    "p": 11,
+    "gl2_size": 2640,
+    "scalars": 2,
+    "pgl_size": 1320,
+    "fits_family": true
+   },
+   {
+    "p": 13,
+    "gl2_size": 4368,
+    "scalars": 4,
+    "pgl_size": 1092,
+    "fits_family": true
+   },
+   {
+    "p": 17,
+    "gl2_size": 9792,
+    "scalars": 4,
+    "pgl_size": 2448,
+    "fits_family": true
+   },
+   {
+    "p": 19,
+    "gl2_size": 13680,
+    "scalars": 2,
+    "pgl_size": 6840,
+    "fits_family": true
+   },
+   {
+    "p": 23,
+    "gl2_size": 24288,
+    "scalars": 2,
+    "pgl_size": 12144,
+    "fits_family": true
+   },
+   {
+    "p": 29,
+    "gl2_size": 48720,
+    "scalars": 4,
+    "pgl_size": 12180,
+    "fits_family": true
+   },
+   {
+    "p": 31,
+    "gl2_size": 59520,
+    "scalars": 2,
+    "pgl_size": 29760,
+    "fits_family": true
+   },
+   {
+    "p": 37,
+    "gl2_size": 101232,
+    "scalars": 4,
+    "pgl_size": 25308,
+    "fits_family": true
+   },
+   {
+    "p": 41,
+    "gl2_size": 137760,
+    "scalars": 4,
+    "pgl_size": 34440,
+    "fits_family": true
+   },
+   {
+    "p": 43,
+    "gl2_size": 158928,
+    "scalars": 2,
+    "pgl_size": 79464,
+    "fits_family": true
+   },
+   {
+    "p": 47,
+    "gl2_size": 207552,
+    "scalars": 2,
+    "pgl_size": 103776,
+    "fits_family": true
+   },
+   {
+    "p": 53,
+    "gl2_size": 297648,
+    "scalars": 4,
+    "pgl_size": 74412,
+    "fits_family": true
+   },
+   {
+    "p": 59,
+    "gl2_size": 410640,
+    "scalars": 2,
+    "pgl_size": 205320,
+    "fits_family": true
+   }
+  ]
+ },
+ "micro_audit": {
+  "pm1": {
+   "work": 1865364,
+   "succ": 225
+  },
+  "pp1": {
+   "work": 5591784,
+   "succ": 292
+  },
+  "tree": {
+   "work": 7463560,
+   "succ": 0
+  },
+  "tree_only_successes": [],
+  "strata": {
+   "p2=3": {
+    "n": 299,
+    "pm1": 113,
+    "pp1": 145,
+    "tree": 0
+   },
+   "p2=1": {
+    "n": 301,
+    "pm1": 112,
+    "pp1": 147,
+    "tree": 0
+   }
+  }
+ },
+ "verdicts": {
+  "CL1_WEAK_CONFIRMED": true,
+  "CL1_STRONG_CONFIRMED": false,
+  "CL2_CONFIRMED": true,
+  "CL3_CONTAINED": true,
+  "RATE_PARITY": false
+ },
+ "wall_s": 38.1
+}

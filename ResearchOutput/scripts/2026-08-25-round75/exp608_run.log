@@ -1,0 +1,12 @@
+[census] 100/550 wall=2s
+[census] 200/550 wall=5s
+[census] 300/550 wall=8s
+[census] 400/550 wall=11s
+[census] 500/550 wall=14s
+[controls] pm1/pp1 positive controls PASS (pp1 p=131143)
+[audit] 150/600 wall=32s
+[audit] 300/600 wall=34s
+[audit] 450/600 wall=36s
+[audit] 600/600 wall=38s
+{"verdicts": {"CL1_WEAK_CONFIRMED": true, "CL1_STRONG_CONFIRMED": false, "CL2_CONFIRMED": true, "CL3_CONTAINED": true, "RATE_PARITY": false}, "wall_s": 38.1}
+EXIT=0

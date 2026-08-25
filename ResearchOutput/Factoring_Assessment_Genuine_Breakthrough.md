@@ -3519,3 +3519,27 @@ null strata); pooled_z ≡ 0 is intercept-orthogonality not evidence;
 prng-collision hygiene note. Verification: independent recompute zero
 discrepancies; exhaustive S_dial reconstruction all Ns ≤ 3.6e−15; alternate-
 seed robustness Δp ≤ 0.005. Wall 37 s. Paper 258, issue #407.
+
+**Assessment addendum v366 — 2026-08-25 (round-96 #1).** Experiment recorded
+(count 595 → 596; papers 258 → 259; version v365 → v366). Content:
+**CONIC ORDER-RIGIDITY (exp 608)** — fleet Bet #2 empirical legs, positive-
+control gated. v1 withdrawn pre-data (wrong generator family: 3×3 triple-space
+matrices det 5, no integral Q, mod-p BFS blew 8.6 GB); correct object =
+GL₂(Z) Berggren moves on (m,n), tree-generation verified EXACT.
+**CL1_WEAK_CONFIRMED**: ZERO violations of ord(w) | p(p²−1) across 550 primes
+× 40 words — one shared modulus caps all tree-words ⇒ single smoothness draw
+per prime. **CL1_STRONG_REFUTED**: 4,973/22,000 orders mix split/non-split
+tori (neither p(p−1) nor p(p+1) individually). **CL2_CONFIRMED**: image ≅
+PGL₂(F_p) exactly at 17 primes ≤ 60. **Micro-audit** (600 bits-40 balanced
+semiprimes, matched per-N budgets): pm1 225, pp1 292, TREE ARM 0 successes;
+zero tree-only; strata flat across (2/p). Raw-trace zero is mechanistically
+predicted (~2/p ⇒ ~0.003 expected); targeted tr(W^E) variant predicted by the
+seal to behave as ONE Williams draw at worse constants (pre-stated
+falsifiable follow-up). **SIX-DEFECT LEDGER caught entirely by the new
+positive-control gates** (wrong generators; band arithmetic vs exp606 strides;
+two invalid control constants on the exponent lattice; pm1 MSB double-count;
+Lucas ladder missing R-squaring — k=5 passed BY ACCIDENT; Williams live-seed
+requirement booked). **PROCESS LAW UPGRADED: positive controls are mandatory
+gates on factoring-machinery experiments.** No barrier breached — negative
+strength closing the tree-matrix-ECM-analogue genre by mechanism. Wall ~90 s.
+Paper 259, issue #408.
