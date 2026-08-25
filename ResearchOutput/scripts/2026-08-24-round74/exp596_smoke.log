@@ -1,0 +1,17 @@
+/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp596_covariate_interactions.py:300: SyntaxWarning: invalid escape sequence '\{'
+  'omega_bar(N+-delta), delta in {-3..3}\{0}, bound 1e5',
+{
+ "mode": "smoke",
+ "order_match": true,
+ "hash_R2": 0.728279,
+ "R2_add": 0.7385533635077284,
+ "R2_int": 0.7542751935374079,
+ "dR2": 0.01572183002967953,
+ "dR2_adj": 0.007424974711110144,
+ "p_perm": 0.2682926829268293,
+ "ctrl_max": 0.13154883934256278,
+ "sec_dR2": 0.04099347404606335,
+ "sec_p": 0.24390243902439024,
+ "verdict": "H0_ADDITIVE_COMPLETE",
+ "wall_s": 0.06
+}

@@ -3129,3 +3129,43 @@ Named next question: early-fire persistence where B1/p must shrink (u ≥ 6–14
 Open unchanged: non-QR per-N structure at u = 2.5, factor-local beyond scan-order, MA-1
 effectivity; .2346 flag traveling; paper 242 entry single-seed-unconfirmed (#391). Paper 244,
 issue #392.
+
+**Assessment addendum v352 — BACKFILLED 2026-08-24 at v353 record time (round-88 #2).** LEDGER CATCH:
+this addendum was claimed by notebook Part 287, paper 245's attribution line, and issue #393
+("assessment v351 → v352") but was never appended to this file — the round-88 #2 recorder committed
+paper + issue without the assessment write, and this session found the file still ending at v351.
+Recorded here as a MARKED RECONSTRUCTION from those three authoritative records rather than invented
+prose; content: **EDGE-KERNEL-CAP [FINAL] (exp 594, paper 245)** — H0_SPIKE_STEEPNESS_UNIDENTIFIABLE:
+cap ladder ΔAICc −99.6/−99.6/−101.3/−101.3 at caps 10/20/40/80 retains paper-238's two-component
+kernel beyond doubt (single-law b = 1.160 replicating papers 229/238), BUT b_edge climbs
+.833*/.833*/40.000(=cap)/40.46 with bootstrap CI [15.2, 80.0] hitting successive caps ⇒ spike
+steepness UNIDENTIFIABLE at n = 9594; paper 238's registered δ = 10 amended to a HARD CENSOR —
+canonical wording now "flat bulk + left-edge spike with b_edge >~ 15 LOWER BOUND ONLY"; controls clean
+(+4.85, w ≈ 8e-7); role-swapped optimum at low caps disclosed as a second unidentified direction;
+papers 239/240 carrier resolution stands (shape-vs-carrier reconciled). Full detail: paper 245,
+notebook Part 287, issue #393.
+
+**Assessment addendum v353 — 2026-08-24 (round-89 #1).** Experiment recorded (count 583 → 584; papers
+245 → 246; version v352 → v353). Content: **COVARIATE-INTERACTIONS [FINAL ADJUDICATION] (issue #394)**
+— exp 596 closes paper 234's ranked-first queue item ("Rate-layer N-covariate") DEFINITIVELY and
+NEGATIVELY on CONFIRMED-lineage data: pure reanalysis of STORED exp577 counts (zero resampling) paired
+with archived_N_vector_seed20260827.json, wall 2.83 s. PROVENANCE VERIFIED both legs: archive Ns ==
+exp577 rows[].N order-for-order 128/128 AND functional hash reproduces exp586's headline R²(y~S√400)
+= 0.624219 EXACTLY (six decimals; mean hits 77.578 vs ref 77.58). ROOT CAUSE of all prior hash failures
+identified: exp581_regen_positions.npz is a DIFFERENT generation than exp577 (window mismatch vs
+rows[].lo/hi) — never use it as an exp577-family y-vector; three-pass adjudication history disclosed
+(v1 INVALID → v2 FAILED_HASH → v3 CONFIRMED via stored counts; dead passes died at the pre-registered
+hash gate before statistics were read). VERDICT **H0_ADDITIVE_COMPLETE**: registered interaction test
+ΔR² = +0.00079 raw / −0.0023 adjusted, permutation p = 0.62 (500 shuffles; permuted-y control max
+0.059) ⇒ covariate COMBINATIONS absorb NONE of the ~40% residual — irreducible sampling noise at these
+powers. Secondary exploratory null too (raw S400 third class ΔR² +0.0018, p = 0.87; corr .77 same-
+signal): the √-dial alone carries ~all predictable variance (~0.62 of 1.0). Four-way-negative coverage
+claim COMPLETE within stated limit: individually (226/227/235/237) + jointly-additive +
+pairwise-interactively all fail. HONEST AMENDMENT: parity class dropped (no stored hit positions for
+true counts) ⇒ completeness covers dial×neighbor(+S400) interaction classes only; a pure
+parity-interaction carrier is NOT excluded — revival needs fresh positions on exp577 geometry. Map
+consequence: "non-QR per-N structure at u = 2.5" narrows to carriers OUTSIDE the tested
+covariate-combination space. Barrier framing: completed negative map IS the asymptotic deliverable for
+this stratum; effort moves to u ≥ 6–14 scale-smoothness deviations or factor-local beyond scan-order.
+Open unchanged: factor-local outside scan-order framing, MA-1 effectivity; .2346 flag traveling; paper
+242 entry single-seed-unconfirmed (#391); positional shape arc untouched. Paper 246, issue #394.

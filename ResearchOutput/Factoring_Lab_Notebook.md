@@ -11958,3 +11958,52 @@ untouched; paper 238's .2346 flag still travels; #391 single-seed-unconfirmed st
 unchanged: non-QR per-N structure at u=2.5, factor-local beyond scan-order, MA-1 effectivity.
 Named next honest question: does a parametric-family choice (or ≥3–4× more pooled hits) turn the
 lower-bound ladder into a pin — or is the profile genuinely scale-free-steep at the edge?
+
+## Part 288 - COVARIATE-INTERACTIONS [FINAL ADJUDICATION] (round-89 #1, exp 596, v353)
+
+**H0_ADDITIVE_COMPLETE on CONFIRMED-lineage data — paper 234's ranked-first queue item ("Rate-layer
+N-covariate") CLOSED definitively, negatively.** Pre-registration in exp596_covariate_interactions.py
+header BEFORE any analysis; pure reanalysis of STORED exp577 counts (zero resampling) paired with
+archived_N_vector_seed20260827.json; hierarchical OLS M_add vs M_int (+ pairwise products of centered
+covariates), 500 interaction-block permutation shuffles + 200 permuted-y control reps; wall **2.83 s**.
+
+PROVENANCE VERIFIED both legs: archive Ns == exp577 rows[].N **order-for-order 128/128**; functional
+hash reproduces exp586's headline EXACTLY — R²(y~S√400) = **0.624219298 vs target 0.624219** (6
+decimals), mean hits 77.578125 vs ref 77.58; counts sha16 df15fea625714b9c. Verification standard
+recorded: identifier string-match AND exact functional-statistic reproduction, both mandatory.
+
+ROOT CAUSE of all prior hash failures IDENTIFIED: `exp581_regen_positions.npz` belongs to a DIFFERENT
+generation than exp577 (its jlo/jhi windows differ from rows[].lo/hi) — pairing that npz with any pool
+was invalid from the start; this also fully explains the ±1 count-jitter mystery. STANDING RULE: never
+use that npz as an exp577-family y-vector. Three-pass adjudication told honestly: v1 INVALID → v2
+FAILED_HASH → v3 CONFIRMED via stored-counts path; both dead passes died at the pre-registered hash
+gate before verdict statistics were read — the gate worked.
+
+REGISTERED TEST NULL: R²_add = 0.62451 (S√400 dial + neighbor ω̄(N±δ), δ∈{-3..3}\\{0}, bound 1e5);
++interactions 0.62530; **ΔR² = +0.00079 raw / −0.0023 adjusted, perm p = 0.62** (null mean .0032 max
+.027; ctrl max .059) ⇒ H0 fires mechanically (ΔR²<0.02): covariate COMBINATIONS absorb NONE of the ~40%
+residual — irreducible sampling noise at these powers. Secondary exploratory also null: raw S400 third
+class ΔR²=+0.0018, p=0.87 (corr(S,S400raw)=.77 same-signal; corr(S,ω̄)=.025 orthogonal-yet-useless) —
+the √-dial alone carries ~all predictable variance (~0.62). Four-way-negative coverage claim COMPLETE
+within stated limit: individually + jointly-additive + pairwise-interactively all fail to beat R²≈0.62.
+
+HONEST AMENDMENT: parity class DROPPED (no stored hit positions for true counts exist on the exp577
+generation) ⇒ completeness claim covers dial×neighbor(+S400) interaction classes only; a hypothetical
+pure parity-interaction carrier is NOT excluded — revival needs fresh positions on exp577 geometry.
+Also disclosed: neighbor LPF → ω̄ substitution per Method line (exact LPF infeasible at 96 bits,
+bounded-below proxy).
+
+Ledger catches: three-pass history; counts-layer split root cause; verification-standard upgrade;
+stray mis-cwd'd smoke log at repo root left untracked (authoritative smoke = round74 copy).
+ASSESSMENT-FILE GAP caught at record time: round-88 #2's addendum (v352) was claimed by Part 287 /
+paper 245 / issue #393 but never appended to the assessment file (file ended at v351) — BACKFILLED
+this session as a marked reconstruction, then v353 appended normally.
+
+Count 583 → 584; assessment v352 → v353. Paper 246, issue #394. Barrier framing: completed negative map
+IS the asymptotic deliverable for this stratum — "non-QR per-N structure" narrows to carriers OUTSIDE the
+tested covariate-combination space (parity-interaction excluded only under the stated limit); effort must
+move to u ≥ 6–14 scale-smoothness deviations or factor-local-beyond-scan-order; MA-1 effectivity open;
+residue cap 4/3, position 5.19×, external-hint laws, quantum frontier, positional shape/carrier arc
+(papers 238–245) all untouched; .2346 flag traveling; #391 single-seed-unconfirmed stands. Named next
+honest question: does ANY fresh-geometry positions collection (powering the excluded parity cell) justify
+itself, or is the rate layer formally closed at covariate-class depth?

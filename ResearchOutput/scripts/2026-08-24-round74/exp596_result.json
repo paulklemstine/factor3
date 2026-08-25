@@ -1,0 +1,70 @@
+{
+ "config": {
+  "exp": 596,
+  "codename": "COVARIATE-INTERACTIONS",
+  "mode": "full",
+  "master_seed": 20260827,
+  "bits": 96,
+  "n_pool": 128,
+  "counts_source": "exp577_result.json rows[].hits/total (STORED, zero resampling), paired with archived_N_vector_seed20260827.json",
+  "covariates": [
+   "S_sqrt400 computed (odd primes 3..400, weight 1/sqrt(l))",
+   "omega_bar(N+-delta), delta in {-3..3}\\{0}, bound 1e5",
+   "secondary-only: stored raw S400 integer"
+  ],
+  "design_amendment": "parity class dropped: no positions exist for the true counts (see honest_notes)",
+  "interactions": "products of centered covariates",
+  "perm_reps": 500,
+  "ctrl_reps": 200,
+  "population_verified": true,
+  "archive_rows_order_match": true,
+  "counts_sha16": "df15fea625714b9c",
+  "mean_hits": 77.578125,
+  "mean_hits_exp586_ref": 77.58
+ },
+ "regression": {
+  "R2_add": 0.6245054251017559,
+  "R2_int": 0.6252967920550869,
+  "dR2": 0.0007913669533310408,
+  "dR2_adj": -0.0022661200405127424,
+  "p_perm": 0.6187624750499002,
+  "null_mean": 0.003191618480462677,
+  "null_max": 0.027473193083808134
+ },
+ "regression_secondary_S400raw": {
+  "R2_add": 0.6288145092297919,
+  "R2_int": 0.630603343382881,
+  "dR2": 0.0017888341530891694,
+  "dR2_adj": -0.0075480612996934315,
+  "p_perm": 0.8682634730538922,
+  "null_mean": 0.008892843618078048,
+  "null_max": 0.056301401394174055
+ },
+ "stats": {
+  "R2_Sonly_vs_exp586_target": 0.6242192982694327,
+  "target_R2": 0.624219,
+  "functional_hash_exact_pass": true,
+  "control_dR2": {
+   "mean": 0.009438012926670103,
+   "max": 0.0586294012538201
+  },
+  "corr_S_omega": 0.025241362916693558,
+  "corr_S_S400raw": 0.7697089323381049
+ },
+ "verdicts": {
+  "rule": "H1 iff adjDR2>=0.05 and p<0.01; H0 iff raw dR2<0.02; else BORDERLINE; INVALID only if functional hash fails",
+  "fired": "H0_ADDITIVE_COMPLETE",
+  "provenance_status": "CONFIRMED-lineage"
+ },
+ "honest_notes": [
+  "ROOT CAUSE of earlier hash failures: the exp581_regen_positions.npz hit/ctl arrays belong to a DIFFERENT generation than exp577 (its jlo/jhi windows differ from rows[].lo/hi); pairing that npz with any pool was invalid. Final run uses ONLY stored exp577 counts -- no resampling.",
+  "Design amendment: parity covariate dropped (no hit positions exist for the true counts). Primary interaction test is therefore S-dial x neighbor-omega only; a residual carried by a PARITY interaction would be missed by this design (stated limit on any additive-completeness upgrade).",
+  "omega-bar replaces neighbor LPF per Method line (exact LPF infeasible at 96 bits; bounded-below proxy).",
+  "Functional hash reproduces exp586 headline EXACTLY: R2(y~S_sqrt400) = 0.624219 (6 decimals) with archive Ns == exp577 rows 128/128.",
+  "Secondary model (adding stored raw S400 as third class) is exploratory, not pre-registered."
+ ],
+ "log": [
+  "archive == exp577 rows[].N order-for-order: True (128/128)"
+ ],
+ "wall_s": 2.83
+}
