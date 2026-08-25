@@ -1,0 +1,92 @@
+{
+ "config": {
+  "exp": "606",
+  "codename": "KAPPA-SUFFICIENCY-SCALE",
+  "mode": "smoke",
+  "bits": 96,
+  "master_seed": 20261007,
+  "prior_seeds_checked_at_this_bits": [
+   20260824,
+   20260825,
+   20260826,
+   20260827,
+   20260828,
+   20260831,
+   20260902,
+   20260903,
+   20260904,
+   20260905,
+   20260906,
+   20260907
+  ],
+  "n_pool": 32,
+  "cell_samples_per_N": 20000,
+  "hit_samples_per_N": 12000,
+  "sizing_ladder": [
+   50000,
+   150000,
+   400000
+  ],
+  "min_mean_hits_target": 300,
+  "lowpower_projected": false,
+  "j_window_t": [
+   0,
+   65536
+  ],
+  "smooth_cut": 1000000,
+  "perm_reps": 50,
+  "perm_seed": 606,
+  "boot_B": 100,
+  "boot_seed": 607,
+  "thresholds": {
+   "H1_dR2": 0.05,
+   "sufficiency_bar": 0.02,
+   "machinery_tol": 0.01
+  },
+  "regen_hash_status": "CONDITIONAL (no stored N strings anywhere in lineage); distinctness asserted per leg at matching bits"
+ },
+ "stats": {
+  "adjR2_dial": 0.082341,
+  "adjR2_kappa": 0.06811,
+  "adjR2_cells": 0.335832,
+  "delta_kappa": -0.01423,
+  "delta_cells_beyond_kappa": 0.267722,
+  "beta_kappa": -0.174987,
+  "beta_ci95": [
+   -0.576729,
+   0.327548
+  ],
+  "perm_p_kappa": 0.5882352941176471,
+  "ctrl_ps_p_vs_obs": 0.5686274509803921,
+  "ctrl_share_ge_obs": 0.56,
+  "rank_models": {
+   "dial": 2,
+   "kappa": 3,
+   "cells": 17
+  },
+  "ctrl_null_max": 0.214797,
+  "clean_control": false,
+  "machinery_ok": true,
+  "cells_shuffle_share_ge": 0.16,
+  "sensitivity_alpha1_delta": 0.05101,
+  "mean_hits_per_N": 179.3,
+  "min_hits_per_N": 97,
+  "max_hits_per_N": 290,
+  "mean_kappa": 1.2541
+ },
+ "verdicts": {
+  "rule": "H1_KAPPA_CARRIES iff dKappa>=0.05 AND perm_p<0.01 AND clean_control; BORDERLINE_CONTROL_DIRTY iff dKappa>=0.05 AND perm_p<0.01 AND NOT clean_control; SUBBAR_POSITIVE iff 0<dKappa<0.05 AND perm_p<0.01; NULL_AT_THIS_SCALE if no perm support and machinery_ok; INVALID_MACHINERY otherwise; INCONCLUSIVE_LOWPOWER overrides all claims when the sizing ladder tops out below 300 mean hits/N; KAPPA_SUFFICIENT iff dCellsBeyond<0.02 AND machinery_ok",
+  "fired": "SMOKE_NON_EVIDENTIARY",
+  "kappa_sufficient": null,
+  "lowpower_flag": false
+ },
+ "honest_notes": [
+  "kappa is assembled from the SAME cell grid as Dr (independent of the hit stream y, but sharing the cell grid's sampling noise with the cells arm); the C2 comparison is exactly a df-penalty question because span{kappa} subset span{Dr}.",
+  "Sizing pilot (full legs) is pre-declared in the header; its 2k/N draws use a distinct stream (+23e6) and feed ONLY n_hit choice.",
+  "Cross-bit slope comparisons are descriptive (different rate regimes); no cross-leg pooling.",
+  "Regen hash CONDITIONAL; tester class matched to 598b/598c, absolute rates internally consistent only.",
+  "Spot-check covers first 8 Ns (positional seeds + ordered ex.map index the rest).",
+  "Rank note: D rows sum to exactly 1, so intercept+Dr carries an exact-in-exact-arithmetic dependence at machine epsilon; lstsq rcond=None classifies designs full-rank and the df penalty counts one algebraically-free parameter -- the error CANCELS within every reported delta (both arms share the Dr block); model ranks recorded in stats.rank_models."
+ ],
+ "wall_s": 37.71
+}

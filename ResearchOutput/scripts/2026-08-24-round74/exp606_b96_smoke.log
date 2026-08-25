@@ -1,0 +1,2 @@
+[b96/smoke] population 32, disjoint from 12 prior seeds (384 Ns @bits=96); bands clear (ours >= 51261007 > ceiling 39260939), wall=0.0s
+{"bits": 96, "fired": "SMOKE_NON_EVIDENTIARY", "kappa_sufficient": null, "delta_kappa": -0.01423, "delta_cells_beyond": 0.267722, "perm_p": 0.5882352941176471, "ctrl_null_max": 0.214797, "clean_control": false, "beta_kappa": -0.174987, "beta_ci95": [-0.576729, 0.327548], "wall_s": 37.71, "out": "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp606_b96_smoke_result.json"}
