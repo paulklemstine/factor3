@@ -1,0 +1,108 @@
+{
+ "config": {
+  "exp": "598b",
+  "codename": "MIXTURE-RATE-CELLS",
+  "mode": "full",
+  "master_seed": 20260827,
+  "bits": 96,
+  "n_pool": 128,
+  "cell_samples_per_N": 50000,
+  "hit_samples_per_N": 50000,
+  "j_window_t": [
+   0,
+   65536
+  ],
+  "smooth_cut": 1000000,
+  "dial": "S_alpha,alpha=0.5,odd primes 3..400",
+  "n_odd_primes": 77,
+  "perm_reps": 500,
+  "perm_seed": 598,
+  "ctrl_reps": 500,
+  "thresholds": {
+   "H1_dR2": 0.05,
+   "H0_dR2": 0.02,
+   "H1_pmax": 0.01
+  },
+  "regen_hash_status": "CONDITIONAL: exp586_result.json stores no N strings/hashes; verbatim recipe identity relied on; exp586 itself verified 128/128 vs exp577 stored rows"
+ },
+ "regression": {
+  "form": "y=log((hits+0.5)/n_hit); A: y~1+S_sqrt400; B: y~1+S_sqrt400+cellFE",
+  "ref_cell": 1,
+  "n_cell_cols": 15,
+  "adjR2_dial_alone": 0.020939,
+  "adjR2_dial_plus_cells": 0.103634,
+  "R2_dial_alone": 0.028648,
+  "R2_dial_plus_cells": 0.216562,
+  "R2_cells_alone": 0.120751
+ },
+ "stats": {
+  "delta_adjR2": 0.082695,
+  "perm_p": 0.0399,
+  "perm_null_q": {
+   "q50": -0.00123,
+   "q95": 0.072737,
+   "max": 0.162909
+  },
+  "ctrl_p_vs_obs": 0.0519,
+  "ctrl_null_mean": 0.000866,
+  "ctrl_null_max": 0.186171,
+  "control_ok": false,
+  "sensitivity_alpha1": {
+   "delta_adjR2": 0.066199,
+   "adjR2_dial": -0.007509,
+   "adjR2_plus_cells": 0.05869
+  },
+  "mean_hits_per_N": 779.0,
+  "min_hits_per_N": 354,
+  "mean_cell_occupancy": {
+   "0": 0.225,
+   "1": 0.2251,
+   "2": 0.1047,
+   "3": 0.105,
+   "4": 0.0747,
+   "5": 0.0748,
+   "6": 0.0338,
+   "7": 0.034,
+   "8": 0.0322,
+   "9": 0.0321,
+   "10": 0.0145,
+   "11": 0.0144,
+   "12": 0.0091,
+   "13": 0.009,
+   "14": 0.0057,
+   "15": 0.0057
+  },
+  "cell_beta_vs_ref": {
+   "0": -18.857,
+   "2": -59.351,
+   "3": 39.5318,
+   "4": -2.7291,
+   "5": -16.3497,
+   "6": -34.3698,
+   "7": 13.908,
+   "8": 51.4404,
+   "9": -71.0979,
+   "10": -88.3213,
+   "11": 67.911,
+   "12": 103.528,
+   "13": -122.8891,
+   "14": 28.6008,
+   "15": -46.5512
+  }
+ },
+ "verdicts": {
+  "rule": "H1 iff dAdjR2>=0.05 AND perm_p<0.01; H0 iff dAdjR2<0.02; else BORDERLINE; control arm must be null",
+  "fired": "BORDERLINE_INCONCLUSIVE",
+  "H1_mixture_adds": false,
+  "H0_dial_sufficient": false,
+  "control_arm_null": false
+ },
+ "honest_notes": [
+  "Hit classifier operationalized as full 1e6-smoothness of v=j^2-N via gcd-chain with primorial(1e6); exp577's exact tester source is outside this agent's read allowance (only exp586 files readable) -- same tester CLASS and cut per task spec.",
+  "Absolute hit rates NOT comparable to exp577 rows (its j-law unreadable); all rates freshly generated and internally consistent; exp586 R2 levels contextual only.",
+  "Regeneration hash-check CONDITIONAL: no N strings stored in exp586_result.json; verbatim code + exp586's own 128/128 verification are the mitigation.",
+  "Fresh streams 50k/N each (task-spec ~50k) vs exp577's 150k; smoke 20k cell / 12k hit per N.",
+  "Cell rows permuted jointly (preserves within-row joint structure, breaks alignment with y and S)."
+ ],
+ "wall_s": 551.63
+}

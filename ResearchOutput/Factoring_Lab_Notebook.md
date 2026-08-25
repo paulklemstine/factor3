@@ -12512,3 +12512,64 @@ scan-order structure reflects proposal geometry, not N-information. Count
 590 -> 591; assessment v360 -> v361. Paper 254. Open unchanged: u>=6-14
 scale-smoothness deviations, factor-local beyond scan-order, MA-1 effectivity,
 residue cap 4/3, external-hint laws; quantum closed; .2346 flag traveling.
+
+## Part 297 — round-95 #2 · MIXTURE-RATE-CELLS (exp 598b) — BORDERLINE-INCONCLUSIVE, CONTROL-FLAGGED: the full 16-cell divisibility mixture clears the H1 effect bar (ΔadjR² = +0.083 ≥ 0.05) but misses the permutation gate (p = 0.0399 > 0.01) AND the permuted-rate control arm is NON-NULL (max control Δ = 0.186 > observed; p_vs_obs 0.052) — neither mixture-adds nor dial-sufficient claimable at n_pool = 128; rate-layer coverage matrix closes UNRESOLVED-AT-RESOLUTION on the joint layer (2026-08-25)
+
+Question (completes the rate-layer coverage matrix): papers 227/235/236 tested
+QR dials; exp596 pairwise interactions; does the FULL 16-cell divisibility
+mixture — joint class vector (2|v, 3|v, 5|v, 7|v), v = j^2-N — explain per-N
+hit-rate variance BEYOND the sqrt dial S_sqrt,400? PRE-REGISTERED in script
+header BEFORE analysis: H1 = hierarchical OLS log-rate ~ dial alone VS ~ dial +
+15 cell fixed effects raises adj R^2 >= 0.05 WITH perm p < 0.01 (500 shuffles
+of cell-label rows); H0 = Delta < 0.02 (dial sufficient); else BORDERLINE;
+CONTROL: permuted-RATE arm must be null (p_ctrl > 0.05 AND max ctrl < obs),
+non-null FLAGS the whole inference.
+
+Method: seed-20260827 VERBATIM regeneration of exp586 make_semiprime (bits=96,
+n_pool=128; hash-check CONDITIONAL — exp586 stores no N strings/hashes; recipe
+identity + exp586's own regeneration_verified=true 128/128 vs exp577 are the
+mitigation). TWO INDEPENDENT fresh streams per N: cell grid 50k (occupancy,
+reference cell dropped for identifiability) + hit stream 50k (mean hits/N 779,
+min 354 => rate ~1.56e-2); window t in [0,65536) from j0=isqrt(N)+1; hit :=
+full 1e6-smoothness via gcd-chain primorial(1e6); perm_seed 598, 500 reps both
+arms. Wall smoke 28.9 s / full 551.6 s.
+
+RESULT: **BORDERLINE-INCONCLUSIVE, CONTROL-FLAGGED** — Delta adj R^2 =
++0.0827 [dial-only 0.0209 -> +cells 0.1036] CLEARS the H1 effect bar;
+perm_p = 0.0399 MISSES < 0.01 (perm null q95 = 0.0727, max = 0.163);
+control FAILS nullity: ctrl_null_max = 0.186 > observed (p_vs_obs = 0.0519,
+barely above the p-clause, dead on the max clause). Per pre-registration:
+NOT H1, NOT H0. The label-permutation machinery's own null range swallows the
+effect at this data size — 15 free cell betas against 128 noisy log-rates fit
+SHUFFLED rates to R^2 ~ 0.1+, so the raw +0.083 cannot be read as composition
+carrying rate structure beyond the dial, and the dial-sufficiency upgrade is
+equally unavailable.
+
+Sensitivity/consistency: alpha=1 same sign (+0.066 [−0.0075 → 0.0587]);
+smoke (32 Ns, non-evidentiary) +0.346 with ctrl_ok false — textbook small-n
+overfit; collapse +0.346 -> +0.083 under 4x population is itself the warning.
+Does NOT contradict exp592's kappa-ordering ledger catch #2 (top-cell RANKING
+replicated there; this test asks about rate-VARIANCE increment — different
+claim, unresolvable here).
+
+CONSEQUENCE: additive-completeness stays at DIAL level. Rate-layer coverage
+matrix (dials 227/235/236 -> pairs exp596 -> joint cells 598b) closes
+UNRESOLVED-AT-RESOLUTION on the joint layer: OPEN but only answerable at ~4x
+n_pool, reduced cell basis, or a paired design whose null spread is measured
+on the test statistic's own footing — pre-stated so the next iteration powers
+it correctly instead of re-firing the flagged design.
+
+Ledger catches / honest limits: regen hash CONDITIONAL recorded-not-asserted;
+hit classifier gcd-chain primorial(1e6) — same tester CLASS/cut as exp577's
+spec, not source-verbatim (source outside read allowance); absolute rates NOT
+comparable to exp577 rows; fresh streams 50k/N vs exp577's 150k disclosed;
+cell rows permuted JOINTLY (conservative). RECOVERY NOTE: session crashed
+between completion (result JSON written 23:47) and recording; findings +
+paper 255 + assessment v362 + this Part reconstructed post-hoc from completed
+artifacts, numbers read directly from exp598b_result.json. Barrier framing:
+no barrier breached; flagged control REDUCES downstream exposure (discredits
+naive uncalibrated-Delta-adjR^2 readings from rich fixed-effect designs at
+small n_pool). Count 591 -> 592; assessment v361 -> v362. Paper 255,
+issue #403. Open unchanged: u>=6-14 scale-smoothness deviations, factor-local
+beyond scan-order, MA-1 effectivity, residue cap 4/3, external-hint laws;
+quantum closed; .2346 flag traveling.

@@ -1,0 +1,18 @@
+  [full] 16/128 Ns scored, wall=59.4s
+  [full] 32/128 Ns scored, wall=118.8s
+  [full] 48/128 Ns scored, wall=184.6s
+  [full] 64/128 Ns scored, wall=245.5s
+  [full] 80/128 Ns scored, wall=307.0s
+  [full] 96/128 Ns scored, wall=392.7s
+  [full] 112/128 Ns scored, wall=489.4s
+  [full] 128/128 Ns scored, wall=550.8s
+{
+ "fired": "BORDERLINE_INCONCLUSIVE",
+ "adjR2_dial": 0.0209,
+ "adjR2_cells": 0.1036,
+ "d_adjR2": 0.0827,
+ "perm_p": 0.0399,
+ "ctrl_ok": false,
+ "wall_s": 551.63,
+ "out": "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp598b_result.json"
+}

@@ -1,0 +1,12 @@
+  [smoke] 16/32 Ns scored, wall=13.6s
+  [smoke] 32/32 Ns scored, wall=28.9s
+{
+ "fired": "BORDERLINE_INCONCLUSIVE",
+ "adjR2_dial": -0.0308,
+ "adjR2_cells": 0.3153,
+ "d_adjR2": 0.3462,
+ "perm_p": 0.1373,
+ "ctrl_ok": false,
+ "wall_s": 28.88,
+ "out": "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp598b_result.json"
+}

@@ -3390,3 +3390,31 @@ key-name bugs pre-full-run). Barrier framing: closes the generality question the
 closed positional thread (250–253) left implicit; answer reduces exposure — the
 structure is scan-order geometry of the square-N slice, not N-information. Wall
 181 s. Paper 254, issue #402.
+
+**Assessment addendum v362 — 2026-08-25 (round-95 #2).** Experiment recorded
+(count 591 → 592; papers 254 → 255; version v361 → v362). Content:
+**MIXTURE-RATE-CELLS (exp 598b)** — rate-layer coverage matrix completed:
+papers 227/235/236 dials → exp596 pairwise interactions → full 16-cell
+divisibility mixture (2|v, 3|v, 5|v, 7|v) with v = j²−N vs sqrt dial
+S_sqrt,400. Pre-registered H1 (ΔadjR² ≥ 0.05 AND perm p < 0.01, 500 cell-label
+row-shuffles), H0 (< 0.02 dial-sufficient), permuted-rate control must be null.
+Population: seed-20260827 verbatim semiprime regeneration (bits = 96, n = 128;
+CONDITIONAL hash status disclosed); two independent fresh streams per N
+(cell grid + hits, 50k each; mean 779 hits/N); gcd-chain primorial(10⁶)
+tester. **RESULT: BORDERLINE-INCONCLUSIVE, CONTROL-FLAGGED** — ΔadjR² =
++0.0827 [0.0209 dial → 0.1036 +cells] clears the H1 effect bar but
+perm_p = 0.0399 misses < 0.01 AND the control arm fails nullity on its max
+clause (control Δ reached 0.186 > observed; p_vs_obs = 0.0519) ⇒ neither
+mixture-adds nor dial-sufficient claimable at n_pool = 128: 15 free cell
+betas against 128 noisy log-rates let a y-shuffle reach Δ ≈ 0.19, so the
+label-permutation null range swallows the effect. Sensitivity α = 1 same
+sign (+0.066); smoke +0.346 small-n overfit non-evidentiary. Consequence:
+additive-completeness stays at DIAL level; joint-cell layer OPEN but only
+answerable at ~4× n_pool / reduced cell basis / paired null footing
+(pre-stated power requirement); exp592's kappa-ordering replication
+unaffected (ranking ≠ variance increment). Ledger catches: regen hash
+CONDITIONAL recorded-not-asserted; tester class-matched not source-verbatim;
+rates not comparable to exp577 rows; joint row-permutation conservative.
+No barrier breached; flagged control REDUCES downstream exposure by
+discrediting naive uncalibrated-ΔadjR² readings from rich fixed-effect
+designs at small n_pool. Wall 551.6 s full. Paper 255, issue #403.
