@@ -3268,3 +3268,30 @@ converse program (F1 sharpness) quantitatively inside the already-mapped positio
 Open unchanged: u ≥ 6–14 scale-smoothness deviations, factor-local beyond scan-order, MA-1
 effectivity; paper 242 single-seed-unconfirmed (#391); .2346 flag traveling. Paper 250,
 issue #398.
+
+**Assessment addendum v358 — 2026-08-25 (round-92 #2).** Experiment recorded (count
+587 → 588; papers 250 → 251; version v357 → v358). Content: **SCAN-SIM-JOINT
+(exp 600, issue #399)** — paper 250's named decidable closer RUN and CONFIRMS ON THE
+ALIGNED FRAME. Pre-registered two-sided (script header before analysis): S_obs ∈
+[1.10, 1.51] with S_obs < certified bound 1.5059 ⇒ calibrated-gap structure confirmed.
+DEFINITIONAL DIFF RESOLVED first: the task's literal operationalization prices REALIZED
+min/max order statistics over m ≈ 75-hit windows (C_asc = min−jlo+1, C_desc =
+jhi−max, C₀ = (W+1)/(m+1)); paper 250/f1tight's own algebra books SINGLE-DRAW PRIOR
+expectations (C_asc = W·E[x], C₀ = W/2 ⇒ Λ = E[x]/(1−E[x]), Θ = 2E[x], X = 1/(2E[x])).
+Two valid frames, different quantities — measured on the same store.
+ALIGNED-FRAME (from raw positions, no parametric refit, π = each pool's own empirical
+hit distribution): Λ = 0.7852 [0.7656, 0.8065] CONTAINS recorded 0.7657; Θ = 0.8797
+[0.8673, 0.8929] lower edge = recorded 0.8673; **S_obs = 1.2736 [1.2399, 1.3061] —
+inside band, below bound ⇒ CONFIRMS**; X = 1.1368 [1.1200, 1.1530], upper CI edge
+touching recorded 1.1530; q̂ = 1 trivially by construction. Hit-weighted sensitivity
+1.2869 also in band. REALIZED-FRAME DIVERGENCE: literal S_obs = 3.3722 [2.5577,
+4.6933] fails high by an IDENTIFIABLE EXTREME-VALUE FACTOR 2.65× (= 3.3722/1.2736;
+per-pool median 3.89, IQR [1.25, 14.91]; min-x reaches 2e−4 of W). Controls all null
+(full 0.985 [.766, 1.260]; count-matched 0.882 [.687, 1.124]; single-draw 0.998) —
+asymmetry carried by hit sets alone. NEW BOOKKEEPING PRINCIPLE (travels to every
+future bound-calibration): **bound/slack must be booked PER MULTIPLICITY REGIME —
+prior-frame slack does not transfer to realized-frame scanning cost.** Honest: exact
+integer costs (deterministic indicators); identity PASS hits 9594 = pool count;
+single pool class untested beyond; C₀ choice affects Θ/X not headline S. Wall 0.08 s
+full. Completes paper 250's closer affirmatively with the frame distinction as added
+insight; sharpness still posed over the prior class. Paper 251, issue #399.

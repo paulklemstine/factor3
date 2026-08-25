@@ -1,0 +1,16 @@
+# exp600 SCAN-SIM-JOINT (round-74) -- findings
+Question: paper-250's named decidable closer -- jointly measure S/Lambda/Theta/qhat from exp581_regen_positions.npz; PRE-REGISTERED two-sided prediction S_obs in [1.10,1.51] with S_obs < bound 1.5059 => CONFIRMS calibrated-gap structure (slack real, X~1.15). Pre-registration in script header BEFORE analysis.
+DEFINITIONAL ALIGNMENT (coordinator-triggered diff): f1tight sec(b)'s own finite-check algebra pins ITS convention to SINGLE-DRAW PRIOR booking C_asc=W*E_pi[x], C_desc=W*E_pi[1-x], C0=W/2 => Lambda=Ex/(1-Ex), Theta=2*Ex, X=1/(2*Ex) (its E[x]=.4336 gives exactly .766/.867/1.153). The task's literal operationalization ("cost from the indicator series") prices the REALIZED window: min/max first-hit ORDER STATISTICS over m~75 hits/pool, C0=(W+1)/(m+1). Both frames measured on the SAME store; diff = identifiable multiplicity factor, not noise.
+FINAL VERDICT ON ALIGNED QUANTITIES: **CONFIRMS**
+- Ex=0.4398 W-weighted (0.4373 hit-weighted) vs f1tight 0.4336
+- Lambda=0.7852 CI95 [0.7656,0.8065] -- CI CONTAINS recorded 0.7657
+- Theta=0.8797 [0.8673,0.8929] -- CI lower edge = recorded 0.8673
+- S_obs=**1.2736 [1.2399,1.3061]** -- inside band [1.10,1.51], below bound 1.5059; upper CI edge = predicted 1.306; hit-weighted sensitivity 1.2869 (also in band)
+- X=1.1368 [1.1200,1.1530] vs recorded 1.1530 and corner-grid [1.1018,1.2205]: inside
+- qhat=1.000 trivially (every pool hit-bearing; carries zero information on this store)
+=> calibrated-gap structure CONFIRMED on its native scale: slack real and quantified.
+REALIZED frame (literal operationalization): S_obs=3.3722 [2.5577,4.6933], Lambda=0.2965, Theta_asc=0.4181, X=0.447 -- FAILS-HIGH there. Convention ratio 3.372/1.274 = **2.65x**: extreme-value amplification of the SAME tilt when scanning realized multi-hit windows (per-pool median S 3.89, IQR [1.25,14.91]; min-x reaches 2e-4 of W). Controls show none of it.
+CONTROLS (identical pipeline): full ctl sets S_obs=0.985 [.766,1.260]; count-matched 0.882 [.687,1.124]; single-draw ctl 0.998 -- ALL cover 1 => no order-asymmetry in null positions; asymmetry carried by the hit sets alone.
+CONSEQUENCE plainly: paper-250's gap statement is CONFIRMED where its numbers live -- single-draw prior booking gives S~1.27 < certified bound 1.51 with slack X~1.14, replicating every f1tight constant from raw positions with NO parametric refit. Separately, scans against REALIZED multi-hit windows gain ~2.65x beyond that frame (S=3.37 > bound): bound/slack must be booked PER MULTIPLICITY REGIME -- prior-frame slack does NOT transfer to realized-frame scanning cost.
+Honest: deterministic indicators => exact integer costs (degenerate sum_k k*P, no Monte Carlo); C0 stated per frame (aligned W/2, realized (W+1)/(m+1)); pi := each pool's OWN empirical hit distribution (no T(x) refit needed for replication); single pool class (128 balanced bitlen-96 semiprimes), generalization untested.
+Wall 0.08 s full (128 pools, nboot 1000, seed 20260824); out-of-window 0; total hits 9594 = recorded pool count (identity PASS). Artifacts: exp600_scan_sim.py / exp600_smoke.log / exp600_result.json / exp600_findings.md. No commits; only exp600_* touched.

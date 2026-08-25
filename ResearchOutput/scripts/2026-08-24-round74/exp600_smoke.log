@@ -1,0 +1,180 @@
+[smoke] n=16 wall=0.07s
+  S_obs_pooled=2.3338 (band [1.1,1.51], bound 1.5059) CI95 1.1411-5.6370
+  Lambda=0.4285 Theta_asc=0.6019 qhat=1.0000 X=0.6453
+  ctrl S_obs full=1.0829 countmatched=0.6094 (must be ~1)
+  ALIGNED frame: Ex=0.4431 Lambda=0.7957 Theta=0.8862 S_obs=1.2568 CI95 1.1898-1.3405 X=1.1284
+  VERDICT realized-frame: FAILS-HIGH (above registered band/bound)
+  VERDICT aligned-frame:  CONFIRMS
+t booking = E[rank of first hit under uniform-random order]",
+      "S_obs": "C_desc/C_asc (ascending-vs-descending)",
+      "Lambda": "C_asc/C_desc",
+      "Theta_asc": "C_asc/C0",
+      "qhat": "fraction of pools with >=1 in-window hit"
+    },
+    "pred_band": [
+      1.1,
+      1.51
+    ],
+    "bound_certified": 1.5059
+  },
+  "measures": {
+    "real": {
+      "S_obs_pooled": 2.3337537953362117,
+      "Lambda_pooled": 0.4284942147703868,
+      "Theta_pooled": 0.601913130657017,
+      "S_obs_mean": 158.14882401594224,
+      "Lambda_mean": 2.3415940345640154,
+      "Theta_mean": 0.5765090528942557,
+      "qhat": 1.0,
+      "oob": 0,
+      "meanx_grand": 0.4435300336451888,
+      "total_hits": 1193.0
+    },
+    "controls_full": {
+      "S_obs_pooled": 1.0829120442468265,
+      "Lambda_pooled": 0.9234360309433141,
+      "Theta_pooled": 0.8540173339776523,
+      "S_obs_mean": 3.9646869947342918,
+      "Lambda_mean": 2.2291225387665747,
+      "Theta_mean": 0.8772196025717787,
+      "qhat": 1.0,
+      "oob": 0,
+      "meanx_grand": 0.500525171121285,
+      "total_hits": 64000.0
+    },
+    "controls_countmatched": {
+      "S_obs_pooled": 0.6093824575971681,
+      "Lambda_pooled": 1.6410055582221066,
+      "Theta_pooled": 1.4780200785414683,
+      "S_obs_mean": 7.22267800689279,
+      "Lambda_mean": 7.608927872478412,
+      "Theta_mean": 1.437702403553161,
+      "qhat": 1.0,
+      "oob": 0,
+      "meanx_grand": 0.49502827199827226,
+      "total_hits": 1193.0
+    },
+    "per_pool_median_S_obs": 3.240914965349414,
+    "per_pool_IQR_S_obs": [
+      0.7130726830509315,
+      35.085252177422284
+    ],
+    "total_hits": 1193.0,
+    "out_of_window": 0,
+    "single_draw_crosscheck": {
+      "note": "prior-level booking: one hit drawn uniformly from each N's set; E[C_asc]=W*xbar, E[C_desc]=W*(1-xbar). Reproduces the recorded profile-level Lambda (~0.766) from THIS store.",
+      "Lambda_single_draw_real": 0.7956585742382483,
+      "S_single_draw_real": 1.2568204910722984,
+      "S_single_draw_controls": 0.9982613693850709
+    }
+  },
+  "comparison": {
+    "S_obs_pooled": 2.3337537953362117,
+    "pred_band": [
+      1.1,
+      1.51
+    ],
+    "bound_certified": 1.5059,
+    "X_measured": 0.6452694380227255,
+    "X_f1tight_reference": [
+      1.1018,
+      1.2205
+    ],
+    "bound_recomputed_from_measured": 3.8772269227434992,
+    "aligned_frame": {
+      "convention": "f1tight_connection.md sec(b): single-draw prior booking, C_asc=W*E_pi[x], C_desc=W*E_pi[1-x], C0=W/2 => Lambda=Ex/(1-Ex), Theta=2*Ex, S=Ex^-1*(1-Ex), X=1/(2*Ex); pi = each pool's own empirical hit distribution",
+      "Lambda_aligned": 0.7956585742382483,
+      "Theta_aligned": 0.886202517174827,
+      "S_obs_aligned": 1.2568204910722984,
+      "Ex_Wweighted": 0.4431012585874135,
+      "sensitivity_hitweighted": {
+        "Lambda": 0.7875500637992909,
+        "S_obs": 1.269760547254368
+      },
+      "f1tight_reference_point": {
+        "E_x": 0.4336,
+        "Lambda": 0.7657,
+        "Theta": 0.8673,
+        "S_asc": 1.306,
+        "bound": 1.5059,
+        "slack_X": 1.153
+      }
+    }
+  },
+  "stats": {
+    "bootstrap_cluster_over_pools": {
+      "nboot": 1000,
+      "seed": 20260824
+    },
+    "ci95": {
+      "Lambda_pooled": [
+        0.17740101555002188,
+        0.8763710187798688
+      ],
+      "Theta_pooled": [
+        0.2773322611722972,
+        0.9207851635773449
+      ],
+      "S_obs_pooled": [
+        1.1410692259130897,
+        5.636954576752596
+      ],
+      "bound_recomputed": [
+        1.4155027546128935,
+        18.309823638391826
+      ],
+      "X": [
+        1.086029958182054,
+        3.60578317180425
+      ],
+      "S_obs_ctrl_full": [
+        0.5629375598629321,
+        2.494816491856399
+      ],
+      "S_obs_ctrl_countmatched": [
+        0.33413611560868084,
+        1.0890207074767826
+      ]
+    },
+    "ci95_aligned_frame": {
+      "Lambda": [
+        0.7460096288886128,
+        0.8404771725662882
+      ],
+      "Theta": [
+        0.8545309440258665,
+        0.9133252831766456
+      ],
+      "S_obs": [
+        1.1898003388635856,
+        1.3404652767270318
+      ],
+      "X": [
+        1.0949001694317928,
+        1.1702326383635158
+      ]
+    }
+  },
+  "verdicts": {
+    "control_no_asymmetry_full": "PASS",
+    "control_no_asymmetry_countmatched": "PASS",
+    "prediction_primary": "FAILS-HIGH (above registered band/bound)",
+    "prediction_aligned_frame": "CONFIRMS",
+    "aligned_side": "none",
+    "prediction_side": "high",
+    "prediction_magnitude": {
+      "S_obs": 2.3337537953362117,
+      "excess_over_bound": 1.5497402186972653,
+      "shortfall_below_band": null
+    }
+  },
+  "honest_notes": [
+    "Indicator series deterministic => P(first hit at k) degenerate; sum_k k*P is an EXACT integer cost per pool, not a Monte Carlo estimate.",
+    "SEMANTIC GAP / DEFINITIONAL DIFF (load-bearing): the task's literal operationalization ('cost from the indicator series under pi') prices the REALIZED multi-hit window: C_asc=min-position cost, C_desc=max-position cost, C0=(W+1)/(m+1) -- order statistics over m~75 hits. f1tight_connection.md's own algebra (its sec(b) finite check pins it) books SINGLE-DRAW PRIOR expectations: C_asc=W*E_pi[x], C_desc=W*E_pi[1-x], C0=W/2. The two conventions differ by an IDENTIFIABLE extreme-value factor ~2.65x on S (realized 3.372 vs aligned ~1.27); both frames reported, registered prediction tested on BOTH.",
+    "C0=(W+1)/(m+1) is an interpretive commitment (flat prior booking given the SAME hit multiplicity); alternative C0=W/2 changes Theta/X but NOT the headline ascending-vs-descending ratio S_obs.",
+    "qhat is trivially 1 by pool construction (every semiprime has >=1 in-window hit); the qhat arm carries no information on this store.",
+    "Controls treated as hit sets through the identical pipeline; both full (m=4000) and count-matched variants reported because asymmetry power depends on m.",
+    "Single pool type (128 balanced bitlen-96 semiprimes); generalization beyond this pool class not tested here."
+  ],
+  "wall_s": 0.07
+}
