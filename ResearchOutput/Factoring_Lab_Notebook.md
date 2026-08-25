@@ -12713,3 +12713,56 @@ beyond scan-order, residue cap 4/3, external-hint laws; quantum closed;
 .2346 flag traveling. NEW PRE-STATED FOLLOW-UPS: locate the sufficiency
 boundary in (96,128); identify which cells carry the b128 increment (candidate:
 heavy-2-adic cells); Dickman-type closed-form check of β ≈ −0.35.
+
+## Part 300 — round-95 #5 · STRATIFIED-DAYZERO (exp 607) — SCREEN_NEGATIVE AS AMENDED: a dial-only screen fires in ALL FOUR stored populations but every alert sits on the K axis — paper 257's graded law replicated cell-wise (+/−0.11 log-rate K-tercile swing, sign-alternating, p_Q at null floor) — absorbing κ erases everything (verified non-mechanical: κ adds R² 31–62× noise; κ-only simulation reproduces fire/collapse exactly) ⇒ exp602's pooled null UPGRADES to stratified-strength: dial+κ exhausts detectable rate structure at these resolutions; Bet#1 main run not funded (2026-08-25)
+
+Fleet Bet #1 day-zero, pre-registered EXPLORATORY screen on STORED artifacts
+(no new sampling): A=598c-b96 seed-20260907, B=606-b96 seed-20261007,
+C=606-b72 seed-20261008, D=606-b128 seed-20261009 (n=512 each; exact Ns from
+*_ns.txt sidecars; balanced-semiprime by twice-audited verbatim recipe).
+Covariates computed fresh from Ns (lnN deciles, frac(√N) quintiles, κ terciles
+via D16 marginals, S_dial terciles spot-verified then exhaustively confirmed).
+Null = residuals reshuffled ONLY within lnN-decile × frac-quintile strata
+(METHOD-LAW compliant), 5000 reps/population.
+
+PHASE 1 (dial-only): G1(M×K) p_Q = .0002/.0016/.0014/.0060 and G3(S×K)
+.0002–.0004 in A/B/C/D — sign-alternating alerts in the SAME pattern every
+time: low-K tercile POSITIVE +2.0..+3.7, high-K NEGATIVE −2.0..−3.7;
+near-identical graded monotone K-tercile residual profiles (+/+0, +/-0.11
+swing) = paper 257's β_κ ≈ −0.35 seen cell-wise. Strongest replication that
+law has received; not a new effect.
+
+PHASE 2 AMENDMENT (disclosed pre-decision, against-interest — LITERAL rule
+fired SCREEN_POSITIVE on phase 1): absorb κ into the base model → G1 →
+.105/.724/.649/.669, G3 → .495/.853/.989/.926, alerts → 0–2 noise cells.
+NOT MECHANICAL: κ adds R² 0.062–0.122 vs E[R²]≈0.002 (31–62×); κ-only
+simulation through the identical pipeline fires phase-1 G3/G1 190/200 &
+162/200 and dies at nominal FP 0/200 & 2/200; corr(κ,lnN) ∈ [−0.05,0]
+excludes magnitude masking.
+
+VERDICT: SCREEN_NEGATIVE_AS_AMENDED. exp602's pooled adjudication upgrades
+to a STRATIFIED-STRENGTH NULL: dial + κ exhausts the N-computable rate
+structure detectable at n=512/population across bits {72,96,96',128}; no
+residual cancellation for any mixture to hide in at these resolutions. Fleet
+Bet #1 MAIN RUN NOT FUNDED from this screen; licensable only by u-regimes
+outside these windows (door question lives at u≥6–14) or >512/population.
+
+CAVEATS MANDATORY (adjudicator, carried in paper 258): G2_MxF p column VOID
+(degenerate by construction — grid axes == null strata ⇒ Q bitwise invariant;
+recorded .0002 entries are fp-tie noise; decision robust without G2);
+pooled_z ≡ 0 is intercept-orthogonality NOT evidence (cancellation demo =
+phase1-alerts→phase2-collapse); prng streams collide B/C/D via seed//1000
+(harmless, hygiene).
+
+Verification: independent from-scratch recompute of both audited populations,
+ALL grids/phases, ZERO discrepancies; exhaustive S_dial reconstruction on ALL
+512 Ns per population (≤3.6e−15 vs jacobi sums over 77 primes); alternate
+permutation seed moves p ≤ 0.005. Ledger catches: output-path inconsistency
+fixed mid-session; amendment-dependence disclosed prominently. Barrier
+framing: strengthens the negative side of the barrier map (density layer now
+sealed at stratified strength); no barrier breached. Count 594 -> 595;
+assessment v364 -> v365. Paper 258, issue #407. Open unchanged: u>=6-14
+scale-smoothness deviations (now the ONLY remaining door for Bet#1-class
+runs), factor-local beyond scan-order, residue cap 4/3, external-hint laws;
+quantum closed; .2346 flag traveling. Fleet queue next: Bet #2 theory triad
+(conic order-rigidity sealing) or Bet #3 CF-cascade experiment.

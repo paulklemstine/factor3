@@ -3492,3 +3492,30 @@ Ledger catches: b128 attempt-1 json.dumps death on raw np.bool_ (bool() cast,
 type-only, disclosed); docstring label drift cosmetic. No barrier breached
 (proposal-geometry refinement, no factor leakage). Catalog: NONE on all five
 target topics. Walls 300/287/1202 s. Paper 257, issue #406.
+
+**Assessment addendum v365 — 2026-08-25 (round-95 #5).** Experiment recorded
+(count 594 → 595; papers 257 → 258; version v364 → v365). Content:
+**STRATIFIED-DAYZERO (exp 607)** — fleet Bet #1 day-zero: does exp602's
+pooled null hide cell-wise cancellations across N-computable strata?
+Pre-registered EXPLORATORY screen on four stored fresh-seed populations
+(598c-b96 s20260907, 606-b96 s20261007, 606-b72 s20261008, 606-b128
+s20261009; n=512 each), method-law calibration (within-stratum shuffles,
+5000 reps). **PHASE 1 (dial-only) FIRED EVERYWHERE but entirely on the K
+axis** — sign-alternating low-κ +/high-κ − alerts in the same cells of all
+four populations = paper 257's β_κ ≈ −0.35 law replicated CELL-WISE in four
+independent datasets (+/−0.11 log-rate tercile swing). **PHASE 2 AMENDMENT**
+(disclosed pre-decision, against-interest: the LITERAL registration fired
+SCREEN_POSITIVE): absorb κ → EVERYTHING VANISHES (G1 p_Q → .10–.72, G3 →
+.49–.99, alerts → noise); verified NON-MECHANICAL three ways (κ ΔR² 0.062–0.122
+vs 0.002 noise floor; κ-only simulation reproduces fire/collapse exactly;
+corr(κ,lnN)≈0 excludes masking). **VERDICT: SCREEN_NEGATIVE_AS_AMENDED —
+exp602's pooled null upgrades to a STRATIFIED-STRENGTH NULL**: dial + κ
+exhausts the N-computable rate structure detectable at n=512/population
+across bits {72, 96, 96′, 128}; no residual cancellation for a mixture to
+hide in at these resolutions; Bet #1 main run NOT funded from this screen
+(still licensable at u ≥ 6–14 regimes or higher resolution). Mandatory
+caveats carried: G2_MxF p column VOID (degenerate by construction — axes ≡
+null strata); pooled_z ≡ 0 is intercept-orthogonality not evidence;
+prng-collision hygiene note. Verification: independent recompute zero
+discrepancies; exhaustive S_dial reconstruction all Ns ≤ 3.6e−15; alternate-
+seed robustness Δp ≤ 0.005. Wall 37 s. Paper 258, issue #407.
