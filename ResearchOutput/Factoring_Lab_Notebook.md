@@ -12382,3 +12382,59 @@ Count 588 -> 589; assessment v358 -> v359. Paper 252, issue #400. Positional thr
 (228-252 arc). Open unchanged: u >= 6-14 scale-smoothness deviations, factor-local beyond
 scan-order, MA-1 effectivity, residue cap 4/3, external-hint laws, quantum closed; paper 242
 single-seed-unconfirmed note SUPERSEDED by this multi-seed closure; .2346 flag traveling.
+
+## Part 295 — round-94 #2 · EDGE-CAP-RAISED (exp 603) — H0 — SPIKE STEEPNESS FORMALLY UNIDENTIFIABLE AT THIS DATA SIZE; LOWER-BOUND LADDER FINAL: b_edge point 30.12 (b_bulk 0.84) IDENTICAL across caps {80,120,240} while CI upper edge pins [0.62,**80.00**]/[0.58,**120.00**]/[0.64,**160.24**], cap-hit 7.8%/4.9%/1.8% — mass thins toward effective ceiling ≈160 but preregistered bar (BOTH 120 AND 240 interior) unmet at 120 so verdict stands; paper-245 loose end closes; canonical description amended (2026-08-25)
+
+Question (paper 245/exp594's named loose end): is b_edge interior-optimal or just boxed by
+the cap? PRE-REGISTERED in script header BEFORE fitting: H1 (identifiable) = at CAP >= 120
+the bootstrap CI upper edge of b_edge stays strictly BELOW its cap at every rung => reported
+AS IDENTIFIED; H0 (unidentified) = CI upper keeps hitting successive caps => steepness
+formally UNIDENTIFIABLE at this data size, lower-bound ladder {CAP -> CI lower} recorded
+FINAL; CONTROL BAR = ctl_* fits kernel-free iff w_edge(x=0.9) < 0.10 AND 1->2-comp relSSE
+improvement < 5% at every cap. Method: T(x)=A(1+x)^-b_bulk + K(1+x)^-b_edge on the pooled
+normalized hit-position histogram (per-seed x=(v-jlo)/(jhi-jlo) clip [0,1], zero clips;
+nb=50 exp581/582 anchor grid), unweighted NLS with (A,K) profiled out linearly over a dense
+(b_bulk,b_edge) log grid incl. near-cap points (0.90c/0.95c/0.98c/0.999c) then multi-start
+bounded TRF point refine; cluster bootstrap over the 128 seeds nboot=1000 main / 300 ctl;
+cap-hit := b_edge_hat >= 0.999*CAP; percentile CI. Caps {80,120,240}. Data:
+exp581_regen_positions.npz (128 seeds, 9594 hits, 512000 ctl). Wall 0.94 s.
+
+RESULT: point estimates EXACTLY invariant under tripling the box — b_edge 30.12235 /
+30.12234 / 30.12258, b_bulk 0.83996 at every cap (A~1.3143, K~1.0768, relSSE improvement
+0.7363): the point optimum never touched any cap, the UNCERTAINTY hits it. CIs
+[0.618,80.00] / [0.583,120.00] / [0.642,160.24]; cap-hit 7.8%/4.9%/1.8%; boot median
+28.91->28.07->27.84 while boot MEAN inflates 28.85->34.01->37.37 — right tail thinning
+toward an EFFECTIVE CEILING ~160 (at cap 240 the upper DETACHES to 160.24 < 240).
+LADDER NUANCE booked both ways honestly: H1 needed BOTH rungs >=120 interior; cap 120 pins
+exactly => H0 stands as pre-written; the 240-rung detachment recorded per-cap ("identified:
+true" at 240 only) and folded into the amended canonical description as ceiling note — no
+post-hoc bar adjustment either direction. Ladder FINAL: LB 0.62/0.58/0.64 (~0.6 bulk-floor
+at every rung, the spike-vs-bulk degeneracy direction). Historical anchor exp594 cap-80
+point 40.46 CI [15.2,80.0] cap-hit 26.7% quoted for comparability (pipeline not replicated
+bit-for-bit; registered test is the WITHIN-RUN cap-to-cap comparison).
+
+CONTROL CLEAN: kernel-free bar PASSES at every cap — w_edge(0.9) ~1e-45..1e-55 (<0.10),
+relSSE improvement ~1e-15 (<5%), K driven to ~e-21..e-23, frac_purebulk 100% of 300 ctl
+boots at every cap; control cap-hits are amplitude-free (K~0) and cannot mimic detection.
+Main-arm pure-bulk boots 0.0%, excluded from CI, never counted as cap-hits.
+SENSITIVITY sqrt(count+1)-wgt @ cap 240: b_edge 44.12 vs exp594's 40.46 — CROSS-PIPELINE
+agreement on the point estimate (two variance treatments, same ~30-45 steepness decade);
+unweighted NLS stays the registered primary, weighted number point-level sensitivity only.
+
+CONSEQUENCE — paper-245 loose end CLOSES; papers 238/245 canonical description AMENDED:
+"flat bulk b~=.57 + left-edge spike, amplitude 8.6% [verified], steepness >~15 [lower bound
+only; point ~30, effective ceiling ~160]". Spike existence/amplitude verified; steepness
+one-sided at this data size (n=9594 hits, nb=50); any future claim needing the actual
+exponent requires more hit mass, not a different cap.
+
+Ledger catches: NONE (no commits during execution, only exp603_* touched; smoke/full configs
+consistent). Honest notes carried from result.json: bootstrap CIs from dense-grid profiled
+fit (no per-boot continuous refine), points multi-start refined; near-cap grid points make
+cap-hits detectable rather than clipped away. Barrier framing: closes the LAST open
+measurement of the positional thread's DENSITY layer after round-93 #1 closed its MECHANISM
+layer — shape now completely specified with honest error bars (two components, verified
+amplitude, one-sided steepness); removes the temptation to cite a spike exponent as if
+measured. Thread arc 228-253 COMPLETE. Count 589 -> 590; assessment v359 -> v360.
+Paper 253, issue #401. Open unchanged: u>=6-14 scale-smoothness deviations, factor-local
+beyond scan-order, MA-1 effectivity, residue cap 4/3, external-hint laws, quantum closed;
+.2346 flag traveling.

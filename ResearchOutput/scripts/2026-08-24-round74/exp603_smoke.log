@@ -1,0 +1,33 @@
+exp603 EDGE-CAP-RAISED smoke=True caps=[40] nboot=50/20 seed=20260824
+seeds=128 clip_hits=0 clip_ctl=0
+{
+ "40": {
+  "b_bulk": 0.8399618812812594,
+  "b_edge": 30.123301223505706,
+  "A": 1.3143268712118532,
+  "K": 1.0767929043880753,
+  "sse": 0.28991408145091857,
+  "sse_1comp": 1.0994135367033047,
+  "w_edge_x09": 5.631090484816936e-09,
+  "rel_sse_improvement": 0.736301153503846,
+  "at_cap": false
+ }
+}
+smoke wall_s=0.18  OK
+# exp603 EDGE-CAP-RAISED (round-74) -- findings
+
+Question raised by paper 245/exp594: is b_edge interior-optimal, or
+just boxed by the cap? Raised caps {80,120,240}, nboot 50 cluster
+(over 128 seeds), nb=50 pooled histogram, preregistered H1/H0.
+
+| cap | b_edge point | 95%% CI | cap-hit | pure-bulk | identified |
+|-----|--------------|--------|---------|-----------|------------|
+| 40 | 30.12 | [0.69, 40.00] | 6.0% | 0.0% | NO (hits cap) |
+
+VERDICT: **H0-UNIDENTIFIED_LADDER_FINAL**
+CI upper edge keeps pinning to successive caps: steepness formally
+unidentifiable here; lower-bound ladder (cap 40 -> LB 0.7) is FINAL.
+Control arm kernel-free: True (bar w_edge(0.9)<0.10, relSSE<5%).
+Sensitivity sqrt(count+1) wgt @ cap 40: b_edge 40.00.
+
+Wall 0.2s; seed 20260824; no commits; only exp603_* touched.

@@ -3325,3 +3325,33 @@ population hashes + disjointness asserted. Wall 2.2 s. Barrier framing: position
 of the barrier map fully resolved (density real, mechanism absent multi-seed); paper-243's
 reopen condition CLOSED AGAINST; paper 242's single-seed-unconfirmed note superseded.
 Paper 252, issue #400.
+
+**Assessment addendum v360 — 2026-08-25 (round-94 #2).** Experiment recorded (count
+589 → 590; papers 252 → 253; version v359 → v360). Content: **EDGE-CAP-RAISED
+(exp 603, issue #401)** — paper 245's named loose end EXECUTED AND CLOSED: is the
+left-edge-spike steepness b_edge interior-optimal or just boxed by its imposed cap?
+Pre-registered (script header before fitting): H1 = CI upper edge strictly below cap at
+BOTH rungs ≥120 ⇒ identified; H0 = upper edge keeps pinning successive caps ⇒ steepness
+formally UNIDENTIFIABLE at this data size, lower-bound ladder FINAL; control bar =
+ctl_* fits kernel-free iff w_edge(0.9) < 0.10 and 1→2-comp relSSE gain < 5% at every cap.
+Model T(x)=A(1+x)^{−b_bulk}+K(1+x)^{−b_edge}, unweighted NLS, nb=50 anchor grid,
+(A,K) profiled linearly on a dense log grid with near-cap points + multi-start TRF point
+refine; cluster bootstrap over 128 seeds (nboot 1000 main / 300 ctl); caps {80,120,240};
+data exp581_regen_positions.npz (9,594 hits / 512,000 ctl / zero clips). **RESULT: H0 —
+point estimates EXACTLY invariant under tripling the box** (b_edge 30.1223/30.1223/30.1226,
+b_bulk 0.83996 everywhere) while **CI upper edge pins [0.618,80.00]/[0.583,120.00]/
+[0.642,160.24]**, cap-hit 7.8%/4.9%/1.8%, pure-bulk 0.0%; boot median falls 28.91→27.84 as
+the boot mean inflates 28.85→37.37 — mass thins toward an EFFECTIVE CEILING ≈160 (cap-240
+upper DETACHES to 160.24 < 240), but H1 required BOTH rungs interior and cap 120 pins
+exactly ⇒ verdict stands as pre-written; ladder nuance booked both ways, no post-hoc bar
+adjustment. Ladder FINAL: LB 0.62/0.58/0.64 (~0.6 bulk-floor at every rung). Control arm
+CLEAN kernel-free at every cap (w_edge(0.9) ~1e−45..−55, relSSE gain ~1e−15, 100%
+pure-bulk boots; control cap-hits amplitude-free K~0). Sensitivity √(count+1) weighting:
+b_edge 44.12 vs exp594's 40.46 — cross-pipeline agreement on the point estimate.
+**Consequence**: papers 238/245 canonical description AMENDED to "flat bulk b ≈ .57 +
+left-edge spike, amplitude 8.6% [verified], steepness >~15 [lower bound only; point ≈30,
+effective ceiling ≈160]" — any future claim needing the actual exponent requires more hit
+mass, not a different cap. Ledger catches NONE. Barrier framing: last open MEASUREMENT of
+the positional thread's density layer closes after round-93 #1 closed its mechanism layer;
+shape fully specified (two components, verified amplitude, one-sided steepness); thread arc
+228–253 COMPLETE. Wall 0.94 s. Paper 253, issue #401.

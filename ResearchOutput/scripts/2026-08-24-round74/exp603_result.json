@@ -1,0 +1,222 @@
+{
+ "experiment": "exp603_EDGE_CAP_RAISED",
+ "config": {
+  "smoke": false,
+  "caps": [
+   80,
+   120,
+   240
+  ],
+  "nboot": 1000,
+  "nboot_control": 300,
+  "nbins": 50,
+  "seed": 20260824,
+  "grid": [
+   20,
+   52
+  ],
+  "model": "T(x)=A(1+x)^-b_bulk + K(1+x)^-b_edge",
+  "normalization": "x=(v-jlo)/(jhi-jlo) per seed, clip [0,1]",
+  "bootstrap": "cluster over 128 seeds, percentile CI",
+  "cap_hit_def": "b_edge_hat >= 0.999*cap"
+ },
+ "data_summary": {
+  "n_seeds": 128,
+  "n_hit_points": 9594,
+  "n_ctl_points": 512000,
+  "clipped_hits": 0,
+  "clipped_ctl": 0
+ },
+ "fits": {
+  "80": {
+   "b_bulk": 0.8399552214697539,
+   "b_edge": 30.12234829298169,
+   "A": 1.3143226426985257,
+   "K": 1.0767817049341377,
+   "sse": 0.2899140810279316,
+   "sse_1comp": 1.0994227987002982,
+   "w_edge_x09": 5.634471189526203e-09,
+   "rel_sse_improvement": 0.7363033753978373,
+   "at_cap": false
+  },
+  "120": {
+   "b_bulk": 0.839955168471557,
+   "b_edge": 30.12234128833385,
+   "A": 1.3143226091708753,
+   "K": 1.0767816353833284,
+   "sse": 0.289914081025175,
+   "sse_1comp": 1.0994228724071529,
+   "w_edge_x09": 5.634496110066398e-09,
+   "rel_sse_improvement": 0.736303393078937,
+   "at_cap": false
+  },
+  "240": {
+   "b_bulk": 0.8399568028832087,
+   "b_edge": 30.122575423256265,
+   "A": 1.314323647475714,
+   "K": 1.0767843836229158,
+   "sse": 0.2899140811200623,
+   "sse_1comp": 1.0994205993661461,
+   "w_edge_x09": 5.633665257379094e-09,
+   "rel_sse_improvement": 0.7363028478025537,
+   "at_cap": false
+  }
+ },
+ "bootstrap": {
+  "80": {
+   "nboot": 1000,
+   "n_valid_2comp": 1000,
+   "frac_purebulk": 0.0,
+   "be_median": 28.90711143942002,
+   "be_mean": 28.850191207904242,
+   "ci_lo": 0.617880815616388,
+   "ci_hi": 80.0,
+   "cap_hit_frac": 0.078,
+   "bb_boot_median": 0.8309795442887812
+  },
+  "120": {
+   "nboot": 1000,
+   "n_valid_2comp": 1000,
+   "frac_purebulk": 0.0,
+   "be_median": 28.073784050306255,
+   "be_mean": 34.00550912508934,
+   "ci_lo": 0.5833826539361482,
+   "ci_hi": 120.0,
+   "cap_hit_frac": 0.049,
+   "bb_boot_median": 0.8309795442887812
+  },
+  "240": {
+   "nboot": 1000,
+   "n_valid_2comp": 1000,
+   "frac_purebulk": 0.0,
+   "be_median": 27.83535325330246,
+   "be_mean": 37.371428042000986,
+   "ci_lo": 0.6416103401345873,
+   "ci_hi": 160.24464381563965,
+   "cap_hit_frac": 0.018,
+   "bb_boot_median": 0.8309795442887812
+  }
+ },
+ "control": {
+  "80": {
+   "point": {
+    "b_bulk": 0.05000000000000001,
+    "b_edge": 79.99150995022798,
+    "A": 1.0193358087684277,
+    "K": 2.6986074334651823e-23,
+    "sse": 0.012620423935010706,
+    "sse_1comp": 0.01262042393501072,
+    "w_edge_x09": 1.376697954216162e-45,
+    "rel_sse_improvement": 1.0996292897353188e-15,
+    "at_cap": true
+   },
+   "frac_purebulk": 1.0
+  },
+  "120": {
+   "point": {
+    "b_bulk": 0.05000000000000001,
+    "b_edge": 119.98172143180648,
+    "A": 1.019335808786725,
+    "K": 1.386584018840476e-21,
+    "sse": 0.012620423935010715,
+    "sse_1comp": 0.01262042393501072,
+    "w_edge_x09": 5.037669730679858e-55,
+    "rel_sse_improvement": 4.1236098365074456e-16,
+    "at_cap": true
+   },
+   "frac_purebulk": 1.0
+  },
+  "240": {
+   "point": {
+    "b_bulk": 0.05000000000000001,
+    "b_edge": 123.01512909123508,
+    "A": 1.0193358087771076,
+    "K": 4.7400917373589944e-21,
+    "sse": 0.012620423935010693,
+    "sse_1comp": 0.01262042393501072,
+    "w_edge_x09": 2.4575193158369934e-55,
+    "rel_sse_improvement": 2.1992585794706377e-15,
+    "at_cap": false
+   },
+   "frac_purebulk": 1.0
+  }
+ },
+ "control_kernel_free": true,
+ "sensitivity_sqrtcount": {
+  "cap": 240,
+  "b_edge": 44.12260278506212,
+  "b_bulk": 1.3742257239082898,
+  "K": 33.55785393112897,
+  "w_edge_x09": 1.8441796084246076e-12
+ },
+ "ladder": [
+  {
+   "source": "exp594",
+   "cap": 80,
+   "b_edge_point": 40.46,
+   "ci_lo": 15.2,
+   "ci_hi": 80.0,
+   "cap_hit_frac": 0.267,
+   "note": "historical anchor, prior run"
+  },
+  {
+   "source": "exp603",
+   "cap": 80,
+   "b_edge_point": 30.12234829298169,
+   "b_bulk_point": 0.8399552214697539,
+   "ci_lo": 0.617880815616388,
+   "ci_hi": 80.0,
+   "cap_hit_frac": 0.078,
+   "frac_purebulk": 0.0,
+   "identified": false
+  },
+  {
+   "source": "exp603",
+   "cap": 120,
+   "b_edge_point": 30.12234128833385,
+   "b_bulk_point": 0.839955168471557,
+   "ci_lo": 0.5833826539361482,
+   "ci_hi": 120.0,
+   "cap_hit_frac": 0.049,
+   "frac_purebulk": 0.0,
+   "identified": false
+  },
+  {
+   "source": "exp603",
+   "cap": 240,
+   "b_edge_point": 30.122575423256265,
+   "b_bulk_point": 0.8399568028832087,
+   "ci_lo": 0.6416103401345873,
+   "ci_hi": 160.24464381563965,
+   "cap_hit_frac": 0.018,
+   "frac_purebulk": 0.0,
+   "identified": true
+  }
+ ],
+ "stats": {
+  "verdict": "H0-UNIDENTIFIED_LADDER_FINAL",
+  "per_cap_identified": {
+   "80": false,
+   "120": false,
+   "240": true
+  }
+ },
+ "verdicts": {
+  "primary": "H0-UNIDENTIFIED_LADDER_FINAL",
+  "per_cap_identified": {
+   "80": false,
+   "120": false,
+   "240": true
+  },
+  "control_kernel_free": true
+ },
+ "honest_notes": [
+  "Preregistration (H1/H0 + control bar) written in header BEFORE fitting; unchanged.",
+  "Pipeline is self-consistent across caps but not bit-identical to exp594 (binning nb=50 shared with exp581/582 anchor; exp594 internals unread); the H1/H0 test is the within-run cap-to-cap comparison.",
+  "Bootstrap CIs come from the dense-grid profiled fit (discretized NLS, no per-boot continuous refine); point estimates are multi-start refined. Near-cap grid points make cap-hits detectable.",
+  "Unweighted density NLS is the preregistered primary; sqrt(count+1) weighting reported as point-level sensitivity only.",
+  "Boots whose best fit is pure bulk (K=0) have undefined b_edge: excluded from CI, reported as frac_purebulk, never counted as cap-hits.",
+  "exp594 cap-80 row quoted as historical anchor for comparability."
+ ],
+ "wall_s": 0.94
+}
