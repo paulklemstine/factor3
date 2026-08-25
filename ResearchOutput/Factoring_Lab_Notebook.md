@@ -12060,3 +12060,53 @@ paper 242 single-seed-unconfirmed (#391); .2346 flag traveling. Named next hones
 plateau LOCATION ever matters operationally, multi-seed replication at the discriminating cells (b72
 fresh seed; b96 >=100k samples/N) — otherwise plateau reading suffices and effort stays on the open
 frontiers.
+
+## Part 290 — round-91 #1 · J-FEATURE-SWEEP (exp 598) — H0_CARRIER_OPEN: no j-arithmetic feature carries the mid-window excess; F5 raw max below null median-max (extreme-value noise); route to consecutive-v dependency study (2026-08-25)
+
+Question (paper 242 named follow-up): the exp579/581 mid-window hump survived divisibility-mixture
+conditioning (exp582 stationary geometric feature u*~0.65) -- is the carrier J-ARITHMETIC, a property
+of the scan position j itself? Pre-registered BEFORE analysis (script header): H1 iff some registered
+j-feature class shows R>=1.15 vs complement within mid-window u in [0.55,0.75], family-wise
+max-statistic permutation p<0.01 x Bonferroni K=8, DiD sign-consistent p<0.05; else H0 => carrier
+open, ROUTE to consecutive-v polynomial-sequence correlation study. K=8 families: j mod 4/3/5/7,
+j mod 105 (CRT joint), omega_small(j) terciles (primes<=97), smoothness of |j-nearest square| (exact
+1e6; registered degenerate-skip rule), exact 10^6-smoothness of j itself. MID n=104,200 positions,
+FLANK [0.05,0.40)+(0.90,1.00] n=235,003 (shoulder/edge margin chosen pre-analysis), from
+exp581_regen_positions.npz (128 windows, 521,594 positions, 9,594 hits; sha256 0b1afa50 recorded);
+500 stratum-preserving label shuffles + 300 fake-hit global-permutation null draws; rng 20260908;
+wall 271 s.
+
+VERDICT **H0_CARRIER_OPEN** -- no class clears the bar; all p_adj = 1.0 after Bonferroni:
+F1 jmod4 cell 1 R=1.0748 pR=.369 | F2 jmod3 cell 1 R=1.0314 pR=.743 | F3 jmod5 cell 3 R=1.0785
+pR=.475 | F4 jmod7 cell 0 R=1.1111 pR=.359 | F5 jmod105 cell 73 R=1.5578 pR=.884 | F6 omega_ter
+cell 0 R=1.0107 pR=.978 | F7 dsq_smooth cell 1 R=1.0224 pR=.771 | F8 jsmooth_1e6 cell 0 R=1.0232
+pR=.767. Every coarse family R<=1.11 with flat DiD (+0.001-0.002 on a ~.088 base contrast):
+parity/mod-3/5/7 residues, omega richness, nearest-square-distance smoothness, and j's own exact
+smoothness are ALL carrier-null WITHIN mid-window.
+EXTREME-VALUE DEMONSTRATION: F5's raw max (cell 73, j=73 mod 105, n=1022, 26 hits, rate .0254,
+R=1.558) sits BELOW the null's own median max-of-105-ratios (med 1.6334, p95 1.8516, max 2.0827);
+226/300 null draws beat it => global_perm_p = 0.754. The most impressive-looking number in the sweep
+is a below-average draw of the noise that scanning 105 cells necessarily produces -- kept as the
+canonical local example of why coarse-family maxima need max-statistic calibration before meaning
+anything.
+CONSEQUENCE (registered H0 route): j-arithmetic hypothesis class ELIMINATED as the paper-242 excess
+carrier => next probe = consecutive-v POLYNOMIAL-SEQUENCE DEPENDENCY STUDY (adjacent-position
+smoothness correlation through shared small-prime divisibility of y_v=(isqrt(N)+v)^2-N -- a mechanism
+invisible to every marginal-on-j test run here).
+
+Ledger catches: smoke caught invalid smoothness early-exit rule (prime residuals <=1e6 misjudged;
+post-fix random-int smooth fraction 0.1355 matches Dickman rho(u~2.45)~0.14) and an F5 gate-starve
+crash (fixed; runs clean at full scale); F7 NON-degenerate at full scale (82.7% smooth, cells
+17,989/86,211 clear gates). Generator not re-run -- positions/labels CONSUMED from exp581 npz whose
+seed-lineage regeneration was hash-proven in exp581; generator source outside this task's read
+allowlist, npz sha256 recorded instead; labels consumed as frozen (upstream cut-1e6 classify).
+RECORDER CATCH: header registers View B (per-N enrichment, count-weighted mean) but result.json has
+no View-B computation (comment placeholder only) -- harmless under H0 since no family nears the bar,
+but any future H1-side reuse must implement or formally drop View B.
+
+Count 585 -> 586; assessment v354 -> v355. Paper 248, issue #396. Barrier framing: no barrier
+interaction -- carrier-identification negative inside the mapped positional stratum; sharpens routing
+toward sequence-level mechanisms over pointwise-j ones. Open unchanged: u>=6-14 scale-smoothness
+deviations, factor-local beyond scan-order, MA-1 effectivity, residue cap 4/3, position 5.19x,
+external-hint laws, quantum closed; paper 242 single-seed-unconfirmed (#391); .2346 flag traveling.
+Named next probe (registered): consecutive-v polynomial-sequence dependency study.

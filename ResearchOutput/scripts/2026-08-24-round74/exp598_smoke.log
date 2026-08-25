@@ -1,0 +1,16 @@
+[    0.0s] loaded 6,986 positions (586 hits) from 8 windows; mid=1,371, flank=3,223
+[    0.0s] 6,986 unique j values
+[    0.0s] stripping primes <= 1e3 ...
+[    1.6s] j 1e6-smooth fraction: 0.1364 (1.6s)
+[    1.7s] |j-nearest sq| smooth fraction: 0.8246 (0.0s)
+[    1.7s] features done
+[    1.7s] F1_jmod4: best cell 1 R=1.0606 DiD=+0.01315 pR=0.9901 pD=0.8812
+[    1.7s] F2_jmod3: best cell 2 R=1.0646 DiD=+0.02763 pR=0.9307 pD=0.2574
+[    1.7s] F3_jmod5: best cell 1 R=1.2778 DiD=+0.03518 pR=0.6535 pD=0.3267
+[    1.7s] F4_jmod7: best cell 0 R=1.0450 DiD=+0.05359 pR=0.8218 pD=0.1782
+[    1.7s] F5_jmod105: GATE-STARVED (no eligible cell)
+[    1.7s] F6_omega_ter: best cell 2 R=1.0905 DiD=+0.01639 pR=0.8911 pD=0.5743
+[    1.7s] F7_dsq_smooth: best cell 0 R=1.0577 DiD=+0.01714 pR=0.8812 pD=0.4752
+[    1.8s] F8_jsmooth_1e6: best cell 0 R=1.2780 DiD=+0.00869 pR=0.2376 pD=0.7228
+[    1.8s] null control: max-R dist med=1.4522 p95=1.9256 max=2.4148; draws beating observed 1.2780: 48/50 => global_perm_p=0.9608
+[    1.8s] WROTE /home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp598_result.json; VERDICT=H0_CARRIER_OPEN; wall=1.8s

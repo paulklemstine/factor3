@@ -3190,3 +3190,23 @@ bitlens" — b72 breaks both clauses: best gain +0.056, harmonic below unweighte
 barrier interaction — dial-layer robustness certificate inside the mapped stratum. Open unchanged:
 u ≥ 6–14 scale-smoothness deviations, factor-local beyond scan-order, MA-1 effectivity; paper 242
 single-seed-unconfirmed (#391); .2346 flag traveling. Paper 247, issue #395.
+
+**Assessment addendum v355 — 2026-08-25 (round-91 #1).** Experiment recorded (count 585 → 586; papers
+247 → 248; version v354 → v355). Content: **J-FEATURE-SWEEP (exp 598, issue #396)** — is paper 242's
+mid-window excess (u* ≈ 0.65) carried by j-ARITHMETIC? Eight pre-registered families (j mod
+4/3/5/7/105-CRT, ω terciles, |j−nearest-square| smoothness, exact 10⁶-smoothness of j) swept on
+104,200 mid-window positions (flank 235,003; exp581 hash-proven npz, sha256 recorded). VERDICT
+**H0_CARRIER_OPEN**: no class clears R ≥ 1.15 / calibrated p < 0.01 ×8 — all honest families R ≤ 1.11
+(best mod-7 cell 0, p = 0.36), flat DiD +0.001–0.002; F5's raw max (j ≡ 73 mod 105, R = 1.558) sits
+BELOW the null's own median max-of-ratios (1.633; 226/300 null draws beat it, global perm p = 0.754)
+— textbook extreme-value noise over 105 cells, kept as the canonical demonstration of why coarse-family
+maxima need max-statistic calibration. CONSEQUENCE: the j-arithmetic hypothesis class ELIMINATED as
+carrier → route to consecutive-v POLYNOMIAL-SEQUENCE DEPENDENCY STUDY (registered). Ledger catches:
+smoke caught invalid smoothness early-exit rule (post-fix smooth fraction 0.1355 matches Dickman
+ρ(2.45)) + F5 gate-starve crash; F7 non-degenerate at full scale (82.7%); generator not re-run
+(consumed exp581 npz, disclosed); RECORDER CATCH: registered View B never computed in result.json —
+harmless under H0, must be implemented or formally dropped on any H1-side reuse. Barrier framing: no
+barrier interaction — carrier-identification negative sharpening routing from pointwise-j to
+sequence-level mechanisms. Open unchanged: u ≥ 6–14 scale-smoothness deviations, factor-local beyond
+scan-order, MA-1 effectivity; paper 242 single-seed-unconfirmed (#391); .2346 flag traveling. Paper
+248, issue #396.
