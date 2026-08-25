@@ -3240,3 +3240,31 @@ characterization inside the mapped positional stratum. Open unchanged: u ≥ 6�
 scale-smoothness deviations, factor-local beyond scan-order, MA-1 effectivity;
 paper 242 single-seed-unconfirmed (#391); .2346 flag traveling. Paper 249, issue
 #397.
+
+**Assessment addendum v357 — 2026-08-25 (round-92 #1).** THEORY deliverable recorded
+(papers-only bump convention stated explicitly: experiment count UNCHANGED at 587, no new
+physics run; papers 249 → 250; version v356 → v357). Content: **F1-TIGHTNESS-CONNECTION
+(issue #398)** — connects paper 225's PROVEN F1 master inequality S ≤ min(1/(Λ·Θ·q̂),
+2^k_bits/(Λ·Θ)) to the measured positional profile (papers 228–242 chain). Parameter map:
+Λ_meas = 0.766 [verified independently 0.765671] = the prior shape itself (b=.573 + edge
+spike w=.086, b_edge≥15), ascending beats descending 1/Λ≈1.306; Θ_asc ≈ 0.867 [0.8193,
+0.9076]; q̂ NOT identified by any recorded number (full-window scans trivially q̂=1); arm 1
+binds everywhere at k_bits=0. EQUALITY CONDITION π-flat REFUTED THREE WAYS on data
+(KS p=7e−76; two-component LRT p=9e−10; binning-free p=1e−21; controls flat in all) ⇒ no
+realizable policy attains the bound on this profile — E1 fails pool-side, beyond policy
+choice. GAP FACTOR X = bound/S = C₀/C_sort = 1.15302 [27-cell CI 1.10175–1.22054] via the
+policy/baseline-independent identity chain C₀/c_asc = bound/S = (M+1)/(2ME_x+1);
+hump-insensitive (ΔX=−0.019). TIGHTNESS-CIRCULARITY CATCH: all four legacy anchors' P̂
+satisfy ΛΘ ≈ 1.00–1.04 BY CONSTRUCTION (law-inversion algebra through S_A=1/q̂; identity
+machine-zero, anchor 4 exact self-consistent inversion) — zero evidential weight for
+attainment ⇒ anchor tightness NOT-CURRENTLY-DECIDABLE without a raw non-inverted P_eff.
+DECIDABLE CLOSER named: scan-simulation joint S/Λ/Θ/q̂ measurement on exp578_positions.npz;
+map predicts S≈1.31 vs bound 1.51, observing S>1.51 falsifies the mapping (two-sided).
+Verification: independent verifier verifyf1_recompute.py (reimplemented from md definitions
+only, continuum+discrete cross-check disc spread 5.2e−6) — all three claims PASS,
+discrepancies 0; cosmetic corrections folded (bulk-alone Λ=0.8769/gain 1.140/spike log-
+share 50.8%; Θ floor 0.8193). Barrier framing: none — prices one side of barrier-4's
+converse program (F1 sharpness) quantitatively inside the already-mapped positional stratum.
+Open unchanged: u ≥ 6–14 scale-smoothness deviations, factor-local beyond scan-order, MA-1
+effectivity; paper 242 single-seed-unconfirmed (#391); .2346 flag traveling. Paper 250,
+issue #398.

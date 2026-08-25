@@ -1,0 +1,149 @@
+{
+ "item1": {
+  "Lambda": 0.7656710808595859,
+  "one_over_Lam": 1.3060438417986782,
+  "Theta": 0.8672861997454615,
+  "bound": 1.5058971792494646,
+  "disc_spread": 5.1724280579756865e-06,
+  "cont_Lambda": 0.765665908752602,
+  "checks": {
+   "lam_766": true,
+   "ratio_1306": true,
+   "mono_and_unit": true,
+   "discretization_stable": true
+  },
+  "note_spike_share": {
+   "Lambda_bulk": 0.876921811592689,
+   "gain_bulk": 1.1403525226311488,
+   "spike_log_share": 0.5081042466488298,
+   "spike_linear_share": 0.47476312843161994
+  }
+ },
+ "item2": {
+  "X_point": 1.153021920899339,
+  "X_min": 1.1017526748807616,
+  "X_max": 1.2205381941958242,
+  "E_x_point": 0.43364144095022755,
+  "Ex_grid_range": [
+   0.409653090456547,
+   0.4538212064206488
+  ],
+  "Theta_grid_range": [
+   0.8193106981456404,
+   0.9076447217232544
+  ],
+  "hump_dX": -0.01850908760454173,
+  "identities": {
+   "direct": true,
+   "closed_form": true,
+   "asym_1_over_2Ex": true
+  },
+  "checks": {
+   "point_1153": true,
+   "interval_corners": true,
+   "rounded_1110_122": true,
+   "identity_chain": true,
+   "Ex_ci": true,
+   "hump_minus_019": true
+  }
+ },
+ "item3": {
+  "rows": [
+   {
+    "mu": 0.05,
+    "P_hat": 0.849953,
+    "S": 5.1935921549,
+    "q_hat": 0.1850423,
+    "LT_inf": 1.0405456547,
+    "LT_M300": 1.0255401632,
+    "S_inverted_target": 5.4041697493,
+    "LT_as_ratio": 1.0405456547,
+    "resid": 0.0,
+    "P_selfconsistent": 0.8416167098,
+    "P_gap_abs": 0.0083362902
+   },
+   {
+    "mu": 0.05,
+    "P_hat": 0.900297,
+    "S": 6.9147245372,
+    "q_hat": 0.1397327,
+    "LT_inf": 1.0349683415,
+    "LT_M300": 1.014223855,
+    "S_inverted_target": 7.1565209861,
+    "LT_as_ratio": 1.0349683415,
+    "resid": 0.0,
+    "P_selfconsistent": 0.8948678658,
+    "P_gap_abs": 0.0054291342
+   },
+   {
+    "mu": 0.05,
+    "P_hat": 0.810643,
+    "S": 4.3530756579,
+    "q_hat": 0.2204213,
+    "LT_inf": 1.0421979754,
+    "LT_M300": 1.0300943103,
+    "S_inverted_target": 4.5367666373,
+    "LT_as_ratio": 1.0421979754,
+    "resid": 0.0,
+    "P_selfconsistent": 0.800308186,
+    "P_gap_abs": 0.010334814
+   },
+   {
+    "mu": 0.02,
+    "P_hat": 0.985068,
+    "S": 29.1254367181,
+    "q_hat": 0.03433472,
+    "LT_inf": 0.9999862856,
+    "LT_M300": 0.914533499,
+    "S_inverted_target": 29.12503728,
+    "LT_as_ratio": 0.9999862856,
+    "resid": 0.0,
+    "P_selfconsistent": 0.9850684905,
+    "P_gap_abs": 4.905e-07
+   }
+  ],
+  "LT_band": [
+   0.9999862855932393,
+   1.0421979753901753
+  ],
+  "drift_pct": [
+   4.055,
+   3.497,
+   4.22,
+   -0.001
+  ],
+  "P_gap_vs_selfconsistent": [
+   0.008336,
+   0.005429,
+   0.010335,
+   0.0
+  ],
+  "target_only_demo": [
+   [
+    5.19,
+    1.0415
+   ],
+   [
+    5.4,
+    1.001
+   ],
+   [
+    5.6,
+    0.96525
+   ]
+  ],
+  "checks": {
+   "values_match_md": true,
+   "fourth_anchor_099999": true,
+   "band_100_104": true,
+   "construction_identity_exact": true,
+   "band_is_bookkeeping_only": true
+  }
+ },
+ "PASS": {
+  "item1_Lambda": true,
+  "item2_X": true,
+  "item3_circularity": true
+ },
+ "discrepancies": 0
+}

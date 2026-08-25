@@ -12179,3 +12179,73 @@ residue cap 4/3, external-hint laws, quantum closed; paper 242 single-seed-
 unconfirmed (#391); .2346 flag traveling. Named next probe: NONE on this thread --
 positional layer closed; remaining positional-side work belongs to the density-curve
 model (paper 238 lineage).
+
+## Part 292 — round-92 #1 · F1-TIGHTNESS-CONNECTION (THEORY, no new physics) — BOUND-SLACK-BY-X = 1.15 [1.10, 1.22]: paper-225 F1 master inequality connected to the measured positional profile; equality pi-flat REFUTED three ways (KS p=7e-76 / LRT p=9e-10 / binning-free p=1e-21) => no realizable policy attains the bound on this profile; TIGHTNESS-CIRCULARITY CATCH on all four legacy anchors (2026-08-25)
+
+Question: does the PROVEN bound S <= min(1/(Lam*Theta*qhat), 2^k_bits/(Lam*Theta))
+(paper 225, gapL4_measure.md section F1 — single inequality link = majorization
+C_sort <= C_0, equality iff pi flat; all other links identities) actually bind on
+tonight's measured positional profile (papers 228/229/230/233/238/242 chain)? THEORY
+deliverable only — finite check f1tight_check.py (~0.5 s, M=40k exact cell sums,
+27-corner CI grid); NO new physics run, papers-only ledger bump.
+
+PARAMETER MAP: Lambda(pi) = within-window prior shape ITSELF — T(x)=A(1+x)^-b_bulk +
+K(1+x)^-b_edge monotone declining => sort order = window-ascending; from b=.573
+[.412,.767], w=.086 [.064,.108], b_edge>=15: Lam_meas = 0.766 [independently verified
+0.765671], ascending beats descending 1/Lam ~= 1.306. Bulk alone Lam=0.8769 (gain
+1.140); edge spike supplies ~51% of log tilt. Theta_asc = C_sort/C_0 ~= 0.867
+[0.8193, 0.9076] head-loaded (uniform-cell booking Theta=1 refuted on this data).
+qhat NOT identified by any recorded number in the 228-242 chain (every profile
+experiment scans the FULL window => mu_eff=P_eff=qhat=1 trivially); k_bits=0
+test-blind => arm 1 binds everywhere, min() = 1/(Lam*Theta).
+
+EQUALITY REFUTED THREE WAYS (E1: pi flat within cells; controls flat in all three):
+KS D=.09519 p=6.9e-76 vs uniform (paper 228/exp578); two-component LRT p=9.3e-10,
+spike weight CI excludes 0, b_bulk CI excludes flat b=0 (paper 238/exp588, exp594);
+binning-free conditional-logistic LRT p=1.17e-21 (paper 233). E1 fails POOL-SIDE,
+beyond policy choice => NO realizable policy attains the bound on this data.
+
+GAP FACTOR X := bound/S_asc = C_0/C_sort — baseline-free and policy-independent via
+the verified identity chain C_0/c_asc = bound/S = (M+1)/(2M*E_x+1). Point fit:
+S_asc=1.3060, bound=1.5059, X = 1.15302 (E_x=0.4336); 27-corner CI grid over
+(b,w,b_e): X in [1.10175, 1.22054] (E_x in [.4097,.4538]). Hump-insensitive:
++20% excess at x*=.65 moves X by -0.019 only (and hump is exp592-gated-H0 anyway).
+Falsifiable tightness condition: E_pi[x]=1/2 exactly <=> b_bulk=0 AND w_spike=0;
+a same-design re-measurement returning E[x]=0.500+-0.005 would reopen it — excluded
+at overwhelming significance.
+
+TIGHTNESS-CIRCULARITY CATCH (own finding): all four legacy anchors' P_hat satisfy
+Lam*Theta = 1/(S*qhat) ~= 1.00-1.04 BY CONSTRUCTION — the P_hat were law-INVERSIONS
+of the speedups through S_A = 1/qhat (the bound at Lam=Theta=1), so the identity
+holds machine-zero (verifier resid 0.0 all four rows; band [0.99999, 1.0422]); anchor
+4 additionally EXACT self-consistent inversion (P matches booked to 4.9e-7). They
+carry ZERO evidential weight for attainment => anchor tightness NOT-CURRENTLY-
+DECIDABLE; deciding needs a raw non-inverted P_eff under a named committed R_eff —
+none exists.
+
+VERDICT **BOUND-SLACK-BY-X**: proven inequality overshoots every realizable test-
+blind policy on the measured profile by >=10% and <=22%; slack PROFILE-FORCED and
+POLICY-INDEPENDENT. Does not weaken the theorem — LOCATES the open work.
+DECIDABLE CLOSER named: scan-simulation joint S/Lam/Theta/qhat measurement on
+exp578_positions.npz (window-ascending policy); map predicts S~=1.31 vs bound 1.51;
+observing S>1.51 would FALSIFY the mapping — genuine two-sided test, ~1 session,
+no heavy compute. Theorem-side closer: sharpness must be posed over the prior class
+(on-data attainment impossible here), never as tightness-on-this-pool. Scope notes:
+exp597 dial plateau concerns the RATE layer, orthogonal to the shape layer consumed
+by Lam/Theta; round-91 closure (#396/#397 pure density, no sequence structure)
+CONSISTENT — this connection consumes only the density shape.
+
+Verification census: independent verifier verifyf1_recompute.py reimplemented from
+md definitions ONLY (no import of f1tight_check), Gauss-Legendre continuum + M=40k
+discrete cross-check (disc spread 5.2e-6): ALL THREE claims PASS, discrepancies=0.
+Cosmetic corrections folded per verifier: bulk-alone Lam 0.895->0.8769 (gain 1.140),
+spike share ~1/3->50.8% log tilt, Theta floor ~0.83->0.8193. Barrier framing: none —
+theory connection inside the already-mapped positional stratum; prices one side of
+barrier-4's converse program (F1 sharpness) quantitatively.
+
+Count UNCHANGED at 587 (papers-only bump, no new physics run — stated explicitly);
+assessment v356 -> v357. Paper 250, issue #398. Open unchanged: u>=6-14 scale-
+smoothness deviations, factor-local beyond scan-order, MA-1 effectivity, residue cap
+4/3, external-hint laws, quantum closed; named next probe = the scan-simulation
+closer above (exp600-class, reads stored npz only); paper 242 single-seed-unconfirmed
+(#391); .2346 flag traveling.
