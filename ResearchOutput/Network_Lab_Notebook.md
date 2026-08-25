@@ -2102,3 +2102,13 @@ results ~/f3cache/net97_results.json; log /tmp/net97.log.
 **Verdict:** THE-KNEE-SHRINKS-WITH-SCALE. Barriers clean/partial as listed.
 Open: sub-8 probing; 7B knee ctx-scaling; cross-family replication; K8/V4
 interaction. Paper 176, issue #405. Now 98 network experiments. Assessment v98.
+
+## Part 98 — THE-KNEE-IS-EIGHT-EXACTLY (compact; sub-8 probe closing NET-97's open bracket): BOTH horns refuted — k=4 FAILS cleanly (ret 0.92560, -5.4pts) AND k=6 FAILS (ret 0.96247, -1.75pts), so the knee does not sit at six nor below four: k*(7B@512) = 8 EXACTLY, bracketed from both sides; NET-97's "<=8" tightens to "=8" — the 14x-scale shrink is an exact HALVING (16 -> 8), not a collapse; retention curve over seven points {4:0.926, 8:0.981, 12:0.989, 16:0.989, 20:0.992, 24:0.995} is strictly monotone with textbook threshold shape between 4 and 8; gate bit-exact again (max|dlogit|=0.000000); baseline reproduced NET-97 EXACTLY third time running (ce=2.50867 acc=0.48663) (NET-98; cpu-large-model axis iteration 73)
+
+**Method:** NET-97 harness reused verbatim, KGRID={4,6}, same slice/windows.
+Script ResearchOutput/exp_net98_kneeprobe.py; results ~/f3cache/net98_results.json;
+log /tmp/net98.log.
+**Verdict:** THE-KNEE-IS-EIGHT-EXACTLY. Barriers clean/partial as prior knee cells.
+Open: sub-4 probing (low value — curve shape clear); 7B knee ctx-scaling; cross-family
+replication. Compact addendum to paper 176 lineage. Issue #409 (published as such). Now 99 network
+experiments. Assessment v99.
