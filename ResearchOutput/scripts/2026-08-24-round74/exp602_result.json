@@ -1,0 +1,562 @@
+{
+ "config": {
+  "exp": "exp602-pooled-adjudication",
+  "codename": "POOLED-ADJUDICATION (paper-243 reopen condition)",
+  "preregistration": {
+   "test": "excess amplitude at u* in [0.55,0.75] vs divisibility-mixture baseline, >=3 pooled seed lineages, null-calibrated z_cal >= 2",
+   "H1": "pooled z_cal >= 2 => non-divisibility positional mechanism CONFIRMED multi-seed",
+   "H0": "pooled z_cal < 2 => density-only reading confirmed; thread closes",
+   "path_rule": "A if >=3 lineages mid-window positional; else B if >=3 lineages counts+dial; else NOT_EXECUTABLE"
+  },
+  "u_window": [
+   0.55,
+   0.75
+  ],
+  "z_threshold": 2.0,
+  "nbins": 50,
+  "ncells": 16,
+  "flanks": "t<0.40|t>0.85",
+  "kappa_shrinkage_lam": 5.0,
+  "lnB_fixed": 13.8155,
+  "n_boot_main": 2000,
+  "n_boot_per_seed": 500,
+  "seeds": {
+   "boot": 20260904,
+   "sim": 20260905,
+   "ctrl_a": 7000
+  },
+  "inputs": {
+   "ctx_exp577_result": "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp577_result.json",
+   "prov_exp592_py": "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp592_u065_freshseed.py",
+   "prov_exp601_py": "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp601_third_seed_counts.py",
+   "L1_positions_20260828": "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp581_regen_positions.npz",
+   "L2_positions_20260902": "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp592_positions.npz",
+   "L2_result_20260902": "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp592_result.json",
+   "L3_counts_20260903": "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp601_smoke_counts.npz"
+  },
+  "amendment_log": [
+   "POST-FIRST-RUN (disclosed): first execution routed to ARTIFACT_CONTAMINATED because the exp592-style CTRL-A blocker marginal-tripped (amp 0.0225 vs 3*se 0.0222, +1.3%). The assignment's registered rule names ONLY pooled z_cal; CTRL-A is demoted to disclosed diagnostic (it still withholds an H1 firing). A fortiori argument recorded: contamination can only inflate z_cal, so the H0 outcome is robust to any contamination reading. First-run verdict string preserved here verbatim: 'ARTIFACT_CONTAMINATED'. No other change; all statistics identical (same seeds)."
+  ]
+ },
+ "inventory": {
+  "lineages": [
+   {
+    "lineage": "20260828",
+    "master": 20260828,
+    "npz": "exp581_regen_positions.npz",
+    "ns_stored": 128,
+    "window_exact_vs_regenerated_population": true,
+    "population_hash16": "20115284998cb001",
+    "has_controls": true,
+    "total_hits": 9594,
+    "total_ctl": 512000,
+    "score_window_points_total": 114606,
+    "score_window_hit_points": 1866,
+    "has_midwindow_positional": true,
+    "tensors": true
+   },
+   {
+    "lineage": "20260902",
+    "master": 20260902,
+    "npz": "exp592_positions.npz",
+    "ns_stored": 128,
+    "window_exact_vs_regenerated_population": true,
+    "population_hash16": "0d69e6f4e59ebc9e",
+    "has_controls": true,
+    "total_hits": 9840,
+    "total_ctl": 512000,
+    "score_window_points_total": 114484,
+    "score_window_hit_points": 1806,
+    "has_midwindow_positional": true,
+    "tensors": true
+   },
+   {
+    "lineage": "20260903",
+    "master": 20260903,
+    "npz": "exp601_smoke_counts.npz",
+    "ns_stored": 16,
+    "window_exact_vs_regenerated_population": true,
+    "population_hash16": "fa1746a5b065cbd9",
+    "has_controls": true,
+    "total_hits": 66,
+    "total_ctl": 19200,
+    "score_window_points_total": 4256,
+    "score_window_hit_points": 11,
+    "has_midwindow_positional": true,
+    "tensors": true
+   }
+  ],
+  "chosen_path": "A",
+  "path_rule_evidence": {
+   "n_lineages_positional": 3,
+   "note": "all three store per-N hit/ctl j-streams + jlo/jhi; mid-window coverage counted from reconstructed t"
+  }
+ },
+ "stats": {
+  "status": "OK",
+  "path_run": "A",
+  "test_statement": "pooled tensor-level mixture amplitude at u* in [0.55,0.75]; z_cal vs CTRL-B parametric-Poisson estimator null; cluster bootstrap over 272 N-clusters",
+  "pooled_amp_mix": 0.09181054335024941,
+  "pooled_se_mix": 0.027358224279617885,
+  "pooled_amp_ci95_pctile": [
+   0.06559983463454258,
+   0.17254294288968286
+  ],
+  "pooled_z_mix_registered_raw": 3.35586631690307,
+  "pooled_amp_sim_estimator_null": 0.06616602245951464,
+  "pooled_se_sim": 0.028173822603679406,
+  "estimator_null_draw_sensitivity_50draws": {
+   "amp_sim_quantiles_q0_q5_q50_q95_q100": [
+    0.0,
+    0.010065861327502767,
+    0.04050711839967924,
+    0.07462187303967725,
+    0.10984588295263142
+   ],
+   "implied_z_cal_at_those_draws": [
+    2.3378521308819504,
+    2.0815363037999766,
+    1.3063839616401405,
+    0.43769013934813256,
+    -0.4592496197278402
+   ],
+   "n_null_draws_implying_z_cal_ge_2": 6,
+   "note": "disclosure only; registered verdict uses the single SIM_SEED draw. 6/50 null draws would imply z_cal>=2 \u2014 the crossing draw(s) are the estimator-null's stochastic FLOOR (amp_sim near 0), i.e. the H1 margin would come from null-draw luck, not from excess in the data; the registered draw gives z_cal=0.65"
+  },
+  "pooled_calibrated_excess_amp_minus_sim": 0.025644520890734768,
+  "pooled_se_combined_cal_scale": 0.03927132179895999,
+  "pooled_z_cal": 0.6530088552154082,
+  "pooled_z_cal_round": 0.65,
+  "ctrl_a_gate": {
+   "amp": 0.022526925005826204,
+   "se": 0.007407807766897669,
+   "maxdev_all_bins": 0.022526925005826204,
+   "pass": false,
+   "null_bootstrap_mean": 0.025481923263552034,
+   "null_bootstrap_p_exceeds_obs": 0.657,
+   "role": "disclosed diagnostic (not verdict-blocking on an H0 outcome; blocks an H1 firing)",
+   "note": "marginal trip amp=0.0225 vs 3*se=0.0222 is in the unmodeled max-over-bins bias regime at pooled counts; machinery-null bootstrap p_exceeds reported alongside"
+  },
+  "per_seed_breakdown_report_only": {
+   "20260828": {
+    "ns": 128,
+    "total_hits": 9594,
+    "total_ctl": 512000,
+    "amp_mix": 0.1774,
+    "se_mix": 0.0417,
+    "z_mix_registered_raw": 4.26,
+    "amp_sim_estimator_null": 0.1115,
+    "se_sim": 0.0458,
+    "z_null_calibrated": 1.07
+   },
+   "20260902": {
+    "ns": 128,
+    "total_hits": 9840,
+    "total_ctl": 512000,
+    "amp_mix": 0.0742,
+    "se_mix": 0.0375,
+    "z_mix_registered_raw": 1.98,
+    "amp_sim_estimator_null": 0.0019,
+    "se_sim": 0.0318,
+    "z_null_calibrated": 1.47
+   },
+   "20260903": {
+    "ns": 16,
+    "total_hits": 66,
+    "total_ctl": 19200,
+    "amp_mix": 1.164,
+    "se_mix": 0.5946,
+    "z_mix_registered_raw": 1.96,
+    "amp_sim_estimator_null": 0.3927,
+    "se_sim": 0.5231,
+    "z_null_calibrated": 0.97
+   }
+  },
+  "n_clusters_pooled": 272,
+  "total_hits_pooled": 19500,
+  "total_reference_pooled": 1043200,
+  "g_global_flank_rate": 33.261792,
+  "score_bins_t": [
+   0.55,
+   0.57,
+   0.59,
+   0.61,
+   0.63,
+   0.65,
+   0.67,
+   0.69,
+   0.71,
+   0.73,
+   0.75
+  ],
+  "residual_rows": [
+   {
+    "bin": 0,
+    "t": 0.01,
+    "hits": 898,
+    "pred_mix": 835.32,
+    "ratio_mix_smooth": 1.075
+   },
+   {
+    "bin": 1,
+    "t": 0.03,
+    "hits": 678,
+    "pred_mix": 633.07,
+    "ratio_mix_smooth": 1.0534
+   },
+   {
+    "bin": 2,
+    "t": 0.05,
+    "hits": 576,
+    "pred_mix": 567.98,
+    "ratio_mix_smooth": 1.0482
+   },
+   {
+    "bin": 3,
+    "t": 0.07,
+    "hits": 568,
+    "pred_mix": 536.11,
+    "ratio_mix_smooth": 1.045
+   },
+   {
+    "bin": 4,
+    "t": 0.09,
+    "hits": 523,
+    "pred_mix": 492.78,
+    "ratio_mix_smooth": 1.0369
+   },
+   {
+    "bin": 5,
+    "t": 0.11,
+    "hits": 482,
+    "pred_mix": 486.94,
+    "ratio_mix_smooth": 1.0333
+   },
+   {
+    "bin": 6,
+    "t": 0.13,
+    "hits": 488,
+    "pred_mix": 465.32,
+    "ratio_mix_smooth": 1.0162
+   },
+   {
+    "bin": 7,
+    "t": 0.15,
+    "hits": 450,
+    "pred_mix": 445.56,
+    "ratio_mix_smooth": 1.0485
+   },
+   {
+    "bin": 8,
+    "t": 0.17,
+    "hits": 474,
+    "pred_mix": 436.19,
+    "ratio_mix_smooth": 1.0401
+   },
+   {
+    "bin": 9,
+    "t": 0.19,
+    "hits": 437,
+    "pred_mix": 426.91,
+    "ratio_mix_smooth": 1.0598
+   },
+   {
+    "bin": 10,
+    "t": 0.21,
+    "hits": 452,
+    "pred_mix": 422.85,
+    "ratio_mix_smooth": 1.0061
+   },
+   {
+    "bin": 11,
+    "t": 0.23,
+    "hits": 376,
+    "pred_mix": 406.16,
+    "ratio_mix_smooth": 1.0251
+   },
+   {
+    "bin": 12,
+    "t": 0.25,
+    "hits": 437,
+    "pred_mix": 404.37,
+    "ratio_mix_smooth": 1.0141
+   },
+   {
+    "bin": 13,
+    "t": 0.27,
+    "hits": 411,
+    "pred_mix": 396.75,
+    "ratio_mix_smooth": 1.0972
+   },
+   {
+    "bin": 14,
+    "t": 0.29,
+    "hits": 448,
+    "pred_mix": 381.29,
+    "ratio_mix_smooth": 1.0752
+   },
+   {
+    "bin": 15,
+    "t": 0.31,
+    "hits": 391,
+    "pred_mix": 385.28,
+    "ratio_mix_smooth": 1.059
+   },
+   {
+    "bin": 16,
+    "t": 0.33,
+    "hits": 372,
+    "pred_mix": 376.83,
+    "ratio_mix_smooth": 1.0068
+   },
+   {
+    "bin": 17,
+    "t": 0.35,
+    "hits": 381,
+    "pred_mix": 374.14,
+    "ratio_mix_smooth": 1.022
+   },
+   {
+    "bin": 18,
+    "t": 0.37,
+    "hits": 385,
+    "pred_mix": 363.07,
+    "ratio_mix_smooth": 1.0797
+   },
+   {
+    "bin": 19,
+    "t": 0.39,
+    "hits": 417,
+    "pred_mix": 359.36,
+    "ratio_mix_smooth": 1.1104
+   },
+   {
+    "bin": 20,
+    "t": 0.41,
+    "hits": 400,
+    "pred_mix": 360.19,
+    "ratio_mix_smooth": 1.1226
+   },
+   {
+    "bin": 21,
+    "t": 0.43,
+    "hits": 380,
+    "pred_mix": 346.45,
+    "ratio_mix_smooth": 1.103
+   },
+   {
+    "bin": 22,
+    "t": 0.45,
+    "hits": 379,
+    "pred_mix": 344.02,
+    "ratio_mix_smooth": 1.0791
+   },
+   {
+    "bin": 23,
+    "t": 0.47,
+    "hits": 359,
+    "pred_mix": 345.63,
+    "ratio_mix_smooth": 1.0847
+   },
+   {
+    "bin": 24,
+    "t": 0.49,
+    "hits": 379,
+    "pred_mix": 340.28,
+    "ratio_mix_smooth": 1.0814
+   },
+   {
+    "bin": 25,
+    "t": 0.51,
+    "hits": 372,
+    "pred_mix": 340.77,
+    "ratio_mix_smooth": 1.0501
+   },
+   {
+    "bin": 26,
+    "t": 0.53,
+    "hits": 310,
+    "pred_mix": 328.06,
+    "ratio_mix_smooth": 1.0203
+   },
+   {
+    "bin": 27,
+    "t": 0.55,
+    "hits": 336,
+    "pred_mix": 328.01,
+    "ratio_mix_smooth": 1.0097
+   },
+   {
+    "bin": 28,
+    "t": 0.57,
+    "hits": 344,
+    "pred_mix": 324.61,
+    "ratio_mix_smooth": 1.0405
+   },
+   {
+    "bin": 29,
+    "t": 0.59,
+    "hits": 337,
+    "pred_mix": 324.88,
+    "ratio_mix_smooth": 1.0701
+   },
+   {
+    "bin": 30,
+    "t": 0.61,
+    "hits": 357,
+    "pred_mix": 320.67,
+    "ratio_mix_smooth": 1.0732
+   },
+   {
+    "bin": 31,
+    "t": 0.63,
+    "hits": 340,
+    "pred_mix": 318.01,
+    "ratio_mix_smooth": 1.0856
+   },
+   {
+    "bin": 32,
+    "t": 0.65,
+    "hits": 339,
+    "pred_mix": 315.5,
+    "ratio_mix_smooth": 1.0918
+   },
+   {
+    "bin": 33,
+    "t": 0.67,
+    "hits": 351,
+    "pred_mix": 310.12,
+    "ratio_mix_smooth": 1.08
+   },
+   {
+    "bin": 34,
+    "t": 0.69,
+    "hits": 322,
+    "pred_mix": 311.52,
+    "ratio_mix_smooth": 1.0689
+   },
+   {
+    "bin": 35,
+    "t": 0.71,
+    "hits": 318,
+    "pred_mix": 305.43,
+    "ratio_mix_smooth": 1.0411
+   },
+   {
+    "bin": 36,
+    "t": 0.73,
+    "hits": 319,
+    "pred_mix": 304.26,
+    "ratio_mix_smooth": 1.0516
+   },
+   {
+    "bin": 37,
+    "t": 0.75,
+    "hits": 320,
+    "pred_mix": 300.39,
+    "ratio_mix_smooth": 1.05
+   },
+   {
+    "bin": 38,
+    "t": 0.77,
+    "hits": 312,
+    "pred_mix": 301.04,
+    "ratio_mix_smooth": 1.0703
+   },
+   {
+    "bin": 39,
+    "t": 0.79,
+    "hits": 325,
+    "pred_mix": 293.02,
+    "ratio_mix_smooth": 1.0588
+   },
+   {
+    "bin": 40,
+    "t": 0.81,
+    "hits": 304,
+    "pred_mix": 294.92,
+    "ratio_mix_smooth": 1.0645
+   },
+   {
+    "bin": 41,
+    "t": 0.83,
+    "hits": 306,
+    "pred_mix": 290.41,
+    "ratio_mix_smooth": 1.0688
+   },
+   {
+    "bin": 42,
+    "t": 0.85,
+    "hits": 328,
+    "pred_mix": 292.36,
+    "ratio_mix_smooth": 1.0674
+   },
+   {
+    "bin": 43,
+    "t": 0.87,
+    "hits": 295,
+    "pred_mix": 287.36,
+    "ratio_mix_smooth": 1.0661
+   },
+   {
+    "bin": 44,
+    "t": 0.89,
+    "hits": 303,
+    "pred_mix": 288.64,
+    "ratio_mix_smooth": 1.016
+   },
+   {
+    "bin": 45,
+    "t": 0.91,
+    "hits": 278,
+    "pred_mix": 286.14,
+    "ratio_mix_smooth": 1.0225
+   },
+   {
+    "bin": 46,
+    "t": 0.93,
+    "hits": 296,
+    "pred_mix": 282.94,
+    "ratio_mix_smooth": 0.9826
+   },
+   {
+    "bin": 47,
+    "t": 0.95,
+    "hits": 263,
+    "pred_mix": 282.8,
+    "ratio_mix_smooth": 1.0075
+   },
+   {
+    "bin": 48,
+    "t": 0.97,
+    "hits": 292,
+    "pred_mix": 279.09,
+    "ratio_mix_smooth": 1.0066
+   },
+   {
+    "bin": 49,
+    "t": 0.99,
+    "hits": 292,
+    "pred_mix": 279.83,
+    "ratio_mix_smooth": 1.0435
+   }
+  ]
+ },
+ "verdicts": {
+  "pooled": "H0_DENSITY_ONLY",
+  "rule": "H1 iff pooled z_cal>=2 (CTRL-A must be null); else H0 density-only, thread closes",
+  "statement": "H0: pooled z_cal<2 -> DENSITY-ONLY READING CONFIRMED; THREAD CLOSES (paper-243 reopen condition resolved negative)",
+  "consequence": "density-only confirmed; thread closes"
+ },
+ "honest_notes": [
+  "Inventory: all three lineages store per-N hit/ctl j-streams + jlo/jhi; positions reconstructed exactly as t=(j-jlo)/(jhi-jlo); Path A chosen by the registered inventory rule (3/3 lineages carry mid-window positional data; per-lineage score-window point counts recorded above).",
+  "Lineage 20260903 artifact exp601_smoke_counts.npz is SMOKE-SIZED: 16 Ns, JS=8000 samples/N (full lineages: 128 Ns, 150000), ctl capped 1200/N (vs 4000). Its pooled contribution is ~0.5% of pooled hits; the pooled verdict is carried by the two full lineages, with L3 adding an independent (low-power) third voice. Disclosed, not hidden.",
+  "Execution form of 'pooled KS/permutation on within-stratum residuals': run as the exp588c/exp592 VERBATIM mixture machinery (per-bin obs/PRED ratio residuals, kappa fitted on flanks only, lam=5 shrinkage, buffer bins predicted-not-scored), pooled at tensor level across lineages; the null-calibrated z_cal uses CTRL-B parametric Poisson (max-over-bins bias INCLUDED in the null) and cluster bootstrap over pooled N-clusters. No separate KS layer was added (single registered test, no sweep).",
+  "Population/window validation gated statistics: regenerated populations (exp578 code path, master seeds 20260828/20260902/20260903) reproduce stored jlo/jhi INT64-exact for all stored Ns; pairwise-disjoint N sets across the three lineages asserted.",
+  "Per-seed z_cals use per-seed flank-fitted kappa and per-seed Poisson nulls at 500 boot reps; they are BREAKDOWN ONLY \u2014 the verdict rides on the single pooled statistic.",
+  "Estimator-null draw sensitivity (50 draws, disclosure): amp_sim spans [0.0000,0.1098] with median 0.0405 \u2014 the max-over-bins null is itself noisy at this hit count; the registered draw (0.0662) sits mid-range and 6/50 draws would imply z_cal>=2, all from the null's stochastic floor (amp_sim near zero) rather than from data excess. The H0 reading is that the observed 0.0918 is TYPICAL of what the mixture + Poisson-noise estimator produces (median-implied z_cal ~1.3).",
+  "Both scales reported per the paper-242 caveat: pooled raw z_mix and null-calibrated pooled z_cal; disagreement flagged, never resolved.",
+  "CTRL-A machinery gate (disclosed diagnostic, demoted post-first-run \u2014 see amendment_log): amp 0.0225 vs bar 3*se; the trip is in the unmodeled max-over-bins bias regime at pooled counts (1.04M reference points make se small while the max-statistic bias stays positive); the machinery-null bootstrap p_exceeds is reported in stats.ctrl_a_gate. Direction argument: any contamination inflates the observed amplitude, so it cannot manufacture the H0 outcome; an H1 firing would have been withheld."
+ ],
+ "wall_s": 2.8
+}

@@ -3295,3 +3295,33 @@ integer costs (deterministic indicators); identity PASS hits 9594 = pool count;
 single pool class untested beyond; C₀ choice affects Θ/X not headline S. Wall 0.08 s
 full. Completes paper 250's closer affirmatively with the frame distinction as added
 insight; sharpness still posed over the prior class. Paper 251, issue #399.
+
+**Assessment addendum v359 — 2026-08-25 (round-93 #1).** Experiment recorded (count
+588 → 589; papers 251 → 252; version v358 → v359). Content: **POOLED-ADJUDICATION
+(exp 602, issue #400)** — paper 243's named reopen condition EXECUTED TO CLOSURE.
+Pre-registered single test (script header before analysis): excess amplitude at u* ∈
+[0.55, 0.75] vs divisibility-mixture, pooled over ≥3 independent seed lineages,
+null-calibrated; H1: pooled z_cal ≥ 2 ⇒ non-divisibility positional mechanism confirmed
+multi-seed; H0: pooled z_cal < 2 ⇒ density-only confirmed, thread closes. Inventory rule:
+all THREE lineages carry per-N j-streams ⇒ positions reconstruct exactly t=(j−jlo)/(jhi−jlo)
+(INT64-exact vs stored bounds; pairwise-disjoint N sets) ⇒ PATH A: verbatim exp588c/exp592
+mixture machinery tensor-pooled (kappa flank-fitted only, λ=5, buffer predicted-not-scored),
+cluster bootstrap over pooled N-clusters, CTRL-B estimator null (max-over-bins bias included).
+Lineages: 20260828 (128 Ns, 9594 hits), 20260902 (128 Ns, 9840 hits), 20260903 SMOKE-SIZED
+(16 Ns, 66 hits — ~0.5% of pooled hits, disclosed). **THE TWO-SCALE RESULT**: amp_mix =
+0.0918 ± 0.0274 [0.0656, 0.1725] over 19,500 pooled hits / 1,043,200 reference points / 272
+N-clusters; **pooled_z_mix_registered_raw = 3.36 > 2 BUT registered z_cal = 0.65 < 2**
+(calibrated excess 0.0256 ± 0.0393) ⇒ **H0 FIRES ON THE REGISTERED CALIBRATED SCALE —
+density-only confirmed; POSITIONAL THREAD CLOSES**. Per-seed z_cal 1.07/1.47/0.97 — none
+clears; raw→calibrated collapse systematic (4.26→1.07, 1.98→1.47, 1.96→0.97).
+CTRL-A MACHINERY-GATE FAIL DISCLOSED PROMINENTLY (amp 0.0225 ± 0.0074, maxdev 0.0225):
+raw-amplitude scale discredited as positional evidence; strictest internal booking =
+ARTIFACT_CONTAMINATED/no-clean-verdict, booked alongside the headline; both readings agree
+NO H1 claim is possible on any scale. What survives: κ composition ordering across all seeds
+(rate-dial law) and the DENSITY phenomenon itself; what dies: any claim of POSITIONAL
+structure beyond it. Ledger catches disclosed: coordinator mechanical fixes (.tolist() +
+_n naming fix, type/bookkeeping only); L3 smoke-sizing; single registered test, no sweep;
+population hashes + disjointness asserted. Wall 2.2 s. Barrier framing: positional stratum
+of the barrier map fully resolved (density real, mechanism absent multi-seed); paper-243's
+reopen condition CLOSED AGAINST; paper 242's single-seed-unconfirmed note superseded.
+Paper 252, issue #400.

@@ -1,0 +1,111 @@
+======================================================================
+exp602 POOLED-ADJUDICATION  inventory
+registered window u*=[0.55,0.75]  z_thresh=2.0  PATH A
+======================================================================
+
+### L1_positions_20260828: 258 arrays (first entries shown)
+  hit_0: {"shape": [79], "dtype": "int64", "size": 79, "n_finite": 79, "min": 220501910028445.0, "p01": 220705992221925.88, "med": 377049770164945.0, "p99": 638995836838649.6, "max": 652488019391983.0, "mean": 380500426612439.7, "n_in_midwin": 0, "frac_in_midwin": 0.0, "integer_like": true}
+  hit_1: {"shape": [95], "dtype": "int64", "size": 95, "n_finite": 95, "min": 224133362056258.0, "p01": 227512576813647.7, "med": 414323499484699.0, "p99": 652776451256405.1, "max": 658610867274143.0, "mean": 417346596574845.1, "n_in_midwin": 0, "frac_in_midwin": 0.0, "integer_like": true}
+  hit_2: {"shape": [90], "dtype": "int64", "size": 90, "n_finite": 90, "min": 203370821039594.0, "p01": 203839808459062.34, "med": 349028741750329.5, "p99": 577092150762568.1, "max": 597918950564670.0, "mean": 373786175958758.7, "n_in_midwin": 0, "frac_in_midwin": 0.0, "integer_like": true}
+  hit_3: {"shape": [48], "dtype": "int64", "size": 48, "n_finite": 48, "min": 268979381488898.0, "p01": 272602043252807.28, "med": 487463279340793.5, "p99": 741306330340875.8, "max": 742229823817857.0, "mean": 487277479789693.2, "n_in_midwin": 0, "frac_in_midwin": 0.0, "integer_like": true}
+  hit_4: {"shape": [60], "dtype": "int64", "size": 60, "n_finite": 60, "min": 269074105568259.0, "p01": 271370772543879.38, "med": 466384461717990.5, "p99": 791375775236050.0, "max": 791552173916608.0, "mean": 499108517891977.44, "n_in_midwin": 0, "frac_in_midwin": 0.0, "integer_like": true}
+  hit_5: {"shape": [97], "dtype": "int64", "size": 97, "n_finite": 97, "min": 220525272996169.0, "p01": 221194275282737.3, "med": 403389289058541.0, "p99": 647002640046593.4, "max": 648198768069388.0, "mean": 412987371222849.8, "n_in_midwin": 0, "frac_in_midwin": 0.0, "integer_like": true}
+  hit_6: {"shape": [78], "dtype": "int64", "size": 78, "n_finite": 78, "min": 205581684810202.0, "p01": 211007423403423.88, "med": 385342343598303.0, "p99": 593074614418803.5, "max": 593390284173272.0, "mean": 387692593066547.0, "n_in_midwin": 0, "frac_in_midwin": 0.0, "integer_like": true}
+  hit_7: {"shape": [39], "dtype": "int64", "size": 39, "n_finite": 39, "min": 236636298987319.0, "p01": 239344885129191.3, "med": 474338006488328.0, "p99": 662451780647460.9, "max": 664407495435950.0, "mean": 454191227632945.25, "n_in_midwin": 0, "frac_in_midwin": 0.0, "integer_like": true}
+
+### L2_positions_20260902: 258 arrays (first entries shown)
+  hit_0: {"shape": [87], "dtype": "int64", "size": 87, "n_finite": 87, "min": 247602731597715.0, "p01": 247768793829951.8, "med": 453371108320738.0, "p99": 691858867585012.2, "max": 694183153205091.0, "mean": 469252852659928.56, "n_in_midwin": 0, "frac_in_midwin": 0.0, "integer_like": true}
+  ctl_0: {"shape": [4000], "dtype": "int64", "size": 4000, "n_finite": 4000, "min": 241941641819706.0, "p01": 246533025068418.56, "med": 484730724881032.5, "p99": 718298394525955.6, "max": 723877444790451.0, "mean": 483691877291452.06, "n_in_midwin": 0, "frac_in_midwin": 0.0, "integer_like": true}
+  hit_1: {"shape": [118], "dtype": "int64", "size": 118, "n_finite": 118, "min": 267448993087363.0, "p01": 269781922127621.25, "med": 479359665769083.5, "p99": 771003405286698.9, "max": 778888897348665.0, "mean": 494782501431395.0, "n_in_midwin": 0, "frac_in_midwin": 0.0, "integer_like": true}
+  ctl_1: {"shape": [4000], "dtype": "int64", "size": 4000, "n_finite": 4000, "min": 265738055880647.0, "p01": 272929338373821.75, "med": 532692913782399.5, "p99": 790956823730234.9, "max": 796863230914318.0, "mean": 533517575377652.8, "n_in_midwin": 0, "frac_in_midwin": 0.0, "integer_like": true}
+  hit_2: {"shape": [59], "dtype": "int64", "size": 59, "n_finite": 59, "min": 247966499324307.0, "p01": 248696140183720.25, "med": 465916533530346.0, "p99": 704688635750109.5, "max": 713160794605382.0, "mean": 455255121232033.75, "n_in_midwin": 0, "frac_in_midwin": 0.0, "integer_like": true}
+  ctl_2: {"shape": [4000], "dtype": "int64", "size": 4000, "n_finite": 4000, "min": 247971471171431.0, "p01": 252274869219640.8, "med": 497667001548404.0, "p99": 739198640322151.8, "max": 743461232812576.0, "mean": 496992531155507.44, "n_in_midwin": 0, "frac_in_midwin": 0.0, "integer_like": true}
+  hit_3: {"shape": [74], "dtype": "int64", "size": 74, "n_finite": 74, "min": 204960629332628.0, "p01": 205539886534610.94, "med": 363350112621842.0, "p99": 607077074769009.0, "max": 611274268938094.0, "mean": 389468929577869.9, "n_in_midwin": 0, "frac_in_midwin": 0.0, "integer_like": true}
+  ctl_3: {"shape": [4000], "dtype": "int64", "size": 4000, "n_finite": 4000, "min": 205071763719327.0, "p01": 209624579716168.38, "med": 410217385868496.5, "p99": 611112363482640.9, "max": 614759319259649.0, "mean": 410261099466706.2, "n_in_midwin": 0, "frac_in_midwin": 0.0, "integer_like": true}
+
+### L2_result_20260902: 106 flat keys
+  * config.seed_boot = 20260901
+  * config.master_seed_fresh = 20260902
+  * config.master_seed_distinct_from = <list len=6>
+  * config.master_seed_distinct_from[0] = 20260824
+  * config.score_window = <list len=2>
+  * config.score_window[0] = 0.55
+  * config.wide_comparability_window = <list len=2>
+  * config.wide_comparability_window[0] = 0.45
+  * config.generator_regression_vs_exp581_npz.checks.population_window_exact_vs_npz = True
+  * residual.rows[0].pred_mix = 423.63
+  * residual.rows[0].ratio_mix_smooth = 1.1284
+  * stats.amp_mix = 0.0742359
+  * stats.se_mix = 0.0377431
+  * stats.z_mix_registered_raw = 1.96687
+  * stats.calibrated_excess_amp_minus_sim = -0.0655275
+  * stats.z_null_calibrated = -1.0764
+  * stats.amp_mix_wide = 0.197993
+  * stats.amp_sim_estimator_null = 0.139763
+  * stats.kappa_table_sorted_by_kappa_over_g[0].flank_rho_sum = 4.54
+  * verdicts.gate_h1_fires = False
+  * verdicts.gate_h0_fires = True
+  * verdicts.rule = GATE-H1 iff amp_mix>=1.0*se_mix AND z_cal>=2 (=> confirmed two-seed, entry hardens); else GATE-H0 iff amp CI includes 0 OR z_cal<1 (=> single-seed-unconfirme...
+  * verdicts.gate_evaluation_order = H1 -> H0 -> PARTIAL
+  * verdicts.verdict = GATE-H0: FEATURE DOES NOT REPLICATE -> ENTRY STAYS SINGLE-SEED-UNCONFIRMED; ORIGINAL z=4.11 FLAGGED POSSIBLY-INFLATED BY MAX-STATISTIC SWEEP SELECTION
+  * verdicts.consequence = entry stays single-seed-unconfirmed; original flagged
+  * verdicts.amp_mix_round = 0.0742
+  * verdicts.se_mix_round = 0.0377
+  * verdicts.z_mix_registered_raw_round = 1.97
+  * verdicts.z_null_calibrated_round = -1.08
+
+### L3_counts_20260903: 37 arrays (first entries shown)
+  S400: {"shape": [16], "dtype": "float64", "size": 16, "n_finite": 16, "min": 3.217473090655935, "p01": 3.225197801544916, "med": 4.227769955713907, "p99": 4.88787061395454, "max": 4.892024169315225, "mean": 4.147625957773371, "n_in_midwin": 0, "frac_in_midwin": 0.0, "integer_like": false}
+  jlo: {"shape": [16], "dtype": "int64", "size": 16, "n_finite": 16, "min": 204169097046476.0, "p01": 204414043057998.2, "med": 220800619270454.0, "p99": 255653400152554.7, "max": 256329123319838.0, "mean": 225934016944912.88, "n_in_midwin": 0, "frac_in_midwin": 0.0, "integer_like": true}
+  jhi: {"shape": [16], "dtype": "int64", "size": 16, "n_finite": 16, "min": 612507291139425.0, "p01": 613242129173991.6, "med": 662401857811359.0, "p99": 766960200457661.1, "max": 768987369959511.0, "mean": 677802050834735.6, "n_in_midwin": 0, "frac_in_midwin": 0.0, "integer_like": true}
+  hits_per_N: {"shape": [16], "dtype": "int64", "size": 16, "n_finite": 16, "min": 1.0, "p01": 1.0, "med": 4.0, "p99": 9.549999999999999, "max": 10.0, "mean": 4.125, "n_in_midwin": 0, "frac_in_midwin": 0.0, "integer_like": true}
+  samples_per_N: {"shape": [16], "dtype": "int64", "size": 16, "n_finite": 16, "min": 8000.0, "p01": 8000.0, "med": 8000.0, "p99": 8000.0, "max": 8000.0, "mean": 8000.0, "n_in_midwin": 0, "frac_in_midwin": 0.0, "integer_like": true}
+  hit_0: {"shape": [2], "dtype": "int64", "size": 2, "n_finite": 2, "min": 299952740393153.0, "p01": 300778106388621.4, "med": 341221040166571.5, "p99": 381663973944521.6, "max": 382489339939990.0, "mean": 341221040166571.5, "n_in_midwin": 0, "frac_in_midwin": 0.0, "integer_like": true}
+  ctl_0: {"shape": [1200], "dtype": "int64", "size": 1200, "n_finite": 1200, "min": 224097944198732.0, "p01": 230216672044968.3, "med": 452012997114928.5, "p99": 668824643044181.1, "max": 671819510405468.0, "mean": 447109017336960.6, "n_in_midwin": 0, "frac_in_midwin": 0.0, "integer_like": true}
+  hit_1: {"shape": [4], "dtype": "int64", "size": 4, "n_finite": 4, "min": 329220725501788.0, "p01": 329293081832480.8, "med": 482605788516521.0, "p99": 680765693719159.0, "max": 682225076808159.0, "mean": 494164344835747.25, "n_in_midwin": 0, "frac_in_midwin": 0.0, "integer_like": true}
+
+### ctx_exp577_result: 144 flat keys
+  * config.master_seed = 20260827
+  * config.seed_distinctness.pairwise_disjoint_N_sets = True
+  * config.seed_distinctness.ordering_differs_vs_each_prior.20260824 = True
+  * config.seed_distinctness.ordering_differs_vs_each_prior.20260825 = True
+  * config.seed_distinctness.ordering_differs_vs_each_prior.20260826 = True
+  * config.seed_distinctness.hashes.20260824 = e8d89a29a03779d5
+  * config.seed_distinctness.hashes.20260825 = 9cb9cc800ee45a38
+  * config.seed_distinctness.hashes.20260826 = 81acc9b5e1be619b
+  * config.seed_distinctness.hashes.20260827 = a15e2877dd1dac7a
+  * config.seed_distinctness.prior_lineage_hash_reproduction_vs_exp576.20260824 = True
+  * config.seed_distinctness.prior_lineage_hash_reproduction_vs_exp576.20260825 = True
+  * config.seed_distinctness.prior_lineage_hash_reproduction_vs_exp576.20260826 = True
+  * stats.D_raw_index_of_dispersion = 4.9
+  * stats.phi_null_poisson_dispersion = 4.93
+  * verdicts.H1_scale_shift_real = False
+  * verdicts.H0_no_qr_carry_any_scale = False
+  * verdicts.rule = leg(i) at B: R2_log>=0.16 AND >=2x base_R2@400(this run); leg(ii): D_reduction>=30%; shift candidates B in {4000,4e4,1e5,1e6}; H1 iff any candidate clears ei...
+  * verdicts.base_R2_at_400_this_run = 0.3207
+  * verdicts.fired_per_candidate.S4000.leg_i_R2_ge_abs_and_2x_base = False
+  * verdicts.fired_per_candidate.S4000.leg_ii_Dred_ge_30 = False
+  * verdicts.fired_per_candidate.S4000.margin_R2_to_abs_bar = -0.1359
+  * verdicts.fired_per_candidate.S40000.leg_i_R2_ge_abs_and_2x_base = False
+  * verdicts.fired_per_candidate.S40000.leg_ii_Dred_ge_30 = False
+  * verdicts.fired_per_candidate.S40000.margin_R2_to_abs_bar = -0.145
+  * verdicts.fired_per_candidate.S100000.leg_i_R2_ge_abs_and_2x_base = False
+  * verdicts.fired_per_candidate.S100000.leg_ii_Dred_ge_30 = False
+  * verdicts.fired_per_candidate.S100000.margin_R2_to_abs_bar = -0.16
+  * verdicts.fired_per_candidate.S1000000.leg_i_R2_ge_abs_and_2x_base = False
+  * verdicts.fired_per_candidate.S1000000.leg_ii_Dred_ge_30 = False
+  * verdicts.fired_per_candidate.S1000000.margin_R2_to_abs_bar = -0.1323
+  * verdicts.one_e6_leg_fired = False
+  * verdicts.B_star_argmax_R2 = S400
+  * verdicts.B_star_R2 = 0.3207
+  * verdicts.B_star_D_reduction_pct = 33.43
+  * verdicts.verdict = WINDOW-STRONGER-NOT-SHIFTED
+  * verdicts.consequence_if_H1 = papers 136/139/220 unify under a scale-dependent QR dial bound; u~10 overdispersion is QR-carried once the window tracks LPF<=1e6
+  * verdicts.consequence_if_H0 = clustering not QR-carried at any symbol-reachable scale -> deepens to non-QR N-structure (factor-local/non-character) map entry
+  * verdicts.slope_direction_expected = POSITIVE on QR-count at the informative bound
+
+### prov_exp592_py: lines=520
+
+### prov_exp601_py: lines=530
+
+SMOKE OK (inventory only) [wall 1.4s]

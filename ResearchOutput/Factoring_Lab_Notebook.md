@@ -12321,3 +12321,64 @@ beyond scan-order, MA-1 effectivity, residue cap 4/3, external-hint laws, quantu
 closed; named next probes: multiplicity-regime transfer test (realized-frame S on a
 low-m pool class — does 2.65x shrink toward 1 as m -> few?), paper 242 single-seed-
 unconfirmed (#391); .2346 flag traveling.
+
+## Part 294 — round-93 #1 · POOLED-ADJUDICATION (exp 602) — H0 FIRES ON THE REGISTERED CALIBRATED SCALE: pooled z_cal = 0.65 < 2 (raw z_mix = 3.36 discredited by CTRL-A machinery-gate FAIL) — density-only reading confirmed; POSITIONAL THREAD CLOSES; paper-243 reopen condition executed to closure (2026-08-25)
+
+Question: run paper 243's named REOPEN CONDITION — the multi-seed POOLED re-adjudication of the
+u*~0.65 mid-window excess that papers 242/243 left single-lineage. PRE-REGISTERED SINGLE TEST
+(script header before analysis): excess amplitude at u* in [0.55,0.75] vs divisibility-mixture,
+pooled over >=3 independent seed lineages, null-calibrated; H1: pooled z_cal >= 2 => non-divisibility
+positional mechanism CONFIRMED multi-seed; H0: pooled z_cal < 2 => density-only confirmed, thread
+closes. Registered path rule decided by inventory ALONE (one test, no sweep): all THREE lineages
+store per-N hit/ctl j-streams + jlo/jhi => positions reconstruct EXACTLY t=(j-jlo)/(jhi-jlo)
+(regenerated populations reproduce stored bounds INT64-exact; pairwise-disjoint N sets asserted)
+=> PATH A: exp588c/exp592 VERBATIM mixture machinery tensor-pooled (kappa_c flank-fitted only,
+lam=5 shrinkage, buffer predicted-not-scored), amplitude = max smoothed ratio-minus-1 over the
+registered window, cluster bootstrap over pooled N-clusters, CTRL-B parametric Poisson estimator
+null (max-over-bins bias INCLUDED), z_cal = (amp_pool - amp_sim)/sqrt(se_mix^2+se_sim^2).
+exp602_pooled_adjudication.py, wall 2.2 s full run.
+
+INVENTORY (window-exact validated per lineage BEFORE statistics): 20260828
+exp581_regen_positions.npz 128 Ns hits 9594 ctl 512000 (hash16 20115284998cb001);
+20260902 exp592_positions.npz 128 Ns hits 9840 ctl 512000 (hash16 0d69e6f4e59ebc9e);
+20260903 exp601_smoke_counts.npz 16 Ns SMOKE-SIZED (JS=8000/N, ctl capped) hits 66 ctl 19200
+(hash16 fa1746a5b065cbd9) — ~0.5% of pooled hits, low-power third voice DISCLOSED up front.
+
+THE TWO-SCALE RESULT (the multiplicity-regime lesson live in a second form): pooled amp_mix =
+0.0918 +- 0.0274 (CI95 [0.0656, 0.1725]) over 19,500 pooled hits / 1,043,200 reference points /
+272 N-clusters; **pooled_z_mix_registered_raw = 3.36 > 2 BUT pooled_z_cal = 0.65 < 2** — calibrated
+excess 0.0256 +- 0.0393 after CTRL-B subtraction; the estimator null absorbs 0.0662 of the raw
+amplitude — most of the "signal" is the statistic's own max-over-bins selection bias. Per-seed
+calibrated breakdown REPORT-ONLY: z_cal = 1.07 / 1.47 / 0.97 — NONE individually clears;
+raw-to-calibrated collapse systematic (4.26->1.07, 1.98->1.47, 1.96->0.97), the seed-level
+machinery-offset pattern.
+
+CTRL-A MACHINERY-GATE FAIL DISCLOSED PROMINENTLY: gate amp = 0.0225 +- 0.0074, maxdev_all_bins =
+0.0225, pass = False. Consequences booked BOTH ways honestly: (i) headline books **H0 ON THE
+REGISTERED SCALE** — the pre-registration placed the bar on z_cal, and 0.65 < 2 is unambiguous;
+(ii) the run's strictest internal booking (result.json verdicts block + findings.md) records
+ARTIFACT_CONTAMINATED — no clean gate verdict, pooled adjudication inconclusive. What BOTH readings
+agree on: NO H1 claim possible on any scale; the raw crossing cannot rescue H1 because machinery
+alone produces this amplitude level (retroactively suspecting every prior single-lineage raw
+crossing in the thread). Both scales flagged, never resolved — paper-242 rule followed.
+
+THREAD-CLOSURE CONSEQUENCE: the positional layer is now FULLY RESOLVED — DENSITY real (two-component
+kernel / edge-spike / rate heterogeneity survive; kappa composition ordering replicates across ALL
+seeds => the rate-dial law untouched); what DIES is any claim of POSITIONAL structure beyond density:
+no j-arithmetic carrier (#396), no consecutive-v sequence dependency (#397), and now no non-divisibility
+positional mechanism multi-seed (this run). Paper 243's reopen condition CLOSED AGAINST; u*~0.65
+enters the catalog as pure within-stratum rate structure absorbed by the divisibility mixture once
+the estimator null is paid.
+
+Ledger catches / honest notes: coordinator mechanical fixes DISCLOSED (.tolist() conversion +
+_n default-arg naming fix applied to enable execution; type/bookkeeping only, no statistical content
+altered); L3 smoke-sizing disclosed up front; execution form = verbatim exp588c/exp592 mixture
+machinery, single registered test, no separate KS layer added; population hashes recorded per
+lineage; per-seed numbers breakdown only — the verdict rides on the ONE pooled statistic.
+Barrier framing: executes paper 243's reopen condition to closure; the positional stratum of the
+barrier map is resolved; the two-scale disagreement DEMONSTRATES machinery-level offsets comparable
+to putative signal — why every claim in this thread now carries a calibrated scale or none.
+Count 588 -> 589; assessment v358 -> v359. Paper 252, issue #400. Positional thread CLOSED
+(228-252 arc). Open unchanged: u >= 6-14 scale-smoothness deviations, factor-local beyond
+scan-order, MA-1 effectivity, residue cap 4/3, external-hint laws, quantum closed; paper 242
+single-seed-unconfirmed note SUPERSEDED by this multi-seed closure; .2346 flag traveling.

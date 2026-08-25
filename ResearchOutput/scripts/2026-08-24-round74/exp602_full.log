@@ -1,0 +1,28 @@
+======================================================================
+exp602 POOLED-ADJUDICATION  inventory
+registered window u*=[0.55,0.75]  z_thresh=2.0  PATH A
+======================================================================
+[load] validating + loading the three lineages...
+[load] 20260828: ns=128 win_exact=True hash16=20115284998cb001 hits=9594 ctl=512000 scorewin_pts=114606 (hits 1866) tensors=True
+[load] 20260902: ns=128 win_exact=True hash16=0d69e6f4e59ebc9e hits=9840 ctl=512000 scorewin_pts=114484 (hits 1806) tensors=True
+[load] 20260903: ns=16 win_exact=True hash16=fa1746a5b065cbd9 hits=66 ctl=19200 scorewin_pts=4256 (hits 11) tensors=True
+[validate] PASS []
+[pool] amp_mix=0.0918 se_mix=0.0274 z_raw=3.36 ci95=[0.0656,0.1725] (boot 0.5s)
+[ctrlA] amp=0.0225 se=0.0074 null_mean=0.0255 p_exceeds=0.657 maxdev=0.0225 pass=False (0.6s)
+[ctrlB] amp_sim=0.0662 se_sim=0.0282 z_cal=0.65 (0.5s)
+[ctrlB-sens] 50 null draws amp_sim q0/q50/q100=0.0000/0.0405/0.1098 -> implied z_cal range [2.34,-0.46]; 6/50 draws would imply z_cal>=2
+[seed 20260828] amp=0.1774 se=0.0417 z_raw=4.26 z_cal=1.07
+[seed 20260902] amp=0.0742 se=0.0375 z_raw=1.98 z_cal=1.47
+[seed 20260903] amp=1.1640 se=0.5946 z_raw=1.96 z_cal=0.97
+{
+ "pooled": "H0_DENSITY_ONLY",
+ "z_cal": 0.653,
+ "amp": 0.0918,
+ "ci95": [
+  0.0656,
+  0.1725
+ ],
+ "amp_sim": 0.0662
+}
+[wall 2.8s] result written
+findings -> exp602_findings.md
