@@ -3355,3 +3355,38 @@ mass, not a different cap. Ledger catches NONE. Barrier framing: last open MEASU
 the positional thread's density layer closes after round-93 #1 closed its mechanism layer;
 shape fully specified (two components, verified amplitude, one-sided steepness); thread arc
 228–253 COMPLETE. Wall 0.94 s. Paper 253, issue #401.
+
+**Assessment addendum v361 — 2026-08-25 (round-95 #1).** Experiment recorded (count
+590 → 591; papers 253 → 254; version v360 → v361). Content: **PROFILE-GENERALITY
+(exp 605)** — papers 228/229's implicit generality question EXECUTED: is the j²−N
+positional smoothness profile (power-law decline + left-edge spike) universal across
+polynomial families? Pre-registered H1 (universal: all pairwise normalized-profile
+r > 0.8 across {j²−N, j³−N, j⁴−N} + edge concentration + monotone decline per arm)
+vs H0 (family-specific); arms on the 128-member npz-lineage population with windows
+[r_k, 3r_k−4] at the integer k-th root (k=2 reproduces the lineage window exactly),
+matched CRN grids L=3000/N/arm (tilt identical across arms → paired), exact 1e6-cut
+gcd-chain tester, controls C=1000/N/arm, cluster bootstrap B=800; sq2d dither probe.
+**RESULT: H0-SIDE (FAMILY-SPECIFIC) WITH THE MECHANISM NAMED** — bars: pair-r>0.8
+FAIL, edge-concentration PASS 4/4, monotone-decline FAIL via cu3. Per family:
+sq2 b̂=+0.157±0.008, ld/ov 1.24×, Spearman −0.802 (p=2.5e−12); qu4 b̂=+0.188±0.013,
+ld/ov 1.29×, Spearman −0.856 (2.4e−15); cu3 b̂=+0.065 CI covers 0, Spearman +0.019
+FLAT; sq2d shallow shape-consistent. Pairwise r: sq2|qu4 0.781 [0.565, 0.767]
+(close to but below the bar), odd pairs 0.385/0.477; controls flat 4/4.
+**THE DIFFERENCE-OF-SQUARES GATE**: rate hierarchy sq2 ≈ qu4 (~2e−2) ≫ sq2d ≈ cu3
+(~7e−4), ≈30× lower (29–34× across pairings), tracked EXACTLY by factorability —
+N_rec=jlo² makes v_k=(j^(k/2)−jlo)(j^(k/2)+jlo) split for EVEN k only; sq2d confirms
+from within the quadratic family (dither off the square locus collapses rate ~35×,
+~97% of mass gone). The gate is ARITHMETIC, not degree. **Consequence**: papers
+228/229's profile law is a QUADRATIC-FAMILY (difference-of-squares-factorable) law,
+not a universal sequence law; scope restriction inherited by barrier-map entries
+citing it. Extension prediction pre-stated: even degrees j^{2m}−N share the
+structure via repeated difference-of-squares (k=4 confirms: b̂ 0.188, r 0.781);
+j⁶/j⁸ matched-grid follow-up falsifiable. Honest limits: npz stores positions only
+→ lineage APPROXIMATE (original N NON-SQUARE via the N-independent v₂ check,
+hit .0226 ≈ ctl .0198; sq2/qu4 RATE LEVELS do not transfer to general-N populations
+— flagged for the 228/229 follow-up); cu3/sq2d thin (287/248 hits vs the 150 floor)
+— null shapes underpowered, disclosed. Ledger catches NONE (smoke caught broadcast +
+key-name bugs pre-full-run). Barrier framing: closes the generality question the
+closed positional thread (250–253) left implicit; answer reduces exposure — the
+structure is scan-order geometry of the square-N slice, not N-information. Wall
+181 s. Paper 254, issue #402.

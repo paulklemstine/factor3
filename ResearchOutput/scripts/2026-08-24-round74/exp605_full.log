@@ -1,0 +1,31 @@
+[    0.0s] selftest PASS chunks=20
+[   42.9s] arm sq2: hits=8639/384000 bhat=0.157+-0.008 ld=2.790e-02 ov=2.250e-02 ctrl_p=0.285
+[   86.2s] arm sq2d: hits=248/384000 bhat=0.168+-0.038 ld=9.466e-04 ov=6.458e-04 ctrl_p=0.649
+[  131.4s] arm cu3: hits=287/384000 bhat=0.065+-0.037 ld=9.944e-04 ov=7.474e-04 ctrl_p=0.244
+[  174.2s] arm qu4: hits=7603/384000 bhat=0.188+-0.013 ld=2.547e-02 ov=1.980e-02 ctrl_p=0.0808
+[  174.2s] npz lineage diagnostic...
+[  181.0s] lineage hit_frac=0.023 ctl_frac=0.0198
+[  181.1s] pairwise r: sq2|cu3=0.385 sq2|qu4=0.781 cu3|qu4=0.477 | sq2~sq2d=0.495
+{
+ "verdict": {
+  "verdict": "H0-SIDE",
+  "bars": {
+   "pair_corr_gt_point8": false,
+   "edge_concentration": true,
+   "monotone_decline": false
+  },
+  "flags": [],
+  "mean_r_to_others": {
+   "sq2": 0.5832006494210915,
+   "cu3": 0.43111044205278304,
+   "qu4": 0.6289595661654075
+  },
+  "which_differs": [
+   "cu3",
+   "sq2",
+   "qu4"
+  ],
+  "lineage": "APPROXIMATE (original N non-square; SQ arm = perfect-square variant)"
+ },
+ "wall_s": 181.1
+}

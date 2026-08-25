@@ -12438,3 +12438,77 @@ measured. Thread arc 228-253 COMPLETE. Count 589 -> 590; assessment v359 -> v360
 Paper 253, issue #401. Open unchanged: u>=6-14 scale-smoothness deviations, factor-local
 beyond scan-order, MA-1 effectivity, residue cap 4/3, external-hint laws, quantum closed;
 .2346 flag traveling.
+
+## Part 296 — round-95 #1 · PROFILE-GENERALITY (exp 605) — H0-SIDE (FAMILY-SPECIFIC) WITH THE MECHANISM NAMED: positional smoothness structure is GATED BY DIFFERENCE-OF-SQUARES FACTORABILITY — j²−N power-law replicates on j⁴−N (b̂ +0.157/+0.188, pair r = 0.781 just under the 0.8 bar) while j³−N is FLAT (Spearman +0.019); square N splits v_k for EVEN k only — 30× rate differential between even and odd powers of j (2026-08-25)
+
+Question (papers 228/229's implicit generality): is the j^2-N positional smoothness
+profile (power law + left-edge spike) universal across polynomial families?
+PRE-REGISTERED in script header BEFORE analysis: H1 (universal) = same normalized
+profile shape for ALL of {j^2-N, j^3-N, j^4-N}, all pairwise profile r > 0.8;
+H0 (family-specific) = profiles diverge; report which and how. Bars fixed:
+(a) all pairwise r > 0.8, (b) every family left-decile > overall with boot
+P > 0.95, (c) every family Spearman rho < 0 at p < 0.01; overrides low-power
+(<150 hits/arm => INCONCLUSIVE-LOWPOWER) and control flatness (chi2 p <= 0.01
+=> INVALID-CONTROL). Method: 128-member npz-lineage population
+(exp581_regen_positions.npz), windows [r_k, 3r_k-4] at the integer k-th root
+(k=2 reproduces [jlo,3jlo-3] exactly), matched CRN grids L=3000/N/arm shared
+t-matrix (1800 uniform + 1200 left-tilted per N; tilt IDENTICAL across arms =>
+paired), exact 1e6-cut gcd-chain B-smooth tester, controls C=1000/N/arm,
+50-bin pooled profiles, WLS ln-rate fit on bins >=3 hits, cluster bootstrap
+B=800 over the 128 Ns; sq2d dither probe (seeded uint dither in [1,2*jlo],
+isqrt preserved). Seeds sampling/bootstrap 20260901, dither 20260902.
+Wall 181 s.
+
+RESULT: **H0-SIDE** — bars: pair-r>0.8 FAIL (max 0.781), edge-concentration
+PASS (4/4 arms P(ld>ov)=1.0), monotone-decline FAIL (cu3). Per-family:
+sq2 (8639 hits, rate .0225): b̂=+.157 ± .008 [boot .138,.169], ld/ov 1.24x,
+Spearman -.802 (p=2.5e-12); qu4 (7603, .0198): b̂=+.188 ± .013 [.173,.201],
+ld/ov 1.29x, Spearman -.856 (p=2.4e-15); cu3 (287, .00075): b̂=+.065 ± .037
+[CI covers 0], Spearman +.019 (p=.92) FLAT; sq2d (248, .00065): b̂=+.168 ± .038,
+ld/ov 1.47x, shape-consistent shallow. Pairwise normalized-profile r:
+sq2|qu4 .781 [.565,.767] (close to but below the 0.8 bar), sq2|cu3 .385,
+cu3|qu4 .477, sq2~sq2d .495; controls flat 4/4 (chi2 p .081-.649).
+No override fires (all arms >=248 >= 150).
+
+MECHANISM NAMED — THE DIFFERENCE-OF-SQUARES GATE: rate hierarchy
+sq2 ~= qu4 (~2e-2) >> sq2d ~= cu3 (~7e-4) = ~30x lower (29-34x across
+pairings) is EXACTLY tracked by difference-of-squares factorability:
+N_rec=jlo^2 makes v_k=(j^(k/2)-jlo)(j^(k/2)+jlo) split for EVEN k only.
+Even powers share papers 228/229's small-factor route (b̂ .16/.19,
+rho -.80/-.86, r .78); odd degree admits no integer split -> baseline
+rate + flat profile. sq2d confirms from the other side: knock N off the
+exact-square locus within the SAME quadratic family and rate collapses ~35x
+(.0225->.00065, ~97% of mass gone) onto cu3/sq2d level with only a shallow
+tilt left. The gate variable is ARITHMETIC (algebraic factorability of f(j)-N
+given N's form), not polynomial degree per se.
+
+CONSEQUENCE: papers 228/229's profile law (with 238/245/253's bulk+spike
+decomposition) must be cited as a QUADRATIC-FAMILY law, not a universal
+sequence law; barrier-map entries citing it inherit the scope restriction.
+Extension prediction PRE-STATED: even degrees generalize — j^{2m}-N factors
+by repeated difference-of-squares for square N for EVERY m, so j^6-N/j^8-N at
+matched grids should land in the same ~0.16-0.19 b̂ band with pairwise r > 0.8
+against sq2/qu4 (falsifiable follow-up that would close "even degrees" as a
+class). Practical asymmetry booked: the strong structure lives on the
+perfect-square-N slice where trial division from jlo is already optimal —
+no scanning advantage transfers to general-N populations.
+
+Ledger catches / honest limits: npz stores positions+bounds ONLY (no N) ->
+byte-exact seed-20260828 regeneration impossible from permitted inputs;
+applicable check ran instead via the N-independent v2=(j-jlo)(j+jlo): stored
+npz hits classify smooth at .0226 == ctl .0198 (pure independence) => ORIGINAL
+N NON-SQUARE; reconstruction APPROXIMATE (disclosed; residual DeltaN<2*jlo
+shifts effective left edge <1 integer step, profiling-invariant) — sq2/qu4
+RATE LEVELS do not transfer to the general-N population of 228/229; a strong
+left-edge law needs exact-square N or finer-than-window resolution (flagged
+for 228/229 follow-up). cu3/sq2d hit counts (287/248) sit just above the
+preregistered 150 low-power floor — their null-ish shapes UNDERPOWERED,
+disclosed (verdict uses them only for bar (c)). Smoke caught t-mat broadcast
+bug + key-name bug (hit_/ctl_ prefixes), both fixed pre-full-run. Barrier
+framing: closes the GENERALITY question the closed positional thread
+(250-253) left implicit; answer REDUCES exposure — the structure is
+family-confined arithmetic, consistent with the standing method law that
+scan-order structure reflects proposal geometry, not N-information. Count
+590 -> 591; assessment v360 -> v361. Paper 254. Open unchanged: u>=6-14
+scale-smoothness deviations, factor-local beyond scan-order, MA-1 effectivity,
+residue cap 4/3, external-hint laws; quantum closed; .2346 flag traveling.

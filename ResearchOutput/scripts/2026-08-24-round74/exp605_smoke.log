@@ -1,0 +1,17 @@
+[    0.0s] selftest PASS chunks=20
+[timing] bsmooth 88.7 us/val, smooth 2/2000; projected full-classification wall 55s
+[    0.9s] arm sq2: hits=99/4800 bhat=-0.241+-0.098 ld=2.431e-02 ov=2.063e-02 ctrl_p=0.432
+{
+ "smoke": "ok",
+ "wall_s": 0.9,
+ "arm_sq2": {
+  "hits": 99,
+  "draws": 4800,
+  "overall_rate": 0.020625,
+  "left_decile": 0.02431011826544021
+ },
+ "ctrl_flat": {
+  "p": 0.4321586705663645,
+  "flat_pass": true
+ }
+}
