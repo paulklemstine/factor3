@@ -12110,3 +12110,72 @@ toward sequence-level mechanisms over pointwise-j ones. Open unchanged: u>=6-14 
 deviations, factor-local beyond scan-order, MA-1 effectivity, residue cap 4/3, position 5.19x,
 external-hint laws, quantum closed; paper 242 single-seed-unconfirmed (#391); .2346 flag traveling.
 Named next probe (registered): consecutive-v polynomial-sequence dependency study.
+
+## Part 291 — round-91 #2 · CONSECUTIVE-V-DEPENDENCY (exp 599) — H0_PURE_DENSITY: mid-window hits INDEPENDENT given position — lag profile flat/slightly negative, runs null both readings, power confirmed; u*~0.65 excess = pure density, POSITIONAL THREAD CLOSES (2026-08-25)
+
+Question (exp598's pre-registered H0 route): after j-arithmetic carriers died, do
+mid-window hits correlate at NEIGHBORING positions in the v/j sequence, or are hit
+events independent GIVEN position? Pre-registered BEFORE analysis (script header):
+H1 iff hit-indicator autocorrelation at lags 1-20 in mid-window [0.55,0.75] shows
+|rho|>0.05 at some lag WITH cluster-over-Ns bootstrap CI excluding 0, OR runs test
+p<0.001 (|Z|>3.2905); else H0 => pure density phenomenon, positional thread closes.
+AMENDMENT 0 registered pre-data: because H0 is independence CONDITIONAL ON POSITION
+and the segment contains the exp582 hump, a global-mean-centered autocorrelation is
+mechanically biased positive under H0 => PRIMARY = per-batch quadratic-detrended rho
++ MC-calibrated runs Z against the pooled empirical rate curve p_hat(u); SECONDARY =
+literal global-mean rho + textbook Wald-Wolfowitz Z; SECONDARY alone cannot fire
+unless C2 fails. Controls pre-committed: C1 ctl batches null both variants; C2
+synthetic smooth-hump iid at pooled rate curve -> secondary positive if confound
+real; C3 injected lag-1 dependence -> must detect. nb=1000 primary (segment=200
+bins), robustness nb {500,2000}; boot 2000 cluster-over-Ns; MC 2000 reps; seed
+599_20260828. Data exp581_regen_positions.npz ONLY (sha256 0b1afa50 recorded;
+hit_i/ctl_i/jlo/jhi, 128 batches, 9,594 hits, no N stored -> purely positional);
+wall 31.4 s.
+
+VERDICT **H0_PURE_DENSITY** -- zero lags fire, runs null both readings:
+PRIMARY detrended rho(lag) in [-0.0199,-0.0023] over lags 1-20 (max |rho|=0.020 vs
+0.05 bar), flat and slightly negative -- no refractory dip, no excitation bump;
+MC-vs-density-curve p per lag 0.128-0.969. SECONDARY literal even more null:
+rho_raw in [-0.0103,+0.0046]. RUNS: textbook pooled Wald-Wolfowitz Z=+0.850 (p~0.40),
+MC-calibrated against the density-only null (mu=-0.0275 sd=0.9813) Z=+0.894 (p~0.37)
+vs bar 3.2905; ctl Z=-0.454. Robustness: nb500 max|rho_det|=0.036, nb2000 0.016 --
+no binning artifact either way.
+CONTROLS all three met: C1 ctl null (max |rho_raw| .009 / |rho_det| .020); C2
+synthetic smooth-hump ALSO null on secondary (max |rho_raw|=.014 @lag17, pooled_Z
++0.60) => Amendment-0 curvature confound quantitatively immaterial at this
+resolution -- conditioned and literal readings AGREE, verdict not amendment-
+dependent; C3 injected lag-1 dependence DETECTED MASSIVELY (rho_det(lag1)=0.337,
+argmax exactly lag 1, pooled_Z -57.4) => a null here means "no dependency", not
+"test blind". Useful side-reading: a perfect iid draw from the exact rate curve
+produces max |rho| ~.014-.022 -- everything measured sits AT the design noise floor.
+
+CONSEQUENCE (thread closure): given position, neighboring hits carry NO information
+about each other -- the u*~0.65 excess is PURE DENSITY / rate heterogeneity along
+the scan axis. Terminal picture: excess real on its home seed (239/241),
+divisibility a rate dial not position dial (242), no j-arithmetic carrier (248), NO
+sequence structure (here). Hit-position thread papers 228-230->231->238/240->241-242
+->248 CLOSES COMPLETELY. Operational law: future gains come from modeling the
+positional DENSITY CURVE itself, never Markov/neighborhood structure. Scope honest:
+holds where the excess manifests (seed-20260828 lineage); exp592/#391 left the >=3
+pooled-seed amplitude test open -- if an excess re-establishes elsewhere, this
+machinery transfers unchanged.
+
+Ledger catches: seed-20260828 ctl regeneration attempted via two canonical recipes
+(rng default / np.random.seed) -- BOTH mismatch ctl_0, recipe not recoverable from
+allowed reads, provenance rests on sha256 0b1afa50...36a38 (disclosed). RECORD-TIME
+CORRECTION: findings' "every CI straddles 0" OVERSTATES -- result.json shows 12/20
+detrended CIs exclude zero on the NEGATIVE side, upper ends <=0.0083 (raw CIs 19/20
+straddle; uniform ~-0.01 detrended offset on hits mirrored by ~+0.01 on controls --
+opposite-sign shared-magnitude artifact, not structure); verdict unaffected since H1
+requires |rho|>0.05 AND CI exclusion JOINTLY and max |rho| anywhere = 0.020. MC null
+approximates batches sharing pooled p_hat; per-batch heterogeneity folded into
+cluster bootstrap (registered).
+
+Count 586 -> 587; assessment v355 -> v356. Paper 249, issue #397. Barrier framing:
+no barrier interaction -- terminal characterization inside the mapped positional
+stratum (position 5.19x layer already fully mapped). Open unchanged: u>=6-14
+scale-smoothness deviations, factor-local beyond scan-order, MA-1 effectivity,
+residue cap 4/3, external-hint laws, quantum closed; paper 242 single-seed-
+unconfirmed (#391); .2346 flag traveling. Named next probe: NONE on this thread --
+positional layer closed; remaining positional-side work belongs to the density-curve
+model (paper 238 lineage).

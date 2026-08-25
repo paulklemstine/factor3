@@ -3210,3 +3210,33 @@ barrier interaction — carrier-identification negative sharpening routing from 
 sequence-level mechanisms. Open unchanged: u ≥ 6–14 scale-smoothness deviations, factor-local beyond
 scan-order, MA-1 effectivity; paper 242 single-seed-unconfirmed (#391); .2346 flag traveling. Paper
 248, issue #396.
+
+**Assessment addendum v356 — 2026-08-25 (round-91 #2).** Experiment recorded (count
+586 → 587; papers 248 → 249; version v355 → v356). Content: **CONSECUTIVE-V-
+DEPENDENCY (exp 599, issue #397)** — exp 598's registered H0 route: do mid-window
+hits correlate at NEIGHBORING positions in the v/j sequence? Pre-registered lag
+autocorrelation (1–20) + runs test on `exp581_regen_positions.npz` (128 batches,
+9,594 hits, purely positional — no N stored), Amendment 0 pre-data: PRIMARY =
+per-batch quadratic-detrended ρ + MC-calibrated runs Z against the pooled density
+curve p̂(u); SECONDARY literal global-mean; C1/C2/C3 controls pre-committed.
+VERDICT **H0_PURE_DENSITY**: detrended ρ ∈ [−0.020, −0.002] vs the 0.05 bar (flat,
+slightly negative, no refractory/excitation), MC p ∈ [0.128, 0.969], runs null both
+readings (Z = +0.85 textbook / +0.89 calibrated vs 3.29 bar), robust nb
+500/1000/2000; POWER CONFIRMED (injected lag-1 dependence detected at ρ_det = 0.337,
+argmax exactly lag 1); C2 synthetic-hump ALSO null ⇒ Amendment-0 curvature confound
+immaterial, readings agree, verdict not amendment-dependent. CONSEQUENCE: **the u\* ≈
+0.65 excess is pure density/rate heterogeneity with no sequence structure — the
+hit-position thread (228–230 → 231 → 238/240 → 241–242 → 248) CLOSES COMPLETELY**
+(terminal characterization: real on home seed → divisibility a rate dial not position
+dial → no j-arithmetic carrier → no sequence structure); operational law: gains come
+from modeling the positional density curve itself, never Markov/neighborhood
+structure. Ledger catches: ctl regeneration via two canonical recipes BOTH mismatch
+ctl_0 — provenance rests on sha256 `0b1afa50…` (disclosed); RECORD-TIME CORRECTION:
+findings' "every CI straddles 0" overstates — 12/20 detrended CIs exclude zero on the
+negative side, upper ends ≤ 0.0083 (uniform ~−0.01 offset mirrored ~+0.01 on
+controls — opposite-sign artifact, not structure; H1 required |ρ| > 0.05 AND CI
+exclusion jointly, so verdict unaffected). Barrier framing: none — terminal
+characterization inside the mapped positional stratum. Open unchanged: u ≥ 6–14
+scale-smoothness deviations, factor-local beyond scan-order, MA-1 effectivity;
+paper 242 single-seed-unconfirmed (#391); .2346 flag traveling. Paper 249, issue
+#397.

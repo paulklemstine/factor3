@@ -1,0 +1,14 @@
+{
+ "verdict": "H0_PURE_DENSITY",
+ "primary_fired": false,
+ "sig_lags_det": [],
+ "sig_lags_raw": [],
+ "rho_raw_max": 0.010319225974164516,
+ "rho_det_max": 0.019949843310811635,
+ "Z_runs_textbook": 0.8495821195984115,
+ "Z_runs_mc": 0.893784860156603,
+ "C2_fired": false,
+ "C3_power_ok": true,
+ "inside_frac": 1.0,
+ "wall_s": 31.4
+}
