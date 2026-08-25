@@ -1,0 +1,45 @@
+[exp597 full] bits=[48, 72, 96] n_pool=96 n_js=30000 alphas=[0.25, 0.5, 0.75, 1.0] JMAX=2^52 cut=1000000
+primorial(1000000): 78498 primes, 1440509 bits, built in 0.1s
+  bits=48 N 16/96 hits_so_far=106 elapsed=43.5s
+  bits=72 N 16/96 hits_so_far=140 elapsed=43.5s
+  bits=96 N 16/96 hits_so_far=113 elapsed=43.7s
+  bits=72 N 32/96 hits_so_far=295 elapsed=87.2s
+  bits=48 N 32/96 hits_so_far=241 elapsed=87.3s
+  bits=96 N 32/96 hits_so_far=253 elapsed=87.4s
+  bits=72 N 48/96 hits_so_far=414 elapsed=132.0s
+  bits=48 N 48/96 hits_so_far=382 elapsed=132.1s
+  bits=96 N 48/96 hits_so_far=360 elapsed=132.3s
+  bits=72 N 64/96 hits_so_far=576 elapsed=175.8s
+  bits=48 N 64/96 hits_so_far=505 elapsed=176.0s
+  bits=96 N 64/96 hits_so_far=471 elapsed=176.3s
+  bits=72 N 80/96 hits_so_far=744 elapsed=219.6s
+  bits=48 N 80/96 hits_so_far=661 elapsed=219.9s
+  bits=96 N 80/96 hits_so_far=591 elapsed=220.0s
+  bits=72 N 96/96 hits_so_far=886 elapsed=263.4s
+  bits=48 N 96/96 hits_so_far=785 elapsed=263.7s
+  bits=96 N 96/96 hits_so_far=716 elapsed=265.1s
+[exp597] bitlen 48: alpha_hat=0.75 R2hat=0.357264 CI95=[0.5, 0.75] mean_hits=8.18 wall=263.77s
+[exp597] bitlen 72: alpha_hat=0.5 R2hat=0.175848 CI95=[0.25, 0.75] mean_hits=9.23 wall=263.42s
+[exp597] bitlen 96: alpha_hat=0.75 R2hat=0.350589 CI95=[0.5, 1.0] mean_hits=7.46 wall=265.15s
+{
+ "mode": "full",
+ "fired": "HREFINE_SCALE_DEPENDENT",
+ "alpha_hat_by_bits": {
+  "48": 0.75,
+  "72": 0.5,
+  "96": 0.75
+ },
+ "R2_at_alpha_hat": {
+  "48": 0.357264,
+  "72": 0.175848,
+  "96": 0.350589
+ },
+ "mean_hits": {
+  "48": 8.18,
+  "72": 9.23,
+  "96": 7.46
+ },
+ "wall_s": 265.31,
+ "out": "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp597_result.json"
+}
+EXIT=0

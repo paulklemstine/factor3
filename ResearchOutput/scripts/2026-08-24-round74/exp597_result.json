@@ -1,0 +1,349 @@
+{
+ "config": {
+  "exp": 597,
+  "codename": "DIAL-SCALE-TRANSFER",
+  "mode": "full",
+  "bits_list": [
+   48,
+   72,
+   96
+  ],
+  "pop_seeds": {
+   "48": 20260904,
+   "72": 20260905,
+   "96": 20260906
+  },
+  "js_seed_offset": 597,
+  "n_pool": 96,
+  "jsamples_per_N": 30000,
+  "jmax_absolute": 4503599627370496,
+  "smooth_cut": 1000000,
+  "n_smooth_primes": 78498,
+  "prime_range_dial": [
+   3,
+   400
+  ],
+  "n_odd_dial_primes": 77,
+  "alpha_grid": [
+   0.25,
+   0.5,
+   0.75,
+   1.0
+  ],
+  "alpha_anchor": 0.0,
+  "bootstrap_reps": 500,
+  "bootstrap_seed_base": 597,
+  "band": [
+   0.35,
+   0.65
+  ],
+  "regression_form": "log((hits+0.5)/n_js) ~ S_alpha, OLS; S_alpha = sum_{odd prime l<=400} [jacobi(N mod l,l)==+1]/l^alpha",
+  "tester": "gcd-chain: g=gcd(y,primorial(1e6)); strip powers by iterated gcd along shrinking chain; HIT iff cofactor==1; y=(isqrt(N)+j)^2-N, j~U[1,2^52)"
+ },
+ "per_bitlen": [
+  {
+   "bits": 48,
+   "n_pool": 96,
+   "n_js": 30000,
+   "hits_total": 785,
+   "mean_hits_per_N": 8.18,
+   "frac_zero_hit_Ns": 0.0,
+   "mean_y_bitlen": 101.58,
+   "regression": [
+    {
+     "alpha": 0.0,
+     "R2": 0.13056,
+     "r": 0.361331,
+     "slope": 0.036326,
+     "intercept": -9.659659,
+     "slope_se": 0.009669
+    },
+    {
+     "alpha": 0.25,
+     "R2": 0.24851,
+     "r": 0.498508,
+     "slope": 0.149561,
+     "intercept": -10.077405,
+     "slope_se": 0.026825
+    },
+    {
+     "alpha": 0.5,
+     "R2": 0.349619,
+     "r": 0.591285,
+     "slope": 0.407549,
+     "intercept": -9.989742,
+     "slope_se": 0.057333
+    },
+    {
+     "alpha": 0.75,
+     "R2": 0.357264,
+     "r": 0.597716,
+     "slope": 0.73491,
+     "intercept": -9.500503,
+     "slope_se": 0.10167
+    },
+    {
+     "alpha": 1.0,
+     "R2": 0.317405,
+     "r": 0.563387,
+     "slope": 1.07142,
+     "intercept": -9.088608,
+     "slope_se": 0.162058
+    }
+   ],
+   "alpha_curve": [
+    {
+     "alpha": 0.0,
+     "R2": 0.13056
+    },
+    {
+     "alpha": 0.25,
+     "R2": 0.24851
+    },
+    {
+     "alpha": 0.5,
+     "R2": 0.349619
+    },
+    {
+     "alpha": 0.75,
+     "R2": 0.357264
+    },
+    {
+     "alpha": 1.0,
+     "R2": 0.317405
+    }
+   ],
+   "alpha_hat": 0.75,
+   "R2_at_alpha_hat": 0.357264,
+   "R2_at_alpha_half": 0.349619,
+   "R2_at_alpha_1": 0.317405,
+   "delta_R2_half_vs_1": 0.032214,
+   "delta_R2_hat_vs_best_alternative": 0.007646,
+   "best_alternative_alpha": 0.5,
+   "bootstrap_ci95": [
+    0.5,
+    0.75
+   ],
+   "bootstrap_mean_alpha": 0.6595,
+   "bootstrap_distribution": {
+    "0.5": 190,
+    "0.75": 301,
+    "1.0": 9
+   },
+   "wall_s": 263.77
+  },
+  {
+   "bits": 72,
+   "n_pool": 96,
+   "n_js": 30000,
+   "hits_total": 886,
+   "mean_hits_per_N": 9.23,
+   "frac_zero_hit_Ns": 0.0,
+   "mean_y_bitlen": 101.58,
+   "regression": [
+    {
+     "alpha": 0.0,
+     "R2": 0.119598,
+     "r": 0.345829,
+     "slope": 0.035045,
+     "intercept": -9.47568,
+     "slope_se": 0.009807
+    },
+    {
+     "alpha": 0.25,
+     "R2": 0.165858,
+     "r": 0.407257,
+     "slope": 0.129993,
+     "intercept": -9.693718,
+     "slope_se": 0.030068
+    },
+    {
+     "alpha": 0.5,
+     "R2": 0.175848,
+     "r": 0.419342,
+     "slope": 0.32371,
+     "intercept": -9.482629,
+     "slope_se": 0.072282
+    },
+    {
+     "alpha": 0.75,
+     "R2": 0.136085,
+     "r": 0.368897,
+     "slope": 0.518215,
+     "intercept": -8.987556,
+     "slope_se": 0.134671
+    },
+    {
+     "alpha": 1.0,
+     "R2": 0.09256,
+     "r": 0.304236,
+     "slope": 0.658241,
+     "intercept": -8.627765,
+     "slope_se": 0.212578
+    }
+   ],
+   "alpha_curve": [
+    {
+     "alpha": 0.0,
+     "R2": 0.119598
+    },
+    {
+     "alpha": 0.25,
+     "R2": 0.165858
+    },
+    {
+     "alpha": 0.5,
+     "R2": 0.175848
+    },
+    {
+     "alpha": 0.75,
+     "R2": 0.136085
+    },
+    {
+     "alpha": 1.0,
+     "R2": 0.09256
+    }
+   ],
+   "alpha_hat": 0.5,
+   "R2_at_alpha_hat": 0.175848,
+   "R2_at_alpha_half": 0.175848,
+   "R2_at_alpha_1": 0.09256,
+   "delta_R2_half_vs_1": 0.083288,
+   "delta_R2_hat_vs_best_alternative": 0.009989,
+   "best_alternative_alpha": 0.25,
+   "bootstrap_ci95": [
+    0.25,
+    0.75
+   ],
+   "bootstrap_mean_alpha": 0.4255,
+   "bootstrap_distribution": {
+    "0.25": 201,
+    "0.5": 252,
+    "0.75": 42,
+    "1.0": 5
+   },
+   "wall_s": 263.42
+  },
+  {
+   "bits": 96,
+   "n_pool": 96,
+   "n_js": 30000,
+   "hits_total": 716,
+   "mean_hits_per_N": 7.46,
+   "frac_zero_hit_Ns": 0.0,
+   "mean_y_bitlen": 102.1,
+   "regression": [
+    {
+     "alpha": 0.0,
+     "R2": 0.119548,
+     "r": 0.345757,
+     "slope": 0.038251,
+     "intercept": -9.807718,
+     "slope_se": 0.010707
+    },
+    {
+     "alpha": 0.25,
+     "R2": 0.221866,
+     "r": 0.471026,
+     "slope": 0.149898,
+     "intercept": -10.136904,
+     "slope_se": 0.028954
+    },
+    {
+     "alpha": 0.5,
+     "R2": 0.321888,
+     "r": 0.567352,
+     "slope": 0.415089,
+     "intercept": -10.059495,
+     "slope_se": 0.062141
+    },
+    {
+     "alpha": 0.75,
+     "R2": 0.350589,
+     "r": 0.592106,
+     "slope": 0.786074,
+     "intercept": -9.619469,
+     "slope_se": 0.110347
+    },
+    {
+     "alpha": 1.0,
+     "R2": 0.327009,
+     "r": 0.571847,
+     "slope": 1.182572,
+     "intercept": -9.211845,
+     "slope_se": 0.17498
+    }
+   ],
+   "alpha_curve": [
+    {
+     "alpha": 0.0,
+     "R2": 0.119548
+    },
+    {
+     "alpha": 0.25,
+     "R2": 0.221866
+    },
+    {
+     "alpha": 0.5,
+     "R2": 0.321888
+    },
+    {
+     "alpha": 0.75,
+     "R2": 0.350589
+    },
+    {
+     "alpha": 1.0,
+     "R2": 0.327009
+    }
+   ],
+   "alpha_hat": 0.75,
+   "R2_at_alpha_hat": 0.350589,
+   "R2_at_alpha_half": 0.321888,
+   "R2_at_alpha_1": 0.327009,
+   "delta_R2_half_vs_1": -0.005121,
+   "delta_R2_hat_vs_best_alternative": 0.02358,
+   "best_alternative_alpha": 1.0,
+   "bootstrap_ci95": [
+    0.5,
+    1.0
+   ],
+   "bootstrap_mean_alpha": 0.7375,
+   "bootstrap_distribution": {
+    "0.5": 69,
+    "0.75": 387,
+    "1.0": 44
+   },
+   "wall_s": 265.15
+  }
+ ],
+ "comparison": {
+  "alpha_hat_by_bits": {
+   "48": 0.75,
+   "72": 0.5,
+   "96": 0.75
+  },
+  "in_band_by_bits": {
+   "48": false,
+   "72": true,
+   "96": false
+  },
+  "all_in_band": false,
+  "monotonic_drift": false
+ },
+ "verdicts": {
+  "rule": "H1 iff alpha_hat in [0.35,0.65] at ALL bitlens; else scale-dependent (monotonic drift or band exit) => report alpha_hat(bits) curve as refined law",
+  "fired": "HREFINE_SCALE_DEPENDENT",
+  "H1_law_stable": false,
+  "scale_dependent": true,
+  "drift_is_monotonic": false
+ },
+ "honest_notes": [
+  "Tester RECONSTRUCTED to task spec: exp577 script outside this session's read permissions. Semantics locked to exact 1e6-smoothness of y=(isqrt(N)+j)^2-N via iterated-gcd power stripping ('gcd-chain').",
+  "Mechanism coherence: l | (x0+j)^2-N solvable iff chi(N mod l)=+1, so the chi+ dial selects the usable factor base -- same lineage as the per-N yield dial validated across bitlen 40-48 and exp559 QS calibration.",
+  "j ~ U[1, 2^52) ABSOLUTE (identical range at every bitlen), declared a priori; keeps u=ln(y)/ln(1e6) in the measurable band at all scales; absolute rates are therefore approximately comparable across bitlens.",
+  "SINGLE seed per bitlen (20260904, 20260905, 20260906); n=96 clusters per bitlen; CIs are cluster-bootstrap percentiles.",
+  "Poisson attenuation: expected ~10-15 hits/N at 30k samples, so per-N log rates are noisy and R2 attenuated; +0.5 smoothing as exp586; zero-hit Ns handled by the smoothing and reported per bitlen.",
+  "Grid discreteness: band [0.35,0.65] contains only grid point 0.5, so H1 effectively requires alpha_hat=0.5 everywhere; alpha_hat endpoints are grid points."
+ ],
+ "wall_s": 265.31
+}

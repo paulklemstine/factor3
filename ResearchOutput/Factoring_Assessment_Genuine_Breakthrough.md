@@ -3169,3 +3169,24 @@ covariate-combination space. Barrier framing: completed negative map IS the asym
 this stratum; effort moves to u ≥ 6–14 scale-smoothness deviations or factor-local beyond scan-order.
 Open unchanged: factor-local outside scan-order framing, MA-1 effectivity; .2346 flag traveling; paper
 242 entry single-seed-unconfirmed (#391); positional shape arc untouched. Paper 246, issue #394.
+
+**Assessment addendum v354 — 2026-08-25 (round-90 #1).** Experiment recorded (count 584 → 585; papers
+246 → 247; version v353 → v354). Content: **DIAL-SCALE-TRANSFER (exp 597, issue #395)** — exp 597
+resolves papers 223/227's shared scope caveat with a two-part answer. VERDICT
+**HREFINE_SCALE_DEPENDENT fired** exactly as pre-registered: α̂ = 0.75 @ b48 [CI95 0.5–0.75] /
+0.50 @ b72 [0.25–0.75] / 0.75 @ b96 [0.5–1.0] — not all in the [0.35,0.65] band and non-monotonic.
+WHAT TRANSFERRED: the weighted-dial ADVANTAGE (unweighted anchor uniformly weak R² ≈ 0.12–0.13; best
+fractional beats it +0.227/+0.056/+0.231 at 48/72/96; every fractional gains +0.10…+0.23 at b48/b96) —
+χ⁺ dial family scale-universal 48→96, paper 223's tilt-transfer caveat CLOSED. WHAT DID NOT: the
+√-vs-harmonic point refinement (ΔR²(S_0.5−S_1.0) = +0.032/+0.083/**−0.005**, sign flip at largest
+size; shallow plateaus, argmax-vs-alternative 0.008/0.010/0.024, CIs overlap). REFINED LAW:
+scale-stable exponent PLATEAU **α* ∈ [0.5, 0.75]**, grid-unresolved (~8 hits/N Poisson attenuation;
+one-grid-step resolution); AMENDMENTS: paper 227's "α* = 0.5" → plateau membership; canonical S_0.5
+stands WITHOUT scope restriction (never materially beaten), justification downgraded from
+point-optimality to plateau membership. Ledger catches: tester reconstructed from spec (lineage via
+ℓ|y ⟺ χ(N,ℓ)=+1), two pool bugs fixed mid-run smoke byte-identical, SINGLE seed/bitlen disclosed;
+RECORD-TIME CORRECTION on exp597_findings.md's transfer sentence ("every fractional +0.10…+0.23 at ALL
+bitlens" — b72 breaks both clauses: best gain +0.056, harmonic below unweighted). Barrier framing: no
+barrier interaction — dial-layer robustness certificate inside the mapped stratum. Open unchanged:
+u ≥ 6–14 scale-smoothness deviations, factor-local beyond scan-order, MA-1 effectivity; paper 242
+single-seed-unconfirmed (#391); .2346 flag traveling. Paper 247, issue #395.

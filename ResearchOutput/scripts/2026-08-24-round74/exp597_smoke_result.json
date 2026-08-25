@@ -1,0 +1,145 @@
+{
+ "config": {
+  "exp": 597,
+  "codename": "DIAL-SCALE-TRANSFER",
+  "mode": "smoke",
+  "bits_list": [
+   48
+  ],
+  "pop_seeds": {
+   "48": 20260904
+  },
+  "js_seed_offset": 597,
+  "n_pool": 12,
+  "jsamples_per_N": 3000,
+  "jmax_absolute": 4503599627370496,
+  "smooth_cut": 1000000,
+  "n_smooth_primes": 78498,
+  "prime_range_dial": [
+   3,
+   400
+  ],
+  "n_odd_dial_primes": 77,
+  "alpha_grid": [
+   0.25,
+   0.5,
+   1.0
+  ],
+  "alpha_anchor": 0.0,
+  "bootstrap_reps": 20,
+  "bootstrap_seed_base": 597,
+  "band": [
+   0.35,
+   0.65
+  ],
+  "regression_form": "log((hits+0.5)/n_js) ~ S_alpha, OLS; S_alpha = sum_{odd prime l<=400} [jacobi(N mod l,l)==+1]/l^alpha",
+  "tester": "gcd-chain: g=gcd(y,primorial(1e6)); strip powers by iterated gcd along shrinking chain; HIT iff cofactor==1; y=(isqrt(N)+j)^2-N, j~U[1,2^52)"
+ },
+ "per_bitlen": [
+  {
+   "bits": 48,
+   "n_pool": 12,
+   "n_js": 3000,
+   "hits_total": 10,
+   "mean_hits_per_N": 0.83,
+   "frac_zero_hit_Ns": 0.5,
+   "mean_y_bitlen": 101.58,
+   "regression": [
+    {
+     "alpha": 0.0,
+     "R2": 0.016116,
+     "r": 0.126951,
+     "slope": 0.0272,
+     "intercept": -9.031555,
+     "slope_se": 0.067206
+    },
+    {
+     "alpha": 0.25,
+     "R2": 0.027436,
+     "r": 0.165639,
+     "slope": 0.107446,
+     "intercept": -9.257362,
+     "slope_se": 0.202297
+    },
+    {
+     "alpha": 0.5,
+     "R2": 0.050627,
+     "r": 0.225005,
+     "slope": 0.372698,
+     "intercept": -9.480749,
+     "slope_se": 0.510367
+    },
+    {
+     "alpha": 1.0,
+     "R2": 0.109767,
+     "r": 0.331311,
+     "slope": 1.725342,
+     "intercept": -9.149629,
+     "slope_se": 1.553784
+    }
+   ],
+   "alpha_curve": [
+    {
+     "alpha": 0.0,
+     "R2": 0.016116
+    },
+    {
+     "alpha": 0.25,
+     "R2": 0.027436
+    },
+    {
+     "alpha": 0.5,
+     "R2": 0.050627
+    },
+    {
+     "alpha": 1.0,
+     "R2": 0.109767
+    }
+   ],
+   "alpha_hat": 1.0,
+   "R2_at_alpha_hat": 0.109767,
+   "R2_at_alpha_half": 0.050627,
+   "R2_at_alpha_1": 0.109767,
+   "delta_R2_half_vs_1": -0.05914,
+   "delta_R2_hat_vs_best_alternative": 0.05914,
+   "best_alternative_alpha": 0.5,
+   "bootstrap_ci95": [
+    0.25,
+    1.0
+   ],
+   "bootstrap_mean_alpha": 0.7375,
+   "bootstrap_distribution": {
+    "0.25": 3,
+    "0.5": 6,
+    "1.0": 11
+   },
+   "wall_s": 3.03
+  }
+ ],
+ "comparison": {
+  "alpha_hat_by_bits": {
+   "48": 1.0
+  },
+  "in_band_by_bits": {
+   "48": false
+  },
+  "all_in_band": false,
+  "monotonic_drift": true
+ },
+ "verdicts": {
+  "rule": "H1 iff alpha_hat in [0.35,0.65] at ALL bitlens; else scale-dependent (monotonic drift or band exit) => report alpha_hat(bits) curve as refined law",
+  "fired": "HREFINE_SCALE_DEPENDENT",
+  "H1_law_stable": false,
+  "scale_dependent": true,
+  "drift_is_monotonic": true
+ },
+ "honest_notes": [
+  "Tester RECONSTRUCTED to task spec: exp577 script outside this session's read permissions. Semantics locked to exact 1e6-smoothness of y=(isqrt(N)+j)^2-N via iterated-gcd power stripping ('gcd-chain').",
+  "Mechanism coherence: l | (x0+j)^2-N solvable iff chi(N mod l)=+1, so the chi+ dial selects the usable factor base -- same lineage as the per-N yield dial validated across bitlen 40-48 and exp559 QS calibration.",
+  "j ~ U[1, 2^52) ABSOLUTE (identical range at every bitlen), declared a priori; keeps u=ln(y)/ln(1e6) in the measurable band at all scales; absolute rates are therefore approximately comparable across bitlens.",
+  "SINGLE seed per bitlen (20260904); n=12 clusters per bitlen; CIs are cluster-bootstrap percentiles.",
+  "Poisson attenuation: expected ~10-15 hits/N at 30k samples, so per-N log rates are noisy and R2 attenuated; +0.5 smoothing as exp586; zero-hit Ns handled by the smoothing and reported per bitlen.",
+  "Grid discreteness: band [0.35,0.65] contains only grid point 0.5, so H1 effectively requires alpha_hat=0.5 everywhere; alpha_hat endpoints are grid points."
+ ],
+ "wall_s": 3.17
+}

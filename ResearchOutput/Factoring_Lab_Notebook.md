@@ -12007,3 +12007,56 @@ residue cap 4/3, position 5.19×, external-hint laws, quantum frontier, position
 (papers 238–245) all untouched; .2346 flag traveling; #391 single-seed-unconfirmed stands. Named next
 honest question: does ANY fresh-geometry positions collection (powering the excluded parity cell) justify
 itself, or is the rate layer formally closed at covariate-class depth?
+
+## Part 289 — round-90 #1 · DIAL-SCALE-TRANSFER (exp 597) — HREFINE_SCALE_DEPENDENT: advantage transfers, point exponent plateaus (2026-08-25)
+
+Question (papers 223/227 shared scope caveat): does the Sum(chi=+1)/l^alpha weight law's advantage
+transfer beyond paper 223's b=15 measurement? Pre-registered BEFORE analysis (script header): H1 iff
+alpha_hat in [0.35,0.65] at ALL bitlens {48,72,96} (band contains only grid point 0.5, so H1
+effectively requires alpha_hat=0.5 everywhere); else scale-dependent, report the curve. Populations
+96/bitlen, seeds 20260904/05/06, exp586 recipe verbatim; per N 30k j~U[1,2^52) ABSOLUTE (u band
+~4.5-5.2 at all scales without tuning); y=(isqrt(N)+j)^2-N; HIT iff 1e6-smooth via gcd-chain exact
+tester; S_alpha dials odd primes 3<=l<=400, grid {0.25,0.5,0.75,1.0} + unweighted anchor alpha=0
+outside the fitted grid; OLS log((hits+0.5)/30000)~S_alpha; cluster-bootstrap CI95 (96 Ns, 500 reps,
+seed 597). Wall 265 s parallel.
+
+VERDICT **HREFINE_SCALE_DEPENDENT fired** (not all in band AND excursion non-monotonic):
+alpha_hat = **0.75 @ b48 [CI95 0.5-0.75] / 0.50 @ b72 [0.25-0.75] / 0.75 @ b96 [0.5-1.0]**.
+TWO-PART ANSWER resolving papers 223/227's caveat:
+(1) WHAT TRANSFERRED — the weighted-dial ADVANTAGE: unweighted anchor uniformly weak (R2 ~0.12-0.13
+everywhere); best fractional weighting beats it by +0.227/+0.056/+0.231 at 48/72/96; at b48/b96 EVERY
+fractional weighting gains +0.10..+0.23. Chi+ dial family works at every scale tested (48->96, 2x
+beyond paper 223). Paper 223's tilt-transfer caveat CLOSED.
+(2) WHAT DID NOT — the sqrt-vs-harmonic point refinement: dR2(S_0.5-S_1.0) = +0.032/+0.083/**-0.005**
+(sign flip at largest size); R2(alpha) curves are SHALLOW plateaus (argmax-vs-best-alternative
+0.008/0.010/0.024 — only b96 clears the 0.02 bar and there harmonic EDGES sqrt); bootstrap CIs overlap
+heavily; alpha=0.5 inside all three CIs, so is 0.75; common support exactly [0.5,0.75].
+REFINED LAW: scale-stable exponent PLATEAU alpha* in [0.5,0.75], grid-unresolved (n=96 clusters x ~8
+hits/N => heavy Poisson attenuation; R2 levels NOT comparable to exp586's 150k-sample 0.62; design
+resolves one grid step; endpoints are grid points). AMENDMENTS: paper 227's adopted "alpha*=0.5" ->
+"alpha* in [0.5,0.75] plateau"; canonical covariate S_0.5 stands WITHOUT scope restriction (never
+materially beaten; max deficit 0.029 at b96 within design noise), justification downgraded from
+point-optimality to plateau membership.
+
+RECORD-TIME CORRECTION on exp597_findings.md: its transfer sentence ("every fractional weighting beats
+unweighted by dR2 = +0.10..+0.23 at ALL bitlens") overstates — result.json shows b72 breaks both
+clauses (best-fractional gain only +0.056; harmonic R2 0.0926 falls BELOW unweighted 0.1196). Corrected
+universal statement recorded in paper 247 section 3; verdict and amendments unaffected. b72 is also the
+weakest-signal cell overall (max R2 0.176 vs ~0.35 flanking) under a single seed — disclosed.
+
+Ledger catches: tester RECONSTRUCTED from spec (exp577 script outside read permissions; semantics
+locked to exact B-smoothness; lineage coherence via l|y <=> chi(N,l)=+1); two pool-infrastructure bugs
+fixed mid-run with smoke byte-identical pre/post; SINGLE seed/bitlen disclosed; percentile cluster CIs.
+Design facts: mean hits/N 8.18/9.23/7.46 (~2.4-3.0e-4 rates comparable across scales); zero-hit Ns none;
+bootstrap distributions b48 {0.5:190,0.75:301,1.0:9}, b72 {0.25:201,0.5:252,0.75:42,1.0:5}, b96
+{0.5:69,0.75:387,1.0:44}.
+
+Count 584 -> 585; assessment v353 -> v354. Paper 247, issue #395. Barrier framing: no barrier
+interaction — rate/dial-layer robustness closure inside the mapped stratum; gives the QR-dial covariate
+an explicit domain-of-validity certificate (weighting family scale-universal, point exponent
+plateau-identified). Open unchanged: u>=6-14 scale-smoothness deviations, factor-local beyond
+scan-order, MA-1 effectivity, residue cap 4/3, position 5.19x, external-hint laws, quantum closed;
+paper 242 single-seed-unconfirmed (#391); .2346 flag traveling. Named next honest question: if the
+plateau LOCATION ever matters operationally, multi-seed replication at the discriminating cells (b72
+fresh seed; b96 >=100k samples/N) — otherwise plateau reading suffices and effort stays on the open
+frontiers.

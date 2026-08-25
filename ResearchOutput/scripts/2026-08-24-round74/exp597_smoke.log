@@ -1,0 +1,19 @@
+[exp597 smoke] bits=[48] n_pool=12 n_js=3000 alphas=[0.25, 0.5, 1.0] JMAX=2^52 cut=1000000
+primorial(1000000): 78498 primes, 1440509 bits, built in 0.1s
+[exp597] bitlen 48: population + sampling...
+[exp597] bitlen 48: alpha_hat=1.0 R2hat=0.109767 CI95=[0.25, 1.0] mean_hits=0.83 wall=3.03s
+{
+ "mode": "smoke",
+ "fired": "HREFINE_SCALE_DEPENDENT",
+ "alpha_hat_by_bits": {
+  "48": 1.0
+ },
+ "R2_at_alpha_hat": {
+  "48": 0.109767
+ },
+ "mean_hits": {
+  "48": 0.83
+ },
+ "wall_s": 3.17,
+ "out": "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74/exp597_smoke_result.json"
+}
