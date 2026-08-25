@@ -20,6 +20,9 @@ Registered claims/bars (decided before any data):
        clean_control (above-bar effect the machinery cannot certify);
      if 0 < Delta_kappa < 0.05 WITH perm_p < 0.01 => SUBBAR_POSITIVE
        (reported, not claimed);
+     NEGATIVE_DELTA_PERM_SUPPORTED iff dKappa<=0 WITH perm_p<0.01 (kappa
+       ANTI-correlates with rate at this width -- informative, registered);
+     NULL_AT_THIS_SCALE requires NO perm support AND machinery_ok;
      NULL_AT_THIS_SCALE requires no perm support AND machinery_ok :=
        |mean(ctrl)| < 0.01; failing machinery emits INVALID_MACHINERY
        instead (machinery gates every null/sufficiency reading);
@@ -51,7 +54,7 @@ Registered claims/bars (decided before any data):
      bit widths are different rate regimes).
   SAMPLE SIZING (pre-declared adaptive rule, deterministic): each full leg
      first runs a PILOT (first 16 Ns, 2k hit samples/N, stream offset
-     SEED+23e6+i) estimating per-sample hit rate r_hat; n_hit is the
+     SEED + 37e6 + L*1e8 + i) estimating per-sample hit rate r_hat; n_hit is the
      smallest ladder value in {50k, 150k, 400k} with 512*r_hat*n_hit >= 300
      * 512 (projected mean >= 300 hits/N); if even 400k projects < 300, the
      leg RUNS at 400k and is flagged INCONCLUSIVE-LOWPOWER in verdicts
@@ -71,8 +74,12 @@ Registered claims/bars (decided before any data):
      slots with 598c's streams; fixed by moving offsets and asserting
      SEED+min(offsets) > ceiling. 20260901 documented-excluded
      (bootstrap-only usage, never a population).
-  Streams per N: cell grid 50k (20k smoke) rng(SEED+17e6+i); hit stream
-     n_hit rng(SEED+19e6+i); hit := v = j^2-N fully 1e6-smooth via
+  Streams per N -- PER-LEG BAND STRIDE (audit must-fix #2: consecutive
+     LEG_SEEDs differ by exactly 1, so identical offsets would make leg A's
+     slot i+1 byte-identical to leg B's slot i): leg index L = {72:0, 96:1,
+     128:2}; cell grid 50k (20k smoke) rng(SEED + 31e6 + L*1e8 + i); hit
+     stream n_hit rng(SEED + 33e6 + L*1e8 + i); sizing pilot rng(SEED + 37e6
+     + L*1e8 + i). hit := v = j^2-N fully 1e6-smooth via
      gcd-chain primorial(1e6); window t ~ U[0,65536) from j0=isqrt(N)+1.
   Calibration: Phipson-Smyth p-values (1 + #{>= obs})/(reps+1); perm seed
      606; bootstrap seed 607; conservative minimum perm_p = 1/501 clears the
@@ -89,13 +96,17 @@ Registered claims/bars (decided before any data):
   Runtime: parallelized positional-seed workers (deterministic), sequential
      spot-check of first 8 Ns every mode.
 
-Wall budget: ~5-15 min per leg depending on sized n_hit.
+Wall budget: ~5-15 min typical per leg; worst case ~26 min at the
+400k-ladder b128 corner (~93us/draw gcd-dominated).
 """
 import os
 import sys
 import json
 import time
 import random
+import itertools
+from itertools import combinations
+import multiprocessing
 import numpy as np
 import gmpy2
 from gmpy2 import mpz, next_prime
@@ -106,6 +117,11 @@ OUT_DIR = "/home/raver1975/factor3/ResearchOutput/scripts/2026-08-24-round74"
 SEED = None  # bound per-leg in main() (positional worker seeds read this global)
 
 LEG_SEED = {96: 20261007, 72: 20261008, 128: 20261009}
+# Registry scope (audit should-fix): semiprime-population seeds at bits>=64
+# known to date. Bitlen<=52 families (20260990..20261000 exp503,
+# 20261060..64 exp515, 20261200..02 exp541) are excluded BY THE
+# MATCHING-WIDTH ARGUMENT (cannot contain 72/96/128-bit Ns). 20260825/
+# 20260831 asserted-by-prior-registry (no generator usage found repo-wide).
 PRIOR_POPULATION_SEEDS = [20260824, 20260825, 20260826, 20260827,
                           20260828, 20260831, 20260902, 20260903,
                           20260904, 20260905, 20260906, 20260907]
@@ -224,6 +240,7 @@ def cell_occupancy(N, j0, n_samples, rng, T=T_WINDOW):
 
 
 _PRIM = None
+ACTIVE_HIT_OFF = None  # bound per run in main(); fork inherits
 
 
 def _worker_init():
@@ -234,7 +251,7 @@ def _worker_init():
 def _worker_count(args):
     """Per-N hit count over n_hit draws; POSITIONAL seed => scheduling-free."""
     i, N, j0, n_hit = args
-    rng = np.random.default_rng(SEED + HIT_OFF + i)
+    rng = np.random.default_rng(SEED + ACTIVE_HIT_OFF + i)
     t = rng.integers(0, T_WINDOW, size=n_hit).tolist()
     smooth = is_smooth_chain
     hits = 0
@@ -274,7 +291,13 @@ def main():
     bits = int(sys.argv[1]) if len(sys.argv) > 1 else 96
     mode = sys.argv[2] if len(sys.argv) > 2 else "smoke"
     assert bits in BITS_LIST
+    global ACTIVE_HIT_OFF
+    L = BITS_LIST.index(bits)          # per-leg band stride (audit MF#2)
+    CELL_O = CELL_OFF + L * 100_000_000
+    HIT_O = HIT_OFF + L * 100_000_000
+    PILOT_O = PILOT_OFF + L * 100_000_000
     SEED = LEG_SEED[bits]
+    ACTIVE_HIT_OFF = HIT_O
     smoke = mode == "smoke"
     n_pool = 32 if smoke else 512
     n_cell = NCELL_SMOKE if smoke else NCELL_FULL
@@ -294,8 +317,17 @@ def main():
         prior_union |= prior_ns
     hi_prior_band = (max(PRIOR_POPULATION_SEEDS)
                      + max(KNOWN_PRIOR_OFFSETS) + n_pool)
-    lo_ours = SEED + min(CELL_OFF, HIT_OFF, PILOT_OFF)
-    assert lo_ours > hi_prior_band, "stream band overlap"
+    lo_ours = SEED + min(CELL_O, HIT_O, PILOT_O)
+    assert lo_ours > hi_prior_band, "stream band overlap vs priors"
+    # cross-LEG pairwise disjointness (audit MF#2): consecutive LEG_SEEDs
+    # differ by 1 -- without the *1e8 stride their bands would interleave
+    leg_bands = []
+    for _b, _sd in LEG_SEED.items():
+        _o = BITS_LIST.index(_b) * 100_000_000
+        leg_bands.append((_sd + _o + min(CELL_OFF, HIT_OFF, PILOT_OFF),
+                          _sd + _o + max(CELL_OFF, HIT_OFF, PILOT_OFF) + n_pool))
+    for (loA, hiA), (loB, hiB) in combinations(leg_bands, 2):
+        assert hiA < loB or hiB < loA, "cross-leg stream band overlap"
     print(f"[b{bits}/{mode}] population {n_pool}, disjoint from "
           f"{len(PRIOR_POPULATION_SEEDS)} prior seeds ({len(prior_union)} Ns "
           f"@bits={bits}); bands clear (ours >= {lo_ours} > ceiling "
@@ -312,7 +344,7 @@ def main():
     for i, N in enumerate(Ns):
         j0 = int(gmpy2.isqrt(mpz(N))) + 1
         D[i] = cell_occupancy(N, j0, n_cell,
-                              np.random.default_rng(SEED + CELL_OFF + i))
+                              np.random.default_rng(SEED + CELL_O + i))
     ref = int(np.argmax(D.mean(axis=0)))
     keep = [c for c in range(16) if c != ref]
     Dr = D[:, keep]
@@ -334,7 +366,7 @@ def main():
         pilot_hits = []
         for i, N in enumerate(Ns[:PILOT_NS]):
             j0 = int(gmpy2.isqrt(mpz(N))) + 1
-            rng = np.random.default_rng(SEED + PILOT_OFF + i)
+            rng = np.random.default_rng(SEED + PILOT_O + i)
             t = rng.integers(0, T_WINDOW, size=PILOT_HITS).tolist()
             h = sum(1 for tv in t if is_smooth_chain((j0 + tv) ** 2 - N, _PRIM))
             pilot_hits.append(h)
@@ -345,6 +377,7 @@ def main():
                 n_hit = cand
                 break
         lowpower = n_hit == LADDER[-1] and r_hat * n_hit < MIN_MEAN_HITS
+        pilot_r_hat = float(r_hat)
         print(f"[b{bits}/full] pilot r_hat={r_hat:.3e}/sample -> n_hit={n_hit}"
               f"{' INCONCLUSIVE-LOWPOWER PROJECTED' if lowpower else ''}",
               flush=True)
@@ -361,7 +394,9 @@ def main():
         workers = max(2, min(12, (os.cpu_count() or 4) - 1))
         try:
             with ProcessPoolExecutor(max_workers=workers,
-                                     initializer=_worker_init) as ex:
+                                     initializer=_worker_init,
+                                     mp_context=multiprocessing.get_context(
+                                         "fork")) as ex:
                 done = 0
                 for i, h in ex.map(_worker_count, jobs, chunksize=8):
                     hits[i] = h
@@ -437,6 +472,8 @@ def main():
         fired = "BORDERLINE_CONTROL_DIRTY"   # above bar but obs inside y-null range
     elif d_kappa > 0 and p_perm < 0.01:
         fired = "SUBBAR_POSITIVE"            # strictly below the 0.05 bar
+    elif d_kappa <= 0 and p_perm < 0.01:
+        fired = "NEGATIVE_DELTA_PERM_SUPPORTED"   # kappa ANTI-correlates here
     elif machinery_ok:
         fired = "NULL_AT_THIS_SCALE"
     else:
@@ -452,6 +489,9 @@ def main():
             "prior_seeds_checked_at_this_bits": PRIOR_POPULATION_SEEDS,
             "n_pool": n_pool, "cell_samples_per_N": n_cell,
             "hit_samples_per_N": n_hit, "sizing_ladder": LADDER,
+            "stream_offsets_used": {"cell": CELL_O, "hit": HIT_O,
+                                    "pilot": PILOT_O, "leg_stride_index": L},
+            "pilot_r_hat": (pilot_r_hat if not smoke else None),
             "min_mean_hits_target": MIN_MEAN_HITS,
             "lowpower_projected": bool(lowpower),
             "j_window_t": [0, T_WINDOW], "smooth_cut": CUT,
@@ -460,8 +500,10 @@ def main():
             "thresholds": {"H1_dR2": H1_DR2, "sufficiency_bar": SUBBAR,
                            "machinery_tol": MACHINERY_TOL},
             "regen_hash_status": (
-                "CONDITIONAL (no stored N strings anywhere in lineage); "
-                "distinctness asserted per leg at matching bits"),
+                "CONDITIONAL: no canonical regeneration hash exists in this "
+                "lineage; distinctness asserted per leg at matching bits vs "
+                "regenerated prior pools; decimal N vectors ARE stored in "
+                "*_ns.txt sidecars (auditable byte-reproduction)"),
         },
         "stats": {
             "adjR2_dial": round(float(adj_dial), 6),
@@ -505,7 +547,8 @@ def main():
             "the cells arm); the C2 comparison is exactly a df-penalty question "
             "because span{kappa} subset span{Dr}.",
             "Sizing pilot (full legs) is pre-declared in the header; its 2k/N "
-            "draws use a distinct stream (+23e6) and feed ONLY n_hit choice.",
+            "draws use a distinct stream (+37e6+L*1e8) and feed ONLY n_hit choice; "
+            "r_hat persisted in config.pilot_r_hat for auditability.",
             "Cross-bit slope comparisons are descriptive (different rate "
             "regimes); no cross-leg pooling.",
             "Regen hash CONDITIONAL; tester class matched to 598b/598c, "
@@ -518,6 +561,11 @@ def main():
             "counts one algebraically-free parameter -- the error CANCELS "
             "within every reported delta (both arms share the Dr block); "
             "model ranks recorded in stats.rank_models.",
+            "SIGN EXPECTATION (pre-stated): NONE registered -- H1_KAPPA_CARRIES "
+            "is sign-agnostic in Delta_kappa; v2 smokes suggested a NEGATIVE "
+            "beta_kappa at all three widths (richer small-prime composition "
+            "associating with LOWER window rate); beta sign is recorded and "
+            "interpretable either way, never gated on.",
         ],
         "wall_s": round(time.time() - t0, 2),
     }
@@ -535,14 +583,15 @@ def main():
         perm_null_cells=perm_null_cells,
         d_kappa=np.array([d_kappa]), d_cells=np.array([d_cells_beyond]),
         n_hit=np.array([n_hit]), n_pool=np.array([n_pool]),
-        perm_seed=np.array([PERM_SEED]))
+        perm_seed=np.array([PERM_SEED]), bits=np.array([bits]),
+        master_seed=np.array([SEED]))
     with open(os.path.join(OUT_DIR, f"exp606{tag}_ns.txt"), "w") as f:
         f.write("\n".join(str(n) for n in Ns) + "\n")
 
     print(json.dumps({"bits": bits, "fired": fired,
                       "kappa_sufficient": sufficiency,
                       "delta_kappa": result["stats"]["delta_kappa"],
-                      "delta_cells_beyond": result["stats"]["delta_cells_beyond_kappa"],
+                      "delta_cells_beyond_kappa": result["stats"]["delta_cells_beyond_kappa"],
                       "perm_p": p_perm, "ctrl_null_max":
                       result["stats"]["ctrl_null_max"],
                       "clean_control": clean_control,

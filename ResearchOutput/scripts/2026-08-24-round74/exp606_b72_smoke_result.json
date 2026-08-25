@@ -27,6 +27,13 @@
    150000,
    400000
   ],
+  "stream_offsets_used": {
+   "cell": 31000000,
+   "hit": 33000000,
+   "pilot": 37000000,
+   "leg_stride_index": 0
+  },
+  "pilot_r_hat": null,
   "min_mean_hits_target": 300,
   "lowpower_projected": false,
   "j_window_t": [
@@ -43,7 +50,7 @@
    "sufficiency_bar": 0.02,
    "machinery_tol": 0.01
   },
-  "regen_hash_status": "CONDITIONAL (no stored N strings anywhere in lineage); distinctness asserted per leg at matching bits"
+  "regen_hash_status": "CONDITIONAL: no canonical regeneration hash exists in this lineage; distinctness asserted per leg at matching bits vs regenerated prior pools; decimal N vectors ARE stored in *_ns.txt sidecars (auditable byte-reproduction)"
  },
  "stats": {
   "adjR2_dial": -0.032922,
@@ -82,11 +89,12 @@
  },
  "honest_notes": [
   "kappa is assembled from the SAME cell grid as Dr (independent of the hit stream y, but sharing the cell grid's sampling noise with the cells arm); the C2 comparison is exactly a df-penalty question because span{kappa} subset span{Dr}.",
-  "Sizing pilot (full legs) is pre-declared in the header; its 2k/N draws use a distinct stream (+23e6) and feed ONLY n_hit choice.",
+  "Sizing pilot (full legs) is pre-declared in the header; its 2k/N draws use a distinct stream (+37e6+L*1e8) and feed ONLY n_hit choice; r_hat persisted in config.pilot_r_hat for auditability.",
   "Cross-bit slope comparisons are descriptive (different rate regimes); no cross-leg pooling.",
   "Regen hash CONDITIONAL; tester class matched to 598b/598c, absolute rates internally consistent only.",
   "Spot-check covers first 8 Ns (positional seeds + ordered ex.map index the rest).",
-  "Rank note: D rows sum to exactly 1, so intercept+Dr carries an exact-in-exact-arithmetic dependence at machine epsilon; lstsq rcond=None classifies designs full-rank and the df penalty counts one algebraically-free parameter -- the error CANCELS within every reported delta (both arms share the Dr block); model ranks recorded in stats.rank_models."
+  "Rank note: D rows sum to exactly 1, so intercept+Dr carries an exact-in-exact-arithmetic dependence at machine epsilon; lstsq rcond=None classifies designs full-rank and the df penalty counts one algebraically-free parameter -- the error CANCELS within every reported delta (both arms share the Dr block); model ranks recorded in stats.rank_models.",
+  "SIGN EXPECTATION (pre-stated): NONE registered -- H1_KAPPA_CARRIES is sign-agnostic in Delta_kappa; v2 smokes suggested a NEGATIVE beta_kappa at all three widths (richer small-prime composition associating with LOWER window rate); beta sign is recorded and interpretable either way, never gated on."
  ],
- "wall_s": 34.04
+ "wall_s": 34.46
 }
