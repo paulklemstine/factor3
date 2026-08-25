@@ -2092,3 +2092,13 @@ results ~/f3cache/net96_results.json; log /tmp/net96.log.
 resolution documented as the f-gap). Open: instrumented per-position acceptance
 (direct logging); knee-law transfer to 7B. Issue #372. Now 97 network experiments.
 Assessment v97.
+
+## Part 97 — THE-KNEE-SHRINKS-WITH-SCALE: the last standing limited-memory cell closes with an inversion — k*(7B@512) = 8 (ret 0.98056, razor-thin +0.0006), BELOW the entire pre-registered band {12,16,20} and below both smaller models' 16; three-scale chain = {0.5B: 16, 1.5B: 16, 7B: ≤8} — size-invariance (NET-55/65/66) holds to 3x then INVERTS at 14x; retention strictly monotone 0.9806→0.9953 (P3 CONFIRMED), gate BIT-EXACT vs HF eager max|dlogit|=0.000000 top1_agree=1.000000 (P2 CONFIRMED at strongest level); full baseline ce=2.50867 acc=0.48663; practical: 7B needs ≤8 oracle keys @512 = 64× fewer KV reads and HALF the per-key budget of its smaller siblings; P1 REFUTED downward; honest limits: sub-8 unmeasured (bracket open below), razor-thin margin, n=6 windows, cross-scale comparison crosses substrate (bf16-CPU vs fp32-GPU; internal gate neutralizes dtype internally) (NET-97; cpu-large-model axis iteration 72)
+
+**Method:** validated-Runner port from exp_net90 (bf16 CPU adaptation),
+oracle top-k grid {8,12,16,20,24}, ctx=512, threads=8, 250KB held-out
+slice. Script ResearchOutput/exp_net97_knee7b.py;
+results ~/f3cache/net97_results.json; log /tmp/net97.log.
+**Verdict:** THE-KNEE-SHRINKS-WITH-SCALE. Barriers clean/partial as listed.
+Open: sub-8 probing; 7B knee ctx-scaling; cross-family replication; K8/V4
+interaction. Paper 176, issue #405. Now 98 network experiments. Assessment v98.

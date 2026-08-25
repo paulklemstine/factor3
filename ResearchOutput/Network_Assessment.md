@@ -1765,3 +1765,7 @@ Assessment v96. 96 experiments (NET-1 through NET-96 pending).
 - **NET-96 — THE-COST-LAW-CLOSES-THE-LOOP (cpu-large-model axis round 71; compact): depth sweep {1..8}×{prose,code} + differencing extraction — cost-law argmax reproduces NET-91 optima EXACTLY (prose 4, code 8); prose survival collapse by position ~5 supported directionally; per-position map itself under-resolved at n=4 prompts (impossible s_i values — differencing doubles noise); lesson recorded: instrument directly, don't differentiate noisy aggregates. Gate reused NET-91 toolchain. Open: direct per-position instrumentation; knee transfer @7B. Issue #372.
 
 Assessment v97. 97 experiments (NET-1 through NET-97 pending).
+
+- **NET-97 — THE-KNEE-SHRINKS-WITH-SCALE (cpu-large-model axis round 72; LAST standing limited-memory cell CLOSED): k*(Qwen2.5-7B@512) = ≤8 keys (ret 0.98056 at k=8, monotone to 0.99531 @24) — BELOW both smaller models' 16; chain {16,16,≤8}: size-invariance inverts at 14x scale; gate BIT-EXACT vs HF eager (max|dlogit|=0.000000); P1 refuted downward, P2/P3 confirmed; practical: 64× KV-read reduction at half the small-model key budget. Gate exact; n=6 windows stated; sub-8 unmeasured (open bracket). Open: sub-8 probe; 7B knee ctx-scaling; cross-family replication. Paper 176, issue #405.
+
+Assessment v98. 98 experiments (NET-1 through NET-98).
