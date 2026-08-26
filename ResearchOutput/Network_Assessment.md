@@ -1789,3 +1789,7 @@ Assessment v102. 102 experiments (NET-1 through NET-102).
 - **NET-102 — GPTOSS-HOTSET (cpu-large-model axis round 77; compact): native-MXFP4 MoE gpt-oss-20b @9.92 tok/s greedy pure CPU (P1 ✓); role-split cache TRANSFERS cross-architecture (K8/V4 ratio 0.9556 <= 1.05; absolute PPL brokenness documented); lazy-mmap expert hot-set REFUTED (RSS 21.2GB > 12.1GB file — passive caching fails, motivating cgroup-pressure design); eagle3 speculation BLOCKED by segfault (exit 139, upstream datum). Issue #414.
 
 Assessment v103. 103 experiments (NET-1 through NET-103).
+
+- **NET-103 — ENGINE-INVARIANCE CONFIRMED AND THE 30B MoE RUNS AT GOAL SPEED (cpu-large-model axis round 78): ik_llama.cpp matches mainline quality to 0.039% PPL (P4 ✓ engine-invariance of published laws) while delivering +49% dense PP and +133% MoE PP (130.81 vs 56.13 = 2.33x, P2 ✓); resident Qwen3-30B-A3B IQ4_XS sustains 13.28-13.89 tok/s single-stream pure CPU (P3 ✓ goal-grade); dense tg parity held (P1 partially refuted favorably). Raw-capture discipline after two instrumentation bugs. Open: spec x engine; gpt-oss-120b capstone; STARVED-LADDER. Paper 178, issue #415 (as published).
+
+Assessment v104. 104 experiments (NET-1 through NET-104).

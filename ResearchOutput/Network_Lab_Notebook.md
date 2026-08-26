@@ -2156,3 +2156,15 @@ results ~/f3cache/net102_results.json; log /tmp/net102.log.
 crash-blocked P3 documented). Open: eagle3 crash triage/upstream report; MOE-HOT-
 SET with explicit pressure; 120B stream capstone. Issue #414 (published as such). Now 103 network
 experiments. Assessment v103.
+
+## Part 103 — ENGINE-INVARIANCE CONFIRMED AND THE 30B MoE RUNS AT GOAL SPEED: two engines on identical quant files — ik_llama.cpp (pinned 08b500b9) vs mainline (c060ca9) — P4 CONFIRMED at 0.039% PPL delta on 7B-q8_0 (6.9762 vs 6.9781, ±1% band): our published quality laws are MODEL+QUANT properties, not kernel artifacts; while SPEED is emphatically engine-variance: ik pp512 +49% on 7B dense and +133% on Qwen3-30B-A3B IQ4_XS MoE (130.81 vs 56.13 = 2.33x, P2 ✓), tg128 parity-to-slightly-better; GOAL-GRADE: resident 30B-class sparse model sustains 13.28 tok/s mainline / 13.89 ik single-stream pure CPU (P3 ✓); full-context prefill — the dominant long-context cost — is where the lever pays; two instrumentation bugs caught en route (table-parse loss, ik wording) via raw-capture discipline (NET-103; cpu-large-model axis iteration 78)
+
+**Method:** llama-bench -p512 -n128 -t8 matrix {mainline c060ca9, ik
+08b500b9} x {7B Q4_K_M dense, Qwen3-30B-A3B IQ4_XS}; llama-perplexity pair
+on standard 250KB slice. Scripts ResearchOutput/exp_net103_engineik.py +
+exp_net103b_benchredo.py + exp_net103c_ikppl.py;
+results ~/f3cache/net103b_results.json + net103_ikppl_raw.txt.
+**Verdict:** ENGINE-INVARIANCE AND 30B SPEED. Barriers clean (raw capture).
+Open: spec x engine interaction; gpt-oss-120b capstone; STARVED-LADDER;
+cross-family knee. Paper 178, issue #415 (published as such). Now 104 network experiments.
+Assessment v104.
