@@ -56,9 +56,7 @@ else:
     raise SystemExit("download never completed")
 
 def timed(args, timeout=3600):
-    cmd = ["systemd-run", "--scope", "-p", "MemoryMax=16G",
-           "-p", "MemorySwapMax=0",
-           "/usr/bin/time", "-v"] + args
+    cmd = ["/usr/bin/time", "-v"] + args
     p = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
     o = p.stdout + p.stderr
     rss = re.search(r"Maximum resident set size \(kbytes\): (\d+)", o)
