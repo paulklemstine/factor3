@@ -1781,3 +1781,7 @@ Assessment v100. 100 experiments (NET-1 through NET-100).
 - **NET-100 — THE-SPEC-CACHE-INTERACTION (cpu-large-model axis round 75; compact): Law2x4 composition has an INTERACTION — K8/V4 under speculation loses up to -8.65 acceptance pts (code d=4) with tok/s ratio 0.898 there, while other cells stay within ~±1.5pts/parity; P1/P2 both REFUTED; concentration at the steepest-slope config suggests selection-boundary amplification (NET-83 mechanism on the draft-match channel); recipe amended: f16 keys when speculating shallow-on-code. n=3/cell stated as binding limit; replication open. Issue #412.
 
 Assessment v101. 101 experiments (NET-1 through NET-101).
+
+- **NET-101 — THE-DRAFT-CACHE-IS-FREE (cpu-large-model axis round 76; compact): draft-model KV cache at raw q4_0 = ZERO acceptance change (identical to 2 decimals across f16/q8_0/q4_0, both domains, exactly reproducing NET-91) — recoverability asymmetry completed: target keys selection-critical, draft keys free; draft RAM removable from little-RAM stacks. P3 tok/s parity unmeasured (stated). Issue #413.
+
+Assessment v102. 102 experiments (NET-1 through NET-102).

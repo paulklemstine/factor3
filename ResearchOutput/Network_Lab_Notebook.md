@@ -2134,3 +2134,13 @@ results ~/f3cache/net100_results.json; log /tmp/net100.log.
 as the binding limit). Open: replication at n=8+; margin-channel explanation;
 interaction with sub-8 knees. Issue #412 (published as such). Now 101 network experiments.
 Assessment v101.
+
+## Part 101 — THE-DRAFT-CACHE-IS-FREE (compact): quantizing the DRAFT model's own KV cache to even raw q4_0 changes speculative acceptance by EXACTLY ZERO — all three precisions identical to two decimals in both domains {prose: 30.86%, code: 55.97%}, and both values reproduce NET-91's f16 measurements exactly (deterministic harness confirmed a fourth time); completes the recoverability asymmetry: TARGET-side key quantization annihilates (+38,000% PPL, -8.65 spec pts) while DRAFT-side key quantization costs precisely nothing — selection-criticalness applies only where errors are unrecoverable; P3 throughput-parity unmeasured in-script (acceptance-only round, stated limit); practical: draft-side KV can always run at lowest precision, removing draft RAM from little-RAM stacks (NET-101; cpu-large-model axis iteration 76)
+
+**Method:** llama-speculative -ctkd/-ctvd flags, 7B target + 0.5B draft,
+depth 8, domains {prose,code}, 4 prompts each, seed 42.
+Script ResearchOutput/exp_net101_draftcache.py;
+results ~/f3cache/net101_results.json; log /tmp/net101.log.
+**Verdict:** THE-DRAFT-CACHE-IS-FREE. Barriers clean/partial (P3 unmeasured
+stated). Open: tok/s parity check; interaction with target K8/V4 under the
+NET-100 amendment. Issue #413 (published as such). Now 102 network experiments. Assessment v102.
