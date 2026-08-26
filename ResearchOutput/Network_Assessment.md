@@ -1773,3 +1773,7 @@ Assessment v98. 98 experiments (NET-1 through NET-98).
 - **NET-98 — THE-KNEE-IS-EIGHT-EXACTLY (cpu-large-model axis round 73; compact): both horns refuted — k=4 fails (0.926) AND k=6 fails (0.962), so k*(7B@512)=8 exactly; NET-97's "<=8" tightens to "=8": the scale-shrink is an exact halving {16->8}; seven-point curve strictly monotone; gate bit-exact; baseline reproduced exactly third consecutive time. Addendum to paper 176 lineage. Issue #409.
 
 Assessment v99. 99 experiments (NET-1 through NET-99).
+
+- **NET-99 — EIGHT-GB-FRONTIER (cpu-large-model axis round 74): composition law MEASURED — Q2_K weights × K8/V4 cache sub-additive (+19.0% total ≈ weight tax alone; cache-side +0.33%/+0.17%), context-stable (amp guard 0.994 ≤ 1.5, NET-88 fear refuted), iq4_nl interchangeable; GOAL CONSTRUCTED AND VERIFIED: 14B@full-8192-context in 6.48GB RSS @4.33 tok/s inside 8G cgroup; 7B stack in 3.13GB inside 4G cgroup; automated launcher flaw caught (unprivileged systemd-run), manual privileged re-runs authoritative, STARVED-LADDER amendment queued. Gate: standard slices/caps stated. Open: params_max sweep; engine swap; MXFP4 MoE; NET-100 running. Paper 177, issue #411.
+
+Assessment v100. 100 experiments (NET-1 through NET-100).

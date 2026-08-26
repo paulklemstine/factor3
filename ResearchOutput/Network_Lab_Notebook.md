@@ -2112,3 +2112,14 @@ log /tmp/net98.log.
 Open: sub-4 probing (low value — curve shape clear); 7B knee ctx-scaling; cross-family
 replication. Compact addendum to paper 176 lineage. Issue #409 (published as such). Now 99 network
 experiments. Assessment v99.
+
+## Part 99 — EIGHT-GB-FRONTIER: the composition law measured and the GOAL constructed — composition of Q2_K weights x K8/V4 role-split cache is SUB-ADDITIVE and CONTEXT-STABLE: R512=1.190 (in [1.10,1.22] band ✓), R4096/R512=0.994 (amplification guard ≤1.5 ✓ — NET-88-style multiplicative fear REFUTED for this stack); decomposition shows cache adds only +0.33%@512/+0.17%@4096 on top of the +18.6% weight tax; iq4_nl variant within 0.0009 of q4_0 (P1b ✓); CONSTRUCTED POINTS VERIFIED MANUALLY after automated-launcher flaw caught by red-team workflow (systemd-run unprivileged failure mode; manual sudo re-runs authoritative): P3 = Qwen2.5-14B-Instruct Q2_K + K8/V4 at FULL ctx=8192 inside MemoryMax=8G cgroup → 255 tokens @ 4.33 tok/s, peak RSS 6.48GB, zero OOM; P4 = full 7B stack @ctx4096 inside MemoryMax=4G → peak RSS 3.13GB, zero OOM; THE GOAL MADE CONCRETE: a 14B model serves its entire context window in under 6.5GB on pure CPU at usable speed, every ingredient a published lab law (NET-99; cpu-large-model axis iteration 74)
+
+**Method:** llama-perplexity arms {control q8_0+f16, composed q2_k+K8/V4,
+weights-only, iq4_nl} × {512,4096} + systemd-capped constructed points,
+250KB held-out slices. Script ResearchOutput/exp_net99_frontier.py;
+results ~/f3cache/net99_results.json; log /tmp/net99.log.
+**Verdict:** EIGHT-GB-FRONTIER. Barriers clean/partial (constructed-point
+telemetry gaps documented, manually repaired). Open: params_max validation
+sweep; engine cross-check; MXFP4 MoE hot-set; NET-100 staged. Paper 177,
+issue #411 (published as such). Now 100 network experiments. Assessment v100.
