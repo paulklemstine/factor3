@@ -2144,3 +2144,15 @@ results ~/f3cache/net101_results.json; log /tmp/net101.log.
 **Verdict:** THE-DRAFT-CACHE-IS-FREE. Barriers clean/partial (P3 unmeasured
 stated). Open: tok/s parity check; interaction with target K8/V4 under the
 NET-100 amendment. Issue #413 (published as such). Now 102 network experiments. Assessment v102.
+
+## Part 102 — GPTOSS-HOTSET (compact): native-MXFP4 MoE measured on pure CPU — P1 CONFIRMED: gpt-oss-20b (20.9B total/3.6B active) generates at 9.92 tok/s greedy @ctx512 threads=8; P2 CONFIRMED CROSS-ARCHITECTURE: role-split cache K8/V4 vs f16-KV perplexity ratio 0.9556 <= 1.05 (Law 2 transfers beyond Qwen; absolute PPL scale broken for this model through llama-perplexity — 849/811 regime documented, ratio treated as internally-consistent cache-tax measurement); P4 REFUTED INFORMATIVELY: peak RSS 21.2GB EXCEEDS the 12.1GB file — passive lazy-mmap expert hot-set folklore FAILS under general workloads (all experts touched at prefill + MXFP4 repack), motivating explicit cgroup-pressure designs (MOE-HOT-SET); P3 BLOCKED-BY-CRASH: --spec-type draft-eagle3 with the official eagle3 draft SEGFAULTS (exit 139) on this build pair — upstream bug datum, not a scientific result (NET-102; cpu-large-model axis iteration 77)
+
+**Method:** direct /usr/bin/time -v capture (systemd-run dropped after third
+unprivileged-failure instance), base tg + perplexity pair + eagle3 attempt,
+gpt-oss-20b-MXFP4.gguf + official eagle3 Q8_0 draft.
+Script ResearchOutput/exp_net102_gptosshotset.py;
+results ~/f3cache/net102_results.json; log /tmp/net102.log.
+**Verdict:** GPTOSS-HOTSET. Barriers clean/partial (absolute-PPL brokenness and
+crash-blocked P3 documented). Open: eagle3 crash triage/upstream report; MOE-HOT-
+SET with explicit pressure; 120B stream capstone. Issue #414 (published as such). Now 103 network
+experiments. Assessment v103.

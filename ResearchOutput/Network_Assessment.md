@@ -1785,3 +1785,7 @@ Assessment v101. 101 experiments (NET-1 through NET-101).
 - **NET-101 — THE-DRAFT-CACHE-IS-FREE (cpu-large-model axis round 76; compact): draft-model KV cache at raw q4_0 = ZERO acceptance change (identical to 2 decimals across f16/q8_0/q4_0, both domains, exactly reproducing NET-91) — recoverability asymmetry completed: target keys selection-critical, draft keys free; draft RAM removable from little-RAM stacks. P3 tok/s parity unmeasured (stated). Issue #413.
 
 Assessment v102. 102 experiments (NET-1 through NET-102).
+
+- **NET-102 — GPTOSS-HOTSET (cpu-large-model axis round 77; compact): native-MXFP4 MoE gpt-oss-20b @9.92 tok/s greedy pure CPU (P1 ✓); role-split cache TRANSFERS cross-architecture (K8/V4 ratio 0.9556 <= 1.05; absolute PPL brokenness documented); lazy-mmap expert hot-set REFUTED (RSS 21.2GB > 12.1GB file — passive caching fails, motivating cgroup-pressure design); eagle3 speculation BLOCKED by segfault (exit 139, upstream datum). Issue #414.
+
+Assessment v103. 103 experiments (NET-1 through NET-103).
