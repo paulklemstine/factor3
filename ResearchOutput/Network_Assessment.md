@@ -1797,3 +1797,7 @@ Assessment v104. 104 experiments (NET-1 through NET-104).
 - **NET-104 — THE-THREE-REGIME-MAP (cpu-large-model axis round 79; compact): MemoryMax ladders on cached models yield STARVED-STREAMING (7B-q2k @2500M completes at 0.61 tok/s = 14x slowdown, zero OOM) / FULL-SPEED (>=3000M, 8.8 tok/s flat) / PLACEBO (<1%) regimes; 1.5B flat 25.2 tok/s everywhere; canaries clean; --user launcher fix verified in production. Formula offline validation pending. Addendum to paper 177 lineage. Issue #417.
 
 Assessment v105. 105 experiments (NET-1 through NET-105).
+
+- **NET-105 — MOE-HOT-SET INVALID-AS-INSTRUMENTED (cpu-large-model axis round 80; QUARANTINED): MemoryMax caps never bound against mmap'd file-backed pages (identical telemetry across 6G-16G caps AND a sudo system-scope run: peak RSS 16.26GB, zero OOM, flat 13.3-13.6 tok/s) — all arms placebo-equivalent, MoE-routing claims UNMEASURED; enforcement must be asserted in-run (read back memory.max) via explicit cgroup-v2 creation; rerun queued. Does NOT increment experiment count (invalid measurement).
+
+Assessment note appended (count unchanged at 105).

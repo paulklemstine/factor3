@@ -2180,3 +2180,15 @@ Open: fine bracket around 3000M; formula offline validation; MoE ladders
 (experts page differently); 120B stream capstone design input. Compact
 addendum to paper 177 lineage. Issue #416. Now 105 network experiments.
 Assessment v105.
+
+## Part 105 — MOE-HOT-SET INVALID-AS-INSTRUMENTED + THE UNENFORCEABLE-CAP PUZZLE (compact): all five MemoryMax arms {6G..16G} returned IDENTICAL results (13.28-13.63 tok/s flat, peak RSS 16.05-16.26GB everywhere, zero OOM) — and a manual SUDO system-scope MemoryMax=6G run ALSO showed peak RSS 16.26GB un-killed: the caps NEVER BOUND against llama.cpp's mmap'd file-backed pages on this setup; therefore every arm measured the PLACEBO regime and P1/P2/P3 remain UNMEASURED (no valid claim either way about MoE routing locality); two hypotheses queued for the manual-cgroup-v2 rerun (explicit /sys/fs/cgroup mkdir + memory.max write + pid migration, verified by reading back memory.max): (a) systemd transient scopes skip enforcement when page-cache-reclaimable bytes dominate (kernel reclaims before counting), (b) scope delegation quirk; the tok/s FLATNESS itself is still informative: unconstrained MoE speed 13.3-13.6 tok/s replicates NET-103 across five fresh runs (engine+model stable); red-team lesson re-learned at higher cost: ASSERT enforcement (read back memory.max / count OOM) INSIDE the run, never trust the launcher (NET-105; cpu-large-model axis iteration 80)
+
+**Method:** systemd-run --user AND sudo system scopes, MemoryMax ladder
+{6G..16G}, VmHWM sampling thread, Qwen3-30B-A3B IQ4_XS ctx2048.
+Script ResearchOutput/exp_net105_moehotset.py;
+results ~/f3cache/net105_results.json; log /tmp/net105.log +
+/tmp/net105_sudo6g.log.
+**Verdict:** INVALID-AS-INSTRUMENTED. Barriers: (f) FAILED-and-documented
+(enforcement not asserted in-run) — round quarantined, rerun designed.
+Issue #418. No experiment-count increment (invalid measurement, quarantined).
+Assessment note only.
