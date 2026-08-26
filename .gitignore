@@ -2,3 +2,5 @@ __pycache__/
 *.pyc
 exp_bp/
 .claude/
+llama.log
+.serena/
