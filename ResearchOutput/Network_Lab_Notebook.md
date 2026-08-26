@@ -2168,3 +2168,15 @@ results ~/f3cache/net103b_results.json + net103_ikppl_raw.txt.
 Open: spec x engine interaction; gpt-oss-120b capstone; STARVED-LADDER;
 cross-family knee. Paper 178, issue #415 (published as such). Now 104 network experiments.
 Assessment v104.
+
+## Part 104 — THE-THREE-REGIME-MAP (compact; STARVED-LADDER methodology cell): MemoryMax ladders on cached models produce a clean THREE-REGIME map — 7B-q2k: STARVED-STREAMING at 2500M (generation COMPLETES at 0.61 tok/s, 14x slowdown, zero OOM — mmap paging carries it), FULL-SPEED from 3000M (8.81-8.82 flat), PLACEBO flat to 8000M (<1% delta); 1.5B-q4km flat 25.2 tok/s across {1250M..2000M} (its 44-token run at 1250M = legitimate EOS, not truncation); ALL EIGHT ARMS COMPLETED ZERO-OOM; sha256 canaries clean both models pre/post; P1 formula-validation deferred to offline computation against the measured (2500M, 3000M] bracket; P2 streaming-regime CONFIRMED; P3 placebo-cheap CONFIRMED (<1% << 5%); --user scope launcher fix VERIFIED in production (all arms ran); practical: mmap streaming is a REAL fallback below the RAM wall at severe speed cost — the params_max formula predicts the RESIDENT threshold, not the survivable one (NET-104; cpu-large-model axis iteration 79)
+
+**Method:** systemd-run --user --scope MemoryMax ladders x cached models,
+llama-completion ctx=2048 n=128 threads=8, asserted caps, sha256 canaries
+pre/post. Script ResearchOutput/exp_net104_starvedladder.py;
+results ~/f3cache/net104_results.json; log /tmp/net104.log.
+**Verdict:** THE-THREE-REGIME-MAP. Barriers clean (canaries, stated windows).
+Open: fine bracket around 3000M; formula offline validation; MoE ladders
+(experts page differently); 120B stream capstone design input. Compact
+addendum to paper 177 lineage. Issue #416. Now 105 network experiments.
+Assessment v105.

@@ -1793,3 +1793,7 @@ Assessment v103. 103 experiments (NET-1 through NET-103).
 - **NET-103 — ENGINE-INVARIANCE CONFIRMED AND THE 30B MoE RUNS AT GOAL SPEED (cpu-large-model axis round 78): ik_llama.cpp matches mainline quality to 0.039% PPL (P4 ✓ engine-invariance of published laws) while delivering +49% dense PP and +133% MoE PP (130.81 vs 56.13 = 2.33x, P2 ✓); resident Qwen3-30B-A3B IQ4_XS sustains 13.28-13.89 tok/s single-stream pure CPU (P3 ✓ goal-grade); dense tg parity held (P1 partially refuted favorably). Raw-capture discipline after two instrumentation bugs. Open: spec x engine; gpt-oss-120b capstone; STARVED-LADDER. Paper 178, issue #415 (as published).
 
 Assessment v104. 104 experiments (NET-1 through NET-104).
+
+- **NET-104 — THE-THREE-REGIME-MAP (cpu-large-model axis round 79; compact): MemoryMax ladders on cached models yield STARVED-STREAMING (7B-q2k @2500M completes at 0.61 tok/s = 14x slowdown, zero OOM) / FULL-SPEED (>=3000M, 8.8 tok/s flat) / PLACEBO (<1%) regimes; 1.5B flat 25.2 tok/s everywhere; canaries clean; --user launcher fix verified in production. Formula offline validation pending. Addendum to paper 177 lineage. Issue #417.
+
+Assessment v105. 105 experiments (NET-1 through NET-105).
