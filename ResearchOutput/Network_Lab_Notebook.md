@@ -2123,3 +2123,14 @@ results ~/f3cache/net99_results.json; log /tmp/net99.log.
 telemetry gaps documented, manually repaired). Open: params_max validation
 sweep; engine cross-check; MXFP4 MoE hot-set; NET-100 staged. Paper 177,
 issue #411 (published as such). Now 100 network experiments. Assessment v100.
+
+## Part 100 — THE-SPEC-CACHE-INTERACTION (compact; Law2x4 composition test): BOTH horns REFUTED — K8/V4 role-split cache is NOT interaction-free under speculative decoding, and speed parity fails selectively: acceptance deltas {prose-d4: -2.78 (marginal), prose-d8: +1.33, code-d4: -8.65 (LARGE), code-d8: -0.55}; tok/s ratios {0.942, 1.05?, 0.898, 0.998} — the interaction CONCENTRATES at code-depth-4, exactly where NET-91 mapped the steepest acceptance slope; mechanism hypothesis (untested): perturbed keys shift selection boundaries that speculation then re-tests step-by-step (NET-83 amplification acting on the draft-match channel), amplified by code's sharper distributions; recipe amendment: when speculating on code at shallow depth, keep keys at f16 OR accept ~9% throughput loss; honest limits: n=3 prompts/cell, single seed — the -8.65 outlier needs replication before strong claims (NET-100; cpu-large-model axis iteration 75)
+
+**Method:** llama-speculative, 7B q4_k_m target + 0.5B q8_0 draft, grid
+{f16,K8V4} x depths {4,8} x domains {prose,code}, 3 prompts each, seed 42.
+Script ResearchOutput/exp_net100_speccache.py;
+results ~/f3cache/net100_results.json; log /tmp/net100.log.
+**Verdict:** THE-SPEC-CACHE-INTERACTION. Barriers clean/partial (n=3 stated
+as the binding limit). Open: replication at n=8+; margin-channel explanation;
+interaction with sub-8 knees. Issue #412 (published as such). Now 101 network experiments.
+Assessment v101.
