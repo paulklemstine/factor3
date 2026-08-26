@@ -220,7 +220,7 @@ def main():
     for bits, seed in POPS:
         assert seed not in (20260824, 20260903, 20260907, 20261007)
         rng = random.Random(seed ^ (bits * 100003))
-        Ns, los, his = [], [], {}
+        Ns, los, his = [], [], []
         seen = set()
         while len(Ns) < N_POOL:
             N, lo, hi = make_semiprime(rng, bits)
@@ -289,9 +289,6 @@ def main():
             cnt_large = np.cumsum((aa > LARGE_A_THRESHOLD).astype(np.int64))
             run_max_nu2 = np.maximum.accumulate(nus)
             cs_nu2 = np.cumsum(nus)
-            first_argmax = np.argmax(
-                nus[:, None] == run_max_nu2[:, None], axis=0) \
-                if False else [int(np.argmax(nus[:K])) for K in K_grid]
             # P mod 8 run lengths ending at j
             same = qq[1:] == qq[:-1]
             rle = np.ones(Kmax, dtype=np.int64)
@@ -307,7 +304,7 @@ def main():
                     "mean_a": float(cs_a[m]) / K,
                     "n_large_a": int(cnt_large[m]),
                     "max_nu2Q": int(run_max_nu2[m]),
-                    "argmax_nu2Q_frac": float(first_argmax[m]) / K,
+                    "argmax_nu2Q_frac": float(int(np.argmax(nus[:K]))) / K,
                     "sum_nu2Q": int(cs_nu2[m]),
                     "nu2Q_last": int(nus[m]),
                     "max_run_Pmod8": int(max_rle[m]),
@@ -330,16 +327,50 @@ def main():
         # SQUFOF control at smallest and largest K
         ctrl_res = []
         for K in (K_grid[0], K_grid[-1]):
-            vals = [x[0] for x in ctrl_at[K]]
+            vals = list(ctrl_at[K])
             ctrl_res.append({"K": K, **mi_bits(vals, yy, ss,
                                                np.random.default_rng(777))})
-        # secondary endpoint: nu2-profile vs v2(p+q) classes at K_grid[-1]
+        # secondary endpoint (v2 AMENDED): nu2-profile vs v2(p+q) classes
+        # with TRIVIAL-BASELINE comparison and mod-8-conditioned nulls --
+        # if N mod 8 (or mod 64) explains the same MI, the CF adds nothing
         sec = {}
+        Km = K_grid[-1]
+        nmod8 = [int(n) % 8 for n in (Ns[i] for i in vidx)]
+        nmod64 = [(int(n) % 64) // 8 for n in (Ns[i] for i in vidx)]
+        ss_m8 = ss * 4 + bins(np.array(nmod8, dtype=float), 4)
+        ss_m64 = ss * 8 + np.array(nmod64)
+        base_m8 = mi_bits(nmod8, vv3, ss, np.random.default_rng(556))
+        sec["BASELINE_Nmod8_vs_v2pq"] = base_m8
         for fname in ("max_nu2Q", "sum_nu2Q"):
-            vals = feat_series[K_grid[-1]].get(fname, [])
+            vals = feat_series[Km].get(fname, [])
             if len(vals) == len(vidx):
-                sec[fname] = mi_bits(vals, vv3, ss,
-                                     np.random.default_rng(555))
+                r_plain = mi_bits(vals, vv3, ss, np.random.default_rng(555))
+                r_cond = mi_bits(vals, vv3, ss_m8,
+                                 np.random.default_rng(557))
+                r_c64 = mi_bits(vals, vv3, ss_m64,
+                                np.random.default_rng(558))
+                sec[fname] = {"plain": r_plain, "cond_mod8": r_cond,
+                              "cond_mod64": r_c64}
+        # PC2 FIXED (v2 amendment): estimator validation on UNCENSORED
+        # cascades -- separate pilot subsample run to FIRST SQUARE (cap 400k),
+        # control feature bucketized; must carry bits about y* there.
+        pc_rng = random.Random(seed ^ 0xCFCF)
+        pc_vals, pc_lab = [], []
+        for i in pc_rng.sample(range(len(Ns)), min(250, len(Ns))):
+            cc = cf_cascade(Ns[i], 400000)
+            if cc is None:
+                continue
+            AsF, PsF, QsF = cc
+            j, par = squof_control_feature(AsF, QsF)
+            if j >= len(QsF):
+                continue
+            pc_vals.append(j); pc_lab.append(ystar[i])
+        if len(pc_vals) >= 100 and 0 < sum(pc_lab) < len(pc_lab):
+            pop_out["pc2_uncensored"] = {
+                "n": len(pc_vals),
+                **mi_bits(pc_vals, pc_lab,
+                          np.zeros(len(pc_vals), dtype=int),
+                          np.random.default_rng(778))}
         pop_out["non_squof_family"] = fam_results
         pop_out["squof_control"] = ctrl_res
         pop_out["secondary_v2pq"] = sec
@@ -353,7 +384,7 @@ def main():
     bits_list = [b for b, _ in POPS]
     c_fit = [m / (2 ** (bb / 4)) for m, bb in zip(meds, bits_list)]
     pc1 = all(abs(c / np.mean(c_fit) - 1) < 3 for c in c_fit) and len(c_fit) == 2
-    pc2_all = all(any(r["sig"] for r in v["squof_control"])
+    pc2_all = all(v.get("pc2_uncensored", {}).get("sig", False)
                   for v in results["populations"].values())
     results["controls"] = {"pc1_c_values": [round(c, 2) for c in c_fit],
                            "pc1_pass": bool(pc1), "pc2_pass": bool(pc2_all)}
@@ -364,7 +395,7 @@ def main():
             if hits:
                 violations.setdefault(fname, []).append({pname: hits})
     rep_viol = {f: vv for f, vv in violations.items() if len(vv) >= 2}
-    if not (pc1 and pc2):
+    if not (pc1 and pc2_all):
         verdict = "INVALID_CONTROLS"
     elif rep_viol:
         verdict = "SENSOR_EVENT"

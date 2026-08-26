@@ -3543,3 +3543,21 @@ requirement booked). **PROCESS LAW UPGRADED: positive controls are mandatory
 gates on factoring-machinery experiments.** No barrier breached — negative
 strength closing the tree-matrix-ECM-analogue genre by mechanism. Wall ~90 s.
 Paper 259, issue #408.
+
+**Assessment addendum v367 — 2026-08-25 (round-96 #2).** Experiment recorded
+(count 596 → 597; papers 259 → 260; version v366 → v367). Content:
+**CF-CASCADE EVASION SHOT (exp 609)** — fleet Bet #3, positive-control gated,
+pre-registration pinned (`69d8e6a`). **LAYER 1 primary**: zero replicated
+non-SQUFOF sensor events across 2 populations × 8 depths × 8 features — the
+√N CF-prefix layer carries no detectable information about the Fermat oracle
+d ≤ B before the SQUFOF zone (formally gated by PC2). **LAYER 2 secondary**:
+max_nu2Q ↔ v₂(p+q) ≈ 0.99 bits plain (replicated) but drops to EXACTLY 0.0
+conditioned on N mod 8 ⇒ fully absorbed by trivial modular arithmetic;
+paper-198 mod-8 cap STANDS; no new adic content. **LAYER 3 PC2 erratum**:
+registered control targeted a wrong association (first-square-index vs Fermat
+oracle — unrelated); estimator validity served by LAYER 2 detectability;
+PC2′ pre-stated requiring mechanistic targets. Ledger: censoring-by-own-cap,
+wrong-target control, signature/indexing defects — all pre-evidence; pinned-
+seed determinism. Head-to-head deferred/OPEN. No barrier breached; negative
+strength sealing the geodesic-sensor face at toy strength. Wall ~15 min.
+Paper 260, issue #410.

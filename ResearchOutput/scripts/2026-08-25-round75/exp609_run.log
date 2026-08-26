@@ -1,0 +1,4 @@
+[b48] med_fs=2186 kmax=1093 pos_rate=39/800 done, wall=98s
+[b40] med_fs=418 kmax=208 pos_rate=60/800 done, wall=194s
+{"verdict": "INVALID_CONTROLS", "pc1": true, "pc2": false, "wall_s": 194.0}
+EXIT=0

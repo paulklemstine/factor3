@@ -12806,3 +12806,28 @@ Matthews–Vaserstein–Weisfeiler, Williams 1982, papers 64/67). Count 595 ->
 scale-smoothness deviations, factor-local beyond scan-order, residue cap 4/3,
 external-hint laws; quantum closed; .2346 flag traveling. Fleet queue: Bet#3
 CF-cascade evasion shot next; asymptotic-class hunt workflow in flight.
+
+## Part 302 — round-96 #2 · CF-CASCADE EVASION SHOT (exp 609) — INVALID_CONTROLS(PC2) WITH PRIMARY-NULL SUPPORT AND A FULLY-ABSORBED SECONDARY: zero replicated non-SQUFOF CF-prefix sensor events for the Fermat oracle d≤B; the ν₂(Q_j)-profile ↔ v₂(p+q) association (~0.99 bits plain, replicated) collapses to EXACTLY 0.0 conditioned on N mod 8 — paper-198's mod-8 cap STANDS; geodesic-sensor face seals at toy strength (2026-08-25)
+
+Bet #3 executed with pinned pre-registration (`69d8e6a`), populations seeds
+20261113/20261114 (unused), bands +283e6/+293e6 asserted above prior ceiling.
+LAYER 1 (primary): no non-SQUFOF feature × depth carries ≥q99 bits about
+y*=1{d≤B} in ≥2 populations (one marginal non-replicated blip dead by rule).
+LAYER 2 (secondary): max_nu2Q plain MI 0.998 vs null q99 0.017 BOTH pops ⇒
+apparent first new adic content since round-71 → CONDITIONING KILL: N-mod-8
+stratified nulls leave EXACTLY 0.0 bits both pops — association = trivial
+modular arithmetic; cond_mod64 ~0.86b DEGENERATE (400 strata / n=800),
+disclosed not interpreted. LAYER 3 (PC2 erratum): control demanded
+first-square-index predict the FERMAT oracle — wrong target (unrelated
+quantities; measured ~0.02b < q99); estimator validity served by LAYER 2
+detectability + tight nulls; PC2′ pre-stated (mechanistic targets only).
+Ledger catches all pre-evidence: censoring-by-own-depth-cap, wrong-target
+control, signature/indexing defects; pinned-seed bit-reproducibility.
+Head-to-head DEFERRED/OPEN. Barrier framing: geodesic-sensor face sealed at
+toy strength pending formal gate repair; paper-198 confirmed against its
+first serious challenger; conic-trap lesson generalized — readouts collapsing
+onto coarse modular invariants were never new content. Count 596 -> 597;
+assessment v366 -> v367. Paper 260, issue #410. Open: u>=6-14 scale-
+smoothness deviations, factor-local beyond scan-order, residue cap 4/3,
+external-hint laws; quantum closed; .2346 flag traveling; class-group linkage
+test = the one unreached CF mechanism; asymptotic-class hunt in flight.
